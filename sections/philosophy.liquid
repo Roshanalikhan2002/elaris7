@@ -1,0 +1,58 @@
+<section class="philosophy-block">
+  <div class="philosophy-content">
+    <h2 class="section-title">{{ section.settings.title }}</h2>
+    <p class="section-desc">{{ section.settings.description }}</p>
+    {% if section.settings.button_text != blank %}
+      <a href="{{ section.settings.button_link }}" class="btn-pill-hollow">{{ section.settings.button_text }}</a>
+    {% endif %}
+  </div>
+  <div class="product-lineup">
+    {% if section.settings.image != blank %}
+      {{ section.settings.image | image_url: width: 2200 | image_tag: alt: section.settings.title }}
+    {% else %}
+      <img src="./assets/lineup.png" alt="E7 Lineup">
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Rhode Philosophy",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "one of everything really good"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "At Elaris7, our philosophy is to make one of everything really good. To us, that means a collection of intentional, high-performance essentials you reach for everyday."
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "SHOP ELARIS7"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Lineup Image"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Rhode Philosophy",
+      "category": "Custom Content"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,94 @@
+<section class="hero-block">
+  {% if section.settings.video_url != blank %}
+    <video class="hero-video-bg" autoplay muted loop playsinline>
+      <source src="{{ section.settings.video_url }}" type="video/mp4">
+    </video>
+  {% elsif section.settings.hero_image != blank %}
+    {{ section.settings.hero_image | image_url: width: 2000 | image_tag: class: 'hero-video-bg', alt: section.settings.title }}
+  {% else %}
+    <img src="https://images.unsplash.com/photo-1615397323605-2ce9d9b0ca5c?q=80&w=2000&auto=format&fit=crop" class="hero-video-bg" alt="Hero Background">
+  {% endif %}
+  
+  <div class="hero-overlay">
+    <!-- Header is usually handled in header.liquid, but for this Rhode layout, it might be integrated or needs specific transparent positioning -->
+    <div class="site-header">
+      <nav class="header-nav header-left">
+        <ul>
+          {% for link in linklists[section.settings.menu_left].links %}
+            <li><a href="{{ link.url }}">{{ link.title | uppercase }}</a></li>
+          {% endfor %}
+        </ul>
+      </nav>
+      
+      <div class="header-logo">
+        <a href="/" class="logo-text">{% if section.settings.logo_svg != blank %}{{ section.settings.logo_svg }}{% else %}{{ shop.name | lowercase }}{% endif %}</a>
+      </div>
+      
+      <nav class="header-nav header-right">
+        <ul>
+          <li><a href="/search">SEARCH</a></li>
+          <li><a href="/account">ACCOUNT</a></li>
+          <li><a href="/cart">CART ({{ cart.item_count }})</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="hero-bottom">
+      <h1 class="hero-title">{{ section.settings.title }}</h1>
+      {% if section.settings.btn_link != blank %}
+        <a href="{{ section.settings.btn_link }}" class="btn-pill btn-white-outline">{{ section.settings.btn_text }}</a>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Hero Section (Rhode)",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Hero Title",
+      "default": "E7's all-over glass skin look."
+    },
+    {
+      "type": "text",
+      "id": "btn_text",
+      "label": "Button Text",
+      "default": "THE SETS"
+    },
+    {
+      "type": "url",
+      "id": "btn_link",
+      "label": "Button Link"
+    },
+    {
+      "type": "image_picker",
+      "id": "hero_image",
+      "label": "Hero Image"
+    },
+    {
+      "type": "text",
+      "id": "video_url",
+      "label": "Video URL (MP4)"
+    },
+    {
+      "type": "link_list",
+      "id": "menu_left",
+      "label": "Left Navigation Menu"
+    },
+    {
+      "type": "html",
+      "id": "logo_svg",
+      "label": "Logo SVG (Optional)"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero Section (Rhode)",
+      "category": "Image"
+    }
+  ]
+}
+{% endschema %}

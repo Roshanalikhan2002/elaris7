@@ -1,0 +1,60 @@
+<footer class="site-footer">
+  <div class="footer-col">
+    <h4>{{ section.settings.brand_name | upcase }}</h4>
+    <p style="font-size: 0.85rem; font-weight: 600; line-height: 1.6;">{{ section.settings.brand_bio }}</p>
+  </div>
+  
+  {% for block in section.blocks %}
+    <div class="footer-col" {{ block.shopify_attributes }}>
+      <h4>{{ block.settings.title | upcase }}</h4>
+      <ul>
+        {% for link in linklists[block.settings.menu].links %}
+          <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+  {% endfor %}
+</footer>
+
+<div class="footer-bottom">
+  &copy; {{ 'now' | date: '%Y' }} {{ shop.name | upcase }}. ALL RIGHTS RESERVED.
+</div>
+
+{% schema %}
+{
+  "name": "Rhode Footer",
+  "settings": [
+    {
+      "type": "text",
+      "id": "brand_name",
+      "label": "Brand Name",
+      "default": "ELARIS7"
+    },
+    {
+      "type": "textarea",
+      "id": "brand_bio",
+      "label": "Brand Bio",
+      "default": "Sunnah Beauty meets Korean Skincare Science. Developed to nourish your skin barrier."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "menu",
+      "name": "Footer Menu",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Menu Heading",
+          "default": "Quick Links"
+        },
+        {
+          "type": "link_list",
+          "id": "menu",
+          "label": "Menu"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

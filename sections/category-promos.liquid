@@ -1,0 +1,70 @@
+<div class="section-grid">
+  <div class="card category-block" style="background-image: url('{{ section.settings.image_1 | image_url: width: 1200 }}'); background-size: cover; height:600px;">
+    {% if section.settings.image_1 == blank %}
+      <img src="https://images.unsplash.com/photo-1629198688000-71f23e745b6e?q=80&w=1200" class="hero-video-bg" alt="Fallback">
+    {% endif %}
+    <h2 class="category-title" style="color: #fff;">{{ section.settings.title_1 }}</h2>
+    <a href="{{ section.settings.link_1 }}" class="btn-pill btn-white-outline" style="position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%);">SHOP ALL</a>
+  </div>
+  <div class="card category-block" style="background-image: url('{{ section.settings.image_2 | image_url: width: 1200 }}'); background-size: cover; height:600px;">
+    {% if section.settings.image_2 == blank %}
+      <img src="https://images.unsplash.com/photo-1571781926291-c477eb0025f8?q=80&w=1200" class="hero-video-bg" alt="Fallback">
+    {% endif %}
+    <h2 class="category-title" style="color: #fff;">{{ section.settings.title_2 }}</h2>
+    <a href="{{ section.settings.link_2 }}" class="btn-pill btn-white-outline" style="position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%);">SHOP ALL</a>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Rhode Split Category",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Left Block"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_1",
+      "label": "Left Image"
+    },
+    {
+      "type": "text",
+      "id": "title_1",
+      "label": "Left Title",
+      "default": "shop skin"
+    },
+    {
+      "type": "url",
+      "id": "link_1",
+      "label": "Left Link"
+    },
+    {
+      "type": "header",
+      "content": "Right Block"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_2",
+      "label": "Right Image"
+    },
+    {
+      "type": "text",
+      "id": "title_2",
+      "label": "Right Title",
+      "default": "shop sets"
+    },
+    {
+      "type": "url",
+      "id": "link_2",
+      "label": "Right Link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Rhode Split Category",
+      "category": "Custom Content"
+    }
+  ]
+}
+{% endschema %}

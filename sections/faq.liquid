@@ -1,0 +1,59 @@
+<section id="faq" class="section">
+  <div class="container">
+    <h2 class="text-center mb-8">{{ section.settings.heading }}</h2>
+    <div class="faq-list">
+      {% for block in section.blocks %}
+        <div class="faq-item" {{ block.shopify_attributes }}>
+          <button class="faq-question">{{ block.settings.question }}</button>
+          <div class="faq-answer">
+            <p>{{ block.settings.answer }}</p>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<script>
+  // Handled conceptually by global JS, or could put isolation code here if needed.
+</script>
+
+{% schema %}
+{
+  "name": "FAQ",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Frequently Asked Questions"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "faq",
+      "name": "FAQ Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "Question",
+          "default": "What is 'Glass Skin'?"
+        },
+        {
+          "type": "textarea",
+          "id": "answer",
+          "label": "Answer",
+          "default": "Glass skin is a term for exceptionally smooth, even-toned, and lustrous skin that's so flawless it has the appearance of glass."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "FAQ Accordion",
+      "category": "Text"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,92 @@
+<div class="section-grid">
+  <div class="card showcase-image">
+    {% if section.settings.model_image != blank %}
+      {{ section.settings.model_image | image_url: width: 2000 | image_tag: class: 'full-img', alt: 'Model' }}
+    {% else %}
+      <img src="https://images.unsplash.com/photo-1596462502278-27bfdc4033c8?q=80&w=1200" alt="Model" class="full-img">
+    {% endif %}
+  </div>
+  <div class="card showcase-details">
+    <div class="product-smear">
+      {% if section.settings.smear_image != blank %}
+        {{ section.settings.smear_image | image_url: width: 800 | image_tag: alt: 'Texture' }}
+      {% else %}
+        <img src="https://images.unsplash.com/photo-1629198688000-71f23e745b6e?q=80&w=800" alt="Texture Smear">
+      {% endif %}
+    </div>
+    <div class="details-text">
+      <div class="stars">{{ section.settings.rating }}</div>
+      <h3 class="xl-title">{{ section.settings.title | upcase }}</h3>
+      <p class="subtitle">{{ section.settings.subtitle }}</p>
+      <a href="{{ section.settings.link }}" class="btn-pill-outline" style="margin-top: 300px; display: inline-block;">
+        {{ section.settings.btn_text | upcase }} — {{ section.settings.price }}
+      </a>
+    </div>
+    <div class="page-count">{{ section.settings.count }}</div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Rhode Split Showcase",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "model_image",
+      "label": "Model Image (Left)"
+    },
+    {
+      "type": "image_picker",
+      "id": "smear_image",
+      "label": "Smear Image (Right)"
+    },
+    {
+      "type": "text",
+      "id": "rating",
+      "label": "Rating Text",
+      "default": "★ ★ ★ ★ ★ (6,944)"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Product Title",
+      "default": "CENTELLA NIGHT CREAM"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "A raspberry pink glow"
+    },
+    {
+      "type": "text",
+      "id": "price",
+      "label": "Price",
+      "default": "RS. 2,500"
+    },
+    {
+      "type": "text",
+      "id": "btn_text",
+      "label": "Button Text",
+      "default": "BUY NOW"
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "Button Link"
+    },
+    {
+      "type": "text",
+      "id": "count",
+      "label": "Page Count",
+      "default": "1/4"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Rhode Split Showcase",
+      "category": "Custom Content"
+    }
+  ]
+}
+{% endschema %}

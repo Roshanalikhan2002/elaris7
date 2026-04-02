@@ -1,0 +1,90 @@
+<section id="shop">
+  <div class="product-collection">
+    {% for product in collections[section.settings.collection].products limit: section.settings.product_limit %}
+      {% assign is_focus = false %}
+      {% if forloop.first and section.settings.show_focus_card %}
+        {% assign is_focus = true %}
+      {% endif %}
+
+      {% if is_focus %}
+        <a href="{{ product.url }}" class="card card-focus">
+          {% if product.metafields.custom.focus_image != blank %}
+            {{ product.metafields.custom.focus_image | image_url: width: 1200 | image_tag: class: 'card-focus-bg', alt: product.title }}
+          {% else %}
+            {{ product.featured_image | image_url: width: 1200 | image_tag: class: 'card-focus-bg', alt: product.title }}
+          {% endif %}
+          <div class="card-brand-label">skincare</div>
+          <div class="swipe-helper">swipe</div>
+          <div class="btn-pill-white">GET THE LOOK — {{ product.price | money }}</div>
+        </a>
+      {% else %}
+        <a href="{{ product.url }}" class="card card-standard">
+          <div class="card-brand-label">{{ product.type | lowercase | default: 'skincare' }}</div>
+          <div class="product-image-wrap">
+            {{ product.featured_image | image_url: width: 800 | image_tag: alt: product.title }}
+          </div>
+          <div class="product-details">
+            <div class="stars">★ ★ ★ ★ ★ (16k)</div>
+            <div class="product-name-row">
+              <h3 class="card-product-title">{{ product.title | upcase }}</h3>
+              <span class="card-price">{{ product.price | money }}</span>
+            </div>
+            <p class="card-subtitle">{{ product.description | truncate: 100 }}</p>
+          </div>
+        </a>
+      {% endif %}
+    {% else %}
+      <!-- Fallback Content -->
+      {% for i in (1..3) %}
+        <div class="card card-standard">
+          <div class="card-brand-label">skincare</div>
+          <div class="product-image-wrap">
+            <div style="background:#eee; height:300px; width:100%; border-radius:10px;"></div>
+          </div>
+          <div class="product-details">
+            <div class="stars">★ ★ ★ ★ ★ (10k)</div>
+            <div class="product-name-row">
+              <h3 class="card-product-title">E7 PRODUCT</h3>
+              <span class="card-price">Rs. 1,500</span>
+            </div>
+            <p class="card-subtitle">Default description</p>
+          </div>
+        </div>
+      {% endfor %}
+    {% endfor %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Rhode Product Scroll",
+  "settings": [
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Collection"
+    },
+    {
+      "type": "range",
+      "id": "product_limit",
+      "min": 2,
+      "max": 12,
+      "step": 1,
+      "label": "Product Limit",
+      "default": 6
+    },
+    {
+      "type": "checkbox",
+      "id": "show_focus_card",
+      "label": "Make first card a 'Focus' card",
+      "default": true
+    }
+  ],
+  "presets": [
+    {
+      "name": "Rhode Product Scroll",
+      "category": "Collection"
+    }
+  ]
+}
+{% endschema %}

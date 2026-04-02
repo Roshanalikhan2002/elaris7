@@ -1,0 +1,87 @@
+<section id="bundles" class="section" style="background-color: {{ section.settings.bg_color }};">
+  <div class="container">
+    <div class="split-section">
+      <div class="split-image">
+        {% if section.settings.bundle_image != blank %}
+          {{ section.settings.bundle_image | image_url: width: 800 | image_tag: alt: section.settings.title }}
+        {% else %}
+          <div style="background:#ddd; width:100%; height:500px; display:flex; align-items:center; justify-content:center; border-radius:8px;">Bundle Image</div>
+        {% endif %}
+      </div>
+      <div class="split-content">
+        <h2>{{ section.settings.title }}</h2>
+        <p>{{ section.settings.description }}</p>
+        <ul class="bundle-list">
+          {% for block in section.blocks %}
+            <li>{{ block.settings.bullet_point }}</li>
+          {% endfor %}
+        </ul>
+        {% if section.settings.btn_link != blank %}
+          <a href="{{ section.settings.btn_link }}" class="btn mt-4">{{ section.settings.btn_text }}</a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Glass Skin Bundle",
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#ebdEc4"
+    },
+    {
+      "type": "image_picker",
+      "id": "bundle_image",
+      "label": "Bundle Image"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "E7 Complete Glass Skin Set"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "The ultimate 7-step routine for perfectly hydrated, glowing glass skin. Get everything you need in one bundle."
+    },
+    {
+      "type": "text",
+      "id": "btn_text",
+      "label": "Button Text",
+      "default": "Shop the Set"
+    },
+    {
+      "type": "url",
+      "id": "btn_link",
+      "label": "Button Link"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "bullet",
+      "name": "Bundle Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "bullet_point",
+          "label": "Item Name",
+          "default": "E7 Centella Face Wash"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Glass Skin Bundle",
+      "category": "Custom Content"
+    }
+  ]
+}
+{% endschema %}

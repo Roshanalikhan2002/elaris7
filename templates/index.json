@@ -1,0 +1,38 @@
+{
+  "sections": {
+    "hero": {
+      "type": "hero",
+      "settings": {
+        "title": "E7's all-over glass skin look.",
+        "btn_text": "THE SETS"
+      }
+    },
+    "featured_products": {
+      "type": "featured-products",
+      "settings": {
+        "product_limit": 6
+      }
+    },
+    "category_promos": {
+      "type": "category-promos",
+      "settings": {
+        "title_1": "shop skin",
+        "title_2": "shop sets"
+      }
+    },
+    "benefits_honors": {
+      "type": "benefits",
+      "settings": {
+        "eyebrow": "REAL RESULTS",
+        "quote": "My acne cleared up in just two weeks. Finally a halal-conscious Korean skincare routine.",
+        "author": "AYESHA A."
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "featured_products",
+    "category_promos",
+    "benefits_honors"
+  ]
+}
