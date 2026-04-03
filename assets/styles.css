@@ -935,9 +935,24 @@ a { color: inherit; text-decoration: none; }
   height: 300px;
   border-radius: 12px;
   overflow: hidden;
+  background: #fff;
 }
 
 .social-thumb img { width: 100%; height: 100%; object-fit: cover; }
+
+@media (max-width: 768px) {
+  .social-section {
+    padding: 40px 12px;
+  }
+  .social-scroll {
+    gap: 10px;
+    padding-bottom: 10px; /* space for scroll bar if visible */
+  }
+  .social-thumb {
+    flex: 0 0 90%; /* Show one image almost fully across */
+    height: 380px;
+  }
+}
 
 /* Buttons */
 .btn-pill-white {
@@ -979,11 +994,23 @@ a { color: inherit; text-decoration: none; }
 }
 
 .footer-logo-massive .logo-text {
-  font-size: clamp(8rem, 25vw, 22rem); /* Dynamic massive scale */
+  font-size: clamp(4rem, 18vw, 22rem); /* Dynamic massive scale */
   line-height: 0.8;
   color: #7A7973;
   opacity: 0.8;
-  letter-spacing: -0.08em;
+  letter-spacing: -0.06em;
+  display: block;
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .footer-logo-massive {
+    padding: 20px 10px;
+  }
+  .footer-logo-massive .logo-text {
+    font-size: clamp(3rem, 20vw, 6rem);
+    letter-spacing: -0.04em;
+  }
 }
 
 .footer-grid-container {
