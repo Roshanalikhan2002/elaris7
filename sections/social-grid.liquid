@@ -1,0 +1,170 @@
+<div class="social-grid-wrapper">
+  <div class="social-header">
+    <h2 class="social-title">{{ section.settings.title | default: 'elaris7 + you' }}</h2>
+    <a href="{{ section.settings.button_link | default: '#' }}" class="btn-pill-hollow-social">FIND US ON SOCIAL</a>
+  </div>
+
+  <div class="social-grid-container">
+    {% for i in (1..4) %}
+      <div class="social-item">
+        {% assign img_key = 'image_' | append: i %}
+        {% if section.settings[img_key] != blank %}
+          {{ section.settings[img_key] | image_url: width: 800 | image_tag: class: 'social-img', loading: 'lazy' }}
+        {% else %}
+          <div class="placeholder-social">{% if i == 1 %}Model Photo{% elsif i == 2 %}Product Close-up{% elsif i == 3 %}Customer Glow{% else %}Brand Aesthetic{% endif %}</div>
+        {% endif %}
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+<style>
+.social-grid-wrapper {
+  margin: 60px 12px;
+  background-color: #f7f6f2; /* Light creamy background like the ref */
+  padding: 60px 40px;
+  border-radius: 14px;
+}
+
+.social-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.social-title {
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #333;
+}
+
+.btn-pill-hollow-social {
+  padding: 12px 30px;
+  border: 1px solid #333;
+  border-radius: 50px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #333;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: all 0.3s ease;
+}
+
+.btn-pill-hollow-social:hover {
+  background: #333;
+  color: #fff;
+}
+
+.social-grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.social-item {
+  border-radius: 12px;
+  overflow: hidden;
+  aspect-ratio: 1 / 1;
+}
+
+.social-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.placeholder-social {
+  width: 100%;
+  height: 100%;
+  background: #e0deda;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  color: #777;
+  text-align: center;
+  padding: 10px;
+}
+
+@media (max-width: 768px) {
+  .social-grid-wrapper {
+    margin: 30px 0 0;
+    padding: 40px 20px;
+    border-radius: 14px 14px 0 0; /* Only top rounding as it is likely at the bottom */
+  }
+  .social-title {
+    font-size: 1.6rem;
+  }
+  .social-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  .social-grid-container {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 12px;
+    margin: 0 -20px; /* Bleed to edges */
+    padding: 0 20px 10px;
+    scrollbar-width: none; /* Hide scrollbar for clean look */
+  }
+  .social-grid-container::-webkit-scrollbar {
+    display: none;
+  }
+  .social-item {
+    flex: 0 0 75%; /* Large mobile cards like the ref */
+    scroll-snap-align: start;
+    aspect-ratio: 1 / 1.1; /* Slightly taller for mobile impact */
+  }
+}
+</style>
+
+{% schema %}
+{
+  "name": "Elaris7 + You Social",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "elaris7 + you"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_1",
+      "label": "Photo 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_2",
+      "label": "Photo 2"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_3",
+      "label": "Photo 3"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_4",
+      "label": "Photo 4"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Elaris7 + You Social",
+      "category": "Social Proof"
+    }
+  ]
+}
+{% endschema %}

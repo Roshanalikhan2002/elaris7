@@ -32,6 +32,12 @@
         "title_2": "shop sets"
       }
     },
+    "social_grid": {
+      "type": "social-grid",
+      "settings": {
+        "title": "elaris7 + you"
+      }
+    },
     "benefits_honors": {
       "type": "benefits",
       "settings": {
@@ -47,7 +53,9 @@
     "featured_products",
     "category_promos",
     "category_promos_2",
+    "social_grid",
     "benefits_honors"
   ]
 }
+
 
