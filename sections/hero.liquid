@@ -10,28 +10,7 @@
   {% endif %}
   
   <div class="hero-overlay">
-    <!-- Header is usually handled in header.liquid, but for this Rhode layout, it might be integrated or needs specific transparent positioning -->
-    <div class="site-header">
-      <nav class="header-nav header-left">
-        <ul>
-          {% for link in linklists[section.settings.menu_left].links %}
-            <li><a href="{{ link.url }}">{{ link.title | uppercase }}</a></li>
-          {% endfor %}
-        </ul>
-      </nav>
-      
-      <div class="header-logo">
-        <a href="/" class="logo-text">{% if section.settings.logo_svg != blank %}{{ section.settings.logo_svg }}{% else %}{{ shop.name | lowercase }}{% endif %}</a>
-      </div>
-      
-      <nav class="header-nav header-right">
-        <ul>
-          <li><a href="/search">SEARCH</a></li>
-          <li><a href="/account">ACCOUNT</a></li>
-          <li><a href="/cart">CART ({{ cart.item_count }})</a></li>
-        </ul>
-      </nav>
-    </div>
+
 
     <div class="hero-bottom">
       <h1 class="hero-title">{{ section.settings.title }}</h1>
