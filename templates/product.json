@@ -17,12 +17,17 @@
     "ingredients": {
       "type": "product-ingredients",
       "settings": {}
+    },
+    "benefits_focus": {
+      "type": "product-benefits-focus",
+      "settings": {}
     }
   },
   "order": [
     "main",
     "carousel",
     "details_split",
-    "ingredients"
+    "ingredients",
+    "benefits_focus"
   ]
 }

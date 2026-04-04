@@ -1,0 +1,171 @@
+{%- style -%}
+  .benefits-focus-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 16px 16px 60px 16px;
+  }
+  
+  .bf-left {
+    background-color: #f3f0ec;
+    border-radius: 14px;
+    padding: 80px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .bf-subtitle {
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #8c8a82;
+    margin-bottom: 40px;
+  }
+  
+  .bf-title-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .bf-line {
+    font-size: 3.5rem;
+    font-weight: 900;
+    line-height: 1.1;
+    color: #9c9a96;
+    letter-spacing: -0.04em;
+  }
+  
+  .bf-line-highlight {
+    color: #63765c; /* Deep earthy green */
+  }
+
+  .bf-right {
+    border-radius: 14px;
+    overflow: hidden;
+    position: relative;
+    min-height: 500px;
+  }
+  
+  .bf-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  @media (max-width: 900px) {
+    .benefits-focus-section {
+      grid-template-columns: 1fr;
+    }
+    .bf-left {
+      padding: 60px 20px;
+    }
+    .bf-line {
+      font-size: 2.5rem;
+    }
+    .bf-right {
+      min-height: 400px;
+    }
+  }
+{%- endstyle -%}
+
+<section class="benefits-focus-section">
+  <div class="bf-left">
+    <div class="bf-subtitle">{{ section.settings.subtitle | default: 'SPREAD IT ON FOR:' }}</div>
+    <div class="bf-title-group">
+      {% for block in section.blocks %}
+        <div class="bf-line {% if block.settings.highlight %}bf-line-highlight{% endif %}" {{ block.shopify_attributes }}>
+          {{ block.settings.text | downcase }}
+        </div>
+      {% endfor %}
+      {% if section.blocks.size == 0 %}
+        <div class="bf-line">deep hydration</div>
+        <div class="bf-line">radiant glow</div>
+        <div class="bf-line bf-line-highlight">toned, plump skin</div>
+      {% endif %}
+    </div>
+  </div>
+  
+  <div class="bf-right">
+    {% if section.settings.image != blank %}
+      {{ section.settings.image | image_url: width: 1000 | image_tag: class: 'bf-image', alt: 'Benefits Visual' }}
+    {% else %}
+      <img class="bf-image" src="https://images.unsplash.com/photo-1549439602-43ebca2327af?q=80&w=1000" alt="Jewelry and Cosmetics setup">
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Benefits Focus Split",
+  "settings": [
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "SPREAD IT ON FOR:"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Side Image"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "benefit_line",
+      "name": "Benefit Line",
+      "limit": 5,
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "deep hydration"
+        },
+        {
+          "type": "checkbox",
+          "id": "highlight",
+          "label": "Highlight Color (Green)",
+          "default": false
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Benefits Focus Split",
+      "blocks": [
+        {
+          "type": "benefit_line",
+          "settings": {
+            "text": "deep hydration",
+            "highlight": false
+          }
+        },
+        {
+          "type": "benefit_line",
+          "settings": {
+            "text": "radiant glow",
+            "highlight": false
+          }
+        },
+        {
+          "type": "benefit_line",
+          "settings": {
+            "text": "toned, plump skin",
+            "highlight": true
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
