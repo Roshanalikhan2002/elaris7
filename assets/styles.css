@@ -1675,3 +1675,140 @@ a { color: inherit; text-decoration: none; }
     font-size: 1.3rem; 
   }
 }
+/* ========================================================= */
+/*   RHODE SPLIT CATEGORY                                    */
+/* ========================================================= */
+.split-category-wrapper {
+  margin: 0 12px 12px;
+}
+
+.split-cat-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  min-height: 700px;
+}
+
+.split-cat-left {
+  border-radius: 14px;
+  overflow: hidden;
+  position: relative;
+}
+
+.split-cat-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.split-cat-right {
+  background-color: #f2f2f0;
+  border-radius: 14px;
+  padding: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.product-showcase-card {
+  width: 100%;
+  max-width: 440px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.product-swirl-wrap {
+  width: 100%;
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.product-swirl-img {
+  width: 100%;
+  height: auto;
+  max-width: 320px;
+  mix-blend-mode: multiply;
+}
+
+.stars-row {
+  font-size: 0.75rem;
+  color: #7A7973;
+  margin-bottom: 12px;
+}
+
+.showcase-title {
+  font-size: 1.1rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  color: #2c2b28;
+  margin-bottom: 6px;
+}
+
+.showcase-subtitle {
+  font-size: 0.85rem;
+  color: #7A7973;
+  margin-bottom: 30px;
+}
+
+.btn-pill-buy {
+  display: inline-block;
+  padding: 16px 40px;
+  border: 1.5px solid #2c2b28;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  color: #2c2b28;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn-pill-buy:hover {
+  background-color: #2c2b28;
+  color: #fff;
+}
+
+.pagination-counter {
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+  font-size: 1.8rem;
+  font-weight: 800;
+  letter-spacing: -0.05em;
+  color: #2c2b28;
+}
+
+/* ── Mobile: seamlessly connected, zero gap ── */
+@media (max-width: 768px) {
+  .split-category-wrapper {
+    margin: 0 0 12px; /* flush to screen edges */
+  }
+
+  .split-cat-grid {
+    grid-template-columns: 1fr;
+    gap: 0; /* NO gap between image and card */
+    min-height: auto;
+  }
+
+  .split-cat-left {
+    height: 380px;
+    border-radius: 0; /* remove rounding so panels touch */
+  }
+
+  .split-cat-right {
+    padding: 32px 20px 60px;
+    min-height: 460px;
+    border-radius: 0;
+  }
+
+  .pagination-counter {
+    bottom: 20px;
+    right: 20px;
+    font-size: 1.4rem;
+  }
+}
