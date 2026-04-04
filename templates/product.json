@@ -33,6 +33,12 @@
     "product_reviews": {
       "type": "product-reviews",
       "settings": {}
+    },
+    "related_products": {
+      "type": "featured-products",
+      "settings": {
+        "heading": "you may also like"
+      }
     }
   },
   "order": [
@@ -43,6 +49,7 @@
     "benefits_focus",
     "study_results",
     "faq_split",
-    "product_reviews"
+    "product_reviews",
+    "related_products"
   ]
 }
