@@ -94,9 +94,9 @@
           </a>
         {% endfor %}
       {% else %}
-        {%- assign fallback_names = "Night Cream,Tranexamic Serum,Barrier Cream,Peptide Serum,Niacinamide Essence,Hyaluronic Mist,SPF 50 Sunscreen,Vitamin C Serum,Retinol Night Cream,Ceramide Moisturiser,AHA Exfoliant,Eye Cream,Lip Balm,Cleansing Balm,Glow Booster" | split: "," -%}
-        {%- assign fallback_images = "night-cream.jpg,tranexamic-serum.jpg" | split: "," -%}
-        {%- assign fallback_labels = "nightcream,serum" | split: "," -%}
+        {%- assign fallback_names = "Night Cream,Tranexamic Serum,Keratin Serum,Peptide Serum,Niacinamide Essence,Hyaluronic Mist,SPF 50 Sunscreen,Vitamin C Serum,Retinol Night Cream,Ceramide Moisturiser,AHA Exfoliant,Eye Cream,Lip Balm,Cleansing Balm,Glow Booster" | split: "," -%}
+        {%- assign fallback_images = "night-cream.jpg,tranexamic-serum.jpg,keratin-serum.jpg" | split: "," -%}
+        {%- assign fallback_labels = "nightcream,serum,haircare" | split: "," -%}
         {%- assign preview_product = collections.all.products.first -%}
         {% for i in (1..15) %}
           {%- assign pname = fallback_names[forloop.index0] -%}
@@ -113,6 +113,8 @@
                 <span class="card-badge">new formula</span>
               {% elsif forloop.index0 == 1 %}
                 <span class="card-badge">bestseller</span>
+              {% elsif forloop.index0 == 2 %}
+                <span class="card-badge">limited edition</span>
               {% endif %}
             </div>
 
