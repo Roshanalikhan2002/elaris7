@@ -76,7 +76,7 @@ a { color: inherit; text-decoration: none; }
 
 .desktop-only {
   display: flex !important;
-  gap: 24px; /* precise spacing for nav links */
+  gap: 20px;
   list-style: none;
 }
 
@@ -84,7 +84,7 @@ a { color: inherit; text-decoration: none; }
   display: none !important;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 1024px) {
   .desktop-only {
     display: none !important;
   }
@@ -93,9 +93,6 @@ a { color: inherit; text-decoration: none; }
   }
   .header-main {
     padding: 10px 15px;
-  }
-  .page-wrapper {
-    padding-top: 80px; /* Slimmer header on mobile */
   }
 }
 
@@ -173,7 +170,7 @@ a { color: inherit; text-decoration: none; }
 }
 
 /* Mobile Header Adjustment */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   /*
    * Rhode-exact layout:
    * - Announcement bar: on white bg, in normal flow
