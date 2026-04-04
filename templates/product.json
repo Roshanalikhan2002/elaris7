@@ -5,9 +5,14 @@
     "main": {
       "type": "product-luxury-detail",
       "settings": {}
+    },
+    "carousel": {
+      "type": "meet-the-product",
+      "settings": {}
     }
   },
   "order": [
-    "main"
+    "main",
+    "carousel"
   ]
 }
