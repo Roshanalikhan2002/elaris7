@@ -75,14 +75,16 @@ a { color: inherit; text-decoration: none; }
 }
 
 .desktop-only {
-  display: flex;
+  display: flex !important;
+  gap: 24px; /* precise spacing for nav links */
+  list-style: none;
 }
 
 .mobile-only {
-  display: none;
+  display: none !important;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .desktop-only {
     display: none !important;
   }
