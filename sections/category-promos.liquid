@@ -1,19 +1,27 @@
 <style>
+  #shopify-section-{{ section.id }} .split-cat-grid {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+  }
   #shopify-section-{{ section.id }} .split-cat-grid.flipped {
     flex-direction: row-reverse;
   }
   @media (max-width: 768px) {
-    #shopify-section-{{ section.id }} .split-cat-grid.flipped {
-      flex-direction: column; /* Keep stacked on mobile */
+    #shopify-section-{{ section.id }} .split-cat-grid {
+      flex-direction: column !important;
+      gap: 0 !important;
     }
-    #shopify-section-{{ section.id }} .split-cat-grid.flipped .split-cat-right {
-      order: 1; /* Match the layout look where image is on top or bottom as desired */
+    #shopify-section-{{ section.id }} .split-cat-left,
+    #shopify-section-{{ section.id }} .split-cat-right {
+      flex: none !important;
+      width: 100% !important;
     }
   }
 </style>
 
 <div class="split-category-wrapper">
-  <div class="split-cat-grid {% if section.settings.flip_layout %}flipped{% endif %}" style="display: flex; gap: 12px;">
+  <div class="split-cat-grid {% if section.settings.flip_layout %}flipped{% endif %}">
     <!-- Lifestyle Image Column -->
     <div class="split-cat-left" style="flex: 1;">
       {%- if section.settings.image_left != blank -%}
