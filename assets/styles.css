@@ -5,7 +5,7 @@
   --surface-color: #f1efea; 
   --text-color: #333333; 
   --text-light: #777777;
-  --border-radius: 12px; /* Rhode typically uses tighter radii than 20px */
+  --border-radius: 24px; /* Rhode exact match */
   --nav-radius: 30px;
   --font-family-body: 'Inter', Helvetica, Arial, sans-serif;
   --rhode-grey: #5B5A53;
@@ -35,22 +35,9 @@ a { color: inherit; text-decoration: none; }
   gap: 12px;
 }
 
-/* Announcement Bar */
-.announcement-bar {
-  background-color: var(--surface-color);
-  color: #7A7973;
-  padding: 8px 0;
-  text-align: center;
-  font-size: 0.7rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  width: 100%;
-}
-
-/* Header */
+/* 1. Header & Navigation */
 .site-header {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   right: 0;
@@ -59,7 +46,20 @@ a { color: inherit; text-decoration: none; }
   flex-direction: column;
   z-index: 500;
   background: transparent;
-  transition: transform 0.4s ease, background-color 0.3s ease;
+}
+
+.announcement-bar {
+  background-color: #f2f2ef;
+  color: #7A7973;
+  padding: 10px 0;
+  text-align: center;
+  font-size: 0.65rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  width: auto;
+  margin: 10px 12px 0;
+  border-radius: 6px;
 }
 
 .header-main {
@@ -70,8 +70,21 @@ a { color: inherit; text-decoration: none; }
   padding: 20px 60px;
 }
 
+.desktop-only {
+  display: flex;
+}
+
 .mobile-only {
   display: none;
+}
+
+@media (max-width: 768px) {
+  .desktop-only {
+    display: none !important;
+  }
+  .mobile-only {
+    display: flex !important;
+  }
 }
 
 .header-hidden {
@@ -105,37 +118,115 @@ a { color: inherit; text-decoration: none; }
 
 /* Mobile Header Adjustment */
 @media (max-width: 768px) {
-  .menu-trigger { 
-    display: flex;
-    flex: 1; 
-  }
-  .desktop-only { display: none !important; }
-  .mobile-only { display: flex !important; }
-  
-  .header-main { 
-    padding: 12px 20px;
+  /*
+   * Rhode-exact layout:
+   * - Announcement bar: on white bg, in normal flow
+   * - Header-main: absolute, top:100% → floats RIGHT ON TOP of the hero image
+   * - Hero card: starts immediately after announcement bar
+   */
+  .site-header {
     position: relative;
+    background: #fff;
+    overflow: visible; /* Let header-main extend into hero area */
+    z-index: 100;
+  }
+
+  .announcement-bar {
+    margin: 15px 16px 8px; /* 15px top matches Rhode body's 15px top padding */
+    padding: 9px 0;
+    font-size: 0.62rem;
+    letter-spacing: 0.08em;
+    border-radius: 8px;
+    position: relative;
+    z-index: 5;
+  }
+
+  /* header-main sits at the TOP of the hero image */
+  .header-main { 
+    position: absolute;
+    top: 100%; /* starts exactly at bottom of site-header = top of hero */
+    left: 0;
+    right: 0;
+    height: 48px;
+    padding: 0 16px; /* Aligned with hero card's 16px margins = icon hugs card edge */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: transparent;
+    z-index: 600;
   }
   
+  .menu-trigger {
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4.5px;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    padding: 0;
+    flex-shrink: 0;
+  }
+
+  .menu-trigger span {
+    display: block;
+    width: 18px;
+    height: 1.2px;
+    background: #5b5a53;
+    border-radius: 0;
+  }
+
   .header-logo {
     position: absolute;
     left: 50%;
-    transform: translateX(-50%);
+    top: 50%;
+    transform: translate(-50%, -50%);
   }
 
-  .header-logo .logo-text { font-size: 1.4rem; }
-
-  .header-right { 
-    display: flex;
-    flex: 1;
-    justify-content: flex-end;
+  .header-logo .logo-text { 
+    font-size: 1.6rem;
+    color: #5b5a53;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    opacity: 0.9;
+    display: block;
+    line-height: 1;
   }
-  
+
   .mobile-header-icons {
-    display: flex;
-    gap: 15px;
+    display: flex !important;
+    gap: 12px; /* Tight spacing like Rhode */
     align-items: center;
-    color: #333;
+    flex-shrink: 0;
+    z-index: 10;
+  }
+
+  .mobile-header-icons svg {
+    stroke-width: 1.2px !important;
+    color: #5b5a53 !important;
+    width: 18px; /* Smaller icons matching Rhode */
+    height: 18px;
+    opacity: 0.9 !important;
+    display: block !important;
+  }
+
+  .cart-icon-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  .cart-count {
+    position: absolute;
+    top: -4px;
+    right: -5px;
+    font-size: 9px;
+    font-weight: 600;
+    color: #5b5a53;
+    font-family: inherit;
+    line-height: 1;
   }
 }
 
@@ -341,7 +432,8 @@ a { color: inherit; text-decoration: none; }
   position: relative;
   background-color: var(--surface-color);
   border-radius: var(--border-radius);
-  height: 90vh;
+  height: 450px; /* Exact Rhode mobile height */
+  margin: 0 12px; /* Precise side margins */
   overflow: hidden;
 }
 
@@ -384,34 +476,66 @@ a { color: inherit; text-decoration: none; }
 
 /* Mobile Adjustments for Hero */
 @media (max-width: 768px) {
+  .page-wrapper {
+    padding: 0 16px 16px; /* sides + bottom match Rhode's 16px 16px. Top is 0 — controlled by announcement bar margin */
+    gap: 12px;
+  }
+
+  .hero-block {
+    height: 242px; /* Exact Rhode: 241.88px from inspector */
+    margin: 0;
+    border-radius: 14px;
+  }
+
+  .hero-video-bg {
+    object-fit: cover;
+    object-position: center 38%;
+  }
+
+  /* Rhode layout: text wraps 2 lines on RIGHT, button stacked BELOW — column, right-aligned */
   .hero-bottom {
-    top: auto;
-    bottom: 30px; /* back to bottom */
-    right: 0;
+    position: absolute;
     left: 0;
-    max-width: 100%;
-    align-items: center; /* centered for better masking */
-    text-align: center;
-    padding: 40px 20px 30px;
-    background: linear-gradient(to bottom, transparent, #f1efea 15%);
+    right: 0;
+    bottom: 0;
+    height: 132px;
+    padding: 12px;
     display: flex;
     flex-direction: column;
-  }
-  .hero-title {
-    font-size: 1.4rem;
-    line-height: 1.1;
-    white-space: normal;
-    font-weight: 900;
-    margin-bottom: 20px;
-    color: #333;
-  }
-  .hero-bottom .btn-pill-outline {
-    padding: 12px 35px;
-    font-size: 0.8rem;
-    min-width: 200px;
+    justify-content: flex-end;
+    align-items: flex-end; /* RIGHT-aligned — matches Rhode BOTTOM_RIGHT class */
+    gap: 8px;
     background: transparent;
-    border: 1px solid #333;
-    backdrop-filter: none;
+    text-align: right;
+  }
+
+  .hero-title {
+    font-size: 1.35rem;
+    line-height: 1.15;
+    font-weight: 700;
+    margin: 0;
+    color: #fff;
+    max-width: 100%;
+    letter-spacing: -0.01em;
+    text-align: right;
+  }
+
+  /* Button sits BELOW the title text, right-aligned */
+  .hero-bottom .btn-pill-outline {
+    position: static;
+    flex-shrink: 0;
+    align-self: flex-end; /* Right-aligned */
+    padding: 7px 18px;
+    font-size: 0.62rem;
+    white-space: nowrap;
+    border: 1px solid rgba(255,255,255,0.85);
+    color: #fff;
+    border-radius: 50px;
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(6px);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
   }
 }
 
@@ -494,6 +618,17 @@ a { color: inherit; text-decoration: none; }
 
 .card-rhode:hover {
   box-shadow: 0 8px 32px rgba(0,0,0,0.09);
+}
+
+@media (max-width: 768px) {
+  .product-collection {
+    scroll-snap-type: x mandatory;
+    padding-right: 16px; /* allows scroll past last child visually */
+  }
+  .card-rhode {
+    flex: 0 0 88vw; /* Takes up 88% of screen so the 2nd product peeks cleanly */
+    scroll-snap-align: start;
+  }
 }
 
 .card-hover-bg {
@@ -810,9 +945,21 @@ a { color: inherit; text-decoration: none; }
 
 @media (max-width: 768px) {
   .section-grid {
-    grid-template-columns: 1fr;
-    min-height: auto;
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
     gap: 12px;
+    padding-right: 16px;
+    scrollbar-width: none;
+    min-height: auto;
+  }
+  .section-grid::-webkit-scrollbar {
+    display: none;
+  }
+  .section-grid > .card {
+    flex: 0 0 88vw;
+    scroll-snap-align: start;
+    min-height: 500px; /* Force minimum height so both cards look substantial block-style on mobile */
   }
 }
 
@@ -995,12 +1142,12 @@ a { color: inherit; text-decoration: none; }
 
 .footer-logo-massive .logo-text {
   font-size: clamp(4rem, 18vw, 22rem); /* Dynamic massive scale */
-  line-height: 0.8;
+  line-height: 0.85;
   color: #7A7973;
   opacity: 0.8;
   letter-spacing: -0.06em;
   display: block;
-  overflow: hidden;
+  /* Removed overflow hidden to prevent letters from being cropped at the bottom */
 }
 
 @media (max-width: 768px) {
@@ -1121,5 +1268,135 @@ a { color: inherit; text-decoration: none; }
   }
   .footer-grid-col {
     border-right: none;
+  }
+}
+
+/* ========================================================= */
+/*   VALUES / MISSION SECTION (Above Footer)                 */
+/* ========================================================= */
+.values-section {
+  background-color: #f3f0ec; /* Rhode signature light beige */
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: 12px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.values-content-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* keep centered vertically */
+  height: 100%;
+}
+
+.values-image-wrap {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+}
+
+.values-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.values-content {
+  padding: 40px 40px 0 40px; /* balanced padding */
+  text-align: left;
+}
+
+.values-statement {
+  font-size: 1.55rem;
+  line-height: 1.15;
+  color: #5b5a53;
+  margin-bottom: 24px;
+  letter-spacing: -0.02em;
+  font-weight: 500;
+}
+
+.values-statement strong {
+  font-weight: 800;
+  color: #333;
+}
+
+.btn-pill-values {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: #5b5a53;
+  border: 1px solid #5b5a53;
+  border-radius: 50px;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: transparent;
+  transition: all 0.2s ease;
+}
+
+.btn-pill-values:hover {
+  background: #5b5a53;
+  color: #fff;
+}
+
+.values-accordion {
+  padding: 0 40px 40px;
+  margin-top: 32px; /* Pull it right under the button */
+}
+
+.values-accordion-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(91, 90, 83, 0.15);
+  cursor: pointer;
+  color: #5b5a53;
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: -0.01em;
+}
+
+.values-accordion-item:last-child {
+  border-bottom: none;
+}
+
+.values-accordion-item .accordion-icon {
+  font-size: 1.2rem;
+  font-weight: 400;
+  transition: transform 0.3s ease;
+}
+
+.values-accordion-item.active .accordion-icon {
+  transform: rotate(45deg); /* Turns '+' into 'x' */
+}
+
+/* Mobile Adjustments for Values Section */
+@media (max-width: 768px) {
+  .values-section {
+    grid-template-columns: 1fr;
+  }
+  
+  /* On mobile, place the image on top */
+  .values-image-wrap {
+    order: -1;
+    aspect-ratio: 1 / 1;
+  }
+
+  .values-content {
+    padding: 30px 20px 20px;
+  }
+
+  .values-accordion {
+    padding: 0 20px 20px;
+  }
+
+  .values-statement {
+    font-size: 1.3rem; 
   }
 }

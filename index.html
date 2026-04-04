@@ -97,12 +97,6 @@
     </div>
   </div>
 
-  <div class="page-wrapper">
-    
-    <!-- 1. Hero Section -->
-    <section class="hero-block">
-      <img src="./assets/hero-image.png" class="hero-video-bg" alt="Glass Skin">
-      <div class="hero-overlay">
     <header class="site-header">
       <div class="announcement-bar">
         free shipping on all orders over rs. 2000
@@ -128,12 +122,22 @@
             <li><a href="#">CART (0)</a></li>
           </ul>
           <div class="mobile-only mobile-header-icons">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            <div class="cart-icon-wrapper">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+              <span class="cart-count">0</span>
+            </div>
           </div>
         </nav>
       </div>
     </header>
+
+  <div class="page-wrapper">
+    
+    <!-- 1. Hero Section -->
+    <section class="hero-block">
+      <img src="https://www.rhodeskin.com/cdn/shop/files/hp-hero-mobile_e647d87c-0df0-4e10-aacf-23a662557c7a_1024x.jpg?v=1774896241" class="hero-video-bg" alt="Glass Skin">
+      <div class="hero-overlay">
 
         <div class="hero-bottom">
           <h1 class="hero-title">E7's all-over glass skin look.</h1>
@@ -158,7 +162,7 @@
       <div class="product-collection">
 
         <!-- Card 1: Face Wash -->
-        <div class="card card-rhode">
+        <div class="card card-rhode" onclick="window.location.href='product.html'" style="cursor: pointer;">
           <img src="https://images.unsplash.com/photo-1556228578-0d85b1a4d571?q=80&w=800" alt="Texture Model" class="card-hover-bg">
           <div class="card-rhode-top">
             <span class="card-brand-label">wash</span>
@@ -181,7 +185,7 @@
         </div>
 
         <!-- Card 2: Essence -->
-        <div class="card card-rhode">
+        <div class="card card-rhode" onclick="window.location.href='product.html'" style="cursor: pointer;">
           <div class="card-rhode-top">
             <span class="card-brand-label">essence</span>
             <span class="card-badge">new shades</span>
@@ -203,7 +207,7 @@
         </div>
 
         <!-- Card 3: Barrier -->
-        <div class="card card-rhode">
+        <div class="card card-rhode" onclick="window.location.href='product.html'" style="cursor: pointer;">
           <div class="card-rhode-top">
             <span class="card-brand-label">barrier</span>
             <span class="card-badge">limited edition</span>
@@ -279,6 +283,41 @@
         <div class="social-thumb"><img src="https://images.pexels.com/photos/3762467/pexels-photo-3762467.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Skin Care Textures"></div>
         <div class="social-thumb"><img src="https://images.unsplash.com/photo-1612817288484-6f916006741a?q=80&w=600" alt="Skincare Ritual"></div>
         <div class="social-thumb"><img src="https://images.unsplash.com/photo-1556228578-0d85b1a4d571?q=80&w=600" alt="Dewy Results"></div>
+      </div>
+    </section>
+
+    <!-- Values / Mission Section (Rhode-style, above footer) -->
+    <section class="values-section">
+      <!-- On Desktop: Left column (Content), Right column (Image) -->
+      
+      <!-- Content Column -->
+      <div class="values-content-col">
+        <!-- Mission statement -->
+        <div class="values-content">
+          <p class="values-statement">To <strong>RESTORE</strong>, <strong>PROTECT</strong>, and <strong>NURTURE</strong> the skin you have now for lasting results that reveal themselves over time.</p>
+          <a href="#" class="btn-pill-values">OUR VALUES</a>
+        </div>
+
+        <!-- Accordion: mission / philanthropy / sustainability -->
+        <div class="values-accordion">
+          <div class="values-accordion-item active" onclick="this.classList.toggle('active')">
+            <span class="accordion-label">mission</span>
+            <span class="accordion-icon">+</span>
+          </div>
+          <div class="values-accordion-item" onclick="this.classList.toggle('active')">
+            <span class="accordion-label">philanthropy</span>
+            <span class="accordion-icon">+</span>
+          </div>
+          <div class="values-accordion-item" onclick="this.classList.toggle('active')">
+            <span class="accordion-label">sustainability</span>
+            <span class="accordion-icon">+</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Image Column -->
+      <div class="values-image-wrap">
+        <img src="./assets/mission-flatlay.png" alt="Elaris7 Skincare Products">
       </div>
     </section>
 
