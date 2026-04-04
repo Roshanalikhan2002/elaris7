@@ -19,7 +19,7 @@
     <div class="product-collection" id="product-collection-scroll">
       {% if section.blocks.size > 0 %}
         {% for block in section.blocks %}
-          <div class="card-rhode" {{ block.shopify_attributes }}>
+          <a href="{{ block.settings.product_link | default: '#' }}" class="card-rhode" {{ block.shopify_attributes }} style="text-decoration: none; color: inherit; display: flex; flex-direction: column;">
             {% if block.settings.hover_image != blank %}
               {{ block.settings.hover_image | image_url: width: 1000 | image_tag: class: 'card-hover-bg', alt: block.settings.title }}
             {% endif %}
@@ -51,7 +51,7 @@
             <div class="buy-button-hover">
                BUY {{ block.settings.title | upcase }} - {{ block.settings.price }}
             </div>
-          </div>
+          </a>
         {% endfor %}
       {% elsif collections[section.settings.collection].products.size > 0 %}
         {% assign limit_count = section.settings.product_limit | default: 15 %}
@@ -178,36 +178,37 @@
           "type": "text",
           "id": "title",
           "label": "Product Title",
-          "default": "Pocket Blush"
+          "default": "Anti Acne Serum"
         },
         {
           "type": "text",
           "id": "price",
           "label": "Price",
-          "default": "$25.00"
+          "default": "Rs. 1,500"
         },
         {
           "type": "text",
           "id": "subtitle",
           "label": "Subtitle",
-          "default": "The natural flush"
+          "default": "Premium Korean skincare formula"
         },
         {
           "type": "text",
           "id": "brand_label",
           "label": "Top Label (e.g. blush)",
-          "default": "blush"
+          "default": "antiacne"
         },
         {
           "type": "text",
           "id": "badge",
-          "label": "Badge (e.g. new shades)"
+          "label": "Badge (e.g. new shades)",
+          "default": "new shades"
         },
         {
           "type": "text",
           "id": "reviews",
           "label": "Review Count (e.g. 6,949)",
-          "default": "6,949"
+          "default": "16k"
         },
         {
           "type": "image_picker",
@@ -218,6 +219,11 @@
           "type": "image_picker",
           "id": "hover_image",
           "label": "Hover Image (Model Portrait)"
+        },
+        {
+          "type": "url",
+          "id": "product_link",
+          "label": "Product Link"
         }
       ]
     }
