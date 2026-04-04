@@ -1,46 +1,73 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "hero": {
       "type": "hero",
       "settings": {
         "title": "E7's all-over glass skin look.",
-        "btn_text": "THE SETS"
+        "btn_text": "THE SETS",
+        "btn_link": "",
+        "hero_image": "shopify://shop_images/Artboard_4-100_jpg.jpg",
+        "video_url": "",
+        "menu_left": "",
+        "logo_svg": ""
       }
     },
     "category_nav": {
       "type": "category-nav",
-      "settings": {
-      }
+      "settings": {}
     },
     "featured_products": {
       "type": "featured-products",
       "settings": {
+        "collection": "",
         "product_limit": 6
       }
     },
     "category_promos": {
       "type": "category-promos",
       "settings": {
-        "title_1": "shop skin",
-        "title_2": "shop sets"
+        "flip_layout": false,
+        "pagination_text": "1/4",
+        "product_title": "Centella Night Cream",
+        "product_subtitle": "A raspberry pink glow",
+        "product_price": "RS. 2,500",
+        "product_link": ""
       }
     },
     "category_promos_2": {
       "type": "category-promos",
       "settings": {
-        "title_1": "shop skin",
-        "title_2": "shop sets"
+        "flip_layout": false,
+        "pagination_text": "1/4",
+        "product_title": "Centella Night Cream",
+        "product_subtitle": "A raspberry pink glow",
+        "product_price": "RS. 2,500",
+        "product_link": ""
       }
     },
     "social_grid": {
       "type": "social-grid",
       "settings": {
-        "title": "elaris7 + you"
+        "title": "elaris7 + you",
+        "button_link": ""
       }
     },
     "values_accordion": {
       "type": "values-accordion",
       "settings": {
+        "button_link": "",
+        "mission_text": "",
+        "philanthropy_text": "",
+        "sustainability_text": ""
       }
     }
   },
@@ -54,6 +81,3 @@
     "values_accordion"
   ]
 }
-
-
-
