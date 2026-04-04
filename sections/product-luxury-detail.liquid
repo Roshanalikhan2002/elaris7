@@ -1,0 +1,225 @@
+{%- style -%}
+  /* Luxury Product Page Specific Styles */
+  .product-page {
+    padding: 16px;
+    background-color: #ffffff;
+  }
+  .product-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 12px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  .product-gallery {
+    position: relative;
+    border-radius: 14px;
+    overflow: hidden;
+  }
+  .product-gallery-inner {
+    position: sticky;
+    top: 20px;
+  }
+  .main-product-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 14px;
+  }
+  .product-details {
+    background-color: #f3f0ec;
+    border-radius: 14px;
+    padding: 60px 40px;
+  }
+  .product-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 8px;
+  }
+  .product-title {
+    font-size: 3.5rem;
+    font-weight: 900;
+    margin: 0;
+    color: #5b5a53;
+    line-height: 1;
+    letter-spacing: -0.04em;
+    text-transform: lowercase;
+  }
+  .product-award {
+    background-color: #e02b20;
+    color: white;
+    padding: 8px;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.65rem;
+    font-weight: 800;
+    text-align: center;
+    line-height: 1.1;
+  }
+  .product-meta {
+    margin-bottom: 30px;
+  }
+  .product-subtitle {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #5b5a53;
+    letter-spacing: 0.05em;
+    display: block;
+    margin-bottom: 12px;
+  }
+  .product-reviews {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+  }
+  .stars { color: #5b5a53; }
+  .review-count { color: #7a7873; }
+  
+  .product-description {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #5b5a53;
+    margin-bottom: 40px;
+  }
+  .divider {
+    border: none;
+    border-top: 1px solid rgba(0,0,0,0.1);
+    margin: 30px 0;
+  }
+  .size-selector {
+    display: flex;
+    gap: 12px;
+    margin-top: 12px;
+  }
+  .size-btn {
+    flex: 1;
+    background: transparent;
+    border: 1px solid #5b5a53;
+    border-radius: 40px;
+    padding: 12px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+  }
+  .size-btn.active {
+    background: #ffffff;
+    border-width: 2px;
+  }
+  .size-title { font-weight: 700; font-size: 0.9rem; margin-bottom: 2px; }
+  .size-desc { font-size: 0.75rem; color: #7a7873; }
+  
+  .buy-button {
+    width: 100%;
+    background: #5b5a53;
+    color: white;
+    border: none;
+    border-radius: 40px;
+    padding: 18px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin-top: 30px;
+    cursor: pointer;
+  }
+  
+  .accordions {
+    margin-top: 40px;
+  }
+  .accordion-item {
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    padding: 18px 0;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 0.85rem;
+    color: #5b5a53;
+  }
+
+  @media (max-width: 850px) {
+    .product-grid { grid-template-columns: 1fr; }
+    .product-title { font-size: 2.5rem; }
+    .product-details { padding: 40px 20px; }
+  }
+{%- endstyle -%}
+
+<main class="product-page">
+  <div class="product-grid">
+    <div class="product-gallery">
+      <div class="product-gallery-inner">
+        {% if product.featured_image %}
+          <img src="{{ product.featured_image | img_url: '1200x' }}" class="main-product-img" alt="{{ product.title }}">
+        {% else %}
+          <img src="{{ 'product-anti-acne.jpg' | asset_url }}" class="main-product-img" alt="Anti Acne Serum">
+        {% endif %}
+      </div>
+    </div>
+
+    <div class="product-details">
+      <div class="product-header">
+        <h1 class="product-title">{{ product.title | default: "barrier butter" }}</h1>
+        <div class="product-award">BEST OF BEAUTY</div>
+      </div>
+
+      <div class="product-meta">
+        <span class="product-subtitle">INTENSIVE MOISTURE BALM</span>
+        <div class="product-reviews">
+          <span class="stars">★★★★★</span>
+          <span class="review-count">(1,895)</span>
+        </div>
+      </div>
+
+      <div class="product-description">
+        {{ product.description | default: "An intensive moisture balm for deep hydration overnight. Our buttery-smooth formula is a supercharged addition to your nighttime routine." }}
+      </div>
+
+      <hr class="divider">
+
+      <div class="product-options">
+        <p class="product-subtitle">Select size:</p>
+        <div class="size-selector">
+          <button class="size-btn active">
+            <span class="size-title">big (3.4 oz)</span>
+            <span class="size-desc">for your shelf</span>
+          </button>
+          <button class="size-btn">
+            <span class="size-title">little (1.35 oz)</span>
+            <span class="size-desc">for on-the-go</span>
+          </button>
+        </div>
+      </div>
+
+      <button class="buy-button">BUY {{ product.title | upcase | default: "BARRIER BUTTER" }} - Rs. 3,500</button>
+      
+      <div class="afterpay" style="margin-top: 15px; font-size: 0.8rem; color: #7a7873; text-align: center;">
+        or interest-free payments with <strong>Afterpay</strong> ⓘ
+      </div>
+
+      <hr class="divider">
+
+      <div class="accordions">
+        <div class="accordion-item"><span>BENEFITS</span><span>+</span></div>
+        <div class="accordion-item"><span>APPLICATION</span><span>+</span></div>
+        <div class="accordion-item"><span>KEY INGREDIENTS</span><span>+</span></div>
+      </div>
+    </div>
+  </div>
+</main>
+
+{% schema %}
+{
+  "name": "Luxury Product Detail",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Luxury Product Detail"
+    }
+  ]
+}
+{% endschema %}
