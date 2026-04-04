@@ -1,7 +1,9 @@
 <div class="product-scroll-wrapper">
   <div class="product-scroll-header">
     <span class="product-scroll-count">
-      {% if collections[section.settings.collection] != blank %}
+      {% if section.blocks.size > 0 %}
+        {{ section.blocks.size }} products
+      {% elsif collections[section.settings.collection] != blank %}
         {{ collections[section.settings.collection].products_count }} products
       {% endif %}
     </span>
@@ -15,8 +17,44 @@
 
   <section id="shop">
     <div class="product-collection" id="product-collection-scroll">
-      {% assign limit_count = section.settings.product_limit | default: 15 %}
-      {% if collections[section.settings.collection].products.size > 0 %}
+      {% if section.blocks.size > 0 %}
+        {% for block in section.blocks %}
+          <div class="card-rhode" {{ block.shopify_attributes }}>
+            {% if block.settings.hover_image != blank %}
+              {{ block.settings.hover_image | image_url: width: 1000 | image_tag: class: 'card-hover-bg', alt: block.settings.title }}
+            {% endif %}
+            
+            <div class="card-rhode-top">
+              <div class="card-brand-label">{{ block.settings.brand_label | lowercase | default: 'skincare' }}</div>
+              {% if block.settings.badge != blank %}
+                <span class="card-badge">{{ block.settings.badge | lowercase }}</span>
+              {% endif %}
+            </div>
+
+            <div class="card-rhode-image">
+              {% if block.settings.main_image != blank %}
+                {{ block.settings.main_image | image_url: width: 800 | image_tag: alt: block.settings.title }}
+              {% else %}
+                <div class="product-placeholder-img"></div>
+              {% endif %}
+            </div>
+
+            <div class="card-rhode-details">
+              <div class="stars">★ ★ ★ ★ ★ ({{ block.settings.reviews | default: '14k' }})</div>
+              <div class="product-name-row">
+                <h3 class="card-product-title">{{ block.settings.title | upcase }}</h3>
+                <span class="card-price">{{ block.settings.price }}</span>
+              </div>
+              <p class="card-subtitle">{{ block.settings.subtitle }}</p>
+            </div>
+
+            <div class="buy-button-hover">
+               BUY {{ block.settings.title | upcase }} - {{ block.settings.price }}
+            </div>
+          </div>
+        {% endfor %}
+      {% elsif collections[section.settings.collection].products.size > 0 %}
+        {% assign limit_count = section.settings.product_limit | default: 15 %}
         {% for product in collections[section.settings.collection].products limit: limit_count %}
           <a href="{{ product.url }}" class="card-rhode">
             {% if product.images.size > 1 %}
@@ -54,12 +92,10 @@
         {%- assign fallback_names = "Centella Face Wash,Glass Skin Toner,Barrier Cream,Peptide Serum,Niacinamide Essence,Hyaluronic Mist,SPF 50 Sunscreen,Vitamin C Serum,Retinol Night Cream,Ceramide Moisturiser,AHA Exfoliant,Eye Cream,Lip Balm,Cleansing Balm,Glow Booster" | split: "," -%}
         {% for i in (1..15) %}
           {%- assign pname = fallback_names[forloop.index0] -%}
-          <div class="card card-standard">
+          <div class="card-rhode">
             <div class="card-brand-label">skincare</div>
-            <div class="product-image-wrap">
-              <div class="product-placeholder-img"></div>
-            </div>
-            <div class="product-details">
+            <div class="product-placeholder-img"></div>
+            <div class="card-rhode-details">
               <div class="stars">★ ★ ★ ★ ★ (10k)</div>
               <div class="product-name-row">
                 <h3 class="card-product-title">{{ pname | upcase }}</h3>
@@ -99,7 +135,7 @@
     {
       "type": "collection",
       "id": "collection",
-      "label": "Collection"
+      "label": "Collection (Auto Mode)"
     },
     {
       "type": "range",
@@ -109,6 +145,59 @@
       "step": 1,
       "label": "Product Limit",
       "default": 15
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product",
+      "name": "Manual Product Block",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Product Title",
+          "default": "Pocket Blush"
+        },
+        {
+          "type": "text",
+          "id": "price",
+          "label": "Price",
+          "default": "$25.00"
+        },
+        {
+          "type": "text",
+          "id": "subtitle",
+          "label": "Subtitle",
+          "default": "The natural flush"
+        },
+        {
+          "type": "text",
+          "id": "brand_label",
+          "label": "Top Label (e.g. blush)",
+          "default": "blush"
+        },
+        {
+          "type": "text",
+          "id": "badge",
+          "label": "Badge (e.g. new shades)"
+        },
+        {
+          "type": "text",
+          "id": "reviews",
+          "label": "Review Count (e.g. 6,949)",
+          "default": "6,949"
+        },
+        {
+          "type": "image_picker",
+          "id": "main_image",
+          "label": "Primary Image (Product)"
+        },
+        {
+          "type": "image_picker",
+          "id": "hover_image",
+          "label": "Hover Image (Model Portrait)"
+        }
+      ]
     }
   ],
   "presets": [
