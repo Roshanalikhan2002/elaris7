@@ -1,16 +1,30 @@
+<style>
+  #shopify-section-{{ section.id }} .split-cat-grid.flipped {
+    flex-direction: row-reverse;
+  }
+  @media (max-width: 768px) {
+    #shopify-section-{{ section.id }} .split-cat-grid.flipped {
+      flex-direction: column; /* Keep stacked on mobile */
+    }
+    #shopify-section-{{ section.id }} .split-cat-grid.flipped .split-cat-right {
+      order: 1; /* Match the layout look where image is on top or bottom as desired */
+    }
+  }
+</style>
+
 <div class="split-category-wrapper">
-  <div class="split-cat-grid">
-    <!-- Left: Lifestyle Image -->
-    <div class="split-cat-left">
+  <div class="split-cat-grid {% if section.settings.flip_layout %}flipped{% endif %}" style="display: flex; gap: 12px;">
+    <!-- Lifestyle Image Column -->
+    <div class="split-cat-left" style="flex: 1;">
       {%- if section.settings.image_left != blank -%}
         {{ section.settings.image_left | image_url: width: 1200 | image_tag: class: 'split-cat-img', loading: 'lazy' }}
       {%- else -%}
-        <div class="placeholder-bg" style="background:#f2f0ed; height:100%;">Lifestyle Image</div>
+        <div class="placeholder-bg" style="background:#f2f0ed; height:100%; min-height:400px; display:flex; align-items:center; justify-content:center;">Lifestyle Image</div>
       {%- endif -%}
     </div>
 
-    <!-- Right: Product Detail with 1/4 layout -->
-    <div class="split-cat-right">
+    <!-- Product Detail Column -->
+    <div class="split-cat-right" style="flex: 1;">
       <div class="product-showcase-card">
         <div class="product-swirl-wrap">
           {%- if section.settings.product_image != blank -%}
@@ -32,7 +46,7 @@
           </div>
         </div>
 
-        <div class="pagination-counter">1/4</div>
+        <div class="pagination-counter">{{ section.settings.pagination_text | default: '1/4' }}</div>
       </div>
     </div>
   </div>
@@ -43,13 +57,25 @@
   "name": "Rhode Split Category",
   "settings": [
     {
+      "type": "checkbox",
+      "id": "flip_layout",
+      "label": "Flip Layout (Image on Right)",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "pagination_text",
+      "label": "Pagination Counter Text",
+      "default": "1/4"
+    },
+    {
       "type": "image_picker",
       "id": "image_left",
-      "label": "Left Lifestyle Image"
+      "label": "Lifestyle Image"
     },
     {
       "type": "header",
-      "content": "Product Detail (Right)"
+      "content": "Product Detail"
     },
     {
       "type": "image_picker",
