@@ -18,18 +18,35 @@
       {% assign limit_count = section.settings.product_limit | default: 15 %}
       {% if collections[section.settings.collection].products.size > 0 %}
         {% for product in collections[section.settings.collection].products limit: limit_count %}
-          <a href="{{ product.url }}" class="card card-standard">
-            <div class="card-brand-label">{{ product.type | lowercase | default: 'skincare' }}</div>
-            <div class="product-image-wrap">
+          <a href="{{ product.url }}" class="card-rhode">
+            {% if product.images.size > 1 %}
+              {{ product.images[1] | image_url: width: 1000 | image_tag: class: 'card-hover-bg', alt: product.title }}
+            {% endif %}
+            
+            <div class="card-rhode-top">
+              <div class="card-brand-label">{{ product.type | lowercase | default: 'skincare' }}</div>
+              {% if product.tags contains 'new' or product.tags contains 'New' %}
+                <span class="card-badge">new shades</span>
+              {% elsif product.tags contains 'limited' %}
+                <span class="card-badge">limited edition</span>
+              {% endif %}
+            </div>
+
+            <div class="card-rhode-image">
               {{ product.featured_image | image_url: width: 800 | image_tag: alt: product.title }}
             </div>
-            <div class="product-details">
-              <div class="stars">★ ★ ★ ★ ★ (16k)</div>
+
+            <div class="card-rhode-details">
+              <div class="stars">★ ★ ★ ★ ★ ({{ product.metafields.reviews.rating_count | default: '16k' }})</div>
               <div class="product-name-row">
                 <h3 class="card-product-title">{{ product.title | upcase }}</h3>
                 <span class="card-price">{{ product.price | money }}</span>
               </div>
-              <p class="card-subtitle">{{ product.description | truncate: 80 }}</p>
+              <p class="card-subtitle">{{ product.description | truncate: 50 }}</p>
+            </div>
+
+            <div class="buy-button-hover">
+               BUY {{ product.title | upcase }} - {{ product.price | money }}
             </div>
           </a>
         {% endfor %}
