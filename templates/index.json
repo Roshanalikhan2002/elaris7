@@ -42,14 +42,6 @@
       "type": "values-accordion",
       "settings": {
       }
-    },
-    "benefits_honors": {
-      "type": "benefits",
-      "settings": {
-        "eyebrow": "REAL RESULTS",
-        "quote": "My acne cleared up in just two weeks. Finally a halal-conscious Korean skincare routine.",
-        "author": "AYESHA A."
-      }
     }
   },
   "order": [
@@ -59,8 +51,7 @@
     "category_promos",
     "category_promos_2",
     "social_grid",
-    "values_accordion",
-    "benefits_honors"
+    "values_accordion"
   ]
 }
 
