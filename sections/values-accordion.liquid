@@ -1,0 +1,248 @@
+<div class="values-wrapper">
+  <div class="values-grid">
+    <div class="values-content-card">
+      <div class="values-text-area">
+        <h2 class="values-headline">
+          To <strong>RESTORE</strong>, <strong>PROTECT</strong>, and <strong>NURTURE</strong> the skin you have now for lasting results that reveal themselves over time.
+        </h2>
+        <a href="{{ section.settings.button_link | default: '#' }}" class="btn-pill-values-large">OUR VALUES</a>
+      </div>
+
+      <div class="values-accordion-wrap">
+        <div class="values-acc-item active">
+          <div class="values-acc-header">
+            <span>mission</span>
+            <span class="acc-icon">×</span>
+          </div>
+          <div class="values-acc-content">
+            <p>{{ section.settings.mission_text | default: 'Our mission is to provide simple, intentional, and high-performance skincare essentials for all.' }}</p>
+          </div>
+        </div>
+
+        <div class="values-acc-item">
+          <div class="values-acc-header">
+            <span>philanthropy</span>
+            <span class="acc-icon">+</span>
+          </div>
+          <div class="values-acc-content">
+            <p>{{ section.settings.philanthropy_text | default: 'At Elaris7, we donate 1% of every sale to support community health and wellness initiatives.' }}</p>
+          </div>
+        </div>
+
+        <div class="values-acc-item">
+          <div class="values-acc-header">
+            <span>sustainability</span>
+            <span class="acc-icon">+</span>
+          </div>
+          <div class="values-acc-content">
+            <p>{{ section.settings.sustainability_text | default: 'We are committed to reducing our environmental footprint through conscious packaging and sourcing.' }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="values-image-card">
+      {%- if section.settings.image != blank -%}
+        {{ section.settings.image | image_url: width: 1400 | image_tag: class: 'values-bg-img', loading: 'lazy' }}
+      {%- else -%}
+        <div class="placeholder-values-img">Product Aesthetic Image</div>
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+
+<style>
+.values-wrapper {
+  margin: 0 12px 60px;
+  overflow: hidden;
+  border-radius: 14px;
+  background-color: #f3f0ec;
+}
+
+.values-grid {
+  display: flex;
+  min-height: 700px;
+}
+
+.values-content-card {
+  flex: 1;
+  padding: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.values-headline {
+  font-size: 1.8rem;
+  line-height: 1.35;
+  font-weight: 400;
+  color: #555;
+  margin-bottom: 40px;
+  letter-spacing: -0.01em;
+}
+
+.values-headline strong {
+  font-weight: 800;
+  color: #2c2b28;
+}
+
+.btn-pill-values-large {
+  display: inline-block;
+  padding: 14px 40px;
+  border: 1px solid #333;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #333;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 60px;
+  transition: all 0.3s ease;
+}
+
+.btn-pill-values-large:hover {
+  background: #333;
+  color: #fff;
+}
+
+.values-accordion-wrap {
+  border-top: 1px solid rgba(0,0,0,0.08);
+}
+
+.values-acc-item {
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+
+.values-acc-header {
+  padding: 24px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 800;
+  color: #2c2b28;
+  letter-spacing: 0.02em;
+}
+
+.acc-icon {
+  font-size: 1.2rem;
+  font-weight: 300;
+  color: #777;
+}
+
+.values-acc-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.values-acc-item.active .values-acc-content {
+  max-height: 200px;
+  padding-bottom: 24px;
+}
+
+.values-acc-content p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #666;
+}
+
+.values-image-card {
+  flex: 1;
+  position: relative;
+}
+
+.values-bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.placeholder-values-img {
+  width: 100%;
+  height: 100%;
+  background: #eee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #999;
+}
+
+@media (max-width: 900px) {
+  .values-grid {
+    flex-direction: column;
+  }
+  .values-image-card {
+    height: 450px;
+    order: -1; /* Image on top for mobile */
+  }
+  .values-content-card {
+    padding: 60px 20px;
+  }
+  .values-headline {
+    font-size: 1.5rem;
+  }
+}
+</style>
+
+<script>
+document.querySelectorAll('.values-acc-header').forEach(header => {
+  header.addEventListener('click', () => {
+    const item = header.parentElement;
+    const isActive = item.classList.contains('active');
+    
+    // Close other items
+    document.querySelectorAll('.values-acc-item').forEach(el => {
+      el.classList.remove('active');
+      el.querySelector('.acc-icon').textContent = '+';
+    });
+
+    if (!isActive) {
+      item.classList.add('active');
+      header.querySelector('.acc-icon').textContent = '×';
+    }
+  });
+});
+</script>
+
+{% schema %}
+{
+  "name": "Rhode Values Accordion",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Right Side Image"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    },
+    {
+      "type": "textarea",
+      "id": "mission_text",
+      "label": "Mission Content"
+    },
+    {
+      "type": "textarea",
+      "id": "philanthropy_text",
+      "label": "Philanthropy Content"
+    },
+    {
+      "type": "textarea",
+      "id": "sustainability_text",
+      "label": "Sustainability Content"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Rhode Values Accordion",
+      "category": "Custom Content"
+    }
+  ]
+}
+{% endschema %}

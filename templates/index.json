@@ -38,6 +38,11 @@
         "title": "elaris7 + you"
       }
     },
+    "values_accordion": {
+      "type": "values-accordion",
+      "settings": {
+      }
+    },
     "benefits_honors": {
       "type": "benefits",
       "settings": {
@@ -54,8 +59,10 @@
     "category_promos",
     "category_promos_2",
     "social_grid",
+    "values_accordion",
     "benefits_honors"
   ]
 }
+
 
 
