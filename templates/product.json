@@ -21,6 +21,10 @@
     "benefits_focus": {
       "type": "product-benefits-focus",
       "settings": {}
+    },
+    "study_results": {
+      "type": "product-study-results",
+      "settings": {}
     }
   },
   "order": [
@@ -28,6 +32,7 @@
     "carousel",
     "details_split",
     "ingredients",
-    "benefits_focus"
+    "benefits_focus",
+    "study_results"
   ]
 }

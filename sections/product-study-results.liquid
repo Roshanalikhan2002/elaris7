@@ -1,0 +1,164 @@
+{%- style -%}
+  .study-results-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 16px 16px 60px 16px;
+  }
+  
+  .sr-left {
+    background-color: #f3f0ec;
+    border-radius: 14px;
+    padding: 80px 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .sr-stat-block {
+    margin-bottom: 45px;
+  }
+  
+  .sr-number {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #c95966; /* Vivid pink-red from the design */
+    margin: 0 0 8px 0;
+    line-height: 1;
+    letter-spacing: -0.01em;
+  }
+  
+  .sr-desc {
+    font-size: 0.8rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #6a6863;
+    letter-spacing: 0.05em;
+    margin: 0;
+  }
+  
+  .sr-footnote {
+    font-size: 0.75rem;
+    color: #5b5a53;
+    margin-top: 10px;
+  }
+
+  .sr-right {
+    border-radius: 14px;
+    overflow: hidden;
+    position: relative;
+    min-height: 500px;
+  }
+  
+  .sr-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  @media (max-width: 900px) {
+    .study-results-section {
+      grid-template-columns: 1fr;
+    }
+    .sr-left {
+      padding: 50px 30px;
+    }
+    .sr-number {
+      font-size: 2.2rem;
+    }
+    .sr-right {
+      min-height: 400px;
+      order: -1; /* Push image to top on mobile */
+    }
+  }
+{%- endstyle -%}
+
+<section class="study-results-section">
+  <div class="sr-left">
+    {% for block in section.blocks %}
+      <div class="sr-stat-block" {{ block.shopify_attributes }}>
+        <h3 class="sr-number">{{ block.settings.number }}</h3>
+        <p class="sr-desc">{{ block.settings.description }}</p>
+      </div>
+    {% endfor %}
+    
+    {% if section.blocks.size == 0 %}
+      <div class="sr-stat-block">
+        <h3 class="sr-number">100%</h3>
+        <p class="sr-desc">SAID IT GAVE CHEEKS A NATURAL GLOW</p>
+      </div>
+      <div class="sr-stat-block">
+        <h3 class="sr-number">97%</h3>
+        <p class="sr-desc">SAID IT MELTS INTO SKIN + BLENDS SEAMLESSLY</p>
+      </div>
+      <div class="sr-stat-block">
+        <h3 class="sr-number">94%</h3>
+        <p class="sr-desc">SAID IT WORKS WELL ON CHEEKS + LIPS</p>
+      </div>
+      <div class="sr-stat-block">
+        <h3 class="sr-number">3 out of 4</h3>
+        <p class="sr-desc">SAID THE BLUSH FEELS HYDRATING</p>
+      </div>
+    {% endif %}
+
+    <div class="sr-footnote">
+      {{ section.settings.footnote | default: '*Based on a 32-subject consumer perception study after 2 weeks of use.' }}
+    </div>
+  </div>
+  
+  <div class="sr-right">
+    {% if section.settings.image != blank %}
+      {{ section.settings.image | image_url: width: 1000 | image_tag: class: 'sr-image', alt: 'Study Results Visual' }}
+    {% else %}
+      <img class="sr-image" src="https://images.unsplash.com/photo-1549439602-43ebca2327af?q=80&w=1000" alt="Cosmetic application close up">
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Consumer Study Results",
+  "settings": [
+    {
+      "type": "text",
+      "id": "footnote",
+      "label": "Footnote Text",
+      "default": "*Based on a 32-subject consumer perception study after 2 weeks of use."
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Side Image"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "stat_block",
+      "name": "Statistic",
+      "limit": 6,
+      "settings": [
+        {
+          "type": "text",
+          "id": "number",
+          "label": "Number/Percentage",
+          "default": "100%"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description",
+          "default": "SAID IT GAVE CHEEKS A NATURAL GLOW"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Consumer Study Results"
+    }
+  ]
+}
+{% endschema %}
