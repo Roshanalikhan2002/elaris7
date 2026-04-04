@@ -1,0 +1,9 @@
+{
+  "accessibility": {
+    "skip_to_content": "Skip to content",
+    "refresh_page": "Refresh page",
+    "link_messages": {
+      "new_window": "Opens in a new window"
+    }
+  }
+}

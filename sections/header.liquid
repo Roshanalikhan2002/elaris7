@@ -1,0 +1,50 @@
+<header class="site-header">
+  <div class="announcement-bar">
+    {{ section.settings.announcement_text }}
+  </div>
+  <div class="header-main">
+    <nav class="header-nav">
+      <div class="menu-trigger" id="menu-open">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul class="desktop-only">
+        {%- for link in linklists.main-menu.links -%}
+          <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+        {%- endfor -%}
+      </ul>
+    </nav>
+    <div class="header-logo">
+      <a href="/" class="logo-text">{{ shop.name }}</a>
+    </div>
+    <nav class="header-nav header-right">
+      <ul class="desktop-only">
+        <li><a href="/search">SEARCH</a></li>
+        <li><a href="/account">ACCOUNT</a></li>
+        <li><a href="/cart">CART ({{ cart.item_count }})</a></li>
+      </ul>
+      <div class="mobile-only mobile-header-icons">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <div class="cart-icon-wrapper">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+          <span class="cart-count">{{ cart.item_count }}</span>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+
+{% schema %}
+{
+  "name": "Header",
+  "settings": [
+    {
+      "type": "text",
+      "id": "announcement_text",
+      "label": "Announcement Text",
+      "default": "free shipping on all orders over rs. 2000"
+    }
+  ]
+}
+{% endschema %}
