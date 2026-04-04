@@ -1,0 +1,233 @@
+{%- style -%}
+  .ingredients-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 16px 16px 60px 16px;
+    min-height: 600px;
+  }
+  
+  /* Left Side: Image with Button */
+  .ing-left {
+    position: relative;
+    border-radius: 14px;
+    overflow: hidden;
+  }
+  .ing-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .ing-full-btn {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    color: white;
+    padding: 10px 24px;
+    border-radius: 40px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    backdrop-filter: blur(4px);
+    transition: background 0.3s, color 0.3s;
+  }
+  .ing-full-btn:hover {
+    background: white;
+    color: #333;
+  }
+
+  /* Right Side: Text Content */
+  .ing-right {
+    background-color: #f3f0ec;
+    border-radius: 14px;
+    position: relative;
+    padding: 80px 80px 80px 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .ing-vertical-title {
+    position: absolute;
+    top: 60px;
+    left: 80px;
+    transform: rotate(90deg);
+    transform-origin: 0 0;
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: #a09d94;
+    letter-spacing: -0.02em;
+  }
+  
+  .ing-content {
+    color: #6a6863;
+    max-width: 500px;
+  }
+  .ing-intro {
+    font-size: 0.85rem;
+    line-height: 1.6;
+    margin-bottom: 40px;
+  }
+  
+  .hero-ingredient {
+    margin-bottom: 40px;
+  }
+  .hero-title {
+    font-size: 1.4rem;
+    font-weight: 900;
+    color: #8c8a82;
+    margin: 0 0 12px 0;
+    letter-spacing: -0.02em;
+  }
+  .hero-desc {
+    font-size: 0.85rem;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .ing-footer {
+    font-size: 0.75rem;
+    line-height: 1.6;
+    margin-top: 50px;
+    font-weight: 700;
+    color: #7a7873;
+  }
+
+  @media (max-width: 900px) {
+    .ingredients-section {
+      grid-template-columns: 1fr;
+    }
+    .ing-vertical-title {
+      position: static;
+      transform: none;
+      margin-bottom: 30px;
+      margin-top: 0;
+    }
+    .ing-right {
+      padding: 40px 30px;
+    }
+    .ing-left {
+      min-height: 400px;
+    }
+  }
+{%- endstyle -%}
+
+<section class="ingredients-section">
+  <!-- Left Side: Image -->
+  <div class="ing-left">
+    {% if section.settings.image != blank %}
+      {{ section.settings.image | image_url: width: 1000 | image_tag: class: 'ing-image', alt: 'Ingredients visual' }}
+    {% else %}
+      <img class="ing-image" src="https://images.unsplash.com/photo-1541701494587-cb58502866ab?q=80&w=1000" alt="Abstract Paint Texture">
+    {% endif %}
+    {% if section.settings.show_btn %}
+      <button class="ing-full-btn">{{ section.settings.btn_label }}</button>
+    {% endif %}
+  </div>
+
+  <!-- Right Side: Content -->
+  <div class="ing-right">
+    <div class="ing-vertical-title">{{ section.settings.title }}</div>
+    <div class="ing-content">
+      <div class="ing-intro">{{ section.settings.intro }}</div>
+      
+      {% for block in section.blocks %}
+        <div class="hero-ingredient" {{ block.shopify_attributes }}>
+          <h3 class="hero-title">{{ block.settings.title | downcase }}</h3>
+          <p class="hero-desc">{{ block.settings.description }}</p>
+        </div>
+      {% endfor %}
+
+      {% if section.settings.footer_text != blank %}
+        <div class="ing-footer">
+          {{ section.settings.footer_text }}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Product Ingredients",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Vertical Title",
+      "default": "what's inside"
+    },
+    {
+      "type": "textarea",
+      "id": "intro",
+      "label": "Introductory Text",
+      "default": "Our formula is packed with 13 efficacious hero ingredients. Meet 2 of our favorites for intensive hydration."
+    },
+    {
+      "type": "textarea",
+      "id": "footer_text",
+      "label": "Also Made With (Footer)",
+      "default": "also made with POLYGLUTAMIC ACID, ISOSORBIDE DICAPRYLATE, CERAMIDE NP, PALMITOYL TETRAPEPTIDE-10, PALMITOYL TRIPEPTIDE-8, BISABOLOL, GINGER ROOT EXTRACT"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Left Abstract Image"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_btn",
+      "label": "Show Button over Image",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "btn_label",
+      "label": "Button Label",
+      "default": "FULL INGREDIENTS LIST"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "ingredient",
+      "name": "Hero Ingredient",
+      "limit": 4,
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Ingredient Name",
+          "default": "hyaluronic acid complex"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description",
+          "default": "5 molecular weights of hyaluronic acid help improve hydration on and below the skin's surface"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Ingredients",
+      "blocks": [
+        {
+          "type": "ingredient"
+        },
+        {
+          "type": "ingredient",
+          "settings": {
+            "title": "murumuru butter",
+            "description": "a nourishing emollient that helps seal in moisture to decrease transepidermal water loss"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

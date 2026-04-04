@@ -13,11 +13,16 @@
     "details_split": {
       "type": "product-details-split",
       "settings": {}
+    },
+    "ingredients": {
+      "type": "product-ingredients",
+      "settings": {}
     }
   },
   "order": [
     "main",
     "carousel",
-    "details_split"
+    "details_split",
+    "ingredients"
   ]
 }
