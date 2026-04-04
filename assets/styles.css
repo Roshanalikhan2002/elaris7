@@ -84,7 +84,7 @@ a { color: inherit; text-decoration: none; }
   display: none !important;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 850px) {
   .desktop-only {
     display: none !important;
   }
@@ -170,7 +170,7 @@ a { color: inherit; text-decoration: none; }
 }
 
 /* Mobile Header Adjustment */
-@media (max-width: 1024px) {
+@media (max-width: 850px) {
   /*
    * Rhode-exact layout:
    * - Announcement bar: on white bg, in normal flow
@@ -476,7 +476,6 @@ a { color: inherit; text-decoration: none; }
 }
 
 .header-nav.header-right ul {
-  display: flex !important;
   justify-content: flex-end;
 }
 
