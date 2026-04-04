@@ -1,0 +1,13 @@
+{
+  "name": "Luxury Default",
+  "layout": "theme",
+  "sections": {
+    "main": {
+      "type": "product-luxury-detail",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main"
+  ]
+}
