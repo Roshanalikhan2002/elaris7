@@ -547,7 +547,7 @@ a { color: inherit; text-decoration: none; }
 /* Mobile Adjustments for Hero */
 @media (max-width: 768px) {
   .page-wrapper {
-    padding: 0 16px 16px; /* sides + bottom match Rhode's 16px 16px. Top is 0 — controlled by announcement bar margin */
+    padding: 100px 16px 16px; /* Space for fixed mobile header move move move */
     gap: 12px;
   }
 
