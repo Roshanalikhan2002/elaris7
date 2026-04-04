@@ -92,7 +92,7 @@
         {%- assign fallback_names = "Anti Acne Serum,Glass Skin Toner,Barrier Cream,Peptide Serum,Niacinamide Essence,Hyaluronic Mist,SPF 50 Sunscreen,Vitamin C Serum,Retinol Night Cream,Ceramide Moisturiser,AHA Exfoliant,Eye Cream,Lip Balm,Cleansing Balm,Glow Booster" | split: "," -%}
         {% for i in (1..15) %}
           {%- assign pname = fallback_names[forloop.index0] -%}
-          <div class="card-rhode">
+          <a href="product.html" class="card-rhode" style="text-decoration: none; color: inherit; display: flex; flex-direction: column;">
             {% if forloop.first %}
               <img src="{{ 'hover-anti-acne.png' | asset_url }}" class="card-hover-bg" alt="Hover Background">
             {% endif %}
@@ -124,7 +124,7 @@
             <div class="buy-button-hover">
                BUY {{ pname | upcase }} - Rs. 1,500
             </div>
-          </div>
+          </a>
         {% endfor %}
       {% endif %}
     </div>
