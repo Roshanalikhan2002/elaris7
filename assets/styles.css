@@ -29,7 +29,7 @@ body {
 a { color: inherit; text-decoration: none; }
 
 .page-wrapper {
-  padding-top: 135px; /* Perfect balance for header & announcement bar */
+  padding-top: 115px; /* Tighter balance for header & announcement bar */
   display: flex;
   flex-direction: column;
   gap: 12px;
