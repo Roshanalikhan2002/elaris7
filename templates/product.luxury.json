@@ -25,6 +25,10 @@
     "faq_split": {
       "type": "product-faq-split",
       "settings": {}
+    },
+    "product_reviews": {
+      "type": "product-reviews",
+      "settings": {}
     }
   },
   "order": [
@@ -33,6 +37,7 @@
     "details_split",
     "ingredients",
     "study_results",
-    "faq_split"
+    "faq_split",
+    "product_reviews"
   ]
 }

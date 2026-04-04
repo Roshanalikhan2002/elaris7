@@ -1,0 +1,376 @@
+<div class="product-reviews-wrapper">
+  <div class="pr-header">
+    <div class="pr-rating-info">
+      <div class="pr-rating-score">4.7 <span class="pr-stars">★★★★★</span></div>
+      <div class="pr-rating-label">AVERAGE RATING</div>
+      <div class="pr-rating-count">Based on 6,947 reviews</div>
+    </div>
+    <div class="pr-actions">
+      <button class="pr-btn-pill">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 6px;">
+          <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
+        </svg>
+        FILTERS
+      </button>
+      <button class="pr-btn-pill">MOST RECENT</button>
+    </div>
+  </div>
+
+  <div class="pr-list">
+    <div class="pr-item">
+      <div class="pr-item-sidebar">
+        <div class="pr-meta-group">
+          <div class="pr-reviewer-name">Carolina R.</div>
+          <div class="pr-verified">
+            Verified Buyer 
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="#333">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+            </svg>
+          </div>
+        </div>
+        
+        <div class="pr-meta-group">
+          <div class="pr-meta-title">Reviewing</div>
+          <a href="#" class="pr-meta-link">pocket blush piggy</a>
+        </div>
+        
+        <div class="pr-meta-group">
+          <div class="pr-meta-title">Age Range</div>
+          <div class="pr-meta-value">Under 18</div>
+        </div>
+        
+        <div class="pr-meta-group">
+          <div class="pr-meta-title">Biggest Skin Concern</div>
+          <div class="pr-meta-value">Pore Size</div>
+        </div>
+        
+        <div class="pr-meta-group">
+          <div class="pr-meta-title">What is your skin type?</div>
+          <div class="pr-meta-value">Oily</div>
+        </div>
+        
+        <div class="pr-meta-group">
+          <div class="pr-meta-title">What are your favorite features about this product?</div>
+          <div class="pr-meta-value">Long-Wearing, Easy to Apply, Lightweight, Hydrating</div>
+        </div>
+      </div>
+      
+      <div class="pr-item-content">
+        <div class="pr-item-top">
+          <span class="pr-stars">★★★★★</span>
+          <span class="pr-date">10 minutes ago</span>
+        </div>
+        
+        <h3 class="pr-review-title">My daughter love it</h3>
+        <p class="pr-review-text">This is the second time I bought this for my daughter</p>
+        
+        <div class="pr-attribute-slider">
+          <div class="pr-slider-label">How long-wearing is this product?</div>
+          <div class="pr-slider-track">
+            <div class="pr-slider-point point-1"></div>
+            <div class="pr-slider-point point-2"></div>
+            <div class="pr-slider-point point-3"></div>
+            <div class="pr-slider-value" style="left: 75%;"></div>
+          </div>
+          <div class="pr-slider-labels">
+            <span>Not very long wearing</span>
+            <span>Super long wearing</span>
+          </div>
+        </div>
+        
+        <div class="pr-helpfulness">
+          Was this helpful? 
+          <button class="pr-vote">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path>
+            </svg> 0
+          </button>
+          <button class="pr-vote">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M10 15v4a3 3 0 0 0 3 3l4-9V2H5.72a2 2 0 0 0-2 1.7l-1.38 9a2 2 0 0 0 2 2.3zm7-13h2a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-2"></path>
+            </svg> 0
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+.product-reviews-wrapper {
+  background-color: #f3f0ec;
+  padding: 60px;
+  margin: 0;
+  color: #555;
+  border-top: 1px solid rgba(0,0,0,0.06);
+}
+
+.pr-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-bottom: 24px;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  margin-bottom: 40px;
+}
+
+.pr-rating-score {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.pr-stars {
+  color: #777;
+  letter-spacing: 2px;
+  font-size: 0.95rem;
+}
+
+.pr-rating-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #555;
+  margin-bottom: 2px;
+}
+
+.pr-rating-count {
+  font-size: 0.8rem;
+  color: #777;
+}
+
+.pr-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.pr-btn-pill {
+  background: transparent;
+  border: 1px solid #d5d1c8;
+  border-radius: 50px;
+  padding: 8px 16px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #555;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.05em;
+  transition: all 0.2s ease;
+}
+
+.pr-btn-pill:hover {
+  background: #fff;
+  border-color: #bbb;
+}
+
+.pr-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.pr-item {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 40px;
+  padding-bottom: 40px;
+  margin-bottom: 40px;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.pr-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.pr-item-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.pr-meta-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.pr-reviewer-name {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #333;
+}
+
+.pr-verified {
+  font-size: 0.8rem;
+  color: #555;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.pr-meta-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #555;
+}
+
+.pr-meta-value {
+  font-size: 0.8rem;
+  color: #777;
+  line-height: 1.4;
+}
+
+.pr-meta-link {
+  font-size: 0.8rem;
+  color: #777;
+  text-decoration: underline;
+}
+
+.pr-item-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.pr-item-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.pr-date {
+  font-size: 0.8rem;
+  color: #888;
+}
+
+.pr-review-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #333;
+  margin: 0 0 12px 0;
+}
+
+.pr-review-text {
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.6;
+  margin: 0 0 32px 0;
+}
+
+.pr-attribute-slider {
+  max-width: 450px;
+  margin-bottom: 40px;
+}
+
+.pr-slider-label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 16px;
+}
+
+.pr-slider-track {
+  height: 2px;
+  background: #d5d1c8;
+  position: relative;
+  border-radius: 2px;
+  margin-bottom: 12px;
+}
+
+.pr-slider-point {
+  position: absolute;
+  width: 1px;
+  height: 10px;
+  background: #a8a49c;
+  top: -4px;
+}
+
+.point-1 { left: 0; }
+.point-2 { left: 50%; }
+.point-3 { left: 100%; right: 0; }
+
+.pr-slider-value {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: #555;
+  border-radius: 50%;
+  top: -5px;
+  transform: translateX(-50%);
+}
+
+.pr-slider-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: #888;
+}
+
+.pr-helpfulness {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  font-size: 0.8rem;
+  color: #888;
+  margin-top: auto;
+}
+
+.pr-vote {
+  background: none;
+  border: none;
+  color: #888;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  padding: 0;
+}
+
+@media (max-width: 800px) {
+  .product-reviews-wrapper {
+    padding: 40px 20px;
+  }
+  .pr-item {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .pr-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  .pr-actions {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .pr-item-sidebar {
+    order: 2;
+    margin-top: 10px;
+    border-top: 1px solid rgba(0,0,0,0.05);
+    padding-top: 24px;
+  }
+  .pr-item-content {
+    order: 1;
+  }
+}
+</style>
+
+{% schema %}
+{
+  "name": "Product Reviews",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Product Reviews",
+      "category": "Product"
+    }
+  ]
+}
+{% endschema %}
