@@ -9,10 +9,15 @@
     "carousel": {
       "type": "meet-the-product",
       "settings": {}
+    },
+    "details_split": {
+      "type": "product-details-split",
+      "settings": {}
     }
   },
   "order": [
     "main",
-    "carousel"
+    "carousel",
+    "details_split"
   ]
 }

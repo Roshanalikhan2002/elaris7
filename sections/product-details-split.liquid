@@ -1,0 +1,163 @@
+{%- style -%}
+  .details-split-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 16px 16px 60px 16px;
+  }
+  .ds-left {
+    background-color: #f3f0ec;
+    border-radius: 14px;
+    padding: 60px 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .ds-title {
+    font-size: 2rem;
+    font-weight: 500;
+    color: #6a6863;
+    margin: 0 0 60px 0;
+    line-height: 1.3;
+    letter-spacing: -0.02em;
+    max-width: 90%;
+  }
+  .ds-list {
+    display: flex;
+    flex-direction: column;
+  }
+  .ds-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(91,90,83,0.15);
+    font-size: 0.85rem;
+    color: #5b5a53;
+  }
+  .ds-row:last-child {
+    border-bottom: none;
+  }
+  .ds-label {
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    flex: 0 0 130px;
+  }
+  .ds-value {
+    text-align: right;
+    line-height: 1.5;
+    flex: 1;
+  }
+  .ds-right {
+    border-radius: 14px;
+    overflow: hidden;
+    display: flex;
+  }
+  .ds-image {
+    width: 100%;
+    height: 100%;
+    min-height: 500px;
+    object-fit: cover;
+  }
+
+  @media (max-width: 900px) {
+    .details-split-section {
+      grid-template-columns: 1fr;
+    }
+    .ds-left {
+      padding: 40px 24px;
+    }
+    .ds-right {
+      order: -1;
+    }
+    .ds-image {
+      min-height: 350px;
+    }
+  }
+{%- endstyle -%}
+
+<section class="details-split-section">
+  <div class="ds-left">
+    <h2 class="ds-title">{{ section.settings.title | default: 'A creamy blush for BUILDABLE color + BABY-SOFT cheeks.' }}</h2>
+    <div class="ds-list">
+      {% if section.blocks.size > 0 %}
+        {% for block in section.blocks %}
+          <div class="ds-row">
+            <div class="ds-label">{{ block.settings.label }}</div>
+            <div class="ds-value">{{ block.settings.value }}</div>
+          </div>
+        {% endfor %}
+      {% else %}
+        <div class="ds-row">
+          <div class="ds-label">GOOD FOR:</div>
+          <div class="ds-value">All skin types</div>
+        </div>
+        <div class="ds-row">
+          <div class="ds-label">FEELS LIKE:</div>
+          <div class="ds-value">A creamy, lightweight texture that melts on smoothly</div>
+        </div>
+        <div class="ds-row">
+          <div class="ds-label">LOOKS LIKE:</div>
+          <div class="ds-value">A fresh-squeezed, hot pink glow</div>
+        </div>
+        <div class="ds-row">
+          <div class="ds-label">SMELLS LIKE:</div>
+          <div class="ds-value">Fragrance-Free</div>
+        </div>
+        <div class="ds-row">
+          <div class="ds-label">FYI:</div>
+          <div class="ds-value">Cruelty-Free • Vegan • Gluten-Free<br>Dermatologist-Tested</div>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+  <div class="ds-right">
+    {% if section.settings.image != blank %}
+      {{ section.settings.image | image_url: width: 1000 | image_tag: class: 'ds-image', alt: section.settings.title }}
+    {% else %}
+      <img class="ds-image" src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?q=80&w=1000" alt="Glossier Cosmetic Layout">
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Product Details Split",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section Title",
+      "default": "A creamy blush for BUILDABLE color + BABY-SOFT cheeks."
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Side Image"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "detail_row",
+      "name": "Detail Row",
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label (e.g. GOOD FOR:)"
+        },
+        {
+          "type": "textarea",
+          "id": "value",
+          "label": "Value (e.g. All skin types)"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Details Split"
+    }
+  ]
+}
+{% endschema %}
