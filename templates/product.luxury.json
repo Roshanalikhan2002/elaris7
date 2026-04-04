@@ -5,9 +5,34 @@
     "main": {
       "type": "product-luxury-detail",
       "settings": {}
+    },
+    "meet_product": {
+      "type": "meet-the-product",
+      "settings": {}
+    },
+    "details_split": {
+      "type": "product-details-split",
+      "settings": {}
+    },
+    "ingredients": {
+      "type": "product-ingredients",
+      "settings": {}
+    },
+    "study_results": {
+      "type": "product-study-results",
+      "settings": {}
+    },
+    "faq_split": {
+      "type": "product-faq-split",
+      "settings": {}
     }
   },
   "order": [
-    "main"
+    "main",
+    "meet_product",
+    "details_split",
+    "ingredients",
+    "study_results",
+    "faq_split"
   ]
 }

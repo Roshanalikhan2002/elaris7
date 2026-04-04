@@ -25,6 +25,10 @@
     "study_results": {
       "type": "product-study-results",
       "settings": {}
+    },
+    "faq_split": {
+      "type": "product-faq-split",
+      "settings": {}
     }
   },
   "order": [
@@ -33,6 +37,7 @@
     "details_split",
     "ingredients",
     "benefits_focus",
-    "study_results"
+    "study_results",
+    "faq_split"
   ]
 }
