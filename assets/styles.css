@@ -128,7 +128,7 @@ a { color: inherit; text-decoration: none; }
 }
 
 .header-hidden {
-  transform: translateY(-110%);
+  transform: translateY(-250%);
   transition: transform 0.4s cubic-bezier(0.4, 0, 0.6, 1);
   pointer-events: none;
 }
@@ -178,10 +178,11 @@ a { color: inherit; text-decoration: none; }
    * - Hero card: starts immediately after announcement bar
    */
   .site-header {
-    position: relative;
-    background: #fff;
-    overflow: visible; /* Let header-main extend into hero area */
-    z-index: 100;
+    position: fixed;
+    background: transparent;
+    overflow: visible; 
+    z-index: 1000;
+    top: 0;
   }
 
   .announcement-bar {
