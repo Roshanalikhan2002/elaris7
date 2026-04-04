@@ -25,6 +25,13 @@
         "title_2": "shop sets"
       }
     },
+    "category_promos_2": {
+      "type": "category-promos",
+      "settings": {
+        "title_1": "shop skin",
+        "title_2": "shop sets"
+      }
+    },
     "benefits_honors": {
       "type": "benefits",
       "settings": {
@@ -39,6 +46,8 @@
     "category_nav",
     "featured_products",
     "category_promos",
+    "category_promos_2",
     "benefits_honors"
   ]
 }
+
