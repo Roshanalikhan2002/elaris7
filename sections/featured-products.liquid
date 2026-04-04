@@ -94,9 +94,9 @@
           </a>
         {% endfor %}
       {% else %}
-        {%- assign fallback_names = "Night Cream,Tranexamic Serum,Keratin Serum,Peptide Serum,Niacinamide Essence,Hyaluronic Mist,SPF 50 Sunscreen,Vitamin C Serum,Retinol Night Cream,Ceramide Moisturiser,AHA Exfoliant,Eye Cream,Lip Balm,Cleansing Balm,Glow Booster" | split: "," -%}
-        {%- assign fallback_images = "night-cream.jpg,tranexamic-serum.jpg,keratin-serum.jpg" | split: "," -%}
-        {%- assign fallback_labels = "nightcream,serum,haircare" | split: "," -%}
+        {%- assign fallback_names = "Night Cream,Tranexamic Serum,Keratin Serum,Glow Serum,Glutathione Cream,Hair Mist,Face Wash,Anti Acne Serum,Retinol Night Cream,Ceramide Moisturiser,AHA Exfoliant,Eye Cream,Lip Balm,Cleansing Balm,Glow Booster" | split: "," -%}
+        {%- assign fallback_images = "night-cream.jpg,tranexamic-serum.jpg,keratin-serum.jpg,glow-serum-100.jpg,glutathione-cream-100.jpg,hair-mist.jpg,facewash-100.jpg,anti-acne-100.jpg" | split: "," -%}
+        {%- assign fallback_labels = "nightcream,serum,haircare,serum,repair,haircare,cleanser,antiacne" | split: "," -%}
         {%- assign preview_product = collections.all.products.first -%}
         {% for i in (1..15) %}
           {%- assign pname = fallback_names[forloop.index0] -%}
