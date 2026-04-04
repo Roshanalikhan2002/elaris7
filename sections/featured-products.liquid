@@ -90,10 +90,10 @@
         {% endfor %}
       {% else %}
         {%- assign fallback_names = "Anti Acne Serum,Glass Skin Toner,Barrier Cream,Peptide Serum,Niacinamide Essence,Hyaluronic Mist,SPF 50 Sunscreen,Vitamin C Serum,Retinol Night Cream,Ceramide Moisturiser,AHA Exfoliant,Eye Cream,Lip Balm,Cleansing Balm,Glow Booster" | split: "," -%}
+        {%- assign preview_product = collections.all.products.first -%}
         {% for i in (1..15) %}
           {%- assign pname = fallback_names[forloop.index0] -%}
-          {%- assign phandle = pname | handleize -%}
-          <a href="/products/{{ phandle }}" class="card-rhode" style="text-decoration: none; color: inherit; display: flex; flex-direction: column;">
+          <a href="{{ preview_product.url | default: '#' }}" class="card-rhode" style="text-decoration: none; color: inherit; display: flex; flex-direction: column;">
             {% if forloop.first %}
               <img src="{{ 'hover-anti-acne.png' | asset_url }}" class="card-hover-bg" alt="Hover Background">
             {% endif %}
