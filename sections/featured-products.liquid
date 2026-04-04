@@ -89,19 +89,40 @@
           </a>
         {% endfor %}
       {% else %}
-        {%- assign fallback_names = "Centella Face Wash,Glass Skin Toner,Barrier Cream,Peptide Serum,Niacinamide Essence,Hyaluronic Mist,SPF 50 Sunscreen,Vitamin C Serum,Retinol Night Cream,Ceramide Moisturiser,AHA Exfoliant,Eye Cream,Lip Balm,Cleansing Balm,Glow Booster" | split: "," -%}
+        {%- assign fallback_names = "Anti Acne Serum,Glass Skin Toner,Barrier Cream,Peptide Serum,Niacinamide Essence,Hyaluronic Mist,SPF 50 Sunscreen,Vitamin C Serum,Retinol Night Cream,Ceramide Moisturiser,AHA Exfoliant,Eye Cream,Lip Balm,Cleansing Balm,Glow Booster" | split: "," -%}
         {% for i in (1..15) %}
           {%- assign pname = fallback_names[forloop.index0] -%}
           <div class="card-rhode">
-            <div class="card-brand-label">skincare</div>
-            <div class="product-placeholder-img"></div>
+            {% if forloop.first %}
+              <img src="{{ 'hover-anti-acne.png' | asset_url }}" class="card-hover-bg" alt="Hover Background">
+            {% endif %}
+
+            <div class="card-rhode-top">
+              <div class="card-brand-label">skincare</div>
+              {% if forloop.first %}
+                <span class="card-badge">new shades</span>
+              {% endif %}
+            </div>
+
+            <div class="card-rhode-image">
+              {% if forloop.first %}
+                <img src="{{ 'product-anti-acne.jpg' | asset_url }}" alt="{{ pname }}">
+              {% else %}
+                <div class="product-placeholder-img"></div>
+              {% endif %}
+            </div>
+
             <div class="card-rhode-details">
-              <div class="stars">★ ★ ★ ★ ★ (10k)</div>
+              <div class="stars">★ ★ ★ ★ ★ (16k)</div>
               <div class="product-name-row">
                 <h3 class="card-product-title">{{ pname | upcase }}</h3>
                 <span class="card-price">Rs. 1,500</span>
               </div>
               <p class="card-subtitle">Premium Korean skincare formula</p>
+            </div>
+
+            <div class="buy-button-hover">
+               BUY {{ pname | upcase }} - Rs. 1,500
             </div>
           </div>
         {% endfor %}
