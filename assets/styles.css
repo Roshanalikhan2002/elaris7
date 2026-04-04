@@ -498,17 +498,19 @@ a { color: inherit; text-decoration: none; }
 /* Hero Section */
 .hero-block {
   position: relative;
-  background-color: var(--surface-color);
+  background-color: #fff; /* matching banner bg */
   border-radius: var(--border-radius);
-  height: 450px; /* Exact Rhode mobile height */
-  margin: 0 12px; /* Precise side margins */
+  height: auto; /* Allow image to dictate height */
+  min-height: 480px; 
+  margin: 0 12px; 
   overflow: hidden;
 }
 
 .hero-video-bg {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
+  min-height: 100%;
+  object-fit: contain;
 }
 
 .hero-bottom {
@@ -530,7 +532,7 @@ a { color: inherit; text-decoration: none; }
   line-height: 1.1;
   letter-spacing: -0.05em;
   text-transform: lowercase;
-  white-space: nowrap; /* keep on one line */
+  display: none; /* Hide since banner already has text */
 }
 
 .hero-bottom .btn-pill-outline {
@@ -550,14 +552,16 @@ a { color: inherit; text-decoration: none; }
   }
 
   .hero-block {
-    height: 242px; /* Exact Rhode: 241.88px from inspector */
+    height: auto;
+    min-height: 154px; /* Matches 414px / 2.68 ratio approx */
     margin: 0;
     border-radius: 14px;
+    background-color: #fff;
   }
 
   .hero-video-bg {
-    object-fit: cover;
-    object-position: center 38%;
+    object-fit: contain;
+    object-position: center;
   }
 
   /* Rhode layout: text wraps 2 lines on RIGHT, button stacked BELOW — column, right-aligned */
