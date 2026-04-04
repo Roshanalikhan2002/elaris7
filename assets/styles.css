@@ -89,6 +89,43 @@ a { color: inherit; text-decoration: none; }
   .mobile-only {
     display: flex !important;
   }
+  .header-main {
+    padding: 10px 15px;
+  }
+  .page-wrapper {
+    padding-top: 80px; /* Slimmer header on mobile */
+  }
+}
+
+.mobile-header-icons {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.mobile-icon {
+  display: flex;
+  align-items: center;
+  color: #333;
+}
+
+.cart-icon-wrapper {
+  position: relative;
+}
+
+.cart-count {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: transparent;
+  color: #333;
+  font-size: 0.65rem;
+  font-weight: 800;
+  width: 14px;
+  height: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .header-hidden {
