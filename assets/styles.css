@@ -852,8 +852,8 @@ a { color: inherit; text-decoration: none; }
 }
 
 .product-main-img, .card-rhode-image img {
-  max-height: 340px; /* increased from 220px move move moved mov */
-  max-width: 95%; /* increased from 85% move move moved mov */
+  max-height: 420px; /* boosted for maximum impact move move moved mov */
+  max-width: 100%; /* removal of constraints move move moved mov */
   width: auto;
   object-fit: contain;
   display: block;
