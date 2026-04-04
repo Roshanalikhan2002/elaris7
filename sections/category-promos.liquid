@@ -1,17 +1,40 @@
-<div class="section-grid">
-  <div class="card category-block" style="background-image: url('{{ section.settings.image_1 | image_url: width: 1200 }}'); background-size: cover; height:600px;">
-    {% if section.settings.image_1 == blank %}
-      <img src="https://images.unsplash.com/photo-1629198688000-71f23e745b6e?q=80&w=1200" class="hero-video-bg" alt="Fallback">
-    {% endif %}
-    <h2 class="category-title" style="color: #fff;">{{ section.settings.title_1 }}</h2>
-    <a href="{{ section.settings.link_1 }}" class="btn-pill btn-white-outline" style="position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%);">SHOP ALL</a>
-  </div>
-  <div class="card category-block" style="background-image: url('{{ section.settings.image_2 | image_url: width: 1200 }}'); background-size: cover; height:600px;">
-    {% if section.settings.image_2 == blank %}
-      <img src="https://images.unsplash.com/photo-1571781926291-c477eb0025f8?q=80&w=1200" class="hero-video-bg" alt="Fallback">
-    {% endif %}
-    <h2 class="category-title" style="color: #fff;">{{ section.settings.title_2 }}</h2>
-    <a href="{{ section.settings.link_2 }}" class="btn-pill btn-white-outline" style="position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%);">SHOP ALL</a>
+<div class="split-category-wrapper">
+  <div class="split-cat-grid">
+    <!-- Left: Lifestyle Image -->
+    <div class="split-cat-left">
+      {%- if section.settings.image_left != blank -%}
+        {{ section.settings.image_left | image_url: width: 1200 | image_tag: class: 'split-cat-img', loading: 'lazy' }}
+      {%- else -%}
+        <div class="placeholder-bg" style="background:#f2f0ed; height:100%;">Lifestyle Image</div>
+      {%- endif -%}
+    </div>
+
+    <!-- Right: Product Detail with 1/4 layout -->
+    <div class="split-cat-right">
+      <div class="product-showcase-card">
+        <div class="product-swirl-wrap">
+          {%- if section.settings.product_image != blank -%}
+            {{ section.settings.product_image | image_url: width: 800 | image_tag: class: 'product-swirl-img' }}
+          {%- else -%}
+            <div class="placeholder-bg swirl-placeholder">Product Swirl</div>
+          {%- endif -%}
+        </div>
+
+        <div class="product-showcase-details">
+          <div class="stars-row">★ ★ ★ ★ ★ (6,944)</div>
+          <h2 class="showcase-title">{{ section.settings.product_title | default: 'CENTELLA NIGHT CREAM' | upcase }}</h2>
+          <p class="showcase-subtitle">{{ section.settings.product_subtitle | default: 'A raspberry pink glow' }}</p>
+          
+          <div class="buy-action-row">
+            <a href="{{ section.settings.product_link | default: '#' }}" class="btn-pill-buy">
+              BUY NOW — {{ section.settings.product_price | default: 'RS. 2,500' }}
+            </a>
+          </div>
+        </div>
+
+        <div class="pagination-counter">1/4</div>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -20,50 +43,47 @@
   "name": "Rhode Split Category",
   "settings": [
     {
-      "type": "header",
-      "content": "Left Block"
-    },
-    {
       "type": "image_picker",
-      "id": "image_1",
-      "label": "Left Image"
-    },
-    {
-      "type": "text",
-      "id": "title_1",
-      "label": "Left Title",
-      "default": "shop skin"
-    },
-    {
-      "type": "url",
-      "id": "link_1",
-      "label": "Left Link"
+      "id": "image_left",
+      "label": "Left Lifestyle Image"
     },
     {
       "type": "header",
-      "content": "Right Block"
+      "content": "Product Detail (Right)"
     },
     {
       "type": "image_picker",
-      "id": "image_2",
-      "label": "Right Image"
+      "id": "product_image",
+      "label": "Product Swirl Image"
     },
     {
       "type": "text",
-      "id": "title_2",
-      "label": "Right Title",
-      "default": "shop sets"
+      "id": "product_title",
+      "label": "Product Title",
+      "default": "Centella Night Cream"
+    },
+    {
+      "type": "text",
+      "id": "product_subtitle",
+      "label": "Subtitle",
+      "default": "A raspberry pink glow"
+    },
+    {
+      "type": "text",
+      "id": "product_price",
+      "label": "Price Label",
+      "default": "RS. 2,500"
     },
     {
       "type": "url",
-      "id": "link_2",
-      "label": "Right Link"
+      "id": "product_link",
+      "label": "Buy Link"
     }
   ],
   "presets": [
     {
       "name": "Rhode Split Category",
-      "category": "Custom Content"
+      "category": "High Fidelity"
     }
   ]
 }

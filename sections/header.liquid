@@ -49,10 +49,10 @@
   var header = document.querySelector('.site-header');
   if (!header) return;
 
-  var lastScrollY = window.scrollY;
+  var lastScrollY = window.pageYOffset || document.documentElement.scrollTop;
   var hideTimer = null;
   var isHidden = false;
-  var threshold = 5; // buffer to prevent jitter
+  var threshold = 5;
 
   function showHeader() {
     if (hideTimer) {
@@ -67,24 +67,26 @@
   }
 
   function scheduleHide() {
-    if (hideTimer) clearTimeout(hideTimer);
-    hideTimer = setTimeout(function() {
-      if (!isHidden && window.scrollY > 100) { // Only hide if we're not at the very top
-        header.classList.remove('header-visible');
-        header.classList.add('header-hidden');
-        isHidden = true;
-      }
-    }, 2000); // 2 second delay
+    // Only schedule if not already scheduled to avoid constant resets
+    if (!hideTimer && !isHidden) {
+      hideTimer = setTimeout(function() {
+        var currentY = window.pageYOffset || document.documentElement.scrollTop;
+        if (!isHidden && currentY > 100) {
+          header.classList.remove('header-visible');
+          header.classList.add('header-hidden');
+          isHidden = true;
+        }
+        hideTimer = null;
+      }, 2000); // 2 second stay
+    }
   }
 
   window.addEventListener('scroll', function() {
-    var currentScrollY = window.scrollY;
+    var currentScrollY = window.pageYOffset || document.documentElement.scrollTop;
     
-    // Ignore tiny scrolls
     if (Math.abs(currentScrollY - lastScrollY) < threshold) return;
 
     if (currentScrollY <= 20) {
-      // Force show at top
       showHeader();
     } else if (currentScrollY > lastScrollY) {
       // Scrolling DOWN
