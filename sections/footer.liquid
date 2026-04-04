@@ -92,18 +92,37 @@
 
 {% schema %}
 {
-  "name": "Rhode High-Fidelity Footer",
+  "name": "Rhode Footer",
   "settings": [
     {
       "type": "text",
-      "id": "branding",
-      "label": "Branding Giant Text",
+      "id": "branding_text",
+      "label": "Giant Branding Text",
       "default": "elaris7"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "link_list",
+      "name": "Footer Menu",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading",
+          "default": "Quick Links"
+        },
+        {
+          "type": "link_list",
+          "id": "menu",
+          "label": "Menu"
+        }
+      ]
     }
   ],
   "presets": [
     {
-      "name": "Rhode High-Fidelity Footer"
+      "name": "Rhode Footer"
     }
   ]
 }
