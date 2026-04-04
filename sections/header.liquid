@@ -35,6 +35,63 @@
   </div>
 </header>
 
+<script>
+(function() {
+  var header = document.querySelector('.site-header');
+  if (!header) return;
+
+  var lastScrollY = window.scrollY;
+  var hideTimer = null;
+  var isHidden = false;
+  var ticking = false;
+
+  function showHeader() {
+    if (isHidden) {
+      header.classList.remove('header-hidden');
+      isHidden = false;
+    }
+    // Clear any pending hide timer
+    if (hideTimer) {
+      clearTimeout(hideTimer);
+      hideTimer = null;
+    }
+  }
+
+  function scheduleHide() {
+    if (hideTimer) clearTimeout(hideTimer);
+    hideTimer = setTimeout(function() {
+      if (!isHidden) {
+        header.classList.add('header-hidden');
+        isHidden = true;
+      }
+    }, 2000); // 2 second delay before hiding
+  }
+
+  window.addEventListener('scroll', function() {
+    if (!ticking) {
+      window.requestAnimationFrame(function() {
+        var currentScrollY = window.scrollY;
+
+        if (currentScrollY <= 10) {
+          // At the very top — always show
+          showHeader();
+        } else if (currentScrollY > lastScrollY) {
+          // Scrolling DOWN — schedule hide after 2s
+          scheduleHide();
+        } else {
+          // Scrolling UP — immediately show
+          showHeader();
+        }
+
+        lastScrollY = currentScrollY;
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }, { passive: true });
+})();
+</script>
+
 {% schema %}
 {
   "name": "Header",
