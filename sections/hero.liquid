@@ -3,10 +3,19 @@
     <video class="hero-video-bg" autoplay muted loop playsinline>
       <source src="{{ section.settings.video_url }}" type="video/mp4">
     </video>
-  {% elsif section.settings.hero_image != blank %}
-    {{ section.settings.hero_image | image_url: width: 2000 | image_tag: class: 'hero-video-bg', alt: section.settings.title }}
   {% else %}
-    <img src="https://images.unsplash.com/photo-1615397323605-2ce9d9b0ca5c?q=80&w=2000&auto=format&fit=crop" class="hero-video-bg" alt="Hero Background">
+    {% if section.settings.hero_image != blank %}
+      {{ section.settings.hero_image | image_url: width: 2000 | image_tag: class: 'hero-video-bg desktop-only', alt: section.settings.title }}
+    {% endif %}
+    {% if section.settings.hero_image_mobile != blank %}
+      {{ section.settings.hero_image_mobile | image_url: width: 1000 | image_tag: class: 'hero-video-bg mobile-only', alt: section.settings.title }}
+    {% elsif section.settings.hero_image != blank %}
+      {{ section.settings.hero_image | image_url: width: 1000 | image_tag: class: 'hero-video-bg mobile-only', alt: section.settings.title }}
+    {% endif %}
+    
+    {% if section.settings.hero_image == blank and section.settings.hero_image_mobile == blank %}
+      <img src="https://images.unsplash.com/photo-1615397323605-2ce9d9b0ca5c?q=80&w=2000&auto=format&fit=crop" class="hero-video-bg" alt="Hero Background">
+    {% endif %}
   {% endif %}
   
   <div class="hero-overlay">
@@ -45,7 +54,12 @@
     {
       "type": "image_picker",
       "id": "hero_image",
-      "label": "Hero Image"
+      "label": "Hero Image (Desktop)"
+    },
+    {
+      "type": "image_picker",
+      "id": "hero_image_mobile",
+      "label": "Hero Image (Mobile Portrait)"
     },
     {
       "type": "text",
