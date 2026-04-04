@@ -1,12 +1,23 @@
 <nav class="category-bar">
   <ul class="category-list">
-    {% for block in section.blocks %}
-      <li>
-        <a href="{{ block.settings.link | default: '#' }}" class="cat-link {% if forloop.first %}active{% endif %}">
-          {{ block.settings.title | uppercase }}
-        </a>
-      </li>
-    {% endfor %}
+    {% if section.blocks.size > 0 %}
+      {% for block in section.blocks %}
+        <li>
+          <a href="{{ block.settings.link | default: '#' }}" class="cat-link {% if forloop.first %}active{% endif %}" {{ block.shopify_attributes }}>
+            {{ block.settings.title | uppercase }}
+          </a>
+        </li>
+      {% endfor %}
+    {% else %}
+      {% assign default_cats = "FEATURED,SKIN,LIP+CHEEK,SETS,COLOUR" | split: "," %}
+      {% for cat in default_cats %}
+        <li>
+          <a href="#" class="cat-link {% if forloop.first %}active{% endif %}">
+            {{ cat }}
+          </a>
+        </li>
+      {% endfor %}
+    {% endif %}
   </ul>
 </nav>
 
