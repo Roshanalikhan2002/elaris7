@@ -526,13 +526,7 @@ a { color: inherit; text-decoration: none; }
 }
 
 .hero-title {
-  font-size: 2.6rem;
-  font-weight: 800;
-  color: #333;
-  line-height: 1.1;
-  letter-spacing: -0.05em;
-  text-transform: lowercase;
-  white-space: nowrap; /* keep on one line */
+  display: none !important; /* Hide overlay text since banner has text move move */
 }
 
 .hero-bottom .btn-pill-outline {
@@ -553,7 +547,7 @@ a { color: inherit; text-decoration: none; }
 
   .hero-block {
     height: auto;
-    aspect-ratio: 1 / 1.2; /* Taller portrait-style as requested for mobile move moved moved */
+    aspect-ratio: 1 / 1.5; /* Tallest portrait-style matching your vertical image move moved moves move move move */
     margin: 0;
     border-radius: 14px;
     background-color: #fff;
