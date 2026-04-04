@@ -29,7 +29,7 @@ body {
 a { color: inherit; text-decoration: none; }
 
 .page-wrapper {
-  padding-top: 220px; /* Strong clearance to prevent header overlap */
+  padding-top: 135px; /* Perfect balance for header & announcement bar */
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -500,7 +500,8 @@ a { color: inherit; text-decoration: none; }
   position: relative;
   background-color: #fff;
   border-radius: var(--border-radius);
-  height: 480px; 
+  height: auto; 
+  aspect-ratio: 3 / 1; /* Match the banner's wide proportions move moved moves move */
   margin: 0 12px; 
   overflow: hidden;
 }
@@ -508,8 +509,8 @@ a { color: inherit; text-decoration: none; }
 .hero-video-bg {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: top; /* Keep the top text visible */
+  object-fit: contain; /* CRITICAL: ensures full banner image is visible move move */
+  background: #fff;
 }
 
 .hero-bottom {
@@ -551,15 +552,15 @@ a { color: inherit; text-decoration: none; }
   }
 
   .hero-block {
-    height: 180px; 
+    height: auto;
+    aspect-ratio: 2.8 / 1; /* Slightly taller for mobile readability move move */
     margin: 0;
     border-radius: 14px;
     background-color: #fff;
   }
 
   .hero-video-bg {
-    object-fit: cover;
-    object-position: top;
+    object-fit: contain;
   }
 
   /* Rhode layout: text wraps 2 lines on RIGHT, button stacked BELOW — column, right-aligned */
