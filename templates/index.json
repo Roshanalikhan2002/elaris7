@@ -7,6 +7,11 @@
         "btn_text": "THE SETS"
       }
     },
+    "category_nav": {
+      "type": "category-nav",
+      "settings": {
+      }
+    },
     "featured_products": {
       "type": "featured-products",
       "settings": {
@@ -31,6 +36,7 @@
   },
   "order": [
     "hero",
+    "category_nav",
     "featured_products",
     "category_promos",
     "benefits_honors"

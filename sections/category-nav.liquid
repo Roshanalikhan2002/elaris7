@@ -1,0 +1,48 @@
+<nav class="category-bar">
+  <ul class="category-list">
+    {% for block in section.blocks %}
+      <li>
+        <a href="{{ block.settings.link | default: '#' }}" class="cat-link {% if forloop.first %}active{% endif %}">
+          {{ block.settings.title | uppercase }}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+</nav>
+
+{% schema %}
+{
+  "name": "Category Navigation",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "category",
+      "name": "Category",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Category Title"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Category Navigation",
+      "blocks": [
+        { "type": "category", "settings": { "title": "FEATURED" } },
+        { "type": "category", "settings": { "title": "SKIN" } },
+        { "type": "category", "settings": { "title": "LIP+CHEEK" } },
+        { "type": "category", "settings": { "title": "SETS" } },
+        { "type": "category", "settings": { "title": "COLOUR" } }
+      ]
+    }
+  ]
+}
+{% endschema %}
