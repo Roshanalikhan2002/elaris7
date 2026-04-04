@@ -94,25 +94,31 @@
           </a>
         {% endfor %}
       {% else %}
-        {%- assign fallback_names = "Night Cream,Glass Skin Toner,Barrier Cream,Peptide Serum,Niacinamide Essence,Hyaluronic Mist,SPF 50 Sunscreen,Vitamin C Serum,Retinol Night Cream,Ceramide Moisturiser,AHA Exfoliant,Eye Cream,Lip Balm,Cleansing Balm,Glow Booster" | split: "," -%}
+        {%- assign fallback_names = "Night Cream,Tranexamic Serum,Barrier Cream,Peptide Serum,Niacinamide Essence,Hyaluronic Mist,SPF 50 Sunscreen,Vitamin C Serum,Retinol Night Cream,Ceramide Moisturiser,AHA Exfoliant,Eye Cream,Lip Balm,Cleansing Balm,Glow Booster" | split: "," -%}
+        {%- assign fallback_images = "night-cream.jpg,tranexamic-serum.jpg" | split: "," -%}
+        {%- assign fallback_labels = "nightcream,serum" | split: "," -%}
         {%- assign preview_product = collections.all.products.first -%}
         {% for i in (1..15) %}
           {%- assign pname = fallback_names[forloop.index0] -%}
+          {%- assign pimage = fallback_images[forloop.index0] -%}
+          {%- assign plabel = fallback_labels[forloop.index0] | default: 'antiacne' -%}
           <a href="{{ preview_product.url | default: '#' }}" class="card-rhode" style="text-decoration: none; color: inherit; display: flex; flex-direction: column;">
-            {% if forloop.first %}
-              <img src="{{ 'night-cream.jpg' | asset_url }}" class="card-hover-bg" alt="Hover Background">
+            {% if pimage != blank %}
+              <img src="{{ pimage | asset_url }}" class="card-hover-bg" alt="Hover Background">
             {% endif %}
 
             <div class="card-rhode-top">
-              <div class="card-brand-label">{% if forloop.first %}nightcream{% else %}antiacne{% endif %}</div>
-              {% if forloop.first %}
+              <div class="card-brand-label">{{ plabel }}</div>
+              {% if forloop.index0 == 0 %}
                 <span class="card-badge">new formula</span>
+              {% elsif forloop.index0 == 1 %}
+                <span class="card-badge">bestseller</span>
               {% endif %}
             </div>
 
             <div class="card-rhode-image">
-              {% if forloop.first %}
-                <img src="{{ 'night-cream.jpg' | asset_url }}" alt="{{ pname }}">
+              {% if pimage != blank %}
+                <img src="{{ pimage | asset_url }}" alt="{{ pname }}">
               {% else %}
                 <div class="product-placeholder-img"></div>
               {% endif %}
