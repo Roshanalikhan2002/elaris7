@@ -52,51 +52,49 @@
   var lastScrollY = window.scrollY;
   var hideTimer = null;
   var isHidden = false;
-  var ticking = false;
+  var threshold = 5; // buffer to prevent jitter
 
   function showHeader() {
-    if (isHidden) {
-      header.classList.remove('header-hidden');
-      isHidden = false;
-    }
-    // Clear any pending hide timer
     if (hideTimer) {
       clearTimeout(hideTimer);
       hideTimer = null;
+    }
+    if (isHidden) {
+      header.classList.remove('header-hidden');
+      header.classList.add('header-visible');
+      isHidden = false;
     }
   }
 
   function scheduleHide() {
     if (hideTimer) clearTimeout(hideTimer);
     hideTimer = setTimeout(function() {
-      if (!isHidden) {
+      if (!isHidden && window.scrollY > 100) { // Only hide if we're not at the very top
+        header.classList.remove('header-visible');
         header.classList.add('header-hidden');
         isHidden = true;
       }
-    }, 2000); // 2 second delay before hiding
+    }, 2000); // 2 second delay
   }
 
   window.addEventListener('scroll', function() {
-    if (!ticking) {
-      window.requestAnimationFrame(function() {
-        var currentScrollY = window.scrollY;
+    var currentScrollY = window.scrollY;
+    
+    // Ignore tiny scrolls
+    if (Math.abs(currentScrollY - lastScrollY) < threshold) return;
 
-        if (currentScrollY <= 10) {
-          // At the very top — always show
-          showHeader();
-        } else if (currentScrollY > lastScrollY) {
-          // Scrolling DOWN — schedule hide after 2s
-          scheduleHide();
-        } else {
-          // Scrolling UP — immediately show
-          showHeader();
-        }
-
-        lastScrollY = currentScrollY;
-        ticking = false;
-      });
-      ticking = true;
+    if (currentScrollY <= 20) {
+      // Force show at top
+      showHeader();
+    } else if (currentScrollY > lastScrollY) {
+      // Scrolling DOWN
+      scheduleHide();
+    } else {
+      // Scrolling UP
+      showHeader();
     }
+
+    lastScrollY = currentScrollY;
   }, { passive: true });
 })();
 </script>
