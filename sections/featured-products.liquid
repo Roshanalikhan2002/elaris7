@@ -106,9 +106,10 @@
           {%- assign pname = fallback_names[forloop.index0] -%}
           {%- assign pimage = fallback_images[forloop.index0] -%}
           {%- assign plabel = fallback_labels[forloop.index0] | default: 'antiacne' -%}
-          {%- assign phandle = pname | handleize -%}
-          {%- assign p_real = all_products[phandle] -%}
-          <a href="{{ p_real.url | default: '#' }}" class="card-rhode" style="text-decoration: none; color: inherit; display: flex; flex-direction: column;">
+          {%- assign phandle_spaced = pname | handleize -%}
+          {%- assign phandle_merged = pname | remove: ' ' | downcase -%}
+          {%- assign p_real = all_products[phandle_spaced] | default: all_products[phandle_merged] -%}
+          <a href="{{ p_real.url | default: collections.all.products.first.url | default: '#' }}" class="card-rhode" style="text-decoration: none; color: inherit; display: flex; flex-direction: column;">
             {% if forloop.first %}
               <div class="mobile-swipe-badge">swipe</div>
             {% endif %}
