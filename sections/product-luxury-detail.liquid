@@ -309,7 +309,7 @@
         {% if product.featured_image %}
           <img src="{{ product.featured_image | img_url: '1200x' }}" class="main-product-img" alt="{{ product.title }}">
         {% else %}
-          <img src="{{ 'product-anti-acne.jpg' | asset_url }}" class="main-product-img" alt="Anti Acne Serum">
+          <img src="{{ 'night-cream.jpg' | asset_url }}" class="main-product-img" alt="Night Cream" style="object-fit: contain; background: #f2f0ed;">
         {% endif %}
       </div>
     </div>
