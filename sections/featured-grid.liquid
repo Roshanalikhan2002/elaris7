@@ -213,7 +213,6 @@
     padding: 15px 12px;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center labels */
   }
   .card-rhode-grid .card-rhode-image {
     position: relative;
@@ -226,7 +225,7 @@
     overflow: hidden;
   }
   .card-rhode-grid .card-rhode-image img {
-    transform: scale(1.6); /* Reduced zoom to prevent overlap */
+    transform: scale(1.6);
     width: 100%;
     height: 100%;
     object-fit: contain;
@@ -234,7 +233,7 @@
   .card-rhode-grid .card-rhode-top {
     width: 100%;
     display: flex !important;
-    justify-content: center;
+    justify-content: center; /* Label remains centered as per design */
     z-index: 10;
   }
   .card-rhode-grid .card-brand-label {
@@ -244,17 +243,19 @@
   .card-rhode-grid .card-rhode-details {
     margin-top: auto;
     width: 100%;
-    text-align: left;
+    text-align: left !important; /* Forces Name to the left */
     padding: 5px 0;
   }
   .card-rhode-grid .stars {
     font-size: 0.55rem;
     margin-bottom: 2px;
+    text-align: left !important;
   }
   .card-rhode-grid .card-product-title {
     font-size: 0.62rem;
     font-weight: 900;
     margin: 0;
+    text-align: left !important; /* Forces Name to the left */
   }
   .card-rhode-grid .buy-button-hover {
     background: transparent;
@@ -265,6 +266,7 @@
     padding: 7px 0;
     font-size: 0.55rem;
     font-weight: 700;
+    text-align: center;
   }
 }
 {%- endstyle -%}
