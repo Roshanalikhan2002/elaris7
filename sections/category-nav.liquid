@@ -27,32 +27,32 @@
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   const catLinks = document.querySelectorAll('.cat-link');
-  const scrollSection = document.getElementById('shopify-section-featured_products');
+  // Use class selectors instead of Shopify generated IDs which can vary
+  const scrollSection = document.querySelector('.product-scroll-wrapper');
   const gridSection = document.getElementById('featured-grid-section');
 
-  // Initial state: Show Featured Grid, hide Scroll
-  if (gridSection && scrollSection) {
-    gridSection.style.display = 'block';
-    scrollSection.style.display = 'none';
+  function toggleView(catName) {
+    if (catName === 'featured') {
+      if (gridSection) gridSection.style.setProperty('display', 'block', 'important');
+      if (scrollSection) scrollSection.closest('.shopify-section').style.setProperty('display', 'none', 'important');
+    } else {
+      if (gridSection) gridSection.style.setProperty('display', 'none', 'important');
+      if (scrollSection) scrollSection.closest('.shopify-section').style.setProperty('display', 'block', 'important');
+    }
   }
+
+  // Initial state: Show Featured Grid, hide Scroll
+  toggleView('featured');
 
   catLinks.forEach(link => {
     link.addEventListener('click', function(e) {
-      // If it's a real link, don't prevent default
       if (this.getAttribute('href') === '#') e.preventDefault();
       
       catLinks.forEach(l => l.classList.remove('active'));
       this.classList.add('active');
 
       const catName = this.dataset.category;
-      
-      if (catName === 'featured') {
-        if (gridSection) gridSection.style.display = 'block';
-        if (scrollSection) scrollSection.style.display = 'none';
-      } else {
-        if (gridSection) gridSection.style.display = 'none';
-        if (scrollSection) scrollSection.style.display = 'block';
-      }
+      toggleView(catName);
     });
   });
 });
