@@ -94,11 +94,11 @@
           </a>
         {% endfor %}
       {% else %}
-        {%- assign fallback_names = "Night Cream,Tranexamic Serum,Keratin Serum,Glow Serum,Glutathione Cream,Hair Mist,Face Wash,Anti Acne Serum,Sunscreen,Retinol Night Cream,Ceramide Moisturiser,AHA Exfoliant,Eye Cream,Lip Balm,Cleansing Balm,Glow Booster" | split: "," -%}
-        {%- assign fallback_images = "night-cream.jpg,tranexamic-serum.jpg,keratin-serum.jpg,glow-serum-100.jpg,glutathione-cream-100.jpg,hair-mist.jpg,facewash-100.jpg,anti-acne-100.jpg,sunscreen-100.jpg" | split: "," -%}
-        {%- assign fallback_labels = "nightcream,serum,haircare,serum,repair,haircare,cleanser,antiacne,sunscreen" | split: "," -%}
+        {%- assign fallback_names = "Night Cream,Tranexamic Serum,Keratin Serum,Glow Serum,Glutathione Cream,Hair Mist,Face Wash,Anti Acne Serum,Sunscreen,Renewal Cleanser,Hydra Burst Moisturizer,Renewal Toner,Skin Refining Toner,Retinol Night Cream,Ceramide Moisturiser,AHA Exfoliant" | split: "," -%}
+        {%- assign fallback_images = "night-cream.jpg,tranexamic-serum.jpg,keratin-serum.jpg,glow-serum-100.jpg,glutathione-cream-100.jpg,hair-mist.jpg,facewash-100.jpg,anti-acne-100.jpg,sunscreen-100.jpg,gel cleanser-100.jpg,moisturizer-100.jpg,renewal toner-100.jpg,skin refining-100.jpg" | split: "," -%}
+        {%- assign fallback_labels = "nightcream,serum,haircare,serum,repair,haircare,cleanser,antiacne,sunscreen,cleanser,moisturizer,toner,toner" | split: "," -%}
         {%- assign preview_product = collections.all.products.first -%}
-        {% for i in (1..15) %}
+        {% for i in (1..16) %}
           {%- assign pname = fallback_names[forloop.index0] -%}
           {%- assign pimage = fallback_images[forloop.index0] -%}
           {%- assign plabel = fallback_labels[forloop.index0] | default: 'antiacne' -%}
