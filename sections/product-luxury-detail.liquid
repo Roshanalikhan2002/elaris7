@@ -316,17 +316,13 @@
   <div class="product-grid">
     <div class="product-gallery">
       <div class="product-gallery-inner">
-        {% if product.featured_image %}
-          <img src="{{ product.featured_image | img_url: '1200x' }}" class="main-product-img" alt="{{ product.title }}">
-        {% else %}
-          <img src="{{ 'night-cream.jpg' | asset_url }}" class="main-product-img" alt="Night Cream" style="object-fit: contain; background: #f2f0ed;">
-        {% endif %}
+        <img src="{{ 'night-cream.jpg' | asset_url }}" class="main-product-img" alt="Night Cream" style="object-fit: contain; background: #f2f0ed;">
       </div>
     </div>
 
-    <div class="product-details">
+  <div class="product-details">
       <div class="product-header">
-        <h1 class="product-title">{{ product.title | default: "night cream" }}</h1>
+        <h1 class="product-title">night cream</h1>
         <div class="product-award">BEST OF BEAUTY</div>
       </div>
 
@@ -334,12 +330,12 @@
         <span class="product-subtitle">ADVANCED GLOW REGEN NIGHT CREAM</span>
         <div class="product-reviews">
           <span class="stars">★★★★★</span>
-          <span class="review-count">(1,895)</span>
+          <span class="review-count">(16k)</span>
         </div>
       </div>
 
       <div class="product-description">
-        {{ product.description | default: "An advanced overnight renewal cream formulated with Centella Asiatica and Peptides. Our ultra-rich formula works while you sleep to deeply nourish and restore radiance overnight." }}
+        An advanced overnight renewal cream formulated with Centella Asiatica and Peptides. Our ultra-rich formula works while you sleep to deeply nourish and restore radiance overnight.
       </div>
 
       <hr class="divider">
