@@ -15,7 +15,7 @@
         <div class="card card-rhode" {{ block.shopify_attributes }}>
           <a href="{{ block.settings.product_link | default: '#' }}" class="card-link-wrapper">
             <div class="card-rhode-top">
-              <span class="card-brand-label">{{ block.settings.brand_label | default: 'NIGHT CREAM' }}</span>
+              <span class="card-brand-label">{{ block.settings.brand_label | default: 'nightcream' }}</span>
               {% if block.settings.badge != blank %}
                 <span class="card-badge">{{ block.settings.badge }}</span>
               {% endif %}
@@ -30,7 +30,7 @@
             <div class="card-rhode-footer">
               <div class="card-meta">
                 <div class="card-stars">★★★★★ <span class="review-count">({{ block.settings.reviews | default: '16k' }})</span></div>
-                <h3 class="card-name">{{ block.settings.title | default: 'PRODUCT NAME' }}</h3>
+                <h3 class="card-name">{{ block.settings.title | default: 'NIGHT CREAM' }}</h3>
               </div>
               <span class="btn-rhode-buy-pill">BUY - {{ block.settings.price | default: 'RS. 1,500' }}</span>
             </div>
@@ -38,7 +38,37 @@
         </div>
       {% endfor %}
     {% else %}
-      <!-- Fallback blocks removed for brevity, assuming blocks are used in Theme Editor -->
+      {% comment %} Fallback Items if no blocks exist move move moved moves move move move move move move move move move {% endcomment %}
+      {%- assign fallback_names = "Night Cream,Tranexamic Serum,Keratin Serum,Glow Serum,Face Wash" | split: "," -%}
+      {%- assign fallback_images = "night-cream.jpg,tranexamic-serum.jpg,keratin-serum.jpg,glow-serum-100.jpg,facewash-100.jpg" | split: "," -%}
+      {%- assign fallback_labels = "nightcream,serum,haircare,serum,cleanser" | split: "," -%}
+      
+      {% for i in (0..4) %}
+        {%- assign pname = fallback_names[i] -%}
+        {%- assign pimage = fallback_images[i] -%}
+        {%- assign plabel = fallback_labels[i] -%}
+        <div class="card card-rhode">
+          <a href="#" class="card-link-wrapper">
+            <div class="card-rhode-top">
+              <span class="card-brand-label">{{ plabel }}</span>
+            </div>
+            <div class="card-rhode-image">
+              {% if pimage != blank %}
+                <img src="{{ pimage | asset_url }}" class="product-main-img" alt="{{ pname }}">
+              {% else %}
+                <div class="product-placeholder-img"></div>
+              {% endif %}
+            </div>
+            <div class="card-rhode-footer">
+              <div class="card-meta">
+                <div class="card-stars">★★★★★ <span class="review-count">(16k)</span></div>
+                <h3 class="card-name">{{ pname | upcase }}</h3>
+              </div>
+              <span class="btn-rhode-buy-pill">BUY - RS. 1,500</span>
+            </div>
+          </a>
+        </div>
+      {% endfor %}
     {% endif %}
   </div>
 </section>
