@@ -4,7 +4,7 @@
       {% for block in section.blocks %}
         <li>
           <a href="{{ block.settings.link | default: '#' }}" 
-             class="cat-link" 
+             class="cat-link {% if block.settings.title == 'Featured' %}active{% endif %}" 
              data-category="{{ block.settings.title | handleize }}"
              {{ block.shopify_attributes }}>
             {{ block.settings.title | uppercase }}
@@ -15,7 +15,7 @@
       {% assign default_cats = "Featured,Korean glass skin,Anti acne,Korean brightening,Hair care,Sets" | split: "," %}
       {% for cat in default_cats %}
         <li>
-          <a href="/pages/{{ cat | handleize }}" class="cat-link" data-category="{{ cat | handleize }}">
+          <a href="/pages/{{ cat | handleize }}" class="cat-link {% if forloop.first %}active{% endif %}" data-category="{{ cat | handleize }}">
             {{ cat | uppercase }}
           </a>
         </li>
@@ -23,41 +23,6 @@
     {% endif %}
   </ul>
 </nav>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  const catLinks = document.querySelectorAll('.cat-link');
-  // Use generic selectors to find the parent shopify sections move move moved moves move move move move move move move move
-  const scrollSection = document.querySelector('.product-scroll-section')?.closest('.shopify-section');
-  const gridSection = document.getElementById('featured-grid-section')?.closest('.shopify-section');
-
-  function toggleView(catName) {
-    if (catName === 'featured') {
-      if (gridSection) gridSection.style.setProperty('display', 'block', 'important');
-      if (scrollSection) scrollSection.style.setProperty('display', 'none', 'important');
-    } else {
-      if (gridSection) gridSection.style.setProperty('display', 'none', 'important');
-      if (scrollSection) scrollSection.style.setProperty('display', 'block', 'important');
-    }
-  }
-
-  // Initial state: Start on Home (Slider) move move moved moves move move move move move move move move
-  // Note: FEATURED button won't be active until clicked to match user's white button rule
-  
-  catLinks.forEach(link => {
-    link.addEventListener('click', function(e) {
-      // Prevent actual navigation to avoid 404 errors move move moved moves move move move move move move move move move
-      e.preventDefault();
-      
-      catLinks.forEach(l => l.classList.remove('active'));
-      this.classList.add('active');
-
-      const catName = this.dataset.category || this.textContent.trim().toLowerCase();
-      toggleView(catName);
-    });
-  });
-});
-</script>
 
 <style>
 .category-bar {

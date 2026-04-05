@@ -1,11 +1,25 @@
 {
   "sections": {
+    "hero": {
+      "type": "hero",
+      "settings": {
+        "title": "featured products",
+        "btn_text": "view sets",
+        "hero_image": "shopify://shop_images/Artboard_4-100_jpg.jpg"
+      }
+    },
+    "nav": {
+      "type": "category-nav",
+      "settings": {}
+    },
     "main": {
       "type": "featured-grid",
       "settings": {}
     }
   },
   "order": [
+    "hero",
+    "nav",
     "main"
   ]
 }
