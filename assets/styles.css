@@ -689,6 +689,12 @@ a { color: inherit; text-decoration: none; }
   transform: scale(1.08);
 }
 
+@media (max-width: 768px) {
+  .scroll-arrow-btn {
+    display: none !important;
+  }
+}
+
 .product-collection {
   display: flex;
   gap: 12px;
@@ -769,11 +775,10 @@ a { color: inherit; text-decoration: none; }
   height: 480px;
   background-color: #f2f0ed;
   border-radius: 12px;
-  padding: 24px 22px 22px;
   display: flex;
   flex-direction: column;
   position: relative;
-  overflow: hidden;
+  overflow: visible; /* Inner wrapper handles clipping */
   cursor: pointer;
   transition: box-shadow 0.3s ease;
 }
@@ -785,11 +790,61 @@ a { color: inherit; text-decoration: none; }
 @media (max-width: 768px) {
   .product-collection {
     scroll-snap-type: x mandatory;
-    padding-right: 16px; /* allows scroll past last child visually */
+    padding-right: 40px; /* Ensures 2nd card peeks through */
+    overflow-x: scroll;
   }
   .card-rhode {
-    flex: 0 0 88vw; /* Takes up 88% of screen so the 2nd product peeks cleanly */
+    flex: 0 0 calc(100vw - 70px); /* card width = screen - peek space */
+    width: calc(100vw - 70px);
+    overflow: visible; /* CRITICAL: allow swipe badge to show outside card */
     scroll-snap-align: start;
+  }
+}
+
+/* Inner wrapper that contains hover bg and clips it properly */
+.card-rhode-inner {
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: 24px 22px 22px;
+}
+
+@media (max-width: 768px) {
+  .card-rhode-inner {
+    overflow: hidden; /* Keep bg image clipped on mobile too */
+    border-radius: 12px;
+  }
+}
+
+.mobile-swipe-badge {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .mobile-swipe-badge {
+    display: flex;
+    position: absolute;
+    right: -30px; /* Hangs off right edge of card to overlap 2nd card gap */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 62px;
+    height: 62px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 50%;
+    color: #2c2b28;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+    text-transform: lowercase;
+    z-index: 999;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.18);
+    border: 1.5px solid rgba(255,255,255,0.6);
+    pointer-events: none;
   }
 }
 

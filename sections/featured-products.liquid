@@ -21,6 +21,10 @@
       {% if section.blocks.size > 0 %}
         {% for block in section.blocks %}
           <a href="{{ block.settings.product_link | default: '#' }}" class="card-rhode" {{ block.shopify_attributes }} style="text-decoration: none; color: inherit; display: flex; flex-direction: column;">
+            {% if forloop.first %}
+              <div class="mobile-swipe-badge">swipe</div>
+            {% endif %}
+            <div class="card-rhode-inner">
             {% if block.settings.hover_image != blank %}
               {{ block.settings.hover_image | image_url: width: 1000 | image_tag: class: 'card-hover-bg', alt: block.settings.title }}
             {% endif %}
@@ -52,12 +56,16 @@
             <div class="buy-button-hover">
                BUY {{ block.settings.title | upcase }} - {{ block.settings.price }}
             </div>
+            </div><!-- /.card-rhode-inner -->
           </a>
         {% endfor %}
       {% elsif collections[section.settings.collection].products.size > 0 %}
         {% assign limit_count = section.settings.product_limit | default: 15 %}
         {% for product in collections[section.settings.collection].products limit: limit_count %}
           <a href="{{ product.url }}" class="card-rhode">
+            {% if forloop.first %}
+              <div class="mobile-swipe-badge">swipe</div>
+            {% endif %}
             {% if product.images.size > 1 %}
               {{ product.images[1] | image_url: width: 1000 | image_tag: class: 'card-hover-bg', alt: product.title }}
             {% endif %}
@@ -99,6 +107,9 @@
           {%- assign pimage = fallback_images[forloop.index0] -%}
           {%- assign plabel = fallback_labels[forloop.index0] | default: 'antiacne' -%}
           <a href="{{ preview_product.url | default: '#' }}" class="card-rhode" style="text-decoration: none; color: inherit; display: flex; flex-direction: column;">
+            {% if forloop.first %}
+              <div class="mobile-swipe-badge">swipe</div>
+            {% endif %}
             {% if pimage != blank %}
               <img src="{{ pimage | asset_url }}" class="card-hover-bg" alt="Hover Background">
             {% endif %}
