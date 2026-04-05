@@ -3,7 +3,10 @@
     {% if section.blocks.size > 0 %}
       {% for block in section.blocks %}
         <li>
-          <a href="{{ block.settings.link | default: '#' }}" class="cat-link {% if forloop.first %}active{% endif %}" {{ block.shopify_attributes }}>
+          <a href="{{ block.settings.link | default: '#' }}" 
+             class="cat-link {% if forloop.first %}active{% endif %}" 
+             data-category="{{ block.settings.title | handleize }}"
+             {{ block.shopify_attributes }}>
             {{ block.settings.title | uppercase }}
           </a>
         </li>
@@ -12,7 +15,7 @@
       {% assign default_cats = "Featured,Korean glass skin,Anti acne,Korean brightening,Hair care,Sets" | split: "," %}
       {% for cat in default_cats %}
         <li>
-          <a href="#" class="cat-link {% if forloop.first %}active{% endif %}">
+          <a href="#" class="cat-link {% if forloop.first %}active{% endif %}" data-category="{{ cat | handleize }}">
             {{ cat | uppercase }}
           </a>
         </li>
@@ -20,6 +23,40 @@
     {% endif %}
   </ul>
 </nav>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const catLinks = document.querySelectorAll('.cat-link');
+  const scrollSection = document.getElementById('shopify-section-featured_products');
+  const gridSection = document.getElementById('featured-grid-section');
+
+  // Initial state: Show Featured Grid, hide Scroll
+  if (gridSection && scrollSection) {
+    gridSection.style.display = 'block';
+    scrollSection.style.display = 'none';
+  }
+
+  catLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      // If it's a real link, don't prevent default
+      if (this.getAttribute('href') === '#') e.preventDefault();
+      
+      catLinks.forEach(l => l.classList.remove('active'));
+      this.classList.add('active');
+
+      const catName = this.dataset.category;
+      
+      if (catName === 'featured') {
+        if (gridSection) gridSection.style.display = 'block';
+        if (scrollSection) scrollSection.style.display = 'none';
+      } else {
+        if (gridSection) gridSection.style.display = 'none';
+        if (scrollSection) scrollSection.style.display = 'block';
+      }
+    });
+  });
+});
+</script>
 
 {% schema %}
 {

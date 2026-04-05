@@ -1,0 +1,206 @@
+<section class="featured-grid-section" id="featured-grid-section" style="display: none;">
+  <div class="grid-container">
+    {% if section.blocks.size > 0 %}
+      {% for block in section.blocks %}
+        <div class="grid-item">
+          <a href="{{ block.settings.product_link | default: '#' }}" class="card-rhode-grid">
+            <div class="card-rhode-inner-grid">
+              {% if block.settings.hover_image != blank %}
+                {{ block.settings.hover_image | image_url: width: 1000 | image_tag: class: 'card-hover-bg', alt: block.settings.title }}
+              {% endif %}
+              
+              <div class="card-rhode-top">
+                <div class="card-brand-label">{{ block.settings.brand_label | lowercase | default: 'skincare' }}</div>
+                {% if block.settings.badge != blank %}
+                  <span class="card-badge">{{ block.settings.badge | lowercase }}</span>
+                {% endif %}
+              </div>
+
+              <div class="card-rhode-image">
+                {% if block.settings.main_image != blank %}
+                  {{ block.settings.main_image | image_url: width: 800 | image_tag: alt: block.settings.title }}
+                {% else %}
+                  <div class="product-placeholder-img"></div>
+                {% endif %}
+              </div>
+
+              <div class="card-rhode-details">
+                <div class="stars">★ ★ ★ ★ ★ ({{ block.settings.reviews | default: '16k' }})</div>
+                <div class="product-name-row">
+                  <h3 class="card-product-title">{{ block.settings.title | upcase }}</h3>
+                  <span class="card-price">{{ block.settings.price }}</span>
+                </div>
+                <p class="card-subtitle">{{ block.settings.subtitle }}</p>
+              </div>
+
+              <div class="buy-button-hover">
+                 BUY {{ block.settings.title | upcase }} - {{ block.settings.price }}
+              </div>
+            </div>
+          </a>
+        </div>
+      {% endfor %}
+    {% else %}
+      {% comment %} Fallback items same as scroll section but in grid {% endcomment %}
+      {%- assign fallback_names = "Night Cream,Tranexamic Serum,Keratin Serum,Glow Serum,Glutathione Cream,Hair Mist,Face Wash,Anti Acne Serum,Sunscreen,Renewal Cleanser,Hydra Burst Moisturizer,Renewal Toner" | split: "," -%}
+      {%- assign fallback_images = "night-cream.jpg,tranexamic-serum.jpg,keratin-serum.jpg,glow-serum-100.jpg,glutathione-cream-100.jpg,hair-mist.jpg,facewash-100.jpg,anti-acne-100.jpg,sunscreen-100.jpg,gel cleanser-100.jpg,moisturizer-100.jpg,renewal toner-100.jpg" | split: "," -%}
+      {%- assign fallback_labels = "nightcream,serum,haircare,serum,repair,haircare,cleanser,antiacne,sunscreen,cleanser,moisturizer,toner" | split: "," -%}
+      
+      {% for i in (0..11) %}
+        {%- assign pname = fallback_names[i] -%}
+        {%- assign pimage = fallback_images[i] -%}
+        {%- assign plabel = fallback_labels[i] | default: 'antiacne' -%}
+        <div class="grid-item">
+          <a href="#" class="card-rhode-grid">
+            <div class="card-rhode-inner-grid">
+              {% if pimage != blank %}
+                <img src="{{ pimage | asset_url }}" class="card-hover-bg" alt="Hover Background">
+              {% endif %}
+
+              <div class="card-rhode-top">
+                <div class="card-brand-label">{{ plabel }}</div>
+                {% if i < 3 %}
+                  <span class="card-badge">featured</span>
+                {% endif %}
+              </div>
+
+              <div class="card-rhode-image">
+                {% if pimage != blank %}
+                  <img src="{{ pimage | asset_url }}" alt="{{ pname }}">
+                {% else %}
+                  <div class="product-placeholder-img"></div>
+                {% endif %}
+              </div>
+
+              <div class="card-rhode-details">
+                <div class="stars">★ ★ ★ ★ ★ (16k)</div>
+                <div class="product-name-row">
+                  <h3 class="card-product-title">{{ pname | upcase }}</h3>
+                  <span class="card-price">Rs. 1,500</span>
+                </div>
+                <p class="card-subtitle">Premium Korean skincare formula</p>
+              </div>
+
+              <div class="buy-button-hover">
+                 BUY {{ pname | upcase }} - Rs. 1,500
+              </div>
+            </div>
+          </a>
+        </div>
+      {% endfor %}
+    {% endif %}
+  </div>
+</section>
+
+{%- style -%}
+.featured-grid-section {
+  padding: 0 12px 60px;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+.card-rhode-grid {
+  display: block;
+  height: 480px;
+  background-color: #f2f0ed;
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+}
+.card-rhode-inner-grid {
+  position: absolute;
+  inset: 0;
+  padding: 24px 22px 22px;
+  display: flex;
+  flex-direction: column;
+}
+@media (max-width: 900px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .card-rhode-grid {
+    height: 400px;
+  }
+}
+@media (max-width: 600px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+}
+{%- endstyle -%}
+
+{% schema %}
+{
+  "name": "Featured Grid",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "product",
+      "name": "Manual Product Block",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Product Title",
+          "default": "Anti Acne Serum"
+        },
+        {
+          "type": "text",
+          "id": "price",
+          "label": "Price",
+          "default": "Rs. 1,500"
+        },
+        {
+          "type": "text",
+          "id": "subtitle",
+          "label": "Subtitle",
+          "default": "Premium Korean skincare formula"
+        },
+        {
+          "type": "text",
+          "id": "brand_label",
+          "label": "Top Label (e.g. blush)",
+          "default": "antiacne"
+        },
+        {
+          "type": "text",
+          "id": "badge",
+          "label": "Badge (e.g. new shades)",
+          "default": "new shades"
+        },
+        {
+          "type": "text",
+          "id": "reviews",
+          "label": "Review Count (e.g. 6,949)",
+          "default": "16k"
+        },
+        {
+          "type": "image_picker",
+          "id": "main_image",
+          "label": "Primary Image (Product)"
+        },
+        {
+          "type": "image_picker",
+          "id": "hover_image",
+          "label": "Hover Image (Model Portrait)"
+        },
+        {
+          "type": "url",
+          "id": "product_link",
+          "label": "Product Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Featured Grid",
+      "category": "Collection"
+    }
+  ]
+}
+{% endschema %}
