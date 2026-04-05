@@ -44,7 +44,7 @@
 </section>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
+  (function initProductSlider() {
     const track = document.getElementById('product-collection-scroll');
     const nextBtn = document.getElementById('scroll-next-btn');
     const prevBtn = document.getElementById('scroll-prev-btn');
@@ -71,11 +71,18 @@
         const atStart = track.scrollLeft <= 10;
         const atEnd = track.scrollLeft + track.clientWidth >= track.scrollWidth - 10;
         
-        prevBtn.style.opacity = atStart ? '0' : '1';
-        prevBtn.style.pointerEvents = atStart ? 'none' : 'auto';
-        nextBtn.style.opacity = atEnd ? '0' : '1';
-        nextBtn.style.pointerEvents = atEnd ? 'none' : 'auto';
+        prevBtn.style.visibility = atStart ? 'hidden' : 'visible';
+        nextBtn.style.visibility = atEnd ? 'hidden' : 'visible';
       });
+
+      // Initial state
+      prevBtn.style.visibility = 'hidden';
+      // Ensure right arrow is shown if content overflows
+      setTimeout(() => {
+        if (track.scrollWidth > track.clientWidth) {
+          nextBtn.style.visibility = 'visible';
+        }
+      }, 500);
 
       // Drag to scroll for desktop mice
       let isDown = false;
@@ -98,7 +105,12 @@
         track.scrollLeft = scrollLeft - walk;
       });
     }
-  });
+
+    // Shopify Theme Editor Integration
+    document.addEventListener('shopify:section:load', function(event) {
+       initProductSlider();
+    });
+  })();
 </script>
 
 {% schema %}

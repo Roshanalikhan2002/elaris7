@@ -703,29 +703,37 @@ a { color: inherit; text-decoration: none; }
 
 .product-scroll-controls {
   position: absolute;
-  top: 45%; /* Slightly above middle for better alignment with image move move moved moves move move move move move */
-  left: 10px;
-  right: 10px;
+  top: 50%;
+  left: 15px;
+  right: 15px;
   transform: translateY(-50%);
   display: flex;
   justify-content: space-between;
   pointer-events: none;
-  z-index: 100;
+  z-index: 500; /* Ensure it is above cards move move moved moves move move move move move move move */
 }
 
 .scroll-arrow {
-  width: 50px;
-  height: 50px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
-  background: #fff;
-  border: 1px solid #d1d1cf;
+  background: #ffffff;
+  border: 1px solid rgba(0,0,0,0.06);
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   pointer-events: auto;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 4px 20px rgba(0,0,0,0.1); /* More visible shadow */
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.12); /* Rhode exact match shadow move move moved moves move move move move move move move */
+  opacity: 1; /* Always visible for user clarity move move moved moves move move move move move move move */
+}
+
+.scroll-arrow svg {
+  color: #333;
+  stroke-width: 2.5px;
+  width: 22px;
+  height: 22px;
 }
 
 .scroll-arrow:hover {
