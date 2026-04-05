@@ -790,13 +790,13 @@ a { color: inherit; text-decoration: none; }
 @media (max-width: 768px) {
   .product-collection {
     scroll-snap-type: x mandatory;
-    padding-right: 40px; /* Ensures 2nd card peeks through */
+    padding-right: 20px;
     overflow-x: scroll;
   }
   .card-rhode {
-    flex: 0 0 calc(100vw - 70px); /* card width = screen - peek space */
-    width: calc(100vw - 70px);
-    overflow: visible; /* CRITICAL: allow swipe badge to show outside card */
+    flex: 0 0 calc(100vw - 110px); /* Narrower so ~110px of 2nd card shows */
+    width: calc(100vw - 110px);
+    overflow: visible;
     scroll-snap-align: start;
   }
 }
@@ -880,6 +880,13 @@ a { color: inherit; text-decoration: none; }
   text-transform: lowercase;
   color: #2c2b28;
   line-height: 1;
+}
+
+@media (max-width: 768px) {
+  .card-brand-label {
+    font-size: 1.9rem; /* Fits within card on mobile, matches reference */
+    letter-spacing: -0.04em;
+  }
 }
 
 .card-badge {
