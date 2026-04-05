@@ -1,9 +1,5 @@
 <div class="product-scroll-wrapper">
-  {% if section.settings.heading != blank %}
-    <div style="margin-bottom: 20px;">
-      <h2 style="font-size: 1.8rem; font-weight: 400; color: #5b5a53; margin: 0; letter-spacing: -0.01em;">{{ section.settings.heading }}</h2>
-    </div>
-  {% endif %}
+
   <div class="product-scroll-header">
     <span class="product-scroll-count">
       {% if section.blocks.size > 0 %}
@@ -167,12 +163,7 @@
 {
   "name": "Rhode Product Scroll",
   "settings": [
-    {
-      "type": "text",
-      "id": "heading",
-      "label": "Heading",
-      "default": "you may also like"
-    },
+
     {
       "type": "collection",
       "id": "collection",
