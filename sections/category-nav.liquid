@@ -24,6 +24,41 @@
   </ul>
 </nav>
 
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const catLinks = document.querySelectorAll('.cat-link');
+  // Use generic selectors to find the parent shopify sections move move moved moves move move move move move move move move
+  const scrollSection = document.querySelector('.product-scroll-section')?.closest('.shopify-section');
+  const gridSection = document.getElementById('featured-grid-section')?.closest('.shopify-section');
+
+  function toggleView(catName) {
+    if (catName === 'featured') {
+      if (gridSection) gridSection.style.setProperty('display', 'block', 'important');
+      if (scrollSection) scrollSection.style.setProperty('display', 'none', 'important');
+    } else {
+      if (gridSection) gridSection.style.setProperty('display', 'none', 'important');
+      if (scrollSection) scrollSection.style.setProperty('display', 'block', 'important');
+    }
+  }
+
+  // Initial state: Start on Home (Slider) move move moved moves move move move move move move move move
+  // Note: FEATURED button won't be active until clicked to match user's white button rule
+  
+  catLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      // Prevent actual navigation to avoid 404 errors move move moved moves move move move move move move move move move
+      e.preventDefault();
+      
+      catLinks.forEach(l => l.classList.remove('active'));
+      this.classList.add('active');
+
+      const catName = this.dataset.category || this.textContent.trim().toLowerCase();
+      toggleView(catName);
+    });
+  });
+});
+</script>
+
 <style>
 .category-bar {
   padding: 30px 40px;
@@ -52,13 +87,14 @@
   transition: all 0.3s ease;
   white-space: nowrap;
   display: inline-block;
+  cursor: pointer;
 }
 .cat-link:hover {
   border-color: #333;
   color: #333;
 }
 .cat-link.active {
-  background-color: #5b5a53; /* Dark gray active color from reference move move move */
+  background-color: #5b5a53;
   color: #fff;
   border-color: #5b5a53;
 }
