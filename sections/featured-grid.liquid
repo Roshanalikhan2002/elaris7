@@ -103,32 +103,54 @@
 }
 .card-rhode-grid {
   display: block;
-  height: 480px;
   background-color: #f2f0ed;
   border-radius: 12px;
   position: relative;
   overflow: hidden;
   text-decoration: none;
   color: inherit;
+  aspect-ratio: 1 / 1.5;
 }
 .card-rhode-inner-grid {
   position: absolute;
   inset: 0;
-  padding: 24px 22px 22px;
+  padding: 20px 16px 16px;
   display: flex;
   flex-direction: column;
 }
+.card-rhode-grid .card-rhode-details {
+  border-top: none;
+  padding-top: 5px;
+}
+.card-rhode-grid .buy-button-hover {
+  position: static;
+  transform: none;
+  opacity: 1;
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px 0;
+  border: 1px solid #5b5a53;
+  color: #5b5a53;
+  border-radius: 50px;
+  font-size: 0.65rem;
+  background: transparent;
+  box-shadow: none;
+}
+.card-rhode-grid:hover .buy-button-hover {
+  background: #5b5a53;
+  color: #fff;
+}
+.card-rhode-grid:hover .card-rhode-details {
+  opacity: 1;
+}
+
 @media (max-width: 900px) {
   .grid-container {
     grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
   }
-  .card-rhode-grid {
-    height: 400px;
-  }
-}
-@media (max-width: 600px) {
-  .grid-container {
-    grid-template-columns: 1fr;
+  .featured-grid-section {
+    padding: 0 16px 40px;
   }
 }
 {%- endstyle -%}
