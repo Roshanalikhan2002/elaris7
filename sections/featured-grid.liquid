@@ -216,61 +216,54 @@
     background-color: #f1efea;
   }
   .card-rhode-inner-grid {
-    padding: 12px 10px;
-  }
-  .card-rhode-grid .card-rhode-image {
     position: absolute;
     inset: 0;
-    z-index: 1;
-    margin: 0;
-    width: 100%;
-    height: 100%;
-    padding: 0;
+    padding: 14px 12px;
+    display: flex;
+    flex-direction: column;
+  }
+  .card-rhode-grid .card-rhode-image {
+    position: relative;
+    flex: 1;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin: 0;
+    width: 100%;
+    overflow: hidden;
   }
   .card-rhode-grid .card-rhode-image img {
-    transform: scale(3) translateY(-10px); /* Move image up slightly */
+    transform: scale(1.8); /* Controlled zoom to prevent overlap */
     width: 100%;
     height: 100%;
     object-fit: contain;
   }
   .card-rhode-grid .card-rhode-top {
     z-index: 10;
-    position: relative;
-    justify-content: flex-start;
   }
   .card-rhode-grid .card-brand-label {
     font-size: 0.9rem;
     font-weight: 800;
-    color: #5b5a53;
   }
   .card-rhode-grid .card-rhode-details {
-    z-index: 10;
-    position: relative;
-    margin-top: auto;
-    background: transparent; /* Full transparency */
+    margin-top: 5px;
+    background: transparent;
     padding: 0;
     width: 100%;
   }
   .card-rhode-grid .stars {
     font-size: 0.58rem;
-    color: #5b5a53;
     margin-bottom: 2px;
   }
   .card-rhode-grid .card-product-title {
     font-size: 0.62rem;
-    color: #5b5a53;
     font-weight: 900;
     margin: 0;
     text-align: left;
   }
   .card-rhode-grid .buy-button-hover {
-    z-index: 10;
-    position: relative;
-    background: transparent; /* Transparent button */
-    margin: 10px 0 0;
+    background: transparent;
+    margin: 8px 0 0;
     width: 100%;
     border: 1px solid #5b5a53;
     border-radius: 50px;
