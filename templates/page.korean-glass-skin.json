@@ -1,0 +1,33 @@
+{
+  "sections": {
+    "hero": {
+      "type": "hero",
+      "settings": {
+        "title": "Korean Glass Skin",
+        "btn_text": "view skincare",
+        "hero_image": "shopify://shop_images/Artboard_4-100_jpg.jpg"
+      }
+    },
+    "nav": {
+      "type": "category-nav",
+      "settings": {}
+    },
+    "main": {
+      "type": "featured-grid",
+      "settings": {},
+      "blocks": {
+        "p1": { "type": "product", "settings": { "title": "Placeholder" } },
+        "p2": { "type": "product", "settings": { "title": "Placeholder" } },
+        "p3": { "type": "product", "settings": { "title": "Placeholder" } },
+        "p4": { "type": "product", "settings": { "title": "Placeholder" } },
+        "p5": { "type": "product", "settings": { "title": "Placeholder" } },
+        "p6": { "type": "product", "settings": { "title": "Placeholder" } },
+        "p7": { "type": "product", "settings": { "title": "Placeholder" } },
+        "p8": { "type": "product", "settings": { "title": "Placeholder" } },
+        "p9": { "type": "product", "settings": { "title": "Placeholder" } }
+      },
+      "block_order": ["p1", "p2", "p3", "p4", "p5", "p6", "p7", "p8", "p9"]
+    }
+  },
+  "order": ["hero", "nav", "main"]
+}

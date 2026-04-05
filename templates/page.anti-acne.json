@@ -1,0 +1,25 @@
+{
+  "sections": {
+    "hero": {
+      "type": "hero",
+      "settings": {
+        "title": "Anti Acne Solution",
+        "btn_text": "all collections",
+        "hero_image": "shopify://shop_images/Artboard_4-100_jpg.jpg"
+      }
+    },
+    "nav": {
+      "type": "category-nav",
+      "settings": {}
+    },
+    "main": {
+      "type": "featured-grid",
+      "settings": {},
+      "blocks": {
+        "p1": { "type": "product", "settings": { "title": "Anti Acne Serum", "brand_label": "skincare", "price": "RS. 1,500" } }
+      },
+      "block_order": ["p1"]
+    }
+  },
+  "order": ["hero", "nav", "main"]
+}
