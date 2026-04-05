@@ -202,14 +202,10 @@
   }
   .featured-grid-section {
     padding: 0 16px 40px;
-    background: #fff;
   }
   .card-rhode-grid {
-    aspect-ratio: 1 / 1.75;
+    aspect-ratio: 1 / 1.7;
     background-color: #f1efea;
-    border-radius: 12px;
-    position: relative;
-    overflow: hidden;
   }
   .card-rhode-inner-grid {
     position: absolute;
@@ -218,62 +214,65 @@
     display: flex;
     flex-direction: column;
   }
-  .card-rhode-grid .card-rhode-top {
-    display: flex !important;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
-    height: 20px;
-    z-index: 10;
-  }
-  .card-rhode-grid .card-brand-label {
-    font-size: 0.9rem;
-    font-weight: 700;
-    color: #5b5a53;
-  }
   .card-rhode-grid .card-rhode-image {
-    flex: 1;
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    margin: 0;
+    width: 100%;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100%;
-    margin: 10px 0;
   }
   .card-rhode-grid .card-rhode-image img {
-    max-width: 90%;
-    max-height: 90%;
+    transform: scale(3) translateY(-10px);
+    width: 100%;
+    height: 100%;
     object-fit: contain;
     mix-blend-mode: multiply;
   }
+  .card-rhode-grid .card-rhode-top {
+    z-index: 10;
+    position: relative;
+    justify-content: flex-start;
+  }
+  .card-rhode-grid .card-brand-label {
+    font-size: 0.9rem;
+    font-weight: 800;
+    color: #5b5a53;
+  }
   .card-rhode-grid .card-rhode-details {
+    z-index: 10;
+    position: relative;
     margin-top: auto;
-    text-align: left;
+    background: transparent;
+    padding: 0;
     width: 100%;
-    padding-bottom: 5px;
+    text-align: left;
   }
   .card-rhode-grid .stars {
-    font-size: 0.6rem;
+    font-size: 0.58rem;
     color: #5b5a53;
-    display: block;
     margin-bottom: 2px;
   }
   .card-rhode-grid .card-product-title {
     font-size: 0.62rem;
-    font-weight: 800;
-    margin: 0;
+    font-weight: 900;
     color: #5b5a53;
   }
   .card-rhode-grid .buy-button-hover {
+    z-index: 10;
+    position: relative;
     background: transparent;
+    margin: 8px 0 0;
+    width: 100%;
     border: 1px solid #5b5a53;
     border-radius: 50px;
-    margin-top: 10px;
-    padding: 8px 0;
-    font-size: 0.58rem;
+    padding: 7px 0;
+    font-size: 0.55rem;
     font-weight: 700;
     color: #5b5a53;
-    width: 100%;
-    text-align: center;
   }
 }
 {%- endstyle -%}
