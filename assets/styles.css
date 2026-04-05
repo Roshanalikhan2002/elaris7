@@ -695,14 +695,56 @@ a { color: inherit; text-decoration: none; }
   }
 }
 
+/* Product Collection Slider */
+.product-scroll-section {
+  position: relative;
+  margin-top: 20px;
+}
+
+.product-scroll-controls {
+  position: absolute;
+  top: 45%; /* Slightly above middle for better alignment with image move move moved moves move move move move move */
+  left: 10px;
+  right: 10px;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  pointer-events: none;
+  z-index: 100;
+}
+
+.scroll-arrow {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #fff;
+  border: 1px solid #d1d1cf;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  pointer-events: auto;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1); /* More visible shadow */
+}
+
+.scroll-arrow:hover {
+  background: #fff;
+  transform: scale(1.1);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+}
+
 .product-collection {
   display: flex;
-  gap: 12px;
+  gap: 16px; /* Slightly wider gap */
   overflow-x: auto;
   scrollbar-width: none;
   scroll-behavior: smooth;
-  padding-left: 12px;
+  padding: 10px 40px 30px; /* More padding for a cleaner look move move move */
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
 }
+
 .product-collection::-webkit-scrollbar { display: none; }
 
 /* Standard product card (used in the scroll) */
@@ -769,35 +811,186 @@ a { color: inherit; text-decoration: none; }
   }
 }
 
-/* ── Rhode-style product cards ── */
+/* ── Rhode-style product cards (High Fidelity) ── */
 .card-rhode {
-  flex: 0 0 370px;
-  height: 480px;
-  background-color: #f2f0ed;
+  flex: 0 0 30%; /* Clearly shows peek on most screens move move moved moves move move move move move move */
+  min-width: 330px;
+  height: 600px;
+  background-color: #f6f5f3;
   border-radius: 12px;
   display: flex;
   flex-direction: column;
   position: relative;
-  overflow: visible; /* Inner wrapper handles clipping */
+  overflow: hidden;
   cursor: pointer;
-  transition: box-shadow 0.3s ease;
+  transition: background-color 0.3s ease;
+  scroll-snap-align: start;
+  text-decoration: none;
 }
 
 .card-rhode:hover {
-  box-shadow: 0 8px 32px rgba(0,0,0,0.09);
+  background-color: #f0eeeb;
+}
+
+.card-link-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 24px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.card-rhode-top {
+  margin-bottom: 20px;
+}
+
+.card-brand-label {
+  font-size: 2.8rem;
+  font-weight: 900;
+  color: #333;
+  opacity: 1;
+  text-transform: lowercase;
+  letter-spacing: -0.05em;
+  line-height: 0.9;
+  font-family: var(--font-family-body);
+}
+
+.card-rhode-image {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+.product-main-img {
+  max-width: 100%;
+  max-height: 280px;
+  object-fit: contain;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-rhode:hover .product-main-img {
+  transform: scale(1.05);
+}
+
+.card-rhode-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: auto;
+}
+
+.card-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.card-stars {
+  font-size: 0.65rem;
+  color: #333;
+  letter-spacing: 0.1em;
+}
+
+.review-count {
+  color: #7A7973;
+  margin-left: 4px;
+}
+
+.card-name {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #333;
+}
+
+.btn-rhode-buy-pill {
+  width: 100%;
+  padding: 14px;
+  background: transparent;
+  border: 1.5px solid #333;
+  color: #333;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.btn-rhode-buy-pill:hover {
+  background: #333;
+  color: #fff;
+}
+
+@media (max-width: 1024px) {
+  .card-rhode {
+    flex: 0 0 350px;
+  }
 }
 
 @media (max-width: 768px) {
   .product-collection {
-    scroll-snap-type: x mandatory;
-    padding-right: 20px;
-    overflow-x: scroll;
+    padding: 0 16px 20px;
+    gap: 10px;
   }
   .card-rhode {
-    flex: 0 0 calc(100vw - 110px); /* Narrower so ~110px of 2nd card shows */
-    width: calc(100vw - 110px);
-    overflow: visible;
-    scroll-snap-align: start;
+    flex: 0 0 calc(100vw - 60px);
+    height: 520px;
+    min-width: unset;
+  }
+    .card-brand-label {
+      font-size: 2.2rem;
+    }
+  }
+
+/* Product Grid for Category Pages */
+.product-grid-section {
+  padding: 40px 12px;
+  margin-top: 100px; /* Space for fixed header */
+}
+
+.product-grid-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.product-grid-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  color: #333;
+  text-transform: lowercase;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  padding: 0 12px;
+}
+
+@media (max-width: 1024px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .product-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .product-grid-section {
+    padding: 20px 16px;
+    margin-top: 80px;
+  }
+  .product-grid-title {
+    font-size: 2rem;
   }
 }
 

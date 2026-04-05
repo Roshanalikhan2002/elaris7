@@ -64,11 +64,27 @@ document.addEventListener('DOMContentLoaded', () => {
   scrollArea.addEventListener('mouseup', () => {
     isDown = false;
   });
+  // Drag to Scroll logic (refined)
   scrollArea.addEventListener('mousemove', (e) => {
     if (!isDown) return;
-    e.preventDefault();
     const x = e.pageX - scrollArea.offsetLeft;
-    const walk = (x - startX) * 2; // scroll-fast
+    const walk = (x - startX) * 2;
     scrollArea.scrollLeft = scrollLeft - walk;
   });
+
+  // Product Scroll Arrow Buttons
+  const nextBtn = document.getElementById('scroll-next');
+  const prevBtn = document.getElementById('scroll-prev');
+
+  if (nextBtn && prevBtn && scrollArea) {
+    nextBtn.addEventListener('click', () => {
+      const cardWidth = scrollArea.querySelector('.card-rhode').offsetWidth;
+      scrollArea.scrollBy({ left: cardWidth + 12, behavior: 'smooth' });
+    });
+
+    prevBtn.addEventListener('click', () => {
+      const cardWidth = scrollArea.querySelector('.card-rhode').offsetWidth;
+      scrollArea.scrollBy({ left: -(cardWidth + 12), behavior: 'smooth' });
+    });
+  }
 });
