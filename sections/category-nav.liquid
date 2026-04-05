@@ -4,7 +4,7 @@
       {% for block in section.blocks %}
         <li>
           <a href="{{ block.settings.link | default: '#' }}" 
-             class="cat-link {% if block.settings.title == 'Featured' %}active{% endif %}" 
+             class="cat-link" 
              data-category="{{ block.settings.title | handleize }}"
              {{ block.shopify_attributes }}>
             {{ block.settings.title | uppercase }}
@@ -15,7 +15,7 @@
       {% assign default_cats = "Featured,Korean glass skin,Anti acne,Korean brightening,Hair care,Sets" | split: "," %}
       {% for cat in default_cats %}
         <li>
-          <a href="/pages/{{ cat | handleize }}" class="cat-link {% if forloop.first %}active{% endif %}" data-category="{{ cat | handleize }}">
+          <a href="/pages/{{ cat | handleize }}" class="cat-link" data-category="{{ cat | handleize }}">
             {{ cat | uppercase }}
           </a>
         </li>
@@ -26,16 +26,15 @@
 
 <style>
 .category-bar {
-  padding: 20px 40px;
+  padding: 30px 40px;
   background: #fff;
-  border-bottom: 1px solid #f0f0f0;
   overflow-x: auto;
   scrollbar-width: none;
 }
 .category-bar::-webkit-scrollbar { display: none; }
 .category-list {
   display: flex;
-  gap: 30px;
+  gap: 12px;
   list-style: none;
   padding: 0;
   margin: 0;
@@ -43,19 +42,33 @@
 }
 .cat-link {
   text-decoration: none;
-  font-size: 0.72rem;
+  font-size: 0.75rem;
   font-weight: 700;
   color: #7A7973;
-  letter-spacing: 0.1em;
-  transition: color 0.3s ease;
+  padding: 10px 24px;
+  border: 1px solid #e5e5e5;
+  border-radius: 50px;
+  letter-spacing: 0.08em;
+  transition: all 0.3s ease;
   white-space: nowrap;
+  display: inline-block;
 }
-.cat-link.active, .cat-link:hover {
+.cat-link:hover {
+  border-color: #333;
   color: #333;
+}
+.cat-link.active {
+  background-color: #5b5a53; /* Dark gray active color from reference move move move */
+  color: #fff;
+  border-color: #5b5a53;
 }
 @media (max-width: 768px) {
   .category-list {
     justify-content: flex-start;
+    padding: 0 16px;
+  }
+  .category-bar {
+    padding: 20px 0;
   }
 }
 </style>
