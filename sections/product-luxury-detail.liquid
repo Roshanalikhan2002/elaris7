@@ -15,12 +15,22 @@
   .product-gallery {
     position: sticky;
     top: 20px;
-    height: calc(100vh - 40px); /* Constrain to viewport height */
+    height: calc(100vh - 40px);
     border-radius: 14px;
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 10;
+  }
+  @media (max-width: 850px) {
+    .product-gallery {
+      position: relative;
+      top: 0;
+      height: auto;
+      aspect-ratio: 1/1;
+      margin-bottom: 12px;
+    }
   }
   .product-gallery-inner {
     width: 100%;
@@ -316,12 +326,12 @@
 
     <div class="product-details">
       <div class="product-header">
-        <h1 class="product-title">{{ product.title | default: "barrier butter" }}</h1>
+        <h1 class="product-title">{{ product.title | default: "night cream" }}</h1>
         <div class="product-award">BEST OF BEAUTY</div>
       </div>
 
       <div class="product-meta">
-        <span class="product-subtitle">INTENSIVE MOISTURE BALM</span>
+        <span class="product-subtitle">ADVANCED GLOW REGEN NIGHT CREAM</span>
         <div class="product-reviews">
           <span class="stars">★★★★★</span>
           <span class="review-count">(1,895)</span>
@@ -329,7 +339,7 @@
       </div>
 
       <div class="product-description">
-        {{ product.description | default: "An intensive moisture balm for deep hydration overnight. Our buttery-smooth formula is a supercharged addition to your nighttime routine." }}
+        {{ product.description | default: "An advanced overnight renewal cream formulated with Centella Asiatica and Peptides. Our ultra-rich formula works while you sleep to deeply nourish and restore radiance overnight." }}
       </div>
 
       <hr class="divider">
@@ -408,7 +418,7 @@
         </div>
       </div>
 
-      <button class="buy-button">BUY {{ product.title | upcase | default: "BARRIER BUTTER" }} - Rs. 3,500</button>
+      <button class="buy-button">BUY {{ product.title | upcase | default: "NIGHT CREAM" }} - Rs. 1,500</button>
       
       <div class="afterpay" style="margin-top: 15px; font-size: 0.8rem; color: #7a7873; text-align: center;">
         or interest-free payments with <strong>Afterpay</strong> ⓘ
