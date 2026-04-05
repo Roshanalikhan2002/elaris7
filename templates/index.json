@@ -24,10 +24,6 @@
         "product_limit": 6
       }
     },
-    "featured_grid": {
-      "type": "featured-grid",
-      "settings": {}
-    },
     "category_promos": {
       "type": "category-promos",
       "settings": {
@@ -71,7 +67,6 @@
     "hero",
     "category_nav",
     "featured_products",
-    "featured_grid",
     "category_promos",
     "category_promos_2",
     "social_grid",

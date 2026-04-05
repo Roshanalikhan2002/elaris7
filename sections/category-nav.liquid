@@ -4,7 +4,7 @@
       {% for block in section.blocks %}
         <li>
           <a href="{{ block.settings.link | default: '#' }}" 
-             class="cat-link {% if forloop.first %}active{% endif %}" 
+             class="cat-link {% if block.settings.title == 'Featured' %}active{% endif %}" 
              data-category="{{ block.settings.title | handleize }}"
              {{ block.shopify_attributes }}>
             {{ block.settings.title | uppercase }}
@@ -15,7 +15,7 @@
       {% assign default_cats = "Featured,Korean glass skin,Anti acne,Korean brightening,Hair care,Sets" | split: "," %}
       {% for cat in default_cats %}
         <li>
-          <a href="#" class="cat-link {% if forloop.first %}active{% endif %}" data-category="{{ cat | handleize }}">
+          <a href="/pages/{{ cat | handleize }}" class="cat-link {% if forloop.first %}active{% endif %}" data-category="{{ cat | handleize }}">
             {{ cat | uppercase }}
           </a>
         </li>
@@ -24,39 +24,41 @@
   </ul>
 </nav>
 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  const catLinks = document.querySelectorAll('.cat-link');
-  // Use class selectors instead of Shopify generated IDs which can vary
-  const scrollSection = document.querySelector('.product-scroll-wrapper');
-  const gridSection = document.getElementById('featured-grid-section');
-
-  function toggleView(catName) {
-    if (catName === 'featured') {
-      if (gridSection) gridSection.style.setProperty('display', 'block', 'important');
-      if (scrollSection) scrollSection.closest('.shopify-section').style.setProperty('display', 'none', 'important');
-    } else {
-      if (gridSection) gridSection.style.setProperty('display', 'none', 'important');
-      if (scrollSection) scrollSection.closest('.shopify-section').style.setProperty('display', 'block', 'important');
-    }
+<style>
+.category-bar {
+  padding: 20px 40px;
+  background: #fff;
+  border-bottom: 1px solid #f0f0f0;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.category-bar::-webkit-scrollbar { display: none; }
+.category-list {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  justify-content: center;
+}
+.cat-link {
+  text-decoration: none;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #7A7973;
+  letter-spacing: 0.1em;
+  transition: color 0.3s ease;
+  white-space: nowrap;
+}
+.cat-link.active, .cat-link:hover {
+  color: #333;
+}
+@media (max-width: 768px) {
+  .category-list {
+    justify-content: flex-start;
   }
-
-  // Initial state: Show Featured Grid, hide Scroll
-  toggleView('featured');
-
-  catLinks.forEach(link => {
-    link.addEventListener('click', function(e) {
-      if (this.getAttribute('href') === '#') e.preventDefault();
-      
-      catLinks.forEach(l => l.classList.remove('active'));
-      this.classList.add('active');
-
-      const catName = this.dataset.category;
-      toggleView(catName);
-    });
-  });
-});
-</script>
+}
+</style>
 
 {% schema %}
 {
