@@ -9,11 +9,11 @@
         </li>
       {% endfor %}
     {% else %}
-      {% assign default_cats = "FEATURED,SKIN,LIP+CHEEK,SETS,COLOUR" | split: "," %}
+      {% assign default_cats = "Featured,Korean glass skin,Anti acne,Korean brightening,Hair care,Sets" | split: "," %}
       {% for cat in default_cats %}
         <li>
           <a href="#" class="cat-link {% if forloop.first %}active{% endif %}">
-            {{ cat }}
+            {{ cat | uppercase }}
           </a>
         </li>
       {% endfor %}
@@ -47,11 +47,12 @@
     {
       "name": "Category Navigation",
       "blocks": [
-        { "type": "category", "settings": { "title": "FEATURED" } },
-        { "type": "category", "settings": { "title": "SKIN" } },
-        { "type": "category", "settings": { "title": "LIP+CHEEK" } },
-        { "type": "category", "settings": { "title": "SETS" } },
-        { "type": "category", "settings": { "title": "COLOUR" } }
+        { "type": "category", "settings": { "title": "Featured" } },
+        { "type": "category", "settings": { "title": "Korean glass skin" } },
+        { "type": "category", "settings": { "title": "Anti acne" } },
+        { "type": "category", "settings": { "title": "Korean brightening" } },
+        { "type": "category", "settings": { "title": "Hair care" } },
+        { "type": "category", "settings": { "title": "Sets" } }
       ]
     }
   ]
