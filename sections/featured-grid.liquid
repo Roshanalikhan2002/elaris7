@@ -212,10 +212,11 @@
     padding: 0 16px 40px;
   }
   .card-rhode-grid {
-    aspect-ratio: 1 / 1.75;
+    aspect-ratio: 1 / 1.7;
+    background-color: #f1efea;
   }
   .card-rhode-inner-grid {
-    padding: 12px;
+    padding: 12px 10px;
   }
   .card-rhode-grid .card-rhode-image {
     position: absolute;
@@ -225,41 +226,57 @@
     width: 100%;
     height: 100%;
     padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   .card-rhode-grid .card-rhode-image img {
-    transform: scale(2.2); /* Adjust scale for overlay feel */
+    transform: scale(3) translateY(-10px); /* Move image up slightly */
     width: 100%;
     height: 100%;
+    object-fit: contain;
   }
   .card-rhode-grid .card-rhode-top {
     z-index: 10;
     position: relative;
+    justify-content: flex-start;
   }
   .card-rhode-grid .card-brand-label {
-    font-size: 1.1rem;
+    font-size: 0.9rem;
+    font-weight: 800;
     color: #5b5a53;
   }
   .card-rhode-grid .card-rhode-details {
     z-index: 10;
     position: relative;
     margin-top: auto;
-    background: rgba(241, 239, 234, 0.85); /* Slight blur/bg for readability */
-    backdrop-filter: blur(4px);
-    padding: 10px;
-    border-radius: 12px 12px 0 0;
-    width: calc(100% + 24px);
-    margin: auto -12px 0;
+    background: transparent; /* Full transparency */
+    padding: 0;
+    width: 100%;
+  }
+  .card-rhode-grid .stars {
+    font-size: 0.58rem;
+    color: #5b5a53;
+    margin-bottom: 2px;
+  }
+  .card-rhode-grid .card-product-title {
+    font-size: 0.62rem;
+    color: #5b5a53;
+    font-weight: 900;
+    margin: 0;
+    text-align: left;
   }
   .card-rhode-grid .buy-button-hover {
     z-index: 10;
     position: relative;
-    background: #fff;
-    margin: 0 -12px -12px;
-    width: calc(100% + 24px);
-    border: none;
-    border-top: 1px solid rgba(0,0,0,0.05);
-    border-radius: 0;
-    padding: 12px 0;
+    background: transparent; /* Transparent button */
+    margin: 10px 0 0;
+    width: 100%;
+    border: 1px solid #5b5a53;
+    border-radius: 50px;
+    padding: 7px 0;
+    font-size: 0.55rem;
+    font-weight: 700;
   }
 }
 {%- endstyle -%}
