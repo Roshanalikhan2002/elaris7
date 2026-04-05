@@ -102,40 +102,35 @@
   overflow: hidden;
   text-decoration: none;
   color: inherit;
-  aspect-ratio: 1 / 1.7; /* Taller for more vertical space */
-  border: 1px solid rgba(0,0,0,0.02);
+  aspect-ratio: 1 / 1.55;
+  border: 1px solid rgba(0,0,0,0.03);
+  transition: transform 0.2s ease;
 }
 .card-rhode-inner-grid {
   position: absolute;
   inset: 0;
-  padding: 16px 12px 14px;
+  padding: 24px 18px 18px;
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 .card-rhode-grid .card-rhode-top {
-  width: 100%;
   display: flex !important;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
-  position: relative;
-  height: 20px;
+  z-index: 10;
+  height: 24px;
 }
 .card-rhode-grid .card-brand-label {
-  font-size: 0.95rem; /* Reduced per instructions */
+  font-size: 1.15rem;
   font-weight: 700;
   color: #5b5a53;
   text-transform: lowercase;
-  letter-spacing: -0.02em;
 }
 .card-rhode-grid .card-badge {
-  position: absolute;
-  right: 0;
-  top: 0;
-  font-size: 0.45rem;
+  font-size: 0.52rem;
   background: #5b5a53;
   color: #fff;
-  padding: 2px 8px;
+  padding: 3px 12px;
   border-radius: 20px;
   text-transform: lowercase;
   font-weight: 600;
@@ -145,54 +140,53 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  padding: 0;
-  margin: 15px 0;
+  padding: 10px 0;
 }
 .card-rhode-grid .card-rhode-image img {
-  width: 100%;
-  height: 100%;
+  max-width: 85%;
+  max-height: 85%;
   object-fit: contain;
   mix-blend-mode: multiply;
-  transform: scale(3.2); /* Zoomed in for full preview visibility */
   transition: transform 0.3s ease;
+}
+.card-rhode-grid:hover .card-rhode-image img {
+  transform: scale(1.05); /* Subtle desktop hover effect */
 }
 .card-rhode-grid .card-rhode-details {
   width: 100%;
   padding: 0;
   text-align: left;
-  margin-top: 10px;
 }
 .card-rhode-grid .stars {
-  font-size: 0.62rem; /* Reduced */
+  font-size: 0.72rem;
   color: #5b5a53;
   margin-bottom: 2px;
   display: block;
 }
 .card-rhode-grid .card-product-title {
-  font-size: 0.65rem; /* Reduced */
+  font-size: 0.78rem;
   color: #5b5a53;
   margin: 0;
   font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 0.03em;
-  line-height: 1.1;
+  letter-spacing: 0.04em;
+  line-height: 1.2;
 }
 .card-rhode-grid .buy-button-hover {
   position: relative;
   opacity: 1;
   width: 100%;
   margin-top: 12px;
-  padding: 8px 0;
+  padding: 10px 0;
   border: 1px solid #5b5a53;
   color: #5b5a53;
   border-radius: 50px;
-  font-size: 0.58rem; /* Reduced */
+  font-size: 0.68rem;
   font-weight: 700;
   text-align: center;
   background: transparent;
   text-transform: uppercase;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.05em;
   box-sizing: border-box;
 }
 @media (max-width: 900px) {
