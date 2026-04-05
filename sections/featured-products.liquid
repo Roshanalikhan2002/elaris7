@@ -106,7 +106,9 @@
           {%- assign pname = fallback_names[forloop.index0] -%}
           {%- assign pimage = fallback_images[forloop.index0] -%}
           {%- assign plabel = fallback_labels[forloop.index0] | default: 'antiacne' -%}
-          <a href="{{ preview_product.url | default: '#' }}" class="card-rhode" style="text-decoration: none; color: inherit; display: flex; flex-direction: column;">
+          {%- assign phandle = pname | handleize -%}
+          {%- assign p_real = all_products[phandle] -%}
+          <a href="{{ p_real.url | default: '#' }}" class="card-rhode" style="text-decoration: none; color: inherit; display: flex; flex-direction: column;">
             {% if forloop.first %}
               <div class="mobile-swipe-badge">swipe</div>
             {% endif %}
