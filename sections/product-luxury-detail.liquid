@@ -462,17 +462,13 @@
           </div>
         {%- else -%}
           <!-- Fallback thumbs if no Shopify images uploaded yet -->
-          {%- if section.settings.asset_main_image != blank -%}
-            <div class="thumb-item active" onmouseover="scrollGallery(0, this)">
-              <img src="{{ section.settings.asset_main_image | asset_url }}" alt="{{ product.title }}">
-            </div>
-          {%- else -%}
-            <div class="thumb-item active" onmouseover="scrollGallery(0, this)">
-              <img src="{{ 'night-cream.jpg' | asset_url }}" alt="Night Cream">
-            </div>
-          {%- endif -%}
+          {%- assign handle_image = product.handle | append: '.jpg' -%}
+          {%- assign fallback_img = section.settings.asset_main_image | default: handle_image -%}
+          <div class="thumb-item active" onmouseover="scrollGallery(0, this)">
+            <img src="{{ fallback_img | asset_url }}" alt="{{ product.title }}">
+          </div>
           <div class="thumb-item" onmouseover="scrollGallery(1, this)">
-            <img src="{{ 'night-cream-jar.jpg' | asset_url }}" alt="Night Cream Jar">
+            <img src="{{ 'night-cream-jar.jpg' | asset_url }}" alt="Jar">
           </div>
           <div class="thumb-item" onmouseover="scrollGallery(2, this)">
             <img src="{{ 'night-cream-ba.jpg' | asset_url }}" alt="Before After">
@@ -490,11 +486,9 @@
             <div class="gallery-slide">
               <img src="{{ image | img_url: 'master' }}" alt="{{ image.alt | escape }}">
             </div>
-          {%- if section.settings.asset_main_image != blank -%}
-            <div class="gallery-slide"><img src="{{ section.settings.asset_main_image | asset_url }}" alt="{{ product.title }}"></div>
-          {%- else -%}
-            <div class="gallery-slide"><img src="{{ 'night-cream.jpg' | asset_url }}" alt="Night Cream"></div>
-          {%- endif -%}
+          {%- assign handle_image = product.handle | append: '.jpg' -%}
+          {%- assign fallback_img = section.settings.asset_main_image | default: handle_image -%}
+          <div class="gallery-slide"><img src="{{ fallback_img | asset_url }}" alt="{{ product.title }}"></div>
             <div class="gallery-slide"><img src="{{ 'night-cream-jar.jpg' | asset_url }}" alt="Night Cream Jar"></div>
             <div class="gallery-slide"><img src="{{ 'night-cream-ba.jpg' | asset_url }}" alt="Before After"></div>
             <div class="gallery-slide"><img src="{{ 'night-cream-swatch.jpeg' | asset_url }}" alt="Swatch"></div>
