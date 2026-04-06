@@ -103,7 +103,8 @@
         "stat_2"
       ],
       "settings": {
-        "footnote": "*Based on a 14-day consumer perception study."
+        "footnote": "*Based on a 14-day consumer perception study.",
+        "image": "shopify://shop_images/before_after-100.jpg"
       }
     },
     "faq_split": {
