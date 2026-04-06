@@ -37,6 +37,7 @@
       "type": "category-promos",
       "settings": {
         "flip_layout": false,
+        "white_text": false,
         "pagination_text": "",
         "image_left": "shopify://shop_images/new_bundle_banner-100_jpg.jpg",
         "product_image": "shopify://shop_images/brightening_bundle-100_jpg.jpg",
@@ -79,9 +80,9 @@
       "settings": {
         "image": "shopify://shop_images/to_restore_protect_and_nurture-100_jpg.jpg",
         "button_link": "",
-        "mission_text": "",
-        "philanthropy_text": "",
-        "sustainability_text": ""
+        "mission_text": "Our mission is to empower your natural beauty through gentle, halal, and faith-conscious skincare. Every product is designed to nurture confidence, radiance, and well-being, so your skin reflects the care and attention it truly deserves.",
+        "philanthropy_text": "Blending the wisdom of Korean skincare with Sunnah-inspired ingredients, our formulas harness the power of Centella Asiatica and honey to reveal luminous, glass-like skin. Each product is meticulously crafted for hydration, calmness, and a radiant glow, creating a modern skincare ritual rooted in science and tradition.",
+        "sustainability_text": "We care for your skin and the planet. From eco-friendly packaging to responsibly sourced ingredients, every Elaris7 product is designed to minimize impact while maximizing effectiveness. Gentle, clean, and sustainable, beauty you can feel good about."
       }
     }
   },
