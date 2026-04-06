@@ -156,12 +156,36 @@
   .accordion-item {
     border-bottom: 1px solid rgba(0,0,0,0.1);
     padding: 18px 0;
+  }
+  .accordion-item summary {
     display: flex;
     justify-content: space-between;
     cursor: pointer;
     font-weight: 700;
     font-size: 0.85rem;
     color: #5b5a53;
+    list-style: none;
+  }
+  .accordion-item summary::-webkit-details-marker {
+    display: none;
+  }
+  .accordion-item[open] summary span:last-child {
+    transform: rotate(45deg);
+    display: inline-block;
+  }
+  .accordion-content {
+    padding-top: 15px;
+    font-size: 0.85rem;
+    color: #5b5a53;
+    line-height: 1.5;
+    font-weight: 400;
+  }
+  .accordion-content ul {
+    padding-left: 20px;
+    margin: 0;
+  }
+  .accordion-content li {
+    margin-bottom: 8px;
   }
 
   .bogo-offer-container {
@@ -421,9 +445,52 @@
       <hr class="divider">
 
       <div class="accordions">
-        <div class="accordion-item"><span>BENEFITS</span><span>+</span></div>
-        <div class="accordion-item"><span>APPLICATION</span><span>+</span></div>
-        <div class="accordion-item"><span>KEY INGREDIENTS</span><span>+</span></div>
+        <details class="accordion-item">
+          <summary><span>BENEFITS</span><span>+</span></summary>
+          <div class="accordion-content">
+            <ul>
+              <li>Boosts skin radiance for a naturally luminous glow</li>
+              <li>Provides 72-hour hydration with a moisture-locking formula</li>
+              <li>Supports collagen to improve skin firmness and elasticity</li>
+              <li>Helps fade dark spots, acne scars, and discoloration</li>
+              <li>Repairs and strengthens the skin barrier overnight</li>
+              <li>Delivers a soft, smooth, poreless finish by morning</li>
+              <li>Reduces the appearance of fine lines and wrinkles</li>
+              <li>Promotes a more even-toned, youthful-looking complexion over time</li>
+            </ul>
+          </div>
+        </details>
+        <details class="accordion-item">
+          <summary><span>APPLICATION</span><span>+</span></summary>
+          <div class="accordion-content">
+            <p style="margin:0;">After cleansing and toning, take a small amount of Centella Night Cream and gently massage it upward onto your face and neck, avoiding the eye area. Leave it on overnight to fully absorb and lock in hydration, allowing your skin to repair, restore, and wake up looking radiant and smooth. Consistency is key for optimal results.</p>
+          </div>
+        </details>
+        <details class="accordion-item">
+          <summary><span>TRICK</span><span>+</span></summary>
+          <div class="accordion-content">
+            <ul>
+              <li>Apply a slightly thicker layer on dry areas to maximize overnight hydration</li>
+              <li>Combine with your serum for enhanced repair benefits</li>
+              <li>Use consistently to see a reduction in fine lines and dark spots</li>
+            </ul>
+          </div>
+        </details>
+        <details class="accordion-item">
+          <summary><span>KEY INGREDIENTS</span><span>+</span></summary>
+          <div class="accordion-content">
+            <ul>
+              <li>Centella Asiatica</li>
+              <li>Brightening Complex</li>
+              <li>Moisture-Lock Technology</li>
+              <li>Collagen Support Blend</li>
+              <li>Spot-Corrective Blend</li>
+              <li>Barrier Repair Actives</li>
+              <li>Line-Reducing Complex</li>
+              <li>Even-Tone Enhancer</li>
+            </ul>
+          </div>
+        </details>
       </div>
     </div>
   </div>
