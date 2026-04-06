@@ -27,6 +27,8 @@
             <div class="card-rhode-image">
               {% if block.settings.main_image != blank %}
                 {{ block.settings.main_image | image_url: width: 800 | image_tag: alt: block.settings.title, class: 'product-main-img' }}
+              {% elsif block.settings.asset_image != blank %}
+                <img src="{{ block.settings.asset_image | asset_url }}" alt="{{ block.settings.title }}" class="product-main-img">
               {% else %}
                 <div class="product-placeholder-img"></div>
               {% endif %}
@@ -236,6 +238,11 @@
           "type": "image_picker",
           "id": "main_image",
           "label": "Primary Image (Product)"
+        },
+        {
+          "type": "text",
+          "id": "asset_image",
+          "label": "Asset Image Filename (e.g. night-cream.jpg)"
         },
         {
           "type": "image_picker",
