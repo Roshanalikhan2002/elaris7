@@ -1,17 +1,18 @@
 <div class="section-grid">
-  <div class="card showcase-image">
+  <div class="card showcase-image" style="position: relative !important; height: 100% !important; background: none !important;">
     {% if section.settings.model_image != blank %}
-      {{ section.settings.model_image | image_url: width: 2000 | image_tag: class: 'full-img', alt: 'Model' }}
+      {{ section.settings.model_image | image_url: width: 2000 | image_tag: class: 'full-img', alt: 'Model', style: 'position: absolute !important; top: 0 !important; left: 0 !important; width: 100% !important; height: 100% !important; object-fit: cover !important;' }}
     {% else %}
-      <img src="{{ 'new-bundle-banner.jpg' | asset_url }}" alt="New Bundle Banner" class="full-img">
+      <img src="{{ 'new-bundle-banner.jpg' | asset_url }}" alt="New Bundle Banner" class="full-img" style="position: absolute !important; top: 0 !important; left: 0 !important; width: 100% !important; height: 100% !important; object-fit: cover !important;">
     {% endif %}
   </div>
-  <div class="card showcase-image">
+  <div class="card showcase-image" style="position: relative !important; height: 100% !important; background: none !important;">
      {% if section.settings.smear_image != blank %}
-        {{ section.settings.smear_image | image_url: width: 2000 | image_tag: class: 'full-img', alt: 'Product Shot' }}
+        {{ section.settings.smear_image | image_url: width: 2000 | image_tag: class: 'full-img', alt: 'Product Shot', style: 'position: absolute !important; top: 0 !important; left: 0 !important; width: 100% !important; height: 100% !important; object-fit: cover !important;' }}
       {% else %}
-        <img src="https://images.unsplash.com/photo-1629198688000-71f23e745b6e?q=80&w=1200" alt="Product Swirl" class="full-img">
+        <img src="https://images.unsplash.com/photo-1629198688000-71f23e745b6e?q=80&w=1200" alt="Product Swirl" class="full-img" style="position: absolute !important; top: 0 !important; left: 0 !important; width: 100% !important; height: 100% !important; object-fit: cover !important;">
       {% endif %}
+      <div class="page-count">{{ section.settings.count }}</div>
   </div>
 </div>
 
