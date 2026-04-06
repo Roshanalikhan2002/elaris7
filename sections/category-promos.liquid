@@ -31,33 +31,13 @@
       {%- endif -%}
     </div>
 
-    <!-- Product Detail Column -->
-    <div class="split-cat-right" style="flex: 1; min-width: 50%;">
-      <div class="product-showcase-card" style="width: 100% !important; height: 100% !important; position: relative !important; overflow: hidden !important; border-radius: 12px; background: none !important; padding: 0 !important; margin: 0 !important;">
-        <div class="product-swirl-wrap" style="width: 100% !important; height: 100% !important; margin: 0 !important; padding: 0 !important;">
-          {%- if section.settings.product_image != blank -%}
-            {{ section.settings.product_image | image_url: width: 2400 | image_tag: class: 'product-swirl-img', style: 'width:100% !important; height:100% !important; object-fit:cover !important; display:block !important;' }}
-          {%- else -%}
-            <div class="placeholder-bg swirl-placeholder">Product Swirl</div>
-          {%- endif -%}
-        </div>
-
-        {%- unless section.settings.hide_details -%}
-          <div class="product-showcase-details">
-            <div class="stars-row">★ ★ ★ ★ ★ (6,944)</div>
-            <h2 class="showcase-title">{{ section.settings.product_title | default: 'CENTELLA NIGHT CREAM' | upcase }}</h2>
-            <p class="showcase-subtitle">{{ section.settings.product_subtitle | default: 'A raspberry pink glow' }}</p>
-            
-            <div class="buy-action-row">
-              <a href="{{ section.settings.product_link | default: '#' }}" class="btn-pill-buy">
-                BUY NOW — {{ section.settings.product_price | default: 'RS. 2,500' }}
-              </a>
-            </div>
-          </div>
-        {%- endunless -%}
-
-        <div class="pagination-counter">{{ section.settings.pagination_text | default: '1/4' }}</div>
-      </div>
+    <!-- Product/Right Image Column (Now Mirrored for 100% Fit) -->
+    <div class="split-cat-right" style="flex: 1;">
+      {%- if section.settings.product_image != blank -%}
+        {{ section.settings.product_image | image_url: width: 1200 | image_tag: class: 'split-cat-img', loading: 'lazy' }}
+      {%- else -%}
+        <div class="placeholder-bg" style="background:#f2f0ed; height:100%; min-height:400px; display:flex; align-items:center; justify-content:center;">Lifestyle Image</div>
+      {%- endif -%}
     </div>
   </div>
 </div>
