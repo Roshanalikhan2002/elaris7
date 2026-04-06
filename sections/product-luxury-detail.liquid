@@ -17,11 +17,9 @@
     top: 20px;
     height: calc(100vh - 40px);
     border-radius: 14px;
-    display: flex;
-    gap: 15px;
+    overflow: hidden;
     z-index: 10;
     background: #f2f0ed;
-    padding: 15px;
   }
   @media (max-width: 850px) {
     .product-gallery {
@@ -29,23 +27,29 @@
       top: 0;
       height: auto;
       aspect-ratio: 1/1;
-      margin-bottom: 12px;
-      flex-direction: column-reverse;
+      margin-bottom: 24px;
     }
   }
   .gallery-thumbnails {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
     display: flex;
     flex-direction: column;
     gap: 12px;
     justify-content: center;
     width: 60px;
+    z-index: 30;
   }
   @media (max-width: 850px) {
     .gallery-thumbnails {
+      position: static;
       flex-direction: row;
       width: 100%;
       height: auto;
-      margin-top: 10px;
+      margin-top: 15px;
+      transform: none;
     }
   }
   .thumb-item {
@@ -54,13 +58,15 @@
     border-radius: 8px;
     overflow: hidden;
     cursor: pointer;
-    border: 2px solid transparent;
-    transition: border-color 0.2s, transform 0.2s;
+    border: 2px solid rgba(255,255,255,0.8);
     background: white;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
   }
   .thumb-item:hover, .thumb-item.active {
     border-color: #002d5f;
-    transform: scale(1.05);
+    transform: scale(1.1);
+    box-shadow: 0 8px 16px rgba(0,45,95,0.2);
   }
   .thumb-item img {
     width: 100%;
@@ -68,14 +74,25 @@
     object-fit: cover;
   }
   .product-gallery-inner {
-    flex: 1;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+  }
+  .gallery-viewport {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  }
+  .gallery-slide {
+    min-width: 100%;
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
-    overflow: hidden;
-    border-radius: 12px;
+    padding: 40px;
   }
   .main-product-img {
     max-width: 100%;
@@ -385,35 +402,36 @@
   <div class="product-grid">
     <div class="product-gallery">
       <div class="gallery-thumbnails">
-        <div class="thumb-item active" onmouseover="updateGallery('{{ 'night-cream.jpg' | asset_url }}', this)">
+        <div class="thumb-item active" onmouseover="updateGallery(0, this)">
           <img src="{{ 'night-cream.jpg' | asset_url }}" alt="Thumb 1">
         </div>
-        <div class="thumb-item" onmouseover="updateGallery('{{ 'night-cream-jar.jpg' | asset_url }}', this)">
+        <div class="thumb-item" onmouseover="updateGallery(1, this)">
           <img src="{{ 'night-cream-jar.jpg' | asset_url }}" alt="Thumb 2">
         </div>
-        <div class="thumb-item" onmouseover="updateGallery('{{ 'night-cream-ba.jpg' | asset_url }}', this)">
+        <div class="thumb-item" onmouseover="updateGallery(2, this)">
           <img src="{{ 'night-cream-ba.jpg' | asset_url }}" alt="Thumb 3">
         </div>
-        <div class="thumb-item" onmouseover="updateGallery('{{ 'night-cream-swatch.jpeg' | asset_url }}', this)">
+        <div class="thumb-item" onmouseover="updateGallery(3, this)">
           <img src="{{ 'night-cream-swatch.jpeg' | asset_url }}" alt="Thumb 4">
         </div>
       </div>
       <div class="product-gallery-inner">
-        <img src="{{ 'night-cream.jpg' | asset_url }}" id="main-gallery-img" class="main-product-img" alt="Night Cream" style="object-fit: contain;">
+        <div class="gallery-viewport" id="galleryViewport">
+          <div class="gallery-slide"><img src="{{ 'night-cream.jpg' | asset_url }}" class="main-product-img" alt="Night Cream"></div>
+          <div class="gallery-slide"><img src="{{ 'night-cream-jar.jpg' | asset_url }}" class="main-product-img" alt="Jar View"></div>
+          <div class="gallery-slide"><img src="{{ 'night-cream-ba.jpg' | asset_url }}" class="main-product-img" alt="Before After"></div>
+          <div class="gallery-slide"><img src="{{ 'night-cream-swatch.jpeg' | asset_url }}" class="main-product-img" alt="Swatch View"></div>
+        </div>
       </div>
     </div>
 
     <script>
-      function updateGallery(imgSrc, thumbElement) {
-        const mainImg = document.getElementById('main-gallery-img');
+      function updateGallery(index, thumbElement) {
+        const viewport = document.getElementById('galleryViewport');
         const thumbs = document.querySelectorAll('.thumb-item');
         
-        // Update image with smooth fade
-        mainImg.style.opacity = '0';
-        setTimeout(() => {
-          mainImg.src = imgSrc;
-          mainImg.style.opacity = '1';
-        }, 150);
+        // Update transform with right-to-left slide effect
+        viewport.style.transform = `translateX(-${index * 100}%)`;
 
         // Update active class
         thumbs.forEach(t => t.classList.remove('active'));
