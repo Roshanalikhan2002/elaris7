@@ -5,13 +5,24 @@
   </div>
 
   <div class="social-grid-container">
-    {% for i in (1..4) %}
+    {% for i in (1..5) %}
       <div class="social-item">
         {% assign img_key = 'image_' | append: i %}
         {% if section.settings[img_key] != blank %}
           {{ section.settings[img_key] | image_url: width: 800 | image_tag: class: 'social-img', loading: 'lazy' }}
         {% else %}
-          <div class="placeholder-social">{% if i == 1 %}Model Photo{% elsif i == 2 %}Product Close-up{% elsif i == 3 %}Customer Glow{% else %}Brand Aesthetic{% endif %}</div>
+           {% comment %} User request: Pick images L to R (1,2,3,4) and place R to L (5,4,3,2) skipping 1st {% endcomment %}
+           {% if i == 5 %}
+             <img src="{{ 'social-face.jpg' | asset_url }}" alt="Model Photo" class="social-img">
+           {% elsif i == 4 %}
+             <img src="{{ 'social-jar.jpg' | asset_url }}" alt="Product Close-up" class="social-img">
+           {% elsif i == 3 %}
+             <img src="{{ 'social-anti-acne.png' | asset_url }}" alt="Anti Acne" class="social-img">
+           {% elsif i == 2 %}
+             <img src="{{ 'social-hand.jpg' | asset_url }}" alt="Brand Aesthetic" class="social-img">
+           {% else %}
+             <div class="placeholder-social">User Story</div>
+           {% endif %}
         {% endif %}
       </div>
     {% endfor %}
@@ -59,12 +70,19 @@
 }
 
 .social-grid-container {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: flex;
   gap: 16px;
+  overflow-x: auto;
+  scrollbar-width: none; /* Hide scrollbar for clean look */
+  -ms-overflow-style: none; /* Internet Explorer and Edge */
+}
+
+.social-grid-container::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, and Opera */
 }
 
 .social-item {
+  flex: 0 0 calc(25% - 12px); /* ensure exactly 4 items are shown by default on desktop */
   border-radius: 12px;
   overflow: hidden;
   aspect-ratio: 1 / 1;
@@ -158,6 +176,11 @@
       "type": "image_picker",
       "id": "image_4",
       "label": "Photo 4"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_5",
+      "label": "Photo 5"
     }
   ],
   "presets": [
