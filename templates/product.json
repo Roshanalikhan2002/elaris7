@@ -1,5 +1,13 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
-  "name": "Luxury Default",
   "layout": "theme",
   "sections": {
     "main": {
@@ -12,23 +20,39 @@
     },
     "details_split": {
       "type": "product-details-split",
-      "settings": {}
+      "settings": {
+        "title": "A creamy blush for BUILDABLE color + BABY-SOFT cheeks.",
+        "image": "shopify://shop_images/night_cream-100.jpg_1.jpg"
+      }
     },
     "ingredients": {
       "type": "product-ingredients",
-      "settings": {}
+      "settings": {
+        "title": "what's inside",
+        "intro": "Our formula is packed with 13 efficacious hero ingredients. Meet 2 of our favorites for intensive hydration.",
+        "footer_text": "also made with POLYGLUTAMIC ACID, ISOSORBIDE DICAPRYLATE, CERAMIDE NP, PALMITOYL TETRAPEPTIDE-10, PALMITOYL TRIPEPTIDE-8, BISABOLOL, GINGER ROOT EXTRACT",
+        "show_btn": true,
+        "btn_label": "FULL INGREDIENTS LIST"
+      }
     },
     "benefits_focus": {
       "type": "product-benefits-focus",
-      "settings": {}
+      "settings": {
+        "subtitle": "SPREAD IT ON FOR:"
+      }
     },
     "study_results": {
       "type": "product-study-results",
-      "settings": {}
+      "settings": {
+        "footnote": "*Based on a 32-subject consumer perception study after 2 weeks of use."
+      }
     },
     "faq_split": {
       "type": "product-faq-split",
-      "settings": {}
+      "settings": {
+        "title": "FAQ",
+        "subtitle": "Find out more about Barrier Butter."
+      }
     },
     "product_reviews": {
       "type": "product-reviews",
@@ -37,7 +61,8 @@
     "related_products": {
       "type": "featured-products",
       "settings": {
-        "heading": "you may also like"
+        "collection": "",
+        "product_limit": 15
       }
     }
   },
