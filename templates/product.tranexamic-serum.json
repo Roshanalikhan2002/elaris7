@@ -4,7 +4,11 @@
     "main": {
       "type": "product-luxury-detail",
       "settings": {
-        "asset_main_image": "tranexamic-serum.jpg"
+        "asset_main_image": "tranexamic-serum.jpg",
+        "subtitle": "",
+        "show_reviews": false,
+        "description": "A lightweight, glow-enhancing moisturizer infused with Centella Asiatica, brightening complexes, and nourishing botanicals to hydrate, soothe, and refine your skin for a smooth, glass-like finish every day.",
+        "show_ingredients": false
       }
     },
     "meet_product": {

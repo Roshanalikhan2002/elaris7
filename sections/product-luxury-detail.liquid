@@ -517,25 +517,33 @@
       </div>
 
       <div class="product-meta" style="margin-top: 5px;">
-        <span class="product-subtitle">Night Renewal</span>
-        <div class="product-reviews">
-          <span class="stars">★★★★★</span>
-          <span class="review-count">(16k)</span>
-        </div>
+        <span class="product-subtitle">{{ section.settings.subtitle | default: 'Night Renewal' }}</span>
+        {%- if section.settings.show_reviews != false -%}
+          <div class="product-reviews">
+            <span class="stars">★★★★★</span>
+            <span class="review-count">({{ section.settings.review_count | default: '16k' }})</span>
+          </div>
+        {%- endif -%}
       </div>
 
       <div class="product-description" style="margin-top: 15px; font-weight: 600; color: #4a4a4a;">
-        Faith's Light. Korean Science. <br>Powered by Nature's Purest.
+        {%- if section.settings.description != blank -%}
+          {{ section.settings.description }}
+        {%- else -%}
+          Faith's Light. Korean Science. <br>Powered by Nature's Purest.
+        {%- endif -%}
       </div>
       
-      <div class="ingredients-preview" style="margin-top: 20px;">
-        <span class="ing-label" style="display: flex; align-items: center; gap: 8px; font-weight: 700; color: #333; margin-bottom: 8px;">
-          <span style="font-size: 1.2rem;">🌱</span> Key Ingredients
-        </span>
-        <p style="font-size: 0.88rem; line-height: 1.5; color: #555;">
-          Glutathione, Vitamin C, Alpha Arbutin, Centella Asiatica, Kojic Dipalmitate, Niacinamide, Honey, Hyaluronic Acid,
-        </p>
-      </div>
+      {%- if section.settings.show_ingredients != false -%}
+        <div class="ingredients-preview" style="margin-top: 20px;">
+          <span class="ing-label" style="display: flex; align-items: center; gap: 8px; font-weight: 700; color: #333; margin-bottom: 8px;">
+            <span style="font-size: 1.2rem;">🌱</span> Key Ingredients
+          </span>
+          <p style="font-size: 0.88rem; line-height: 1.5; color: #555;">
+            {{ section.settings.key_ingredients | default: 'Glutathione, Vitamin C, Alpha Arbutin, Centella Asiatica, Kojic Dipalmitate, Niacinamide, Honey, Hyaluronic Acid,' }}
+          </p>
+        </div>
+      {%- endif -%}
 
       <hr class="divider">
 
@@ -767,6 +775,42 @@
       "id": "asset_main_image",
       "label": "Fallback Asset Image",
       "info": "Used if no product media is uploaded. Example: tranexamic-serum.jpg"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Night Renewal"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_reviews",
+      "label": "Show Reviews",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "review_count",
+      "label": "Review Count",
+      "default": "16k"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Faith's Light. Korean Science. <br>Powered by Nature's Purest."
+    },
+    {
+      "type": "checkbox",
+      "id": "show_ingredients",
+      "label": "Show Key Ingredients",
+      "default": true
+    },
+    {
+      "type": "textarea",
+      "id": "key_ingredients",
+      "label": "Key Ingredients List text",
+      "default": "Glutathione, Vitamin C, Alpha Arbutin, Centella Asiatica, Kojic Dipalmitate, Niacinamide, Honey, Hyaluronic Acid,"
     }
   ],
   "presets": [
