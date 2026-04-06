@@ -44,12 +44,18 @@
   }
   @media (max-width: 850px) {
     .gallery-thumbnails {
-      position: static;
-      flex-direction: row;
-      width: 100%;
-      height: auto;
-      margin-top: 15px;
+      position: absolute;
+      left: 15px;
+      top: 20px;
       transform: none;
+      flex-direction: column;
+      width: 45px;
+      gap: 8px;
+      margin-top: 0;
+    }
+    .thumb-item {
+      width: 40px;
+      height: 40px;
     }
   }
   .thumb-item {
