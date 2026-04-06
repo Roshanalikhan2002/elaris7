@@ -26,6 +26,10 @@
               {% else %}
                 <div class="product-placeholder-img"></div>
               {% endif %}
+
+              {% if block.settings.hover_image != blank %}
+                {{ block.settings.hover_image | image_url: width: 1200 | image_tag: class: 'card-hover-bg', alt: block.settings.title }}
+              {% endif %}
             </div>
             <div class="card-rhode-footer">
               <div class="card-meta">
@@ -41,6 +45,7 @@
       {% comment %} Fallback Items if no blocks exist move move moved moves move move move move move move move move move {% endcomment %}
       {%- assign fallback_names = "Night Cream,Tranexamic Serum,Keratin Serum,Glow Serum,Face Wash" | split: "," -%}
       {%- assign fallback_images = "night-cream.jpg,tranexamic-serum.jpg,keratin-serum.jpg,glow-serum-100.jpg,facewash-100.jpg" | split: "," -%}
+      {%- assign fallback_hovers = "night-cream-hover.jpg,hover-anti-acne.png,keratin-serum.jpg,glow-serum-100.jpg,facewash-shot.png" | split: "," -%}
       {%- assign fallback_labels = "nightcream,serum,haircare,serum,cleanser" | split: "," -%}
       
       {% for i in (0..4) %}
@@ -57,6 +62,11 @@
                 <img src="{{ pimage | asset_url }}" class="product-main-img" alt="{{ pname }}">
               {% else %}
                 <div class="product-placeholder-img"></div>
+              {% endif %}
+
+              {%- assign hover_img = fallback_hovers[i] -%}
+              {% if hover_img != blank %}
+                <img src="{{ hover_img | asset_url }}" class="card-hover-bg" alt="{{ pname }} hover">
               {% endif %}
             </div>
             <div class="card-rhode-footer">

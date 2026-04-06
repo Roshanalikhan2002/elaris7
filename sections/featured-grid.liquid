@@ -40,6 +40,7 @@
       {% comment %} Fallback items same as scroll section but in grid {% endcomment %}
       {%- assign fallback_names = "Night Cream,Tranexamic Serum,Keratin Serum,Glow Serum,Glutathione Cream,Hair Mist,Face Wash,Anti Acne Serum,Sunscreen,Renewal Cleanser,Hydra Burst Moisturizer,Renewal Toner" | split: "," -%}
       {%- assign fallback_images = "night-cream.jpg,tranexamic-serum.jpg,keratin-serum.jpg,glow-serum-100.jpg,glutathione-cream-100.jpg,hair-mist.jpg,facewash-100.jpg,anti-acne-100.jpg,sunscreen-100.jpg,gel cleanser-100.jpg,moisturizer-100.jpg,renewal toner-100.jpg" | split: "," -%}
+      {%- assign fallback_hovers = "night-cream-hover.jpg,,,,,,,hover-anti-acne.png,,," | split: "," -%}
       {%- assign fallback_labels = "nightcream,serum,haircare,serum,repair,haircare,cleanser,antiacne,sunscreen,cleanser,moisturizer,toner" | split: "," -%}
       
       {% for i in (0..11) %}
@@ -49,8 +50,13 @@
         <div class="grid-item">
           <a href="#" class="card-rhode-grid">
             <div class="card-rhode-inner-grid">
-              {% if pimage != blank %}
-                <img src="{{ pimage | asset_url }}" class="card-hover-bg" alt="Hover Background">
+              {%- assign hover_img = fallback_hovers[i] -%}
+              {% if hover_img != blank %}
+                <img src="{{ hover_img | asset_url }}" class="card-hover-bg" alt="Hover Background">
+              {% else %}
+                {% if pimage != blank %}
+                  <img src="{{ pimage | asset_url }}" class="card-hover-bg" alt="Hover Background">
+                {% endif %}
               {% endif %}
 
               <div class="card-rhode-top">
