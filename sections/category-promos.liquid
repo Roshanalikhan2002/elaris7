@@ -33,26 +33,28 @@
 
     <!-- Product Detail Column -->
     <div class="split-cat-right" style="flex: 1;">
-      <div class="product-showcase-card">
-        <div class="product-swirl-wrap">
+      <div class="product-showcase-card" style="height: 100%; position: relative; overflow: hidden; border-radius: 12px; background: none; padding: 0;">
+        <div class="product-swirl-wrap" style="width: 100%; height: 100%; margin: 0;">
           {%- if section.settings.product_image != blank -%}
-            {{ section.settings.product_image | image_url: width: 800 | image_tag: class: 'product-swirl-img' }}
+            {{ section.settings.product_image | image_url: width: 2000 | image_tag: class: 'product-swirl-img', style: 'width:100%; height:100%; object-fit:cover;' }}
           {%- else -%}
             <div class="placeholder-bg swirl-placeholder">Product Swirl</div>
           {%- endif -%}
         </div>
 
-        <div class="product-showcase-details">
-          <div class="stars-row">★ ★ ★ ★ ★ (6,944)</div>
-          <h2 class="showcase-title">{{ section.settings.product_title | default: 'CENTELLA NIGHT CREAM' | upcase }}</h2>
-          <p class="showcase-subtitle">{{ section.settings.product_subtitle | default: 'A raspberry pink glow' }}</p>
-          
-          <div class="buy-action-row">
-            <a href="{{ section.settings.product_link | default: '#' }}" class="btn-pill-buy">
-              BUY NOW — {{ section.settings.product_price | default: 'RS. 2,500' }}
-            </a>
+        {%- unless section.settings.hide_details -%}
+          <div class="product-showcase-details">
+            <div class="stars-row">★ ★ ★ ★ ★ (6,944)</div>
+            <h2 class="showcase-title">{{ section.settings.product_title | default: 'CENTELLA NIGHT CREAM' | upcase }}</h2>
+            <p class="showcase-subtitle">{{ section.settings.product_subtitle | default: 'A raspberry pink glow' }}</p>
+            
+            <div class="buy-action-row">
+              <a href="{{ section.settings.product_link | default: '#' }}" class="btn-pill-buy">
+                BUY NOW — {{ section.settings.product_price | default: 'RS. 2,500' }}
+              </a>
+            </div>
           </div>
-        </div>
+        {%- endunless -%}
 
         <div class="pagination-counter">{{ section.settings.pagination_text | default: '1/4' }}</div>
       </div>
@@ -112,6 +114,12 @@
       "type": "url",
       "id": "product_link",
       "label": "Buy Link"
+    },
+    {
+      "type": "checkbox",
+      "id": "hide_details",
+      "label": "Hide Text & Buttons (Full Bleed Image)",
+      "default": true
     }
   ],
   "presets": [
