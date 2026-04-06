@@ -462,9 +462,15 @@
           </div>
         {%- else -%}
           <!-- Fallback thumbs if no Shopify images uploaded yet -->
-          <div class="thumb-item active" onmouseover="scrollGallery(0, this)">
-            <img src="{{ 'night-cream.jpg' | asset_url }}" alt="Night Cream">
-          </div>
+          {%- if section.settings.asset_main_image != blank -%}
+            <div class="thumb-item active" onmouseover="scrollGallery(0, this)">
+              <img src="{{ section.settings.asset_main_image | asset_url }}" alt="{{ product.title }}">
+            </div>
+          {%- else -%}
+            <div class="thumb-item active" onmouseover="scrollGallery(0, this)">
+              <img src="{{ 'night-cream.jpg' | asset_url }}" alt="Night Cream">
+            </div>
+          {%- endif -%}
           <div class="thumb-item" onmouseover="scrollGallery(1, this)">
             <img src="{{ 'night-cream-jar.jpg' | asset_url }}" alt="Night Cream Jar">
           </div>
@@ -484,8 +490,11 @@
             <div class="gallery-slide">
               <img src="{{ image | img_url: 'master' }}" alt="{{ image.alt | escape }}">
             </div>
+          {%- if section.settings.asset_main_image != blank -%}
+            <div class="gallery-slide"><img src="{{ section.settings.asset_main_image | asset_url }}" alt="{{ product.title }}"></div>
           {%- else -%}
             <div class="gallery-slide"><img src="{{ 'night-cream.jpg' | asset_url }}" alt="Night Cream"></div>
+          {%- endif -%}
             <div class="gallery-slide"><img src="{{ 'night-cream-jar.jpg' | asset_url }}" alt="Night Cream Jar"></div>
             <div class="gallery-slide"><img src="{{ 'night-cream-ba.jpg' | asset_url }}" alt="Before After"></div>
             <div class="gallery-slide"><img src="{{ 'night-cream-swatch.jpeg' | asset_url }}" alt="Swatch"></div>
@@ -755,7 +764,14 @@
 {% schema %}
 {
   "name": "Luxury Product Detail",
-  "settings": [],
+  "settings": [
+    {
+      "type": "text",
+      "id": "asset_main_image",
+      "label": "Fallback Asset Image",
+      "info": "Used if no product media is uploaded. Example: tranexamic-serum.jpg"
+    }
+  ],
   "presets": [
     {
       "name": "Luxury Product Detail"

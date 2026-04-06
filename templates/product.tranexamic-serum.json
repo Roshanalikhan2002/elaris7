@@ -3,7 +3,9 @@
   "sections": {
     "main": {
       "type": "product-luxury-detail",
-      "settings": {}
+      "settings": {
+        "asset_main_image": "tranexamic-serum.jpg"
+      }
     },
     "meet_product": {
       "type": "meet-the-product",
