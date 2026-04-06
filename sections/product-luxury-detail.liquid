@@ -44,18 +44,22 @@
   }
   @media (max-width: 850px) {
     .gallery-thumbnails {
-      position: absolute;
-      left: 15px;
-      top: 20px;
-      transform: none;
-      flex-direction: column;
-      width: 45px;
-      gap: 8px;
-      margin-top: 0;
+      display: none;
     }
-    .thumb-item {
-      width: 40px;
-      height: 40px;
+    .product-gallery-inner {
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scrollbar-width: none; /* Hide scrollbar on Firefox */
+    }
+    .product-gallery-inner::-webkit-scrollbar {
+      display: none; /* Hide scrollbar on Chrome/Safari */
+    }
+    .gallery-viewport {
+      transition: none;
+      width: auto;
+    }
+    .gallery-slide {
+      scroll-snap-align: start;
     }
   }
   .thumb-item {
