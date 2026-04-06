@@ -1148,7 +1148,7 @@ a { color: inherit; text-decoration: none; }
   opacity: 1;
 }
 
-.card-rhode:hover .card-rhode-image img,
+.card-rhode:hover .card-rhode-image .product-main-img,
 .card-rhode:hover .product-main-img {
   opacity: 0;
 }
