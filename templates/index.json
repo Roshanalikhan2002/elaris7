@@ -1,12 +1,3 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "sections": {
     "hero": {
@@ -204,9 +195,9 @@
         "pagination_text": "",
         "image_left": "shopify://shop_images/new_bundle_banner-100_jpg.jpg",
         "product_image": "shopify://shop_images/brightening_bundle-100_jpg.jpg",
-        "product_title": "Centella Night Cream",
+        "product_title": "KOREAN BRIGHTENING BUNDLE",
         "product_subtitle": "A raspberry pink glow",
-        "product_price": "RS. 2,500",
+        "product_price": "Rs. 10,920 Rs. 5,460",
         "product_link": "",
         "hide_details": true
       }
@@ -219,9 +210,9 @@
         "pagination_text": "1/4",
         "image_left": "shopify://shop_images/hair_care_bundle_product_image-100_jpg.jpg",
         "product_image": "shopify://shop_images/hair_care_image-100_jpg.jpg",
-        "product_title": "Centella Night Cream",
+        "product_title": "HAIR CARE BUNDLE",
         "product_subtitle": "A raspberry pink glow",
-        "product_price": "RS. 2,500",
+        "product_price": "Rs. 7,935 Rs. 3,962",
         "product_link": "",
         "hide_details": true
       }
@@ -247,15 +238,28 @@
         "philanthropy_text": "Blending the wisdom of Korean skincare with Sunnah-inspired ingredients, our formulas harness the power of Centella Asiatica and honey to reveal luminous, glass-like skin. Each product is meticulously crafted for hydration, calmness, and a radiant glow, creating a modern skincare ritual rooted in science and tradition.",
         "sustainability_text": "We care for your skin and the planet. From eco-friendly packaging to responsibly sourced ingredients, every Elaris7 product is designed to minimize impact while maximizing effectiveness. Gentle, clean, and sustainable, beauty you can feel good about."
       }
+    },
+    "social_grid_UshP8M": {
+      "type": "social-grid",
+      "settings": {
+        "title": "elaris7 + you",
+        "button_link": "",
+        "image_1": "shopify://shop_images/moisturizer_1-100_jpg.jpg",
+        "image_2": "shopify://shop_images/moisturizer-100.jpg_2.jpg",
+        "image_3": "shopify://shop_images/tranexamic-100_jpg.jpg",
+        "image_4": "shopify://shop_images/tranexamic_serum-100.jpg_1.jpg",
+        "image_5": "shopify://shop_images/anti_frizz_serum-100.jpg_1.jpg"
+      }
     }
   },
-  "order": [
+  "content_for_index": [
     "hero",
     "category_nav",
     "featured_products",
     "category_promos",
     "category_promos_9mCf8w",
     "social_grid",
-    "values_accordion"
+    "values_accordion",
+    "social_grid_UshP8M"
   ]
 }
