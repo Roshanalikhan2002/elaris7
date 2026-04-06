@@ -86,24 +86,40 @@
         "stat_1": {
           "type": "stat_block",
           "settings": {
-            "number": "97%",
-            "description": "SAID THEIR SKIN FELT DEEPLY HYDRATED"
+            "number": "99%",
+            "description": "SAID THEIR SKIN LOOKED MORE EVEN"
           }
         },
         "stat_2": {
           "type": "stat_block",
           "settings": {
-            "number": "95%",
-            "description": "SAID IT ABSORBED WELL WITHOUT HEAVINESS"
+            "number": "98%",
+            "description": "SAID THEIR SKIN APPEARED BRIGHTER"
+          }
+        },
+        "stat_3": {
+          "type": "stat_block",
+          "settings": {
+            "number": "97%",
+            "description": "SAID DARK SPOTS LOOKED LESS VISIBLE"
+          }
+        },
+        "stat_4": {
+          "type": "stat_block",
+          "settings": {
+            "number": "3 out of 4",
+            "description": "SAID THEY NOTICED IMPROVED SKIN CLARITY"
           }
         }
       },
       "block_order": [
         "stat_1",
-        "stat_2"
+        "stat_2",
+        "stat_3",
+        "stat_4"
       ],
       "settings": {
-        "footnote": "*Based on a 14-day consumer perception study.",
+        "footnote": "*Based on a 2-week consumer perception study with consistent daily use.",
         "image": "shopify://shop_images/before_after-100.jpg"
       }
     },
