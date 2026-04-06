@@ -12,30 +12,45 @@
         <div class="values-acc-item active">
           <div class="values-acc-header">
             <span>mission</span>
-            <span class="acc-icon">×</span>
+            <div class="acc-icon-wrap">
+              <div class="line v-line"></div>
+              <div class="line h-line"></div>
+            </div>
           </div>
           <div class="values-acc-content">
-            <p>{{ section.settings.mission_text | default: 'Our mission is to provide simple, intentional, and high-performance skincare essentials for all.' }}</p>
+            <div class="values-acc-content-inner">
+              <p>{{ section.settings.mission_text | default: 'Our mission is to provide simple, intentional, and high-performance skincare essentials for all.' }}</p>
+            </div>
           </div>
         </div>
 
         <div class="values-acc-item">
           <div class="values-acc-header">
             <span>Innovation</span>
-            <span class="acc-icon">+</span>
+            <div class="acc-icon-wrap">
+              <div class="line v-line"></div>
+              <div class="line h-line"></div>
+            </div>
           </div>
           <div class="values-acc-content">
-            <p>{{ section.settings.philanthropy_text | default: 'At Elaris7, we donate 1% of every sale to support community health and wellness initiatives.' }}</p>
+            <div class="values-acc-content-inner">
+              <p>{{ section.settings.philanthropy_text | default: 'At Elaris7, we donate 1% of every sale to support community health and wellness initiatives.' }}</p>
+            </div>
           </div>
         </div>
 
         <div class="values-acc-item">
           <div class="values-acc-header">
             <span>sustainability</span>
-            <span class="acc-icon">+</span>
+            <div class="acc-icon-wrap">
+              <div class="line v-line"></div>
+              <div class="line h-line"></div>
+            </div>
           </div>
           <div class="values-acc-content">
-            <p>{{ section.settings.sustainability_text | default: 'We are committed to reducing our environmental footprint through conscious packaging and sourcing.' }}</p>
+            <div class="values-acc-content-inner">
+              <p>{{ section.settings.sustainability_text | default: 'We are committed to reducing our environmental footprint through conscious packaging and sourcing.' }}</p>
+            </div>
           </div>
         </div>
       </div>
@@ -126,20 +141,49 @@
   letter-spacing: 0.02em;
 }
 
-.acc-icon {
-  font-size: 1.2rem;
-  font-weight: 300;
-  color: #777;
+.acc-icon-wrap {
+  position: relative;
+  width: 14px;
+  height: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.acc-icon-wrap .line {
+  position: absolute;
+  background: #777;
+  transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.acc-icon-wrap .v-line {
+  width: 1.5px;
+  height: 14px;
+}
+
+.acc-icon-wrap .h-line {
+  width: 14px;
+  height: 1.5px;
+}
+
+.values-acc-item.active .acc-icon-wrap {
+  transform: rotate(-135deg);
 }
 
 .values-acc-content {
-  max-height: 0;
+  display: grid;
+  grid-template-rows: 0fr;
   overflow: hidden;
-  transition: max-height 0.3s ease;
+  transition: grid-template-rows 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .values-acc-item.active .values-acc-content {
-  max-height: 200px;
+  grid-template-rows: 1fr;
+}
+
+.values-acc-content-inner {
+  min-height: 0;
   padding-bottom: 24px;
 }
 
@@ -197,12 +241,10 @@ document.querySelectorAll('.values-acc-header').forEach(header => {
     // Close other items
     document.querySelectorAll('.values-acc-item').forEach(el => {
       el.classList.remove('active');
-      el.querySelector('.acc-icon').textContent = '+';
     });
 
     if (!isActive) {
       item.classList.add('active');
-      header.querySelector('.acc-icon').textContent = '×';
     }
   });
 });
