@@ -1957,7 +1957,6 @@ a { color: inherit; text-decoration: none; }
 
 .product-showcase-card {
   width: 100%;
-  max-width: 440px;
   text-align: left;
   display: flex;
   flex-direction: column;
@@ -1966,9 +1965,6 @@ a { color: inherit; text-decoration: none; }
 
 .product-swirl-wrap {
   width: 100%;
-  margin-bottom: 40px;
-  display: flex;
-  justify-content: center;
 }
 
 .product-swirl-img {
