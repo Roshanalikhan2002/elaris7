@@ -2045,4 +2045,30 @@ a { color: inherit; text-decoration: none; }
     right: 20px;
     font-size: 1.4rem;
   }
+
+  .product-overlay-details {
+    position: absolute !important;
+    bottom: 16px !important;
+    left: 16px !important;
+    right: auto !important;
+    text-align: left !important;
+    z-index: 10;
+  }
+
+  .product-overlay-details .stars-row {
+    font-size: 0.55rem !important;
+    margin-bottom: 4px !important;
+  }
+
+  .product-overlay-details .showcase-title {
+    font-size: 0.85rem !important;
+    margin-bottom: 10px !important;
+    line-height: 1.2 !important;
+  }
+
+  .product-overlay-details .btn-pill-buy {
+    font-size: 0.6rem !important;
+    padding: 7px 16px !important;
+    border-radius: 50px !important;
+  }
 }
