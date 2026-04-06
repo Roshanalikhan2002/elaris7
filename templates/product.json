@@ -46,7 +46,8 @@
     "study_results": {
       "type": "product-study-results",
       "settings": {
-        "footnote": "*Based on a 32-subject consumer perception study after 2 weeks of use."
+        "footnote": "*Based on a 32-subject consumer perception study after 2 weeks of use.",
+        "image": "shopify://shop_images/NIGHT_CREAM_BEFORE_AFTER-100_jpg.jpg"
       }
     },
     "faq_split": {
