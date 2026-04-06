@@ -38,6 +38,15 @@
       {%- else -%}
         <div class="placeholder-bg" style="background:#f2f0ed; height:100%; min-height:400px; display:flex; align-items:center; justify-content:center;">Lifestyle Image</div>
       {%- endif -%}
+
+      <!-- Product Details Overlay (Bottom Left) -->
+      <div class="product-overlay-details" style="position: absolute; bottom: 35px; left: 35px; text-align: left; z-index: 10;">
+        <div class="stars-row" style="font-size: 0.75rem; color: #5b5a53; margin-bottom: 8px;">★ ★ ★ ★ ★ (6,955)</div>
+        <h2 class="showcase-title" style="font-size: 1.5rem; font-weight: 800; color: #5b5a53; margin-bottom: 20px; letter-spacing: -0.01em;">{{ section.settings.product_title | default: 'POCKET BLUSH TEACUP' | upcase }}</h2>
+        <a href="{{ section.settings.product_link | default: '#' }}" class="btn-pill-buy" style="display: inline-block; padding: 12px 30px; border: 1.2px solid #5b5a53; border-radius: 50px; font-size: 0.8rem; font-weight: 700; color: #5b5a53; text-decoration: none;">
+          BUY BLUSH — {{ section.settings.product_price | default: '$25.00' }}
+        </a>
+      </div>
     </div>
   </div>
 </div>
