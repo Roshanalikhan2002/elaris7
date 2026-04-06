@@ -129,25 +129,49 @@
         "faq_1": {
           "type": "faq_item",
           "settings": {
-            "question": "Can I use this daily?",
-            "answer": "Yes, our formula is gentle enough for daily use."
+            "question": "Can I use this serum every day?",
+            "answer": "Yes, it is suitable for daily use, both morning and night."
           }
         },
         "faq_2": {
           "type": "faq_item",
           "settings": {
             "question": "Is it suitable for sensitive skin?",
-            "answer": "Absolutely, all products are dermatologist-tested for all skin types."
+            "answer": "Yes, it includes soothing ingredients, but patch testing is recommended."
+          }
+        },
+        "faq_3": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Does it help with dark spots and pigmentation?",
+            "answer": "Yes, it is designed to target discoloration and improve uneven tone."
+          }
+        },
+        "faq_4": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Can I layer it with other skincare products?",
+            "answer": "Yes, it works well with moisturizers, sunscreens, and other gentle actives."
+          }
+        },
+        "faq_5": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Do I need to use sunscreen with this?",
+            "answer": "Yes, sunscreen is essential during the day to protect and maintain results."
           }
         }
       },
       "block_order": [
         "faq_1",
-        "faq_2"
+        "faq_2",
+        "faq_3",
+        "faq_4",
+        "faq_5"
       ],
       "settings": {
         "title": "FAQ",
-        "subtitle": "Find out more about Barrier Butter."
+        "subtitle": "Find out more about Tranexamic Serum."
       }
     },
     "product_reviews": {
