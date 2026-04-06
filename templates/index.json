@@ -1,12 +1,3 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "sections": {
     "hero": {
@@ -28,9 +19,157 @@
     },
     "featured_products": {
       "type": "featured-products",
+      "blocks": {
+        "block_night_cream": {
+          "type": "product",
+          "settings": {
+            "title": "Night Cream",
+            "price": "Rs. 2,500",
+            "brand_label": "nightcream",
+            "badge": "bestseller",
+            "reviews": "16k",
+            "product_link": "/products/night-cream"
+          }
+        },
+        "block_tranexamic": {
+          "type": "product",
+          "settings": {
+            "title": "Tranexamic Serum",
+            "price": "Rs. 2,800",
+            "brand_label": "serum",
+            "badge": "new",
+            "reviews": "8k",
+            "product_link": "/products/tranexamic-serum"
+          }
+        },
+        "block_keratin": {
+          "type": "product",
+          "settings": {
+            "title": "Keratin Serum",
+            "price": "Rs. 2,700",
+            "brand_label": "haircare",
+            "badge": "",
+            "reviews": "6k",
+            "product_link": "/products/keratin-serum"
+          }
+        },
+        "block_glow": {
+          "type": "product",
+          "settings": {
+            "title": "Glow Serum",
+            "price": "Rs. 2,540",
+            "brand_label": "serum",
+            "badge": "",
+            "reviews": "12k",
+            "product_link": "/products/glow-serum"
+          }
+        },
+        "block_glutathione": {
+          "type": "product",
+          "settings": {
+            "title": "Glutathione Cream",
+            "price": "Rs. 2,950",
+            "brand_label": "repair",
+            "badge": "",
+            "reviews": "9k",
+            "product_link": "/products/glutathione-cream"
+          }
+        },
+        "block_hair_mist": {
+          "type": "product",
+          "settings": {
+            "title": "Hair Mist",
+            "price": "Rs. 2,400",
+            "brand_label": "haircare",
+            "badge": "",
+            "reviews": "5k",
+            "product_link": "/products/hair-mist"
+          }
+        },
+        "block_face_wash": {
+          "type": "product",
+          "settings": {
+            "title": "Face Wash",
+            "price": "Rs. 2,200",
+            "brand_label": "cleanser",
+            "badge": "",
+            "reviews": "11k",
+            "product_link": "/products/face-wash"
+          }
+        },
+        "block_anti_acne": {
+          "type": "product",
+          "settings": {
+            "title": "Anti Acne Serum",
+            "price": "Rs. 2,450",
+            "brand_label": "antiacne",
+            "badge": "",
+            "reviews": "14k",
+            "product_link": "/products/anti-acne-serum"
+          }
+        },
+        "block_sunscreen": {
+          "type": "product",
+          "settings": {
+            "title": "Sunscreen SPF60+",
+            "price": "Rs. 2,630",
+            "brand_label": "sunscreen",
+            "badge": "",
+            "reviews": "7k",
+            "product_link": "/products/sunscreen"
+          }
+        },
+        "block_cleanser": {
+          "type": "product",
+          "settings": {
+            "title": "Renewal Cleanser",
+            "price": "Rs. 2,850",
+            "brand_label": "cleanser",
+            "badge": "",
+            "reviews": "10k",
+            "product_link": "/products/renewal-cleanser"
+          }
+        },
+        "block_moisturizer": {
+          "type": "product",
+          "settings": {
+            "title": "Hydra Burst Moisturizer",
+            "price": "Rs. 2,499",
+            "brand_label": "moisturizer",
+            "badge": "",
+            "reviews": "13k",
+            "product_link": "/products/hydra-burst-moisturizer"
+          }
+        },
+        "block_toner": {
+          "type": "product",
+          "settings": {
+            "title": "Renewal Toner",
+            "price": "Rs. 2,670",
+            "brand_label": "toner",
+            "badge": "",
+            "reviews": "8k",
+            "product_link": "/products/renewal-toner"
+          }
+        }
+      },
+      "block_order": [
+        "block_night_cream",
+        "block_tranexamic",
+        "block_keratin",
+        "block_glow",
+        "block_glutathione",
+        "block_hair_mist",
+        "block_face_wash",
+        "block_anti_acne",
+        "block_sunscreen",
+        "block_cleanser",
+        "block_moisturizer",
+        "block_toner"
+      ],
       "settings": {
         "collection": "",
-        "product_limit": 6
+        "product_limit": 12
       }
     },
     "category_promos": {
