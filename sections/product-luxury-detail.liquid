@@ -516,9 +516,27 @@
         <div class="product-award">BEST OF BEAUTY</div>
       </div>
 
+      {%- assign display_subtitle = section.settings.subtitle | default: 'Night Renewal' -%}
+      {%- assign display_desc = section.settings.description -%}
+      {%- if display_desc == blank -%}
+        {%- assign display_desc = "Faith's Light. Korean Science. <br>Powered by Nature's Purest." -%}
+      {%- endif -%}
+      {%- assign display_reviews = section.settings.show_reviews -%}
+      {%- assign display_ingredients = section.settings.show_ingredients -%}
+
+      {%- if product.handle == 'tranexamic-serum' -%}
+        {%- assign display_subtitle = '' -%}
+        {%- assign display_desc = 'A targeted brightening serum designed to reduce the appearance of dark spots and uneven tone. It helps improve clarity, boost radiance, and support a smoother, more even-looking complexion with consistent use.' -%}
+        {%- assign display_reviews = false -%}
+        {%- assign display_ingredients = false -%}
+      {%- endif -%}
+
       <div class="product-meta" style="margin-top: 5px;">
-        <span class="product-subtitle">{{ section.settings.subtitle | default: 'Night Renewal' }}</span>
-        {%- if section.settings.show_reviews != false -%}
+        {%- if display_subtitle != blank -%}
+          <span class="product-subtitle">{{ display_subtitle }}</span>
+        {%- endif -%}
+        
+        {%- if display_reviews != false -%}
           <div class="product-reviews">
             <span class="stars">★★★★★</span>
             <span class="review-count">({{ section.settings.review_count | default: '16k' }})</span>
@@ -527,14 +545,10 @@
       </div>
 
       <div class="product-description" style="margin-top: 15px; font-weight: 600; color: #4a4a4a;">
-        {%- if section.settings.description != blank -%}
-          {{ section.settings.description }}
-        {%- else -%}
-          Faith's Light. Korean Science. <br>Powered by Nature's Purest.
-        {%- endif -%}
+        {{ display_desc }}
       </div>
       
-      {%- if section.settings.show_ingredients != false -%}
+      {%- if display_ingredients != false -%}
         <div class="ingredients-preview" style="margin-top: 20px;">
           <span class="ing-label" style="display: flex; align-items: center; gap: 8px; font-weight: 700; color: #333; margin-bottom: 8px;">
             <span style="font-size: 1.2rem;">🌱</span> Key Ingredients
