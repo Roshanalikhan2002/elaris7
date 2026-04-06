@@ -39,6 +39,7 @@
         "flip_layout": false,
         "pagination_text": "1/4",
         "image_left": "shopify://shop_images/new_bundle_banner-100_jpg.jpg",
+        "product_image": "shopify://shop_images/bundle_product_image-100_jpg.jpg",
         "product_title": "Centella Night Cream",
         "product_subtitle": "A raspberry pink glow",
         "product_price": "RS. 2,500",
