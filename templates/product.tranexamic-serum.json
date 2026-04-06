@@ -25,35 +25,35 @@
           "type": "detail_row",
           "settings": {
             "label": "GOOD FOR:",
-            "value": "All skin types, including dry and sensitive skin"
+            "value": "All skin types, especially uneven tone and dark spots"
           }
         },
         "row_feels": {
           "type": "detail_row",
           "settings": {
             "label": "FEELS LIKE:",
-            "value": "A rich, creamy formula that melts effortlessly into the skin"
+            "value": "A smooth, fast-absorbing serum that layers easily"
           }
         },
         "row_looks": {
           "type": "detail_row",
           "settings": {
             "label": "LOOKS LIKE:",
-            "value": "Smooth, plump, and poreless skin by morning"
+            "value": "Brighter, clearer skin with improved tone"
           }
         },
         "row_smells": {
           "type": "detail_row",
           "settings": {
             "label": "SMELLS LIKE:",
-            "value": "Subtle, calming freshness for a relaxing routine"
+            "value": "A soft, clean scent with a subtle finish"
           }
         },
         "row_fyi": {
           "type": "detail_row",
           "settings": {
             "label": "FYI:",
-            "value": "Halal-Friendly • Dermatologist-Tested • Non-Sticky • Repair-Focused"
+            "value": "Non-Greasy • Fast Absorbing • Daily Use • Tone-Correcting"
           }
         }
       },
