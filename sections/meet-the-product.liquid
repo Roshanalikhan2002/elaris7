@@ -26,19 +26,21 @@
     scrollbar-width: none;
     -ms-overflow-style: none;
     padding-bottom: 8px;
+    scroll-snap-type: x mandatory;
   }
   .meet-carousel::-webkit-scrollbar {
     display: none;
   }
 
-  .meet-carousel img {
-    width: 25vw;
-    min-width: 240px;
+  .meet-carousel img, .meet-carousel > div {
+    flex: 0 0 calc(33.333% - 10.66px);
+    width: 100%;
+    min-width: 260px;
     height: auto;
     aspect-ratio: 4/5;
     object-fit: cover;
     border-radius: 12px;
-    flex-shrink: 0;
+    scroll-snap-align: start;
   }
 
   .carousel-arrow {
@@ -84,10 +86,11 @@
           {% endif %}
         {% endfor %}
       {% else %}
-        <!-- Fallback 3 images if no blocks are added -->
-        <img src="{{ 'product-anti-acne.jpg' | asset_url }}" alt="Product Image 1">
-        <img src="{{ 'hover-anti-acne.png' | asset_url }}" alt="Product Image 2">
-        <img src="https://images.unsplash.com/photo-1549439602-43ebca2327af?q=80&w=400" alt="Product Image 3">
+        <!-- Fallback 4 images if no blocks are added -->
+        <img src="{{ 'night-cream-suite.jpeg' | asset_url }}" alt="Product Image 1">
+        <img src="{{ 'night-cream-model.png' | asset_url }}" alt="Product Image 2">
+        <img src="{{ 'night-cream-hover.jpg' | asset_url }}" alt="Product Image 3">
+        <img src="{{ 'night-cream-swatch.jpeg' | asset_url }}" alt="Product Image 4">
       {% endif %}
     </div>
     <!-- Right Arrow Overlay -->
