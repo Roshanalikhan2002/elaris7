@@ -11,10 +11,15 @@
             <div class="faq-acc-item {% if forloop.first %}active{% endif %}" {{ block.shopify_attributes }}>
               <div class="faq-acc-header">
                 <span>{{ block.settings.question | upcase }}</span>
-                <span class="acc-icon-faq">{% if forloop.first %}−{% else %}+{% endif %}</span>
+                <div class="acc-icon-faq">
+                  <div class="line v-line"></div>
+                  <div class="line h-line"></div>
+                </div>
               </div>
               <div class="faq-acc-content">
-                <p>{{ block.settings.answer }}</p>
+                <div class="faq-acc-content-inner">
+                  <p>{{ block.settings.answer }}</p>
+                </div>
               </div>
             </div>
           {%- endfor -%}
@@ -22,46 +27,71 @@
             <div class="faq-acc-item active">
               <div class="faq-acc-header">
                 <span>Can I use this night cream with my serum?</span>
-                <span class="acc-icon-faq">−</span>
+                <div class="acc-icon-faq">
+                  <div class="line v-line"></div>
+                  <div class="line h-line"></div>
+                </div>
               </div>
               <div class="faq-acc-content">
-                <p>Yes, applying serum before the night cream enhances hydration and repair benefits.</p>
+                <div class="faq-acc-content-inner">
+                  <p>Yes, applying serum before the night cream enhances hydration and repair benefits.</p>
+                </div>
               </div>
             </div>
             <div class="faq-acc-item">
               <div class="faq-acc-header">
                 <span>Is it suitable for oily skin at night?</span>
-                <span class="acc-icon-faq">+</span>
+                <div class="acc-icon-faq">
+                  <div class="line v-line"></div>
+                  <div class="line h-line"></div>
+                </div>
               </div>
               <div class="faq-acc-content">
-                <p>Absolutely, it hydrates without clogging pores or leaving a greasy residue.</p>
+                <div class="faq-acc-content-inner">
+                  <p>Absolutely, it hydrates without clogging pores or leaving a greasy residue.</p>
+                </div>
               </div>
             </div>
             <div class="faq-acc-item">
               <div class="faq-acc-header">
                 <span>How often should I use it?</span>
-                <span class="acc-icon-faq">+</span>
+                <div class="acc-icon-faq">
+                  <div class="line v-line"></div>
+                  <div class="line h-line"></div>
+                </div>
               </div>
               <div class="faq-acc-content">
-                <p>For optimal results, use every night as the final step in your evening routine.</p>
+                <div class="faq-acc-content-inner">
+                  <p>For optimal results, use every night as the final step in your evening routine.</p>
+                </div>
               </div>
             </div>
             <div class="faq-acc-item">
               <div class="faq-acc-header">
                 <span>Will it help with dull or uneven skin tone?</span>
-                <span class="acc-icon-faq">+</span>
+                <div class="acc-icon-faq">
+                  <div class="line v-line"></div>
+                  <div class="line h-line"></div>
+                </div>
               </div>
               <div class="faq-acc-content">
-                <p>Yes, its brightening and repair ingredients work overnight to improve radiance and evenness.</p>
+                <div class="faq-acc-content-inner">
+                  <p>Yes, its brightening and repair ingredients work overnight to improve radiance and evenness.</p>
+                </div>
               </div>
             </div>
             <div class="faq-acc-item">
               <div class="faq-acc-header">
                 <span>Can it reduce the appearance of fine lines?</span>
-                <span class="acc-icon-faq">+</span>
+                <div class="acc-icon-faq">
+                  <div class="line v-line"></div>
+                  <div class="line h-line"></div>
+                </div>
               </div>
               <div class="faq-acc-content">
-                <p>Yes, regular use helps visibly minimize fine lines and promotes firmer, youthful-looking skin.</p>
+                <div class="faq-acc-content-inner">
+                  <p>Yes, regular use helps visibly minimsze fine lines and promotes firmer, youthful-looking skin.</p>
+                </div>
               </div>
             </div>
         {%- endif -%}
@@ -136,26 +166,56 @@
 }
 
 .acc-icon-faq {
-  font-size: 1.1rem;
-  font-weight: 500;
-  color: #fff;
-  width: 22px;
-  height: 22px;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  background: #a8a39a;
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 50%;
-  background: #a8a39a;
+  transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), background-color 0.4s;
+}
+
+.acc-icon-faq .line {
+  position: absolute;
+  background: white;
+  transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), opacity 0.3s;
+}
+
+.acc-icon-faq .v-line {
+  width: 2px;
+  height: 10px;
+}
+
+.acc-icon-faq .h-line {
+  width: 10px;
+  height: 2px;
+}
+
+.faq-acc-item.active .acc-icon-faq {
+  transform: rotate(-135deg); /* Anticlockwise rotation into an X/minus feel */
+  background: #5b5a53;
+}
+
+.faq-acc-item.active .v-line {
+  /* Optionally hide the vertical line to make it a perfect minus, but rotation looks cooler move moved moves move move */
+  /* opacity: 0; */
 }
 
 .faq-acc-content {
-  max-height: 0;
+  display: grid;
+  grid-template-rows: 0fr;
   overflow: hidden;
-  transition: max-height 0.3s ease;
+  transition: grid-template-rows 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .faq-acc-item.active .faq-acc-content {
-  max-height: 300px;
+  grid-template-rows: 1fr;
+}
+
+.faq-acc-content-inner {
+  min-height: 0;
   padding-bottom: 24px;
 }
 
@@ -203,25 +263,17 @@ document.addEventListener('DOMContentLoaded', () => {
   if (faqHeaders.length === 0) return;
 
   faqHeaders.forEach(header => {
-    // Prevent duplicate event listeners if this runs multiple times
-    const newHeader = header.cloneNode(true);
-    header.parentNode.replaceChild(newHeader, header);
-    
-    newHeader.addEventListener('click', () => {
-      const item = newHeader.parentElement;
+    header.addEventListener('click', () => {
+      const item = header.parentElement;
       const isActive = item.classList.contains('active');
       
       const wrap = item.closest('.faq-accordion-wrap');
       wrap.querySelectorAll('.faq-acc-item').forEach(el => {
         el.classList.remove('active');
-        const icon = el.querySelector('.acc-icon-faq');
-        if (icon) icon.textContent = '+';
       });
 
       if (!isActive) {
         item.classList.add('active');
-        const icon = newHeader.querySelector('.acc-icon-faq');
-        if (icon) icon.textContent = '−';
       }
     });
   });
