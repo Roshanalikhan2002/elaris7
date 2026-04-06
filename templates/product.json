@@ -39,7 +39,8 @@
     "benefits_focus": {
       "type": "product-benefits-focus",
       "settings": {
-        "subtitle": "SPREAD IT ON FOR:"
+        "subtitle": "SPREAD IT ON FOR:",
+        "image": "shopify://shop_images/night_cream_4-100_jpg.jpg"
       }
     },
     "study_results": {
