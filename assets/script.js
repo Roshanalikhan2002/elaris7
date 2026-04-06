@@ -47,29 +47,51 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Horizontal Drag to Scroll functionality
+  // Horizontal Drag to Scroll functionality (with click protection)
   let isDown = false;
   let startX;
   let scrollLeft;
+  let hasMoved = false;
 
   scrollArea.addEventListener('mousedown', (e) => {
     isDown = true;
+    hasMoved = false;
     scrollArea.classList.add('active');
     startX = e.pageX - scrollArea.offsetLeft;
     scrollLeft = scrollArea.scrollLeft;
   });
+
   scrollArea.addEventListener('mouseleave', () => {
     isDown = false;
+    scrollArea.classList.remove('active');
   });
-  scrollArea.addEventListener('mouseup', () => {
+
+  scrollArea.addEventListener('mouseup', (e) => {
     isDown = false;
+    scrollArea.classList.remove('active');
   });
-  // Drag to Scroll logic (refined)
+
   scrollArea.addEventListener('mousemove', (e) => {
     if (!isDown) return;
     const x = e.pageX - scrollArea.offsetLeft;
     const walk = (x - startX) * 2;
+    
+    // If we move more than 5px, it's a drag, not a click
+    if (Math.abs(x - startX) > 5) {
+      hasMoved = true;
+      e.preventDefault(); // prevent link clicking during drag
+    }
+    
     scrollArea.scrollLeft = scrollLeft - walk;
+  });
+
+  // Prevent link click if we were dragging
+  scrollArea.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', (e) => {
+      if (hasMoved) {
+        e.preventDefault();
+      }
+    });
   });
 
   // Product Scroll Arrow Buttons

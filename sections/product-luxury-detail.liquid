@@ -427,25 +427,19 @@
   <div class="product-grid">
     <div class="product-gallery">
       <div class="gallery-thumbnails">
-        <div class="thumb-item active" onmouseover="updateGallery(0, this)">
-          <img src="{{ 'night-cream.jpg' | asset_url }}" alt="Thumb 1">
-        </div>
-        <div class="thumb-item" onmouseover="updateGallery(1, this)">
-          <img src="{{ 'night-cream-jar.jpg' | asset_url }}" alt="Thumb 2">
-        </div>
-        <div class="thumb-item" onmouseover="updateGallery(2, this)">
-          <img src="{{ 'night-cream-ba.jpg' | asset_url }}" alt="Thumb 3">
-        </div>
-        <div class="thumb-item" onmouseover="updateGallery(3, this)">
-          <img src="{{ 'night-cream-swatch.jpeg' | asset_url }}" alt="Thumb 4">
-        </div>
+        {%- for image in product.images -%}
+          <div class="thumb-item {% if forloop.first %}active{% endif %}" onmouseover="updateGallery({{ forloop.index0 }}, this)">
+            <img src="{{ image | img_url: '100x100', crop: 'center' }}" alt="{{ image.alt | escape }}">
+          </div>
+        {%- endfor -%}
       </div>
       <div class="product-gallery-inner">
         <div class="gallery-viewport" id="galleryViewport">
-          <div class="gallery-slide"><img src="{{ 'night-cream.jpg' | asset_url }}" class="main-product-img" alt="Night Cream"></div>
-          <div class="gallery-slide"><img src="{{ 'night-cream-jar.jpg' | asset_url }}" class="main-product-img" alt="Jar View"></div>
-          <div class="gallery-slide"><img src="{{ 'night-cream-ba.jpg' | asset_url }}" class="main-product-img" alt="Before After"></div>
-          <div class="gallery-slide"><img src="{{ 'night-cream-swatch.jpeg' | asset_url }}" class="main-product-img" alt="Swatch View"></div>
+          {%- for image in product.images -%}
+            <div class="gallery-slide">
+              <img src="{{ image | img_url: 'master' }}" class="main-product-img" alt="{{ image.alt | escape }}">
+            </div>
+          {%- endfor -%}
         </div>
       </div>
     </div>
@@ -466,7 +460,7 @@
 
   <div class="product-details">
       <div class="product-header">
-        <h1 class="product-title">Centella<br>Night Cream</h1>
+        <h1 class="product-title">{{ product.title }}</h1>
         <div class="product-award">BEST OF BEAUTY</div>
       </div>
 
@@ -479,7 +473,7 @@
       </div>
 
       <div class="product-description">
-        An intensive overnight formula designed to rejuvenate your skin while you sleep. Infused with Centella Asiatica, brightening complexes, and repair-focused botanicals, this night cream hydrates deeply, improves skin texture, and helps reveal a smoother, luminous, and refreshed complexion by morning.
+        {{ product.description }}
       </div>
 
       <hr class="divider">
@@ -628,7 +622,7 @@
         </div>
       </div>
 
-      <button class="buy-button" style="white-space: nowrap;">ADD TO BAG - Rs. 1,500</button>
+      <button class="buy-button" style="white-space: nowrap;">ADD TO BAG - {{ product.price | money }}</button>
       
 
 
