@@ -3,7 +3,7 @@
     {% if section.settings.model_image != blank %}
       {{ section.settings.model_image | image_url: width: 2000 | image_tag: class: 'full-img', alt: 'Model' }}
     {% else %}
-      <img src="https://images.unsplash.com/photo-1596462502278-27bfdc4033c8?q=80&w=1200" alt="Model" class="full-img">
+      <img src="{{ 'new-bundle-banner.jpg' | asset_url }}" alt="New Bundle Banner" class="full-img">
     {% endif %}
   </div>
   <div class="card showcase-details">
@@ -50,19 +50,19 @@
       "type": "text",
       "id": "title",
       "label": "Product Title",
-      "default": "CENTELLA NIGHT CREAM"
+      "default": "COMPLETE ELARIS BUNDLE"
     },
     {
       "type": "text",
       "id": "subtitle",
       "label": "Subtitle",
-      "default": "A raspberry pink glow"
+      "default": "The ultimate glow routine collection"
     },
     {
       "type": "text",
       "id": "price",
       "label": "Price",
-      "default": "RS. 2,500"
+      "default": "RS. 6,500"
     },
     {
       "type": "text",
