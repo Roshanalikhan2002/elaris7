@@ -1,9 +1,9 @@
 <div class="section-grid">
-  <div style="position: relative; height: 100%; width: 100%; border-radius: 12px; overflow: hidden;">
+  <div style="position: relative; height: 100%; width: 100%; border-radius: 12px; overflow: hidden; background: #fff;">
     {% if section.settings.model_image != blank %}
-      {{ section.settings.model_image | image_url: width: 2000 | image_tag: style: 'width: 100%; height: 100%; object-fit: cover; display: block;', alt: 'Model' }}
+      {{ section.settings.model_image | image_url: width: 2000 | image_tag: style: 'width: 100%; height: 100%; object-fit: contain; display: block;', alt: 'Model' }}
     {% else %}
-      <img src="{{ 'new-bundle-banner.jpg' | asset_url }}" style="width: 100%; height: 100%; object-fit: cover; display: block;" alt="Banner">
+      <img src="{{ 'new-bundle-banner.jpg' | asset_url }}" style="width: 100%; height: 100%; object-fit: contain; display: block;" alt="Banner">
     {% endif %}
   </div>
   <div style="position: relative; height: 100%; width: 100%; border-radius: 12px; overflow: hidden;">
