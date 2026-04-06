@@ -29,6 +29,7 @@
             "badge": "bestseller",
             "reviews": "16k",
             "asset_image": "night-cream.jpg",
+            "asset_hover_image": "night-cream-hover.jpg",
             "product_link": "/products/night-cream"
           }
         },
@@ -53,6 +54,7 @@
             "badge": "",
             "reviews": "6k",
             "asset_image": "keratin-serum.jpg",
+            "asset_hover_image": "keratin-serum-hover.jpg",
             "product_link": "/products/keratin-serum"
           }
         },
@@ -113,6 +115,7 @@
             "badge": "",
             "reviews": "14k",
             "asset_image": "anti-acne-100.jpg",
+            "asset_hover_image": "hover-anti-acne.png",
             "product_link": "/products/anti-acne-serum"
           }
         },
