@@ -43,18 +43,22 @@
         "product_title": "Centella Night Cream",
         "product_subtitle": "A raspberry pink glow",
         "product_price": "RS. 2,500",
-        "product_link": ""
+        "product_link": "",
+        "hide_details": true
       }
     },
-    "category_promos_2": {
+    "category_promos_9mCf8w": {
       "type": "category-promos",
       "settings": {
         "flip_layout": false,
         "pagination_text": "1/4",
+        "image_left": "shopify://shop_images/new_bundle_banner-100_jpg.jpg",
+        "product_image": "shopify://shop_images/bundle_product_image-100_jpg.jpg",
         "product_title": "Centella Night Cream",
         "product_subtitle": "A raspberry pink glow",
         "product_price": "RS. 2,500",
-        "product_link": ""
+        "product_link": "",
+        "hide_details": true
       }
     },
     "social_grid": {
@@ -80,7 +84,7 @@
     "category_nav",
     "featured_products",
     "category_promos",
-    "category_promos_2",
+    "category_promos_9mCf8w",
     "social_grid",
     "values_accordion"
   ]
