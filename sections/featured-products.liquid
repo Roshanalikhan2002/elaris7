@@ -30,6 +30,12 @@
               {% else %}
                 <div class="product-placeholder-img"></div>
               {% endif %}
+              
+              {% if forloop.first %}
+                <div class="swipe-bubble mobile-only">
+                  <span>swipe</span>
+                </div>
+              {% endif %}
             </div>
             <div class="card-rhode-footer">
               <div class="card-meta">
@@ -70,6 +76,12 @@
                 <img src="{{ pimage | asset_url }}" class="product-main-img" alt="{{ pname }}">
               {% else %}
                 <div class="product-placeholder-img"></div>
+              {% endif %}
+              
+              {% if forloop.first %}
+                <div class="swipe-bubble mobile-only">
+                  <span>swipe</span>
+                </div>
               {% endif %}
             </div>
             <div class="card-rhode-footer">
