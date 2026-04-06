@@ -12,19 +12,155 @@
     },
     "details_split": {
       "type": "product-details-split",
-      "settings": {}
+      "settings": {
+        "title": "An intensive overnight cream for DEEP REPAIR + BABY-SOFT skin."
+      },
+      "blocks": {
+        "row_good": {
+          "type": "detail_row",
+          "settings": {
+            "label": "GOOD FOR:",
+            "value": "All skin types, including dry and sensitive skin"
+          }
+        },
+        "row_feels": {
+          "type": "detail_row",
+          "settings": {
+            "label": "FEELS LIKE:",
+            "value": "A rich, creamy formula that melts effortlessly into the skin"
+          }
+        },
+        "row_looks": {
+          "type": "detail_row",
+          "settings": {
+            "label": "LOOKS LIKE:",
+            "value": "Smooth, plump, and poreless skin by morning"
+          }
+        },
+        "row_smells": {
+          "type": "detail_row",
+          "settings": {
+            "label": "SMELLS LIKE:",
+            "value": "Subtle, calming freshness for a relaxing nighttime routine"
+          }
+        },
+        "row_fyi": {
+          "type": "detail_row",
+          "settings": {
+            "label": "FYI:",
+            "value": "Halal-Friendly • Dermatologist-Tested • Non-Sticky • Repair-Focused"
+          }
+        }
+      },
+      "block_order": ["row_good", "row_feels", "row_looks", "row_smells", "row_fyi"]
     },
     "ingredients": {
       "type": "product-ingredients",
-      "settings": {}
+      "settings": {
+        "title": "what's inside",
+        "intro": "Our formula is packed with 13 efficacious hero ingredients. Meet 2 of our favorites for intensive hydration.",
+        "footer_text": "also made with POLYGLUTAMIC ACID, ISOSORBIDE DICAPRYLATE, CERAMIDE NP, PALMITOYL TETRAPEPTIDE-10, PALMITOYL TRIPEPTIDE-8, BISABOLOL, GINGER ROOT EXTRACT",
+        "show_btn": true,
+        "btn_label": "FULL INGREDIENTS LIST"
+      },
+      "blocks": {
+        "ing_1": {
+          "type": "ingredient",
+          "settings": {
+            "title": "hyaluronic acid complex",
+            "description": "5 molecular weights of hyaluronic acid help improve hydration on and below the skin's surface"
+          }
+        },
+        "ing_2": {
+          "type": "ingredient",
+          "settings": {
+            "title": "centella asiatica",
+            "description": "a powerful skin-calming botanical that helps soothe irritation, strengthen the skin barrier, and accelerate overnight repair"
+          }
+        }
+      },
+      "block_order": ["ing_1", "ing_2"]
     },
     "study_results": {
       "type": "product-study-results",
-      "settings": {}
+      "settings": {
+        "footnote": "*Based on a 32-subject consumer perception study after 2 weeks of use."
+      },
+      "blocks": {
+        "stat_1": {
+          "type": "stat_block",
+          "settings": {
+            "number": "97%",
+            "description": "SAID THEIR SKIN FELT DEEPLY HYDRATED AND NOURISHED"
+          }
+        },
+        "stat_2": {
+          "type": "stat_block",
+          "settings": {
+            "number": "95%",
+            "description": "SAID IT ABSORBED WELL WITHOUT HEAVINESS"
+          }
+        },
+        "stat_3": {
+          "type": "stat_block",
+          "settings": {
+            "number": "94%",
+            "description": "NOTICED SMOOTHER, SOFTER, AND REFINED SKIN BY MORNING"
+          }
+        },
+        "stat_4": {
+          "type": "stat_block",
+          "settings": {
+            "number": "3 out of 4",
+            "description": "REPORTED A VISIBLE REDUCTION IN FINE LINES AND DARK SPOTS"
+          }
+        }
+      },
+      "block_order": ["stat_1", "stat_2", "stat_3", "stat_4"]
     },
     "faq_split": {
       "type": "product-faq-split",
-      "settings": {}
+      "settings": {
+        "title": "FAQ"
+      },
+      "blocks": {
+        "faq_1": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Can I use this night cream with my serum?",
+            "answer": "Yes, applying serum before the night cream enhances hydration and repair benefits."
+          }
+        },
+        "faq_2": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Is it suitable for oily skin at night?",
+            "answer": "Absolutely, it hydrates without clogging pores or leaving a greasy residue."
+          }
+        },
+        "faq_3": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How often should I use it?",
+            "answer": "For optimal results, use every night as the final step in your evening routine."
+          }
+        },
+        "faq_4": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Will it help with dull or uneven skin tone?",
+            "answer": "Yes, its brightening and repair ingredients work overnight to improve radiance and evenness."
+          }
+        },
+        "faq_5": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Can it reduce the appearance of fine lines?",
+            "answer": "Yes, regular use helps visibly minimize fine lines and promotes firmer, youthful-looking skin."
+          }
+        }
+      },
+      "block_order": ["faq_1", "faq_2", "faq_3", "faq_4", "faq_5"]
     },
     "product_reviews": {
       "type": "product-reviews",
