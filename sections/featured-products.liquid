@@ -56,17 +56,18 @@
       {% endfor %}
     {% else %}
       {% comment %} Fallback Items if no blocks exist move move moved moves move move move move move move move move move {% endcomment %}
-      {%- assign fallback_names = "Night Cream,Tranexamic Serum,Keratin Serum,Glow Serum,Glutathione Cream,Hair Mist,Face Wash,Anti Acne Serum,Sunscreen,Renewal Cleanser,Hydra Burst Moisturizer,Renewal Toner" | split: "," -%}
+      {%- assign fallback_names = "Night Cream,Tranexamic Serum,Anti Frizz Keratin Serum,Glow Serum,Glutathione Cream,Floral Blossom Hair Mist,Face Wash,Anti Acne,Sunscreen,Renewal Cleanser,Hydra Burst Moisturizer,Renewal Toner" | split: "," -%}
       {%- assign fallback_images = "night-cream.jpg,tranexamic-serum.jpg,keratin-serum.jpg,glow-serum-100.jpg,glutathione-cream-100.jpg,hair-mist.jpg,facewash-100.jpg,anti-acne-100.jpg,sunscreen-100.jpg,gel cleanser-100.jpg,moisturizer-100.jpg,renewal toner-100.jpg" | split: "," -%}
       {%- assign fallback_hovers = "night-cream-hover.jpg,,keratin-serum-hover.jpg,,,,,hover-anti-acne.png,,," | split: "," -%}
       {%- assign fallback_labels = "nightcream,serum,haircare,serum,repair,haircare,cleanser,antiacne,sunscreen,cleanser,moisturizer,toner" | split: "," -%}
       
       {% for i in (0..11) %}
         {%- assign pname = fallback_names[i] -%}
+        {%- assign phandle = pname | handleize -%}
         {%- assign pimage = fallback_images[i] -%}
         {%- assign plabel = fallback_labels[i] -%}
         <div class="card card-rhode">
-          <a href="#" class="card-link-wrapper">
+          <a href="/products/{{ phandle }}" class="card-link-wrapper">
             {%- assign hover_img = fallback_hovers[i] -%}
             {% if hover_img != blank %}
               <img src="{{ hover_img | asset_url }}" class="card-hover-bg" alt="Hover Background">

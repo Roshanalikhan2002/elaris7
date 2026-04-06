@@ -1,4 +1,4 @@
-﻿/*
+/*
  * ------------------------------------------------------------
  * IMPORTANT: The contents of this file are auto-generated.
  *
@@ -140,6 +140,13 @@
         "footnote": "*Based on a 32-subject consumer perception study after 2 weeks of use."
       }
     },
+    "benefits_focus": {
+      "type": "product-benefits-focus",
+      "settings": {
+        "subtitle": "SPREAD IT ON FOR:",
+        "image": "shopify://shop_images/night_cream_4-100_jpg.jpg"
+      }
+    },
     "faq_split": {
       "type": "product-faq-split",
       "blocks": {
@@ -204,6 +211,7 @@
     "meet_product",
     "details_split",
     "ingredients",
+    "benefits_focus",
     "study_results",
     "faq_split",
     "product_reviews",
