@@ -38,6 +38,9 @@
               </div>
               <span class="btn-rhode-buy-pill">BUY - {{ block.settings.price | default: 'RS. 1,500' }}</span>
             </div>
+            <div class="buy-button-hover">
+              BUY {{ block.settings.title | default: 'NIGHT CREAM' | upcase }} - {{ block.settings.price | default: 'RS. 1,500' }}
+            </div>
           </a>
         </div>
       {% endfor %}
@@ -75,6 +78,9 @@
                 <h3 class="card-name">{{ pname | upcase }}</h3>
               </div>
               <span class="btn-rhode-buy-pill">BUY - RS. 1,500</span>
+            </div>
+            <div class="buy-button-hover">
+              BUY {{ pname | upcase }} - RS. 1,500
             </div>
           </a>
         </div>
