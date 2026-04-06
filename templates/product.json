@@ -54,7 +54,8 @@
       "type": "product-faq-split",
       "settings": {
         "title": "FAQ",
-        "subtitle": "Find out more about Barrier Butter."
+        "subtitle": "Find out more about Barrier Butter.",
+        "image": "shopify://shop_images/faq-100_jpg.jpg"
       }
     },
     "product_reviews": {
