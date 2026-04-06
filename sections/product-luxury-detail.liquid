@@ -712,7 +712,7 @@
       <hr class="divider">
 
       <div class="accordions">
-        {%- assign accordion_titles = "BENEFITS,APPLICATION,TRICK,KEY INGREDIENTS" | split: "," -%}
+        {%- assign accordion_titles = "BENEFITS,APPLICATION,ELARIS TRICKS,KEY INGREDIENTS" | split: "," -%}
         {%- for title in accordion_titles -%}
           <div class="accordion-item-wrap">
             <button class="accordion-trigger" onclick="toggleAccordion(this)">
@@ -722,35 +722,75 @@
             <div class="accordion-content-panel">
               <div class="accordion-content-inner">
                 {%- if title == "BENEFITS" -%}
-                  <ul>
-                    <li>Boosts skin radiance for a naturally luminous glow</li>
-                    <li>Provides 72-hour hydration with a moisture-locking formula</li>
-                    <li>Supports collagen to improve skin firmness and elasticity</li>
-                    <li>Helps fade dark spots, acne scars, and discoloration</li>
-                    <li>Repairs and strengthens the skin barrier overnight</li>
-                    <li>Delivers a soft, smooth, poreless finish by morning</li>
-                    <li>Reduces the appearance of fine lines and wrinkles</li>
-                    <li>Promotes a more even-toned, youthful-looking complexion over time</li>
-                  </ul>
+                  {%- if product.handle == 'tranexamic-serum' -%}
+                    <ul>
+                      <li>Helps reduce the appearance of dark spots and discoloration</li>
+                      <li>Supports a brighter, more even skin tone</li>
+                      <li>Improves dullness and uneven texture</li>
+                      <li>Enhances overall skin clarity and radiance</li>
+                      <li>Hydrates while supporting the skin barrier</li>
+                      <li>Helps smooth and refine the skin surface</li>
+                      <li>Promotes a healthier, more luminous glow</li>
+                    </ul>
+                  {%- else -%}
+                    <ul>
+                      <li>Boosts skin radiance for a naturally luminous glow</li>
+                      <li>Provides 72-hour hydration with a moisture-locking formula</li>
+                      <li>Supports collagen to improve skin firmness and elasticity</li>
+                      <li>Helps fade dark spots, acne scars, and discoloration</li>
+                      <li>Repairs and strengthens the skin barrier overnight</li>
+                      <li>Delivers a soft, smooth, poreless finish by morning</li>
+                      <li>Reduces the appearance of fine lines and wrinkles</li>
+                      <li>Promotes a more even-toned, youthful-looking complexion over time</li>
+                    </ul>
+                  {%- endif -%}
                 {%- elsif title == "APPLICATION" -%}
-                  <p style="margin:0;">After cleansing and toning, take a small amount of Centella Night Cream and gently massage it upward onto your face and neck, avoiding the eye area. Leave it on overnight to fully absorb and lock in hydration, allowing your skin to repair, restore, and wake up looking radiant and smooth. Consistency is key for optimal results.</p>
-                {%- elsif title == "TRICK" -%}
-                  <ul>
-                    <li>Apply a slightly thicker layer on dry areas to maximize overnight hydration</li>
-                    <li>Combine with your serum for enhanced repair benefits</li>
-                    <li>Use consistently to see a reduction in fine lines and dark spots</li>
-                  </ul>
+                  {%- if product.handle == 'tranexamic-serum' -%}
+                    <p style="margin:0;">Use morning and night after cleansing and toning. Apply 2–3 drops to face and neck and gently press into the skin. Follow with moisturizer and use sunscreen during the day.</p>
+                  {%- else -%}
+                    <p style="margin:0;">After cleansing and toning, take a small amount of Centella Night Cream and gently massage it upward onto your face and neck, avoiding the eye area. Leave it on overnight to fully absorb and lock in hydration, allowing your skin to repair, restore, and wake up looking radiant and smooth. Consistency is key for optimal results.</p>
+                  {%- endif -%}
+                {%- elsif title == "ELARIS TRICKS" -%}
+                  {%- if product.handle == 'tranexamic-serum' -%}
+                    <ul>
+                      <li>Apply on slightly damp skin for better absorption</li>
+                      <li>Use consistently for visible brightening results</li>
+                      <li>Pair with sunscreen daily to prevent further discoloration</li>
+                      <li>Layer with moisturizer to lock in hydration</li>
+                    </ul>
+                  {%- else -%}
+                    <ul>
+                      <li>Apply a slightly thicker layer on dry areas to maximize overnight hydration</li>
+                      <li>Combine with your serum for enhanced repair benefits</li>
+                      <li>Use consistently to see a reduction in fine lines and dark spots</li>
+                    </ul>
+                  {%- endif -%}
                 {%- elsif title == "KEY INGREDIENTS" -%}
-                  <ul>
-                    <li>Centella Asiatica</li>
-                    <li>Brightening Complex</li>
-                    <li>Moisture-Lock Technology</li>
-                    <li>Collagen Support Blend</li>
-                    <li>Spot-Corrective Blend</li>
-                    <li>Barrier Repair Actives</li>
-                    <li>Line-Reducing Complex</li>
-                    <li>Even-Tone Enhancer</li>
-                  </ul>
+                  {%- if product.handle == 'tranexamic-serum' -%}
+                    <ul>
+                      <li>Tranexamic Acid (4%)</li>
+                      <li>Niacinamide (10%)</li>
+                      <li>Vitamin C</li>
+                      <li>Alpha Arbutin</li>
+                      <li>Hyaluronic Acid</li>
+                      <li>Glycerin</li>
+                      <li>Panthenol (Vitamin B5)</li>
+                      <li>Vitamin E</li>
+                      <li>Peptides</li>
+                      <li>Botanical Extracts</li>
+                    </ul>
+                  {%- else -%}
+                    <ul>
+                      <li>Centella Asiatica</li>
+                      <li>Brightening Complex</li>
+                      <li>Moisture-Lock Technology</li>
+                      <li>Collagen Support Blend</li>
+                      <li>Spot-Corrective Blend</li>
+                      <li>Barrier Repair Actives</li>
+                      <li>Line-Reducing Complex</li>
+                      <li>Even-Tone Enhancer</li>
+                    </ul>
+                  {%- endif -%}
                 {%- endif -%}
               </div>
             </div>
