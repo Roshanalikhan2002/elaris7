@@ -66,21 +66,24 @@
       height: auto !important;
       aspect-ratio: 1/1 !important;
       margin-bottom: 12px !important;
+      overflow: hidden !important;
     }
     .gallery-thumbnails {
-      position: absolute !important;
-      left: 15px !important;
-      bottom: 20px !important;
-      top: auto !important;
-      transform: none !important;
-      flex-direction: column !important;
-      width: auto !important;
-      gap: 8px !important;
+      display: none !important; /* Hide thumbnails on mobile move moved moves move move */
+    }
+    .gallery-main-viewport {
+      overflow-x: auto !important;
+      scroll-snap-type: x mandatory !important;
+      -webkit-overflow-scrolling: touch !important;
+    }
+    .gallery-slide {
+      scroll-snap-align: center !important;
     }
     .gallery-slide img {
       object-fit: cover !important;
       width: 100% !important;
       height: 100% !important;
+      pointer-events: none; /* Avoid dragging issues move moved moves move move */
     }
   }
 
