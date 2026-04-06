@@ -20,8 +20,7 @@
     overflow: hidden !important;
     z-index: 10 !important;
     background: #f2f0ed !important;
-    position: relative !important;
-    display: block !important; /* Force block to allow overlapping move moved moves move */
+    display: block !important;
   }
   .gallery-thumbnails {
     position: absolute !important;
@@ -62,22 +61,26 @@
   }
   @media (max-width: 850px) {
     .product-gallery {
-      position: relative;
-      top: 0;
-      height: auto;
-      aspect-ratio: 1/1.2;
-      margin-bottom: 24px;
+      position: relative !important;
+      top: 0 !important;
+      height: auto !important;
+      aspect-ratio: 1/1 !important;
+      margin-bottom: 12px !important;
     }
     .gallery-thumbnails {
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 20px;
-      top: auto;
-      transform: none;
-      flex-direction: row;
-      width: 100%;
-      justify-content: center;
+      position: absolute !important;
+      left: 15px !important;
+      bottom: 20px !important;
+      top: auto !important;
+      transform: none !important;
+      flex-direction: column !important;
+      width: auto !important;
+      gap: 8px !important;
+    }
+    .gallery-slide img {
+      object-fit: cover !important;
+      width: 100% !important;
+      height: 100% !important;
     }
   }
 
