@@ -1427,6 +1427,7 @@ a { color: inherit; text-decoration: none; }
 .showcase-image {
   border-radius: 12px;
   overflow: hidden;
+  position: relative;
 }
 
 .showcase-image .full-img {
