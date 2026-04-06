@@ -71,30 +71,11 @@
     },
     "ingredients": {
       "type": "product-ingredients",
-      "blocks": {
-        "ing_1": {
-          "type": "ingredient",
-          "settings": {
-            "title": "hyaluronic acid complex",
-            "description": "High molecular weight hyaluronic acid for surface hydration"
-          }
-        },
-        "ing_2": {
-          "type": "ingredient",
-          "settings": {
-            "title": "centella asiatica",
-            "description": "Calming botanical for barrier repair"
-          }
-        }
-      },
-      "block_order": [
-        "ing_1",
-        "ing_2"
-      ],
       "settings": {
         "title": "what's inside",
-        "intro": "Meet our favorite hero ingredients.",
-        "footer_text": "also made with clean, sustainable, and effective actives.",
+        "intro": "A potent brightening serum formulated to target dark spots, even skin tone, and enhance natural radiance.",
+        "footer_text": "",
+        "image": "shopify://shop_images/whats_inside-100.jpg",
         "show_btn": true,
         "btn_label": "FULL INGREDIENTS LIST"
       }
