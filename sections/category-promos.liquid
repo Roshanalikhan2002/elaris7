@@ -41,9 +41,9 @@
 
       <!-- Product Details Overlay (Exact Bottom Left) -->
       <div class="product-overlay-details" style="position: absolute; bottom: 25px; left: 25px; text-align: left; z-index: 10;">
-        <div class="stars-row" style="font-size: 0.65rem; color: #5b5a53; margin-bottom: 6px;">★ ★ ★ ★ ★ (6,955)</div>
-        <h2 class="showcase-title" style="font-size: 1.15rem; font-weight: 800; color: #5b5a53; margin-bottom: 15px; letter-spacing: -0.01em;">{{ section.settings.product_title | default: 'CENTELLA NIGHT CREAM' | upcase }}</h2>
-        <a href="{{ section.settings.product_link | default: '#' }}" class="btn-pill-buy" style="display: inline-block; padding: 10px 24px; border: 1.2px solid #5b5a53; border-radius: 50px; font-size: 0.75rem; font-weight: 700; color: #5b5a53; text-decoration: none;">
+        <div class="stars-row" style="font-size: 0.65rem; color: {% if section.settings.white_text %}#ffffff{% else %}#5b5a53{% endif %}; margin-bottom: 6px; opacity: 0.9;">★ ★ ★ ★ ★ (6,955)</div>
+        <h2 class="showcase-title" style="font-size: 1.15rem; font-weight: 800; color: {% if section.settings.white_text %}#ffffff{% else %}#5b5a53{% endif %}; margin-bottom: 15px; letter-spacing: -0.01em;">{{ section.settings.product_title | default: 'CENTELLA NIGHT CREAM' | upcase }}</h2>
+        <a href="{{ section.settings.product_link | default: '#' }}" class="btn-pill-buy" style="display: inline-block; padding: 10px 24px; border: 1.2px solid {% if section.settings.white_text %}#ffffff{% else %}#5b5a53{% endif %}; border-radius: 50px; font-size: 0.75rem; font-weight: 700; color: {% if section.settings.white_text %}#ffffff{% else %}#5b5a53{% endif %}; text-decoration: none; transition: opacity 0.2s;">
           BUY BLUSH — {{ section.settings.product_price | default: 'RS. 2,500' }}
         </a>
       </div>
@@ -59,6 +59,12 @@
       "type": "checkbox",
       "id": "flip_layout",
       "label": "Flip Layout (Image on Right)",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "white_text",
+      "label": "White Text (for Dark Images)",
       "default": false
     },
     {
