@@ -60,7 +60,7 @@
         "block_keratin": {
           "type": "product",
           "settings": {
-            "title": "Keratin Serum",
+            "title": "Anti Frizz Keratin Serum",
             "price": "Rs. 2,700",
             "subtitle": "Premium Korean skincare formula",
             "brand_label": "haircare",
@@ -68,7 +68,7 @@
             "reviews": "6k",
             "asset_image": "keratin-serum.jpg",
             "asset_hover_image": "keratin-serum-hover.jpg",
-            "product_link": "/products/keratin-serum"
+            "product_link": "/products/anti-frizz-keratin-serum"
           }
         },
         "block_glow": {
@@ -102,7 +102,7 @@
         "block_hair_mist": {
           "type": "product",
           "settings": {
-            "title": "Hair Mist",
+            "title": "Floral Blossom Hair Mist",
             "price": "Rs. 2,400",
             "subtitle": "Premium Korean skincare formula",
             "brand_label": "haircare",
@@ -110,7 +110,7 @@
             "reviews": "5k",
             "asset_image": "hair-mist.jpg",
             "asset_hover_image": "",
-            "product_link": "/products/hair-mist"
+            "product_link": "/products/floral-blossom-hair-mist"
           }
         },
         "block_face_wash": {
@@ -130,7 +130,7 @@
         "block_anti_acne": {
           "type": "product",
           "settings": {
-            "title": "Anti Acne Serum",
+            "title": "Anti Acne",
             "price": "Rs. 2,450",
             "subtitle": "Premium Korean skincare formula",
             "brand_label": "antiacne",
@@ -138,7 +138,7 @@
             "reviews": "14k",
             "asset_image": "anti-acne-100.jpg",
             "asset_hover_image": "hover-anti-acne.png",
-            "product_link": "/products/anti-acne-serum"
+            "product_link": "/products/anti-acne"
           }
         },
         "block_sunscreen": {
