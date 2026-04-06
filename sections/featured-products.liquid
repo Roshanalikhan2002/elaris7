@@ -30,12 +30,6 @@
               {% else %}
                 <div class="product-placeholder-img"></div>
               {% endif %}
-              
-              {% if forloop.first %}
-                <div class="swipe-bubble mobile-only">
-                  <span>swipe</span>
-                </div>
-              {% endif %}
             </div>
             <div class="card-rhode-footer">
               <div class="card-meta">
@@ -48,6 +42,12 @@
               BUY {{ block.settings.title | default: 'NIGHT CREAM' | upcase }} - {{ block.settings.price | default: 'RS. 1,500' }}
             </div>
           </a>
+          
+          {% if forloop.first %}
+            <div class="swipe-bubble mobile-only">
+              <span>swipe</span>
+            </div>
+          {% endif %}
         </div>
       {% endfor %}
     {% else %}
@@ -77,12 +77,6 @@
               {% else %}
                 <div class="product-placeholder-img"></div>
               {% endif %}
-              
-              {% if forloop.first %}
-                <div class="swipe-bubble mobile-only">
-                  <span>swipe</span>
-                </div>
-              {% endif %}
             </div>
             <div class="card-rhode-footer">
               <div class="card-meta">
@@ -95,6 +89,12 @@
               BUY {{ pname | upcase }} - RS. 1,500
             </div>
           </a>
+          
+          {% if forloop.first %}
+            <div class="swipe-bubble mobile-only">
+              <span>swipe</span>
+            </div>
+          {% endif %}
         </div>
       {% endfor %}
     {% endif %}
