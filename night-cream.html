@@ -795,19 +795,21 @@
       scrollbar-width: none;
       -ms-overflow-style: none;
       padding-bottom: 8px; /* space for potential scroll snapping */
+      scroll-snap-type: x mandatory;
     }
     .meet-carousel::-webkit-scrollbar {
       display: none;
     }
 
     .meet-carousel img {
-      width: 25vw;
-      min-width: 240px;
+      flex: 0 0 calc(33.333% - 10.66px);
+      width: 100%;
+      min-width: 260px;
       height: auto;
       aspect-ratio: 4/5;
       object-fit: cover;
       border-radius: 12px;
-      flex-shrink: 0;
+      scroll-snap-align: start;
     }
 
     .carousel-arrow {
