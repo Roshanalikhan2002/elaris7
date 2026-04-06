@@ -1,3 +1,62 @@
+<style>
+.section-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  padding: 0 12px;
+  min-height: 80vh;
+}
+
+.showcase-details {
+  background: #f2f0ed;
+  display: flex !important;
+  flex-direction: column;
+  padding: 0 !important; /* Forces full bleed */
+  position: relative !important;
+  border-radius: 12px;
+  overflow: hidden;
+  min-height: 500px;
+}
+
+.product-smear { 
+  position: absolute !important;
+  inset: 0 !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  z-index: 1 !important;
+}
+
+.product-smear img { 
+  width: 100% !important; 
+  height: 100% !important;
+  object-fit: cover !important;
+  display: block !important;
+}
+
+.details-text-overlap {
+  position: absolute !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  padding: 40px !important;
+  z-index: 10 !important;
+  background: transparent !important;
+  text-align: left !important;
+}
+
+@media (max-width: 768px) {
+  .section-grid {
+    display: flex;
+    flex-direction: column;
+  }
+  .showcase-details {
+    padding: 0 !important;
+    min-height: 600px;
+  }
+}
+</style>
+
 <div class="section-grid">
   <div class="card showcase-image">
     {% if section.settings.model_image != blank %}
@@ -9,16 +68,16 @@
   <div class="card showcase-details">
     <div class="product-smear">
       {% if section.settings.smear_image != blank %}
-        {{ section.settings.smear_image | image_url: width: 800 | image_tag: alt: 'Texture' }}
+        {{ section.settings.smear_image | image_url: width: 1200 | image_tag: alt: 'Texture', style: 'width:100%; height:100%; object-fit:cover;' }}
       {% else %}
-        <img src="https://images.unsplash.com/photo-1629198688000-71f23e745b6e?q=80&w=800" alt="Texture Smear">
+        <img src="https://images.unsplash.com/photo-1629198688000-71f23e745b6e?q=80&w=1200" alt="Texture Smear">
       {% endif %}
     </div>
-    <div class="details-text">
-      <div class="stars">{{ section.settings.rating }}</div>
-      <h3 class="xl-title">{{ section.settings.title | upcase }}</h3>
-      <p class="subtitle">{{ section.settings.subtitle }}</p>
-      <a href="{{ section.settings.link }}" class="btn-pill-outline" style="margin-top: 300px; display: inline-block;">
+    <div class="details-text-overlap">
+      <div class="stars" style="color: #5B5A53; font-size: 0.8rem; margin-bottom: 4px;">{{ section.settings.rating }}</div>
+      <h3 class="xl-title" style="font-size: 1.2rem; font-weight: 800; margin: 6px 0 2px; text-transform: uppercase; color: #2c2b28;">{{ section.settings.title | upcase }}</h3>
+      <p class="subtitle" style="font-size: 0.9rem; color: #7A7973; margin-top: 0;">{{ section.settings.subtitle }}</p>
+      <a href="{{ section.settings.link }}" class="btn-rhode-outline">
         {{ section.settings.btn_text | upcase }} — {{ section.settings.price }}
       </a>
     </div>
