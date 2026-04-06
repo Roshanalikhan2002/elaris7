@@ -1,0 +1,50 @@
+{
+  "name": "Luxury Product",
+  "layout": "theme",
+  "sections": {
+    "main": {
+      "type": "product-luxury-detail",
+      "settings": {}
+    },
+    "meet_product": {
+      "type": "meet-the-product",
+      "settings": {}
+    },
+    "details_split": {
+      "type": "product-details-split",
+      "settings": {}
+    },
+    "ingredients": {
+      "type": "product-ingredients",
+      "settings": {}
+    },
+    "study_results": {
+      "type": "product-study-results",
+      "settings": {}
+    },
+    "faq_split": {
+      "type": "product-faq-split",
+      "settings": {}
+    },
+    "product_reviews": {
+      "type": "product-reviews",
+      "settings": {}
+    },
+    "related_products": {
+      "type": "featured-products",
+      "settings": {
+        "heading": "you may also like"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "meet_product",
+    "details_split",
+    "ingredients",
+    "study_results",
+    "faq_split",
+    "product_reviews",
+    "related_products"
+  ]
+}
