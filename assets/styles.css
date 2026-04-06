@@ -1973,9 +1973,8 @@ a { color: inherit; text-decoration: none; }
 
 .product-swirl-img {
   width: 100%;
-  height: auto;
-  max-width: 320px;
-  mix-blend-mode: multiply;
+  height: 100%;
+  object-fit: cover;
 }
 
 .stars-row {
