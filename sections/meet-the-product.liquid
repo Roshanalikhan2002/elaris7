@@ -74,7 +74,11 @@
 {%- endstyle -%}
 
 <section class="meet-product-section">
-  <h2 class="meet-title">Your Overnight Glow Secret</h2>
+  {%- assign meet_title = section.settings.title | default: "Your Overnight Glow Secret" -%}
+  {%- if product.handle == 'tranexamic-serum' -%}
+    {%- assign meet_title = "Fade Spots. Reveal Clarity." -%}
+  {%- endif -%}
+  <h2 class="meet-title">{{ meet_title }}</h2>
   <div class="meet-carousel-wrapper">
     <div class="meet-carousel">
       {% if section.blocks.size > 0 %}
