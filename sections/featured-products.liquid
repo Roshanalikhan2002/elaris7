@@ -14,6 +14,10 @@
       {% for block in section.blocks %}
         <div class="card card-rhode" {{ block.shopify_attributes }}>
           <a href="{{ block.settings.product_link | default: '#' }}" class="card-link-wrapper">
+            {% if block.settings.hover_image != blank %}
+              {{ block.settings.hover_image | image_url: width: 1200 | image_tag: class: 'card-hover-bg', alt: block.settings.title }}
+            {% endif %}
+            
             <div class="card-rhode-top">
               <span class="card-brand-label">{{ block.settings.brand_label | default: 'nightcream' }}</span>
               {% if block.settings.badge != blank %}
@@ -25,10 +29,6 @@
                 {{ block.settings.main_image | image_url: width: 800 | image_tag: alt: block.settings.title, class: 'product-main-img' }}
               {% else %}
                 <div class="product-placeholder-img"></div>
-              {% endif %}
-
-              {% if block.settings.hover_image != blank %}
-                {{ block.settings.hover_image | image_url: width: 1200 | image_tag: class: 'card-hover-bg', alt: block.settings.title }}
               {% endif %}
             </div>
             <div class="card-rhode-footer">
@@ -57,6 +57,11 @@
         {%- assign plabel = fallback_labels[i] -%}
         <div class="card card-rhode">
           <a href="#" class="card-link-wrapper">
+            {%- assign hover_img = fallback_hovers[i] -%}
+            {% if hover_img != blank %}
+              <img src="{{ hover_img | asset_url }}" class="card-hover-bg" alt="Hover Background">
+            {% endif %}
+
             <div class="card-rhode-top">
               <span class="card-brand-label">{{ plabel }}</span>
             </div>
@@ -65,11 +70,6 @@
                 <img src="{{ pimage | asset_url }}" class="product-main-img" alt="{{ pname }}">
               {% else %}
                 <div class="product-placeholder-img"></div>
-              {% endif %}
-
-              {%- assign hover_img = fallback_hovers[i] -%}
-              {% if hover_img != blank %}
-                <img src="{{ hover_img | asset_url }}" class="card-hover-bg" alt="{{ pname }} hover">
               {% endif %}
             </div>
             <div class="card-rhode-footer">
