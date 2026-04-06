@@ -1118,7 +1118,7 @@ a { color: inherit; text-decoration: none; }
   overflow: hidden;
 }
 
-.product-main-img, .card-rhode-image img {
+.product-main-img, .card-rhode-image img:not(.card-hover-bg) {
   max-height: 420px; /* boosted for maximum impact move move moved mov */
   max-width: 100%; /* removal of constraints move move moved mov */
   width: 100%;
