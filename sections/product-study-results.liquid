@@ -62,9 +62,12 @@
   @media (max-width: 900px) {
     .study-results-section {
       grid-template-columns: 1fr;
+      margin: 0;
+      gap: 0;
     }
     .sr-left {
-      padding: 50px 30px;
+      padding: 50px 24px;
+      border-radius: 0;
     }
     .sr-number {
       font-size: 2.2rem;
@@ -72,6 +75,7 @@
     .sr-right {
       min-height: 400px;
       order: -1; /* Push image to top on mobile */
+      border-radius: 0;
     }
   }
 {%- endstyle -%}
