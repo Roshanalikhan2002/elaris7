@@ -494,6 +494,19 @@
               <div class="thumb-item" onmouseover="scrollGallery(3, this)">
                 <img src="{{ 'tranexamic-meet-3.jpg' | asset_url }}" alt="Meet Elaris 3">
               </div>
+            {%- elsif product.handle == 'glow-serum' -%}
+              <div class="thumb-item active" onmouseover="scrollGallery(0, this)">
+                <img src="{{ 'glow-serum-100.jpg' | asset_url }}" alt="{{ product.title }}">
+              </div>
+              <div class="thumb-item" onmouseover="scrollGallery(1, this)">
+                <img src="{{ 'social-face.jpg' | asset_url }}" alt="Lifestyle Glow">
+              </div>
+              <div class="thumb-item" onmouseover="scrollGallery(2, this)">
+                <img src="{{ 'social-hand.jpg' | asset_url }}" alt="Texture Close up">
+              </div>
+              <div class="thumb-item" onmouseover="scrollGallery(3, this)">
+                <img src="{{ 'social-jar.jpg' | asset_url }}" alt="Product flatlay">
+              </div>
             {%- else -%}
               {%- assign handle_image = product.handle | append: '.jpg' -%}
               {%- assign fallback_img = section.settings.asset_main_image | default: handle_image -%}
@@ -534,6 +547,11 @@
                 <div class="gallery-slide"><img src="{{ 'tranexamic-meet-1.jpg' | asset_url }}" alt="Meet Elaris 1"></div>
                 <div class="gallery-slide"><img src="{{ 'tranexamic-meet-2.jpg' | asset_url }}" alt="Meet Elaris 2"></div>
                 <div class="gallery-slide"><img src="{{ 'tranexamic-meet-3.jpg' | asset_url }}" alt="Meet Elaris 3"></div>
+              {%- elsif product.handle == 'glow-serum' -%}
+                <div class="gallery-slide"><img src="{{ 'glow-serum-100.jpg' | asset_url }}" alt="{{ product.title }}"></div>
+                <div class="gallery-slide"><img src="{{ 'social-face.jpg' | asset_url }}" alt="Lifestyle Glow" style="object-fit: cover !important;"></div>
+                <div class="gallery-slide"><img src="{{ 'social-hand.jpg' | asset_url }}" alt="Texture Close up" style="object-fit: cover !important;"></div>
+                <div class="gallery-slide"><img src="{{ 'social-jar.jpg' | asset_url }}" alt="Product flatlay" style="object-fit: cover !important;"></div>
               {%- else -%}
                 {%- assign handle_image = product.handle | append: '.jpg' -%}
                 {%- assign fallback_img = section.settings.asset_main_image | default: handle_image -%}
@@ -578,6 +596,9 @@
       {%- elsif product.handle == 'anti-frizz-keratin-serum' -%}
         {%- assign display_subtitle = 'Keratin + Argan Oil' -%}
         {%- assign display_desc = 'A smoothing hair serum designed to control frizz, protect against heat, and restore softness without weighing hair down. It seals moisture, enhances shine, and leaves hair silky, manageable, and smooth with every use.' -%}
+      {%- elsif product.handle == 'glow-serum' -%}
+        {%- assign display_subtitle = 'Aloe Vera + Niacinamide' -%}
+        {%- assign display_desc = 'A lightweight, brightening serum designed to deliver a glass-skin finish. Infused with Aloe Vera and Niacinamide to hydrate, refine texture, and boost radiance for a naturally luminous glow.' -%}
       {%- endif -%}
 
       <div class="product-meta" style="margin-top: 5px;">
@@ -785,14 +806,14 @@
                       <li>Helps smooth and refine the skin surface</li>
                       <li>Promotes a healthier, more luminous glow</li>
                     </ul>
-                  {%- elsif product.handle == 'anti-frizz-keratin-serum' -%}
+                  {%- elsif product.handle == 'glow-serum' -%}
                     <ul>
-                      <li>Instantly controls frizz for a smoother look</li>
-                      <li>Helps reduce hair breakage and split ends</li>
-                      <li>Protects hair from heat styling damage</li>
-                      <li>Locks in moisture for long-lasting smoothness</li>
-                      <li>Enhances shine and softness without heaviness</li>
-                      <li>Keeps hair manageable and easy to style</li>
+                      <li>Instantly hydrates and plumps for a dewy look</li>
+                      <li>Minimizes the appearance of pores and fine lines</li>
+                      <li>Brightens uneven skin tone for a glass-skin finish</li>
+                      <li>Calms redness and soothes irritated skin</li>
+                      <li>Enhances skin radiance and natural glow</li>
+                      <li>Lightweight and non-greasy for all-day comfort</li>
                     </ul>
                   {%- else -%}
                     <ul>
@@ -811,6 +832,8 @@
                     <p style="margin:0;">Use morning and night after cleansing and toning. Apply 2–3 drops to face and neck and gently press into the skin. Follow with moisturizer and use sunscreen during the day.</p>
                   {%- elsif product.handle == 'anti-frizz-keratin-serum' -%}
                     <p style="margin:0;">After washing or styling, take a small amount of Anti Frizz Keratin Serum and apply evenly through damp or dry hair, focusing on mid-lengths and ends. Avoid the roots and style as desired.</p>
+                  {%- elsif product.handle == 'glow-serum' -%}
+                    <p style="margin:0;">Apply 2–3 drops of Glow Serum onto clean, dry or damp skin. Gently press and massage into the face and neck until fully absorbed. Use morning and night before your moisturizer for best results.</p>
                   {%- else -%}
                     <p style="margin:0;">After cleansing and toning, take a small amount of Centella Night Cream and gently massage it upward onto your face and neck, avoiding the eye area. Leave it on overnight to fully absorb and lock in hydration, allowing your skin to repair, restore, and wake up looking radiant and smooth. Consistency is key for optimal results.</p>
                   {%- endif -%}
@@ -828,6 +851,13 @@
                       <li>Use a small amount to avoid product buildup</li>
                       <li>Apply before heat styling for added protection</li>
                       <li>Use on dry hair to tame flyaways instantly</li>
+                    </ul>
+                  {%- elsif product.handle == 'glow-serum' -%}
+                    <ul>
+                      <li>Mix a drop with your foundation for an extra dewy base</li>
+                      <li>Pat a small amount onto cheekbones for a natural highlight</li>
+                      <li>Use on damp skin to maximize hydration and absorption</li>
+                      <li>Layer under moisturizer to lock in moisture all day</li>
                     </ul>
                   {%- else -%}
                     <ul>
@@ -863,6 +893,15 @@
                       <li>Shea Butter</li>
                       <li>Squalene</li>
                       <li>Niacinamide</li>
+                    </ul>
+                  {%- elsif product.handle == 'glow-serum' -%}
+                    <ul>
+                      <li>Aloe Vera Extract (Soothing & Hydrating)</li>
+                      <li>Niacinamide (Brightening & Pore-Refining)</li>
+                      <li>Hyaluronic Acid (Plumping & Moisturizing)</li>
+                      <li>Centella Asiatica (Calming & Repairing)</li>
+                      <li>Green Tea Extract (Antioxidant Protection)</li>
+                      <li>Honey (Natural Glow & Softness)</li>
                     </ul>
                   {%- else -%}
                     <ul>

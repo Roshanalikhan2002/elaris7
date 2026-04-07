@@ -79,6 +79,8 @@
     {%- assign meet_title = "Fade Spots. Reveal Clarity." -%}
   {%- elsif product.handle == 'anti-frizz-keratin-serum' -%}
     {%- assign meet_title = "Smooth Hair. Zero Frizz." -%}
+  {%- elsif product.handle == 'glow-serum' -%}
+    {%- assign meet_title = "Glass Skin. Infinite Glow." -%}
   {%- endif -%}
   <h2 class="meet-title">{{ meet_title }}</h2>
   <div class="meet-carousel-wrapper">
@@ -103,6 +105,11 @@
           <img src="{{ 'keratin-ba.jpg' | asset_url }}" alt="Before After Results">
           <img src="{{ 'keratin-1.jpg' | asset_url }}" alt="Keratin Serum Close Up">
           <img src="{{ 'keratin-2.jpg' | asset_url }}" alt="Keratin Serum Texture">
+        {%- elsif product.handle == 'glow-serum' -%}
+          <img src="{{ 'social-face.jpg' | asset_url }}" alt="Glow Model">
+          <img src="{{ 'social-hand.jpg' | asset_url }}" alt="Serum Texture">
+          <img src="{{ 'social-jar.jpg' | asset_url }}" alt="Serum Flatlay">
+          <img src="{{ 'glow-serum-100.jpg' | asset_url }}" alt="Glow Serum">
         {%- else -%}
           <img src="{{ 'night-cream-suite.jpeg' | asset_url }}" alt="Product Image 1">
           <img src="{{ 'night-cream-swatch.jpeg' | asset_url }}" alt="Product Image 2">

@@ -1,18 +1,17 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "layout": "theme",
   "sections": {
     "main": {
       "type": "product-luxury-detail",
-      "settings": {}
+      "settings": {
+        "asset_main_image": "glow-serum-100.jpg",
+        "subtitle": "Aloe Vera + Niacinamide",
+        "show_reviews": true,
+        "review_count": "12k",
+        "description": "A lightweight, brightening serum designed to deliver a glass-skin finish. Infused with Aloe Vera and Niacinamide to hydrate, refine texture, and boost radiance for a naturally luminous glow.",
+        "show_ingredients": true,
+        "key_ingredients": "Aloe Vera, Niacinamide, Glycerin, Hyaluronic Acid, Centella Asiatica, Green Tea Extract, Honey."
+      }
     },
     "meet_product": {
       "type": "meet-the-product",
@@ -25,35 +24,35 @@
           "type": "detail_row",
           "settings": {
             "label": "GOOD FOR:",
-            "value": "All skin types, including dry and sensitive skin"
+            "value": "All skin types wanting a hydrated, glass-skin glow"
           }
         },
         "row_feels": {
           "type": "detail_row",
           "settings": {
             "label": "FEELS LIKE:",
-            "value": "A rich, creamy formula that melts effortlessly into the skin"
+            "value": "A refreshing, weightless gel that absorbs instantly"
           }
         },
         "row_looks": {
           "type": "detail_row",
           "settings": {
             "label": "LOOKS LIKE:",
-            "value": "Smooth, plump, and poreless skin by morning"
+            "value": "Dewy, luminous skin with a smooth, refined texture"
           }
         },
         "row_smells": {
           "type": "detail_row",
           "settings": {
             "label": "SMELLS LIKE:",
-            "value": "Subtle, calming freshness for a relaxing nighttime routine"
+            "value": "Fresh, light botanical scent with hints of aloe"
           }
         },
         "row_fyi": {
           "type": "detail_row",
           "settings": {
             "label": "FYI:",
-            "value": "Halal-Friendly • Dermatologist-Tested • Non-Sticky • Repair-Focused"
+            "value": "Non-Comedogenic • Alcohol-Free • Hydration-Boosting • Glass-Skin Finish"
           }
         }
       },
@@ -65,7 +64,8 @@
         "row_fyi"
       ],
       "settings": {
-        "title": "An intensive overnight cream for DEEP REPAIR + BABY-SOFT skin."
+        "title": "A dewy brightening serum for GLASS-SKIN + INSTANT GLOW.",
+        "image": "shopify://shop_images/social-jar.jpg"
       }
     },
     "ingredients": {
@@ -74,15 +74,15 @@
         "ing_1": {
           "type": "ingredient",
           "settings": {
-            "title": "hyaluronic acid complex",
-            "description": "5 molecular weights of hyaluronic acid help improve hydration on and below the skin's surface"
+            "title": "niacinamide (vitamin b3)",
+            "description": "helps refine skin texture, minimize the appearance of pores, and brighten uneven skin tone for a clearer complexion"
           }
         },
         "ing_2": {
           "type": "ingredient",
           "settings": {
-            "title": "centella asiatica",
-            "description": "a powerful skin-calming botanical that helps soothe irritation, strengthen the skin barrier, and accelerate overnight repair"
+            "title": "aloe vera extract",
+            "description": "deeply hydrates and soothes the skin while providing a refreshing, cooling sensation and supporting natural repair"
           }
         }
       },
@@ -92,8 +92,8 @@
       ],
       "settings": {
         "title": "what's inside",
-        "intro": "Our formula is packed with 13 efficacious hero ingredients. Meet 2 of our favorites for intensive hydration.",
-        "footer_text": "also made with POLYGLUTAMIC ACID, ISOSORBIDE DICAPRYLATE, CERAMIDE NP, PALMITOYL TETRAPEPTIDE-10, PALMITOYL TRIPEPTIDE-8, BISABOLOL, GINGER ROOT EXTRACT",
+        "intro": "Our formula combines calming botanicals with potent brightening actives. Meet 2 of our favorites for the ultimate glow.",
+        "footer_text": "also made with HYALURONIC ACID, CENTELLA ASIATICA, GREEN TEA EXTRACT, HONEY, GLYCERIN, PANTHENOL, ALLANTOIN",
         "show_btn": true,
         "btn_label": "FULL INGREDIENTS LIST"
       }
@@ -104,40 +104,33 @@
         "stat_1": {
           "type": "stat_block",
           "settings": {
-            "number": "97%",
-            "description": "SAID THEIR SKIN FELT DEEPLY HYDRATED AND NOURISHED"
+            "number": "98%",
+            "description": "SAID THEIR SKIN LOOKED INSTANTLY DEWY AND GLOWY"
           }
         },
         "stat_2": {
           "type": "stat_block",
           "settings": {
-            "number": "95%",
-            "description": "SAID IT ABSORBED WELL WITHOUT HEAVINESS"
+            "number": "96%",
+            "description": "SAID IT IMPROVED SKIN RADIANCE OVER TIME"
           }
         },
         "stat_3": {
           "type": "stat_block",
           "settings": {
-            "number": "94%",
-            "description": "NOTICED SMOOTHER, SOFTER, AND REFINED SKIN BY MORNING"
-          }
-        },
-        "stat_4": {
-          "type": "stat_block",
-          "settings": {
-            "number": "3 out of 4",
-            "description": "REPORTED A VISIBLE REDUCTION IN FINE LINES AND DARK SPOTS"
+            "number": "95%",
+            "description": "SAID THEIR SKIN FELT PLUMPER AND MORE HYDRATED"
           }
         }
       },
       "block_order": [
         "stat_1",
         "stat_2",
-        "stat_3",
-        "stat_4"
+        "stat_3"
       ],
       "settings": {
-        "footnote": "*Based on a 32-subject consumer perception study after 2 weeks of use."
+        "footnote": "Based on a 1-week consumer perception study with consistent use.",
+        "image": "shopify://shop_images/social-face.jpg"
       }
     },
     "faq_split": {
@@ -146,36 +139,36 @@
         "faq_1": {
           "type": "faq_item",
           "settings": {
-            "question": "Can I use this night cream with my serum?",
-            "answer": "Yes, applying serum before the night cream enhances hydration and repair benefits."
+            "question": "When should I apply the Glow Serum?",
+            "answer": "Apply morning and night after cleansing and toning, and before your moisturizer."
           }
         },
         "faq_2": {
           "type": "faq_item",
           "settings": {
-            "question": "Is it suitable for oily skin at night?",
-            "answer": "Absolutely, it hydrates without clogging pores or leaving a greasy residue."
+            "question": "Can I use it under makeup?",
+            "answer": "Yes, it creates a perfect dewy base for makeup application."
           }
         },
         "faq_3": {
           "type": "faq_item",
           "settings": {
-            "question": "How often should I use it?",
-            "answer": "For optimal results, use every night as the final step in your evening routine."
+            "question": "Is it suitable for oily skin?",
+            "answer": "Yes, its lightweight, water-based formula provides hydration without oiliness."
           }
         },
         "faq_4": {
           "type": "faq_item",
           "settings": {
-            "question": "Will it help with dull or uneven skin tone?",
-            "answer": "Yes, its brightening and repair ingredients work overnight to improve radiance and evenness."
+            "question": "How long until I see results?",
+            "answer": "You'll notice an instant glow; visible texture improvement typically appears within 2-4 weeks."
           }
         },
         "faq_5": {
           "type": "faq_item",
           "settings": {
-            "question": "Can it reduce the appearance of fine lines?",
-            "answer": "Yes, regular use helps visibly minimize fine lines and promotes firmer, youthful-looking skin."
+            "question": "Does it help with acne marks?",
+            "answer": "Yes, Niacinamide is excellent for fading the appearance of post-acne marks and redness."
           }
         }
       },
@@ -187,7 +180,9 @@
         "faq_5"
       ],
       "settings": {
-        "title": "FAQ"
+        "title": "FAQ",
+        "subtitle": "Discover everything you need for that glass-skin finish.",
+        "image": "shopify://shop_images/faq-100_2.jpg"
       }
     },
     "product_reviews": {
