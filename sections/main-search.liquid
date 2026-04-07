@@ -1,0 +1,175 @@
+{% schema %}
+{
+  "name": "Main Search",
+  "settings": [
+    {
+      "type": "text",
+      "id": "search_title",
+      "label": "Search Title",
+      "default": "SEARCH RESULTS"
+    }
+  ]
+}
+{% endschema %}
+
+<div class="search-page-container">
+  <div class="search-page-header">
+    <h1 class="page-title">{{ section.settings.search_title }}</h1>
+    <p class="search-result-count">
+      {% if search.results_count == 0 %}
+        No results found for "{{ search.terms }}"
+      {% else %}
+        {{ search.results_count }} results for "{{ search.terms }}"
+      {% endif %}
+    </p>
+  </div>
+
+  <div class="search-page-form">
+    <form action="/search" method="get" class="search-results-form">
+      <input type="text" name="q" value="{{ search.terms | escape }}" placeholder="SEARCH ELARIS7..." class="search-page-input">
+      <button type="submit" class="search-page-submit">Search</button>
+    </form>
+  </div>
+
+  {% if search.performed and search.results_count > 0 %}
+    <div class="search-grid">
+      {% for item in search.results %}
+        {% if item.object_type == 'product' %}
+          <a href="{{ item.url }}" class="search-grid-item">
+            <div class="search-item-image">
+               <img src="{{ item.featured_image | image_url: width: 600 }}" alt="{{ item.title }}" loading="lazy">
+            </div>
+            <div class="search-item-meta">
+              <h3 class="search-item-title">{{ item.title | uppercase }}</h3>
+              <p class="search-item-price">{{ item.price | money }}</p>
+            </div>
+          </a>
+        {% endif %}
+      {% endfor %}
+    </div>
+  {% endif %}
+</div>
+
+<style>
+.search-page-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 40px;
+  background: #f1efea;
+}
+
+.search-page-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.page-title {
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.2rem;
+  color: #5b5a53;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.search-result-count {
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: #a09f98;
+  letter-spacing: 0.05rem;
+}
+
+.search-page-form {
+  max-width: 600px;
+  margin: 0 auto 80px;
+}
+
+.search-results-form {
+  display: flex;
+  border-bottom: 1px solid rgba(91,90,83,0.3);
+  padding-bottom: 10px;
+}
+
+.search-page-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #5b5a53;
+  padding: 10px 0;
+  outline: none;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+}
+
+.search-page-submit {
+  background: none;
+  border: none;
+  font-size: 0.65rem;
+  font-weight: 800;
+  color: #5b5a53;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  cursor: pointer;
+  padding: 0 20px;
+}
+
+.search-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+.search-grid-item {
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.search-item-image {
+  background: #fff;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  overflow: hidden;
+}
+
+.search-item-image img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+  transition: transform 0.4s ease;
+}
+
+.search-grid-item:hover .search-item-image img {
+  transform: scale(1.05);
+}
+
+.search-item-meta {
+  text-align: left;
+}
+
+.search-item-title {
+  font-size: 0.65rem;
+  font-weight: 800;
+  color: #333;
+  margin-bottom: 4px;
+}
+
+.search-item-price {
+  font-size: 0.6rem;
+  font-weight: 600;
+  color: #8c8b84;
+}
+
+@media (max-width: 1024px) {
+  .search-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  .search-page-container { padding: 60px 20px; }
+}
+</style>

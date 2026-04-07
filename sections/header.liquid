@@ -81,17 +81,17 @@
     </div>
     <nav class="header-nav header-right">
       <ul class="desktop-only site-nav">
-        <li><button class="nav-link search-trigger" id="search-open-desktop">SEARCH</button></li>
+        <li><a href="/search" class="nav-link search-trigger" id="search-open-desktop">SEARCH</a></li>
         <li><a href="/account" class="nav-link">ACCOUNT</a></li>
         <li><a href="/cart" class="nav-link cart-count">CART ({{ cart.item_count }})</a></li>
       </ul>
       <div class="mobile-only mobile-header-icons">
-        <button class="mobile-icon search-trigger" id="search-open-mobile">
+        <a href="/search" class="mobile-icon search-trigger" id="search-open-mobile">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="11" cy="11" r="8"></circle>
             <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
           </svg>
-        </button>
+        </a>
         <a href="/cart" class="mobile-icon cart-icon-wrapper">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
             <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path>
@@ -215,10 +215,10 @@
   z-index: 4000;
   opacity: 0;
   visibility: hidden;
-  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   display: flex;
   justify-content: center;
-  padding: 80px 40px;
+  padding: 100px 40px;
 }
 
 .search-overlay.active {
@@ -227,82 +227,81 @@
 }
 
 .search-container {
-  max-width: 800px;
+  max-width: 900px;
   width: 100%;
-  position: relative;
 }
 
 .search-top {
   display: flex;
   justify-content: flex-end;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 }
 
 .search-close {
   background: none;
   border: none;
-  font-size: 2.2rem;
+  font-size: 2.5rem;
   color: #5b5a53;
   cursor: pointer;
   line-height: 1;
-  transition: transform 0.3s ease;
+  transition: opacity 0.3s ease;
 }
-.search-close:hover { transform: rotate(90deg); }
+.search-close:hover { opacity: 0.5; }
 
 .search-form {
   width: 100%;
+  position: relative;
 }
 
 .search-input {
   width: 100%;
   background: transparent;
   border: none;
-  border-bottom: 2px solid #5b5a53;
-  font-size: 2.8rem;
-  font-weight: 900;
-  color: #5b5a53;
-  padding: 15px 0;
+  border-bottom: 1px solid rgba(91, 90, 83, 0.4);
+  font-size: 2rem;
+  font-weight: 700;
+  color: #333;
+  padding: 12px 0;
   outline: none;
   text-transform: uppercase;
-  letter-spacing: -0.03em;
+  letter-spacing: 0.08em;
   font-family: 'Inter', sans-serif;
 }
 
 .search-input::placeholder {
-  color: rgba(91, 90, 83, 0.15);
+  color: rgba(91, 90, 83, 0.2);
 }
 
 .search-suggestions {
-  margin-top: 60px;
+  margin-top: 50px;
 }
 
 .suggestion-label {
-  font-size: 0.65rem;
-  font-weight: 900;
-  color: #8c8b84;
+  font-size: 0.62rem;
+  font-weight: 800;
+  color: #9a9990;
   text-transform: uppercase;
-  letter-spacing: 0.12em;
-  margin-bottom: 25px;
+  letter-spacing: 0.1em;
+  margin-bottom: 24px;
 }
 
 .suggestion-items {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 10px;
 }
 
 .suggestion-items a {
   background: #fff;
   border: 1px solid #d1d1cf;
   border-radius: 50px;
-  padding: 10px 24px;
-  font-size: 0.7rem;
-  font-weight: 800;
+  padding: 8px 22px;
+  font-size: 0.65rem;
+  font-weight: 700;
   color: #5b5a53;
   text-decoration: none;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
 }
 
 .suggestion-items a:hover {
@@ -312,10 +311,9 @@
 }
 
 @media (max-width: 768px) {
-  .search-overlay { padding: 60px 20px; }
-  .search-input { font-size: 1.6rem; }
-  .search-top { margin-bottom: 20px; }
-  .suggestion-items a { padding: 8px 18px; font-size: 0.65rem; }
+  .search-overlay { padding: 80px 20px; }
+  .search-input { font-size: 1.4rem; padding: 10px 0; }
+  .search-top { margin-bottom: 25px; }
 }
 
 /* ===== Hamburger & Mobile Trigger ===== */
@@ -811,7 +809,8 @@ body.menu-open { overflow: hidden; }
   const searchClose = document.getElementById('search-close');
   const searchInput = document.getElementById('search-input');
 
-  function openSearch() {
+  function openSearch(e) {
+    if (e) e.preventDefault();
     if (!searchOverlay) return;
     searchOverlay.classList.add('active');
     document.body.classList.add('menu-open');
