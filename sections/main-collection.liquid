@@ -40,11 +40,15 @@
   </div>
 
   <div class="collection-main">
+    {%- assign featured_handles = "night-cream,tranexamic-serum,anti-frizz-keratin-serum,e7-korean-glass-skin-centella-sunscreen-spf50-copy,glutathione-cream,floral-blossom-hair-mist,e7-korean-glass-skin-centella-night-cream-copy,anti-acne,e7-korean-glass-skin-centella-face-wash-copy,centella-skin-toner-copy,e7-korean-glass-skin-moisturizer,centella-skin-toner" | split: "," -%}
     {% paginate collection.products by section.settings.products_per_page %}
       <div class="collection-grid">
         {% for product in collection.products %}
-           <div class="coll-item">
-             <a href="{{ product.url }}" class="coll-card">
+          {% unless featured_handles contains product.handle %}
+            {% continue %}
+          {% endunless %}
+          <div class="coll-item">
+            <a href="{{ product.url }}" class="coll-card">
                <div class="coll-image">
                  <img src="{{ product.featured_image | image_url: width: 800 }}" alt="{{ product.title }}" loading="lazy" class="main-img">
                  {% if product.images[1] != blank %}
