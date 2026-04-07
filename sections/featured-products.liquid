@@ -89,14 +89,20 @@
               {% endif %}
             </div>
             <div class="card-rhode-footer">
+              {%- assign pprice = "RS. 1,500" -%}
+              {%- assign previews = "16k" -%}
+              {%- if pname == "Glutathione Cream" -%}
+                {%- assign pprice = "RS. 2,950" -%}
+                {%- assign previews = "9k" -%}
+              {%- endif -%}
               <div class="card-meta">
-                <div class="card-stars">★★★★★ <span class="review-count">(16k)</span></div>
+                <div class="card-stars">★★★★★ <span class="review-count">({{ previews }})</span></div>
                 <h3 class="card-name">{{ pname | upcase }}</h3>
               </div>
-              <span class="btn-rhode-buy-pill">BUY - RS. 1,500</span>
+              <span class="btn-rhode-buy-pill">BUY - {{ pprice }}</span>
             </div>
             <div class="buy-button-hover">
-              BUY {{ pname | upcase }} - RS. 1,500
+              BUY {{ pname | upcase }} - {{ pprice }}
             </div>
           </a>
           

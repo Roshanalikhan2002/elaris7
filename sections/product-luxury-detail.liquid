@@ -498,6 +498,19 @@
           <div class="thumb-item" onmouseover="scrollGallery(3, this)">
             <img src="{{ 'glow-gallery-4.jpg' | asset_url }}" alt="Product Infographic">
           </div>
+        {%- elsif product.handle == 'glutathione-cream' -%}
+          <div class="thumb-item active" onmouseover="scrollGallery(0, this)">
+            <img src="{{ 'glutathione-cream-100.jpg' | asset_url }}" alt="{{ product.title }}">
+          </div>
+          <div class="thumb-item" onmouseover="scrollGallery(1, this)">
+            <img src="{{ 'glutathione-cream-100.jpg' | asset_url }}" alt="Gallery 2">
+          </div>
+          <div class="thumb-item" onmouseover="scrollGallery(2, this)">
+            <img src="{{ 'glutathione-cream-100.jpg' | asset_url }}" alt="Gallery 3">
+          </div>
+          <div class="thumb-item" onmouseover="scrollGallery(3, this)">
+            <img src="{{ 'glutathione-cream-100.jpg' | asset_url }}" alt="Gallery 4">
+          </div>
         {%- else -%}
           {%- for image in product.images -%}
             <div class="thumb-item {% if forloop.first %}active{% endif %}" 
@@ -544,6 +557,11 @@
             <div class="gallery-slide"><img src="{{ 'glow-gallery-2.jpg' | asset_url }}" alt="Glow Gift Set" style="object-fit: contain !important; background: #fff;"></div>
             <div class="gallery-slide"><img src="{{ 'glow-gallery-3.jpg' | asset_url }}" alt="Before After Results" style="object-fit: contain !important; background: #fff;"></div>
             <div class="gallery-slide"><img src="{{ 'glow-gallery-4.jpg' | asset_url }}" alt="Product Infographic" style="object-fit: contain !important; background: #fff;"></div>
+          {%- elsif product.handle == 'glutathione-cream' -%}
+            <div class="gallery-slide"><img src="{{ 'glutathione-cream-100.jpg' | asset_url }}" alt="{{ product.title }}" style="object-fit: contain !important; background: #fbfbfb;"></div>
+            <div class="gallery-slide"><img src="{{ 'glutathione-cream-100.jpg' | asset_url }}" alt="Gallery 2" style="object-fit: contain !important; background: #fbfbfb;"></div>
+            <div class="gallery-slide"><img src="{{ 'glutathione-cream-100.jpg' | asset_url }}" alt="Gallery 3" style="object-fit: contain !important; background: #fbfbfb;"></div>
+            <div class="gallery-slide"><img src="{{ 'glutathione-cream-100.jpg' | asset_url }}" alt="Gallery 4" style="object-fit: contain !important; background: #fbfbfb;"></div>
           {%- else -%}
             {%- for image in product.images -%}
               <div class="gallery-slide">
@@ -596,6 +614,9 @@
         {%- assign display_subtitle = 'Centella Asiatica + Brightening Actives' -%}
         {%- assign display_desc = 'A concentrated, glow-correcting serum infused with Centella Asiatica and advanced brightening actives to visibly even tone, fade dark spots, and restore a smooth, glass-like complexion over time.' -%}
         {%- assign display_ingredients = false -%}
+      {%- elsif product.handle == 'glutathione-cream' -%}
+        {%- assign display_subtitle = 'Glutathione + Hyaluronic Acid' -%}
+        {%- assign display_desc = 'A rich, restorative night cream formulated with Glutathione to visibly brighten, deeply hydrate, and repair the skin barrier while you sleep.' -%}
       {%- endif -%}
 
       <div class="product-meta" style="margin-top: 5px;">
@@ -812,6 +833,13 @@
                       <li>Helps calm sensitivity and strengthen the skin barrier</li>
                       <li>Refines pores and smooths uneven texture</li>
                     </ul>
+                  {%- elsif product.handle == 'glutathione-cream' -%}
+                    <ul>
+                      <li>Delivers deep overnight repair and nourishment</li>
+                      <li>Helps visibly brighten dull, uneven skin</li>
+                      <li>Intensely hydrates for a plump, baby-soft finish</li>
+                      <li>Supports the natural skin barrier</li>
+                    </ul>
                   {%- else -%}
                     <ul>
                       <li>Boosts skin radiance for a naturally luminous glow</li>
@@ -831,6 +859,8 @@
                     <p style="margin:0;">After washing or styling, take a small amount of Anti Frizz Keratin Serum and apply evenly through damp or dry hair, focusing on mid-lengths and ends. Avoid the roots and style as desired.</p>
                   {%- elsif product.handle == 'e7-korean-glass-skin-centella-sunscreen-spf50-copy' -%}
                     <p style="margin:0;">After cleansing, take 3–4 drops of Centella Serum and gently press onto slightly damp skin across the face and neck. Allow it to absorb fully, then follow with your moisturizer to seal in hydration.</p>
+                  {%- elsif product.handle == 'glutathione-cream' -%}
+                    <p style="margin:0;">Use every night as the final step in your routine. Apply an even layer to your face and neck, gently massaging it into the skin. Leave it on overnight for maximum repair and hydration.</p>
                   {%- else -%}
                     <p style="margin:0;">After cleansing and toning, take a small amount of Centella Night Cream and gently massage it upward onto your face and neck, avoiding the eye area. Leave it on overnight to fully absorb and lock in hydration, allowing your skin to repair, restore, and wake up looking radiant and smooth. Consistency is key for optimal results.</p>
                   {%- endif -%}
@@ -855,6 +885,12 @@
                       <li>Layer with a moisturizer to lock in active ingredients effectively</li>
                       <li>Use day and night consistently for more visible tone correction</li>
                       <li>Pair with sunscreen in the morning to protect brightening results</li>
+                    </ul>
+                  {%- elsif product.handle == 'glutathione-cream' -%}
+                    <ul>
+                      <li>Apply to slightly damp skin to lock in extra moisture</li>
+                      <li>Use after your favorite serum for enhanced results</li>
+                      <li>Focus on dry patches for targeted repair</li>
                     </ul>
                   {%- else -%}
                     <ul>
