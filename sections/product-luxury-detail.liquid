@@ -89,26 +89,27 @@
   }
 
   .thumb-item {
-    width: 50px;
-    height: 50px;
+    width: 64px;
+    height: 64px;
     border-radius: 8px;
     overflow: hidden;
     cursor: pointer;
     border: 2px solid rgba(255,255,255,0.8);
-    background: white;
+    background: #f5f5f5;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    flex-shrink: 0;
   }
   .thumb-item:hover, .thumb-item.active {
     border-color: #002d5f;
-    transform: scale(1.1);
+    transform: scale(1.05);
     box-shadow: 0 8px 16px rgba(0,45,95,0.2);
   }
   .thumb-item img {
     width: 100%;
     height: 100%;
-    object-fit: contain;
-    mix-blend-mode: multiply;
+    object-fit: cover;
+    display: block;
   }
   .product-gallery-inner {
     width: 100%;
@@ -573,6 +574,19 @@
           <div class="thumb-item" onmouseover="scrollGallery(3, this)">
             <img src="{{ 'skin refining-100.jpg' | asset_url }}" alt="Product Shot">
           </div>
+        {%- elsif product.handle == 'floral-blossom-hair-mist' -%}
+          <div class="thumb-item active" onmouseover="scrollGallery(0, this)">
+            <img src="{{ 'hair-mist.jpg' | asset_url }}" alt="{{ product.title }}">
+          </div>
+          <div class="thumb-item" onmouseover="scrollGallery(1, this)">
+            <img src="{{ 'hair-mist-hover.jpg' | asset_url }}" alt="Style 1">
+          </div>
+          <div class="thumb-item" onmouseover="scrollGallery(2, this)">
+            <img src="{{ 'hair-mist-hover-2.png' | asset_url }}" alt="Style 2">
+          </div>
+          <div class="thumb-item" onmouseover="scrollGallery(3, this)">
+            <img src="{{ 'hair-mist-meet-1.jpg' | asset_url }}" alt="Gallery 1">
+          </div>
         {%- elsif product.handle == 'glutathione-cream' -%}
           <div class="thumb-item active" onmouseover="scrollGallery(0, this)">
             <img src="{{ 'glutathione-cream-100.jpg' | asset_url }}" alt="{{ product.title }}">
@@ -661,6 +675,11 @@
             <div class="gallery-slide"><img src="{{ 'gift-toner.png' | asset_url }}" alt="Refreshing Glow" style="object-fit: cover !important;"></div>
             <div class="gallery-slide"><img src="{{ 'social-hand.jpg' | asset_url }}" alt="Application View" style="object-fit: cover !important;"></div>
             <div class="gallery-slide"><img src="{{ 'skin refining-100.jpg' | asset_url }}" alt="Product Shot" style="object-fit: cover !important;"></div>
+          {%- elsif product.handle == 'floral-blossom-hair-mist' -%}
+            <div class="gallery-slide"><img src="{{ 'hair-mist.jpg' | asset_url }}" alt="{{ product.title }}"></div>
+            <div class="gallery-slide"><img src="{{ 'hair-mist-hover.jpg' | asset_url }}" alt="Style 1" style="object-fit: cover !important;"></div>
+            <div class="gallery-slide"><img src="{{ 'hair-mist-hover-2.png' | asset_url }}" alt="Style 2" style="object-fit: cover !important;"></div>
+            <div class="gallery-slide"><img src="{{ 'hair-mist-meet-1.jpg' | asset_url }}" alt="Gallery 1" style="object-fit: cover !important;"></div>
           {%- elsif product.handle == 'glutathione-cream' -%}
             <div class="gallery-slide"><img src="{{ 'glutathione-cream-100.jpg' | asset_url }}" alt="{{ product.title }}" style="object-fit: contain !important; background: #fbfbfb;"></div>
             <div class="gallery-slide"><img src="{{ 'glutathione-meet-1.jpg' | asset_url }}" alt="Model Focus" style="object-fit: cover !important;"></div>
@@ -869,7 +888,7 @@
             </label>
 
             <label class="gift-option">
-              <input type="radio" name="free_gift" value="hair-mist" data-gift-handle="hair-mist">
+              <input type="radio" name="free_gift" value="hair-mist" data-gift-handle="floral-blossom-hair-mist">
               <div class="gift-radio-custom"></div>
               <img src="{{ 'hair-mist.jpg' | asset_url }}" class="gift-img" alt="Hair Mist">
               <div class="gift-details">
@@ -938,6 +957,15 @@
                       <li>Helps calm sensitivity and strengthen the skin barrier</li>
                       <li>Refines pores and smooths uneven texture</li>
                     </ul>
+                  {%- elsif product.handle == 'floral-blossom-hair-mist' -%}
+                    <ul>
+                      <li>Leaves hair with a long-lasting, luxury floral scent</li>
+                      <li>Nourishes with Pro-Vitamin B5 for a shiny, healthy finish</li>
+                      <li>Lightweight and non-greasy, perfect for daily use</li>
+                      <li>Reduces frizz and static while adding a protective shield</li>
+                      <li>Safe for color-treated and chemically-treated hair</li>
+                      <li>Alcohol-free formula that won't dry out your hair</li>
+                    </ul>
                   {%- elsif product.handle == 'glutathione-cream' -%}
                     <ul>
                       <li>Helps visibly brighten dull and uneven skin tone</li>
@@ -967,6 +995,8 @@
                     <p style="margin:0;">After washing or styling, take a small amount of Anti Frizz Keratin Serum and apply evenly through damp or dry hair, focusing on mid-lengths and ends. Avoid the roots and style as desired.</p>
                   {%- elsif product.handle == 'e7-korean-glass-skin-centella-sunscreen-spf50-copy' -%}
                     <p style="margin:0;">After cleansing, take 3–4 drops of Centella Serum and gently press onto slightly damp skin across the face and neck. Allow it to absorb fully, then follow with your moisturizer to seal in hydration.</p>
+                  {%- elsif product.handle == 'floral-blossom-hair-mist' -%}
+                    <p style="margin:0;">Mist onto damp or dry hair from a distance of about 15-20cm. Focus on mid-lengths and ends for a refreshing scent and healthy shine. Use anytime throughout the day for an aromatic boost.</p>
                   {%- elsif product.handle == 'glutathione-cream' -%}
                     <p style="margin:0;">Use morning and evening after cleansing and serum. Apply a small amount to face and neck and gently massage until fully absorbed. In the morning, follow with sunscreen. Suitable for daily use.</p>
                   {%- else -%}
@@ -993,6 +1023,13 @@
                       <li>Layer with a moisturizer to lock in active ingredients effectively</li>
                       <li>Use day and night consistently for more visible tone correction</li>
                       <li>Pair with sunscreen in the morning to protect brightening results</li>
+                    </ul>
+                  {%- elsif product.handle == 'floral-blossom-hair-mist' -%}
+                    <ul>
+                      <li>Mist on your hairbrush before brushing for even distribution</li>
+                      <li>Use after styling to seal in shine and tame flyaways</li>
+                      <li>Spray onto a hair tie before tying your hair to release scent throughout the day</li>
+                      <li>Perfect for refreshing second-day hair without washing</li>
                     </ul>
                   {%- elsif product.handle == 'glutathione-cream' -%}
                     <ul>
@@ -1051,6 +1088,17 @@
                       <li>Peptides</li>
                       <li>Vitamin B5</li>
                       <li>Witch Hazel</li>
+                    </ul>
+                  {%- elsif product.handle == 'floral-blossom-hair-mist' -%}
+                    <ul>
+                      <li>Pro-Vitamin B5 (Panthenol)</li>
+                      <li>Aloe Vera Extract</li>
+                      <li>Floral Aromatic Compounds</li>
+                      <li>Keratin Amino Acids</li>
+                      <li>Vitamin E</li>
+                      <li>Silk Protein</li>
+                      <li>Glycerin</li>
+                      <li>UV Filter</li>
                     </ul>
                   {%- elsif product.handle == 'glutathione-cream' -%}
                     <ul>

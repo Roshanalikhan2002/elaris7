@@ -159,12 +159,13 @@ document.addEventListener('DOMContentLoaded', () => {
         await updateCartCount();
         window.location.href = '/cart';
       } else {
-        console.error('Shopify Cart Error:', data);
-        alert(`Error: ${data.description || data.message || 'Could not add to cart'}`);
+        const errorText = data.description || data.message || 'Could not add to cart';
+        console.error('Shopify Cart Error Detailed:', data);
+        alert(`Shopping Bag Error: ${errorText}\n\n(Status: ${data.status || response.status})`);
       }
     } catch (e) { 
       console.error('Cart add fetch error:', e);
-      alert('Network error. Please try again.');
+      alert('Network error or checkout is currently unavailable. Please refresh and try again.');
     }
   }
 
