@@ -12,7 +12,15 @@
   "sections": {
     "main": {
       "type": "product-luxury-detail",
-      "settings": {}
+      "settings": {
+        "asset_main_image": "",
+        "subtitle": "Night Renewal",
+        "show_reviews": true,
+        "review_count": "16k",
+        "description": "An intensive overnight formula designed to rejuvenate your skin while you sleep. Infused with Centella Asiatica, brightening complexes, and repair-focused botanicals, this night cream hydrates deeply, improves skin texture, and helps reveal a smoother, luminous, and refreshed complexion by morning.",
+        "show_ingredients": false,
+        "key_ingredients": ""
+      }
     },
     "meet_product": {
       "type": "meet-the-product",
