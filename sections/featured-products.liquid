@@ -74,7 +74,10 @@
         <div class="card card-rhode">
           <a href="/products/{{ phandle }}" class="card-link-wrapper">
             {%- assign hover_img = fallback_hovers[i] -%}
-            {% if hover_img != blank %}
+            {%- if pname == "Glutathione Cream" -%}
+              {%- assign hover_img = "deep hydration-100.jpg" -%}
+            {%- endif -%}
+            {% if hover_img != blank and hover_img != 'none' %}
               <img src="{{ hover_img | asset_url }}" class="card-hover-bg" alt="Hover Background">
             {% endif %}
 
