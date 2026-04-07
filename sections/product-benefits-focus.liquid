@@ -91,9 +91,15 @@
         </div>
       {% endfor %}
       {% if section.blocks.size == 0 %}
-        <div class="bf-line">deep repair</div>
-        <div class="bf-line">overnight hydration</div>
-        <div class="bf-line bf-line-highlight">revitalized, luminous skin</div>
+        {%- if product.handle == 'e7-korean-glass-skin-centella-sunscreen-spf50-copy' -%}
+          <div class="bf-line">evened-out tone</div>
+          <div class="bf-line">bright, radiant skin</div>
+          <div class="bf-line bf-line-highlight">smooth, glass-like finish</div>
+        {%- else -%}
+          <div class="bf-line">deep repair</div>
+          <div class="bf-line">overnight hydration</div>
+          <div class="bf-line bf-line-highlight">revitalized, luminous skin</div>
+        {%- endif -%}
       {% endif %}
     </div>
   </div>
