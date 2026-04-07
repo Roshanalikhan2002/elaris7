@@ -472,6 +472,32 @@
           <div class="thumb-item" onmouseover="scrollGallery(4, this)">
             <img src="{{ 'keratin-2.jpg' | asset_url }}" alt="Close up 2">
           </div>
+        {%- elsif product.handle == 'tranexamic-serum' -%}
+          <div class="thumb-item active" onmouseover="scrollGallery(0, this)">
+            <img src="{{ 'tranexamic-meet-1.jpg' | asset_url }}" alt="{{ product.title }}">
+          </div>
+          <div class="thumb-item" onmouseover="scrollGallery(1, this)">
+            <img src="{{ 'tranexamic-meet-1.jpg' | asset_url }}" alt="Meet Elaris 1">
+          </div>
+          <div class="thumb-item" onmouseover="scrollGallery(2, this)">
+            <img src="{{ 'tranexamic-meet-2.jpg' | asset_url }}" alt="Meet Elaris 2">
+          </div>
+          <div class="thumb-item" onmouseover="scrollGallery(3, this)">
+            <img src="{{ 'tranexamic-meet-3.jpg' | asset_url }}" alt="Meet Elaris 3">
+          </div>
+        {%- elsif product.handle == 'e7-korean-glass-skin-centella-sunscreen-spf50-copy' -%}
+          <div class="thumb-item active" onmouseover="scrollGallery(0, this)">
+            <img src="{{ 'glow-serum-100.jpg' | asset_url }}" alt="{{ product.title }}">
+          </div>
+          <div class="thumb-item" onmouseover="scrollGallery(1, this)">
+            <img src="{{ 'glow-gallery-2.jpg' | asset_url }}" alt="Glow Gift Set">
+          </div>
+          <div class="thumb-item" onmouseover="scrollGallery(2, this)">
+            <img src="{{ 'glow-gallery-3.jpg' | asset_url }}" alt="Before After Results">
+          </div>
+          <div class="thumb-item" onmouseover="scrollGallery(3, this)">
+            <img src="{{ 'glow-gallery-4.jpg' | asset_url }}" alt="Product Infographic">
+          </div>
         {%- else -%}
           {%- for image in product.images -%}
             <div class="thumb-item {% if forloop.first %}active{% endif %}" 
@@ -481,48 +507,20 @@
             </div>
           {%- else -%}
             <!-- Fallback thumbs if no Shopify images uploaded yet -->
-            {%- if product.handle == 'tranexamic-serum' -%}
-              <div class="thumb-item active" onmouseover="scrollGallery(0, this)">
-                <img src="{{ 'tranexamic-meet-1.jpg' | asset_url }}" alt="{{ product.title }}">
-              </div>
-              <div class="thumb-item" onmouseover="scrollGallery(1, this)">
-                <img src="{{ 'tranexamic-meet-1.jpg' | asset_url }}" alt="Meet Elaris 1">
-              </div>
-              <div class="thumb-item" onmouseover="scrollGallery(2, this)">
-                <img src="{{ 'tranexamic-meet-2.jpg' | asset_url }}" alt="Meet Elaris 2">
-              </div>
-              <div class="thumb-item" onmouseover="scrollGallery(3, this)">
-                <img src="{{ 'tranexamic-meet-3.jpg' | asset_url }}" alt="Meet Elaris 3">
-              </div>
-            {%- elsif product.handle == 'e7-korean-glass-skin-centella-sunscreen-spf50-copy' -%}
-              <div class="thumb-item active" onmouseover="scrollGallery(0, this)">
-                <img src="{{ 'glow-serum-100.jpg' | asset_url }}" alt="{{ product.title }}">
-              </div>
-              <div class="thumb-item" onmouseover="scrollGallery(1, this)">
-                <img src="{{ 'glow-gallery-2.jpg' | asset_url }}" alt="Glow Gift Set">
-              </div>
-              <div class="thumb-item" onmouseover="scrollGallery(2, this)">
-                <img src="{{ 'glow-gallery-3.jpg' | asset_url }}" alt="Before After Results">
-              </div>
-              <div class="thumb-item" onmouseover="scrollGallery(3, this)">
-                <img src="{{ 'glow-gallery-4.jpg' | asset_url }}" alt="Product Infographic">
-              </div>
-            {%- else -%}
-              {%- assign handle_image = product.handle | append: '.jpg' -%}
-              {%- assign fallback_img = section.settings.asset_main_image | default: handle_image -%}
-              <div class="thumb-item active" onmouseover="scrollGallery(0, this)">
-                <img src="{{ fallback_img | asset_url }}" alt="{{ product.title }}">
-              </div>
-              <div class="thumb-item" onmouseover="scrollGallery(1, this)">
-                <img src="{{ 'night-cream-jar.jpg' | asset_url }}" alt="Jar">
-              </div>
-              <div class="thumb-item" onmouseover="scrollGallery(2, this)">
-                <img src="{{ 'night-cream-ba.jpg' | asset_url }}" alt="Before After">
-              </div>
-              <div class="thumb-item" onmouseover="scrollGallery(3, this)">
-                <img src="{{ 'night-cream-swatch.jpeg' | asset_url }}" alt="Swatch">
-              </div>
-            {%- endif -%}
+            {%- assign handle_image = product.handle | append: '.jpg' -%}
+            {%- assign fallback_img = section.settings.asset_main_image | default: handle_image -%}
+            <div class="thumb-item active" onmouseover="scrollGallery(0, this)">
+              <img src="{{ fallback_img | asset_url }}" alt="{{ product.title }}">
+            </div>
+            <div class="thumb-item" onmouseover="scrollGallery(1, this)">
+              <img src="{{ 'night-cream-jar.jpg' | asset_url }}" alt="Jar">
+            </div>
+            <div class="thumb-item" onmouseover="scrollGallery(2, this)">
+              <img src="{{ 'night-cream-ba.jpg' | asset_url }}" alt="Before After">
+            </div>
+            <div class="thumb-item" onmouseover="scrollGallery(3, this)">
+              <img src="{{ 'night-cream-swatch.jpeg' | asset_url }}" alt="Swatch">
+            </div>
           {%- endfor -%}
         {%- endif -%}
       </div>
@@ -536,30 +534,28 @@
             <div class="gallery-slide"><img src="{{ 'keratin-ba.jpg' | asset_url }}" alt="Before After" style="object-fit: cover !important;"></div>
             <div class="gallery-slide"><img src="{{ 'keratin-1.jpg' | asset_url }}" alt="Close up 1" style="object-fit: cover !important;"></div>
             <div class="gallery-slide"><img src="{{ 'keratin-2.jpg' | asset_url }}" alt="Close up 2" style="object-fit: cover !important;"></div>
+          {%- elsif product.handle == 'tranexamic-serum' -%}
+            <div class="gallery-slide"><img src="{{ 'tranexamic-meet-1.jpg' | asset_url }}" alt="{{ product.title }}"></div>
+            <div class="gallery-slide"><img src="{{ 'tranexamic-meet-1.jpg' | asset_url }}" alt="Meet Elaris 1"></div>
+            <div class="gallery-slide"><img src="{{ 'tranexamic-meet-2.jpg' | asset_url }}" alt="Meet Elaris 2"></div>
+            <div class="gallery-slide"><img src="{{ 'tranexamic-meet-3.jpg' | asset_url }}" alt="Meet Elaris 3"></div>
+          {%- elsif product.handle == 'e7-korean-glass-skin-centella-sunscreen-spf50-copy' -%}
+            <div class="gallery-slide"><img src="{{ 'glow-serum-100.jpg' | asset_url }}" alt="{{ product.title }}" style="object-fit: contain !important; background: #fff;"></div>
+            <div class="gallery-slide"><img src="{{ 'glow-gallery-2.jpg' | asset_url }}" alt="Glow Gift Set" style="object-fit: contain !important; background: #fff;"></div>
+            <div class="gallery-slide"><img src="{{ 'glow-gallery-3.jpg' | asset_url }}" alt="Before After Results" style="object-fit: contain !important; background: #fff;"></div>
+            <div class="gallery-slide"><img src="{{ 'glow-gallery-4.jpg' | asset_url }}" alt="Product Infographic" style="object-fit: contain !important; background: #fff;"></div>
           {%- else -%}
             {%- for image in product.images -%}
               <div class="gallery-slide">
                 <img src="{{ image | img_url: 'master' }}" alt="{{ image.alt | escape }}">
               </div>
             {%- else -%}
-              {%- if product.handle == 'tranexamic-serum' -%}
-                <div class="gallery-slide"><img src="{{ 'tranexamic-meet-1.jpg' | asset_url }}" alt="{{ product.title }}"></div>
-                <div class="gallery-slide"><img src="{{ 'tranexamic-meet-1.jpg' | asset_url }}" alt="Meet Elaris 1"></div>
-                <div class="gallery-slide"><img src="{{ 'tranexamic-meet-2.jpg' | asset_url }}" alt="Meet Elaris 2"></div>
-                <div class="gallery-slide"><img src="{{ 'tranexamic-meet-3.jpg' | asset_url }}" alt="Meet Elaris 3"></div>
-              {%- elsif product.handle == 'e7-korean-glass-skin-centella-sunscreen-spf50-copy' -%}
-                <div class="gallery-slide"><img src="{{ 'glow-serum-100.jpg' | asset_url }}" alt="{{ product.title }}" style="object-fit: contain !important; background: #fff;"></div>
-                <div class="gallery-slide"><img src="{{ 'glow-gallery-2.jpg' | asset_url }}" alt="Glow Gift Set" style="object-fit: contain !important; background: #fff;"></div>
-                <div class="gallery-slide"><img src="{{ 'glow-gallery-3.jpg' | asset_url }}" alt="Before After Results" style="object-fit: contain !important; background: #fff;"></div>
-                <div class="gallery-slide"><img src="{{ 'glow-gallery-4.jpg' | asset_url }}" alt="Product Infographic" style="object-fit: contain !important; background: #fff;"></div>
-              {%- else -%}
-                {%- assign handle_image = product.handle | append: '.jpg' -%}
-                {%- assign fallback_img = section.settings.asset_main_image | default: handle_image -%}
-                <div class="gallery-slide"><img src="{{ fallback_img | asset_url }}" alt="{{ product.title }}"></div>
-                <div class="gallery-slide"><img src="{{ 'night-cream-jar.jpg' | asset_url }}" alt="Night Cream Jar"></div>
-                <div class="gallery-slide"><img src="{{ 'night-cream-ba.jpg' | asset_url }}" alt="Before After"></div>
-                <div class="gallery-slide"><img src="{{ 'night-cream-swatch.jpeg' | asset_url }}" alt="Swatch"></div>
-              {%- endif -%}
+              {%- assign handle_image = product.handle | append: '.jpg' -%}
+              {%- assign fallback_img = section.settings.asset_main_image | default: handle_image -%}
+              <div class="gallery-slide"><img src="{{ fallback_img | asset_url }}" alt="{{ product.title }}"></div>
+              <div class="gallery-slide"><img src="{{ 'night-cream-jar.jpg' | asset_url }}" alt="Night Cream Jar"></div>
+              <div class="gallery-slide"><img src="{{ 'night-cream-ba.jpg' | asset_url }}" alt="Before After"></div>
+              <div class="gallery-slide"><img src="{{ 'night-cream-swatch.jpeg' | asset_url }}" alt="Swatch"></div>
             {%- endfor -%}
           {%- endif -%}
         </div>
