@@ -32,12 +32,13 @@
   </div>
 
   {% if search.performed and search.results_count > 0 %}
+    {%- assign featured_handles = "night-cream,tranexamic-serum,anti-frizz-keratin-serum,e7-korean-glass-skin-centella-sunscreen-spf50-copy,glutathione-cream,floral-blossom-hair-mist,e7-korean-glass-skin-centella-night-cream-copy,anti-acne,e7-korean-glass-skin-centella-face-wash-copy,centella-skin-toner-copy,e7-korean-glass-skin-moisturizer,centella-skin-toner" | split: "," -%}
     <div class="search-grid">
       {% for item in search.results %}
         {% if item.object_type == 'product' %}
-          {% if item.title contains 'Underarm' %}
+          {% unless featured_handles contains item.handle %}
             {% continue %}
-          {% endif %}
+          {% endunless %}
           <a href="{{ item.url }}" class="search-grid-item">
             <div class="search-item-image">
                <img src="{{ item.featured_image | image_url: width: 600 }}" alt="{{ item.title }}" loading="lazy">
