@@ -73,7 +73,8 @@
         "row_fyi"
       ],
       "settings": {
-        "title": "An intensive overnight cream for DEEP REPAIR + BABY-SOFT skin."
+        "title": "An intensive overnight cream for DEEP REPAIR + BABY-SOFT skin.",
+        "image": "shopify://shop_images/a_creamy_blush-100_6.jpg"
       }
     },
     "ingredients": {
@@ -102,6 +103,7 @@
         "title": "what's inside",
         "intro": "Our formula is packed with 13 efficacious hero ingredients. Meet 2 of our favorites for intensive hydration.",
         "footer_text": "also made with POLYGLUTAMIC ACID, ISOSORBIDE DICAPRYLATE, CERAMIDE NP, PALMITOYL TETRAPEPTIDE-10, PALMITOYL TRIPEPTIDE-8, BISABOLOL, GINGER ROOT EXTRACT",
+        "image": "shopify://shop_images/whats_inside-100_6.jpg",
         "show_btn": true,
         "btn_label": "FULL INGREDIENTS LIST"
       }
@@ -110,7 +112,7 @@
       "type": "product-benefits-focus",
       "settings": {
         "subtitle": "SPREAD IT ON FOR:",
-        "image": "shopify://shop_images/night_cream_4-100_jpg.jpg"
+        "image": "shopify://shop_images/deep_hydration-100_6.jpg"
       }
     },
     "study_results": {
@@ -152,7 +154,8 @@
         "stat_4"
       ],
       "settings": {
-        "footnote": "*Based on a 32-subject consumer perception study after 2 weeks of use."
+        "footnote": "*Based on a 32-subject consumer perception study after 2 weeks of use.",
+        "image": "shopify://shop_images/before_after-100_5.jpg"
       }
     },
     "faq_split": {
@@ -203,7 +206,8 @@
       ],
       "settings": {
         "title": "FAQ",
-        "subtitle": "Find out more about Barrier Butter."
+        "subtitle": "Find out more about Barrier Butter.",
+        "image": "shopify://shop_images/faq-100_8.jpg"
       }
     },
     "product_reviews": {
