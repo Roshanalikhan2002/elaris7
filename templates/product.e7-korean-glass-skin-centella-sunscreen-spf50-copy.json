@@ -1,12 +1,3 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "layout": "theme",
   "sections": {
@@ -83,15 +74,15 @@
         "ing_1": {
           "type": "ingredient",
           "settings": {
-            "title": "niacinamide (vitamin b3)",
-            "description": "helps refine skin texture, minimize the appearance of pores, and brighten uneven skin tone for a clearer complexion"
+            "title": "NIACINAMIDE",
+            "description": "a multitasking ingredient that helps visibly even out skin tone, reduce the look of pores, and strengthen the skin barrier for a smoother, clearer complexion"
           }
         },
         "ing_2": {
           "type": "ingredient",
           "settings": {
-            "title": "aloe vera extract",
-            "description": "deeply hydrates and soothes the skin while providing a refreshing, cooling sensation and supporting natural repair"
+            "title": "ALPHA ARBUTIN",
+            "description": "a targeted brightening active known to help fade dark spots, post-acne marks, and discoloration for a more uniform, radiant look over time"
           }
         }
       },
@@ -101,8 +92,8 @@
       ],
       "settings": {
         "title": "what's inside",
-        "intro": "Our formula combines calming botanicals with potent brightening actives. Meet 2 of our favorites for the ultimate glow.",
-        "footer_text": "also made with HYALURONIC ACID, CENTELLA ASIATICA, GREEN TEA EXTRACT, HONEY, GLYCERIN, PANTHENOL, ALLANTOIN",
+        "intro": "A powerful blend of tone-correcting actives and skin-repairing hydrators designed to target dullness, uneven tone, and texture. Here are 2 key ingredients behind the glow transformation:",
+        "footer_text": "also made with VITAMIN C, HYALURONIC ACID, ALOE VERA, ROSE EXTRACT, VITAMIN E, HONEY, PEPTIDES, CENTELLA ASIATICA, VITAMIN B5, WITCH HAZEL",
         "show_btn": true,
         "btn_label": "FULL INGREDIENTS LIST"
       }
