@@ -12,7 +12,15 @@
   "sections": {
     "main": {
       "type": "product-luxury-detail",
-      "settings": {}
+      "settings": {
+        "asset_main_image": "",
+        "subtitle": "Night Renewal",
+        "show_reviews": true,
+        "review_count": "16k",
+        "description": "Faith's Light. Korean Science. <br>Powered by Nature's Purest.",
+        "show_ingredients": true,
+        "key_ingredients": "Glutathione, Vitamin C, Alpha Arbutin, Centella Asiatica, Kojic Dipalmitate, Niacinamide, Honey, Hyaluronic Acid,"
+      }
     },
     "carousel": {
       "type": "meet-the-product",
@@ -22,7 +30,7 @@
       "type": "product-details-split",
       "settings": {
         "title": "Wake Up to Refreshed, Radiant Skin",
-        "image": "shopify://shop_images/night_cream-100.jpg_1.jpg"
+        "image": "shopify://shop_images/a_creamy_blush-100_2.jpg"
       }
     },
     "ingredients": {
@@ -31,7 +39,7 @@
         "title": "what's inside",
         "intro": "Our formula is powered by advanced repair and brightening actives. Meet 2 of our favorites for overnight renewal",
         "footer_text": "MOISTURE-LOCK TECHNOLOGY \na deep hydration system that helps retain moisture, prevent overnight dryness, and keep skin plump and smooth by morning\nalso made with BRIGHTENING COMPLEX, COLLAGEN SUPPORT BLEND, SPOT-CORRECTIVE ACTIVES, LINE-REDUCING COMPLEX, BARRIER REPAIR ACTIVES, EVEN-TONE ENHANCERS",
-        "image": "shopify://shop_images/swatch_night_cream_2-100_jpg.jpg",
+        "image": "shopify://shop_images/whats_inside-100_2.jpg",
         "show_btn": true,
         "btn_label": "FULL INGREDIENTS LIST"
       }
@@ -40,14 +48,14 @@
       "type": "product-benefits-focus",
       "settings": {
         "subtitle": "SPREAD IT ON FOR:",
-        "image": "shopify://shop_images/night_cream_4-100_jpg.jpg"
+        "image": "shopify://shop_images/faq-100_4.jpg"
       }
     },
     "study_results": {
       "type": "product-study-results",
       "settings": {
         "footnote": "Based on a 2-week consumer perception study with consistent nightly use.",
-        "image": "shopify://shop_images/NIGHT_CREAM_BEFORE_AFTER-100_jpg.jpg"
+        "image": "shopify://shop_images/before_after-100_1.jpg"
       }
     },
     "faq_split": {
@@ -55,7 +63,7 @@
       "settings": {
         "title": "FAQ",
         "subtitle": "Find out more about Barrier Butter.",
-        "image": "shopify://shop_images/faq-100.jpg_1.jpg"
+        "image": "shopify://shop_images/meet_elaris_you_4-100_2.jpg"
       }
     },
     "product_reviews": {
