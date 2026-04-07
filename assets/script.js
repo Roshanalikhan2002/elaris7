@@ -130,19 +130,42 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   async function addItemsToCart(items) {
+    console.log('Adding to cart:', items);
+    
+    // Using simple object for single item or FormData for multiple
+    let bodyData;
+    let headers = {};
+
+    if (items.length === 1) {
+      bodyData = JSON.stringify({
+        id: items[0].id,
+        quantity: items[0].quantity
+      });
+      headers['Content-Type'] = 'application/json';
+    } else {
+      bodyData = JSON.stringify({ items: items });
+      headers['Content-Type'] = 'application/json';
+    }
+
     try {
       const response = await fetch('/cart/add.js', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ items })
+        headers: headers,
+        body: bodyData
       });
+      const data = await response.json();
+      
       if (response.ok) {
         await updateCartCount();
         window.location.href = '/cart';
       } else {
-        alert('Could not add to cart. Please try again.');
+        console.error('Shopify Cart Error:', data);
+        alert(`Error: ${data.description || data.message || 'Could not add to cart'}`);
       }
-    } catch (e) { console.error('Cart add error:', e); }
+    } catch (e) { 
+      console.error('Cart add fetch error:', e);
+      alert('Network error. Please try again.');
+    }
   }
 
   // Handle Global "BUY" clicks (from Grids/Carousels)
