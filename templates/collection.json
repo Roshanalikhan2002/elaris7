@@ -1,12 +1,24 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
-  "name": "Collection",
   "sections": {
     "hero": {
       "type": "hero",
       "settings": {
         "title": "Shop All",
         "btn_text": "VIEW PRODUCTS",
-        "btn_link": ""
+        "btn_link": "",
+        "hero_image": "shopify://shop_images/Artboard_71-100_jpg.jpg",
+        "video_url": "",
+        "menu_left": "",
+        "logo_svg": ""
       }
     },
     "main": {
