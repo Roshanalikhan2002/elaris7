@@ -35,6 +35,9 @@
     <div class="search-grid">
       {% for item in search.results %}
         {% if item.object_type == 'product' %}
+          {% if item.title contains 'Underarm' %}
+            {% continue %}
+          {% endif %}
           <a href="{{ item.url }}" class="search-grid-item">
             <div class="search-item-image">
                <img src="{{ item.featured_image | image_url: width: 600 }}" alt="{{ item.title }}" loading="lazy">
