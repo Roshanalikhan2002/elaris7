@@ -9,20 +9,79 @@
         <span></span>
         <span></span>
       </div>
-      <ul class="desktop-only">
-        <li><a href="/collections/all">SHOP</a></li>
-        <li><a href="/pages/about">ABOUT</a></li>
-        <li><a href="/pages/futures">FUTURES</a></li>
+      <ul class="desktop-only site-nav">
+        <li class="nav-item-shop">
+          <a href="/collections/all" class="nav-link">SHOP</a>
+          <div class="mega-menu-container">
+            <div class="mega-menu-categories">
+              <div class="mega-cat-list">
+                <button class="mega-cat-item active">FEATURED</button>
+                <button class="mega-cat-item">KOREAN GLASS SKIN</button>
+                <button class="mega-cat-item">ANTI ACNE</button>
+                <button class="mega-cat-item">KOREAN BRIGHTENING</button>
+                <button class="mega-cat-item">HAIR CARE</button>
+                <button class="mega-cat-item">SETS</button>
+              </div>
+            </div>
+            
+            <div class="mega-menu-products">
+              <div class="mega-products-grid">
+                <a href="/products/night-cream" class="mega-product-card">
+                  <div class="mega-product-image">
+                    <img src="{{ 'night-cream.jpg' | asset_url }}" alt="Night Cream">
+                  </div>
+                  <div class="mega-product-info">
+                    <h3 class="mega-product-name">NIGHT CREAM</h3>
+                    <p class="mega-product-desc">To restore, protect and nurture</p>
+                  </div>
+                </a>
+                <a href="/products/tranexamic-serum" class="mega-product-card">
+                  <div class="mega-product-image">
+                    <img src="{{ 'tranexamic-serum.jpg' | asset_url }}" alt="Tranexamic Serum">
+                  </div>
+                  <div class="mega-product-info">
+                    <h3 class="mega-product-name">TRANEXAMIC SERUM</h3>
+                    <p class="mega-product-desc">Advanced brightening formula</p>
+                  </div>
+                </a>
+                <a href="/products/facewash-100" class="mega-product-card">
+                  <div class="mega-product-image">
+                    <img src="{{ 'facewash-100.jpg' | asset_url }}" alt="Face Wash">
+                  </div>
+                  <div class="mega-product-info">
+                    <h3 class="mega-product-name">FACE WASH</h3>
+                    <p class="mega-product-desc">Gentle daily cleanser</p>
+                  </div>
+                </a>
+                <a href="/products/hair-mist" class="mega-product-card">
+                  <div class="mega-product-image">
+                    <img src="{{ 'hair-mist.jpg' | asset_url }}" alt="Hair Mist">
+                  </div>
+                  <div class="mega-product-info">
+                    <h3 class="mega-product-name">FLORAL BLOSSOM HAIR MIST</h3>
+                    <p class="mega-product-desc">Scented radiance for hair</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+            
+            <div class="mega-menu-footer">
+              <a href="/collections/all" class="mega-shop-btn">SHOP ELARIS7</a>
+            </div>
+          </div>
+        </li>
+        <li><a href="/pages/about" class="nav-link">ABOUT</a></li>
+        <li><a href="/pages/futures" class="nav-link">FUTURES</a></li>
       </ul>
     </nav>
     <div class="header-logo">
       <a href="/" class="logo-text">{{ shop.name }}</a>
     </div>
     <nav class="header-nav header-right">
-      <ul class="desktop-only">
-        <li><a href="/search">SEARCH</a></li>
-        <li><a href="/account">ACCOUNT</a></li>
-        <li><a href="/cart" class="cart-count">CART ({{ cart.item_count }})</a></li>
+      <ul class="desktop-only site-nav">
+        <li><a href="/search" class="nav-link">SEARCH</a></li>
+        <li><a href="/account" class="nav-link">ACCOUNT</a></li>
+        <li><a href="/cart" class="nav-link cart-count">CART ({{ cart.item_count }})</a></li>
       </ul>
       <div class="mobile-only mobile-header-icons">
         <a href="/search" class="mobile-icon">
@@ -44,8 +103,207 @@
   </div>
 </header>
 
+<style>
+/* Mega Menu Base */
+.nav-item-shop {
+  position: static;
+}
+
+.mega-menu-container {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: #f1efea;
+  border-top: 1px solid rgba(0,0,0,0.05);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  padding: 40px 0 60px;
+  z-index: 1000;
+}
+
+.nav-item-shop:hover .mega-menu-container {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Mega Menu Categories */
+.mega-menu-categories {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.mega-cat-list {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding: 0 20px;
+  scrollbar-width: none;
+}
+.mega-cat-list::-webkit-scrollbar { display: none; }
+
+.mega-cat-item {
+  background: #fff;
+  border: 1px solid #d1d1cf;
+  border-radius: 50px;
+  font-size: 0.65rem;
+  font-weight: 800;
+  color: #5b5a53;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  padding: 8px 24px;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.mega-cat-item.active {
+  background: #5b5a53;
+  color: #fff;
+  border-color: #5b5a53;
+}
+
+.mega-cat-item:hover:not(.active) {
+  border-color: #5b5a53;
+  color: #333;
+}
+
+/* Mega Menu Products */
+.mega-menu-products {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 40px;
+}
+
+.mega-products-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.mega-product-card {
+  text-decoration: none;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+  aspect-ratio: 1 / 1.4;
+}
+
+.mega-product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+.mega-product-image {
+  flex: 1;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  overflow: hidden;
+}
+
+.mega-product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+  transition: transform 0.5s ease;
+}
+
+.mega-product-card:hover .mega-product-image img {
+  transform: scale(1.08);
+}
+
+.mega-product-info {
+  padding: 20px;
+  text-align: left;
+}
+
+.mega-product-name {
+  font-size: 0.7rem;
+  font-weight: 900;
+  color: #333;
+  margin: 0 0 5px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  line-height: 1.2;
+}
+
+.mega-product-desc {
+  font-size: 0.6rem;
+  color: #8c8b84;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Mega Menu Footer */
+.mega-menu-footer {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.mega-shop-btn {
+  background: #fff;
+  border: 1px solid #d1d1cf;
+  border-radius: 50px;
+  padding: 12px 40px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: #5b5a53;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  transition: all 0.3s ease;
+}
+
+.mega-shop-btn:hover {
+  background: #5b5a53;
+  color: #fff;
+  border-color: #5b5a53;
+}
+
+/* Responsive fixes */
+@media (max-width: 1200px) {
+  .mega-menu-products { padding: 0 20px; }
+  .mega-products-grid { gap: 15px; }
+}
+
+@media (max-width: 1024px) {
+  .mega-products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+</style>
+
 <script>
 (function() {
+  // Mega Menu Category Switching
+  const catItems = document.querySelectorAll('.mega-cat-item');
+  catItems.forEach(item => {
+    item.addEventListener('click', (e) => {
+      e.stopPropagation();
+      catItems.forEach(i => i.classList.remove('active'));
+      item.classList.add('active');
+      // Potential logic to filter products based on category can be added here
+    });
+  });
+
+  // Header Scroll Logic move move moved moves move move move move move move move
   var header = document.querySelector('.site-header');
   if (!header) return;
 
@@ -55,10 +313,7 @@
   var threshold = 5;
 
   function showHeader() {
-    if (hideTimer) {
-      clearTimeout(hideTimer);
-      hideTimer = null;
-    }
+    if (hideTimer) { clearTimeout(hideTimer); hideTimer = null; }
     if (isHidden) {
       header.classList.remove('header-hidden');
       header.classList.add('header-visible');
@@ -67,35 +322,26 @@
   }
 
   function scheduleHide() {
-    // Only schedule if not already scheduled to avoid constant resets
     if (!hideTimer && !isHidden) {
       hideTimer = setTimeout(function() {
         var currentY = window.pageYOffset || document.documentElement.scrollTop;
-        if (!isHidden && currentY > 100) {
+        const megaIsHovered = document.querySelector('.nav-item-shop:hover');
+        if (!isHidden && currentY > 100 && !megaIsHovered) {
           header.classList.remove('header-visible');
           header.classList.add('header-hidden');
           isHidden = true;
         }
         hideTimer = null;
-      }, 2000); // 2 second stay
+      }, 2000);
     }
   }
 
   window.addEventListener('scroll', function() {
     var currentScrollY = window.pageYOffset || document.documentElement.scrollTop;
-    
     if (Math.abs(currentScrollY - lastScrollY) < threshold) return;
-
-    if (currentScrollY <= 20) {
-      showHeader();
-    } else if (currentScrollY > lastScrollY) {
-      // Scrolling DOWN
-      scheduleHide();
-    } else {
-      // Scrolling UP
-      showHeader();
-    }
-
+    if (currentScrollY <= 20) { showHeader(); } 
+    else if (currentScrollY > lastScrollY) { scheduleHide(); } 
+    else { showHeader(); }
     lastScrollY = currentScrollY;
   }, { passive: true });
 })();
