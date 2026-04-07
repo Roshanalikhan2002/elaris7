@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "layout": "theme",
   "sections": {
@@ -64,36 +73,16 @@
         "row_fyi"
       ],
       "settings": {
-        "title": "Intensive smoothing for SLEEK + SHINY, FRIZZ-FREE hair.",
+        "title": " Frizz-Free Confidence Every Day A daily serum for SMOOTHING + SOFT, SHINY HAIR.",
         "image": "shopify://shop_images/a_creamy_blush-100_1.jpg"
       }
     },
     "ingredients": {
       "type": "product-ingredients",
-      "blocks": {
-        "ing_1": {
-          "type": "ingredient",
-          "settings": {
-            "title": "Argan Oil",
-            "description": "Rich in antioxidants and fatty acids to deeply nourish and provide a luxurious shine."
-          }
-        },
-        "ing_2": {
-          "type": "ingredient",
-          "settings": {
-            "title": "Keratin Proteins",
-            "description": "Helps strengthen hair strands and reduce breakage and split ends for a healthier look."
-          }
-        }
-      },
-      "block_order": [
-        "ing_1",
-        "ing_2"
-      ],
       "settings": {
         "title": "what's inside",
-        "intro": "A powerful blend of salon-grade ingredients to tame frizz and lock in smoothness.",
-        "footer_text": "also made with DIMETHICONE, VITAMIN E, CYCLOPENTASILOXANE, FRAGRANCE, and botanical extracts for maximum protection and shine.",
+        "intro": "A lightweight, smoothing hair serum that tames frizz, protects strands, and enhances shine without weighing hair down.",
+        "footer_text": "ARGAN OIL\n nourishes and softens hair while reducing breakage\nKERATIN COMPLEX\n strengthens hair fibers for smoother, frizz-free strands\n\nalso made with Wheat Germ Oil, Almond Oil, Olive Oil, Grapeseed Oil, Coconut Oil, Flaxseed Oil, Safflower Oil, Shea Butter, Squalene, Niacinamide",
         "image": "shopify://shop_images/whats_inside-100_1.jpg",
         "show_btn": true,
         "btn_label": "FULL INGREDIENTS LIST"
