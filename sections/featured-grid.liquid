@@ -7,6 +7,8 @@
             <div class="card-rhode-inner-grid">
               {% if block.settings.hover_image != blank %}
                 {{ block.settings.hover_image | image_url: width: 1000 | image_tag: class: 'card-hover-bg', alt: block.settings.title }}
+              {% elsif block.settings.asset_hover_image != blank %}
+                <img src="{{ block.settings.asset_hover_image | asset_url }}" class="card-hover-bg" alt="Hover Background">
               {% endif %}
               
               <div class="card-rhode-top">
@@ -18,7 +20,9 @@
 
               <div class="card-rhode-image">
                 {% if block.settings.main_image != blank %}
-                  {{ block.settings.main_image | image_url: width: 800 | image_tag: alt: block.settings.title }}
+                  {{ block.settings.main_image | image_url: width: 800 | image_tag: alt: block.settings.title, class: 'product-main-img' }}
+                {% elsif block.settings.asset_image != blank %}
+                  <img src="{{ block.settings.asset_image | asset_url }}" alt="{{ block.settings.title }}" class="product-main-img">
                 {% else %}
                   <div class="product-placeholder-img"></div>
                 {% endif %}
@@ -40,7 +44,7 @@
       {% comment %} Fallback items same as scroll section but in grid {% endcomment %}
       {%- assign fallback_names = "Night Cream,Tranexamic Serum,Anti Frizz Keratin Serum,Glow Serum,Glutathione Cream,Floral Blossom Hair Mist,Face Wash,Anti Acne,Sunscreen,Renewal Cleanser,Hydra Burst Moisturizer,Renewal Toner" | split: "," -%}
       {%- assign fallback_images = "night-cream.jpg,tranexamic-serum.jpg,keratin-serum.jpg,glow-serum-100.jpg,glutathione-cream-100.jpg,hair-mist.jpg,facewash-100.jpg,anti-acne-100.jpg,sunscreen-100.jpg,gel cleanser-100.jpg,moisturizer-100.jpg,renewal toner-100.jpg" | split: "," -%}
-      {%- assign fallback_hovers = "night-cream-hover.jpg,,keratin-serum-hover.jpg,,,,,hover-anti-acne.png,,," | split: "," -%}
+      {%- assign fallback_hovers = "night-cream-hover.jpg,tranexamic-meet-1.jpg,keratin-serum-hover.jpg,glow-serum-hover.jpg,deep-hydration-100.jpg,,facewash-shot.png,hover-anti-acne.png,model.png,,," | split: "," -%}
       {%- assign fallback_labels = "nightcream,serum,haircare,serum,repair,haircare,cleanser,antiacne,sunscreen,cleanser,moisturizer,toner" | split: "," -%}
       
       {% for i in (0..11) %}
@@ -74,7 +78,7 @@
 
               <div class="card-rhode-image">
                 {% if pimage != blank %}
-                  <img src="{{ pimage | asset_url }}" alt="{{ pname }}">
+                  <img src="{{ pimage | asset_url }}" class="product-main-img" alt="{{ pname }}">
                 {% else %}
                   <div class="product-placeholder-img"></div>
                 {% endif %}
@@ -147,19 +151,28 @@
   text-transform: lowercase;
   font-weight: 600;
 }
-.card-rhode-grid .card-rhode-image {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px 0;
+.card-rhode-grid .card-hover-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  z-index: 15;
+  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.card-rhode-grid:hover .card-hover-bg {
+  opacity: 1;
+}
+.card-rhode-grid:hover .product-main-img {
+  opacity: 0;
 }
 .card-rhode-grid .card-rhode-image img {
   max-width: 85%;
   max-height: 85%;
   object-fit: contain;
   mix-blend-mode: multiply;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, opacity 0.5s ease;
 }
 .card-rhode-grid:hover .card-rhode-image img {
   transform: scale(1.05); /* Subtle desktop hover effect */
@@ -328,9 +341,19 @@
           "label": "Primary Image (Product)"
         },
         {
+          "type": "text",
+          "id": "asset_image",
+          "label": "Asset Image Filename (e.g. night-cream.jpg)"
+        },
+        {
           "type": "image_picker",
           "id": "hover_image",
           "label": "Hover Image (Model Portrait)"
+        },
+        {
+          "type": "text",
+          "id": "asset_hover_image",
+          "label": "Asset Hover Image Filename (e.g. night-cream-hover.jpg)"
         },
         {
           "type": "url",

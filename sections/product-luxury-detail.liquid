@@ -498,12 +498,35 @@
           <div class="thumb-item" onmouseover="scrollGallery(3, this)">
             <img src="{{ 'glow-gallery-4.jpg' | asset_url }}" alt="Product Infographic">
           </div>
+        {%- elsif product.handle == 'anti-acne' -%}
+          <div class="thumb-item active" onmouseover="scrollGallery(0, this)">
+            <img src="{{ 'anti-acne-100.jpg' | asset_url }}" alt="{{ product.title }}">
+          </div>
+          <div class="thumb-item" onmouseover="scrollGallery(1, this)">
+            <img src="{{ 'hover-anti-acne.png' | asset_url }}" alt="Model View">
+          </div>
+          <div class="thumb-item" onmouseover="scrollGallery(2, this)">
+            <img src="{{ 'social-anti-acne.png' | asset_url }}" alt="Social View">
+          </div>
+          <div class="thumb-item" onmouseover="scrollGallery(3, this)">
+            <img src="{{ 'product-anti-acne.jpg' | asset_url }}" alt="Texture View">
+          </div>
+        {%- elsif product.handle == 'face-wash' -%}
+          <div class="thumb-item active" onmouseover="scrollGallery(0, this)">
+            <img src="{{ 'facewash-100.jpg' | asset_url }}" alt="{{ product.title }}">
+          </div>
+          <div class="thumb-item" onmouseover="scrollGallery(1, this)">
+            <img src="{{ 'facewash-shot.png' | asset_url }}" alt="Product Shot">
+          </div>
+          <div class="thumb-item" onmouseover="scrollGallery(2, this)">
+            <img src="{{ 'wash-new.png' | asset_url }}" alt="New Look">
+          </div>
         {%- elsif product.handle == 'glutathione-cream' -%}
           <div class="thumb-item active" onmouseover="scrollGallery(0, this)">
             <img src="{{ 'glutathione-cream-100.jpg' | asset_url }}" alt="{{ product.title }}">
           </div>
           <div class="thumb-item" onmouseover="scrollGallery(1, this)">
-            <img src="{{ 'glutathione-cream-100.jpg' | asset_url }}" alt="Gallery 2">
+            <img src="{{ 'deep-hydration-100.jpg' | asset_url }}" alt="Hydration Focus">
           </div>
           <div class="thumb-item" onmouseover="scrollGallery(2, this)">
             <img src="{{ 'glutathione-cream-100.jpg' | asset_url }}" alt="Gallery 3">
@@ -557,9 +580,18 @@
             <div class="gallery-slide"><img src="{{ 'glow-gallery-2.jpg' | asset_url }}" alt="Glow Gift Set" style="object-fit: contain !important; background: #fff;"></div>
             <div class="gallery-slide"><img src="{{ 'glow-gallery-3.jpg' | asset_url }}" alt="Before After Results" style="object-fit: contain !important; background: #fff;"></div>
             <div class="gallery-slide"><img src="{{ 'glow-gallery-4.jpg' | asset_url }}" alt="Product Infographic" style="object-fit: contain !important; background: #fff;"></div>
+          {%- elsif product.handle == 'anti-acne' -%}
+            <div class="gallery-slide"><img src="{{ 'anti-acne-100.jpg' | asset_url }}" alt="{{ product.title }}"></div>
+            <div class="gallery-slide"><img src="{{ 'hover-anti-acne.png' | asset_url }}" alt="Model View" style="object-fit: cover !important;"></div>
+            <div class="gallery-slide"><img src="{{ 'social-anti-acne.png' | asset_url }}" alt="Social View" style="object-fit: cover !important;"></div>
+            <div class="gallery-slide"><img src="{{ 'product-anti-acne.jpg' | asset_url }}" alt="Texture View"></div>
+          {%- elsif product.handle == 'face-wash' -%}
+            <div class="gallery-slide"><img src="{{ 'facewash-100.jpg' | asset_url }}" alt="{{ product.title }}"></div>
+            <div class="gallery-slide"><img src="{{ 'facewash-shot.png' | asset_url }}" alt="Product Shot" style="object-fit: cover !important;"></div>
+            <div class="gallery-slide"><img src="{{ 'wash-new.png' | asset_url }}" alt="New Look"></div>
           {%- elsif product.handle == 'glutathione-cream' -%}
             <div class="gallery-slide"><img src="{{ 'glutathione-cream-100.jpg' | asset_url }}" alt="{{ product.title }}" style="object-fit: contain !important; background: #fbfbfb;"></div>
-            <div class="gallery-slide"><img src="{{ 'glutathione-cream-100.jpg' | asset_url }}" alt="Gallery 2" style="object-fit: contain !important; background: #fbfbfb;"></div>
+            <div class="gallery-slide"><img src="{{ 'deep-hydration-100.jpg' | asset_url }}" alt="Hydration Focus" style="object-fit: cover !important;"></div>
             <div class="gallery-slide"><img src="{{ 'glutathione-cream-100.jpg' | asset_url }}" alt="Gallery 3" style="object-fit: contain !important; background: #fbfbfb;"></div>
             <div class="gallery-slide"><img src="{{ 'glutathione-cream-100.jpg' | asset_url }}" alt="Gallery 4" style="object-fit: contain !important; background: #fbfbfb;"></div>
           {%- else -%}

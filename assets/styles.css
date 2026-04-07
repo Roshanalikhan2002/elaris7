@@ -1105,13 +1105,13 @@ a { color: inherit; text-decoration: none; }
 
 .card-hover-bg {
   position: absolute;
-  top: 0; left: 0;
+  inset: 0;
   width: 100%; height: 100%;
   object-fit: cover;
   opacity: 0;
-  z-index: 5;
+  z-index: 20;
   pointer-events: none;
-  transition: opacity 0.4s cubic-bezier(0.16,1,0.3,1);
+  transition: opacity 0.5s cubic-bezier(0.16,1,0.3,1);
 }
 
 .card-rhode:hover .card-hover-bg {
@@ -1186,25 +1186,18 @@ a { color: inherit; text-decoration: none; }
               transform 0.5s cubic-bezier(0.16,1,0.3,1);
 }
 
-.card-hover-bg {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0;
-  z-index: 1;
-  transition: opacity 0.5s cubic-bezier(0.16,1,0.3,1);
-  pointer-events: none;
-}
 
-.card-rhode:hover .card-hover-bg {
-  opacity: 1;
+
+.card-rhode:hover .card-hover-bg,
+.card-rhode-grid:hover .card-hover-bg {
+  opacity: 1 !important;
+  visibility: visible !important;
 }
 
 .card-rhode:hover .card-rhode-image .product-main-img,
-.card-rhode:hover .product-main-img {
-  opacity: 0;
+.card-rhode:hover .product-main-img,
+.card-rhode-grid:hover .product-main-img {
+  opacity: 0 !important;
 }
 
 .card-rhode:hover .card-rhode-footer,
