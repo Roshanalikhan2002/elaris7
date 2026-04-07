@@ -41,33 +41,52 @@
 
   <div class="collection-main">
     {%- assign featured_handles = "night-cream,tranexamic-serum,anti-frizz-keratin-serum,e7-korean-glass-skin-centella-sunscreen-spf50-copy,glutathione-cream,floral-blossom-hair-mist,e7-korean-glass-skin-centella-night-cream-copy,anti-acne,e7-korean-glass-skin-centella-face-wash-copy,centella-skin-toner-copy,e7-korean-glass-skin-moisturizer,centella-skin-toner" | split: "," -%}
+    {%- assign fallback_names = "Night Cream,Tranexamic Serum,Anti Frizz Keratin Serum,Glow Serum,Glutathione Cream,Floral Blossom Hair Mist,Face Wash,Anti Acne,Sunscreen,Renewal Cleanser,Hydra Burst Moisturizer,Renewal Toner" | split: "," -%}
+    {%- assign fallback_images = "night-cream.jpg,tranexamic-serum.jpg,keratin-serum.jpg,glow-serum-100.jpg,glutathione-cream-100.jpg,hair-mist.jpg,facewash-100.jpg,anti-acne-100.jpg,sunscreen-100.jpg,gel cleanser-100.jpg,moisturizer-100.jpg,renewal toner-100.jpg" | split: "," -%}
+    {%- assign fallback_hovers = "night-cream-hover.jpg,tranexamic-meet-1.jpg,keratin-serum-hover.jpg,glow-serum-hover.jpg,deep-hydration-100.jpg,hair-mist-hover.jpg,deep-hydration-facewash.jpg,hover-anti-acne.png,model.png,,," | split: "," -%}
+
     {% paginate collection.products by section.settings.products_per_page %}
       <div class="collection-grid">
         {% for product in collection.products %}
           {% unless featured_handles contains product.handle %}
             {% continue %}
           {% endunless %}
+
+          {% comment %} Find the index of this product to pick the right images {% endcomment %}
+          {%- assign p_index = 0 -%}
+          {% for fh in featured_handles %}
+            {% if fh == product.handle %}
+              {%- assign p_index = forloop.index0 -%}
+              {% break %}
+            {% endif %}
+          {% endfor %}
+
+          {%- assign p_img = fallback_images[p_index] -%}
+          {%- assign h_img = fallback_hovers[p_index] -%}
+
           <div class="coll-item">
             <a href="{{ product.url }}" class="coll-card">
-               <div class="coll-image">
-                 <img src="{{ product.featured_image | image_url: width: 800 }}" alt="{{ product.title }}" loading="lazy" class="main-img">
-                 {% if product.images[1] != blank %}
-                   <img src="{{ product.images[1] | image_url: width: 800 }}" alt="{{ product.title }}" loading="lazy" class="hover-img">
-                 {% endif %}
-                 <div class="coll-badge-top">
+              <div class="coll-image">
+                <img src="{{ p_img | asset_url }}" alt="{{ product.title }}" loading="lazy" class="main-img">
+                {% if h_img != blank %}
+                  <img src="{{ h_img | asset_url }}" alt="{{ product.title }}" loading="lazy" class="hover-img">
+                {% else %}
+                  <img src="{{ p_img | asset_url }}" alt="{{ product.title }}" loading="lazy" class="hover-img">
+                {% endif %}
+                <div class="coll-badge-top">
                    <div class="coll-brand">ELARIS7</div>
-                 </div>
-               </div>
-               <div class="coll-info">
+                </div>
+              </div>
+              <div class="coll-info">
                  <div class="coll-stars">★ ★ ★ ★ ★ (16k)</div>
                  <h3 class="coll-title">{{ product.title | upcase }}</h3>
                  <p class="coll-price">{{ product.price | money }}</p>
-               </div>
-               <div class="coll-buy-btn">
+              </div>
+              <div class="coll-buy-btn">
                   BUY - {{ product.price | money }}
-               </div>
-             </a>
-           </div>
+              </div>
+            </a>
+          </div>
         {% endfor %}
       </div>
 
