@@ -649,6 +649,7 @@
       {%- elsif product.handle == 'glutathione-cream' -%}
         {%- assign display_subtitle = 'Glutathione + Hyaluronic Acid' -%}
         {%- assign display_desc = 'A nourishing brightening cream designed to improve uneven tone, reduce dullness, and support skin repair. It helps fade the look of dark spots, restore radiance, and leave skin smoother and healthier with consistent use.' -%}
+        {%- assign display_ingredients = false -%}
       {%- endif -%}
 
       <div class="product-meta" style="margin-top: 5px;">
@@ -867,10 +868,13 @@
                     </ul>
                   {%- elsif product.handle == 'glutathione-cream' -%}
                     <ul>
-                      <li>Delivers deep overnight repair and nourishment</li>
-                      <li>Helps visibly brighten dull, uneven skin</li>
-                      <li>Intensely hydrates for a plump, baby-soft finish</li>
-                      <li>Supports the natural skin barrier</li>
+                      <li>Helps visibly brighten dull and uneven skin tone</li>
+                      <li>Supports reduction of dark spots and pigmentation</li>
+                      <li>Helps improve post-acne marks and discoloration</li>
+                      <li>Provides deep hydration and skin barrier support</li>
+                      <li>Leaves skin soft, smooth and radiant</li>
+                      <li>Helps restore skin clarity and evenness over time</li>
+                      <li>Promotes a naturally healthy, luminous glow</li>
                     </ul>
                   {%- else -%}
                     <ul>
@@ -892,7 +896,7 @@
                   {%- elsif product.handle == 'e7-korean-glass-skin-centella-sunscreen-spf50-copy' -%}
                     <p style="margin:0;">After cleansing, take 3–4 drops of Centella Serum and gently press onto slightly damp skin across the face and neck. Allow it to absorb fully, then follow with your moisturizer to seal in hydration.</p>
                   {%- elsif product.handle == 'glutathione-cream' -%}
-                    <p style="margin:0;">Use every night as the final step in your routine. Apply an even layer to your face and neck, gently massaging it into the skin. Leave it on overnight for maximum repair and hydration.</p>
+                    <p style="margin:0;">Use morning and evening after cleansing and serum. Apply a small amount to face and neck and gently massage until fully absorbed. In the morning, follow with sunscreen. Suitable for daily use.</p>
                   {%- else -%}
                     <p style="margin:0;">After cleansing and toning, take a small amount of Centella Night Cream and gently massage it upward onto your face and neck, avoiding the eye area. Leave it on overnight to fully absorb and lock in hydration, allowing your skin to repair, restore, and wake up looking radiant and smooth. Consistency is key for optimal results.</p>
                   {%- endif -%}
@@ -920,9 +924,11 @@
                     </ul>
                   {%- elsif product.handle == 'glutathione-cream' -%}
                     <ul>
-                      <li>Apply to slightly damp skin to lock in extra moisture</li>
-                      <li>Use after your favorite serum for enhanced results</li>
-                      <li>Focus on dry patches for targeted repair</li>
+                      <li>Apply on slightly damp skin for better absorption</li>
+                      <li>Use consistently for visible brightening results</li>
+                      <li>Pair with a serum to enhance results</li>
+                      <li>Use sunscreen daily to maintain an even tone</li>
+                      <li>Massage gently to boost skin absorption</li>
                     </ul>
                   {%- else -%}
                     <ul>
@@ -973,6 +979,20 @@
                       <li>Peptides</li>
                       <li>Vitamin B5</li>
                       <li>Witch Hazel</li>
+                    </ul>
+                  {%- elsif product.handle == 'glutathione-cream' -%}
+                    <ul>
+                      <li>Honey</li>
+                      <li>Centella Asiatica</li>
+                      <li>Glutathione</li>
+                      <li>Alpha Arbutin</li>
+                      <li>Kojic Acid Dipalmitate</li>
+                      <li>Niacinamide</li>
+                      <li>Vitamin C</li>
+                      <li>Hyaluronic Acid</li>
+                      <li>Glycerin</li>
+                      <li>Vitamin E</li>
+                      <li>Amla Extract</li>
                     </ul>
                   {%- else -%}
                     <ul>
