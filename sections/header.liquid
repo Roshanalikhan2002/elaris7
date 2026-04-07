@@ -81,17 +81,17 @@
     </div>
     <nav class="header-nav header-right">
       <ul class="desktop-only site-nav">
-        <li><a href="/search" class="nav-link">SEARCH</a></li>
+        <li><button class="nav-link search-trigger" id="search-open-desktop">SEARCH</button></li>
         <li><a href="/account" class="nav-link">ACCOUNT</a></li>
         <li><a href="/cart" class="nav-link cart-count">CART ({{ cart.item_count }})</a></li>
       </ul>
       <div class="mobile-only mobile-header-icons">
-        <a href="/search" class="mobile-icon">
+        <button class="mobile-icon search-trigger" id="search-open-mobile">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="11" cy="11" r="8"></circle>
             <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
           </svg>
-        </a>
+        </button>
         <a href="/cart" class="mobile-icon cart-icon-wrapper">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
             <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path>
@@ -104,6 +104,28 @@
     </nav>
   </div>
 </header>
+
+<div class="search-overlay" id="search-overlay">
+  <div class="search-container">
+    <div class="search-top">
+      <div class="search-close" id="search-close">&times;</div>
+    </div>
+    <form action="/search" method="get" class="search-form">
+      <input type="text" name="q" placeholder="SEARCH ELARIS7..." class="search-input" id="search-input" autocomplete="off">
+    </form>
+    <div class="search-suggestions">
+      <div class="suggestion-group">
+        <h4 class="suggestion-label">TRENDING</h4>
+        <div class="suggestion-items">
+          <a href="/search?q=centella">Centella</a>
+          <a href="/search?q=night+cream">Night Cream</a>
+          <a href="/search?q=serum">Serum</a>
+          <a href="/search?q=glass+skin">Glass Skin</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <div class="mobile-menu-drawer" id="mobile-menu">
   <div class="menu-inner">
@@ -182,6 +204,120 @@
 </div>
 
 <style>
+/* ===== Search Overlay ===== */
+.search-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100dvh;
+  background: #f1efea;
+  z-index: 4000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  justify-content: center;
+  padding: 80px 40px;
+}
+
+.search-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.search-container {
+  max-width: 800px;
+  width: 100%;
+  position: relative;
+}
+
+.search-top {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 30px;
+}
+
+.search-close {
+  background: none;
+  border: none;
+  font-size: 2.2rem;
+  color: #5b5a53;
+  cursor: pointer;
+  line-height: 1;
+  transition: transform 0.3s ease;
+}
+.search-close:hover { transform: rotate(90deg); }
+
+.search-form {
+  width: 100%;
+}
+
+.search-input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid #5b5a53;
+  font-size: 2.8rem;
+  font-weight: 900;
+  color: #5b5a53;
+  padding: 15px 0;
+  outline: none;
+  text-transform: uppercase;
+  letter-spacing: -0.03em;
+  font-family: 'Inter', sans-serif;
+}
+
+.search-input::placeholder {
+  color: rgba(91, 90, 83, 0.15);
+}
+
+.search-suggestions {
+  margin-top: 60px;
+}
+
+.suggestion-label {
+  font-size: 0.65rem;
+  font-weight: 900;
+  color: #8c8b84;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 25px;
+}
+
+.suggestion-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.suggestion-items a {
+  background: #fff;
+  border: 1px solid #d1d1cf;
+  border-radius: 50px;
+  padding: 10px 24px;
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: #5b5a53;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: all 0.3s ease;
+}
+
+.suggestion-items a:hover {
+  background: #5b5a53;
+  color: #fff;
+  border-color: #5b5a53;
+}
+
+@media (max-width: 768px) {
+  .search-overlay { padding: 60px 20px; }
+  .search-input { font-size: 1.6rem; }
+  .search-top { margin-bottom: 20px; }
+  .suggestion-items a { padding: 8px 18px; font-size: 0.65rem; }
+}
+
 /* ===== Hamburger & Mobile Trigger ===== */
 .menu-trigger {
   display: none;
@@ -667,6 +803,40 @@ body.menu-open { overflow: hidden; }
       catItems.forEach(i => i.classList.remove('active'));
       item.classList.add('active');
     });
+  });
+
+  // ===== Search Overlay Toggle =====
+  const searchTriggers = document.querySelectorAll('.search-trigger');
+  const searchOverlay = document.getElementById('search-overlay');
+  const searchClose = document.getElementById('search-close');
+  const searchInput = document.getElementById('search-input');
+
+  function openSearch() {
+    if (!searchOverlay) return;
+    searchOverlay.classList.add('active');
+    document.body.classList.add('menu-open');
+    setTimeout(() => {
+      if (searchInput) searchInput.focus();
+    }, 400);
+  }
+
+  function closeSearch() {
+    if (!searchOverlay) return;
+    searchOverlay.classList.remove('active');
+    if (!document.getElementById('mobile-menu').classList.contains('open')) {
+      document.body.classList.remove('menu-open');
+    }
+  }
+
+  searchTriggers.forEach(trigger => trigger.addEventListener('click', openSearch));
+  if (searchClose) searchClose.addEventListener('click', closeSearch);
+
+  // Esc key to close everything
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      closeSearch();
+      closeMenu();
+    }
   });
 
   // ===== Header Scroll Logic =====
