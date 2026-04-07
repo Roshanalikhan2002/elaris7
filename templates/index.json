@@ -12,13 +12,24 @@
     "mobile_hero": {
       "type": "mobile-hero-slider",
       "blocks": {
-        "slide1": { "type": "banner", "settings": {} },
-        "slide2": { "type": "banner", "settings": { 
-          "image": "shopify://shop_images/Artboard_71-100_jpg.jpg"
-        } }
+        "slide1": {
+          "type": "banner",
+          "settings": {}
+        },
+        "slide2": {
+          "type": "banner",
+          "settings": {
+            "image": "shopify://shop_images/Artboard_71-100_jpg.jpg"
+          }
+        }
       },
-      "block_order": ["slide1", "slide2"],
-      "settings": { "autoplay_speed": 4 }
+      "block_order": [
+        "slide1",
+        "slide2"
+      ],
+      "settings": {
+        "autoplay_speed": 4
+      }
     },
     "hero": {
       "type": "hero",
@@ -233,14 +244,11 @@
       "settings": {
         "flip_layout": false,
         "white_text": false,
-        "pagination_text": "",
         "image_left": "shopify://shop_images/new_bundle_banner-100_jpg.jpg",
         "product_image": "shopify://shop_images/brightening_bundle-100_jpg.jpg",
         "product_title": "KOREAN BRIGHTENING BUNDLE",
         "product_subtitle": "A raspberry pink glow",
-        "product_price": "Rs. 10,920 Rs. 5,460",
-        "product_link": "",
-        "hide_details": true
+        "product_price": "Rs. 10,920 Rs. 5,460"
       }
     },
     "category_promos_9mCf8w": {
@@ -248,14 +256,11 @@
       "settings": {
         "flip_layout": false,
         "white_text": true,
-        "pagination_text": "1/4",
         "image_left": "shopify://shop_images/hair_care_bundle_product_image-100_jpg.jpg",
         "product_image": "shopify://shop_images/hair_care_image-100_jpg.jpg",
         "product_title": "HAIR CARE BUNDLE",
         "product_subtitle": "A raspberry pink glow",
-        "product_price": "Rs. 7,935 Rs. 3,962",
-        "product_link": "",
-        "hide_details": true
+        "product_price": "Rs. 7,935 Rs. 3,962"
       }
     },
     "social_grid": {
