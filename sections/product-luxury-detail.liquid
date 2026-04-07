@@ -603,7 +603,11 @@
             <span style="font-size: 1.2rem;">🌱</span> Key Ingredients
           </span>
           <p style="font-size: 0.88rem; line-height: 1.5; color: #555;">
-            {{ section.settings.key_ingredients | default: 'Glutathione, Vitamin C, Alpha Arbutin, Centella Asiatica, Kojic Dipalmitate, Niacinamide, Honey, Hyaluronic Acid,' }}
+            {%- if product.handle == 'anti-frizz-keratin-serum' -%}
+              Argan Oil, Wheat Germ Oil, Almond Oil, Olive Oil, Grapeseed Oil, Coconut Oil, Flaxseed Oil, Safflower Oil, Shea Butter, Squalene, Niacinamide.
+            {%- else -%}
+              {{ section.settings.key_ingredients | default: 'Glutathione, Vitamin C, Alpha Arbutin, Centella Asiatica, Kojic Dipalmitate, Niacinamide, Honey, Hyaluronic Acid,' }}
+            {%- endif -%}
           </p>
         </div>
       {%- endif -%}
@@ -781,6 +785,15 @@
                       <li>Helps smooth and refine the skin surface</li>
                       <li>Promotes a healthier, more luminous glow</li>
                     </ul>
+                  {%- elsif product.handle == 'anti-frizz-keratin-serum' -%}
+                    <ul>
+                      <li>Instantly controls frizz for a smoother look</li>
+                      <li>Helps reduce hair breakage and split ends</li>
+                      <li>Protects hair from heat styling damage</li>
+                      <li>Locks in moisture for long-lasting smoothness</li>
+                      <li>Enhances shine and softness without heaviness</li>
+                      <li>Keeps hair manageable and easy to style</li>
+                    </ul>
                   {%- else -%}
                     <ul>
                       <li>Boosts skin radiance for a naturally luminous glow</li>
@@ -796,6 +809,8 @@
                 {%- elsif title == "APPLICATION" -%}
                   {%- if product.handle == 'tranexamic-serum' -%}
                     <p style="margin:0;">Use morning and night after cleansing and toning. Apply 2–3 drops to face and neck and gently press into the skin. Follow with moisturizer and use sunscreen during the day.</p>
+                  {%- elsif product.handle == 'anti-frizz-keratin-serum' -%}
+                    <p style="margin:0;">After washing or styling, take a small amount of Anti Frizz Keratin Serum and apply evenly through damp or dry hair, focusing on mid-lengths and ends. Avoid the roots and style as desired.</p>
                   {%- else -%}
                     <p style="margin:0;">After cleansing and toning, take a small amount of Centella Night Cream and gently massage it upward onto your face and neck, avoiding the eye area. Leave it on overnight to fully absorb and lock in hydration, allowing your skin to repair, restore, and wake up looking radiant and smooth. Consistency is key for optimal results.</p>
                   {%- endif -%}
@@ -806,6 +821,13 @@
                       <li>Use consistently for visible brightening results</li>
                       <li>Pair with sunscreen daily to prevent further discoloration</li>
                       <li>Layer with moisturizer to lock in hydration</li>
+                    </ul>
+                  {%- elsif product.handle == 'anti-frizz-keratin-serum' -%}
+                    <ul>
+                      <li>Apply on slightly damp hair for better absorption and control</li>
+                      <li>Use a small amount to avoid product buildup</li>
+                      <li>Apply before heat styling for added protection</li>
+                      <li>Use on dry hair to tame flyaways instantly</li>
                     </ul>
                   {%- else -%}
                     <ul>
@@ -827,6 +849,20 @@
                       <li>Vitamin E</li>
                       <li>Peptides</li>
                       <li>Botanical Extracts</li>
+                    </ul>
+                  {%- elsif product.handle == 'anti-frizz-keratin-serum' -%}
+                    <ul>
+                      <li>Argan Oil</li>
+                      <li>Wheat Germ Oil</li>
+                      <li>Almond Oil</li>
+                      <li>Olive Oil</li>
+                      <li>Grapeseed Oil</li>
+                      <li>Coconut Oil</li>
+                      <li>Flaxseed Oil</li>
+                      <li>Safflower Oil</li>
+                      <li>Shea Butter</li>
+                      <li>Squalene</li>
+                      <li>Niacinamide</li>
                     </ul>
                   {%- else -%}
                     <ul>
