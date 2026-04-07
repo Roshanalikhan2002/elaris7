@@ -46,6 +46,9 @@
       {% for i in (0..11) %}
         {%- assign pname = fallback_names[i] -%}
         {%- assign phandle = pname | handleize -%}
+        {%- if pname contains "Keratin Serum" -%}
+          {%- assign phandle = "e" -%}
+        {%- endif -%}
         {%- assign pimage = fallback_images[i] -%}
         {%- assign plabel = fallback_labels[i] | default: 'antiacne' -%}
         <div class="grid-item">
