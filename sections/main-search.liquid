@@ -33,19 +33,34 @@
 
   {% if search.performed and search.results_count > 0 %}
     {%- assign featured_handles = "night-cream,tranexamic-serum,anti-frizz-keratin-serum,e7-korean-glass-skin-centella-sunscreen-spf50-copy,glutathione-cream,floral-blossom-hair-mist,e7-korean-glass-skin-centella-night-cream-copy,anti-acne-cream,e7-korean-glass-skin-centella-face-wash-copy,centella-skin-toner-copy,e7-korean-glass-skin-moisturizer,centella-skin-toner" | split: "," -%}
+    {%- assign fallback_images = "night-cream.jpg,tranexamic-serum.jpg,keratin-serum.jpg,glow-serum-100.jpg,glutathione-cream-100.jpg,hair-mist.jpg,facewash-100.jpg,anti-acne-100.jpg,sunscreen-100.jpg,gel cleanser-100.jpg,moisturizer-100.jpg,renewal toner-100.jpg" | split: "," -%}
+    {%- assign fallback_prices = "Rs. 2,500,Rs. 2,800,Rs. 2,700,Rs. 2,540,Rs. 2,950,Rs. 2,400,Rs. 2,200,Rs. 2,450,Rs. 2,630,Rs. 2,850,Rs. 2,499,Rs. 2,670" | split: "," -%}
+
     <div class="search-grid">
       {% for item in search.results %}
         {% if item.object_type == 'product' %}
           {% unless featured_handles contains item.handle %}
             {% continue %}
           {% endunless %}
+
+          {%- assign p_index = 0 -%}
+          {% for fh in featured_handles %}
+            {% if fh == item.handle %}
+              {%- assign p_index = forloop.index0 -%}
+              {% break %}
+            {% endif %}
+          {% endfor %}
+
+          {%- assign p_img = fallback_images[p_index] -%}
+          {%- assign p_price = fallback_prices[p_index] -%}
+
           <a href="{{ item.url }}" class="search-grid-item">
             <div class="search-item-image">
-               <img src="{{ item.featured_image | image_url: width: 600 }}" alt="{{ item.title }}" loading="lazy">
+               <img src="{{ p_img | asset_url }}" alt="{{ item.title }}" loading="lazy">
             </div>
             <div class="search-item-meta">
               <h3 class="search-item-title">{{ item.title | uppercase }}</h3>
-              <p class="search-item-price">{{ item.price | money }}</p>
+              <p class="search-item-price">{{ p_price }}</p>
             </div>
           </a>
         {% endif %}
