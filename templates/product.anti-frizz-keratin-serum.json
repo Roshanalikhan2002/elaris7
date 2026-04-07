@@ -103,6 +103,7 @@
         "title": "what's inside",
         "intro": "A powerful blend of salon-grade ingredients to tame frizz and lock in smoothness.",
         "footer_text": "also made with DIMETHICONE, VITAMIN E, CYCLOPENTASILOXANE, FRAGRANCE, and botanical extracts for maximum protection and shine.",
+        "image": "shopify://shop_images/whats_inside-100_1.jpg",
         "show_btn": true,
         "btn_label": "FULL INGREDIENTS LIST"
       }
