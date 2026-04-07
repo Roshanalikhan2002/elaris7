@@ -593,8 +593,8 @@
         {%- assign display_subtitle = 'Keratin + Argan Oil' -%}
         {%- assign display_desc = 'A smoothing hair serum designed to control frizz, protect against heat, and restore softness without weighing hair down. It seals moisture, enhances shine, and leaves hair silky, manageable, and smooth with every use.' -%}
       {%- elsif product.handle == 'e7-korean-glass-skin-centella-sunscreen-spf50-copy' -%}
-        {%- assign display_subtitle = 'Aloe Vera + Niacinamide' -%}
-        {%- assign display_desc = 'A lightweight, brightening serum designed to deliver a glass-skin finish. Infused with Aloe Vera and Niacinamide to hydrate, refine texture, and boost radiance for a naturally luminous glow.' -%}
+        {%- assign display_subtitle = 'Centella Asiatica + Brightening Actives' -%}
+        {%- assign display_desc = 'A concentrated, glow-correcting serum infused with Centella Asiatica and advanced brightening actives to visibly even tone, fade dark spots, and restore a smooth, glass-like complexion over time.' -%}
       {%- endif -%}
 
       <div class="product-meta" style="margin-top: 5px;">
@@ -622,6 +622,8 @@
           <p style="font-size: 0.88rem; line-height: 1.5; color: #555;">
             {%- if product.handle == 'anti-frizz-keratin-serum' -%}
               Argan Oil, Wheat Germ Oil, Almond Oil, Olive Oil, Grapeseed Oil, Coconut Oil, Flaxseed Oil, Safflower Oil, Shea Butter, Squalene, Niacinamide.
+            {%- elsif product.handle == 'e7-korean-glass-skin-centella-sunscreen-spf50-copy' -%}
+              Centella Asiatica, Niacinamide, Alpha Arbutin, Hyaluronic Acid, Glycerin, Sodium Hyaluronate.
             {%- else -%}
               {{ section.settings.key_ingredients | default: 'Glutathione, Vitamin C, Alpha Arbutin, Centella Asiatica, Kojic Dipalmitate, Niacinamide, Honey, Hyaluronic Acid,' }}
             {%- endif -%}
