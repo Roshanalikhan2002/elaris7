@@ -7,7 +7,11 @@
             {% if block.settings.image != blank %}
               <img src="{{ block.settings.image | image_url: width: 1000 }}" alt="{{ block.settings.title }}" loading="lazy">
             {% else %}
-               <div class="placeholder-slide">Upload Mobile Banner {{ forloop.index }}</div>
+               {% if forloop.first %}
+                 <img src="{{ 'new bundle banner-100.jpg' | asset_url }}" alt="New Bundle Launch" loading="lazy">
+               {% else %}
+                 <div class="placeholder-slide">Upload Mobile Banner {{ forloop.index }}</div>
+               {% endif %}
             {% endif %}
             
             {% if block.settings.title != blank or block.settings.btn_link != blank %}
