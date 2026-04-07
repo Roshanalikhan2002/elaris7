@@ -147,36 +147,36 @@
         "faq_1": {
           "type": "faq_item",
           "settings": {
-            "question": "When should I apply the Glow Serum?",
-            "answer": "Apply morning and night after cleansing and toning, and before your moisturizer."
+            "question": "Can I use this serum with other active ingredients?",
+            "answer": "Yes, it layers well with most skincare actives. For stronger treatments like retinol, apply them separately and allow time before layering."
           }
         },
         "faq_2": {
           "type": "faq_item",
           "settings": {
-            "question": "Can I use it under makeup?",
-            "answer": "Yes, it creates a perfect dewy base for makeup application."
+            "question": "Is this suitable for acne-prone or sensitive skin?",
+            "answer": "Yes, the formula includes calming ingredients like Centella Asiatica and Aloe Vera, making it suitable for sensitive and acne-prone skin."
           }
         },
         "faq_3": {
           "type": "faq_item",
           "settings": {
-            "question": "Is it suitable for oily skin?",
-            "answer": "Yes, its lightweight, water-based formula provides hydration without oiliness."
+            "question": "Can I use this serum both morning and night?",
+            "answer": "Absolutely, it is designed for daily use and works effectively in both AM and PM routines."
           }
         },
         "faq_4": {
           "type": "faq_item",
           "settings": {
-            "question": "How long until I see results?",
-            "answer": "You'll notice an instant glow; visible texture improvement typically appears within 2-4 weeks."
+            "question": "Will it help with hyperpigmentation and acne marks?",
+            "answer": "Yes, brightening ingredients like Niacinamide, Vitamin C, and Alpha Arbutin help visibly reduce dark spots and uneven tone over time."
           }
         },
         "faq_5": {
           "type": "faq_item",
           "settings": {
-            "question": "Does it help with acne marks?",
-            "answer": "Yes, Niacinamide is excellent for fading the appearance of post-acne marks and redness."
+            "question": "Does it feel heavy or sticky on the skin?",
+            "answer": "No, the formula is lightweight and fast-absorbing, leaving the skin smooth without any sticky residue."
           }
         }
       },
