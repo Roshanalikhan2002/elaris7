@@ -104,32 +104,40 @@
         "stat_1": {
           "type": "stat_block",
           "settings": {
-            "number": "98%",
-            "description": "SAID THEIR SKIN LOOKED INSTANTLY DEWY AND GLOWY"
+            "number": "99%",
+            "description": "SAID THEIR SKIN LOOKED BRIGHTER + MORE EVEN"
           }
         },
         "stat_2": {
           "type": "stat_block",
           "settings": {
-            "number": "96%",
-            "description": "SAID IT IMPROVED SKIN RADIANCE OVER TIME"
+            "number": "98%",
+            "description": "SAID DARK SPOTS APPEARED VISIBLY REDUCED"
           }
         },
         "stat_3": {
           "type": "stat_block",
           "settings": {
-            "number": "95%",
-            "description": "SAID THEIR SKIN FELT PLUMPER AND MORE HYDRATED"
+            "number": "97%",
+            "description": "SAID THEIR SKIN FELT SMOOTHER + MORE REFINED"
+          }
+        },
+        "stat_4": {
+          "type": "stat_block",
+          "settings": {
+            "number": "3 out of 4",
+            "description": "SAID THEY NOTICED A HEALTHY, GLASS-LIKE GLOW"
           }
         }
       },
       "block_order": [
         "stat_1",
         "stat_2",
-        "stat_3"
+        "stat_3",
+        "stat_4"
       ],
       "settings": {
-        "footnote": "Based on a 1-week consumer perception study with consistent use.",
+        "footnote": "Based on a 2-week consumer perception study with consistent daily use.",
         "image": "shopify://shop_images/social-face.jpg"
       }
     },
