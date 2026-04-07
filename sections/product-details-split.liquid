@@ -91,7 +91,7 @@
     {%- assign ds_title = section.settings.title | default: 'A creamy blush for BUILDABLE color + BABY-SOFT cheeks.' -%}
     {%- if product.handle == 'anti-frizz-keratin-serum' -%}
       {%- assign ds_title = "Intensive smoothing for SLEEK + SHINY, FRIZZ-FREE hair." -%}
-    {%- elsif product.handle == 'glow-serum' -%}
+    {%- elsif product.handle == 'e7-korean-glass-skin-centella-sunscreen-spf50-copy' -%}
       {%- assign ds_title = "A dewy brightening serum for GLASS-SKIN + INSTANT GLOW." -%}
     {%- endif -%}
     <h2 class="ds-title">{{ ds_title }}</h2>
@@ -125,7 +125,7 @@
             <div class="ds-label">FYI:</div>
             <div class="ds-value">Non-Greasy &bull; Lightweight Feel &bull; Heat-Protective &bull; No Buildup</div>
           </div>
-        {%- elsif product.handle == 'glow-serum' -%}
+        {%- elsif product.handle == 'e7-korean-glass-skin-centella-sunscreen-spf50-copy' -%}
           <div class="ds-row">
             <div class="ds-label">GOOD FOR:</div>
             <div class="ds-value">All skin types wanting a hydrated, glass-skin glow</div>
@@ -175,7 +175,7 @@
     {% if section.settings.image != blank %}
       {{ section.settings.image | image_url: width: 1000 | image_tag: class: 'ds-image', alt: section.settings.title }}
     {% else %}
-      {%- if product.handle == 'glow-serum' -%}
+      {%- if product.handle == 'e7-korean-glass-skin-centella-sunscreen-spf50-copy' -%}
         <img class="ds-image" src="{{ 'social-jar.jpg' | asset_url }}" alt="Glow Serum Jar">
       {%- else -%}
         <img class="ds-image" src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?q=80&w=1000" alt="Glossier Cosmetic Layout">

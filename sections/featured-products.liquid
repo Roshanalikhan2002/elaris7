@@ -66,6 +66,8 @@
         {%- assign phandle = pname | handleize -%}
         {%- if pname contains "Keratin Serum" -%}
           {%- assign phandle = "anti-frizz-keratin-serum" -%}
+        {%- elsif pname == "Glow Serum" -%}
+          {%- assign phandle = "e7-korean-glass-skin-centella-sunscreen-spf50-copy" -%}
         {%- endif -%}
         {%- assign pimage = fallback_images[i] -%}
         {%- assign plabel = fallback_labels[i] -%}
