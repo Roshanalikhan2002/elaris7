@@ -4,11 +4,11 @@
     "main": {
       "type": "product-luxury-detail",
       "settings": {
-        "asset_main_image": "facewash-100.jpg",
-        "subtitle": "Gentle Cleansing + pH Balance",
+        "asset_main_image": "hair-mist.jpg",
+        "subtitle": "Floral Blossom + Pro-Vitamin B5",
         "show_reviews": true,
-        "review_count": "11k",
-        "description": "A deep-cleansing yet gentle formula that removes impurities without stripping moisture. Perfect for a refreshing daily cleanse that leaves skin feeling soft and balanced.",
+        "review_count": "5k",
+        "description": "A light, refreshing hair mist infused with floral notes and nourishing vitamins to leave your hair smelling divine and feeling silky smooth throughout the day.",
         "show_ingredients": false,
         "key_ingredients": ""
       }
@@ -24,35 +24,35 @@
           "type": "detail_row",
           "settings": {
             "label": "GOOD FOR:",
-            "value": "All skin types, especially sensitive or dry skin"
+            "value": "All hair types, especially dry or dull hair needing a refresh"
           }
         },
         "row_feels": {
           "type": "detail_row",
           "settings": {
             "label": "FEELS LIKE:",
-            "value": "A light, airy foam that rinses cleanly off the skin"
+            "value": "A weightless mist that dries instantly without any sticky residue"
           }
         },
         "row_looks": {
           "type": "detail_row",
           "settings": {
             "label": "LOOKS LIKE:",
-            "value": "Clarified, fresh-looking skin with a natural glow"
+            "value": "Shiny, healthy-looking hair with reduced static and flyaways"
           }
         },
         "row_smells": {
           "type": "detail_row",
           "settings": {
             "label": "SMELLS LIKE:",
-            "value": "A clean, revitalizing scent with hints of tea tree and citrus"
+            "value": "A fresh, blooming bouquet of spring flowers with a hint of musk"
           }
         },
         "row_fyi": {
           "type": "detail_row",
           "settings": {
             "label": "FYI:",
-            "value": "Dermatologist-Tested • Non-Comedogenic • Sulfate-Free • Soap-Free"
+            "value": "Non-Greasy • Alcohol-Free • UV-Protecting • Color-Safe"
           }
         }
       },
@@ -64,8 +64,8 @@
         "row_fyi"
       ],
       "settings": {
-        "title": "A purifying cleanser for CLEAR + BALANCED skin.",
-        "image": "shopify://shop_images/facewash-100.jpg"
+        "title": "A refreshing aromatic mist for SOFT + SCENTED hair.",
+        "image": "shopify://shop_images/hair-mist.jpg"
       }
     },
     "ingredients": {
@@ -74,15 +74,15 @@
         "ing_1": {
           "type": "ingredient",
           "settings": {
-            "title": "centella asiatica extract",
-            "description": "known for its skin-soothing properties that calm redness and inflammation during cleansing"
+            "title": "floral extract blend",
+            "description": "delivers a long-lasting, elegant scent while providing antioxidant protection to the hair"
           }
         },
         "ing_2": {
           "type": "ingredient",
           "settings": {
-            "title": "mild amino acid surfactants",
-            "description": "gentle cleansing agents that effectively remove dirt while respecting the skin's barrier"
+            "title": "pro-vitamin b5",
+            "description": "known to strengthen and hydrate the hair strand for improved elasticity and shine"
           }
         }
       },
@@ -92,9 +92,9 @@
       ],
       "settings": {
         "title": "what's inside",
-        "intro": "Formulated with sensitive skin in mind to provide a powerful yet non-irritating daily cleanse.",
-        "footer_text": "also made with GLYCERIN, HYALURONIC ACID, GREEN TEA EXTRACT, ALLANTOIN, AND ALOE VERA",
-        "image": "shopify://shop_images/facewash-100.jpg",
+        "intro": "Crafted with premium aromatic compounds and hair-health vitamins to refresh and protect.",
+        "footer_text": "also made with GLYCERIN, ALOE VERA, KERATIN AMINO ACIDS, SILK PROTEIN, AND VITAMIN E",
+        "image": "shopify://shop_images/hair-mist.jpg",
         "show_btn": true,
         "btn_label": "FULL INGREDIENTS LIST"
       }
@@ -105,22 +105,22 @@
         "stat_1": {
           "type": "stat_block",
           "settings": {
-            "number": "98%",
-            "description": "SAID THEIR SKIN FELT CLEAN WITHOUT DRYNESS"
+            "number": "96%",
+            "description": "SAID THEIR HAIR SMELT FRESH ALL DAY"
           }
         },
         "stat_2": {
           "type": "stat_block",
           "settings": {
-            "number": "96%",
-            "description": "SAID IT EFFECTIVELY REMOVED ALL DAYTIME IMPURITIES"
+            "number": "94%",
+            "description": "SAID IT ADDED A HEALTHY SHINE INSTANTLY"
           }
         },
         "stat_3": {
           "type": "stat_block",
           "settings": {
-            "number": "94%",
-            "description": "REPORTED CALMER AND LESS IRRITATED SKIN AFTER USE"
+            "number": "92%",
+            "description": "SAID THEIR HAIR FELT WEIGHTLESS AND SMOOTH"
           }
         }
       },
@@ -130,8 +130,8 @@
         "stat_3"
       ],
       "settings": {
-        "footnote": "Based on a 4-week consumer perception study with twice-daily use.",
-        "image": "shopify://shop_images/facewash-100.jpg"
+        "footnote": "Based on a 1-week consumer perception study with daily application.",
+        "image": "shopify://shop_images/hair-mist.jpg"
       }
     },
     "faq_split": {
@@ -140,22 +140,22 @@
         "faq_1": {
           "type": "faq_item",
           "settings": {
-            "question": "Can I use this as a makeup remover?",
-            "answer": "Yes, while gentle, it effectively removes light makeup and daily sunscreen."
+            "question": "Can I use this on wet hair?",
+            "answer": "Yes, it can be used on both damp and dry hair to refresh and help with detangling."
           }
         },
         "faq_2": {
           "type": "faq_item",
           "settings": {
-            "question": "Is it drying for sensitive skin?",
-            "answer": "No, it's formulated with a skin-mimicking pH to maintain your natural moisture barrier."
+            "question": "Will it make my hair oily?",
+            "answer": "Not at all. The formula is lightweight and water-based, specifically designed to be non-greasy."
           }
         },
         "faq_3": {
           "type": "faq_item",
           "settings": {
-            "question": "Does it contain soap?",
-            "answer": "No, it is soap-free and sulfate-free to minimize any potential irritation."
+            "question": "Is it safe for colored hair?",
+            "answer": "Yes, it is sulfate-free and safe for color-treated or chemically-treated hair."
           }
         }
       },
@@ -166,8 +166,8 @@
       ],
       "settings": {
         "title": "FAQ",
-        "subtitle": "Everything you need to know about Elaris Face Wash.",
-        "image": "shopify://shop_images/facewash-100.jpg"
+        "subtitle": "Everything you need to know about Floral Blossom Hair Mist.",
+        "image": "shopify://shop_images/hair-mist.jpg"
       }
     },
     "product_reviews": {
