@@ -41,12 +41,14 @@
     {% paginate collection.products by 50 %}
       <div class="collection-grid">
         {% for product in collection.products %}
-          {% unless featured_handles contains product.handle %}
-            {% continue %}
-          {% endunless %}
+          {% if collection.handle == 'all' %}
+            {% unless featured_handles contains product.handle %}
+              {% continue %}
+            {% endunless %}
+          {% endif %}
 
-          {% comment %} Find the index of this product to pick the right images {% endcomment %}
-          {%- assign p_index = 0 -%}
+          {% comment %} Find the index of this product to pick the right images (fallback) {% endcomment %}
+          {%- assign p_index = -1 -%}
           {% for fh in featured_handles %}
             {% if fh == product.handle %}
               {%- assign p_index = forloop.index0 -%}
@@ -54,18 +56,26 @@
             {% endif %}
           {% endfor %}
 
-          {%- assign p_img = fallback_images[p_index] -%}
-          {%- assign h_img = fallback_hovers[p_index] -%}
-          {%- assign p_price = fallback_prices[p_index] -%}
+          {%- assign p_img = product.featured_image | image_url: width: 800 -%}
+          {%- assign h_img = product.images[1] | image_url: width: 800 -%}
+          {%- assign p_price = product.price | money -%}
+
+          {% if p_index != -1 %}
+            {%- assign p_img = fallback_images[p_index] | asset_url -%}
+            {% if fallback_hovers[p_index] != blank %}
+              {%- assign h_img = fallback_hovers[p_index] | asset_url -%}
+            {% endif %}
+            {%- assign p_price = fallback_prices[p_index] -%}
+          {% endif %}
 
           <div class="coll-item">
             <a href="{{ product.url }}" class="coll-card">
               <div class="coll-image">
-                <img src="{{ p_img | asset_url }}" alt="{{ product.title }}" loading="lazy" class="main-img">
+                <img src="{{ p_img }}" alt="{{ product.title }}" loading="lazy" class="main-img">
                 {% if h_img != blank %}
-                  <img src="{{ h_img | asset_url }}" alt="{{ product.title }}" loading="lazy" class="hover-img">
+                  <img src="{{ h_img }}" alt="{{ product.title }}" loading="lazy" class="hover-img">
                 {% else %}
-                  <img src="{{ p_img | asset_url }}" alt="{{ product.title }}" loading="lazy" class="hover-img">
+                  <img src="{{ p_img }}" alt="{{ product.title }}" loading="lazy" class="hover-img">
                 {% endif %}
                 <div class="coll-badge-top">
                    <div class="coll-brand">ELARIS7</div>
