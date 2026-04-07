@@ -45,7 +45,7 @@
     {%- assign fallback_images = "night-cream.jpg,tranexamic-serum.jpg,keratin-serum.jpg,glow-serum-100.jpg,glutathione-cream-100.jpg,hair-mist.jpg,facewash-100.jpg,anti-acne-100.jpg,sunscreen-100.jpg,gel cleanser-100.jpg,moisturizer-100.jpg,renewal toner-100.jpg" | split: "," -%}
     {%- assign fallback_hovers = "night-cream-hover.jpg,tranexamic-meet-1.jpg,keratin-serum-hover.jpg,glow-serum-hover.jpg,deep-hydration-100.jpg,hair-mist-hover.jpg,deep-hydration-facewash.jpg,hover-anti-acne.png,model.png,,," | split: "," -%}
 
-    {% paginate collection.products by section.settings.products_per_page %}
+    {% paginate collection.products by 50 %}
       <div class="collection-grid">
         {% for product in collection.products %}
           {% unless featured_handles contains product.handle %}
