@@ -84,7 +84,9 @@
 <section class="benefits-focus-section">
   <div class="bf-left">
     {%- assign bf_subtitle = section.settings.subtitle | default: 'SPREAD IT ON FOR:' -%}
-    {%- if product.handle == 'floral-blossom-hair-mist' and section.settings.subtitle == blank -%}
+    {%- if product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' and section.settings.subtitle == blank -%}
+      {%- assign bf_subtitle = 'WASH IT ON TO:' -%}
+    {%- elsif product.handle == 'floral-blossom-hair-mist' and section.settings.subtitle == blank -%}
       {%- assign bf_subtitle = 'MIST IT ON TO:' -%}
     {%- endif -%}
     <div class="bf-subtitle">{{ bf_subtitle }}</div>
@@ -95,7 +97,11 @@
         </div>
       {% endfor %}
       {% if section.blocks.size == 0 %}
-        {%- if product.handle == 'e7-korean-glass-skin-centella-sunscreen-spf50-copy' -%}
+        {%- if product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' -%}
+          <div class="bf-line">fresh, balanced skin</div>
+          <div class="bf-line">gentle daily cleansing</div>
+          <div class="bf-line bf-line-highlight">natural, radiant glow</div>
+        {%- elsif product.handle == 'e7-korean-glass-skin-centella-sunscreen-spf50-copy' -%}
           <div class="bf-line">evened-out tone</div>
           <div class="bf-line">bright, radiant skin</div>
           <div class="bf-line bf-line-highlight">smooth, glass-like finish</div>
