@@ -128,36 +128,36 @@
         "faq_1": {
           "type": "faq_item",
           "settings": {
-            "question": "Can I use this on wet or dry hair?",
-            "answer": "Yes, both! Apply to damp hair before styling or to dry hair for a finishing touch."
+            "question": "Can I use this serum on dry hair?",
+            "answer": "Yes, it works well on both damp and dry hair to control frizz and add shine."
           }
         },
         "faq_2": {
           "type": "faq_item",
           "settings": {
-            "question": "Will it make my hair look greasy?",
-            "answer": "Not at all. Its lightweight formula absorbs quickly for a silky finish."
+            "question": "Will it make my hair greasy?",
+            "answer": "No, the formula is designed to be non-greasy and does not weigh hair down."
           }
         },
         "faq_3": {
           "type": "faq_item",
           "settings": {
-            "question": "Is it safe for color-treated hair?",
-            "answer": "Yes, it is safe and helps enhance the shine and vibrancy of your color."
+            "question": "Can I use it before heat styling?",
+            "answer": "Yes, it acts as a heat protectant and helps reduce damage from styling tools."
           }
         },
         "faq_4": {
           "type": "faq_item",
           "settings": {
-            "question": "Does it provide heat protection?",
-            "answer": "Yes, it creates a protective barrier against damage from heat styling tools."
+            "question": "Is it suitable for all hair types?",
+            "answer": "Yes, it works for all hair types, especially dry, frizzy, or damaged hair."
           }
         },
         "faq_5": {
           "type": "faq_item",
           "settings": {
-            "question": "How much should I use?",
-            "answer": "Apply 1-2 pumps depending on hair length and thickness, focusing on mid-lengths to ends."
+            "question": "How often should I use it?",
+            "answer": "You can use it daily or whenever your hair needs smoothness and control."
           }
         }
       },
