@@ -137,20 +137,39 @@
   <div class="ing-right">
     <div class="ing-vertical-title">{{ section.settings.title }}</div>
     <div class="ing-content">
-      <div class="ing-intro">{{ section.settings.intro }}</div>
+      <div class="ing-intro">
+        {%- if product.handle == 'glutathione-cream' -%}
+          A nourishing cream that brightens, repairs, and hydrates skin for a clearer, more even complexion.
+        {%- else -%}
+          {{ section.settings.intro }}
+        {%- endif -%}
+      </div>
       
-      {% for block in section.blocks %}
-        <div class="hero-ingredient" {{ block.shopify_attributes }}>
-          <h3 class="hero-title">{{ block.settings.title | downcase }}</h3>
-          <p class="hero-desc">{{ block.settings.description }}</p>
+      {%- if product.handle == 'glutathione-cream' -%}
+        <div class="hero-ingredient">
+          <h3 class="hero-title">HONEY & GLUTATHIONE</h3>
+          <p class="hero-desc">help restore radiance and fade dullness</p>
         </div>
-      {% endfor %}
+        <div class="hero-ingredient">
+          <h3 class="hero-title">ALPHA ARBUTIN & KOJIC ACID DIPALMITATE</h3>
+          <p class="hero-desc">work to reduce dark spots, post-acne marks, and pigmentation</p>
+        </div>
+      {%- else -%}
+        {% for block in section.blocks %}
+          <div class="hero-ingredient" {{ block.shopify_attributes }}>
+            <h3 class="hero-title">{{ block.settings.title | downcase }}</h3>
+            <p class="hero-desc">{{ block.settings.description }}</p>
+          </div>
+        {% endfor %}
+      {%- endif -%}
 
-      {% if section.settings.footer_text != blank %}
-        <div class="ing-footer">
+      <div class="ing-footer">
+        {%- if product.handle == 'glutathione-cream' -%}
+          also made with Centella Asiatica, Niacinamide, Vitamin C, Hyaluronic Acid, Glycerin, Vitamin E, and Amla Extract for hydration, skin barrier support, and smooth texture
+        {%- else -%}
           {{ section.settings.footer_text }}
-        </div>
-      {% endif %}
+        {%- endif -%}
+      </div>
     </div>
   </div>
 </section>

@@ -120,6 +120,23 @@
           <h3 class="sr-number">95%</h3>
           <p class="sr-desc">SAID THEIR SKIN FELT PLUMPER AND MORE HYDRATED</p>
         </div>
+      {%- elsif product.handle == 'glutathione-cream' -%}
+        <div class="sr-stat-block">
+          <h3 class="sr-number">99%</h3>
+          <p class="sr-desc">SAID THEIR SKIN LOOKED MORE RADIANT</p>
+        </div>
+        <div class="sr-stat-block">
+          <h3 class="sr-number">98%</h3>
+          <p class="sr-desc">SAID THEIR SKIN FELT MORE HYDRATED</p>
+        </div>
+        <div class="sr-stat-block">
+          <h3 class="sr-number">97%</h3>
+          <p class="sr-desc">SAID THEIR SKIN APPEARED MORE EVEN</p>
+        </div>
+        <div class="sr-stat-block">
+          <h3 class="sr-number">3 out of 4</h3>
+          <p class="sr-desc">SAID THEY NOTICED IMPROVED SKIN CLARITY</p>
+        </div>
       {%- else -%}
         <div class="sr-stat-block">
           <h3 class="sr-number">97%</h3>
@@ -145,6 +162,8 @@
         Based on a 2-week consumer perception study with consistent use.
       {%- elsif product.handle == 'e7-korean-glass-skin-centella-sunscreen-spf50-copy' -%}
         Based on a 1-week consumer perception study with consistent use.
+      {%- elsif product.handle == 'glutathione-cream' -%}
+        Based on a 2-week consumer perception study with consistent daily use.
       {%- else -%}
         {{ section.settings.footnote | default: '*Based on a 32-subject consumer perception study after 2 weeks of use.' }}
       {%- endif -%}
