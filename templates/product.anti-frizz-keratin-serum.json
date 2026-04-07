@@ -1,12 +1,3 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "layout": "theme",
   "sections": {
@@ -14,12 +5,12 @@
       "type": "product-luxury-detail",
       "settings": {
         "asset_main_image": "",
-        "subtitle": "Night Renewal",
+        "subtitle": "Keratin + Argan Oil",
         "show_reviews": true,
         "review_count": "16k",
-        "description": "Faith's Light. Korean Science. <br>Powered by Nature's Purest.",
+        "description": "A smoothing hair serum designed to control frizz, protect against heat, and restore softness without weighing hair down. It seals moisture, enhances shine, and leaves hair silky, manageable, and smooth with every use.",
         "show_ingredients": true,
-        "key_ingredients": "Glutathione, Vitamin C, Alpha Arbutin, Centella Asiatica, Kojic Dipalmitate, Niacinamide, Honey, Hyaluronic Acid,"
+        "key_ingredients": "Argan Oil, Wheat Germ Oil, Almond Oil, Olive Oil, Grapeseed Oil, Coconut Oil, Flaxseed Oil, Safflower Oil, Shea Butter, Squalene, Niacinamide."
       }
     },
     "meet_product": {
@@ -33,35 +24,35 @@
           "type": "detail_row",
           "settings": {
             "label": "GOOD FOR:",
-            "value": "All hair types, especially frizzy, dry, or chemically treated hair"
+            "value": "All hair types, especially dry and frizzy hair"
           }
         },
         "row_feels": {
           "type": "detail_row",
           "settings": {
             "label": "FEELS LIKE:",
-            "value": "A lightweight, non-greasy oil that smooths instantly"
+            "value": "A silky, weightless layer that glides through hair"
           }
         },
         "row_looks": {
           "type": "detail_row",
           "settings": {
             "label": "LOOKS LIKE:",
-            "value": "Sleek, shiny, and frizz-free hair"
+            "value": "Sleek, shiny hair with controlled frizz"
           }
         },
         "row_smells": {
           "type": "detail_row",
           "settings": {
             "label": "SMELLS LIKE:",
-            "value": "Fresh, salon-like floral scent"
+            "value": "Soft, fresh scent with a clean finish"
           }
         },
         "row_fyi": {
           "type": "detail_row",
           "settings": {
             "label": "FYI:",
-            "value": "Heat protection • Argan Oil infused • Daily Use • Lightweight"
+            "value": "Non-Greasy • Lightweight Feel • Heat-Protective • No Buildup"
           }
         }
       },
@@ -73,7 +64,7 @@
         "row_fyi"
       ],
       "settings": {
-        "title": " Frizz-Free Confidence Every Day A daily serum for SMOOTHING + SOFT, SHINY HAIR.",
+        "title": "Intensive smoothing for SLEEK + SHINY, FRIZZ-FREE hair.",
         "image": "shopify://shop_images/a_creamy_blush-100_1.jpg"
       }
     },
@@ -94,32 +85,40 @@
         "stat_1": {
           "type": "stat_block",
           "settings": {
-            "number": "98%",
-            "description": "SAID THEIR HAIR FELT INSTANTLY SMOOTHER"
+            "number": "99%",
+            "description": "SAID THEIR HAIR FELT SMOOTHER + MORE MANAGEABLE"
           }
         },
         "stat_2": {
           "type": "stat_block",
           "settings": {
-            "number": "96%",
-            "description": "NOTICED A VISIBLE REDUCTION IN FRIZZ"
+            "number": "98%",
+            "description": "SAID IT REDUCED FRIZZ EFFECTIVELY"
           }
         },
         "stat_3": {
           "type": "stat_block",
           "settings": {
-            "number": "94%",
-            "description": "SAID IT PROTECTED HAIR FROM HUMIDITY"
+            "number": "97%",
+            "description": "SAID THEIR HAIR LOOKED SHINIER + HEALTHIER"
+          }
+        },
+        "stat_4": {
+          "type": "stat_block",
+          "settings": {
+            "number": "3 out of 4",
+            "description": "SAID THEY NOTICED LESS BREAKAGE"
           }
         }
       },
       "block_order": [
         "stat_1",
         "stat_2",
-        "stat_3"
+        "stat_3",
+        "stat_4"
       ],
       "settings": {
-        "footnote": "*Based on a consumer perception study after daily use to tame frizz.",
+        "footnote": "Based on a 2-week consumer perception study with consistent use.",
         "image": "shopify://shop_images/product_image_before_after_copy_2-100.jpg"
       }
     },
