@@ -95,6 +95,8 @@
       {%- assign ds_title = "Glow That Transforms Over Time<br><span style='font-size: 0.7em;'>A daily serum for BRIGHTENING + EVEN, GLASS-LIKE SKIN.</span>" -%}
     {%- elsif product.handle == 'glutathione-cream' -%}
       {%- assign ds_title = "Deep Brightening With Skin Repair Care<br><span style='font-size: 0.7em;'>A cream for EVEN TONE + HYDRATION + RADIANT SKIN.</span>" -%}
+    {%- elsif product.handle == 'floral-blossom-hair-mist' -%}
+      {%- assign ds_title = "A Touch of Floral Freshness<br><span style='font-size: 0.7em;'>A daily hair mist for FRESH, FRAGRANT + NATURALLY SHINY HAIR.</span>" -%}
     {%- endif -%}
     <h2 class="ds-title">{{ ds_title }}</h2>
     <div class="ds-list">
@@ -126,6 +128,27 @@
           <div class="ds-row">
             <div class="ds-label">FYI:</div>
             <div class="ds-value">Non-Greasy &bull; Lightweight Feel &bull; Heat-Protective &bull; No Buildup</div>
+          </div>
+        {%- elsif product.handle == 'floral-blossom-hair-mist' -%}
+          <div class="ds-row">
+            <div class="ds-label">GOOD FOR:</div>
+            <div class="ds-value">All hair types, especially dull or odor-prone hair</div>
+          </div>
+          <div class="ds-row">
+            <div class="ds-label">FEELS LIKE:</div>
+            <div class="ds-value">A fine, refreshing mist that settles gently on hair</div>
+          </div>
+          <div class="ds-row">
+            <div class="ds-label">LOOKS LIKE:</div>
+            <div class="ds-value">Soft, naturally shiny hair with a fresh finish</div>
+          </div>
+          <div class="ds-row">
+            <div class="ds-label">SMELLS LIKE:</div>
+            <div class="ds-value">A delicate floral scent that lingers beautifully</div>
+          </div>
+          <div class="ds-row">
+            <div class="ds-label">FYI:</div>
+            <div class="ds-value">Non-Sticky &bull; Fresh Feel &bull; No Residue &bull; Everyday Use</div>
           </div>
         {%- elsif product.handle == 'e7-korean-glass-skin-centella-sunscreen-spf50-copy' -%}
           <div class="ds-row">
