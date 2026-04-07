@@ -90,26 +90,49 @@
     {% endfor %}
     
     {% if section.blocks.size == 0 %}
-      <div class="sr-stat-block">
-        <h3 class="sr-number">97%</h3>
-        <p class="sr-desc">SAID THEIR SKIN FELT DEEPLY HYDRATED AND NOURISHED</p>
-      </div>
-      <div class="sr-stat-block">
-        <h3 class="sr-number">95%</h3>
-        <p class="sr-desc">SAID IT ABSORBED WELL WITHOUT HEAVINESS</p>
-      </div>
-      <div class="sr-stat-block">
-        <h3 class="sr-number">94%</h3>
-        <p class="sr-desc">NOTICED SMOOTHER, SOFTER, AND REFINED SKIN BY MORNING</p>
-      </div>
-      <div class="sr-stat-block">
-        <h3 class="sr-number">3 out of 4</h3>
-        <p class="sr-desc">REPORTED A VISIBLE REDUCTION IN FINE LINES AND DARK SPOTS</p>
-      </div>
+      {%- if product.handle == 'anti-frizz-keratin-serum' -%}
+        <div class="sr-stat-block">
+          <h3 class="sr-number">99%</h3>
+          <p class="sr-desc">SAID THEIR HAIR FELT SMOOTHER + MORE MANAGEABLE</p>
+        </div>
+        <div class="sr-stat-block">
+          <h3 class="sr-number">98%</h3>
+          <p class="sr-desc">SAID IT REDUCED FRIZZ EFFECTIVELY</p>
+        </div>
+        <div class="sr-stat-block">
+          <h3 class="sr-number">97%</h3>
+          <p class="sr-desc">SAID THEIR HAIR LOOKED SHINIER + HEALTHIER</p>
+        </div>
+        <div class="sr-stat-block">
+          <h3 class="sr-number">3 out of 4</h3>
+          <p class="sr-desc">SAID THEY NOTICED LESS BREAKAGE</p>
+        </div>
+      {%- else -%}
+        <div class="sr-stat-block">
+          <h3 class="sr-number">97%</h3>
+          <p class="sr-desc">SAID THEIR SKIN FELT DEEPLY HYDRATED AND NOURISHED</p>
+        </div>
+        <div class="sr-stat-block">
+          <h3 class="sr-number">95%</h3>
+          <p class="sr-desc">SAID IT ABSORBED WELL WITHOUT HEAVINESS</p>
+        </div>
+        <div class="sr-stat-block">
+          <h3 class="sr-number">94%</h3>
+          <p class="sr-desc">NOTICED SMOOTHER, SOFTER, AND REFINED SKIN BY MORNING</p>
+        </div>
+        <div class="sr-stat-block">
+          <h3 class="sr-number">3 out of 4</h3>
+          <p class="sr-desc">REPORTED A VISIBLE REDUCTION IN FINE LINES AND DARK SPOTS</p>
+        </div>
+      {%- endif -%}
     {% endif %}
-
+    
     <div class="sr-footnote">
-      {{ section.settings.footnote | default: '*Based on a 32-subject consumer perception study after 2 weeks of use.' }}
+      {%- if product.handle == 'anti-frizz-keratin-serum' -%}
+        Based on a 2-week consumer perception study with consistent use.
+      {%- else -%}
+        {{ section.settings.footnote | default: '*Based on a 32-subject consumer perception study after 2 weeks of use.' }}
+      {%- endif -%}
     </div>
   </div>
   
@@ -117,7 +140,11 @@
     {% if section.settings.image != blank %}
       {{ section.settings.image | image_url: width: 1000 | image_tag: class: 'sr-image', alt: 'Study Results Visual' }}
     {% else %}
-      <img class="sr-image" src="https://images.unsplash.com/photo-1549439602-43ebca2327af?q=80&w=1000" alt="Cosmetic application close up">
+      {%- if product.handle == 'anti-frizz-keratin-serum' -%}
+        <img class="sr-image" src="{{ 'keratin-ba.jpg' | asset_url }}" alt="Before After Comparison">
+      {%- else -%}
+        <img class="sr-image" src="https://images.unsplash.com/photo-1549439602-43ebca2327af?q=80&w=1000" alt="Cosmetic application close up">
+      {%- endif -%}
     {% endif %}
   </div>
 </section>
