@@ -1,12 +1,3 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "layout": "theme",
   "sections": {
@@ -14,12 +5,12 @@
       "type": "product-luxury-detail",
       "settings": {
         "asset_main_image": "",
-        "subtitle": "Night Renewal",
+        "subtitle": "Glutathione + Hyaluronic Acid",
         "show_reviews": true,
         "review_count": "16k",
-        "description": "Faith's Light. Korean Science. <br>Powered by Nature's Purest.",
-        "show_ingredients": true,
-        "key_ingredients": "Glutathione, Vitamin C, Alpha Arbutin, Centella Asiatica, Kojic Dipalmitate, Niacinamide, Honey, Hyaluronic Acid,"
+        "description": "A nourishing brightening cream designed to improve uneven tone, reduce dullness, and support skin repair. It helps fade the look of dark spots, restore radiance, and leave skin smoother and healthier with consistent use.",
+        "show_ingredients": false,
+        "key_ingredients": ""
       }
     },
     "meet_product": {
@@ -33,35 +24,35 @@
           "type": "detail_row",
           "settings": {
             "label": "GOOD FOR:",
-            "value": "All skin types, including dry and sensitive skin"
+            "value": "All skin types, especially dull and uneven skin"
           }
         },
         "row_feels": {
           "type": "detail_row",
           "settings": {
             "label": "FEELS LIKE:",
-            "value": "A rich, creamy formula that melts effortlessly into the skin"
+            "value": "A rich, smooth cream that absorbs comfortably into skin"
           }
         },
         "row_looks": {
           "type": "detail_row",
           "settings": {
             "label": "LOOKS LIKE:",
-            "value": "Smooth, plump, and poreless skin by morning"
+            "value": "Brighter, clearer skin with improved tone and texture"
           }
         },
         "row_smells": {
           "type": "detail_row",
           "settings": {
             "label": "SMELLS LIKE:",
-            "value": "Subtle, calming freshness for a relaxing nighttime routine"
+            "value": "A soft, fresh scent with a soothing finish"
           }
         },
         "row_fyi": {
           "type": "detail_row",
           "settings": {
             "label": "FYI:",
-            "value": "Halal-Friendly • Dermatologist-Tested • Non-Sticky • Repair-Focused"
+            "value": "Non-Greasy • Deep Hydration • Daily Use • Brightening Care"
           }
         }
       },
@@ -73,7 +64,7 @@
         "row_fyi"
       ],
       "settings": {
-        "title": "An intensive overnight cream for DEEP REPAIR + BABY-SOFT skin.",
+        "title": "Deep Brightening With Skin Repair Care<br><span style='font-size: 0.7em;'>A cream for EVEN TONE + HYDRATION + RADIANT SKIN.</span>",
         "image": "shopify://shop_images/a_creamy_blush-100_3.jpg"
       }
     },
@@ -83,15 +74,15 @@
         "ing_1": {
           "type": "ingredient",
           "settings": {
-            "title": "hyaluronic acid complex",
-            "description": "5 molecular weights of hyaluronic acid help improve hydration on and below the skin's surface"
+            "title": "HONEY & GLUTATHIONE",
+            "description": "help restore radiance and fade dullness"
           }
         },
         "ing_2": {
           "type": "ingredient",
           "settings": {
-            "title": "centella asiatica",
-            "description": "a powerful skin-calming botanical that helps soothe irritation, strengthen the skin barrier, and accelerate overnight repair"
+            "title": "ALPHA ARBUTIN & KOJIC ACID DIPALMITATE",
+            "description": "work to reduce dark spots, post-acne marks, and pigmentation"
           }
         }
       },
@@ -101,8 +92,8 @@
       ],
       "settings": {
         "title": "what's inside",
-        "intro": "Our formula is packed with 13 efficacious hero ingredients. Meet 2 of our favorites for intensive hydration.",
-        "footer_text": "also made with POLYGLUTAMIC ACID, ISOSORBIDE DICAPRYLATE, CERAMIDE NP, PALMITOYL TETRAPEPTIDE-10, PALMITOYL TRIPEPTIDE-8, BISABOLOL, GINGER ROOT EXTRACT",
+        "intro": "A nourishing cream that brightens, repairs, and hydrates skin for a clearer, more even complexion.",
+        "footer_text": "also made with Centella Asiatica, Niacinamide, Vitamin C, Hyaluronic Acid, Glycerin, Vitamin E, and Amla Extract for hydration, skin barrier support, and smooth texture",
         "image": "shopify://shop_images/whats_inside-100_3.jpg",
         "show_btn": true,
         "btn_label": "FULL INGREDIENTS LIST"
@@ -114,29 +105,29 @@
         "stat_1": {
           "type": "stat_block",
           "settings": {
-            "number": "97%",
-            "description": "SAID THEIR SKIN FELT DEEPLY HYDRATED AND NOURISHED"
+            "number": "99%",
+            "description": "SAID THEIR SKIN LOOKED MORE RADIANT"
           }
         },
         "stat_2": {
           "type": "stat_block",
           "settings": {
-            "number": "95%",
-            "description": "SAID IT ABSORBED WELL WITHOUT HEAVINESS"
+            "number": "98%",
+            "description": "SAID THEIR SKIN FELT MORE HYDRATED"
           }
         },
         "stat_3": {
           "type": "stat_block",
           "settings": {
-            "number": "94%",
-            "description": "NOTICED SMOOTHER, SOFTER, AND REFINED SKIN BY MORNING"
+            "number": "97%",
+            "description": "SAID THEIR SKIN APPEARED MORE EVEN"
           }
         },
         "stat_4": {
           "type": "stat_block",
           "settings": {
             "number": "3 out of 4",
-            "description": "REPORTED A VISIBLE REDUCTION IN FINE LINES AND DARK SPOTS"
+            "description": "SAID THEY NOTICED IMPROVED SKIN CLARITY"
           }
         }
       },
@@ -147,7 +138,7 @@
         "stat_4"
       ],
       "settings": {
-        "footnote": "*Based on a 32-subject consumer perception study after 2 weeks of use.",
+        "footnote": "Based on a 2-week consumer perception study with consistent daily use.",
         "image": "shopify://shop_images/before_after-100_2.jpg"
       }
     },
@@ -157,36 +148,36 @@
         "faq_1": {
           "type": "faq_item",
           "settings": {
-            "question": "Can I use this night cream with my serum?",
-            "answer": "Yes, applying serum before the night cream enhances hydration and repair benefits."
+            "question": "Can I use this cream every day?",
+            "answer": "Yes, it is suitable for daily use, both morning and evening."
           }
         },
         "faq_2": {
           "type": "faq_item",
           "settings": {
-            "question": "Is it suitable for oily skin at night?",
-            "answer": "Absolutely, it hydrates without clogging pores or leaving a greasy residue."
+            "question": "Is it suitable for dull and uneven skin?",
+            "answer": "Yes, it is designed to target dullness, pigmentation, and uneven tone."
           }
         },
         "faq_3": {
           "type": "faq_item",
           "settings": {
-            "question": "How often should I use it?",
-            "answer": "For optimal results, use every night as the final step in your evening routine."
+            "question": "Will it feel heavy on my skin?",
+            "answer": "No, it absorbs well while still providing deep hydration and comfort."
           }
         },
         "faq_4": {
           "type": "faq_item",
           "settings": {
-            "question": "Will it help with dull or uneven skin tone?",
-            "answer": "Yes, its brightening and repair ingredients work overnight to improve radiance and evenness."
+            "question": "Can I use it with other skincare products?",
+            "answer": "Yes, it works well with serums, toners, and sunscreen."
           }
         },
         "faq_5": {
           "type": "faq_item",
           "settings": {
-            "question": "Can it reduce the appearance of fine lines?",
-            "answer": "Yes, regular use helps visibly minimize fine lines and promotes firmer, youthful-looking skin."
+            "question": "Do I need sunscreen while using this?",
+            "answer": "Yes, sunscreen is essential during the day to protect and maintain results."
           }
         }
       },
@@ -199,7 +190,7 @@
       ],
       "settings": {
         "title": "FAQ",
-        "subtitle": "Find out more about Barrier Butter.",
+        "subtitle": "Everything you need to know about Glutathione Cream.",
         "image": "shopify://shop_images/faq-100_5.jpg"
       }
     },
