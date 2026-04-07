@@ -1,9 +1,26 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "layout": "theme",
   "sections": {
     "main": {
       "type": "product-luxury-detail",
-      "settings": {}
+      "settings": {
+        "asset_main_image": "",
+        "subtitle": "Night Renewal",
+        "show_reviews": true,
+        "review_count": "16k",
+        "description": "Faith's Light. Korean Science. <br>Powered by Nature's Purest.",
+        "show_ingredients": true,
+        "key_ingredients": "Glutathione, Vitamin C, Alpha Arbutin, Centella Asiatica, Kojic Dipalmitate, Niacinamide, Honey, Hyaluronic Acid,"
+      }
     },
     "meet_product": {
       "type": "meet-the-product",
@@ -57,7 +74,7 @@
       ],
       "settings": {
         "title": "Intensive smoothing for SLEEK + SHINY, FRIZZ-FREE hair.",
-        "image": "shopify://shop_images/Artboard_4-100_jpg.jpg"
+        "image": "shopify://shop_images/a_creamy_blush-100_1.jpg"
       }
     },
     "ingredients": {
@@ -86,6 +103,7 @@
         "title": "what's inside",
         "intro": "A powerful blend of salon-grade ingredients to tame frizz and lock in smoothness.",
         "footer_text": "also made with DIMETHICONE, VITAMIN E, CYCLOPENTASILOXANE, FRAGRANCE, and botanical extracts for maximum protection and shine.",
+        "image": "shopify://shop_images/whats_inside-100_1.jpg",
         "show_btn": true,
         "btn_label": "FULL INGREDIENTS LIST"
       }
@@ -122,7 +140,7 @@
       ],
       "settings": {
         "footnote": "*Based on a consumer perception study after daily use to tame frizz.",
-        "image": "shopify://shop_images/Artboard_71-100_jpg.jpg"
+        "image": "shopify://shop_images/product_image_before_after_copy_2-100.jpg"
       }
     },
     "faq_split": {
@@ -174,7 +192,7 @@
       "settings": {
         "title": "FAQ",
         "subtitle": "Everything you need to know about salon-smooth hair at home.",
-        "image": "shopify://shop_images/Artboard_4-100_jpg.jpg"
+        "image": "shopify://shop_images/faq-100_2.jpg"
       }
     },
     "product_reviews": {
@@ -190,7 +208,7 @@
     }
   },
   "order": [
-    "main" ,
+    "main",
     "meet_product",
     "details_split",
     "ingredients",
@@ -200,4 +218,3 @@
     "related_products"
   ]
 }
-
