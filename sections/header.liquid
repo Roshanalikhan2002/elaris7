@@ -4,10 +4,12 @@
   </div>
   <div class="header-main">
     <nav class="header-nav header-left">
-      <div class="menu-trigger" id="menu-open">
-        <span></span>
-        <span></span>
-        <span></span>
+      <div class="menu-trigger" id="menu-toggle">
+        <div class="hamburger-box">
+          <span class="line"></span>
+          <span class="line"></span>
+          <span class="line"></span>
+        </div>
       </div>
       <ul class="desktop-only site-nav">
         <li class="nav-item-shop">
@@ -103,8 +105,340 @@
   </div>
 </header>
 
+<div class="mobile-menu-drawer" id="mobile-menu">
+  <div class="menu-inner">
+    <div class="menu-top">
+      <div class="menu-close" id="menu-close-btn">&times;</div>
+      <div class="menu-logo-small">elaris7</div>
+      <div class="menu-icons"></div>
+    </div>
+    
+    <div class="menu-tabs-container">
+      <div class="menu-tabs">
+        <div class="tab active">FEATURED</div>
+        <div class="tab">KOREAN GLASS SKIN</div>
+        <div class="tab">ANTI ACNE</div>
+        <div class="tab">KOREAN BRIGHTENING</div>
+        <div class="tab">HAIR CARE</div>
+        <div class="tab">SETS</div>
+      </div>
+    </div>
+    
+    <div class="menu-products">
+      <a href="/products/night-cream" class="menu-product-row">
+        <div class="mini-thumb">
+          <img src="{{ 'night-cream.jpg' | asset_url }}" alt="Night Cream" loading="lazy">
+        </div>
+        <div class="mini-meta">
+          <div class="mini-title">NIGHT CREAM</div>
+          <div class="mini-tag">To restore, protect and nurture</div>
+        </div>
+      </a>
+      <a href="/products/tranexamic-serum" class="menu-product-row">
+        <div class="mini-thumb">
+          <img src="{{ 'tranexamic-serum.jpg' | asset_url }}" alt="Serum" loading="lazy">
+        </div>
+        <div class="mini-meta">
+          <div class="mini-title">TRANEXAMIC SERUM</div>
+          <div class="mini-tag">Limited edition style</div>
+        </div>
+      </a>
+      <a href="/products/facewash-100" class="menu-product-row">
+        <div class="mini-thumb">
+          <img src="{{ 'facewash-100.jpg' | asset_url }}" alt="Face Wash" loading="lazy">
+        </div>
+        <div class="mini-meta">
+          <div class="mini-title">FACE WASH</div>
+          <div class="mini-tag">Limited edition scent</div>
+        </div>
+      </a>
+      <a href="/products/hair-mist" class="menu-product-row">
+        <div class="mini-thumb">
+          <img src="{{ 'hair-mist.jpg' | asset_url }}" alt="Hair Mist" loading="lazy">
+        </div>
+        <div class="mini-meta">
+          <div class="mini-title">HAIR MIST</div>
+          <div class="mini-tag">Designed with clarity</div>
+        </div>
+      </a>
+    </div>
+    
+    <div class="menu-shop-btn-wrap">
+      <a href="/collections/all" class="mega-shop-btn">SHOP ELARIS7</a>
+    </div>
+    
+    <div class="menu-secondary">
+      <a href="/pages/about">ABOUT</a>
+      <a href="/pages/futures">RHODE FUTURES</a>
+      <a href="/pages/impact">IMPACT</a>
+      <a href="/pages/faq">FAQ</a>
+      <a href="/account">ACCOUNT</a>
+    </div>
+    
+    <div class="menu-footer">
+      <div class="region-selector">Region: <span>PAKISTAN (RS)</span></div>
+    </div>
+  </div>
+</div>
+
 <style>
-/* Mega Menu Base */
+/* ===== Hamburger & Mobile Trigger ===== */
+.menu-trigger {
+  display: none;
+  cursor: pointer;
+  z-index: 20;
+}
+
+.hamburger-box {
+  width: 22px;
+  height: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hamburger-box .line {
+  display: block;
+  width: 22px;
+  height: 1.5px;
+  background: #5b5a53;
+  border-radius: 2px;
+  transform-origin: center;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease, width 0.3s ease;
+}
+
+/* Clockwise rotation into X */
+.menu-trigger.is-open .hamburger-box {
+  transform: rotate(180deg);
+}
+
+.menu-trigger.is-open .hamburger-box .line:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.menu-trigger.is-open .hamburger-box .line:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+.menu-trigger.is-open .hamburger-box .line:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ===== Mobile Menu Drawer ===== */
+.mobile-menu-drawer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100dvh;
+  background: #f1efea;
+  z-index: 3000;
+  transform: translateX(-100%);
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+}
+
+.mobile-menu-drawer.open {
+  transform: translateX(0);
+}
+
+.menu-inner {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+.menu-inner::-webkit-scrollbar { display: none; }
+
+.menu-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 20px;
+  border-bottom: 1px solid rgba(91,90,83,0.12);
+  position: relative;
+}
+
+.menu-close {
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: #5b5a53;
+  line-height: 1;
+  transition: transform 0.3s ease;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.menu-close:hover { transform: rotate(90deg); }
+
+.menu-logo-small {
+  font-family: 'Inter', sans-serif;
+  font-weight: 800;
+  font-size: 1.5rem;
+  letter-spacing: -0.05em;
+  color: #5b5a53;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.menu-tabs-container {
+  padding: 18px 0;
+  border-bottom: 1px solid rgba(91,90,83,0.12);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.menu-tabs-container::-webkit-scrollbar { display: none; }
+
+.menu-tabs {
+  display: flex;
+  gap: 28px;
+  padding: 0 20px;
+  white-space: nowrap;
+}
+
+.menu-tabs .tab {
+  font-size: 0.68rem;
+  font-weight: 800;
+  color: #9a9990;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.menu-tabs .tab.active {
+  color: #5b5a53;
+  border-bottom-color: #5b5a53;
+}
+
+.menu-products {
+  padding: 10px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.menu-product-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(91,90,83,0.08);
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.menu-product-row:active { background: rgba(91,90,83,0.04); }
+
+.mini-thumb {
+  width: 56px;
+  height: 56px;
+  flex-shrink: 0;
+  background: #fff;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 6px;
+}
+
+.mini-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+}
+
+.mini-meta {
+  flex: 1;
+}
+
+.mini-title {
+  font-size: 0.72rem;
+  font-weight: 900;
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 3px;
+}
+
+.mini-tag {
+  font-size: 0.6rem;
+  color: #8c8b84;
+  font-weight: 500;
+}
+
+.menu-shop-btn-wrap {
+  padding: 24px 16px;
+  border-bottom: 1px solid rgba(91,90,83,0.12);
+}
+
+.menu-shop-btn-wrap .mega-shop-btn {
+  display: block;
+  text-align: center;
+  padding: 12px;
+  border: 1px solid #5b5a53;
+  border-radius: 50px;
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: #5b5a53;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.menu-shop-btn-wrap .mega-shop-btn:hover {
+  background: #5b5a53;
+  color: #fff;
+}
+
+.menu-secondary {
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border-top: none;
+}
+
+.menu-secondary a {
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: #5b5a53;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+.menu-secondary a:hover { opacity: 0.6; }
+
+.menu-footer {
+  padding: 20px;
+  background: rgba(91,90,83,0.04);
+  margin-top: auto;
+}
+
+.region-selector {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #8c8b84;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.region-selector span { font-weight: 800; color: #5b5a53; }
+
+/* Body lock when menu is open */
+body.menu-open { overflow: hidden; }
+
+/* ===== Mega Menu Base ===== */
 .nav-item-shop {
   position: static;
 }
@@ -292,18 +626,48 @@
 
 <script>
 (function() {
-  // Mega Menu Category Switching
+  // ===== Mobile Menu Toggle =====
+  const menuToggle = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const menuClose = document.getElementById('menu-close-btn');
+
+  function openMenu() {
+    if (!menuToggle || !mobileMenu) return;
+    menuToggle.classList.add('is-open');
+    mobileMenu.classList.add('open');
+    document.body.classList.add('menu-open');
+  }
+
+  function closeMenu() {
+    if (!menuToggle || !mobileMenu) return;
+    menuToggle.classList.remove('is-open');
+    mobileMenu.classList.remove('open');
+    document.body.classList.remove('menu-open');
+  }
+
+  if (menuToggle) menuToggle.addEventListener('click', openMenu);
+  if (menuClose) menuClose.addEventListener('click', closeMenu);
+
+  // Mobile Menu Tab Switching
+  const tabs = document.querySelectorAll('.menu-tabs .tab');
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+    });
+  });
+
+  // ===== Desktop Mega Menu Category Switching =====
   const catItems = document.querySelectorAll('.mega-cat-item');
   catItems.forEach(item => {
     item.addEventListener('click', (e) => {
       e.stopPropagation();
       catItems.forEach(i => i.classList.remove('active'));
       item.classList.add('active');
-      // Potential logic to filter products based on category can be added here
     });
   });
 
-  // Header Scroll Logic move move moved moves move move move move move move move
+  // ===== Header Scroll Logic =====
   var header = document.querySelector('.site-header');
   if (!header) return;
 
