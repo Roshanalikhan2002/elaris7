@@ -16,7 +16,18 @@
       "type": "featured-grid",
       "settings": {},
       "blocks": {
-        "p1": { "type": "product", "settings": { "title": "Anti Acne Serum", "brand_label": "skincare", "price": "RS. 1,500" } }
+        "p1": {
+          "type": "product",
+          "settings": {
+            "title": "Anti Acne",
+            "brand_label": "antiacne",
+            "price": "Rs. 2,450",
+            "reviews": "14k",
+            "asset_image": "anti-acne-100.jpg",
+            "asset_hover_image": "hover-anti-acne.png",
+            "product_link": "/products/anti-acne"
+          }
+        }
       },
       "block_order": ["p1"]
     }
