@@ -1,0 +1,578 @@
+<section class="lux-cart-section">
+
+  <!-- Empty Cart State -->
+  {%- if cart.item_count == 0 -%}
+  <div class="lux-cart-empty">
+    <div class="lux-empty-inner">
+      <svg class="lux-empty-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M8 8H12L18 42H52L56 16H18" stroke="#c9a96e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="24" cy="52" r="4" stroke="#c9a96e" stroke-width="2" fill="none"/>
+        <circle cx="46" cy="52" r="4" stroke="#c9a96e" stroke-width="2" fill="none"/>
+      </svg>
+      <h2 class="lux-empty-title">Your bag is empty</h2>
+      <p class="lux-empty-sub">Discover your next skin ritual.</p>
+      <a href="/collections/all" class="lux-empty-btn">SHOP ALL PRODUCTS</a>
+    </div>
+  </div>
+  {%- else -%}
+
+  <div class="lux-cart-wrapper">
+
+    <!-- Left: Items -->
+    <div class="lux-cart-left">
+      <div class="lux-cart-header">
+        <h1 class="lux-cart-title">Your Bag <span class="lux-cart-count">({{ cart.item_count }} {{ cart.item_count | pluralize: 'item', 'items' }})</span></h1>
+        <a href="/collections/all" class="lux-continue-link">← Continue Shopping</a>
+      </div>
+
+      <div class="lux-items-list" id="lux-cart-items">
+        {%- for item in cart.items -%}
+        <div class="lux-cart-item" data-key="{{ item.key }}">
+          <div class="lux-item-img">
+            <a href="{{ item.url }}">
+              {%- if item.image -%}
+                <img src="{{ item.image | img_url: '200x200', crop: 'center' }}" alt="{{ item.title | escape }}">
+              {%- else -%}
+                <div class="lux-img-placeholder"></div>
+              {%- endif -%}
+            </a>
+          </div>
+          <div class="lux-item-info">
+            <div class="lux-item-top">
+              <div>
+                <a href="{{ item.url }}" class="lux-item-name">{{ item.product.title }}</a>
+                {%- unless item.variant.title == 'Default Title' -%}
+                  <p class="lux-item-variant">{{ item.variant.title }}</p>
+                {%- endunless -%}
+                {%- if item.properties -%}
+                  {%- for prop in item.properties -%}
+                    {%- unless prop.last == blank -%}
+                      <p class="lux-item-prop">{{ prop.first }}: {{ prop.last }}</p>
+                    {%- endunless -%}
+                  {%- endfor -%}
+                {%- endif -%}
+              </div>
+              <p class="lux-item-price">{{ item.final_line_price | money }}</p>
+            </div>
+
+            <div class="lux-item-actions">
+              <div class="lux-qty-control">
+                <button class="lux-qty-btn" onclick="luxUpdateQty('{{ item.key }}', {{ item.quantity | minus: 1 }})">−</button>
+                <span class="lux-qty-num">{{ item.quantity }}</span>
+                <button class="lux-qty-btn" onclick="luxUpdateQty('{{ item.key }}', {{ item.quantity | plus: 1 }})">+</button>
+              </div>
+              <button class="lux-remove-btn" onclick="luxRemoveItem('{{ item.key }}')">Remove</button>
+            </div>
+          </div>
+        </div>
+        {%- endfor -%}
+      </div>
+
+      <!-- Free Gift Badge -->
+      {%- assign has_gift = false -%}
+      {%- for item in cart.items -%}
+        {%- if item.line_level_discount_allocations.size > 0 or item.original_price != item.final_price -%}
+          {%- assign has_gift = true -%}
+        {%- endif -%}
+      {%- endfor -%}
+      <div class="lux-free-gift-banner">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c9a96e" stroke-width="2"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><line x1="12" y1="22" x2="12" y2="7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg>
+        <span>Buy 1 Get 1 FREE is automatically applied at checkout.</span>
+      </div>
+    </div>
+
+    <!-- Right: Summary -->
+    <div class="lux-cart-right">
+      <div class="lux-cart-summary">
+        <h2 class="lux-summary-title">Order Summary</h2>
+
+        <div class="lux-summary-rows">
+          <div class="lux-summary-row">
+            <span>Subtotal</span>
+            <span id="lux-subtotal">{{ cart.total_price | money }}</span>
+          </div>
+          <div class="lux-summary-row">
+            <span>Shipping</span>
+            <span>Calculated at checkout</span>
+          </div>
+          {%- if cart.cart_level_discount_applications.size > 0 -%}
+            {%- for discount in cart.cart_level_discount_applications -%}
+            <div class="lux-summary-row lux-discount-row">
+              <span>{{ discount.title }}</span>
+              <span>-{{ discount.total_allocated_amount | money }}</span>
+            </div>
+            {%- endfor -%}
+          {%- endif -%}
+          <div class="lux-summary-divider"></div>
+          <div class="lux-summary-row lux-total-row">
+            <span>Estimated Total</span>
+            <span id="lux-total">{{ cart.total_price | money }}</span>
+          </div>
+        </div>
+
+        <div class="lux-free-delivery-bar">
+          {%- assign free_threshold = 200000 -%}
+          {%- assign remaining = free_threshold | minus: cart.total_price -%}
+          {%- if remaining > 0 -%}
+            <p class="lux-delivery-text">Add <strong>{{ remaining | money }}</strong> more for FREE shipping</p>
+            <div class="lux-bar-track">
+              {%- assign pct = cart.total_price | times: 100 | divided_by: free_threshold -%}
+              <div class="lux-bar-fill" style="width: {{ pct }}%"></div>
+            </div>
+          {%- else -%}
+            <p class="lux-delivery-text lux-delivery-achieved">🎉 You've unlocked FREE shipping!</p>
+            <div class="lux-bar-track"><div class="lux-bar-fill" style="width:100%"></div></div>
+          {%- endif -%}
+        </div>
+
+        <form action="/checkout" method="post">
+          <button type="submit" class="lux-checkout-btn" id="lux-checkout-btn">
+            SECURE CHECKOUT
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          </button>
+        </form>
+
+        <p class="lux-secure-note">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          Secure SSL encrypted checkout
+        </p>
+
+        <!-- Trust Badges -->
+        <div class="lux-trust-badges">
+          <div class="lux-badge">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#888" stroke-width="1.5"><path d="M21 10H3M16 6l5 4-5 4M8 6L3 10l5 4"/></svg>
+            <span>Free Returns</span>
+          </div>
+          <div class="lux-badge">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#888" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+            <span>Fast Delivery</span>
+          </div>
+          <div class="lux-badge">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#888" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <span>100% Authentic</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  {%- endif -%}
+
+</section>
+
+<!-- Loading Overlay -->
+<div class="lux-cart-loading" id="lux-cart-loading">
+  <div class="lux-spinner"></div>
+</div>
+
+<style>
+/* ── CART SECTION LAYOUT ── */
+.lux-cart-section {
+  min-height: 70vh;
+  padding: 60px 40px 100px;
+  background: #faf9f7;
+  font-family: 'Inter', sans-serif;
+  position: relative;
+}
+
+.lux-cart-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  gap: 48px;
+  align-items: start;
+}
+
+/* ── EMPTY STATE ── */
+.lux-cart-empty {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.lux-empty-inner {
+  text-align: center;
+  padding: 60px 40px;
+}
+.lux-empty-icon {
+  width: 72px;
+  height: 72px;
+  margin-bottom: 24px;
+  opacity: 0.7;
+}
+.lux-empty-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0 0 12px;
+}
+.lux-empty-sub {
+  color: #888;
+  font-size: 1rem;
+  margin-bottom: 32px;
+}
+.lux-empty-btn {
+  display: inline-block;
+  background: #1a1a1a;
+  color: #fff;
+  padding: 14px 40px;
+  font-size: 0.78rem;
+  letter-spacing: 2px;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 2px;
+  transition: background 0.2s, transform 0.2s;
+}
+.lux-empty-btn:hover { background: #333; transform: translateY(-1px); }
+
+/* ── LEFT PANEL ── */
+.lux-cart-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 32px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e8e4de;
+}
+.lux-cart-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0;
+}
+.lux-cart-count {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #888;
+  font-family: 'Inter', sans-serif;
+}
+.lux-continue-link {
+  font-size: 0.78rem;
+  color: #888;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  transition: color 0.2s;
+}
+.lux-continue-link:hover { color: #1a1a1a; }
+
+/* ── CART ITEM ── */
+.lux-cart-item {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 24px;
+  padding: 24px 0;
+  border-bottom: 1px solid #f0ece6;
+  animation: fadeIn 0.3s ease;
+}
+@keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+
+.lux-item-img {
+  border-radius: 8px;
+  overflow: hidden;
+  background: #f1efea;
+  aspect-ratio: 1;
+}
+.lux-item-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+.lux-item-img:hover img { transform: scale(1.04); }
+.lux-img-placeholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #f1efea, #e8e4de);
+}
+
+.lux-item-info { display: flex; flex-direction: column; justify-content: space-between; }
+
+.lux-item-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+.lux-item-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 4px;
+  line-height: 1.3;
+}
+.lux-item-name:hover { color: #c9a96e; }
+.lux-item-variant, .lux-item-prop {
+  font-size: 0.8rem;
+  color: #888;
+  margin: 0 0 4px;
+}
+.lux-item-price {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  white-space: nowrap;
+}
+
+.lux-item-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 16px;
+}
+.lux-qty-control {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.lux-qty-btn {
+  width: 36px;
+  height: 36px;
+  background: #f8f8f8;
+  border: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  color: #1a1a1a;
+  transition: background 0.15s;
+  line-height: 1;
+}
+.lux-qty-btn:hover { background: #eee; }
+.lux-qty-num {
+  width: 44px;
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  background: #fff;
+  padding: 8px 0;
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+}
+.lux-remove-btn {
+  background: none;
+  border: none;
+  color: #bbb;
+  font-size: 0.78rem;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  text-decoration: underline;
+  transition: color 0.2s;
+  padding: 0;
+}
+.lux-remove-btn:hover { color: #c0392b; }
+
+/* ── FREE GIFT BANNER ── */
+.lux-free-gift-banner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #fdf8f0, #fef4e0);
+  border: 1px solid #f0d8a0;
+  border-radius: 8px;
+  padding: 14px 20px;
+  margin-top: 24px;
+  font-size: 0.85rem;
+  color: #8a6800;
+  font-weight: 500;
+}
+
+/* ── RIGHT PANEL: SUMMARY ── */
+.lux-cart-right { position: sticky; top: 100px; }
+.lux-cart-summary {
+  background: #fff;
+  border: 1px solid #e8e4de;
+  border-radius: 12px;
+  padding: 32px;
+}
+.lux-summary-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0 0 24px;
+}
+.lux-summary-rows { display: flex; flex-direction: column; gap: 12px; }
+.lux-summary-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  color: #555;
+}
+.lux-discount-row { color: #27ae60; font-weight: 600; }
+.lux-summary-divider {
+  height: 1px;
+  background: #f0ece6;
+  margin: 4px 0;
+}
+.lux-total-row {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+/* ── FREE DELIVERY BAR ── */
+.lux-free-delivery-bar {
+  margin: 24px 0;
+  padding: 16px;
+  background: #faf9f7;
+  border-radius: 8px;
+}
+.lux-delivery-text {
+  font-size: 0.82rem;
+  color: #555;
+  margin: 0 0 10px;
+}
+.lux-delivery-achieved { color: #27ae60; font-weight: 600; }
+.lux-bar-track {
+  height: 6px;
+  background: #e8e4de;
+  border-radius: 99px;
+  overflow: hidden;
+}
+.lux-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #c9a96e, #e8c87a);
+  border-radius: 99px;
+  transition: width 0.5s ease;
+}
+
+/* ── CHECKOUT BTN ── */
+.lux-checkout-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  background: #1a1a1a;
+  color: #fff;
+  border: none;
+  padding: 18px 24px;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  font-weight: 700;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background 0.2s, transform 0.2s;
+}
+.lux-checkout-btn:hover { background: #333; transform: translateY(-1px); }
+
+.lux-secure-note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  color: #aaa;
+  margin: 12px 0 0;
+  text-align: center;
+}
+
+/* ── TRUST BADGES ── */
+.lux-trust-badges {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid #f0ece6;
+}
+.lux-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.7rem;
+  color: #999;
+  text-align: center;
+  letter-spacing: 0.3px;
+}
+
+/* ── LOADING OVERLAY ── */
+.lux-cart-loading {
+  position: fixed;
+  inset: 0;
+  background: rgba(255,255,255,0.7);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  backdrop-filter: blur(3px);
+}
+.lux-cart-loading.active { display: flex; }
+.lux-spinner {
+  width: 44px;
+  height: 44px;
+  border: 3px solid #e8e4de;
+  border-top-color: #c9a96e;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 860px) {
+  .lux-cart-section { padding: 40px 20px 80px; }
+  .lux-cart-wrapper { grid-template-columns: 1fr; gap: 32px; }
+  .lux-cart-right { position: static; }
+  .lux-cart-item { grid-template-columns: 90px 1fr; gap: 16px; }
+}
+@media (max-width: 480px) {
+  .lux-cart-title { font-size: 1.6rem; }
+  .lux-cart-header { flex-direction: column; gap: 10px; }
+}
+</style>
+
+<script>
+const luxLoading = document.getElementById('lux-cart-loading');
+
+function luxShowLoading() { luxLoading.classList.add('active'); }
+function luxHideLoading() { luxLoading.classList.remove('active'); }
+
+async function luxUpdateQty(key, qty) {
+  if (qty < 0) return;
+  luxShowLoading();
+  try {
+    const res = await fetch('/cart/change.js', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ id: key, quantity: qty })
+    });
+    if (res.ok) {
+      window.location.reload();
+    }
+  } catch(e) { console.error(e); }
+  finally { luxHideLoading(); }
+}
+
+async function luxRemoveItem(key) {
+  luxShowLoading();
+  try {
+    const res = await fetch('/cart/change.js', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ id: key, quantity: 0 })
+    });
+    if (res.ok) {
+      window.location.reload();
+    }
+  } catch(e) { console.error(e); }
+  finally { luxHideLoading(); }
+}
+</script>
+
+{% schema %}
+{
+  "name": "Luxury Cart",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Luxury Cart"
+    }
+  ]
+}
+{% endschema %}

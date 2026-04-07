@@ -1,0 +1,10 @@
+{
+  "layout": "theme",
+  "sections": {
+    "cart_main": {
+      "type": "cart-luxury",
+      "settings": {}
+    }
+  },
+  "order": ["cart_main"]
+}

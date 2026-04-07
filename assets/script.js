@@ -138,8 +138,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
       if (response.ok) {
         await updateCartCount();
-        // Optional: Show a "Thank you" or go to cart
-        window.location.href = '/cart'; 
+        window.location.href = '/cart';
       } else {
         alert('Could not add to cart. Please try again.');
       }
