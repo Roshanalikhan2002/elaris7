@@ -83,7 +83,11 @@
 
 <section class="benefits-focus-section">
   <div class="bf-left">
-    <div class="bf-subtitle">{{ section.settings.subtitle | default: 'SPREAD IT ON FOR:' }}</div>
+    {%- assign bf_subtitle = section.settings.subtitle | default: 'SPREAD IT ON FOR:' -%}
+    {%- if product.handle == 'floral-blossom-hair-mist' and section.settings.subtitle == blank -%}
+      {%- assign bf_subtitle = 'MIST IT ON TO:' -%}
+    {%- endif -%}
+    <div class="bf-subtitle">{{ bf_subtitle }}</div>
     <div class="bf-title-group">
       {% for block in section.blocks %}
         <div class="bf-line {% if block.settings.highlight %}bf-line-highlight{% endif %}" {{ block.shopify_attributes }}>
@@ -95,6 +99,8 @@
           <div class="bf-line">evened-out tone</div>
           <div class="bf-line">bright, radiant skin</div>
           <div class="bf-line bf-line-highlight">smooth, glass-like finish</div>
+        {%- elsif product.handle == 'floral-blossom-hair-mist' -%}
+          <div class="bf-line bf-line-highlight">Bloom With Every Move.</div>
         {%- else -%}
           <div class="bf-line">deep repair</div>
           <div class="bf-line">overnight hydration</div>
