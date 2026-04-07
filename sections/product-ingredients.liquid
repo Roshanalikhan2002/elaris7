@@ -140,6 +140,8 @@
       <div class="ing-intro">
         {%- if product.handle == 'glutathione-cream' -%}
           A nourishing cream that brightens, repairs, and hydrates skin for a clearer, more even complexion.
+        {%- elsif product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' -%}
+          Our formula is powered by gentle cleansers and glow-boosting hydrators. Meet 2 of our favorites for a fresh, balanced cleanse.
         {%- else -%}
           {{ section.settings.intro }}
         {%- endif -%}
@@ -154,6 +156,15 @@
           <h3 class="hero-title">ALPHA ARBUTIN & KOJIC ACID DIPALMITATE</h3>
           <p class="hero-desc">work to reduce dark spots, post-acne marks, and pigmentation</p>
         </div>
+      {%- elsif product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' -%}
+        <div class="hero-ingredient">
+          <h3 class="hero-title">HYALURONIC ACID</h3>
+          <p class="hero-desc">a moisture-binding ingredient that helps keep skin hydrated and plump while cleansing, preventing dryness and tightness</p>
+        </div>
+        <div class="hero-ingredient">
+          <h3 class="hero-title">3-O-ETHYL ASCORBIC ACID</h3>
+          <p class="hero-desc">a stable form of vitamin C that helps brighten the complexion, reduce dullness, and support a more radiant, even look</p>
+        </div>
       {%- else -%}
         {% for block in section.blocks %}
           <div class="hero-ingredient" {{ block.shopify_attributes }}>
@@ -166,6 +177,8 @@
       <div class="ing-footer">
         {%- if product.handle == 'glutathione-cream' -%}
           also made with Centella Asiatica, Niacinamide, Vitamin C, Hyaluronic Acid, Glycerin, Vitamin E, and Amla Extract for hydration, skin barrier support, and smooth texture
+        {%- elsif product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' -%}
+          also made with RICE EXTRACT, LICORICE EXTRACT, MORUS ALBA, HONEY, D-PANTHENOL, SODIUM PCA, GLYCERIN, APPLE EXTRACT, CENTELLA ASIATICA
         {%- else -%}
           {{ section.settings.footer_text }}
         {%- endif -%}

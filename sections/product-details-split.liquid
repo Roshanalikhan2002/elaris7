@@ -97,6 +97,8 @@
       {%- assign ds_title = "Deep Brightening With Skin Repair Care<br><span style='font-size: 0.7em;'>A cream for EVEN TONE + HYDRATION + RADIANT SKIN.</span>" -%}
     {%- elsif product.handle == 'floral-blossom-hair-mist' -%}
       {%- assign ds_title = "A Touch of Floral Freshness<br><span style='font-size: 0.7em;'>A daily hair mist for FRESH, FRAGRANT + NATURALLY SHINY HAIR.</span>" -%}
+    {%- elsif product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' -%}
+      {%- assign ds_title = "Cleanse. Refresh. Glow.<br><span style='font-size: 0.7em;'>A daily face wash for CLEAN SKIN + BALANCED, RADIANT COMPLEXION.</span>" -%}
     {%- endif -%}
     <h2 class="ds-title">{{ ds_title }}</h2>
     <div class="ds-list">
@@ -108,7 +110,28 @@
           </div>
         {% endfor %}
       {% else %}
-        {%- if product.handle == 'anti-frizz-keratin-serum' -%}
+        {%- if product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' -%}
+          <div class="ds-row">
+            <div class="ds-label">GOOD FOR:</div>
+            <div class="ds-value">All skin types, especially dull, sensitive, or acne-prone skin</div>
+          </div>
+          <div class="ds-row">
+            <div class="ds-label">FEELS LIKE:</div>
+            <div class="ds-value">A soft, airy lather that cleanses gently without tightness</div>
+          </div>
+          <div class="ds-row">
+            <div class="ds-label">LOOKS LIKE:</div>
+            <div class="ds-value">Fresh, clear skin with a natural, healthy glow</div>
+          </div>
+          <div class="ds-row">
+            <div class="ds-label">SMELLS LIKE:</div>
+            <div class="ds-value">Light, clean freshness that feels calming and pure</div>
+          </div>
+          <div class="ds-row">
+            <div class="ds-label">FYI:</div>
+            <div class="ds-value">Halal-Friendly &bull; Dermatologist-Tested &bull; Non-Drying &bull; Gentle for Daily Use</div>
+          </div>
+        {%- elsif product.handle == 'anti-frizz-keratin-serum' -%}
           <div class="ds-row">
             <div class="ds-label">GOOD FOR:</div>
             <div class="ds-value">All hair types, especially dry and frizzy hair</div>
