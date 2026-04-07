@@ -499,13 +499,13 @@
                 <img src="{{ 'glow-serum-100.jpg' | asset_url }}" alt="{{ product.title }}">
               </div>
               <div class="thumb-item" onmouseover="scrollGallery(1, this)">
-                <img src="{{ 'social-face.jpg' | asset_url }}" alt="Lifestyle Glow">
+                <img src="{{ 'glow-gallery-2.jpg' | asset_url }}" alt="Glow Gift Set">
               </div>
               <div class="thumb-item" onmouseover="scrollGallery(2, this)">
-                <img src="{{ 'social-hand.jpg' | asset_url }}" alt="Texture Close up">
+                <img src="{{ 'glow-gallery-3.jpg' | asset_url }}" alt="Before After Results">
               </div>
               <div class="thumb-item" onmouseover="scrollGallery(3, this)">
-                <img src="{{ 'social-jar.jpg' | asset_url }}" alt="Product flatlay">
+                <img src="{{ 'glow-gallery-4.jpg' | asset_url }}" alt="Product Infographic">
               </div>
             {%- else -%}
               {%- assign handle_image = product.handle | append: '.jpg' -%}
@@ -548,10 +548,10 @@
                 <div class="gallery-slide"><img src="{{ 'tranexamic-meet-2.jpg' | asset_url }}" alt="Meet Elaris 2"></div>
                 <div class="gallery-slide"><img src="{{ 'tranexamic-meet-3.jpg' | asset_url }}" alt="Meet Elaris 3"></div>
               {%- elsif product.handle == 'e7-korean-glass-skin-centella-sunscreen-spf50-copy' -%}
-                <div class="gallery-slide"><img src="{{ 'glow-serum-100.jpg' | asset_url }}" alt="{{ product.title }}"></div>
-                <div class="gallery-slide"><img src="{{ 'social-face.jpg' | asset_url }}" alt="Lifestyle Glow" style="object-fit: cover !important;"></div>
-                <div class="gallery-slide"><img src="{{ 'social-hand.jpg' | asset_url }}" alt="Texture Close up" style="object-fit: cover !important;"></div>
-                <div class="gallery-slide"><img src="{{ 'social-jar.jpg' | asset_url }}" alt="Product flatlay" style="object-fit: cover !important;"></div>
+                <div class="gallery-slide"><img src="{{ 'glow-serum-100.jpg' | asset_url }}" alt="{{ product.title }}" style="object-fit: contain !important; background: #fff;"></div>
+                <div class="gallery-slide"><img src="{{ 'glow-gallery-2.jpg' | asset_url }}" alt="Glow Gift Set" style="object-fit: contain !important; background: #fff;"></div>
+                <div class="gallery-slide"><img src="{{ 'glow-gallery-3.jpg' | asset_url }}" alt="Before After Results" style="object-fit: contain !important; background: #fff;"></div>
+                <div class="gallery-slide"><img src="{{ 'glow-gallery-4.jpg' | asset_url }}" alt="Product Infographic" style="object-fit: contain !important; background: #fff;"></div>
               {%- else -%}
                 {%- assign handle_image = product.handle | append: '.jpg' -%}
                 {%- assign fallback_img = section.settings.asset_main_image | default: handle_image -%}
