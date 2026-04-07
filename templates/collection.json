@@ -1,6 +1,14 @@
 {
   "name": "Collection",
   "sections": {
+    "hero": {
+      "type": "hero",
+      "settings": {
+        "title": "Shop All",
+        "btn_text": "VIEW PRODUCTS",
+        "btn_link": ""
+      }
+    },
     "main": {
       "type": "main-collection",
       "settings": {
@@ -9,6 +17,7 @@
     }
   },
   "order": [
+    "hero",
     "main"
   ]
 }

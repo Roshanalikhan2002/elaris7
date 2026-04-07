@@ -16,13 +16,6 @@
 {% endschema %}
 
 <div class="collection-page">
-<div class="collection-hero-banner">
-  <img src="{{ 'Artboard_4-100_jpg.jpg' | asset_url }}" alt="Hero Banner" class="hero-bg-img">
-  <div class="hero-overlay-dark"></div>
-  <div class="hero-content-inner">
-     <h1 class="collection-hero-title">{{ collection.title | uppercase }}</h1>
-  </div>
-</div>
 
   <div class="collection-nav-bar">
     <div class="collection-nav-inner">
@@ -77,14 +70,14 @@
                 <div class="coll-badge-top">
                    <div class="coll-brand">ELARIS7</div>
                 </div>
+                <div class="coll-buy-btn">
+                    BUY NOW — {{ p_price }}
+                </div>
               </div>
               <div class="coll-info">
                  <div class="coll-stars">★ ★ ★ ★ ★ (16k)</div>
                  <h3 class="coll-title">{{ product.title | upcase }}</h3>
                  <p class="coll-price">{{ p_price }}</p>
-              </div>
-              <div class="coll-buy-btn">
-                  BUY NOW — {{ p_price }}
               </div>
             </a>
           </div>
@@ -216,7 +209,7 @@
 }
 
 .coll-image {
-  aspect-ratio: 1;
+  aspect-ratio: 3/4;
   position: relative;
   overflow: hidden;
 }
@@ -247,6 +240,7 @@
   position: absolute;
   top: 15px;
   left: 15px;
+  z-index: 5;
 }
 
 .coll-brand {
@@ -259,21 +253,21 @@
 }
 
 .coll-info {
-  padding: 20px;
+  padding: 16px 20px;
   text-align: left;
 }
 
 .coll-stars {
   font-size: 0.65rem;
   color: #c4c4c4;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
 .coll-title {
   font-size: 0.8rem;
   font-weight: 800;
   color: #333;
-  margin-bottom: 5px;
+  margin-bottom: 4px;
   letter-spacing: 0.05em;
 }
 
@@ -283,18 +277,25 @@
   color: #8c8b84;
 }
 
+/* Buy button — sits INSIDE the image, slides up on hover (desktop) */
 .coll-buy-btn {
-  background: #5b5a53;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.65);
+  backdrop-filter: blur(6px);
   color: #fff;
   text-align: center;
-  padding: 15px;
-  font-size: 0.75rem;
+  padding: 14px;
+  font-size: 0.72rem;
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   opacity: 0;
   transform: translateY(100%);
-  transition: all 0.4s ease;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 10;
 }
 
 .coll-card:hover .coll-buy-btn {
@@ -302,31 +303,29 @@
   transform: translateY(0);
 }
 
-@media (max-width: 1024px) {
-  .collection-grid { grid-template-columns: 1fr; gap: 30px; }
-  .collection-hero-banner { height: 300px; }
-  .collection-hero-title { font-size: 2.5rem; }
+@media (max-width: 768px) {
+  .collection-main { padding: 20px 16px; }
+  .collection-grid { grid-template-columns: 1fr; gap: 20px; }
+  .collection-nav-inner { padding: 12px 16px; }
+  .collection-pills { justify-content: flex-start; }
   
+  /* On mobile, always show the pill buy button overlapping the image */
   .coll-buy-btn {
     opacity: 1;
-    transform: none;
-    position: absolute;
-    bottom: 20px;
+    transform: translateY(0);
+    background: rgba(255,255,255,0.35);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1.5px solid rgba(255,255,255,0.7);
+    color: #fff;
+    border-radius: 50px;
+    padding: 12px 20px;
+    width: 80%;
     left: 50%;
     transform: translateX(-50%);
-    width: 90%;
-    background: rgba(255, 255, 255, 0.4);
-    backdrop-filter: blur(8px);
-    border: 1.2px solid #5b5a53;
-    color: #5b5a53;
-    border-radius: 50px;
-    padding: 12px;
+    bottom: 15px;
     font-size: 0.65rem;
-    z-index: 10;
-  }
-  
-  .coll-info {
-    padding: 15px 20px 80px;
+    letter-spacing: 0.08em;
   }
 }
 </style>
