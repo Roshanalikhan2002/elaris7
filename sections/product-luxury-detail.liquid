@@ -917,7 +917,7 @@
       <hr class="divider">
 
       <div class="accordions">
-        {%- assign accordion_titles = "BENEFITS,APPLICATION,ELARIS TRICKS,KEY INGREDIENTS" | split: "," -%}
+        {%- assign accordion_titles = "BENEFITS,APPLICATION,ELARIS TRICKS,INGREDIENTS" | split: "," -%}
         {%- for title in accordion_titles -%}
           <div class="accordion-item-wrap">
             <button class="accordion-trigger" onclick="toggleAccordion(this)">
@@ -965,6 +965,14 @@
                       <li>Helps restore skin clarity and evenness over time</li>
                       <li>Promotes a naturally healthy, luminous glow</li>
                     </ul>
+                  {%- elsif product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' -%}
+                    <ul>
+                      <li>Gently removes dirt, oil, and impurities without stripping the skin</li>
+                      <li>Helps brighten complexion and revive dull, tired-looking skin</li>
+                      <li>Supports hydration for a soft, fresh, and balanced feel</li>
+                      <li>Calms irritation and reduces the look of redness</li>
+                      <li>Helps maintain a healthy skin barrier for daily protection</li>
+                    </ul>
                   {%- else -%}
                     <ul>
                       <li>Boosts skin radiance for a naturally luminous glow</li>
@@ -988,6 +996,8 @@
                     <p style="margin:0;">Spray evenly onto dry hair from a short distance. Use anytime during the day to refresh your hair and enhance its fragrance.</p>
                   {%- elsif product.handle == 'glutathione-cream' -%}
                     <p style="margin:0;">Use morning and evening after cleansing and serum. Apply a small amount to face and neck and gently massage until fully absorbed. In the morning, follow with sunscreen. Suitable for daily use.</p>
+                  {%- elsif product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' -%}
+                    <p style="margin:0;">After wetting your face, take a small amount of Centella Face Wash and gently massage onto skin in circular motions for about 60 seconds. Rinse thoroughly with water and pat dry, then follow with your skincare routine.</p>
                   {%- else -%}
                     <p style="margin:0;">After cleansing and toning, take a small amount of Centella Night Cream and gently massage it upward onto your face and neck, avoiding the eye area. Leave it on overnight to fully absorb and lock in hydration, allowing your skin to repair, restore, and wake up looking radiant and smooth. Consistency is key for optimal results.</p>
                   {%- endif -%}
@@ -1028,6 +1038,12 @@
                       <li>Use sunscreen daily to maintain an even tone</li>
                       <li>Massage gently to boost skin absorption</li>
                     </ul>
+                  {%- elsif product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' -%}
+                    <ul>
+                      <li>Use lukewarm water to avoid drying out your skin while cleansing</li>
+                      <li>Massage gently for a full 60 seconds to allow ingredients to work effectively</li>
+                      <li>Follow immediately with serum or moisturizer on damp skin to lock in hydration</li>
+                    </ul>
                   {%- else -%}
                     <ul>
                       <li>Apply a slightly thicker layer on dry areas to maximize overnight hydration</li>
@@ -1035,8 +1051,22 @@
                       <li>Use consistently to see a reduction in fine lines and dark spots</li>
                     </ul>
                   {%- endif -%}
-                {%- elsif title == "KEY INGREDIENTS" -%}
-                  {%- if product.handle == 'tranexamic-serum' -%}
+                {%- elsif title == "INGREDIENTS" -%}
+                  {%- if product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' -%}
+                    <ul>
+                      <li>3-0-Ethyl Ascorbic Acid</li>
+                      <li>Hyaluronic Acid</li>
+                      <li>Rice Extract</li>
+                      <li>Licorice Extract</li>
+                      <li>Morus Alba</li>
+                      <li>Centella Asiatica</li>
+                      <li>Honey</li>
+                      <li>D-Panthenol</li>
+                      <li>Sodium PCA</li>
+                      <li>Glycerin</li>
+                      <li>Apple Extract</li>
+                    </ul>
+                  {%- elsif product.handle == 'tranexamic-serum' -%}
                     <ul>
                       <li>Tranexamic Acid (4%)</li>
                       <li>Niacinamide (10%)</li>
