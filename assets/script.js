@@ -215,4 +215,26 @@ document.addEventListener('DOMContentLoaded', () => {
       await addItemsToCart(items);
     });
   }
+
+  // Handle "Quick Add" buttons (Split Promos / Grid Overlays)
+  document.addEventListener('click', async (e) => {
+    const quickBtn = e.target.closest('.quick-add-btn');
+    if (quickBtn) {
+      e.preventDefault();
+      e.stopPropagation();
+      const variantId = quickBtn.getAttribute('data-variant-id');
+      if (!variantId) return;
+
+      const originalText = quickBtn.innerHTML;
+      quickBtn.innerHTML = 'ADDING...';
+      
+      try {
+        await addItemsToCart([{ id: variantId, quantity: 1 }]);
+      } catch (err) {
+        console.error(err);
+        quickBtn.innerHTML = 'ERROR';
+        setTimeout(() => { quickBtn.innerHTML = originalText; }, 2000);
+      }
+    }
+  });
 });
