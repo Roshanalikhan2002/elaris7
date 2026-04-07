@@ -37,22 +37,28 @@
             <img src="./assets/glutathione-cream-100.jpg" alt="Product Jar">
           </div>
           <div class="thumb-item" onmouseover="scrollGallery(1, this)">
-            <img src="./assets/deep-hydration-100.jpg" alt="Hydration Model">
+            <img src="./assets/glutathione-meet-1.jpg" alt="Model View">
           </div>
           <div class="thumb-item" onmouseover="scrollGallery(2, this)">
-            <img src="./assets/glutathione-cream-100.jpg" alt="Close up">
+            <img src="./assets/glutathione-meet-3.jpg" alt="Label Detail">
+          </div>
+          <div class="thumb-item" onmouseover="scrollGallery(3, this)">
+            <img src="./assets/glutathione-meet-4.jpg" alt="Texture View">
           </div>
         </div>
         <div class="gallery-main-viewport">
-          <div class="gallery-slider" id="productSlider" style="display: flex; transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1); width: 300%; height: 100%;">
-            <div class="gallery-slide" style="min-width: 33.33%; height: 100%; display: flex; align-items: center; justify-content: center;">
+          <div class="gallery-slider" id="productSlider" style="display: flex; transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1); width: 400%; height: 100%;">
+            <div class="gallery-slide" style="min-width: 25%; height: 100%; display: flex; align-items: center; justify-content: center;">
               <img src="./assets/glutathione-cream-100.jpg" alt="Main View 1">
             </div>
-            <div class="gallery-slide" style="min-width: 33.33%; height: 100%; display: flex; align-items: center; justify-content: center;">
-              <img src="./assets/deep-hydration-100.jpg" alt="Model Focus" style="object-fit: cover !important; width: 100%; height: 100%;">
+            <div class="gallery-slide" style="min-width: 25%; height: 100%; display: flex; align-items: center; justify-content: center;">
+              <img src="./assets/glutathione-meet-1.jpg" alt="Model Focus" style="object-fit: cover !important; width: 100%; height: 100%;">
             </div>
-            <div class="gallery-slide" style="min-width: 33.33%; height: 100%; display: flex; align-items: center; justify-content: center;">
-              <img src="./assets/glutathione-cream-100.jpg" alt="Main View 3">
+            <div class="gallery-slide" style="min-width: 25%; height: 100%; display: flex; align-items: center; justify-content: center;">
+              <img src="./assets/glutathione-meet-3.jpg" alt="Label Detail" style="object-fit: cover !important; width: 100%; height: 100%;">
+            </div>
+            <div class="gallery-slide" style="min-width: 25%; height: 100%; display: flex; align-items: center; justify-content: center;">
+              <img src="./assets/glutathione-meet-4.jpg" alt="Texture View" style="object-fit: cover !important; width: 100%; height: 100%;">
             </div>
           </div>
         </div>
@@ -61,7 +67,7 @@
       <script>
         function scrollGallery(index, thumb) {
           const slider = document.getElementById('productSlider');
-          if (slider) slider.style.transform = `translateX(-${(index * 100) / 3}%)`;
+          if (slider) slider.style.transform = `translateX(-${index * 25}%)`;
           document.querySelectorAll('.thumb-item').forEach(t => t.classList.remove('active'));
           if (thumb) thumb.classList.add('active');
         }
@@ -73,11 +79,11 @@
             <div class="product-award"><div class="award-seal">BEST OF BEAUTY</div></div>
           </div>
           <div class="product-meta">
-            <span class="product-subtitle">Brightening & Repair</span>
+            <span class="product-subtitle">Glutathione + Hyaluronic Acid</span>
             <div class="product-reviews"><span class="stars">★★★★★</span><span class="review-count">(16k)</span></div>
           </div>
           <div class="product-description">
-            <p>Our Glutathione Cream is a specialized brightening and repair treatment. It helps reduce the appearance of dark spots and hyperpigmentation while providing deep nourishment to the skin.</p>
+            <p>A nourishing brightening cream designed to improve uneven tone, reduce dullness, and support skin repair. It helps fade the look of dark spots, restore radiance, and leave skin smoother and healthier with consistent use.</p>
           </div>
           <hr class="divider">
           <button class="buy-button">ADD TO BAG - Rs. 1,500</button>

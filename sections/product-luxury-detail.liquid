@@ -526,13 +526,13 @@
             <img src="{{ 'glutathione-cream-100.jpg' | asset_url }}" alt="{{ product.title }}">
           </div>
           <div class="thumb-item" onmouseover="scrollGallery(1, this)">
-            <img src="{{ 'deep-hydration-100.jpg' | asset_url }}" alt="Hydration Focus">
+            <img src="{{ 'glutathione-meet-1.jpg' | asset_url }}" alt="Model View">
           </div>
           <div class="thumb-item" onmouseover="scrollGallery(2, this)">
-            <img src="{{ 'glutathione-cream-100.jpg' | asset_url }}" alt="Gallery 3">
+            <img src="{{ 'glutathione-meet-3.jpg' | asset_url }}" alt="Product Detail">
           </div>
           <div class="thumb-item" onmouseover="scrollGallery(3, this)">
-            <img src="{{ 'glutathione-cream-100.jpg' | asset_url }}" alt="Gallery 4">
+            <img src="{{ 'glutathione-meet-4.jpg' | asset_url }}" alt="Texture View">
           </div>
         {%- else -%}
           {%- for image in product.images -%}
@@ -591,9 +591,9 @@
             <div class="gallery-slide"><img src="{{ 'wash-new.png' | asset_url }}" alt="New Look"></div>
           {%- elsif product.handle == 'glutathione-cream' -%}
             <div class="gallery-slide"><img src="{{ 'glutathione-cream-100.jpg' | asset_url }}" alt="{{ product.title }}" style="object-fit: contain !important; background: #fbfbfb;"></div>
-            <div class="gallery-slide"><img src="{{ 'deep-hydration-100.jpg' | asset_url }}" alt="Hydration Focus" style="object-fit: cover !important;"></div>
-            <div class="gallery-slide"><img src="{{ 'glutathione-cream-100.jpg' | asset_url }}" alt="Gallery 3" style="object-fit: contain !important; background: #fbfbfb;"></div>
-            <div class="gallery-slide"><img src="{{ 'glutathione-cream-100.jpg' | asset_url }}" alt="Gallery 4" style="object-fit: contain !important; background: #fbfbfb;"></div>
+            <div class="gallery-slide"><img src="{{ 'glutathione-meet-1.jpg' | asset_url }}" alt="Model Focus" style="object-fit: cover !important;"></div>
+            <div class="gallery-slide"><img src="{{ 'glutathione-meet-3.jpg' | asset_url }}" alt="Label Detail" style="object-fit: cover !important;"></div>
+            <div class="gallery-slide"><img src="{{ 'glutathione-meet-4.jpg' | asset_url }}" alt="Texture Close-up" style="object-fit: cover !important;"></div>
           {%- else -%}
             {%- for image in product.images -%}
               <div class="gallery-slide">
@@ -648,7 +648,7 @@
         {%- assign display_ingredients = false -%}
       {%- elsif product.handle == 'glutathione-cream' -%}
         {%- assign display_subtitle = 'Glutathione + Hyaluronic Acid' -%}
-        {%- assign display_desc = 'A rich, restorative night cream formulated with Glutathione to visibly brighten, deeply hydrate, and repair the skin barrier while you sleep.' -%}
+        {%- assign display_desc = 'A nourishing brightening cream designed to improve uneven tone, reduce dullness, and support skin repair. It helps fade the look of dark spots, restore radiance, and leave skin smoother and healthier with consistent use.' -%}
       {%- endif -%}
 
       <div class="product-meta" style="margin-top: 5px;">
