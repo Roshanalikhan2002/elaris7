@@ -25,35 +25,35 @@
           "type": "detail_row",
           "settings": {
             "label": "GOOD FOR:",
-            "value": "All skin types, especially uneven tone and dark spots"
+            "value": "All skin types, including dry and sensitive skin"
           }
         },
         "row_feels": {
           "type": "detail_row",
           "settings": {
             "label": "FEELS LIKE:",
-            "value": "A smooth, fast-absorbing serum that layers easily"
+            "value": "A rich, creamy formula that melts effortlessly into the skin"
           }
         },
         "row_looks": {
           "type": "detail_row",
           "settings": {
             "label": "LOOKS LIKE:",
-            "value": "Brighter, clearer skin with improved tone"
+            "value": "Smooth, plump, and poreless skin by morning"
           }
         },
         "row_smells": {
           "type": "detail_row",
           "settings": {
             "label": "SMELLS LIKE:",
-            "value": "A soft, clean scent with a subtle finish"
+            "value": "Subtle, calming freshness for a relaxing routine"
           }
         },
         "row_fyi": {
           "type": "detail_row",
           "settings": {
             "label": "FYI:",
-            "value": "Non-Greasy • Fast Absorbing • Daily Use • Tone-Correcting"
+            "value": "Halal-Friendly • Dermatologist-Tested • Non-Sticky • Repair-Focused"
           }
         }
       },
@@ -74,7 +74,7 @@
       "settings": {
         "title": "what's inside",
         "intro": "A potent brightening serum formulated to target dark spots, even skin tone, and enhance natural radiance.",
-        "footer_text": "",
+        "footer_text": "TRANEXAMIC ACID (4%)\n helps visibly reduce dark spots and discoloration\nNIACINAMIDE (10%)\n supports even tone and improves dullness\nalso made with Vitamin C, Alpha Arbutin, Hyaluronic Acid, Glycerin, Panthenol, Vitamin E, peptides, and botanical extracts for hydration, barrier support, and glowing skin",
         "image": "shopify://shop_images/whats_inside-100.jpg",
         "show_btn": true,
         "btn_label": "FULL INGREDIENTS LIST"
@@ -86,40 +86,24 @@
         "stat_1": {
           "type": "stat_block",
           "settings": {
-            "number": "99%",
-            "description": "SAID THEIR SKIN LOOKED MORE EVEN"
+            "number": "97%",
+            "description": "SAID THEIR SKIN FELT DEEPLY HYDRATED"
           }
         },
         "stat_2": {
           "type": "stat_block",
           "settings": {
-            "number": "98%",
-            "description": "SAID THEIR SKIN APPEARED BRIGHTER"
-          }
-        },
-        "stat_3": {
-          "type": "stat_block",
-          "settings": {
-            "number": "97%",
-            "description": "SAID DARK SPOTS LOOKED LESS VISIBLE"
-          }
-        },
-        "stat_4": {
-          "type": "stat_block",
-          "settings": {
-            "number": "3 out of 4",
-            "description": "SAID THEY NOTICED IMPROVED SKIN CLARITY"
+            "number": "95%",
+            "description": "SAID IT ABSORBED WELL WITHOUT HEAVINESS"
           }
         }
       },
       "block_order": [
         "stat_1",
-        "stat_2",
-        "stat_3",
-        "stat_4"
+        "stat_2"
       ],
       "settings": {
-        "footnote": "*Based on a 2-week consumer perception study with consistent daily use.",
+        "footnote": "*Based on a 14-day consumer perception study.",
         "image": "shopify://shop_images/before_after-100.jpg"
       }
     },
@@ -129,49 +113,26 @@
         "faq_1": {
           "type": "faq_item",
           "settings": {
-            "question": "Can I use this serum every day?",
-            "answer": "Yes, it is suitable for daily use, both morning and night."
+            "question": "Can I use this daily?",
+            "answer": "Yes, our formula is gentle enough for daily use."
           }
         },
         "faq_2": {
           "type": "faq_item",
           "settings": {
             "question": "Is it suitable for sensitive skin?",
-            "answer": "Yes, it includes soothing ingredients, but patch testing is recommended."
-          }
-        },
-        "faq_3": {
-          "type": "faq_item",
-          "settings": {
-            "question": "Does it help with dark spots and pigmentation?",
-            "answer": "Yes, it is designed to target discoloration and improve uneven tone."
-          }
-        },
-        "faq_4": {
-          "type": "faq_item",
-          "settings": {
-            "question": "Can I layer it with other skincare products?",
-            "answer": "Yes, it works well with moisturizers, sunscreens, and other gentle actives."
-          }
-        },
-        "faq_5": {
-          "type": "faq_item",
-          "settings": {
-            "question": "Do I need to use sunscreen with this?",
-            "answer": "Yes, sunscreen is essential during the day to protect and maintain results."
+            "answer": "Absolutely, all products are dermatologist-tested for all skin types."
           }
         }
       },
       "block_order": [
         "faq_1",
-        "faq_2",
-        "faq_3",
-        "faq_4",
-        "faq_5"
+        "faq_2"
       ],
       "settings": {
         "title": "FAQ",
-        "subtitle": "Find out more about Tranexamic Serum."
+        "subtitle": "Find out more about Barrier Butter.",
+        "image": "shopify://shop_images/faq-100_1.jpg"
       }
     },
     "product_reviews": {
