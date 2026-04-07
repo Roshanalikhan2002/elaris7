@@ -4,7 +4,9 @@
       "type": "mobile-hero-slider",
       "blocks": {
         "slide1": { "type": "banner", "settings": {} },
-        "slide2": { "type": "banner", "settings": {} }
+        "slide2": { "type": "banner", "settings": { 
+          "image": "shopify://shop_images/Artboard_71-100_jpg.jpg"
+        } }
       },
       "block_order": ["slide1", "slide2"],
       "settings": { "autoplay_speed": 4 }
