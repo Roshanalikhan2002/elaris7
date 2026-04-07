@@ -477,6 +477,19 @@
             <div class="thumb-item" onmouseover="scrollGallery(3, this)">
               <img src="{{ 'tranexamic-meet-3.jpg' | asset_url }}" alt="Meet Elaris 3">
             </div>
+          {%- elsif product.handle == 'anti-frizz-keratin-serum' -%}
+            <div class="thumb-item active" onmouseover="scrollGallery(0, this)">
+              <img src="{{ 'keratin-meet-1.jpg' | asset_url }}" alt="{{ product.title }}">
+            </div>
+            <div class="thumb-item" onmouseover="scrollGallery(1, this)">
+              <img src="{{ 'keratin-ba.jpg' | asset_url }}" alt="Before After">
+            </div>
+            <div class="thumb-item" onmouseover="scrollGallery(2, this)">
+              <img src="{{ 'keratin-1.jpg' | asset_url }}" alt="Close up 1">
+            </div>
+            <div class="thumb-item" onmouseover="scrollGallery(3, this)">
+              <img src="{{ 'keratin-2.jpg' | asset_url }}" alt="Close up 2">
+            </div>
           {%- else -%}
             {%- assign handle_image = product.handle | append: '.jpg' -%}
             {%- assign fallback_img = section.settings.asset_main_image | default: handle_image -%}
@@ -509,6 +522,11 @@
               <div class="gallery-slide"><img src="{{ 'tranexamic-meet-1.jpg' | asset_url }}" alt="Meet Elaris 1"></div>
               <div class="gallery-slide"><img src="{{ 'tranexamic-meet-2.jpg' | asset_url }}" alt="Meet Elaris 2"></div>
               <div class="gallery-slide"><img src="{{ 'tranexamic-meet-3.jpg' | asset_url }}" alt="Meet Elaris 3"></div>
+            {%- elsif product.handle == 'anti-frizz-keratin-serum' -%}
+              <div class="gallery-slide"><img src="{{ 'keratin-meet-1.jpg' | asset_url }}" alt="{{ product.title }}"></div>
+              <div class="gallery-slide"><img src="{{ 'keratin-ba.jpg' | asset_url }}" alt="Before After"></div>
+              <div class="gallery-slide"><img src="{{ 'keratin-1.jpg' | asset_url }}" alt="Close up 1"></div>
+              <div class="gallery-slide"><img src="{{ 'keratin-2.jpg' | asset_url }}" alt="Close up 2"></div>
             {%- else -%}
               {%- assign handle_image = product.handle | append: '.jpg' -%}
               {%- assign fallback_img = section.settings.asset_main_image | default: handle_image -%}
