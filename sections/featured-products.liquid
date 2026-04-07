@@ -42,7 +42,7 @@
               </div>
               <span class="btn-rhode-buy-pill">BUY - {{ block.settings.price | default: 'RS. 1,500' }}</span>
             </div>
-            <div class="buy-button-hover">
+            <div class="buy-button-hover" data-handle="{{ block.settings.product_link | split: '/' | last }}">
               BUY {{ block.settings.title | default: 'NIGHT CREAM' | upcase }} - {{ block.settings.price | default: 'RS. 1,500' }}
             </div>
           </a>
@@ -114,7 +114,7 @@
               </div>
               <span class="btn-rhode-buy-pill">BUY - {{ pprice }}</span>
             </div>
-            <div class="buy-button-hover">
+            <div class="buy-button-hover" data-handle="{{ phandle }}">
               BUY {{ pname | upcase }} - {{ pprice }}
             </div>
           </a>

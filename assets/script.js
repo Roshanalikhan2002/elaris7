@@ -109,4 +109,87 @@ document.addEventListener('DOMContentLoaded', () => {
       scrollArea.scrollBy({ left: -(cardWidth + 12), behavior: 'smooth' });
     });
   }
+
+  // --- AJAX CART FUNCTIONALITY ---
+
+  const cartButtons = document.querySelectorAll('.buy-button, .buy-button-hover');
+  const cartCountElements = document.querySelectorAll('.cart-count, #cart-count');
+
+  async function updateCartCount() {
+    try {
+      const response = await fetch('/cart.js');
+      const cart = await response.json();
+      cartCountElements.forEach(el => {
+        el.textContent = `(${cart.item_count})`;
+        // Also update any plain text if needed
+        if (el.tagName === 'A' || el.parentElement.classList.contains('cart-link')) {
+           el.innerHTML = `CART (${cart.item_count})`;
+        }
+      });
+    } catch (e) { console.error('Error updating cart count:', e); }
+  }
+
+  async function addItemsToCart(items) {
+    try {
+      const response = await fetch('/cart/add.js', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ items })
+      });
+      if (response.ok) {
+        await updateCartCount();
+        // Optional: Show a "Thank you" or go to cart
+        window.location.href = '/cart'; 
+      } else {
+        alert('Could not add to cart. Please try again.');
+      }
+    } catch (e) { console.error('Cart add error:', e); }
+  }
+
+  // Handle Global "BUY" clicks (from Grids/Carousels)
+  document.addEventListener('click', async (e) => {
+    const buyBtn = e.target.closest('.buy-button-hover');
+    if (buyBtn) {
+      e.preventDefault();
+      e.stopPropagation();
+      const handle = buyBtn.getAttribute('data-handle');
+      if (!handle) return;
+
+      buyBtn.textContent = 'ADDING...';
+      try {
+        const productRes = await fetch(`/products/${handle}.js`);
+        const productData = await productRes.json();
+        const variantId = productData.variants[0].id;
+        await addItemsToCart([{ id: variantId, quantity: 1 }]);
+      } catch (err) {
+        console.error(err);
+        buyBtn.textContent = 'ERROR';
+      }
+    }
+  });
+
+  // Handle Product Page "ADD TO BAG" (with BOGO)
+  const mainBuyBtn = document.querySelector('.buy-button');
+  if (mainBuyBtn) {
+    mainBuyBtn.addEventListener('click', async (e) => {
+      e.preventDefault();
+      const variantId = mainBuyBtn.getAttribute('data-variant-id');
+      const giftRadio = document.querySelector('input[name="free_gift"]:checked');
+      
+      mainBuyBtn.textContent = 'ADDING TO BAG...';
+
+      let items = [{ id: variantId, quantity: 1 }];
+
+      if (giftRadio) {
+        const giftHandle = giftRadio.getAttribute('data-gift-handle');
+        try {
+          const giftRes = await fetch(`/products/${giftHandle}.js`);
+          const giftData = await giftRes.json();
+          items.push({ id: giftData.variants[0].id, quantity: 1 });
+        } catch (err) { console.error('Gift add error:', err); }
+      }
+
+      await addItemsToCart(items);
+    });
+  }
 });

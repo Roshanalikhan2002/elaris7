@@ -33,7 +33,7 @@
                 <h3 class="card-product-title">{{ block.settings.title | upcase }}</h3>
               </div>
 
-              <div class="buy-button-hover">
+              <div class="buy-button-hover" data-handle="{{ phandle | default: block.settings.title | handleize }}">
                  BUY - {{ block.settings.price }}
               </div>
             </div>
@@ -99,7 +99,7 @@
                 <h3 class="card-product-title">{{ pname | upcase }}</h3>
               </div>
 
-              <div class="buy-button-hover">
+              <div class="buy-button-hover" data-handle="{{ phandle }}">
                  BUY - Rs. 1,500
               </div>
             </div>

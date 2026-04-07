@@ -779,7 +779,7 @@
           <div class="gift-options-list">
             
             <label class="gift-option">
-              <input type="radio" name="free_gift" value="cleanser" checked>
+              <input type="radio" name="free_gift" value="cleanser" data-gift-handle="centella-skin-toner-copy" checked>
               <div class="gift-radio-custom"></div>
               <img src="{{ 'gel cleanser-100.jpg' | asset_url }}" class="gift-img" alt="Cleanser">
               <div class="gift-details">
@@ -789,7 +789,7 @@
             </label>
 
             <label class="gift-option">
-              <input type="radio" name="free_gift" value="toner">
+              <input type="radio" name="free_gift" value="toner" data-gift-handle="centella-skin-toner">
               <div class="gift-radio-custom"></div>
               <img src="{{ 'renewal toner-100.jpg' | asset_url }}" class="gift-img" alt="Toner">
               <div class="gift-details">
@@ -799,7 +799,7 @@
             </label>
 
             <label class="gift-option">
-              <input type="radio" name="free_gift" value="moisturizer">
+              <input type="radio" name="free_gift" value="moisturizer" data-gift-handle="e7-korean-glass-skin-moisturizer">
               <div class="gift-radio-custom"></div>
               <img src="{{ 'moisturizer-100.jpg' | asset_url }}" class="gift-img" alt="Moisturizer">
               <div class="gift-details">
@@ -809,7 +809,7 @@
             </label>
             
             <label class="gift-option">
-              <input type="radio" name="free_gift" value="serum-glow">
+              <input type="radio" name="free_gift" value="serum-glow" data-gift-handle="e7-korean-glass-skin-centella-sunscreen-spf50-copy">
               <div class="gift-radio-custom"></div>
               <img src="{{ 'glow-serum-100.jpg' | asset_url }}" class="gift-img" alt="Glow Serum">
               <div class="gift-details">
@@ -819,7 +819,7 @@
             </label>
 
             <label class="gift-option">
-              <input type="radio" name="free_gift" value="cream-glut">
+              <input type="radio" name="free_gift" value="cream-glut" data-gift-handle="glutathione-cream">
               <div class="gift-radio-custom"></div>
               <img src="{{ 'glutathione-cream-100.jpg' | asset_url }}" class="gift-img" alt="Glutathione Cream">
               <div class="gift-details">
@@ -829,7 +829,7 @@
             </label>
 
             <label class="gift-option">
-              <input type="radio" name="free_gift" value="serum-acne">
+              <input type="radio" name="free_gift" value="serum-acne" data-gift-handle="anti-acne">
               <div class="gift-radio-custom"></div>
               <img src="{{ 'anti-acne-100.jpg' | asset_url }}" class="gift-img" alt="Anti Acne Serum">
               <div class="gift-details">
@@ -839,7 +839,7 @@
             </label>
 
             <label class="gift-option">
-              <input type="radio" name="free_gift" value="night-cream">
+              <input type="radio" name="free_gift" value="night-cream" data-gift-handle="night-cream">
               <div class="gift-radio-custom"></div>
               <img src="{{ 'night-cream.jpg' | asset_url }}" class="gift-img" alt="Night Cream">
               <div class="gift-details">
@@ -849,7 +849,7 @@
             </label>
 
             <label class="gift-option">
-              <input type="radio" name="free_gift" value="serum-tranexamic">
+              <input type="radio" name="free_gift" value="serum-tranexamic" data-gift-handle="tranexamic-serum">
               <div class="gift-radio-custom"></div>
               <img src="{{ 'tranexamic-serum.jpg' | asset_url }}" class="gift-img" alt="Tranexamic Serum">
               <div class="gift-details">
@@ -859,7 +859,7 @@
             </label>
 
             <label class="gift-option">
-              <input type="radio" name="free_gift" value="serum-keratin">
+              <input type="radio" name="free_gift" value="serum-keratin" data-gift-handle="anti-frizz-keratin-serum">
               <div class="gift-radio-custom"></div>
               <img src="{{ 'keratin-serum.jpg' | asset_url }}" class="gift-img" alt="Keratin Serum">
               <div class="gift-details">
@@ -869,7 +869,7 @@
             </label>
 
             <label class="gift-option">
-              <input type="radio" name="free_gift" value="hair-mist">
+              <input type="radio" name="free_gift" value="hair-mist" data-gift-handle="hair-mist">
               <div class="gift-radio-custom"></div>
               <img src="{{ 'hair-mist.jpg' | asset_url }}" class="gift-img" alt="Hair Mist">
               <div class="gift-details">
@@ -879,7 +879,7 @@
             </label>
 
             <label class="gift-option">
-              <input type="radio" name="free_gift" value="face-wash">
+              <input type="radio" name="free_gift" value="face-wash" data-gift-handle="e7-korean-glass-skin-centella-night-cream-copy">
               <div class="gift-radio-custom"></div>
               <img src="{{ 'facewash-100.jpg' | asset_url }}" class="gift-img" alt="Face Wash">
               <div class="gift-details">
@@ -889,7 +889,7 @@
             </label>
 
             <label class="gift-option">
-              <input type="radio" name="free_gift" value="sunscreen">
+              <input type="radio" name="free_gift" value="sunscreen" data-gift-handle="e7-korean-glass-skin-centella-face-wash-copy">
               <div class="gift-radio-custom"></div>
               <img src="{{ 'sunscreen-100.jpg' | asset_url }}" class="gift-img" alt="Sunscreen">
               <div class="gift-details">
@@ -902,7 +902,7 @@
         </div>
       </div>
 
-      <button class="buy-button" style="white-space: nowrap;">ADD TO BAG - {{ product.price | money }}</button>
+      <button class="buy-button" style="white-space: nowrap;" data-variant-id="{{ product.selected_or_first_available_variant.id }}">ADD TO BAG - {{ product.price | money }}</button>
       
 
 
