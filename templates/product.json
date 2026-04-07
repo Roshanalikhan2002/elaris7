@@ -12,7 +12,15 @@
   "sections": {
     "main": {
       "type": "product-luxury-detail",
-      "settings": {}
+      "settings": {
+        "asset_main_image": "",
+        "subtitle": "Night Renewal",
+        "show_reviews": true,
+        "review_count": "16k",
+        "description": "Faith's Light. Korean Science. <br>Powered by Nature's Purest.",
+        "show_ingredients": true,
+        "key_ingredients": "Glutathione, Vitamin C, Alpha Arbutin, Centella Asiatica, Kojic Dipalmitate, Niacinamide, Honey, Hyaluronic Acid,"
+      }
     },
     "carousel": {
       "type": "meet-the-product",
@@ -22,7 +30,7 @@
       "type": "product-details-split",
       "settings": {
         "title": "Wake Up to Refreshed, Radiant Skin",
-        "image": "shopify://shop_images/night_cream-100.jpg_1.jpg"
+        "image": "shopify://shop_images/a_creamy_blush-100_2.jpg"
       }
     },
     "ingredients": {
