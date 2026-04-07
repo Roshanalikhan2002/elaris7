@@ -81,6 +81,8 @@
     {%- assign meet_title = "Smooth Hair. Zero Frizz." -%}
   {%- elsif product.handle == 'e7-korean-glass-skin-centella-sunscreen-spf50-copy' -%}
     {%- assign meet_title = "Glass Skin. Infinite Glow." -%}
+  {%- elsif product.handle == 'glutathione-cream' -%}
+    {%- assign meet_title = "Brighter Skin. Endless Radiance." -%}
   {%- endif -%}
   <h2 class="meet-title">{{ meet_title }}</h2>
   <div class="meet-carousel-wrapper">
@@ -110,6 +112,11 @@
           <img src="{{ 'glow-meet-2.jpg' | asset_url }}" alt="Glow Lifestyle shot">
           <img src="{{ 'glow-meet-3.jpg' | asset_url }}" alt="Glow Texture detail">
           <img src="{{ 'glow-meet-4.jpg' | asset_url }}" alt="Elaris Glow Serum Duo">
+        {%- elsif product.handle == 'glutathione-cream' -%}
+          <img src="{{ 'glutathione-meet-3.jpg' | asset_url }}" alt="Meet Elaris 1">
+          <img src="{{ 'glutathione-meet-4.jpg' | asset_url }}" alt="Meet Elaris 2">
+          <img src="{{ 'glutathione-meet-1.jpg' | asset_url }}" alt="Meet Elaris 3">
+          <img src="{{ 'glutathione-meet-2.jpg' | asset_url }}" alt="Meet Elaris 4">
         {%- else -%}
           <img src="{{ 'night-cream-suite.jpeg' | asset_url }}" alt="Product Image 1">
           <img src="{{ 'night-cream-swatch.jpeg' | asset_url }}" alt="Product Image 2">
