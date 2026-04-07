@@ -12,7 +12,15 @@
   "sections": {
     "main": {
       "type": "product-luxury-detail",
-      "settings": {}
+      "settings": {
+        "asset_main_image": "",
+        "subtitle": "Night Renewal",
+        "show_reviews": true,
+        "review_count": "16k",
+        "description": "Faith's Light. Korean Science. <br>Powered by Nature's Purest.",
+        "show_ingredients": true,
+        "key_ingredients": "An intensive overnight formula designed to rejuvenate your skin while you sleep. Infused with Centella Asiatica, brightening complexes, and repair-focused botanicals, this night cream hydrates deeply, improves skin texture, and helps reveal a smoother, luminous, and refreshed complexion by morning."
+      }
     },
     "meet_product": {
       "type": "meet-the-product",
@@ -98,6 +106,13 @@
         "btn_label": "FULL INGREDIENTS LIST"
       }
     },
+    "benefits_focus": {
+      "type": "product-benefits-focus",
+      "settings": {
+        "subtitle": "SPREAD IT ON FOR:",
+        "image": "shopify://shop_images/night_cream_4-100_jpg.jpg"
+      }
+    },
     "study_results": {
       "type": "product-study-results",
       "blocks": {
@@ -138,13 +153,6 @@
       ],
       "settings": {
         "footnote": "*Based on a 32-subject consumer perception study after 2 weeks of use."
-      }
-    },
-    "benefits_focus": {
-      "type": "product-benefits-focus",
-      "settings": {
-        "subtitle": "SPREAD IT ON FOR:",
-        "image": "shopify://shop_images/night_cream_4-100_jpg.jpg"
       }
     },
     "faq_split": {
@@ -194,7 +202,8 @@
         "faq_5"
       ],
       "settings": {
-        "title": "FAQ"
+        "title": "FAQ",
+        "subtitle": "Find out more about Barrier Butter."
       }
     },
     "product_reviews": {
@@ -203,7 +212,10 @@
     },
     "related_products": {
       "type": "featured-products",
-      "settings": {}
+      "settings": {
+        "collection": "",
+        "product_limit": 15
+      }
     }
   },
   "order": [
