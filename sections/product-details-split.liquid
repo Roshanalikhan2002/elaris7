@@ -88,7 +88,11 @@
 
 <section class="details-split-section">
   <div class="ds-left">
-    <h2 class="ds-title">{{ section.settings.title | default: 'A creamy blush for BUILDABLE color + BABY-SOFT cheeks.' }}</h2>
+    {%- assign ds_title = section.settings.title | default: 'A creamy blush for BUILDABLE color + BABY-SOFT cheeks.' -%}
+    {%- if product.handle == 'anti-frizz-keratin-serum' -%}
+      {%- assign ds_title = "Intensive smoothing for SLEEK + SHINY, FRIZZ-FREE hair." -%}
+    {%- endif -%}
+    <h2 class="ds-title">{{ ds_title }}</h2>
     <div class="ds-list">
       {% if section.blocks.size > 0 %}
         {% for block in section.blocks %}
@@ -98,26 +102,49 @@
           </div>
         {% endfor %}
       {% else %}
-        <div class="ds-row">
-          <div class="ds-label">GOOD FOR:</div>
-          <div class="ds-value">All skin types, including dry and sensitive skin</div>
-        </div>
-        <div class="ds-row">
-          <div class="ds-label">FEELS LIKE:</div>
-          <div class="ds-value">A rich, creamy formula that melts effortlessly into the skin</div>
-        </div>
-        <div class="ds-row">
-          <div class="ds-label">LOOKS LIKE:</div>
-          <div class="ds-value">Smooth, plump, and poreless skin by morning</div>
-        </div>
-        <div class="ds-row">
-          <div class="ds-label">SMELLS LIKE:</div>
-          <div class="ds-value">Subtle, calming freshness for a relaxing nighttime routine</div>
-        </div>
-        <div class="ds-row">
-          <div class="ds-label">FYI:</div>
-          <div class="ds-value">Halal-Friendly &bull; Dermatologist-Tested &bull; Non-Sticky &bull; Repair-Focused</div>
-        </div>
+        {%- if product.handle == 'anti-frizz-keratin-serum' -%}
+          <div class="ds-row">
+            <div class="ds-label">GOOD FOR:</div>
+            <div class="ds-value">All hair types, especially dry and frizzy hair</div>
+          </div>
+          <div class="ds-row">
+            <div class="ds-label">FEELS LIKE:</div>
+            <div class="ds-value">A silky, weightless layer that glides through hair</div>
+          </div>
+          <div class="ds-row">
+            <div class="ds-label">LOOKS LIKE:</div>
+            <div class="ds-value">Sleek, shiny hair with controlled frizz</div>
+          </div>
+          <div class="ds-row">
+            <div class="ds-label">SMELLS LIKE:</div>
+            <div class="ds-value">Soft, fresh scent with a clean finish</div>
+          </div>
+          <div class="ds-row">
+            <div class="ds-label">FYI:</div>
+            <div class="ds-value">Non-Greasy &bull; Lightweight Feel &bull; Heat-Protective &bull; No Buildup</div>
+          </div>
+        {%- else -%}
+          <div class="ds-row">
+            <div class="ds-label">GOOD FOR:</div>
+            <div class="ds-value">All skin types, including dry and sensitive skin</div>
+          </div>
+          <div class="ds-row">
+            <div class="ds-label">FEELS LIKE:</div>
+            <div class="ds-value">A rich, creamy formula that melts effortlessly into the skin</div>
+          </div>
+          <div class="ds-row">
+            <div class="ds-label">LOOKS LIKE:</div>
+            <div class="ds-value">Smooth, plump, and poreless skin by morning</div>
+          </div>
+          <div class="ds-row">
+            <div class="ds-label">SMELLS LIKE:</div>
+            <div class="ds-value">Subtle, calming freshness for a relaxing nighttime routine</div>
+          </div>
+          <div class="ds-row">
+            <div class="ds-label">FYI:</div>
+            <div class="ds-value">Halal-Friendly &bull; Dermatologist-Tested &bull; Non-Sticky &bull; Repair-Focused</div>
+          </div>
+        {%- endif -%}
       {% endif %}
     </div>
   </div>
