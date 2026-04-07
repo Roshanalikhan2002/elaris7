@@ -1,0 +1,195 @@
+{
+  "layout": "theme",
+  "sections": {
+    "main": {
+      "type": "product-luxury-detail",
+      "settings": {
+        "asset_main_image": "renewal toner-100.jpg",
+        "subtitle": "Glycolic Renewal / Pore Refining",
+        "show_reviews": true,
+        "review_count": "8k",
+        "description": "A gentle exfoliating toner that helps refine pores and smooth skin texture, revealing a brighter and more even complexion with every use.",
+        "show_ingredients": false,
+        "key_ingredients": ""
+      }
+    },
+    "meet_product": {
+      "type": "meet-the-product",
+      "settings": {}
+    },
+    "details_split": {
+      "type": "product-details-split",
+      "blocks": {
+        "row_good": {
+          "type": "detail_row",
+          "settings": {
+            "label": "GOOD FOR:",
+            "value": "Dullness, uneven texture, and enlarged pores"
+          }
+        },
+        "row_feels": {
+          "type": "detail_row",
+          "settings": {
+            "label": "FEELS LIKE:",
+            "value": "A refreshing, watery texture that's non-sticky"
+          }
+        },
+        "row_looks": {
+          "type": "detail_row",
+          "settings": {
+            "label": "LOOKS LIKE:",
+            "value": "Smoother, clearer, and more refined skin over time"
+          }
+        },
+        "row_smells": {
+          "type": "detail_row",
+          "settings": {
+            "label": "SMELLS LIKE:",
+            "value": "Clean herbal notes"
+          }
+        },
+        "row_fyi": {
+          "type": "detail_row",
+          "settings": {
+            "label": "FYI:",
+            "value": "Gentle Exfoliation • Pore Refining • Alcohol-Free • Glow-Boosting"
+          }
+        }
+      },
+      "block_order": [
+        "row_good",
+        "row_feels",
+        "row_looks",
+        "row_smells",
+        "row_fyi"
+      ],
+      "settings": {
+        "title": "A texture-smoothing toner for BRIGHT + CLEAR skin.",
+        "image": "shopify://shop_images/renewal toner-100.jpg"
+      }
+    },
+    "ingredients": {
+      "type": "product-ingredients",
+      "blocks": {
+        "ing_1": {
+          "type": "ingredient",
+          "settings": {
+            "title": "glycolic acid blend",
+            "description": "gently removes dead skin cells to reveal fresh radiance"
+          }
+        },
+        "ing_2": {
+          "type": "ingredient",
+          "settings": {
+            "title": "hyaluronic acid",
+            "description": "ensures hydration is maintained even during exfoliation"
+          }
+        }
+      },
+      "block_order": [
+        "ing_1",
+        "ing_2"
+      ],
+      "settings": {
+        "title": "what's inside",
+        "intro": "Refining acids meets deep hydration for the ultimate skin renewal.",
+        "footer_text": "also made with NIACINAMIDE, ALLANTOIN, CENTELLA ASIATICA, AND PANTHENOL",
+        "image": "shopify://shop_images/renewal toner-100.jpg",
+        "show_btn": true,
+        "btn_label": "FULL INGREDIENTS LIST"
+      }
+    },
+    "study_results": {
+      "type": "product-study-results",
+      "blocks": {
+        "stat_1": {
+          "type": "stat_block",
+          "settings": {
+            "number": "97%",
+            "description": "SAID THEIR SKIN LOOKED MORE RADIANT"
+          }
+        },
+        "stat_2": {
+          "type": "stat_block",
+          "settings": {
+            "number": "94%",
+            "description": "NOTICED SMOOTHER SKIN TEXTURE"
+          }
+        },
+        "stat_3": {
+          "type": "stat_block",
+          "settings": {
+            "number": "92%",
+            "description": "SAID THEIR PORES APPEARED SMALLER"
+          }
+        }
+      },
+      "block_order": [
+        "stat_1",
+        "stat_2",
+        "stat_3"
+      ],
+      "settings": {
+        "footnote": "Based on a 4-week consumer perception study with once-daily use.",
+        "image": "shopify://shop_images/renewal toner-100.jpg"
+      }
+    },
+    "faq_split": {
+      "type": "product-faq-split",
+      "blocks": {
+        "faq_1": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Can I use it every day?",
+            "answer": "Yes, it is gentle enough for daily nighttime use."
+          }
+        },
+        "faq_2": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Do I need sunscreen during the day?",
+            "answer": "Yes, glycolic acid can increase sun sensitivity, so sunscreen is essential."
+          }
+        },
+        "faq_3": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Is it suitable for acne-prone skin?",
+            "answer": "Yes, it helps to keep pores clear and improves skin clarity."
+          }
+        }
+      },
+      "block_order": [
+        "faq_1",
+        "faq_2",
+        "faq_3"
+      ],
+      "settings": {
+        "title": "FAQ",
+        "subtitle": "Everything you need to know about Renewal Toner.",
+        "image": "shopify://shop_images/renewal toner-100.jpg"
+      }
+    },
+    "product_reviews": {
+      "type": "product-reviews",
+      "settings": {}
+    },
+    "related_products": {
+      "type": "featured-products",
+      "settings": {
+        "collection": "",
+        "product_limit": 15
+      }
+    }
+  },
+  "order": [
+    "main",
+    "meet_product",
+    "details_split",
+    "ingredients",
+    "study_results",
+    "faq_split",
+    "product_reviews",
+    "related_products"
+  ]
+}

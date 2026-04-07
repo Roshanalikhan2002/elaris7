@@ -164,6 +164,10 @@
         Based on a 1-week consumer perception study with consistent use.
       {%- elsif product.handle == 'glutathione-cream' -%}
         Based on a 2-week consumer perception study with consistent daily use.
+      {%- elsif product.handle == 'e7-korean-glass-skin-centella-face-wash-copy' or product.handle == 'centella-skin-toner' -%}
+        Based on a 4-week consumer perception study with daily application.
+      {%- elsif product.handle == 'e7-korean-glass-skin-moisturizer' or product.handle == 'centella-skin-toner-copy' -%}
+        Based on a 2-week consumer perception study with consistent use.
       {%- else -%}
         {{ section.settings.footnote | default: '*Based on a 32-subject consumer perception study after 2 weeks of use.' }}
       {%- endif -%}

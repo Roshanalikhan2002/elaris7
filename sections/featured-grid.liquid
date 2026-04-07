@@ -56,6 +56,14 @@
           {%- assign phandle = "e7-korean-glass-skin-centella-sunscreen-spf50-copy" -%}
         {%- elsif pname == "Face Wash" -%}
           {%- assign phandle = "e7-korean-glass-skin-centella-night-cream-copy" -%}
+        {%- elsif pname == "Sunscreen SPF60+" -%}
+          {%- assign phandle = "e7-korean-glass-skin-centella-face-wash-copy" -%}
+        {%- elsif pname == "Renewal Cleanser" -%}
+          {%- assign phandle = "centella-skin-toner-copy" -%}
+        {%- elsif pname == "Hydra Burst Moisturizer" -%}
+          {%- assign phandle = "e7-korean-glass-skin-moisturizer" -%}
+        {%- elsif pname == "Renewal Toner" -%}
+          {%- assign phandle = "centella-skin-toner" -%}
         {%- endif -%}
         {%- assign pimage = fallback_images[i] -%}
         {%- assign plabel = fallback_labels[i] | default: 'antiacne' -%}

@@ -1,0 +1,195 @@
+{
+  "layout": "theme",
+  "sections": {
+    "main": {
+      "type": "product-luxury-detail",
+      "settings": {
+        "asset_main_image": "moisturizer-100.jpg",
+        "subtitle": "Hydration Burst / Ceramide Repair",
+        "show_reviews": true,
+        "review_count": "13k",
+        "description": "An intensive moisturizer that delivers a burst of hydration to the skin, helping to repair the barrier and lock in moisture for a plump, healthy look.",
+        "show_ingredients": false,
+        "key_ingredients": ""
+      }
+    },
+    "meet_product": {
+      "type": "meet-the-product",
+      "settings": {}
+    },
+    "details_split": {
+      "type": "product-details-split",
+      "blocks": {
+        "row_good": {
+          "type": "detail_row",
+          "settings": {
+            "label": "GOOD FOR:",
+            "value": "Dry, dehydrated, or barrier-compromised skin"
+          }
+        },
+        "row_feels": {
+          "type": "detail_row",
+          "settings": {
+            "label": "FEELS LIKE:",
+            "value": "A plush, creamy texture that melts comfortably into skin"
+          }
+        },
+        "row_looks": {
+          "type": "detail_row",
+          "settings": {
+            "label": "LOOKS LIKE:",
+            "value": "Dewy, plump, and ultra-hydrated skin all day"
+          }
+        },
+        "row_smells": {
+          "type": "detail_row",
+          "settings": {
+            "label": "SMELLS LIKE:",
+            "value": "Calming, fresh floral notes"
+          }
+        },
+        "row_fyi": {
+          "type": "detail_row",
+          "settings": {
+            "label": "FYI:",
+            "value": "Barrier Repair • Intensive Hydration • Non-Greasy Finish • Halal-Friendly"
+          }
+        }
+      },
+      "block_order": [
+        "row_good",
+        "row_feels",
+        "row_looks",
+        "row_smells",
+        "row_fyi"
+      ],
+      "settings": {
+        "title": "A moisture-locking cream for PLUMP + HEALTHY skin.",
+        "image": "shopify://shop_images/moisturizer-100.jpg"
+      }
+    },
+    "ingredients": {
+      "type": "product-ingredients",
+      "blocks": {
+        "ing_1": {
+          "type": "ingredient",
+          "settings": {
+            "title": "ceramide complexity",
+            "description": "supports the skin's natural protective barrier for long-lasting comfort"
+          }
+        },
+        "ing_2": {
+          "type": "ingredient",
+          "settings": {
+            "title": "centella asiatica",
+            "description": "calms and protects sensitive skin"
+          }
+        }
+      },
+      "block_order": [
+        "ing_1",
+        "ing_2"
+      ],
+      "settings": {
+        "title": "what's inside",
+        "intro": "Intensive hydration meets advanced barrier-repair ingredients.",
+        "footer_text": "also made with HYALURONIC ACID, GLYCERIN, SQUALANE, AND VITAMIN E",
+        "image": "shopify://shop_images/moisturizer-100.jpg",
+        "show_btn": true,
+        "btn_label": "FULL INGREDIENTS LIST"
+      }
+    },
+    "study_results": {
+      "type": "product-study-results",
+      "blocks": {
+        "stat_1": {
+          "type": "stat_block",
+          "settings": {
+            "number": "99%",
+            "description": "SAID THEIR SKIN FELT INSTANTLY HYDRATED"
+          }
+        },
+        "stat_2": {
+          "type": "stat_block",
+          "settings": {
+            "number": "97%",
+            "description": "NOTICED A VISIBLE IMPROVEMENT IN SKIN DUCTILITY"
+          }
+        },
+        "stat_3": {
+          "type": "stat_block",
+          "settings": {
+            "number": "95%",
+            "description": "REPORTED SKIN LOOKED RADIANT AND PLUMP ALL DAY"
+          }
+        }
+      },
+      "block_order": [
+        "stat_1",
+        "stat_2",
+        "stat_3"
+      ],
+      "settings": {
+        "footnote": "Based on a 2-week consumer perception study with twice-daily use.",
+        "image": "shopify://shop_images/moisturizer-100.jpg"
+      }
+    },
+    "faq_split": {
+      "type": "product-faq-split",
+      "blocks": {
+        "faq_1": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Can I use it both AM and PM?",
+            "answer": "Yes, it fits perfectly into both your morning and evening skincare routines."
+          }
+        },
+        "faq_2": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Will it make oily skin oilier?",
+            "answer": "No, it absorbs well without leaving a heavy or greasy residue."
+          }
+        },
+        "faq_3": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Does it help with redness?",
+            "answer": "Yes, Centella Asiatica and ceramides work together to calm and repair visible redness."
+          }
+        }
+      },
+      "block_order": [
+        "faq_1",
+        "faq_2",
+        "faq_3"
+      ],
+      "settings": {
+        "title": "FAQ",
+        "subtitle": "Everything you need to know about Hydra Burst Moisturizer.",
+        "image": "shopify://shop_images/moisturizer-100.jpg"
+      }
+    },
+    "product_reviews": {
+      "type": "product-reviews",
+      "settings": {}
+    },
+    "related_products": {
+      "type": "featured-products",
+      "settings": {
+        "collection": "",
+        "product_limit": 15
+      }
+    }
+  },
+  "order": [
+    "main",
+    "meet_product",
+    "details_split",
+    "ingredients",
+    "study_results",
+    "faq_split",
+    "product_reviews",
+    "related_products"
+  ]
+}

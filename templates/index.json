@@ -152,7 +152,7 @@
             "reviews": "7k",
             "asset_image": "sunscreen-100.jpg",
             "asset_hover_image": "",
-            "product_link": "/products/sunscreen"
+            "product_link": "/products/e7-korean-glass-skin-centella-face-wash-copy"
           }
         },
         "block_cleanser": {
@@ -166,7 +166,7 @@
             "reviews": "10k",
             "asset_image": "gel cleanser-100.jpg",
             "asset_hover_image": "",
-            "product_link": "/products/renewal-cleanser"
+            "product_link": "/products/centella-skin-toner-copy"
           }
         },
         "block_moisturizer": {
@@ -180,7 +180,7 @@
             "reviews": "13k",
             "asset_image": "moisturizer-100.jpg",
             "asset_hover_image": "",
-            "product_link": "/products/hydra-burst-moisturizer"
+            "product_link": "/products/e7-korean-glass-skin-moisturizer"
           }
         },
         "block_toner": {
@@ -194,7 +194,7 @@
             "reviews": "8k",
             "asset_image": "renewal toner-100.jpg",
             "asset_hover_image": "",
-            "product_link": "/products/renewal-toner"
+            "product_link": "/products/centella-skin-toner"
           }
         }
       },

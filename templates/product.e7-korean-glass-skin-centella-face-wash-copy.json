@@ -1,0 +1,195 @@
+{
+  "layout": "theme",
+  "sections": {
+    "main": {
+      "type": "product-luxury-detail",
+      "settings": {
+        "asset_main_image": "sunscreen-100.jpg",
+        "subtitle": "SPF 60+ / Broad Spectrum",
+        "show_reviews": true,
+        "review_count": "7k",
+        "description": "A lightweight, non-greasy sunscreen that provides high-level protection against UVA/UVB rays while keeping your skin hydrated and glowing.",
+        "show_ingredients": false,
+        "key_ingredients": ""
+      }
+    },
+    "meet_product": {
+      "type": "meet-the-product",
+      "settings": {}
+    },
+    "details_split": {
+      "type": "product-details-split",
+      "blocks": {
+        "row_good": {
+          "type": "detail_row",
+          "settings": {
+            "label": "GOOD FOR:",
+            "value": "All skin types, especially those looking for an invisible finish"
+          }
+        },
+        "row_feels": {
+          "type": "detail_row",
+          "settings": {
+            "label": "FEELS LIKE:",
+            "value": "A weightless lotion that absorbs instantly with zero white cast"
+          }
+        },
+        "row_looks": {
+          "type": "detail_row",
+          "settings": {
+            "label": "LOOKS LIKE:",
+            "value": "Sun-protected skin with a natural, healthy dewy glow"
+          }
+        },
+        "row_smells": {
+          "type": "detail_row",
+          "settings": {
+            "label": "SMELLS LIKE:",
+            "value": "Fragrance-free and clean"
+          }
+        },
+        "row_fyi": {
+          "type": "detail_row",
+          "settings": {
+            "label": "FYI:",
+            "value": "No White Cast • Non-Comedogenic • Fast-Absorbing • SPF 60+"
+          }
+        }
+      },
+      "block_order": [
+        "row_good",
+        "row_feels",
+        "row_looks",
+        "row_smells",
+        "row_fyi"
+      ],
+      "settings": {
+        "title": "A high-protection sunscreen for SAFE + GLOWING skin.",
+        "image": "shopify://shop_images/sunscreen-100.jpg"
+      }
+    },
+    "ingredients": {
+      "type": "product-ingredients",
+      "blocks": {
+        "ing_1": {
+          "type": "ingredient",
+          "settings": {
+            "title": "centella asiatica",
+            "description": "soothes skin and reduces redness caused by sun exposure"
+          }
+        },
+        "ing_2": {
+          "type": "ingredient",
+          "settings": {
+            "title": "niacinamide",
+            "description": "helps brighten skin and improve the appearance of enlarged pores while protecting the barrier"
+          }
+        }
+      },
+      "block_order": [
+        "ing_1",
+        "ing_2"
+      ],
+      "settings": {
+        "title": "what's inside",
+        "intro": "Advanced UV filters paired with skin-loving botanicals for ultimate protection and care.",
+        "footer_text": "also made with HYALURONIC ACID, VITAMIN E, PANTHENOL, AND ZINC OXIDE",
+        "image": "shopify://shop_images/sunscreen-100.jpg",
+        "show_btn": true,
+        "btn_label": "FULL INGREDIENTS LIST"
+      }
+    },
+    "study_results": {
+      "type": "product-study-results",
+      "blocks": {
+        "stat_1": {
+          "type": "stat_block",
+          "settings": {
+            "number": "98%",
+            "description": "SAID IT LEFT ZERO WHITE CAST ON SKIN"
+          }
+        },
+        "stat_2": {
+          "type": "stat_block",
+          "settings": {
+            "number": "96%",
+            "description": "SAID THEIR SKIN FELT HYDRATED THROUGHOUT THE DAY"
+          }
+        },
+        "stat_3": {
+          "type": "stat_block",
+          "settings": {
+            "number": "95%",
+            "description": "SAID IT WORKED PERFECTLY UNDER MAKEUP"
+          }
+        }
+      },
+      "block_order": [
+        "stat_1",
+        "stat_2",
+        "stat_3"
+      ],
+      "settings": {
+        "footnote": "Based on a 1-week consumer perception study with daily application.",
+        "image": "shopify://shop_images/sunscreen-100.jpg"
+      }
+    },
+    "faq_split": {
+      "type": "product-faq-split",
+      "blocks": {
+        "faq_1": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Is it water-resistant?",
+            "answer": "Yes, it offers moderate water resistance, though we recommend re-applying after swimming."
+          }
+        },
+        "faq_2": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Will it clog my pores?",
+            "answer": "No, it is non-comedogenic and lightweight, making it safe for acne-prone skin."
+          }
+        },
+        "faq_3": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Can I use it on sensitive skin?",
+            "answer": "Yes, Centella Asiatica helps soothe and protect sensitive skin types."
+          }
+        }
+      },
+      "block_order": [
+        "faq_1",
+        "faq_2",
+        "faq_3"
+      ],
+      "settings": {
+        "title": "FAQ",
+        "subtitle": "Everything you need to know about Sunscreen SPF60+.",
+        "image": "shopify://shop_images/sunscreen-100.jpg"
+      }
+    },
+    "product_reviews": {
+      "type": "product-reviews",
+      "settings": {}
+    },
+    "related_products": {
+      "type": "featured-products",
+      "settings": {
+        "collection": "",
+        "product_limit": 15
+      }
+    }
+  },
+  "order": [
+    "main",
+    "meet_product",
+    "details_split",
+    "ingredients",
+    "study_results",
+    "faq_split",
+    "product_reviews",
+    "related_products"
+  ]
+}
