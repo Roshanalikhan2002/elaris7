@@ -260,7 +260,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
           productCards.forEach(card => {
             const cardCat = card.getAttribute('data-category');
-            if (category === 'featured' || cardCat === category) {
+            if (category === 'featured') {
+              if (cardCat === 'set') {
+                card.style.display = 'none';
+              } else {
+                card.style.display = 'block';
+              }
+            } else if (cardCat === category) {
               card.style.display = 'block';
             } else {
               card.style.display = 'none';
@@ -272,5 +278,27 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
     });
+    // Initial Filter on load (Default is Featured)
+    const initialFilter = () => {
+      const activeLink = document.querySelector('.cat-link.active');
+      if (activeLink) {
+        const category = activeLink.getAttribute('data-category');
+        productCards.forEach(card => {
+          const cardCat = card.getAttribute('data-category');
+          if (category === 'featured') {
+            if (cardCat === 'set') {
+              card.style.display = 'none';
+            } else {
+              card.style.display = 'block';
+            }
+          } else if (cardCat === category) {
+            card.style.display = 'block';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      }
+    };
+    initialFilter();
   }
 });
