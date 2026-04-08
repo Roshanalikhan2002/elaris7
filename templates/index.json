@@ -218,6 +218,58 @@
             "asset_hover_image": "toner-hover.jpg",
             "product_link": "/products/centella-skin-toner"
           }
+        },
+        "block_set_1": {
+          "type": "product",
+          "settings": {
+            "title": "E7 Glass Skin Set",
+            "price": "Rs. 4,500",
+            "subtitle": "Essential glass skin routine",
+            "brand_label": "set",
+            "badge": "popular",
+            "reviews": "12k",
+            "asset_image": "new-bundle-banner.jpg",
+            "product_link": "/products/e7-complete-glass-skin-set"
+          }
+        },
+        "block_set_2": {
+          "type": "product",
+          "settings": {
+            "title": "E7 Complete Glass Skin Set",
+            "price": "Rs. 7,500",
+            "subtitle": "The full transformation kit",
+            "brand_label": "set",
+            "badge": "best value",
+            "reviews": "8k",
+            "asset_image": "new-bundle-banner.jpg",
+            "product_link": "/products/e7-complete-glass-skin-set"
+          }
+        },
+        "block_set_3": {
+          "type": "product",
+          "settings": {
+            "title": "E7 Hair Care Set",
+            "price": "Rs. 3,200",
+            "subtitle": "Complete hair health bundle",
+            "brand_label": "set",
+            "badge": "new",
+            "reviews": "5k",
+            "asset_image": "new-bundle-banner.jpg",
+            "product_link": "/products/e7-complete-glass-skin-set"
+          }
+        },
+        "block_set_4": {
+          "type": "product",
+          "settings": {
+            "title": "ELARIS 7 KOREAN BRIGHTENING BUNDLE",
+            "price": "Rs. 5,900",
+            "subtitle": "Radiance and glow essential",
+            "brand_label": "set",
+            "badge": "limited",
+            "reviews": "15k",
+            "asset_image": "new-bundle-banner.jpg",
+            "product_link": "/products/e7-complete-glass-skin-set"
+          }
         }
       },
       "block_order": [
@@ -232,7 +284,11 @@
         "block_sunscreen",
         "block_cleanser",
         "block_moisturizer",
-        "block_toner"
+        "block_toner",
+        "block_set_1",
+        "block_set_2",
+        "block_set_3",
+        "block_set_4"
       ],
       "settings": {
         "collection": "",
