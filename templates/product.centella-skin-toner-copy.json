@@ -1,25 +1,10 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "layout": "theme",
   "sections": {
     "main": {
       "type": "product-luxury-detail",
       "settings": {
-        "asset_main_image": "gel cleanser-100.jpg",
-        "subtitle": "Oil to Foam / Deep Pore Cleanse",
-        "show_reviews": true,
-        "review_count": "10k",
-        "description": "A unique oil-to-foam cleanser that melts away makeup and impurities, leaving your skin perfectly clean, soft, and refreshed without stripping moisture.",
-        "show_ingredients": false,
-        "key_ingredients": ""
+        "description": "A refining gel cleanser designed to gently remove impurities while enhancing skin brightness."
       }
     },
     "meet_product": {
@@ -28,155 +13,26 @@
     },
     "details_split": {
       "type": "product-details-split",
-      "blocks": {
-        "row_good": {
-          "type": "detail_row",
-          "settings": {
-            "label": "GOOD FOR:",
-            "value": "All skin types, especially those using makeup or sunscreen daily"
-          }
-        },
-        "row_feels": {
-          "type": "detail_row",
-          "settings": {
-            "label": "FEELS LIKE:",
-            "value": "A luxurious oil that transforms into a creamy foam"
-          }
-        },
-        "row_looks": {
-          "type": "detail_row",
-          "settings": {
-            "label": "LOOKS LIKE:",
-            "value": "Clarified and radiant skin with no residue"
-          }
-        },
-        "row_smells": {
-          "type": "detail_row",
-          "settings": {
-            "label": "SMELLS LIKE:",
-            "value": "Subtle, botanical freshness"
-          }
-        },
-        "row_fyi": {
-          "type": "detail_row",
-          "settings": {
-            "label": "FYI:",
-            "value": "Non-Stripping • Deep Cleansing • Makeup-Safe • pH Balanced"
-          }
-        }
-      },
-      "block_order": [
-        "row_good",
-        "row_feels",
-        "row_looks",
-        "row_smells",
-        "row_fyi"
-      ],
       "settings": {
-        "title": "A double-cleansing hero for PURE + SOFT skin.",
-        "image": "shopify://shop_images/gel cleanser-100.jpg"
+        "title": "Cleanse & Glow"
       }
     },
     "ingredients": {
       "type": "product-ingredients",
-      "blocks": {
-        "ing_1": {
-          "type": "ingredient",
-          "settings": {
-            "title": "sunflower seed oil",
-            "description": "effectively dissolves makeup and sunscreen without clogging pores"
-          }
-        },
-        "ing_2": {
-          "type": "ingredient",
-          "settings": {
-            "title": "centella asiatica",
-            "description": "calms and repairs the skin throughout the cleansing process"
-          }
-        }
-      },
-      "block_order": [
-        "ing_1",
-        "ing_2"
-      ],
       "settings": {
-        "title": "what's inside",
-        "intro": "Gentle oils and soothing botanicals combine for the ultimate deep cleanse.",
-        "footer_text": "also made with NIACINAMIDE, GREEN TEA EXTRACT, HYALURONIC ACID, AND VITAMIN E",
-        "image": "shopify://shop_images/gel cleanser-100.jpg",
-        "show_btn": true,
-        "btn_label": "FULL INGREDIENTS LIST"
+        "title": "what's inside"
       }
     },
-    "study_results": {
-      "type": "product-study-results",
-      "blocks": {
-        "stat_1": {
-          "type": "stat_block",
-          "settings": {
-            "number": "99%",
-            "description": "SAID IT EFFECTIVELY REMOVED ALL MAKEUP"
-          }
-        },
-        "stat_2": {
-          "type": "stat_block",
-          "settings": {
-            "number": "97%",
-            "description": "SAID THEIR SKIN FELT SOFT AND NON-DRY"
-          }
-        },
-        "stat_3": {
-          "type": "stat_block",
-          "settings": {
-            "number": "95%",
-            "description": "REPORTED FEWER BLACKHEADS AFTER 2 WEEKS"
-          }
-        }
-      },
-      "block_order": [
-        "stat_1",
-        "stat_2",
-        "stat_3"
-      ],
+    "benefits_focus": {
+      "type": "product-benefits-focus",
       "settings": {
-        "footnote": "Based on a 4-week consumer perception study with daily use.",
-        "image": "shopify://shop_images/gel cleanser-100.jpg"
+        "subtitle": "SPREAD IT ON FOR:"
       }
     },
     "faq_split": {
       "type": "product-faq-split",
-      "blocks": {
-        "faq_1": {
-          "type": "faq_item",
-          "settings": {
-            "question": "Does it remove waterproof mascara?",
-            "answer": "Yes, it's very effective at removing makeup and even stubborn mascara."
-          }
-        },
-        "faq_2": {
-          "type": "faq_item",
-          "settings": {
-            "question": "Can I use it on very dry skin?",
-            "answer": "Yes, the oil component prevents the skin from feeling stripped or tight after washing."
-          }
-        },
-        "faq_3": {
-          "type": "faq_item",
-          "settings": {
-            "question": "How often should I use it?",
-            "answer": "It is perfect for the first step in your nighttime double-cleansing routine."
-          }
-        }
-      },
-      "block_order": [
-        "faq_1",
-        "faq_2",
-        "faq_3"
-      ],
       "settings": {
-        "title": "FAQ",
-        "subtitle": "Everything you need to know about Renewal Cleanser.",
-        "image": "shopify://shop_images/gel cleanser-100.jpg"
+        "title": "FAQ"
       }
     },
     "product_reviews": {
@@ -185,10 +41,7 @@
     },
     "related_products": {
       "type": "featured-products",
-      "settings": {
-        "collection": "",
-        "product_limit": 15
-      }
+      "settings": {}
     }
   },
   "order": [
@@ -196,7 +49,7 @@
     "meet_product",
     "details_split",
     "ingredients",
-    "study_results",
+    "benefits_focus",
     "faq_split",
     "product_reviews",
     "related_products"
