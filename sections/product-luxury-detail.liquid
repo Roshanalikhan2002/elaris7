@@ -473,7 +473,11 @@
   {%- assign display_title = "Renewal Cleanser" -%}
   {%- assign display_subtitle = 'Cleanse & Glow' -%}
   {%- assign display_desc = 'A refining gel cleanser designed to gently remove impurities while enhancing skin brightness.' -%}
-{%- elsif product.handle == 'e7-korean-glass-skin-centella-face-wash-copy' or product.handle == 'sunscreen' -%}
+{%- elsif product.handle == 'e7-korean-glass-skin-centella-face-wash-copy' -%}
+  {%- assign display_title = "Centella Face Wash" -%}
+  {%- assign display_subtitle = 'Centella Asiatica + Hyaluronic Acid' -%}
+  {%- assign display_desc = 'A gentle foam cleanser that deeply purifies pores, balances skin pH, and leaves skin feeling fresh, soft, and radiant.' -%}
+{%- elsif product.handle == 'sunscreen' -%}
   {%- assign display_title = "Sunscreen SPF60+" -%}
   {%- assign display_subtitle = 'Centella Asiatica + UV Filters' -%}
   {%- assign display_desc = 'A protective sunscreen infused with Centella Asiatica and advanced UV filters.' -%}
