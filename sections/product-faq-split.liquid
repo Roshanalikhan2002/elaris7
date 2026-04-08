@@ -75,9 +75,15 @@
                 <div class="faq-acc-content-inner"><p>It works best on dry hair for instant fragrance and shine refresh.</p></div>
               </div>
             </div>
-          {%- elsif product.handle == 'e7-korean-glass-skin-centella-face-wash-copy' or product.handle == 'sunscreen' -%}
+          {%- elsif product.handle == 'sunscreen' -%}
             <div class="faq-acc-item"><div class="faq-acc-header"><span>Does it leave a white cast?</span><div class="acc-icon-faq"><div class="line v-line"></div><div class="line h-line"></div></div></div><div class="faq-acc-content"><div class="faq-acc-content-inner"><p>No, it is formulated to blend invisibly into all skin tones for a smooth finish.</p></div></div></div>
             <div class="faq-acc-item"><div class="faq-acc-header"><span>Can I use it under makeup?</span><div class="acc-icon-faq"><div class="line v-line"></div><div class="line h-line"></div></div></div><div class="faq-acc-content"><div class="faq-acc-content-inner"><p>Yes, its weightless texture makes it a perfect primer for makeup application.</p></div></div></div>
+          {%- elsif product.handle == 'e7-korean-glass-skin-centella-face-wash-copy' -%}
+            <div class="faq-acc-item"><div class="faq-acc-header"><span>CAN I USE THIS FACE WASH TWICE A DAY?</span><div class="acc-icon-faq"><div class="line v-line"></div><div class="line h-line"></div></div></div><div class="faq-acc-content"><div class="faq-acc-content-inner"><p>Yes, it is gentle enough for both morning and evening use without over-drying your skin.</p></div></div></div>
+            <div class="faq-acc-item"><div class="faq-acc-header"><span>IS IT SUITABLE FOR SENSITIVE SKIN?</span><div class="acc-icon-faq"><div class="line v-line"></div><div class="line h-line"></div></div></div><div class="faq-acc-content"><div class="faq-acc-content-inner"><p>Yes, the formula includes calming ingredients like Centella Asiatica and honey, making it ideal for sensitive skin.</p></div></div></div>
+            <div class="faq-acc-item"><div class="faq-acc-header"><span>WILL IT HELP WITH ACNE OR BREAKOUTS?</span><div class="acc-icon-faq"><div class="line v-line"></div><div class="line h-line"></div></div></div><div class="faq-acc-content"><div class="faq-acc-content-inner"><p>It helps cleanse pores, remove excess oil, and soothe irritation, which can support clearer skin over time.</p></div></div></div>
+            <div class="faq-acc-item"><div class="faq-acc-header"><span>DOES IT REMOVE MAKEUP?</span><div class="acc-icon-faq"><div class="line v-line"></div><div class="line h-line"></div></div></div><div class="faq-acc-content"><div class="faq-acc-content-inner"><p>It can remove light makeup, but for heavy or waterproof makeup, use a remover before cleansing.</p></div></div></div>
+            <div class="faq-acc-item"><div class="faq-acc-header"><span>WILL MY SKIN FEEL DRY AFTER WASHING?</span><div class="acc-icon-faq"><div class="line v-line"></div><div class="line h-line"></div></div></div><div class="faq-acc-content"><div class="faq-acc-content-inner"><p>No, it is designed to maintain hydration and leave your skin feeling soft and balanced.</p></div></div></div>
           {%- elsif product.handle == 'e7-korean-glass-skin-centella-sunscreen-spf50-copy' or product.handle == 'centella-serum' -%}
             <div class="faq-acc-item"><div class="faq-acc-header"><span>When should I apply this serum?</span><div class="acc-icon-faq"><div class="line v-line"></div><div class="line h-line"></div></div></div><div class="faq-acc-content"><div class="faq-acc-content-inner"><p>Apply it to clean skin, before your moisturizer, in both morning and evening routines.</p></div></div></div>
             <div class="faq-acc-item"><div class="faq-acc-header"><span>Will it help with dark spots?</span><div class="acc-icon-faq"><div class="line v-line"></div><div class="line h-line"></div></div></div><div class="faq-acc-content"><div class="faq-acc-content-inner"><p>Yes, it contains brightening complexes designed to even out skin tone and fade dullness over time.</p></div></div></div>
@@ -108,7 +114,7 @@
       {%- elsif product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' -%}
         <img class="faq-image faq-bg-img" src="{{ 'faq-100-nc.jpg' | asset_url }}" alt="FAQ Face Wash Visual">
       {%- elsif product.handle == 'e7-korean-glass-skin-centella-face-wash-copy' -%}
-        <img class="faq-image faq-bg-img" src="{{ 'sunscreen-lifestyle-4.jpg' | asset_url }}" alt="FAQ Sunscreen Visual">
+        <img class="faq-image faq-bg-img" src="{{ 'faq-100-nc.jpg' | asset_url }}" alt="FAQ Face Wash Visual">
       {%- elsif product.handle == 'e7-korean-glass-skin-centella-sunscreen-spf50-copy' -%}
         <img class="faq-image faq-bg-img" src="{{ 'glow-meet-4.jpg' | asset_url }}" alt="FAQ Serum Visual">
       {%- elsif product.handle == 'floral-blossom-hair-mist' -%}

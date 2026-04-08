@@ -90,12 +90,12 @@
 {%- endif -%}
 
 {%- assign is_sunscreen = false -%}
-{%- if product.handle == 'e7-korean-glass-skin-centella-face-wash-copy' or product.handle == 'sunscreen' -%}
+{%- if product.handle == 'sunscreen' -%}
   {%- assign is_sunscreen = true -%}
 {%- endif -%}
 
 {%- assign is_cleanser = false -%}
-{%- if product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' or product.handle == 'renewal-cleanser' -%}
+{%- if product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' or product.handle == 'renewal-cleanser' or product.handle == 'e7-korean-glass-skin-centella-face-wash-copy' -%}
   {%- assign is_cleanser = true -%}
 {%- endif -%}
 
