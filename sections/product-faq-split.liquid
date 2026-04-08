@@ -109,6 +109,8 @@
     <div class="faq-split-image">
       {%- if product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' -%}
         <img class="faq-image faq-bg-img" src="{{ 'facewash-faq-squeeze.jpg' | asset_url }}" alt="FAQ Face Wash Visual">
+      {%- elsif product.handle == 'e7-korean-glass-skin-centella-face-wash-copy' or product.handle == 'e7-korean-glass-skin-centella-sunscreen-spf50-copy' or product.handle == 'sunscreen' -%}
+        <img class="faq-image faq-bg-img" src="{{ 'sunscreen-lifestyle-2.jpg' | asset_url }}" alt="FAQ Sunscreen Visual">
       {%- elsif product.handle == 'centella-skin-toner' -%}
         <img class="faq-image faq-bg-img" src="{{ 'toner-meet-4.jpg' | asset_url }}" alt="FAQ Toner Visual">
       {%- elsif product.handle == 'e7-korean-glass-skin-moisturizer' -%}
