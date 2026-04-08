@@ -123,9 +123,16 @@
             {%- assign product_key = 'moisturizer' -%}
           {%- elsif product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' or product.handle == 'night-cream' -%}
             {%- assign product_key = 'night-cream' -%}
+          {%- elsif product.handle == 'e7-korean-glass-skin-centella-face-wash-copy' -%}
+            {%- assign product_key = 'face-wash' -%}
           {%- endif -%}
 
-          {%- if product_key == 'tranexamic' -%}
+          {%- if product_key == 'face-wash' -%}
+            <img src="{{ 'facewash-gallery-1.jpg' | asset_url }}" alt="Face Wash 1">
+            <img src="{{ 'facewash-gallery-2.jpg' | asset_url }}" alt="Face Wash 2">
+            <img src="{{ 'facewash-gallery-3.jpg' | asset_url }}" alt="Face Wash 3">
+            <img src="{{ 'facewash-gallery-4.jpg' | asset_url }}" alt="Face Wash 4">
+          {%- elsif product_key == 'tranexamic' -%}
             <img src="{{ 'tranexamic-meet-4.jpg' | asset_url }}" alt="Serum 4">
             <img src="{{ 'tranexamic-meet-3.jpg' | asset_url }}" alt="Serum 3">
             <img src="{{ 'tranexamic-meet-2.jpg' | asset_url }}" alt="Serum 2">
