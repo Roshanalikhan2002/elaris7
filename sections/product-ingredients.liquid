@@ -146,8 +146,8 @@
       <div class="ing-intro">
         {%- if product.handle == 'glutathione-cream' -%}
           A nourishing cream that brightens, repairs, and hydrates skin for a clearer, more even complexion.
-        {%- elsif product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' -%}
-          Our formula is powered by gentle cleansers and glow-boosting hydrators. Meet 2 of our favorites for a fresh, balanced cleanse.
+        {%- elsif product.handle == 'anti-acne' or product.handle == 'night-cream' or product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' -%}
+          Our formula is powered by advanced repair and brightening actives. Meet 2 of our favorites for overnight renewal.
         {%- elsif product.handle == 'e7-korean-glass-skin-centella-face-wash-copy' -%}
           A high-performance sun defense formula that protects, hydrates, and keeps your skin comfortable under daily sun exposure. Here are 2 standout ingredients powering your daily shield:
         {%- elsif product.handle == 'centella-skin-toner-copy' -%}
@@ -170,14 +170,14 @@
           <h3 class="hero-title">ALPHA ARBUTIN & KOJIC ACID DIPALMITATE</h3>
           <p class="hero-desc">work to reduce dark spots, post-acne marks, and pigmentation</p>
         </div>
-      {%- elsif product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' -%}
+      {%- elsif product.handle == 'anti-acne' or product.handle == 'night-cream' or product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' -%}
         <div class="hero-ingredient">
-          <h3 class="hero-title">HYALURONIC ACID</h3>
-          <p class="hero-desc">a moisture-binding ingredient that helps keep skin hydrated and plump while cleansing, preventing dryness and tightness</p>
+          <h3 class="hero-title">CENTELLA ASIATICA</h3>
+          <p class="hero-desc">a calming botanical that helps repair the skin barrier, reduce redness, and support healthier, more resilient skin overnight</p>
         </div>
         <div class="hero-ingredient">
-          <h3 class="hero-title">3-O-ETHYL ASCORBIC ACID</h3>
-          <p class="hero-desc">a stable form of vitamin C that helps brighten the complexion, reduce dullness, and support a more radiant, even look</p>
+          <h3 class="hero-title">MOISTURE-LOCK TECHNOLOGY</h3>
+          <p class="hero-desc">a deep hydration system that helps retain moisture, prevent overnight dryness, and keep skin plump and smooth by morning</p>
         </div>
       {%- elsif product.handle == 'e7-korean-glass-skin-centella-face-wash-copy' -%}
         <div class="hero-ingredient">
@@ -227,8 +227,8 @@
       <div class="ing-footer">
         {%- if product.handle == 'glutathione-cream' -%}
           also made with Centella Asiatica, Niacinamide, Vitamin C, Hyaluronic Acid, Glycerin, Vitamin E, and Amla Extract for hydration, skin barrier support, and smooth texture
-        {%- elsif product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' -%}
-          also made with RICE EXTRACT, LICORICE EXTRACT, MORUS ALBA, HONEY, D-PANTHENOL, SODIUM PCA, GLYCERIN, APPLE EXTRACT, CENTELLA ASIATICA
+        {%- elsif product.handle == 'anti-acne' or product.handle == 'night-cream' or product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' -%}
+          also made with BRIGHTENING COMPLEX, COLLAGEN SUPPORT BLEND, SPOT-CORRECTIVE ACTIVES, LINE-REDUCING COMPLEX, BARRIER REPAIR ACTIVES, EVEN-TONE ENHANCERS
         {%- elsif product.handle == 'e7-korean-glass-skin-centella-face-wash-copy' -%}
           also made with Tinosorb S, Avobenzone, Ethylhexyl Methoxycinnamate, Ceramides, Vitamin E, Centella Asiatica, Cyclopentasiloxane, C12-15 Alkyl Benzoate
         {%- elsif product.handle == 'centella-skin-toner-copy' -%}
