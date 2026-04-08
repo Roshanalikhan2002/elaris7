@@ -16,15 +16,17 @@
         "asset_main_image": "facewash-100.jpg",
         "subtitle": "Gentle Cleansing + pH Balance",
         "show_reviews": true,
-        "review_count": "11k",
-        "description": "A deep-cleansing yet gentle formula that removes impurities without stripping moisture. Perfect for a refreshing daily cleanse that leaves skin feeling soft and balanced.",
-        "show_ingredients": false,
-        "key_ingredients": ""
+        "review_count": "16k",
+        "description": "A gentle, glow-reviving cleanser infused with Centella Asiatica, brightening actives, and hydrating botanicals to cleanse, soothe, and refresh your skin for a soft, balanced, and radiant look every day.",
+        "show_ingredients": true,
+        "key_ingredients": "Centella Asiatica, Vitamin C, Honey, Rice Extract, Hyaluronic Acid"
       }
     },
     "meet_product": {
       "type": "meet-the-product",
-      "settings": {}
+      "settings": {
+        "title": "Meet Your Purest Clean"
+      }
     },
     "details_split": {
       "type": "product-details-split",
@@ -33,35 +35,35 @@
           "type": "detail_row",
           "settings": {
             "label": "GOOD FOR:",
-            "value": "All skin types, especially sensitive or dry skin"
+            "value": "All skin types, especially dull, sensitive, or acne-prone skin"
           }
         },
         "row_feels": {
           "type": "detail_row",
           "settings": {
             "label": "FEELS LIKE:",
-            "value": "A light, airy foam that rinses cleanly off the skin"
+            "value": "A soft, airy lather that cleanses gently without tightness"
           }
         },
         "row_looks": {
           "type": "detail_row",
           "settings": {
             "label": "LOOKS LIKE:",
-            "value": "Clarified, fresh-looking skin with a natural glow"
+            "value": "Fresh, clear skin with a natural, healthy glow"
           }
         },
         "row_smells": {
           "type": "detail_row",
           "settings": {
             "label": "SMELLS LIKE:",
-            "value": "A clean, revitalizing scent with hints of tea tree and citrus"
+            "value": "Light, clean freshness that feels calming and pure"
           }
         },
         "row_fyi": {
           "type": "detail_row",
           "settings": {
             "label": "FYI:",
-            "value": "Dermatologist-Tested • Non-Comedogenic • Sulfate-Free • Soap-Free"
+            "value": "Halal-Friendly • Dermatologist-Tested • Non-Drying • Gentle for Daily Use"
           }
         }
       },
@@ -73,7 +75,7 @@
         "row_fyi"
       ],
       "settings": {
-        "title": "A purifying cleanser for CLEAR + BALANCED skin.",
+        "title": "Cleanse. Refresh. Glow. A daily face wash for CLEAN SKIN + BALANCED, RADIANT COMPLEXION.",
         "image": "shopify://shop_images/facewash-100.jpg"
       }
     },
@@ -83,15 +85,15 @@
         "ing_1": {
           "type": "ingredient",
           "settings": {
-            "title": "centella asiatica extract",
+            "title": "CENTELLA ASIATICA",
             "description": "known for its skin-soothing properties that calm redness and inflammation during cleansing"
           }
         },
         "ing_2": {
           "type": "ingredient",
           "settings": {
-            "title": "mild amino acid surfactants",
-            "description": "gentle cleansing agents that effectively remove dirt while respecting the skin's barrier"
+            "title": "RICE EXTRACT",
+            "description": "a natural brightener that helps revive dull skin for a luminous, refreshed look"
           }
         }
       },
@@ -101,11 +103,9 @@
       ],
       "settings": {
         "title": "what's inside",
-        "intro": "Formulated with sensitive skin in mind to provide a powerful yet non-irritating daily cleanse.",
-        "footer_text": "also made with GLYCERIN, HYALURONIC ACID, GREEN TEA EXTRACT, ALLANTOIN, AND ALOE VERA",
-        "image": "shopify://shop_images/facewash-100.jpg",
-        "show_btn": true,
-        "btn_label": "FULL INGREDIENTS LIST"
+        "intro": "Our formula is powered by gentle cleansers and glow-boosting hydrators. Meet 2 of our favorites for a fresh, balanced cleanse.",
+        "footer_text": "also made with VITAMIN C, HONEY, D-PANTHENOL, GLYCERIN, APPLE EXTRACT",
+        "image": "shopify://shop_images/facewash-ingredients.jpg"
       }
     },
     "study_results": {
@@ -114,22 +114,22 @@
         "stat_1": {
           "type": "stat_block",
           "settings": {
-            "number": "98%",
-            "description": "SAID THEIR SKIN FELT CLEAN WITHOUT DRYNESS"
+            "number": "99%",
+            "description": "SAID THEIR SKIN FELT CLEAN + REFRESHED AFTER EVERY WASH"
           }
         },
         "stat_2": {
           "type": "stat_block",
           "settings": {
-            "number": "96%",
-            "description": "SAID IT EFFECTIVELY REMOVED ALL DAYTIME IMPURITIES"
+            "number": "98%",
+            "description": "SAID IT DID NOT DRY OUT THEIR SKIN"
           }
         },
         "stat_3": {
           "type": "stat_block",
           "settings": {
-            "number": "94%",
-            "description": "REPORTED CALMER AND LESS IRRITATED SKIN AFTER USE"
+            "number": "97%",
+            "description": "SAID THEIR SKIN LOOKED CLEARER + MORE BALANCED"
           }
         }
       },
@@ -139,8 +139,8 @@
         "stat_3"
       ],
       "settings": {
-        "footnote": "Based on a 4-week consumer perception study with twice-daily use.",
-        "image": "shopify://shop_images/facewash-100.jpg"
+        "footnote": "Based on a 2-week consumer perception study with consistent daily use.",
+        "image": "shopify://shop_images/facewash-benefits.jpg"
       }
     },
     "faq_split": {
@@ -149,46 +149,31 @@
         "faq_1": {
           "type": "faq_item",
           "settings": {
-            "question": "Can I use this as a makeup remover?",
-            "answer": "Yes, while gentle, it effectively removes light makeup and daily sunscreen."
+            "question": "Can I use this face wash twice a day?",
+            "answer": "Yes, it is gentle enough for both morning and evening use without over-drying your skin."
           }
         },
         "faq_2": {
           "type": "faq_item",
           "settings": {
-            "question": "Is it drying for sensitive skin?",
-            "answer": "No, it's formulated with a skin-mimicking pH to maintain your natural moisture barrier."
-          }
-        },
-        "faq_3": {
-          "type": "faq_item",
-          "settings": {
-            "question": "Does it contain soap?",
-            "answer": "No, it is soap-free and sulfate-free to minimize any potential irritation."
+            "question": "Does it remove makeup?",
+            "answer": "It can remove light makeup, but for heavy or waterproof makeup, use a remover before cleansing."
           }
         }
       },
       "block_order": [
         "faq_1",
-        "faq_2",
-        "faq_3"
+        "faq_2"
       ],
       "settings": {
         "title": "FAQ",
-        "subtitle": "Everything you need to know about Elaris Face Wash.",
+        "subtitle": "Everything you need to know about Centella Face Wash.",
         "image": "shopify://shop_images/facewash-100.jpg"
       }
     },
     "product_reviews": {
       "type": "product-reviews",
       "settings": {}
-    },
-    "related_products": {
-      "type": "featured-products",
-      "settings": {
-        "collection": "",
-        "product_limit": 15
-      }
     }
   },
   "order": [
@@ -198,7 +183,6 @@
     "ingredients",
     "study_results",
     "faq_split",
-    "product_reviews",
-    "related_products"
+    "product_reviews"
   ]
 }
