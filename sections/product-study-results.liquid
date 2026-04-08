@@ -85,12 +85,12 @@
 {%- endcomment -%}
 
 {%- assign is_serum = false -%}
-{%- if product.handle == 'e7-korean-glass-skin-centella-sunscreen-spf50-copy' or product.handle == 'centella-serum' or product.handle == 'e7-korean-glass-skin-centella-sunscreen' -%}
+{%- if product.handle == 'centella-serum' -%}
   {%- assign is_serum = true -%}
 {%- endif -%}
 
 {%- assign is_sunscreen = false -%}
-{%- if product.handle == 'sunscreen' -%}
+{%- if product.handle == 'sunscreen' or product.handle == 'e7-korean-glass-skin-centella-sunscreen' or product.handle == 'e7-korean-glass-skin-centella-sunscreen-spf50-copy' -%}
   {%- assign is_sunscreen = true -%}
 {%- endif -%}
 

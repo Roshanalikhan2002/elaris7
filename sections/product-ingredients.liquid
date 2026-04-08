@@ -142,9 +142,9 @@
           A gentle daily face wash that cleanses while repairing the skin barrier and revealing a radiant glow.
         {%- elsif product.handle == 'e7-korean-glass-skin-centella-face-wash-copy' -%}
           Our formula is powered by gentle cleansers and glow-boosting hydrators. Meet 2 of our favorites for a fresh, balanced cleanse.
-        {%- elsif product.handle == 'sunscreen' -%}
+        {%- elsif product.handle == 'sunscreen' or product.handle == 'e7-korean-glass-skin-centella-sunscreen' or product.handle == 'e7-korean-glass-skin-centella-sunscreen-spf50-copy' -%}
           A high-protection formula that hydrates skin while defending against harmful UV rays and environmental stress.
-        {%- elsif product.handle == 'e7-korean-glass-skin-centella-sunscreen-spf50-copy' or product.handle == 'centella-serum' -%}
+        {%- elsif product.handle == 'centella-serum' -%}
           A concentrated serum designed to brighten dark spots, even skin tone, and restore a youthful, glass-like glow.
         {%- elsif product.handle == 'centella-skin-toner' or product.handle == 'renewal-toner' -%}
           A clarifying toner that smooths and rebalances the skin. Meet 2 standout ingredients:
@@ -163,10 +163,10 @@
         {%- elsif product.handle == 'e7-korean-glass-skin-centella-face-wash-copy' -%}
           <div class="hero-ingredient"><h3 class="hero-title">3-O-ETHYL ASCORBIC ACID</h3><p class="hero-desc">a stable form of vitamin C that helps brighten the complexion, reduce dullness, and support a more radiant, even look</p></div>
           <div class="hero-ingredient"><h3 class="hero-title">HYALURONIC ACID</h3><p class="hero-desc">a moisture-binding ingredient that helps keep skin hydrated and plump while cleansing, preventing dryness and tightness</p></div>
-        {%- elsif product.handle == 'sunscreen' -%}
+        {%- elsif product.handle == 'sunscreen' or product.handle == 'e7-korean-glass-skin-centella-sunscreen' or product.handle == 'e7-korean-glass-skin-centella-sunscreen-spf50-copy' -%}
           <div class="hero-ingredient"><h3 class="hero-title">SPF 60 PA+++</h3><p class="hero-desc">maximum defense against aging sun rays</p></div>
           <div class="hero-ingredient"><h3 class="hero-title">CENTELLA ASIATICA</h3><p class="hero-desc">soothes and hydrates sensitive skin</p></div>
-        {%- elsif product.handle == 'e7-korean-glass-skin-centella-sunscreen-spf50-copy' or product.handle == 'centella-serum' -%}
+        {%- elsif product.handle == 'centella-serum' -%}
           <div class="hero-ingredient"><h3 class="hero-title">CENTELLA ASIATICA</h3><p class="hero-desc">concentrated repair for glass-smooth skin</p></div>
           <div class="hero-ingredient"><h3 class="hero-title">NIACINAMIDE</h3><p class="hero-desc">brightens dark spots and evens texture</p></div>
         {%- elsif product.handle == 'centella-skin-toner' or product.handle == 'renewal-toner' -%}

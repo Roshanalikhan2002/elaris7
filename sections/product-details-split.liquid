@@ -95,7 +95,7 @@
 {%- assign ds_image = section.settings.image -%}
 {%- assign use_custom_list = false -%}
 
-{%- if product.handle == 'centella-serum' or product.handle == 'e7-korean-glass-skin-centella-sunscreen-spf50-copy' -%}
+{%- if product.handle == 'centella-serum' -%}
   {%- assign ds_title = "Glow That Transforms Over Time<br><span style='font-size: 0.7em;'>A daily serum for BRIGHTENING + EVEN, GLASS-LIKE SKIN.</span>" -%}
   {%- assign ds_image_name = 'centella-serum-split.jpg' -%}
   {%- assign use_custom_list = true -%}
@@ -119,7 +119,7 @@
     <div class="ds-row"><div class="ds-label">FYI:</div><div class="ds-value">Halal-Friendly • Dermatologist-Tested • Non-Drying • Gentle for Daily Use</div></div>
   {%- endcapture -%}
 
-{%- elsif product.handle == 'e7-korean-glass-skin-centella-sunscreen' or product.handle == 'sunscreen' -%}
+{%- elsif product.handle == 'e7-korean-glass-skin-centella-sunscreen' or product.handle == 'sunscreen' or product.handle == 'e7-korean-glass-skin-centella-sunscreen-spf50-copy' -%}
   {%- assign ds_title = "Protection That Feels Effortless<br><span style='font-size: 0.7em;'>A daily sunscreen for DEFENSE + HYDRATED, PROTECTED SKIN.</span>" -%}
   {%- assign ds_image_name = 'sunscreen-100.jpg' -%}
   {%- assign use_custom_list = true -%}
