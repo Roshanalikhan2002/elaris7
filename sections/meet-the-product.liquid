@@ -132,57 +132,54 @@
             <img src="{{ 'facewash-gallery-2.jpg' | asset_url }}" alt="Face Wash 2">
             <img src="{{ 'facewash-gallery-3.jpg' | asset_url }}" alt="Face Wash 3">
             <img src="{{ 'facewash-gallery-4.jpg' | asset_url }}" alt="Face Wash 4">
-          {%- elsif product_key == 'tranexamic' -%}
-            <img src="{{ 'tranexamic-meet-4.jpg' | asset_url }}" alt="Serum 4">
-            <img src="{{ 'tranexamic-meet-3.jpg' | asset_url }}" alt="Serum 3">
-            <img src="{{ 'tranexamic-meet-2.jpg' | asset_url }}" alt="Serum 2">
-            <img src="{{ 'tranexamic-meet-1.jpg' | asset_url }}" alt="Serum 1">
-          {%- elsif product_key == 'keratin' -%}
-            <img src="{{ 'keratin-meet-1.jpg' | asset_url }}" alt="Keratin 1">
-            <img src="{{ 'keratin-ba.jpg' | asset_url }}" alt="Keratin 2">
-            <img src="{{ 'keratin-1.jpg' | asset_url }}" alt="Keratin 3">
-            <img src="{{ 'keratin-2.jpg' | asset_url }}" alt="Keratin 4">
-          {%- elsif product_key == 'glow' -%}
-            <img src="{{ 'centella-serum-1.jpg' | asset_url }}" alt="Glow 1">
-            <img src="{{ 'centella-serum-2.jpg' | asset_url }}" alt="Glow 2">
-            <img src="{{ 'centella-serum-3.jpg' | asset_url }}" alt="Glow 3">
-            <img src="{{ 'glow-meet-4.jpg' | asset_url }}" alt="Glow 4">
-          {%- elsif product_key == 'glutathione' -%}
-            <img src="{{ 'glutathione-meet-3.jpg' | asset_url }}" alt="Glutathione 3">
-            <img src="{{ 'glutathione-meet-4.jpg' | asset_url }}" alt="Glutathione 4">
-            <img src="{{ 'glutathione-meet-1.jpg' | asset_url }}" alt="Glutathione 1">
-            <img src="{{ 'glutathione-meet-2.jpg' | asset_url }}" alt="Glutathione 2">
-          {%- elsif product_key == 'anti-acne' -%}
-            <img src="{{ 'anti-acne-meet-1.jpg' | asset_url }}" alt="Acne 1">
-            <img src="{{ 'anti-acne-meet-2.jpg' | asset_url }}" alt="Acne 2">
-            <img src="{{ 'anti-acne-meet-3.jpg' | asset_url }}" alt="Acne 3">
-            <img src="{{ 'anti-acne-meet-4.jpg' | asset_url }}" alt="Acne 4">
-          {%- elsif product_key == 'hair-mist' -%}
-            <img src="{{ 'hair-mist-main.jpg' | asset_url }}" alt="Hair Mist Main">
-            <img src="{{ 'hair-mist-meet-1.jpg' | asset_url }}" alt="Hair Mist 1">
-            <img src="{{ 'hair-mist-meet-2.jpg' | asset_url }}" alt="Hair Mist 2">
-            <img src="{{ 'hair-mist-meet-3.jpg' | asset_url }}" alt="Hair Mist 3">
-            <img src="{{ 'hair-mist-meet-4.jpg' | asset_url }}" alt="Hair Mist 4">
-          {%- elsif product_key == 'cleanser' -%}
-            <img src="{{ 'cleanser-meet-1.jpg' | asset_url }}" alt="Cleanser 1">
-            <img src="{{ 'cleanser-meet-2.jpg' | asset_url }}" alt="Cleanser 2">
-            <img src="{{ 'cleanser-meet-3.jpg' | asset_url }}" alt="Cleanser 3">
-            <img src="{{ 'cleanser-meet-4.jpg' | asset_url }}" alt="Cleanser 4">
-          {%- elsif product_key == 'toner' -%}
-            <img src="{{ 'toner-meet-2.jpg' | asset_url }}" alt="Toner 2">
-            <img src="{{ 'toner-meet-4.jpg' | asset_url }}" alt="Toner 4">
-            <img src="{{ 'toner-meet-3.jpg' | asset_url }}" alt="Toner 3">
-            <img src="{{ 'toner-whats-inside.jpg' | asset_url }}" alt="Toner Inside">
-          {%- elsif product_key == 'moisturizer' -%}
-            <img src="{{ 'moisturizer-meet-3.jpg' | asset_url }}" alt="Moisturizer 3">
-            <img src="{{ 'moisturizer-meet-4.jpg' | asset_url }}" alt="Moisturizer 4">
-            <img src="{{ 'moisturizer-meet-2.jpg' | asset_url }}" alt="Moisturizer 2">
-            <img src="{{ 'moisturizer-meet-1.jpg' | asset_url }}" alt="Moisturizer 1">
-          {%- elsif product_key == 'night-cream' -%}
-            <img src="{{ 'faq-100-nc.jpg' | asset_url }}" alt="Night Cream 1">
-            <img src="{{ 'night-cream-swatch-7-100.jpg' | asset_url }}" alt="Night Cream 2">
-            <img src="{{ 'nigh-suite-100.jpg' | asset_url }}" alt="Night Cream 3">
-            <img src="{{ 'lifestyle-100.jpg' | asset_url }}" alt="Night Cream 4">
+          {%- elsif product_key != 'default' -%}
+             {%- if product_key == 'tranexamic' -%}
+                <img src="{{ 'tranexamic-meet-4.jpg' | asset_url }}" alt="Serum 4">
+                <img src="{{ 'tranexamic-meet-3.jpg' | asset_url }}" alt="Serum 3">
+                <img src="{{ 'tranexamic-meet-2.jpg' | asset_url }}" alt="Serum 2">
+                <img src="{{ 'tranexamic-meet-1.jpg' | asset_url }}" alt="Serum 1">
+              {%- elsif product_key == 'keratin' -%}
+                <img src="{{ 'keratin-meet-1.jpg' | asset_url }}" alt="Keratin 1">
+                <img src="{{ 'keratin-ba.jpg' | asset_url }}" alt="Keratin 2">
+                <img src="{{ 'keratin-1.jpg' | asset_url }}" alt="Keratin 3">
+                <img src="{{ 'keratin-2.jpg' | asset_url }}" alt="Keratin 4">
+              {%- elsif product_key == 'glow' -%}
+                <img src="{{ 'centella-serum-1.jpg' | asset_url }}" alt="Glow 1">
+                <img src="{{ 'centella-serum-2.jpg' | asset_url }}" alt="Glow 2">
+                <img src="{{ 'centella-serum-3.jpg' | asset_url }}" alt="Glow 3">
+                <img src="{{ 'glow-meet-4.jpg' | asset_url }}" alt="Glow 4">
+              {%- elsif product_key == 'glutathione' -%}
+                <img src="{{ 'glutathione-meet-3.jpg' | asset_url }}" alt="Glutathione 3">
+                <img src="{{ 'glutathione-meet-4.jpg' | asset_url }}" alt="Glutathione 4">
+                <img src="{{ 'glutathione-meet-1.jpg' | asset_url }}" alt="Glutathione 1">
+                <img src="{{ 'glutathione-meet-2.jpg' | asset_url }}" alt="Glutathione 2">
+              {%- elsif product_key == 'anti-acne' -%}
+                <img src="{{ 'anti-acne-meet-1.jpg' | asset_url }}" alt="Acne 1">
+                <img src="{{ 'anti-acne-meet-2.jpg' | asset_url }}" alt="Acne 2">
+                <img src="{{ 'anti-acne-meet-3.jpg' | asset_url }}" alt="Acne 3">
+                <img src="{{ 'anti-acne-meet-4.jpg' | asset_url }}" alt="Acne 4">
+              {%- elsif product_key == 'hair-mist' -%}
+                <img src="{{ 'hair-mist-main.jpg' | asset_url }}" alt="Hair Mist Main">
+                <img src="{{ 'hair-mist-meet-1.jpg' | asset_url }}" alt="Hair Mist 1">
+                <img src="{{ 'hair-mist-meet-2.jpg' | asset_url }}" alt="Hair Mist 2">
+                <img src="{{ 'hair-mist-meet-3.jpg' | asset_url }}" alt="Hair Mist 3">
+                <img src="{{ 'hair-mist-meet-4.jpg' | asset_url }}" alt="Hair Mist 4">
+              {%- elsif product_key == 'cleanser' -%}
+                <img src="{{ 'cleanser-meet-1.jpg' | asset_url }}" alt="Cleanser 1">
+                <img src="{{ 'cleanser-meet-2.jpg' | asset_url }}" alt="Cleanser 2">
+                <img src="{{ 'cleanser-meet-3.jpg' | asset_url }}" alt="Cleanser 3">
+                <img src="{{ 'cleanser-meet-4.jpg' | asset_url }}" alt="Cleanser 4">
+              {%- elsif product_key == 'toner' -%}
+                <img src="{{ 'toner-meet-2.jpg' | asset_url }}" alt="Toner 2">
+                <img src="{{ 'toner-meet-4.jpg' | asset_url }}" alt="Toner 4">
+                <img src="{{ 'toner-meet-3.jpg' | asset_url }}" alt="Toner 3">
+                <img src="{{ 'toner-whats-inside.jpg' | asset_url }}" alt="Toner Inside">
+              {%- elsif product_key == 'moisturizer' -%}
+                <img src="{{ 'moisturizer-meet-3.jpg' | asset_url }}" alt="Moisturizer 3">
+                <img src="{{ 'moisturizer-meet-4.jpg' | asset_url }}" alt="Moisturizer 4">
+                <img src="{{ 'moisturizer-meet-2.jpg' | asset_url }}" alt="Moisturizer 2">
+                <img src="{{ 'moisturizer-meet-1.jpg' | asset_url }}" alt="Moisturizer 1">
+             {%- endif -%}
           {%- else -%}
             {%- if section.blocks.size > 0 -%}
                {%- for block in section.blocks -%}
