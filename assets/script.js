@@ -237,4 +237,37 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
   });
+  // --- CATEGORY FILTERING ---
+  const catLinks = document.querySelectorAll('.cat-link');
+  const productCards = document.querySelectorAll('.card-rhode');
+
+  if (catLinks.length > 0 && productCards.length > 0) {
+    catLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        // If it's a "local" filter (staying on homepage), prevent default
+        if (window.location.pathname === '/' || window.location.pathname.includes('index.html') || window.location.pathname.includes('.json')) {
+          e.preventDefault();
+          
+          // Toggle active class
+          catLinks.forEach(l => l.classList.remove('active'));
+          link.classList.add('active');
+
+          const category = link.getAttribute('data-category');
+          console.log('Filtering by:', category);
+
+          productCards.forEach(card => {
+            const cardCat = card.getAttribute('data-category');
+            if (category === 'featured' || cardCat === category) {
+              card.style.display = 'block';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+
+          // Reset scroll to start
+          if (scrollArea) scrollArea.scrollLeft = 0;
+        }
+      });
+    });
+  }
 });

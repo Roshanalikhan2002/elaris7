@@ -12,7 +12,7 @@
         </li>
       {% endfor %}
     {% else %}
-      {% assign default_cats = "Featured,Korean glass skin,Anti acne,Korean brightening,Hair care,Sets" | split: "," %}
+      {% assign default_cats = "Featured,Korean glass skin,Anti acne,Korean brightening,Hair care,SET" | split: "," %}
       {% for cat in default_cats %}
         {%- assign c_handle = cat | handleize -%}
         <li>
@@ -106,7 +106,7 @@
         { "type": "category", "settings": { "title": "Anti acne" } },
         { "type": "category", "settings": { "title": "Korean brightening" } },
         { "type": "category", "settings": { "title": "Hair care" } },
-        { "type": "category", "settings": { "title": "Sets" } }
+        { "type": "category", "settings": { "title": "SET" } }
       ]
     }
   ]

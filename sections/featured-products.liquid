@@ -12,7 +12,7 @@
   <div class="product-collection" id="product-collection-scroll">
     {% if section.blocks.size > 0 %}
       {% for block in section.blocks %}
-        <div class="card card-rhode" {{ block.shopify_attributes }}>
+        <div class="card card-rhode" data-category="{{ block.settings.brand_label | handleize }}" {{ block.shopify_attributes }}>
           <a href="{{ block.settings.product_link | default: '#' }}" class="card-link-wrapper">
             {% if block.settings.hover_image != blank %}
               {{ block.settings.hover_image | image_url: width: 1200 | image_tag: class: 'card-hover-bg', alt: block.settings.title }}
@@ -56,12 +56,12 @@
       {% endfor %}
     {% else %}
       {% comment %} Fallback Items if no blocks exist move move moved moves move move move move move move move move move {% endcomment %}
-      {%- assign fallback_names = "Night Cream,Tranexamic Serum,Anti Frizz Keratin Serum,Glow Serum,Glutathione Cream,Floral Blossom Hair Mist,Face Wash,Anti Acne,Sunscreen SPF60+,Renewal Cleanser,Hydra Burst Moisturizer,Renewal Toner" | split: "," -%}
-      {%- assign fallback_images = "night-cream.jpg,tranexamic-serum.jpg,keratin-serum.jpg,glow-serum-100.jpg,glutathione-cream-100.jpg,hair-mist.jpg,facewash-100.jpg,anti-acne-100.jpg,sunscreen-100.jpg,gel cleanser-100.jpg,moisturizer-100.jpg,renewal toner-100.jpg" | split: "," -%}
-      {%- assign fallback_hovers = "night-cream-hover.jpg,tranexamic-meet-1.jpg,keratin-serum-hover.jpg,glow-serum-hover.jpg,deep-hydration-100.jpg,hair-mist-hover.jpg,deep-hydration-facewash.jpg,hover-anti-acne.png,sunscreen-hover.jpg,gel-cleanser-hover.jpg,moisturizer-hover.jpg,toner-hover.jpg" | split: "," -%}
-      {%- assign fallback_labels = "nightcream,serum,haircare,serum,repair,haircare,cleanser,antiacne,sunscreen,cleanser,moisturizer,toner" | split: "," -%}
+      {%- assign fallback_names = "Night Cream,Tranexamic Serum,Anti Frizz Keratin Serum,Glow Serum,Glutathione Cream,Floral Blossom Hair Mist,Face Wash,Anti Acne,Sunscreen SPF60+,Renewal Cleanser,Hydra Burst Moisturizer,Renewal Toner,E7 Glass Skin Set,E7 Complete Glass Skin Set,E7 Hair Care Set,Elaris 7 Korean Brightening Bundle" | split: "," -%}
+      {%- assign fallback_images = "night-cream.jpg,tranexamic-serum.jpg,keratin-serum.jpg,glow-serum-100.jpg,glutathione-cream-100.jpg,hair-mist.jpg,facewash-100.jpg,anti-acne-100.jpg,sunscreen-100.jpg,gel cleanser-100.jpg,moisturizer-100.jpg,renewal toner-100.jpg,set-glass-skin.jpg,set-complete.jpg,set-haircare.jpg,set-brightening.jpg" | split: "," -%}
+      {%- assign fallback_hovers = "night-cream-hover.jpg,tranexamic-meet-1.jpg,keratin-serum-hover.jpg,glow-serum-hover.jpg,deep-hydration-100.jpg,hair-mist-hover.jpg,deep-hydration-facewash.jpg,hover-anti-acne.png,sunscreen-hover.jpg,gel-cleanser-hover.jpg,moisturizer-hover.jpg,toner-hover.jpg,set-glass-skin.jpg,set-complete.jpg,set-haircare.jpg,set-brightening.jpg" | split: "," -%}
+      {%- assign fallback_labels = "nightcream,serum,haircare,serum,repair,haircare,cleanser,antiacne,sunscreen,cleanser,moisturizer,toner,set,set,set,set" | split: "," -%}
       
-      {% for i in (0..11) %}
+      {% for i in (0..15) %}
         {%- assign pname = fallback_names[i] -%}
         {%- assign phandle = pname | handleize -%}
         {%- if pname contains "Keratin Serum" -%}
@@ -78,10 +78,12 @@
           {%- assign phandle = "e7-korean-glass-skin-moisturizer" -%}
         {%- elsif pname == "Renewal Toner" -%}
           {%- assign phandle = "centella-skin-toner" -%}
+        {%- elsif pname contains "Set" or pname contains "Bundle" -%}
+          {%- assign phandle = "e7-complete-glass-skin-set" -%}
         {%- endif -%}
         {%- assign pimage = fallback_images[i] -%}
         {%- assign plabel = fallback_labels[i] -%}
-        <div class="card card-rhode">
+        <div class="card card-rhode" data-category="{{ plabel | handleize }}">
           <a href="/products/{{ phandle }}" class="card-link-wrapper">
             {%- assign hover_img = fallback_hovers[i] -%}
             {%- if pname == "Glutathione Cream" -%}
