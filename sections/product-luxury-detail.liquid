@@ -520,26 +520,27 @@
 <main class="product-page">
   <div class="product-grid">
     
-    <div class="product-gallery">
-      <!-- Thumbnails on Left -->
-        {%- if is_renewal_cleanser -%}
-          <div class="thumb-item active" onmouseover="scrollGallery(0, this)"><img src="{{ 'gel cleanser-100.jpg' | asset_url }}" alt="{{ product.title }}"></div>
-          <div class="thumb-item" onmouseover="scrollGallery(1, this)"><img src="{{ 'cleanser-meet-1.jpg' | asset_url }}" alt="Cleanser 1"></div>
-          <div class="thumb-item" onmouseover="scrollGallery(2, this)"><img src="{{ 'cleanser-meet-2.jpg' | asset_url }}" alt="Cleanser 2"></div>
-          <div class="thumb-item" onmouseover="scrollGallery(3, this)"><img src="{{ 'cleanser-meet-3.jpg' | asset_url }}" alt="Cleanser 3"></div>
-          <div class="thumb-item" onmouseover="scrollGallery(4, this)"><img src="{{ 'cleanser-meet-4.jpg' | asset_url }}" alt="Cleanser 4"></div>
-        {%- elsif product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' -%}
-          <div class="thumb-item active" onmouseover="scrollGallery(0, this)"><img src="{{ 'facewash-gallery-1-v2.jpg' | asset_url }}" alt="{{ product.title }}"></div>
-          <div class="thumb-item" onmouseover="scrollGallery(1, this)"><img src="{{ 'facewash-gallery-1-v2.jpg' | asset_url }}" alt="Face Wash 1"></div>
-          <div class="thumb-item" onmouseover="scrollGallery(2, this)"><img src="{{ 'facewash-gallery-2.jpg' | asset_url }}" alt="Face Wash 2"></div>
-          <div class="thumb-item" onmouseover="scrollGallery(3, this)"><img src="{{ 'facewash-gallery-3.jpg' | asset_url }}" alt="Face Wash 3"></div>
-          <div class="thumb-item" onmouseover="scrollGallery(4, this)"><img src="{{ 'facewash-gallery-4.jpg' | asset_url }}" alt="Face Wash 4"></div>
-        {%- elsif product.handle == 'sunscreen' or product.handle == 'e7-korean-glass-skin-centella-face-wash-copy' -%}
-            <div class="thumb-item active" onmouseover="scrollGallery(0, this)"><img src="{{ 'sunscreen-100.jpg' | asset_url }}" alt="{{ product.title }}"></div>
-            <div class="thumb-item" onmouseover="scrollGallery(1, this)"><img src="{{ 'sunscreen-lifestyle-1.jpg' | asset_url }}" alt="Lifestyle 1"></div>
-            <div class="thumb-item" onmouseover="scrollGallery(2, this)"><img src="{{ 'sunscreen-lifestyle-2.jpg' | asset_url }}" alt="Lifestyle 2"></div>
-            <div class="thumb-item" onmouseover="scrollGallery(3, this)"><img src="{{ 'sunscreen-lifestyle-3.jpg' | asset_url }}" alt="Lifestyle 3"></div>
-            <div class="thumb-item" onmouseover="scrollGallery(4, this)"><img src="{{ 'sunscreen-lifestyle-4.jpg' | asset_url }}" alt="Lifestyle 4"></div>
+        <div class="gallery-thumbnails">
+          {%- if is_renewal_cleanser -%}
+            <div class="thumb-item active" onmouseover="scrollGallery(0, this)"><img src="{{ 'gel cleanser-100.jpg' | asset_url }}" alt="{{ product.title }}"></div>
+            <div class="thumb-item" onmouseover="scrollGallery(1, this)"><img src="{{ 'cleanser-meet-1.jpg' | asset_url }}" alt="Cleanser 1"></div>
+            <div class="thumb-item" onmouseover="scrollGallery(2, this)"><img src="{{ 'cleanser-meet-2.jpg' | asset_url }}" alt="Cleanser 2"></div>
+            <div class="thumb-item" onmouseover="scrollGallery(3, this)"><img src="{{ 'cleanser-meet-3.jpg' | asset_url }}" alt="Cleanser 3"></div>
+            <div class="thumb-item" onmouseover="scrollGallery(4, this)"><img src="{{ 'cleanser-meet-4.jpg' | asset_url }}" alt="Cleanser 4"></div>
+          {%- elsif product.handle == 'sunscreen' or product.handle == 'e7-korean-glass-skin-centella-face-wash-copy' -%}
+              <div class="thumb-item active" onmouseover="scrollGallery(0, this)"><img src="{{ 'sunscreen-100.jpg' | asset_url }}" alt="{{ product.title }}"></div>
+              <div class="thumb-item" onmouseover="scrollGallery(1, this)"><img src="{{ 'sunscreen-lifestyle-1.jpg' | asset_url }}" alt="Lifestyle 1"></div>
+              <div class="thumb-item" onmouseover="scrollGallery(2, this)"><img src="{{ 'sunscreen-lifestyle-2.jpg' | asset_url }}" alt="Lifestyle 2"></div>
+              <div class="thumb-item" onmouseover="scrollGallery(3, this)"><img src="{{ 'sunscreen-lifestyle-3.jpg' | asset_url }}" alt="Lifestyle 3"></div>
+              <div class="thumb-item" onmouseover="scrollGallery(4, this)"><img src="{{ 'sunscreen-lifestyle-4.jpg' | asset_url }}" alt="Lifestyle 4"></div>
+          {%- elsif product.handle == 'night-cream' -%}
+            <div class="thumb-item active" onmouseover="scrollGallery(0, this)"><img src="{{ 'Artboard-1-100.jpg' | asset_url }}" alt="{{ product.title }}"></div>
+          {%- else -%}
+            {%- for image in product.images -%}
+              <div class="thumb-item {% if forloop.first %}active{% endif %}" onmouseover="scrollGallery({{ forloop.index0 }}, this)"><img src="{{ image | img_url: '100x100', crop: 'center' }}" alt="{{ image.alt | escape }}"></div>
+            {%- endfor -%}
+          {%- endif -%}
+        </div>
         {%- else -%}
           {%- assign valid_sidebar_count = 0 -%}
           {%- for block in section.blocks -%}
@@ -633,12 +634,6 @@
             <div class="gallery-slide"><img src="{{ 'cleanser-meet-2.jpg' | asset_url }}" alt="Cleanser 2" style="object-fit: cover !important;"></div>
             <div class="gallery-slide"><img src="{{ 'cleanser-meet-3.jpg' | asset_url }}" alt="Cleanser 3" style="object-fit: cover !important;"></div>
             <div class="gallery-slide"><img src="{{ 'cleanser-meet-4.jpg' | asset_url }}" alt="Cleanser 4" style="object-fit: cover !important;"></div>
-          {%- elsif product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' -%}
-            <div class="gallery-slide"><img src="{{ 'facewash-gallery-1-v2.jpg' | asset_url }}" alt="{{ product.title }}"></div>
-            <div class="gallery-slide"><img src="{{ 'facewash-gallery-1-v2.jpg' | asset_url }}" alt="Face Wash 1" style="object-fit: cover !important;"></div>
-            <div class="gallery-slide"><img src="{{ 'facewash-gallery-2.jpg' | asset_url }}" alt="Face Wash 2" style="object-fit: cover !important;"></div>
-            <div class="gallery-slide"><img src="{{ 'facewash-gallery-3.jpg' | asset_url }}" alt="Face Wash 3" style="object-fit: cover !important;"></div>
-            <div class="gallery-slide"><img src="{{ 'facewash-gallery-4.jpg' | asset_url }}" alt="Face Wash 4" style="object-fit: cover !important;"></div>
           {%- elsif product.handle == 'sunscreen' or product.handle == 'e7-korean-glass-skin-centella-face-wash-copy' -%}
             <div class="gallery-slide"><img src="{{ 'sunscreen-100.jpg' | asset_url }}" alt="{{ product.title }}"></div>
             <div class="gallery-slide"><img src="{{ 'sunscreen-lifestyle-1.jpg' | asset_url }}" alt="Suitcase Shot" style="object-fit: cover !important;"></div>
@@ -646,44 +641,6 @@
             <div class="gallery-slide"><img src="{{ 'sunscreen-lifestyle-3.jpg' | asset_url }}" alt="Basket Shot" style="object-fit: cover !important;"></div>
             <div class="gallery-slide"><img src="{{ 'sunscreen-lifestyle-4.jpg' | asset_url }}" alt="Action Shot" style="object-fit: cover !important;"></div>
           {%- elsif product.images.size > 0 -%}
-            {%- for image in product.images -%}
-              <div class="gallery-slide"><img src="{{ image | img_url: 'master' }}" alt="{{ image.alt | escape }}"></div>
-            {%- endfor -%}
-          {%- else -%}
-            {%- if product.handle == 'anti-frizz-keratin-serum' or product.handle == 'anti-frizz-serum' or product.handle == 'keratin-serum' -%}
-              <div class="gallery-slide"><img src="{{ 'keratin-serum.jpg' | asset_url }}" alt="{{ product.title }}"></div>
-              <div class="gallery-slide"><img src="{{ 'keratin-meet-1.jpg' | asset_url }}" alt="Lifestyle View" style="object-fit: cover !important;"></div>
-              <div class="gallery-slide"><img src="{{ 'keratin-ba.jpg' | asset_url }}" alt="Before After" style="object-fit: cover !important;"></div>
-              <div class="gallery-slide"><img src="{{ 'keratin-1.jpg' | asset_url }}" alt="Close up 1" style="object-fit: cover !important;"></div>
-              <div class="gallery-slide"><img src="{{ 'keratin-2.jpg' | asset_url }}" alt="Close up 2" style="object-fit: cover !important;"></div>
-            {%- elsif product.handle == 'tranexamic-serum' -%}
-              <div class="gallery-slide"><img src="{{ 'tranexamic-meet-1.jpg' | asset_url }}" alt="{{ product.title }}"></div>
-              <div class="gallery-slide"><img src="{{ 'tranexamic-meet-2.jpg' | asset_url }}" alt="Meet Elaris 2"></div>
-              <div class="gallery-slide"><img src="{{ 'tranexamic-meet-3.jpg' | asset_url }}" alt="Meet Elaris 3"></div>
-            {%- elsif product.handle == 'floral-blossom-hair-mist' or product.handle == 'hair-mist' -%}
-              <div class="gallery-slide"><img src="{{ 'hair-mist-main.jpg' | asset_url }}" alt="{{ product.title }}"></div>
-              <div class="gallery-slide"><img src="{{ 'hair-mist-meet-1.jpg' | asset_url }}" alt="Lifestyle 1" style="object-fit: cover !important;"></div>
-              <div class="gallery-slide"><img src="{{ 'hair-mist-meet-2.jpg' | asset_url }}" alt="Lifestyle 2" style="object-fit: cover !important;"></div>
-              <div class="gallery-slide"><img src="{{ 'hair-mist-meet-3.jpg' | asset_url }}" alt="Lifestyle 3" style="object-fit: cover !important;"></div>
-              <div class="gallery-slide"><img src="{{ 'hair-mist-meet-4.jpg' | asset_url }}" alt="Lifestyle 4" style="object-fit: cover !important;"></div>
-            {%- elsif is_centella_serum -%}
-              <div class="gallery-slide"><img src="{{ 'centella-serum-1.jpg' | asset_url }}" alt="{{ product.title }}" style="object-fit: contain !important; background: #fff;"></div>
-              <div class="gallery-slide"><img src="{{ 'centella-serum-2.jpg' | asset_url }}" alt="Serum 2" style="object-fit: contain !important; background: #fff;"></div>
-              <div class="gallery-slide"><img src="{{ 'centella-serum-3.jpg' | asset_url }}" alt="Serum 3" style="object-fit: contain !important; background: #fff;"></div>
-              <div class="gallery-slide"><img src="{{ 'glow-gallery-4.jpg' | asset_url }}" alt="Product Infographic" style="object-fit: contain !important; background: #fff;"></div>
-            {%- elsif product.handle == 'night-cream' -%}
-              <div class="gallery-slide"><img src="{{ 'Artboard-1-100.jpg' | asset_url }}" alt="{{ product.title }}" style="object-fit: contain !important; background: #fff;"></div>
-              <div class="gallery-slide"><img src="{{ 'faq-100-nc.jpg' | asset_url }}" alt="FAQ" style="object-fit: cover !important;"></div>
-              <div class="gallery-slide"><img src="{{ 'night-cream-swatch-7-100.jpg' | asset_url }}" alt="Swatch" style="object-fit: cover !important;"></div>
-              <div class="gallery-slide"><img src="{{ 'nigh-suite-100.jpg' | asset_url }}" alt="Suite" style="object-fit: cover !important;"></div>
-              <div class="gallery-slide"><img src="{{ 'lifestyle-100.jpg' | asset_url }}" alt="Lifestyle" style="object-fit: cover !important;"></div>
-            {%- elsif product.handle == 'centella-skin-toner-copy' or product.handle == 'renewal-cleanser' -%}
-              <div class="gallery-slide"><img src="{{ 'gel cleanser-100.jpg' | asset_url }}" alt="{{ product.title }}"></div>
-              <div class="gallery-slide"><img src="{{ 'cleanser-meet-1.jpg' | asset_url }}" alt="Cleanser Model 1" style="object-fit: cover !important;"></div>
-              <div class="gallery-slide"><img src="{{ 'cleanser-meet-2.jpg' | asset_url }}" alt="Cleanser Model 2" style="object-fit: cover !important;"></div>
-              <div class="gallery-slide"><img src="{{ 'cleanser-meet-3.jpg' | asset_url }}" alt="Cleanser Model 3" style="object-fit: cover !important;"></div>
-              <div class="gallery-slide"><img src="{{ 'cleanser-meet-4.jpg' | asset_url }}" alt="Cleanser Model 4" style="object-fit: cover !important;"></div>
-            {%- elsif product.handle == 'e7-korean-glass-skin-moisturizer' or product.handle == 'hydra-burst-moisturizer' -%}
               <div class="gallery-slide"><img src="{{ 'moisturizer-100.jpg' | asset_url }}" alt="{{ product.title }}"></div>
               <div class="gallery-slide"><img src="{{ 'moisturizer-gallery-1.jpg' | asset_url }}" alt="Deep Hydration" style="object-fit: cover !important;"></div>
               <div class="gallery-slide"><img src="{{ 'moisturizer-gallery-2.jpg' | asset_url }}" alt="Texture Jar" style="object-fit: cover !important;"></div>
