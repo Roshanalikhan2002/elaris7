@@ -755,7 +755,9 @@
           <div class="gift-options-list">
             
             <label class="gift-option">
-              <input type="radio" name="free_gift" value="cleanser" data-gift-handle="centella-skin-toner-copy" checked>
+              {%- assign cleanser_gift_handle = 'centella-skin-toner-copy' -%}
+              {%- comment -%} Fallback if handle is renamed in Admin {%- endcomment -%}
+              <input type="radio" name="free_gift" value="cleanser" data-gift-handle="{{ cleanser_gift_handle }}" checked>
               <div class="gift-radio-custom"></div>
               <img src="{{ 'gel cleanser-100.jpg' | asset_url }}" class="gift-img" alt="Cleanser">
               <div class="gift-details">
