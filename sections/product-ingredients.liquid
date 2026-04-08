@@ -107,12 +107,19 @@
   }
 {%- endstyle -%}
 
+{%- assign title_color = '#003087' -%}
+{%- if product.handle == 'renewal-cleanser' or product.handle == 'centella-skin-toner-copy' or product.handle == 'night-cream' -%}
+  {%- assign title_color = '#333333' -%}
+{%- endif -%}
+
+{%- assign display_title = product.title -%}
+
 <section class="ingredients-section">
   <div class="ing-left">
     {%- if product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' -%}
       <img class="ing-image" src="{{ 'facewash-ingredients-v2.jpg' | asset_url }}" alt="Face Wash Ingredients">
-    {%- elsif product.handle == 'centella-skin-toner' or product.handle == 'renewal-toner' -%}
-      <img class="ing-image" src="{{ 'toner-whats-inside.jpg' | asset_url }}" alt="Toner Ingredients">
+    {%- elsif product.handle == 'centella-skin-toner-copy' or product.handle == 'renewal-cleanser' -%}
+      <img class="ing-image" src="{{ 'cleanser-meet-1.jpg' | asset_url }}" alt="Renewal Cleanser Ingredients">
     {%- elsif product.handle == 'e7-korean-glass-skin-moisturizer' or product.handle == 'hydra-burst-moisturizer' -%}
       <img class="ing-image" src="{{ 'moisturizer-whats-inside.jpg' | asset_url }}" alt="Moisturizer Ingredients">
     {%- elsif product.handle == 'floral-blossom-hair-mist' or product.handle == 'hair-mist' -%}
