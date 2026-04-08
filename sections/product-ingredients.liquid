@@ -118,7 +118,7 @@
     {%- elsif product.handle == 'e7-korean-glass-skin-centella-face-wash-copy' or product.handle == 'sunscreen' -%}
       <img class="ing-image" src="{{ 'sunscreen-100.jpg' | asset_url }}" alt="Sunscreen Ingredients">
     {%- elsif product.handle == 'e7-korean-glass-skin-centella-sunscreen-spf50-copy' or product.handle == 'centella-serum' -%}
-      <img class="ing-image" src="{{ 'glow-serum-100.jpg' | asset_url }}" alt="Serum Ingredients">
+      <img class="ing-image" src="{{ 'centella-serum-ingredients.jpg' | asset_url }}" alt="Serum Ingredients">
     {%- elsif section.settings.image != blank -%}
       {{ section.settings.image | image_url: width: 1000 | image_tag: class: 'ing-image', alt: 'Ingredients visual' }}
     {%- else -%}
