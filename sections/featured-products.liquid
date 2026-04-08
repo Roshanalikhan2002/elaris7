@@ -13,7 +13,11 @@
     {% if section.blocks.size > 0 %}
       {% for block in section.blocks %}
         <div class="card card-rhode" data-category="{{ block.settings.brand_label | handleize }}" {{ block.shopify_attributes }}>
-          <a href="{{ block.settings.product_link | default: '#' }}" class="card-link-wrapper">
+          {%- assign final_link = block.settings.product_link | default: '#' -%}
+          {%- if final_link contains 'renewal-cleanser' -%}
+            {%- assign final_link = '/products/centella-skin-toner-copy' -%}
+          {%- endif -%}
+          <a href="{{ final_link }}" class="card-link-wrapper">
             {% if block.settings.hover_image != blank %}
               {{ block.settings.hover_image | image_url: width: 1200 | image_tag: class: 'card-hover-bg', alt: block.settings.title }}
             {% elsif block.settings.asset_hover_image != blank %}
@@ -118,7 +122,7 @@
               </div>
               <span class="btn-rhode-buy-pill">BUY - {{ pprice }}</span>
             </div>
-            <div class="buy-button-hover" data-handle="{{ phandle }}">
+            <div class="buy-button-hover" data-handle="{{ phandle }}" onclick="window.location.href='/products/{{ phandle }}'">
               BUY {{ current_prod.title | default: pname | upcase }} - {{ pprice }}
             </div>
           </a>

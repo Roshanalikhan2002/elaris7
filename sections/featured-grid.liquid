@@ -3,7 +3,11 @@
     {% if section.blocks.size > 0 %}
       {% for block in section.blocks %}
         <div class="grid-item">
-          <a href="{{ block.settings.product_link | default: '#' }}" class="card-rhode-grid">
+          {%- assign final_link = block.settings.product_link | default: '#' -%}
+          {%- if final_link contains 'renewal-cleanser' -%}
+            {%- assign final_link = '/products/centella-skin-toner-copy' -%}
+          {%- endif -%}
+          <a href="{{ final_link }}" class="card-rhode-grid">
             <div class="card-rhode-inner-grid">
               {% if block.settings.hover_image != blank %}
                 {{ block.settings.hover_image | image_url: width: 1000 | image_tag: class: 'card-hover-bg', alt: block.settings.title }}
