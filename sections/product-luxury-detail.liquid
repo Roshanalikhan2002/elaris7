@@ -517,18 +517,18 @@
     
     <div class="product-gallery">
       <!-- Thumbnails on Left -->
-        {%- if product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' -%}
-          <div class="thumb-item active" onmouseover="scrollGallery(0, this)"><img src="{{ 'facewash-gallery-1-v2.jpg' | asset_url }}" alt="{{ product.title }}"></div>
-          <div class="thumb-item" onmouseover="scrollGallery(1, this)"><img src="{{ 'facewash-gallery-1-v2.jpg' | asset_url }}" alt="Face Wash 1"></div>
-          <div class="thumb-item" onmouseover="scrollGallery(2, this)"><img src="{{ 'facewash-gallery-2.jpg' | asset_url }}" alt="Face Wash 2"></div>
-          <div class="thumb-item" onmouseover="scrollGallery(3, this)"><img src="{{ 'facewash-gallery-3.jpg' | asset_url }}" alt="Face Wash 3"></div>
-          <div class="thumb-item" onmouseover="scrollGallery(4, this)"><img src="{{ 'facewash-gallery-4.jpg' | asset_url }}" alt="Face Wash 4"></div>
-        {%- elsif product.handle == 'renewal-cleanser' or product.handle == 'centella-skin-toner-copy' -%}
+        {%- if product.handle == 'centella-skin-toner-copy' or product.handle == 'renewal-cleanser' -%}
           <div class="thumb-item active" onmouseover="scrollGallery(0, this)"><img src="{{ 'gel cleanser-100.jpg' | asset_url }}" alt="{{ product.title }}"></div>
           <div class="thumb-item" onmouseover="scrollGallery(1, this)"><img src="{{ 'cleanser-meet-1.jpg' | asset_url }}" alt="Cleanser 1"></div>
           <div class="thumb-item" onmouseover="scrollGallery(2, this)"><img src="{{ 'cleanser-meet-2.jpg' | asset_url }}" alt="Cleanser 2"></div>
           <div class="thumb-item" onmouseover="scrollGallery(3, this)"><img src="{{ 'cleanser-meet-3.jpg' | asset_url }}" alt="Cleanser 3"></div>
           <div class="thumb-item" onmouseover="scrollGallery(4, this)"><img src="{{ 'cleanser-meet-4.jpg' | asset_url }}" alt="Cleanser 4"></div>
+        {%- elsif product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' -%}
+          <div class="thumb-item active" onmouseover="scrollGallery(0, this)"><img src="{{ 'facewash-gallery-1-v2.jpg' | asset_url }}" alt="{{ product.title }}"></div>
+          <div class="thumb-item" onmouseover="scrollGallery(1, this)"><img src="{{ 'facewash-gallery-1-v2.jpg' | asset_url }}" alt="Face Wash 1"></div>
+          <div class="thumb-item" onmouseover="scrollGallery(2, this)"><img src="{{ 'facewash-gallery-2.jpg' | asset_url }}" alt="Face Wash 2"></div>
+          <div class="thumb-item" onmouseover="scrollGallery(3, this)"><img src="{{ 'facewash-gallery-3.jpg' | asset_url }}" alt="Face Wash 3"></div>
+          <div class="thumb-item" onmouseover="scrollGallery(4, this)"><img src="{{ 'facewash-gallery-4.jpg' | asset_url }}" alt="Face Wash 4"></div>
         {%- elsif product.handle == 'sunscreen' or product.handle == 'e7-korean-glass-skin-centella-face-wash-copy' -%}
             <div class="thumb-item active" onmouseover="scrollGallery(0, this)"><img src="{{ 'sunscreen-100.jpg' | asset_url }}" alt="{{ product.title }}"></div>
             <div class="thumb-item" onmouseover="scrollGallery(1, this)"><img src="{{ 'sunscreen-lifestyle-1.jpg' | asset_url }}" alt="Lifestyle 1"></div>
@@ -622,18 +622,18 @@
       <!-- Main Slider -->
       <div class="gallery-main-viewport">
         <div class="gallery-slider" id="productSlider">
-          {%- if product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' -%}
-            <div class="gallery-slide"><img src="{{ 'facewash-gallery-1-v2.jpg' | asset_url }}" alt="{{ product.title }}"></div>
-            <div class="gallery-slide"><img src="{{ 'facewash-gallery-1-v2.jpg' | asset_url }}" alt="Face Wash 1" style="object-fit: cover !important;"></div>
-            <div class="gallery-slide"><img src="{{ 'facewash-gallery-2.jpg' | asset_url }}" alt="Face Wash 2" style="object-fit: cover !important;"></div>
-            <div class="gallery-slide"><img src="{{ 'facewash-gallery-3.jpg' | asset_url }}" alt="Face Wash 3" style="object-fit: cover !important;"></div>
-            <div class="gallery-slide"><img src="{{ 'facewash-gallery-4.jpg' | asset_url }}" alt="Face Wash 4" style="object-fit: cover !important;"></div>
-          {%- elsif product.handle == 'renewal-cleanser' or product.handle == 'centella-skin-toner-copy' -%}
+          {%- if product.handle == 'centella-skin-toner-copy' or product.handle == 'renewal-cleanser' -%}
             <div class="gallery-slide"><img src="{{ 'gel cleanser-100.jpg' | asset_url }}" alt="{{ product.title }}"></div>
             <div class="gallery-slide"><img src="{{ 'cleanser-meet-1.jpg' | asset_url }}" alt="Cleanser 1" style="object-fit: cover !important;"></div>
             <div class="gallery-slide"><img src="{{ 'cleanser-meet-2.jpg' | asset_url }}" alt="Cleanser 2" style="object-fit: cover !important;"></div>
             <div class="gallery-slide"><img src="{{ 'cleanser-meet-3.jpg' | asset_url }}" alt="Cleanser 3" style="object-fit: cover !important;"></div>
             <div class="gallery-slide"><img src="{{ 'cleanser-meet-4.jpg' | asset_url }}" alt="Cleanser 4" style="object-fit: cover !important;"></div>
+          {%- elsif product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' -%}
+            <div class="gallery-slide"><img src="{{ 'facewash-gallery-1-v2.jpg' | asset_url }}" alt="{{ product.title }}"></div>
+            <div class="gallery-slide"><img src="{{ 'facewash-gallery-1-v2.jpg' | asset_url }}" alt="Face Wash 1" style="object-fit: cover !important;"></div>
+            <div class="gallery-slide"><img src="{{ 'facewash-gallery-2.jpg' | asset_url }}" alt="Face Wash 2" style="object-fit: cover !important;"></div>
+            <div class="gallery-slide"><img src="{{ 'facewash-gallery-3.jpg' | asset_url }}" alt="Face Wash 3" style="object-fit: cover !important;"></div>
+            <div class="gallery-slide"><img src="{{ 'facewash-gallery-4.jpg' | asset_url }}" alt="Face Wash 4" style="object-fit: cover !important;"></div>
           {%- elsif product.handle == 'sunscreen' or product.handle == 'e7-korean-glass-skin-centella-face-wash-copy' -%}
             <div class="gallery-slide"><img src="{{ 'sunscreen-100.jpg' | asset_url }}" alt="{{ product.title }}"></div>
             <div class="gallery-slide"><img src="{{ 'sunscreen-lifestyle-1.jpg' | asset_url }}" alt="Suitcase Shot" style="object-fit: cover !important;"></div>
