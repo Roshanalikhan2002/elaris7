@@ -85,17 +85,17 @@
 {%- endcomment -%}
 
 {%- assign is_serum = false -%}
-{%- if product.handle == 'centella-serum' -%}
+{%- if product.handle == 'centella-serum' or product.handle == 'e7-korean-glass-skin-centella-sunscreen-spf50-copy' -%}
   {%- assign is_serum = true -%}
 {%- endif -%}
 
 {%- assign is_sunscreen = false -%}
-{%- if product.handle == 'sunscreen' or product.handle == 'e7-korean-glass-skin-centella-sunscreen' or product.handle == 'e7-korean-glass-skin-centella-sunscreen-spf50-copy' -%}
+{%- if product.handle == 'sunscreen' or product.handle == 'e7-korean-glass-skin-centella-face-wash-copy' -%}
   {%- assign is_sunscreen = true -%}
 {%- endif -%}
 
 {%- assign is_cleanser = false -%}
-{%- if product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' or product.handle == 'renewal-cleanser' or product.handle == 'e7-korean-glass-skin-centella-face-wash-copy' -%}
+{%- if product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' or product.handle == 'renewal-cleanser' -%}
   {%- assign is_cleanser = true -%}
 {%- endif -%}
 

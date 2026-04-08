@@ -457,7 +457,7 @@
 {%- endcomment -%}
 
 {%- assign is_centella_serum = false -%}
-{%- if product.handle == 'centella-serum' -%}
+{%- if product.handle == 'centella-serum' or product.handle == 'e7-korean-glass-skin-centella-sunscreen-spf50-copy' -%}
   {%- assign is_centella_serum = true -%}
 {%- endif -%}
 
@@ -473,14 +473,14 @@
   {%- assign display_title = "Renewal Cleanser" -%}
   {%- assign display_subtitle = 'Cleanse & Glow' -%}
   {%- assign display_desc = 'A refining gel cleanser designed to gently remove impurities while enhancing skin brightness.' -%}
-{%- elsif product.handle == 'e7-korean-glass-skin-centella-face-wash-copy' -%}
-  {%- assign display_title = "Centella Face Wash" -%}
-  {%- assign display_subtitle = "Pure Start" -%}
-  {%- assign display_desc = 'A gentle, glow-reviving cleanser infused with Centella Asiatica, brightening actives, and hydrating botanicals to cleanse, soothe, and refresh your skin for a soft, balanced, and radiant look every day.' -%}
-{%- elsif product.handle == 'sunscreen' or product.handle == 'e7-korean-glass-skin-centella-sunscreen' or product.handle == 'e7-korean-glass-skin-centella-sunscreen-spf50-copy' -%}
+{%- elsif product.handle == 'sunscreen' or product.handle == 'e7-korean-glass-skin-centella-face-wash-copy' -%}
   {%- assign display_title = "Sunscreen SPF60+" -%}
   {%- assign display_subtitle = 'Centella Asiatica + UV Filters' -%}
   {%- assign display_desc = 'A protective sunscreen infused with Centella Asiatica and advanced UV filters.' -%}
+{%- elsif product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' -%}
+  {%- assign display_title = "Centella Face Wash" -%}
+  {%- assign display_subtitle = "Pure Start" -%}
+  {%- assign display_desc = 'A gentle, glow-reviving cleanser infused with Centella Asiatica, brightening actives, and hydrating botanicals to cleanse, soothe, and refresh your skin for a soft, balanced, and radiant look every day.' -%}
 {%- elsif product.handle == 'night-cream' -%}
   {%- assign display_title = "Centella Night Cream" -%}
   {%- assign display_subtitle = 'Wake Up to Refreshed, Radiant Skin' -%}
@@ -573,12 +573,12 @@
             <div class="thumb-item" onmouseover="scrollGallery(2, this)"><img src="{{ 'night-cream-swatch-7-100.jpg' | asset_url }}" alt="Swatch"></div>
             <div class="thumb-item" onmouseover="scrollGallery(3, this)"><img src="{{ 'nigh-suite-100.jpg' | asset_url }}" alt="Suite"></div>
             <div class="thumb-item" onmouseover="scrollGallery(4, this)"><img src="{{ 'lifestyle-100.jpg' | asset_url }}" alt="Lifestyle"></div>
-          {%- elsif product.handle == 'e7-korean-glass-skin-centella-face-wash-copy' -%}
+          {%- elsif product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' -%}
             <div class="thumb-item active" onmouseover="scrollGallery(0, this)"><img src="{{ 'facewash-gallery-1.jpg' | asset_url }}" alt="{{ product.title }}"></div>
             <div class="thumb-item" onmouseover="scrollGallery(1, this)"><img src="{{ 'facewash-gallery-2.jpg' | asset_url }}" alt="Face Wash 2"></div>
             <div class="thumb-item" onmouseover="scrollGallery(2, this)"><img src="{{ 'facewash-gallery-3.jpg' | asset_url }}" alt="Face Wash 3"></div>
             <div class="thumb-item" onmouseover="scrollGallery(3, this)"><img src="{{ 'facewash-gallery-4.jpg' | asset_url }}" alt="Face Wash 4"></div>
-          {%- elsif product.handle == 'sunscreen' or product.handle == 'e7-korean-glass-skin-centella-sunscreen' or product.handle == 'e7-korean-glass-skin-centella-sunscreen-spf50-copy' -%}
+          {%- elsif product.handle == 'sunscreen' or product.handle == 'e7-korean-glass-skin-centella-face-wash-copy' -%}
             <div class="thumb-item active" onmouseover="scrollGallery(0, this)"><img src="{{ 'sunscreen-100.jpg' | asset_url }}" alt="{{ product.title }}"></div>
             <div class="thumb-item" onmouseover="scrollGallery(1, this)"><img src="{{ 'sunscreen-lifestyle-1.jpg' | asset_url }}" alt="Lifestyle 1"></div>
             <div class="thumb-item" onmouseover="scrollGallery(2, this)"><img src="{{ 'sunscreen-lifestyle-2.jpg' | asset_url }}" alt="Lifestyle 2"></div>
@@ -647,12 +647,12 @@
               <div class="gallery-slide"><img src="{{ 'night-cream-swatch-7-100.jpg' | asset_url }}" alt="Swatch" style="object-fit: cover !important;"></div>
               <div class="gallery-slide"><img src="{{ 'nigh-suite-100.jpg' | asset_url }}" alt="Suite" style="object-fit: cover !important;"></div>
               <div class="gallery-slide"><img src="{{ 'lifestyle-100.jpg' | asset_url }}" alt="Lifestyle" style="object-fit: cover !important;"></div>
-            {%- elsif product.handle == 'e7-korean-glass-skin-centella-face-wash-copy' -%}
+            {%- elsif product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' -%}
               <div class="gallery-slide"><img src="{{ 'facewash-gallery-1.jpg' | asset_url }}" alt="{{ product.title }}" style="object-fit: cover !important;"></div>
               <div class="gallery-slide"><img src="{{ 'facewash-gallery-2.jpg' | asset_url }}" alt="Face Wash 2" style="object-fit: cover !important;"></div>
               <div class="gallery-slide"><img src="{{ 'facewash-gallery-3.jpg' | asset_url }}" alt="Face Wash 3" style="object-fit: cover !important;"></div>
               <div class="gallery-slide"><img src="{{ 'facewash-gallery-4.jpg' | asset_url }}" alt="Face Wash 4" style="object-fit: cover !important;"></div>
-            {%- elsif product.handle == 'sunscreen' or product.handle == 'e7-korean-glass-skin-centella-sunscreen' or product.handle == 'e7-korean-glass-skin-centella-sunscreen-spf50-copy' -%}
+            {%- elsif product.handle == 'sunscreen' or product.handle == 'e7-korean-glass-skin-centella-face-wash-copy' -%}
               <div class="gallery-slide"><img src="{{ 'sunscreen-100.jpg' | asset_url }}" alt="{{ product.title }}"></div>
               <div class="gallery-slide"><img src="{{ 'sunscreen-lifestyle-1.jpg' | asset_url }}" alt="Suitcase Shot" style="object-fit: cover !important;"></div>
               <div class="gallery-slide"><img src="{{ 'sunscreen-lifestyle-2.jpg' | asset_url }}" alt="Poolside Shot" style="object-fit: cover !important;"></div>
