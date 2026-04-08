@@ -3,9 +3,7 @@
   "sections": {
     "main": {
       "type": "product-luxury-detail",
-      "settings": {
-        "description": "A refining gel cleanser designed to gently remove impurities while enhancing skin brightness."
-      }
+      "settings": {}
     },
     "meet_product": {
       "type": "meet-the-product",
@@ -13,20 +11,64 @@
     },
     "details_split": {
       "type": "product-details-split",
+      "blocks": {
+        "row_good": {
+          "type": "detail_row",
+          "settings": {
+            "label": "GOOD FOR:",
+            "value": "Cleaning and glowing your skin daily."
+          }
+        },
+        "row_feels": {
+          "type": "detail_row",
+          "settings": {
+            "label": "FEELS LIKE:",
+            "value": "A refreshing gel that cleanses without stripping."
+          }
+        }
+      },
+      "block_order": [
+        "row_good",
+        "row_feels"
+      ],
       "settings": {
-        "title": "Cleanse & Glow"
+        "title": "A refreshing gel cleanser designed to gently remove impurities."
       }
     },
     "ingredients": {
       "type": "product-ingredients",
+      "blocks": {
+        "ing_1": {
+          "type": "ingredient",
+          "settings": {
+            "title": "Centella Asiatica",
+            "description": "Soothes and repairs the skin barrier while you cleanse."
+          }
+        }
+      },
+      "block_order": [
+        "ing_1"
+      ],
       "settings": {
         "title": "what's inside"
       }
     },
-    "benefits_focus": {
-      "type": "product-benefits-focus",
+    "study_results": {
+      "type": "product-study-results",
+      "blocks": {
+        "stat_1": {
+          "type": "stat_block",
+          "settings": {
+            "number": "98%",
+            "description": "experienced a clearer complexion after 7 days."
+          }
+        }
+      },
+      "block_order": [
+        "stat_1"
+      ],
       "settings": {
-        "subtitle": "SPREAD IT ON FOR:"
+        "footnote": "*Based on a consumer study."
       }
     },
     "faq_split": {
@@ -49,7 +91,7 @@
     "meet_product",
     "details_split",
     "ingredients",
-    "benefits_focus",
+    "study_results",
     "faq_split",
     "product_reviews",
     "related_products"
