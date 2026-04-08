@@ -84,19 +84,13 @@
 <section class="benefits-focus-section">
   <div class="bf-left">
     {%- assign bf_subtitle = section.settings.subtitle | default: 'SPREAD IT ON FOR:' -%}
-    {%- if product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' and section.settings.subtitle == blank -%}
+    {%- if product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' -%}
       {%- assign bf_subtitle = 'WASH IT ON TO:' -%}
     {%- elsif product.handle == 'floral-blossom-hair-mist' -%}
       {%- assign bf_subtitle = 'MIST IT ON TO:' -%}
     {%- endif -%}
     <div class="bf-subtitle">{{ bf_subtitle }}</div>
     <div class="bf-title-group">
-      {% for block in section.blocks %}
-        <div class="bf-line {% if block.settings.highlight %}bf-line-highlight{% endif %}" {{ block.shopify_attributes }}>
-          {{ block.settings.text | downcase }}
-        </div>
-      {% endfor %}
-      {% if section.blocks.size == 0 %}
         {%- if product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' -%}
           <div class="bf-line">fresh, balanced skin</div>
           <div class="bf-line">gentle daily cleansing</div>
@@ -109,7 +103,7 @@
           <div class="bf-line">hair refresh</div>
           <div class="bf-line">soft floral scent</div>
           <div class="bf-line bf-line-highlight">natural shine</div>
-        {%- elsif product.handle == 'centella-skin-toner-copy' -%}
+        {%- elsif product.handle == 'centella-skin-toner-copy' or product.handle == 'renewal-cleanser' -%}
           <div class="bf-line">daily cleansing</div>
           <div class="bf-line">brighter skin</div>
           <div class="bf-line bf-line-highlight">fresh, clean feel</div>
@@ -121,21 +115,49 @@
           <div class="bf-line">refined, balanced skin</div>
           <div class="bf-line">smoother texture</div>
           <div class="bf-line bf-line-highlight">clear, radiant glow</div>
+        {%- elsif product.handle == 'e7-korean-glass-skin-centella-face-wash-copy' -%}
+           <div class="bf-line">daily defense</div>
+           <div class="bf-line">weightless feel</div>
+           <div class="bf-line bf-line-highlight">complete protection</div>
         {%- else -%}
-          <div class="bf-line">deep repair</div>
-          <div class="bf-line">overnight hydration</div>
-          <div class="bf-line bf-line-highlight">revitalized, luminous skin</div>
+          {%- for block in section.blocks -%}
+             <div class="bf-line {% if block.settings.highlight %}bf-line-highlight{% endif %}" {{ block.shopify_attributes }}>
+               {{ block.settings.text | downcase }}
+             </div>
+          {%- endfor -%}
+          {%- if section.blocks.size == 0 -%}
+              <div class="bf-line">deep repair</div>
+              <div class="bf-line">overnight hydration</div>
+              <div class="bf-line bf-line-highlight">revitalized, luminous skin</div>
+          {%- endif -%}
         {%- endif -%}
-      {% endif %}
     </div>
   </div>
   
   <div class="bf-right">
-    {% if section.settings.image != blank %}
+    {%- if product.handle == 'centella-skin-toner' -%}
+      <img class="bf-image" src="{{ 'toner-deep-hydration.jpg' | asset_url }}" alt="Refined, balanced skin">
+    {%- elsif product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' -%}
+      <img class="bf-image" src="{{ 'facewash-shot.png' | asset_url }}" alt="Face Wash Shot">
+    {%- elsif product.handle == 'e7-korean-glass-skin-centella-face-wash-copy' -%}
+      <img class="bf-image" src="{{ 'sunscreen-lifestyle-3.jpg' | asset_url }}" alt="Sunscreen Shot">
+    {%- elsif product.handle == 'e7-korean-glass-skin-centella-sunscreen-spf50-copy' -%}
+      <img class="bf-image" src="{{ 'glow-meet-2.jpg' | asset_url }}" alt="Serum Shot">
+    {%- elsif product.handle == 'centella-skin-toner-copy' or product.handle == 'renewal-cleanser' -%}
+      <img class="bf-image" src="{{ 'cleanser-meet-3.jpg' | asset_url }}" alt="Gel Cleanser Shot">
+    {%- elsif product.handle == 'e7-korean-glass-skin-moisturizer' -%}
+      <img class="bf-image" src="{{ 'moisturizer-deep-hydration.jpg' | asset_url }}" alt="Moisturizer Shot">
+    {%- elsif product.handle == 'floral-blossom-hair-mist' -%}
+      <img class="bf-image" src="{{ 'hair-mist-meet-1.jpg' | asset_url }}" alt="Hair Mist Shot">
+    {%- elsif product.handle == 'anti-frizz-keratin-serum' -%}
+      <img class="bf-image" src="{{ 'keratin-meet-1.jpg' | asset_url }}" alt="Keratin Shot">
+    {%- elsif product.handle == 'glutathione-cream' -%}
+      <img class="bf-image" src="{{ 'glutathione-meet-1.jpg' | asset_url }}" alt="Glutathione Shot">
+    {%- elsif section.settings.image != blank -%}
       {{ section.settings.image | image_url: width: 1000 | image_tag: class: 'bf-image', alt: 'Benefits Visual' }}
-    {% else %}
+    {%- else -%}
       <img class="bf-image" src="https://images.unsplash.com/photo-1549439602-43ebca2327af?q=80&w=1000" alt="Jewelry and Cosmetics setup">
-    {% endif %}
+    {%- endif -%}
   </div>
 </section>
 
@@ -178,30 +200,7 @@
   ],
   "presets": [
     {
-      "name": "Benefits Focus Split",
-      "blocks": [
-        {
-          "type": "benefit_line",
-          "settings": {
-            "text": "deep repair",
-            "highlight": false
-          }
-        },
-        {
-          "type": "benefit_line",
-          "settings": {
-            "text": "overnight hydration",
-            "highlight": false
-          }
-        },
-        {
-          "type": "benefit_line",
-          "settings": {
-            "text": "revitalized, luminous skin",
-            "highlight": true
-          }
-        }
-      ]
+      "name": "Benefits Focus Split"
     }
   ]
 }

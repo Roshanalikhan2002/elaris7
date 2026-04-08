@@ -81,43 +81,45 @@
         {%- elsif pname contains "Set" or pname contains "Bundle" -%}
           {%- assign phandle = "e7-complete-glass-skin-set" -%}
         {%- endif -%}
-        {%- assign pimage = fallback_images[i] -%}
+
+        {%- assign current_prod = all_products[phandle] -%}
+        {%- assign pimage = fallback_images[i] | asset_url -%}
+        {%- if current_prod.featured_image != blank -%}
+          {%- assign pimage = current_prod.featured_image | img_url: '800x800' -%}
+        {%- endif -%}
+        
+        {%- assign phover = fallback_hovers[i] | asset_url -%}
+        {%- if current_prod.images.size > 1 -%}
+          {%- assign phover = current_prod.images[1] | img_url: '1200x' -%}
+        {%- endif -%}
+
         {%- assign plabel = fallback_labels[i] -%}
         <div class="card card-rhode" data-category="{{ plabel | handleize }}">
           <a href="/products/{{ phandle }}" class="card-link-wrapper">
-            {%- assign hover_img = fallback_hovers[i] -%}
-            {%- if pname == "Glutathione Cream" -%}
-              {%- assign hover_img = "deep-hydration-100.jpg" -%}
-            {%- endif -%}
-            {% if hover_img != blank and hover_img != 'none' %}
-              <img src="{{ hover_img | asset_url }}" class="card-hover-bg" alt="Hover Background">
+            {% if phover != blank and phover != 'none' %}
+              <img src="{{ phover }}" class="card-hover-bg" alt="Hover Background">
             {% endif %}
 
             <div class="card-rhode-top">
               <span class="card-brand-label">{{ plabel }}</span>
             </div>
             <div class="card-rhode-image">
-              {% if pimage != blank %}
-                <img src="{{ pimage | asset_url }}" class="product-main-img" alt="{{ pname }}">
-              {% else %}
-                <div class="product-placeholder-img"></div>
-              {% endif %}
+              <img src="{{ pimage }}" class="product-main-img" alt="{{ pname }}">
             </div>
             <div class="card-rhode-footer">
-              {%- assign pprice = "RS. 1,500" -%}
+              {%- assign pprice = current_prod.price | money | default: "RS. 1,500" -%}
               {%- assign previews = "16k" -%}
               {%- if pname == "Glutathione Cream" -%}
-                {%- assign pprice = "RS. 2,950" -%}
                 {%- assign previews = "9k" -%}
               {%- endif -%}
               <div class="card-meta">
                 <div class="card-stars">★★★★★ <span class="review-count">({{ previews }})</span></div>
-                <h3 class="card-name">{{ pname | upcase }}</h3>
+                <h3 class="card-name">{{ current_prod.title | default: pname | upcase }}</h3>
               </div>
               <span class="btn-rhode-buy-pill">BUY - {{ pprice }}</span>
             </div>
             <div class="buy-button-hover" data-handle="{{ phandle }}">
-              BUY {{ pname | upcase }} - {{ pprice }}
+              BUY {{ current_prod.title | default: pname | upcase }} - {{ pprice }}
             </div>
           </a>
           

@@ -80,209 +80,88 @@
   }
 {%- endstyle -%}
 
+{%- comment -%}
+  CENTRALIZED STUDY RESULTS MAPPING
+{%- endcomment -%}
+
+{%- assign is_serum = false -%}
+{%- if product.handle == 'e7-korean-glass-skin-centella-sunscreen-spf50-copy' or product.handle == 'centella-serum' or product.handle == 'e7-korean-glass-skin-centella-sunscreen' -%}
+  {%- assign is_serum = true -%}
+{%- endif -%}
+
+{%- assign is_sunscreen = false -%}
+{%- if product.handle == 'e7-korean-glass-skin-centella-face-wash-copy' or product.handle == 'sunscreen' -%}
+  {%- assign is_sunscreen = true -%}
+{%- endif -%}
+
+{%- assign is_cleanser = false -%}
+{%- if product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' or product.handle == 'renewal-cleanser' -%}
+  {%- assign is_cleanser = true -%}
+{%- endif -%}
+
 <section class="study-results-section">
   <div class="sr-left">
-    {% for block in section.blocks %}
-      <div class="sr-stat-block" {{ block.shopify_attributes }}>
-        <h3 class="sr-number">{{ block.settings.number }}</h3>
-        <p class="sr-desc">{{ block.settings.description }}</p>
-      </div>
-    {% endfor %}
-    
-    {% if section.blocks.size == 0 %}
-      {%- if product.handle == 'anti-frizz-keratin-serum' -%}
-        <div class="sr-stat-block">
-          <h3 class="sr-number">99%</h3>
-          <p class="sr-desc">SAID THEIR HAIR FELT SMOOTHER + MORE MANAGEABLE</p>
-        </div>
-        <div class="sr-stat-block">
-          <h3 class="sr-number">98%</h3>
-          <p class="sr-desc">SAID IT REDUCED FRIZZ EFFECTIVELY</p>
-        </div>
-        <div class="sr-stat-block">
-          <h3 class="sr-number">97%</h3>
-          <p class="sr-desc">SAID THEIR HAIR LOOKED SHINIER + HEALTHIER</p>
-        </div>
-        <div class="sr-stat-block">
-          <h3 class="sr-number">3 out of 4</h3>
-          <p class="sr-desc">SAID THEY NOTICED LESS BREAKAGE</p>
-        </div>
-      {%- elsif product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' -%}
-        <div class="sr-stat-block">
-          <h3 class="sr-number">99%</h3>
-          <p class="sr-desc">SAID THEIR SKIN FELT CLEAN + REFRESHED AFTER EVERY WASH</p>
-        </div>
-        <div class="sr-stat-block">
-          <h3 class="sr-number">98%</h3>
-          <p class="sr-desc">SAID IT DID NOT DRY OUT THEIR SKIN</p>
-        </div>
-        <div class="sr-stat-block">
-          <h3 class="sr-number">97%</h3>
-          <p class="sr-desc">SAID THEIR SKIN LOOKED CLEARER + MORE BALANCED</p>
-        </div>
-        <div class="sr-stat-block">
-          <h3 class="sr-number">3 out of 4</h3>
-          <p class="sr-desc">SAID THEY NOTICED LESS DULLNESS WITH DAILY USE</p>
-        </div>
-      {%- elsif product.handle == 'e7-korean-glass-skin-centella-sunscreen-spf50-copy' -%}
-        <div class="sr-stat-block">
-          <h3 class="sr-number">99%</h3>
-          <p class="sr-desc">SAID THEIR SKIN LOOKED BRIGHTER + MORE EVEN</p>
-        </div>
-        <div class="sr-stat-block">
-          <h3 class="sr-number">98%</h3>
-          <p class="sr-desc">SAID DARK SPOTS APPEARED VISIBLY REDUCED</p>
-        </div>
-        <div class="sr-stat-block">
-          <h3 class="sr-number">97%</h3>
-          <p class="sr-desc">SAID THEIR SKIN FELT SMOOTHER + MORE REFINED</p>
-        </div>
-        <div class="sr-stat-block">
-          <h3 class="sr-number">3 out of 4</h3>
-          <p class="sr-desc">SAID THEY NOTICED A HEALTHY, GLASS-LIKE GLOW</p>
-        </div>
+    {%- assign has_custom_stats = false -%}
+    {%- capture sr_stats -%}
+      {%- if is_serum -%}
+        <div class="sr-stat-block"><h3 class="sr-number">99%</h3><p class="sr-desc">SAID THEIR SKIN LOOKED BRIGHTER + MORE EVEN</p></div>
+        <div class="sr-stat-block"><h3 class="sr-number">98%</h3><p class="sr-desc">SAID DARK SPOTS APPEARED VISIBLY REDUCED</p></div>
+        <div class="sr-stat-block"><h3 class="sr-number">97%</h3><p class="sr-desc">SAID THEIR SKIN FELT SMOOTHER + MORE REFINED</p></div>
+        <div class="sr-stat-block"><h3 class="sr-number">3 out of 4</h3><p class="sr-desc">SAID THEY NOTICED A HEALTHY, GLASS-LIKE GLOW</p></div>
+        {%- assign has_custom_stats = true -%}
+      {%- elsif is_cleanser -%}
+        <div class="sr-stat-block"><h3 class="sr-number">99%</h3><p class="sr-desc">SAID THEIR SKIN FELT CLEAN + REFRESHED AFTER EVERY WASH</p></div>
+        <div class="sr-stat-block"><h3 class="sr-number">98%</h3><p class="sr-desc">SAID IT DID NOT DRY OUT THEIR SKIN</p></div>
+        <div class="sr-stat-block"><h3 class="sr-number">97%</h3><p class="sr-desc">SAID THEIR SKIN LOOKED CLEARER + MORE BALANCED</p></div>
+        <div class="sr-stat-block"><h3 class="sr-number">3 out of 4</h3><p class="sr-desc">SAID THEY NOTICED LESS DULLNESS WITH DAILY USE</p></div>
+        {%- assign has_custom_stats = true -%}
+      {%- elsif is_sunscreen -%}
+        <div class="sr-stat-block"><h3 class="sr-number">99%</h3><p class="sr-desc">SAID THEIR SKIN FELT PROTECTED + COMFORTABLE</p></div>
+        <div class="sr-stat-block"><h3 class="sr-number">98%</h3><p class="sr-desc">SAID IT BLENDS EASILY WITHOUT ANY WHITE CAST</p></div>
+        <div class="sr-stat-block"><h3 class="sr-number">97%</h3><p class="sr-desc">SAID THEIR SKIN FELT HYDRATED THROUGHOUT THE DAY</p></div>
+        <div class="sr-stat-block"><h3 class="sr-number">3 out of 4</h3><p class="sr-desc">SAID THEY NOTICED A HEALTHY, PROTECTED GLOW</p></div>
+        {%- assign has_custom_stats = true -%}
+      {%- elsif product.handle == 'anti-frizz-keratin-serum' or product.handle == 'keratin-serum' -%}
+        <div class="sr-stat-block"><h3 class="sr-number">99%</h3><p class="sr-desc">SAID THEIR HAIR FELT SMOOTHER + MORE MANAGEABLE</p></div>
+        <div class="sr-stat-block"><h3 class="sr-number">98%</h3><p class="sr-desc">SAID IT REDUCED FRIZZ EFFECTIVELY</p></div>
+        <div class="sr-stat-block"><h3 class="sr-number">97%</h3><p class="sr-desc">SAID THEIR HAIR LOOKED SHINIER + HEALTHIER</p></div>
+        {%- assign has_custom_stats = true -%}
       {%- elsif product.handle == 'glutathione-cream' -%}
-        <div class="sr-stat-block">
-          <h3 class="sr-number">99%</h3>
-          <p class="sr-desc">SAID THEIR SKIN LOOKED MORE RADIANT</p>
-        </div>
-        <div class="sr-stat-block">
-          <h3 class="sr-number">98%</h3>
-          <p class="sr-desc">SAID THEIR SKIN FELT MORE HYDRATED</p>
-        </div>
-        <div class="sr-stat-block">
-          <h3 class="sr-number">97%</h3>
-          <p class="sr-desc">SAID THEIR SKIN APPEARED MORE EVEN</p>
-        </div>
-        <div class="sr-stat-block">
-          <h3 class="sr-number">3 out of 4</h3>
-          <p class="sr-desc">SAID THEY NOTICED IMPROVED SKIN CLARITY</p>
-        </div>
-      {%- elsif product.handle == 'floral-blossom-hair-mist' -%}
-        <div class="sr-stat-block">
-          <h3 class="sr-number">99%</h3>
-          <p class="sr-desc">SAID THEIR HAIR FELT FRESHER INSTANTLY</p>
-        </div>
-        <div class="sr-stat-block">
-          <h3 class="sr-number">98%</h3>
-          <p class="sr-desc">SAID THE FRAGRANCE LASTED THROUGHOUT THE DAY</p>
-        </div>
-        <div class="sr-stat-block">
-          <h3 class="sr-number">97%</h3>
-          <p class="sr-desc">SAID THEIR HAIR LOOKED MORE SHINY + REVIVED</p>
-        </div>
-        <div class="sr-stat-block">
-          <h3 class="sr-number">3 out of 4</h3>
-          <p class="sr-desc">SAID THEY USED IT DAILY FOR QUICK REFRESH</p>
-        </div>
-      {%- elsif product.handle == 'centella-skin-toner' -%}
-        <div class="sr-stat-block">
-          <h3 class="sr-number">99%</h3>
-          <p class="sr-desc">SAID THEIR SKIN FELT CLEANER + MORE BALANCED</p>
-        </div>
-        <div class="sr-stat-block">
-          <h3 class="sr-number">98%</h3>
-          <p class="sr-desc">SAID THEIR SKIN LOOKED CLEARER + MORE REFINED</p>
-        </div>
-        <div class="sr-stat-block">
-          <h3 class="sr-number">97%</h3>
-          <p class="sr-desc">SAID THEIR SKIN TEXTURE FELT SMOOTHER</p>
-        </div>
-        <div class="sr-stat-block">
-          <h3 class="sr-number">3 out of 4</h3>
-          <p class="sr-desc">SAID THEY NOTICED A HEALTHY, EVEN GLOW</p>
-        </div>
-      {%- elsif product.handle == 'e7-korean-glass-skin-centella-face-wash-copy' -%}
-        <div class="sr-stat-block">
-          <h3 class="sr-number">99%</h3>
-          <p class="sr-desc">SAID THEIR SKIN FELT PROTECTED + COMFORTABLE</p>
-        </div>
-        <div class="sr-stat-block">
-          <h3 class="sr-number">98%</h3>
-          <p class="sr-desc">SAID IT BLENDS EASILY WITHOUT ANY WHITE CAST</p>
-        </div>
-        <div class="sr-stat-block">
-          <h3 class="sr-number">97%</h3>
-          <p class="sr-desc">SAID THEIR SKIN FELT HYDRATED THROUGHOUT THE DAY</p>
-        </div>
-        <div class="sr-stat-block">
-          <h3 class="sr-number">3 out of 4</h3>
-          <p class="sr-desc">SAID THEY NOTICED A HEALTHY, PROTECTED GLOW</p>
-        </div>
-      {%- elsif product.handle == 'centella-skin-toner-copy' -%}
-        <div class="sr-stat-block">
-          <h3 class="sr-number">99%</h3>
-          <p class="sr-desc">SAID THEIR SKIN FELT CLEAN + REFRESHED</p>
-        </div>
-        <div class="sr-stat-block">
-          <h3 class="sr-number">98%</h3>
-          <p class="sr-desc">SAID THEIR SKIN LOOKED BRIGHTER AFTER USE</p>
-        </div>
-        <div class="sr-stat-block">
-          <h3 class="sr-number">97%</h3>
-          <p class="sr-desc">SAID THEIR SKIN FELT SOFT + HYDRATED</p>
-        </div>
-        <div class="sr-stat-block">
-          <h3 class="sr-number">3 out of 4</h3>
-          <p class="sr-desc">SAID THEY NOTICED A HEALTHIER GLOW</p>
-        </div>
-      {%- elsif product.handle == 'e7-korean-glass-skin-moisturizer' -%}
-        <div class="sr-stat-block">
-          <h3 class="sr-number">99%</h3>
-          <p class="sr-desc">SAID THEIR SKIN FELT MORE HYDRATED + REFRESHED</p>
-        </div>
-        <div class="sr-stat-block">
-          <h3 class="sr-number">98%</h3>
-          <p class="sr-desc">SAID IT ABSORBS QUICKLY WITHOUT ANY HEAVINESS</p>
-        </div>
-        <div class="sr-stat-block">
-          <h3 class="sr-number">97%</h3>
-          <p class="sr-desc">SAID THEIR SKIN LOOKED SMOOTHER + MORE EVEN</p>
-        </div>
-        <div class="sr-stat-block">
-          <h3 class="sr-number">3 out of 4</h3>
-          <p class="sr-desc">SAID THEY NOTICED A HEALTHY, NATURAL GLOW</p>
-        </div>
-      {%- else -%}
-        <div class="sr-stat-block">
-          <h3 class="sr-number">97%</h3>
-          <p class="sr-desc">SAID THEIR SKIN FELT DEEPLY HYDRATED AND NOURISHED</p>
-        </div>
-        <div class="sr-stat-block">
-          <h3 class="sr-number">95%</h3>
-          <p class="sr-desc">SAID IT ABSORBED WELL WITHOUT HEAVINESS</p>
-        </div>
-        <div class="sr-stat-block">
-          <h3 class="sr-number">94%</h3>
-          <p class="sr-desc">NOTICED SMOOTHER, SOFTER, AND REFINED SKIN BY MORNING</p>
-        </div>
-        <div class="sr-stat-block">
-          <h3 class="sr-number">3 out of 4</h3>
-          <p class="sr-desc">REPORTED A VISIBLE REDUCTION IN FINE LINES AND DARK SPOTS</p>
-        </div>
+        <div class="sr-stat-block"><h3 class="sr-number">99%</h3><p class="sr-desc">SAID THEIR SKIN LOOKED MORE RADIANT</p></div>
+        <div class="sr-stat-block"><h3 class="sr-number">98%</h3><p class="sr-desc">SAID THEIR SKIN FELT MORE HYDRATED</p></div>
+        {%- assign has_custom_stats = true -%}
+      {%- elsif product.handle == 'floral-blossom-hair-mist' or product.handle == 'hair-mist' -%}
+        <div class="sr-stat-block"><h3 class="sr-number">99%</h3><p class="sr-desc">SAID THEIR HAIR FELT FRESHER INSTANTLY</p></div>
+        <div class="sr-stat-block"><h3 class="sr-number">98%</h3><p class="sr-desc">SAID THE FRAGRANCE LASTED THROUGHOUT THE DAY</p></div>
+        {%- assign has_custom_stats = true -%}
+      {%- elsif product.handle == 'centella-skin-toner' or product.handle == 'renewal-toner' -%}
+        <div class="sr-stat-block"><h3 class="sr-number">99%</h3><p class="sr-desc">SAID THEIR SKIN FELT CLEANER + MORE BALANCED</p></div>
+        <div class="sr-stat-block"><h3 class="sr-number">98%</h3><p class="sr-desc">SAID THEIR SKIN LOOKED CLEARER + MORE REFINED</p></div>
+        {%- assign has_custom_stats = true -%}
+      {%- elsif product.handle == 'e7-korean-glass-skin-moisturizer' or product.handle == 'hydra-burst-moisturizer' -%}
+        <div class="sr-stat-block"><h3 class="sr-number">99%</h3><p class="sr-desc">SAID THEIR SKIN FELT MORE HYDRATED + REFRESHED</p></div>
+        <div class="sr-stat-block"><h3 class="sr-number">98%</h3><p class="sr-desc">SAID IT ABSORBS QUICKLY WITHOUT ANY HEAVINESS</p></div>
+        {%- assign has_custom_stats = true -%}
       {%- endif -%}
-    {% endif %}
+    {%- endcapture -%}
+
+    {%- if has_custom_stats -%}
+      {{ sr_stats }}
+    {%- elsif section.blocks.size > 0 -%}
+      {% for block in section.blocks %}
+        <div class="sr-stat-block" {{ block.shopify_attributes }}>
+          <h3 class="sr-number">{{ block.settings.number }}</h3>
+          <p class="sr-desc">{{ block.settings.description }}</p>
+        </div>
+      {% endfor %}
+    {%- else -%}
+        <div class="sr-stat-block"><h3 class="sr-number">97%</h3><p class="sr-desc">SAID THEIR SKIN FELT DEEPLY HYDRATED AND NOURISHED</p></div>
+        <div class="sr-stat-block"><h3 class="sr-number">95%</h3><p class="sr-desc">SAID IT ABSORBED WELL WITHOUT HEAVINESS</p></div>
+        <div class="sr-stat-block"><h3 class="sr-number">3 out of 4</h3><p class="sr-desc">REPORTED A VISIBLE REDUCTION IN FINE LINES</p></div>
+    {%- endif -%}
     
     <div class="sr-footnote">
-      {%- if product.handle == 'anti-frizz-keratin-serum' -%}
-        Based on a 2-week consumer perception study with consistent use.
-      {%- elsif product.handle == 'e7-korean-glass-skin-centella-sunscreen-spf50-copy' -%}
-        Based on a 2-week consumer perception study with consistent daily use.
-      {%- elsif product.handle == 'centella-skin-toner' -%}
-        Based on a 2-week consumer perception study with consistent use.
-      {%- elsif product.handle == 'glutathione-cream' -%}
-        Based on a 2-week consumer perception study with consistent daily use.
-      {%- elsif product.handle == 'floral-blossom-hair-mist' -%}
-        Based on a 2-week consumer perception study with consistent daily use.
-      {%- elsif product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' -%}
-        Based on a 2-week consumer perception study with consistent daily use.
-      {%- elsif product.handle == 'e7-korean-glass-skin-centella-face-wash-copy' -%}
-        Based on a 2-week consumer perception study with consistent daily use.
-      {%- elsif product.handle == 'centella-skin-toner' -%}
-        Based on a 2-week consumer perception study with consistent use.
-      {%- elsif product.handle == 'e7-korean-glass-skin-moisturizer' -%}
-        Based on a 2-week consumer perception study with consistent use.
-      {%- elsif product.handle == 'centella-skin-toner-copy' -%}
+      {%- if is_serum or is_sunscreen or is_cleanser or product.handle contains 'serum' or product.handle contains 'mist' or product.handle contains 'toner' or product.handle contains 'moisturizer' or product.handle contains 'cream' -%}
         Based on a 2-week consumer perception study with consistent daily use.
       {%- else -%}
         {{ section.settings.footnote | default: '*Based on a 32-subject consumer perception study after 2 weeks of use.' }}
@@ -291,21 +170,25 @@
   </div>
   
   <div class="sr-right">
-    {% if section.settings.image != blank %}
+    {%- if is_serum -%}
+      <img class="sr-image" src="{{ 'social-face.jpg' | asset_url }}" alt="Serum Result">
+    {%- elsif is_sunscreen -%}
+      <img class="sr-image" src="{{ 'sunscreen-lifestyle-4.jpg' | asset_url }}" alt="Sunscreen Result">
+    {%- elsif is_cleanser -%}
+       <img class="sr-image" src="{{ 'cleanser-meet-1.jpg' | asset_url }}" alt="Cleanser Result">
+    {%- elsif product.handle == 'centella-skin-toner' or product.handle == 'renewal-toner' -%}
+      <img class="sr-image" src="{{ 'toner-before-after.jpg' | asset_url }}" alt="Toner Results">
+    {%- elsif product.handle == 'e7-korean-glass-skin-moisturizer' or product.handle == 'hydra-burst-moisturizer' -%}
+      <img class="sr-image" src="{{ 'moisturizer-before-after.jpg' | asset_url }}" alt="Moisturizer Results">
+    {%- elsif product.handle == 'anti-frizz-keratin-serum' or product.handle == 'keratin-serum' -%}
+      <img class="sr-image" src="{{ 'keratin-ba.jpg' | asset_url }}" alt="Before After Comparison">
+    {%- elsif product.handle == 'floral-blossom-hair-mist' or product.handle == 'hair-mist' -%}
+      <img class="sr-image" src="{{ 'hair-mist.jpg' | asset_url }}" alt="Hair Mist Results">
+    {%- elsif section.settings.image != blank -%}
       {{ section.settings.image | image_url: width: 1000 | image_tag: class: 'sr-image', alt: 'Study Results Visual' }}
-    {% else %}
-      {%- if product.handle == 'anti-frizz-keratin-serum' -%}
-        <img class="sr-image" src="{{ 'keratin-ba.jpg' | asset_url }}" alt="Before After Comparison">
-      {%- elsif product.handle == 'e7-korean-glass-skin-centella-sunscreen-spf50-copy' -%}
-        <img class="sr-image" src="{{ 'social-face.jpg' | asset_url }}" alt="Glow Result">
-      {%- elsif product.handle == 'e7-korean-glass-skin-moisturizer' -%}
-        <img class="sr-image" src="{{ 'moisturizer-before-after.jpg' | asset_url }}" alt="Moisturizer Results">
-      {%- elsif product.handle == 'centella-skin-toner' -%}
-        <img class="sr-image" src="{{ 'toner-before-after.jpg' | asset_url }}" alt="Toner Results">
-      {%- else -%}
-        <img class="sr-image" src="https://images.unsplash.com/photo-1549439602-43ebca2327af?q=80&w=1000" alt="Cosmetic application close up">
-      {%- endif -%}
-    {% endif %}
+    {%- else -%}
+      <img class="sr-image" src="https://images.unsplash.com/photo-1549439602-43ebca2327af?q=80&w=1000" alt="Cosmetic application close up">
+    {%- endif -%}
   </div>
 </section>
 

@@ -451,283 +451,224 @@
   }
 {%- endstyle -%}
 
+{%- comment -%}
+  CENTRALIZED PRODUCT DATA OVERRIDES
+  Ensures Gallery, Title, and Description are perfectly synced.
+{%- endcomment -%}
+
+{%- assign is_centella_serum = false -%}
+{%- if product.handle == 'e7-korean-glass-skin-centella-sunscreen-spf50-copy' or product.handle == 'centella-serum' or product.handle == 'e7-korean-glass-skin-centella-sunscreen' -%}
+  {%- assign is_centella_serum = true -%}
+{%- endif -%}
+
+{%- assign display_title = product.title -%}
+{%- assign display_subtitle = section.settings.subtitle -%}
+{%- assign display_desc = section.settings.description -%}
+
+{%- if is_centella_serum -%}
+  {%- assign display_title = "Centella Serum" -%}
+  {%- assign display_subtitle = 'Glow That Transforms Over Time' -%}
+  {%- assign display_desc = 'A daily serum for BRIGHTENING + EVEN, GLASS-LIKE SKIN.' -%}
+{%- elsif product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' or product.handle == 'renewal-cleanser' -%}
+  {%- assign display_title = "Renewal Cleanser" -%}
+  {%- assign display_subtitle = 'Cleanse & Glow' -%}
+  {%- assign display_desc = 'A refining gel cleanser designed to gently remove impurities while enhancing skin brightness.' -%}
+{%- elsif product.handle == 'e7-korean-glass-skin-centella-face-wash-copy' or product.handle == 'sunscreen' -%}
+  {%- assign display_title = "Sunscreen SPF60+" -%}
+  {%- assign display_subtitle = 'Centella Asiatica + UV Filters' -%}
+  {%- assign display_desc = 'A protective sunscreen infused with Centella Asiatica and advanced UV filters.' -%}
+{%- elsif product.handle == 'night-cream' -%}
+  {%- assign display_title = "Centella Night Cream" -%}
+  {%- assign display_subtitle = 'Wake Up to Refreshed, Radiant Skin' -%}
+  {%- assign display_desc = 'An overnight formula for HYDRATION + REPAIR + RADIANT SKIN' -%}
+{%- elsif product.handle == 'tranexamic-serum' -%}
+  {%- assign display_subtitle = 'Targeted Brightening That Works' -%}
+  {%- assign display_desc = 'A serum for EVEN TONE + CLEAR, RADIANT SKIN.' -%}
+{%- elsif product.handle == 'glutathione-cream' -%}
+  {%- assign display_title = "Glutathione Cream" -%}
+  {%- assign display_subtitle = 'Glutathione + Hyaluronic Acid' -%}
+  {%- assign display_desc = 'A nourishing brightening cream designed to improve uneven tone and reduce dullness.' -%}
+{%- elsif product.handle == 'centella-skin-toner' or product.handle == 'renewal-toner' -%}
+  {%- assign display_title = "Centella Skin Toner" -%}
+  {%- assign display_subtitle = 'Refine. Smooth. Glow.' -%}
+  {%- assign display_desc = 'A refining toner designed to clarify, smooth, and rebalance the skin.' -%}
+{%- elsif product.handle == 'e7-korean-glass-skin-moisturizer' or product.handle == 'hydra-burst-moisturizer' -%}
+  {%- assign display_title = "Centella Moisturizer" -%}
+  {%- assign display_subtitle = 'Centella Asiatica + Ceramide Repair' -%}
+  {%- assign display_desc = 'A lightweight, glow-enhancing moisturizer for a smooth finish.' -%}
+{%- elsif product.handle == 'anti-frizz-keratin-serum' or product.handle == 'keratin-serum' -%}
+  {%- assign display_title = "Anti-Frizz Keratin Serum" -%}
+  {%- assign display_subtitle = 'Smooth. Shine. Control.' -%}
+{%- elsif product.handle == 'floral-blossom-hair-mist' or product.handle == 'hair-mist' -%}
+  {%- assign display_title = "Floral Blossom Hair Mist" -%}
+  {%- assign display_subtitle = 'Bloom With Every Move' -%}
+{%- endif -%}
+
+{%- if display_desc == blank -%}
+  {%- assign display_desc = "Faith's Light. Korean Science. <br>Powered by Nature's Purest." -%}
+{%- endif -%}
+
 <main class="product-page">
   <div class="product-grid">
     
     <div class="product-gallery">
       <!-- Thumbnails on Left -->
       <div class="gallery-thumbnails">
-        {%- if product.handle == 'anti-frizz-keratin-serum' -%}
-          <div class="thumb-item active" onmouseover="scrollGallery(0, this)">
-            <img src="{{ 'keratin-serum.jpg' | asset_url }}" alt="{{ product.title }}">
-          </div>
-          <div class="thumb-item" onmouseover="scrollGallery(1, this)">
-            <img src="{{ 'keratin-meet-1.jpg' | asset_url }}" alt="Lifestyle View">
-          </div>
-          <div class="thumb-item" onmouseover="scrollGallery(2, this)">
-            <img src="{{ 'keratin-ba.jpg' | asset_url }}" alt="Before After">
-          </div>
-          <div class="thumb-item" onmouseover="scrollGallery(3, this)">
-            <img src="{{ 'keratin-1.jpg' | asset_url }}" alt="Close up 1">
-          </div>
-          <div class="thumb-item" onmouseover="scrollGallery(4, this)">
-            <img src="{{ 'keratin-2.jpg' | asset_url }}" alt="Close up 2">
-          </div>
-        {%- elsif product.handle == 'tranexamic-serum' -%}
-          <div class="thumb-item active" onmouseover="scrollGallery(0, this)">
-            <img src="{{ 'tranexamic-meet-1.jpg' | asset_url }}" alt="{{ product.title }}">
-          </div>
-          <div class="thumb-item" onmouseover="scrollGallery(1, this)">
-            <img src="{{ 'tranexamic-meet-1.jpg' | asset_url }}" alt="Meet Elaris 1">
-          </div>
-          <div class="thumb-item" onmouseover="scrollGallery(2, this)">
-            <img src="{{ 'tranexamic-meet-2.jpg' | asset_url }}" alt="Meet Elaris 2">
-          </div>
-          <div class="thumb-item" onmouseover="scrollGallery(3, this)">
-            <img src="{{ 'tranexamic-meet-3.jpg' | asset_url }}" alt="Meet Elaris 3">
-          </div>
-        {%- elsif product.handle == 'e7-korean-glass-skin-centella-sunscreen-spf50-copy' -%}
-          <div class="thumb-item active" onmouseover="scrollGallery(0, this)">
-            <img src="{{ 'glow-serum-100.jpg' | asset_url }}" alt="{{ product.title }}">
-          </div>
-          <div class="thumb-item" onmouseover="scrollGallery(1, this)">
-            <img src="{{ 'glow-gallery-2.jpg' | asset_url }}" alt="Glow Gift Set">
-          </div>
-          <div class="thumb-item" onmouseover="scrollGallery(2, this)">
-            <img src="{{ 'glow-gallery-3.jpg' | asset_url }}" alt="Before After Results">
-          </div>
-          <div class="thumb-item" onmouseover="scrollGallery(3, this)">
-            <img src="{{ 'glow-gallery-4.jpg' | asset_url }}" alt="Product Infographic">
-          </div>
-        {%- elsif product.handle == 'anti-acne' -%}
-          <div class="thumb-item active" onmouseover="scrollGallery(0, this)">
-            <img src="{{ 'anti-acne-meet-1.jpg' | asset_url }}" alt="{{ product.title }}">
-          </div>
-          <div class="thumb-item" onmouseover="scrollGallery(1, this)">
-            <img src="{{ 'anti-acne-meet-2.jpg' | asset_url }}" alt="Style 1">
-          </div>
-          <div class="thumb-item" onmouseover="scrollGallery(2, this)">
-            <img src="{{ 'anti-acne-meet-3.jpg' | asset_url }}" alt="Style 2">
-          </div>
-          <div class="thumb-item" onmouseover="scrollGallery(3, this)">
-            <img src="{{ 'anti-acne-meet-4.jpg' | asset_url }}" alt="Style 3">
-          </div>
-        {%- elsif product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' or product.handle == 'night-cream' -%}
-          <div class="thumb-item active" onmouseover="scrollGallery(0, this)">
-            <img src="{{ 'Artboard-1-100.jpg' | asset_url }}" alt="{{ product.title }}">
-          </div>
-          <div class="thumb-item" onmouseover="scrollGallery(1, this)">
-            <img src="{{ 'faq-100-nc.jpg' | asset_url }}" alt="FAQ">
-          </div>
-          <div class="thumb-item" onmouseover="scrollGallery(2, this)">
-            <img src="{{ 'night-cream-swatch-7-100.jpg' | asset_url }}" alt="Swatch">
-          </div>
-          <div class="thumb-item" onmouseover="scrollGallery(3, this)">
-            <img src="{{ 'nigh-suite-100.jpg' | asset_url }}" alt="Suite">
-          </div>
-          <div class="thumb-item" onmouseover="scrollGallery(4, this)">
-            <img src="{{ 'lifestyle-100.jpg' | asset_url }}" alt="Lifestyle">
-          </div>
-        {%- elsif product.handle == 'e7-korean-glass-skin-centella-face-wash-copy' -%}
-          <div class="thumb-item active" onmouseover="scrollGallery(0, this)">
-            <img src="{{ 'sunscreen-100.jpg' | asset_url }}" alt="{{ product.title }}">
-          </div>
-          <div class="thumb-item" onmouseover="scrollGallery(1, this)">
-            <img src="{{ 'sunscreen-lifestyle-1.jpg' | asset_url }}" alt="Lifestyle 1">
-          </div>
-          <div class="thumb-item" onmouseover="scrollGallery(2, this)">
-            <img src="{{ 'sunscreen-lifestyle-2.jpg' | asset_url }}" alt="Lifestyle 2">
-          </div>
-          <div class="thumb-item" onmouseover="scrollGallery(3, this)">
-            <img src="{{ 'sunscreen-lifestyle-3.jpg' | asset_url }}" alt="Lifestyle 3">
-          </div>
-          <div class="thumb-item" onmouseover="scrollGallery(4, this)">
-            <img src="{{ 'sunscreen-lifestyle-4.jpg' | asset_url }}" alt="Lifestyle 4">
-          </div>
-        {%- elsif product.handle == 'centella-skin-toner-copy' -%}
-          <div class="thumb-item active" onmouseover="scrollGallery(0, this)">
-            <img src="{{ 'gel cleanser-100.jpg' | asset_url }}" alt="{{ product.title }}">
-          </div>
-          <div class="thumb-item" onmouseover="scrollGallery(1, this)">
-            <img src="{{ 'cleanser-meet-1.jpg' | asset_url }}" alt="Cleanser Model 1">
-          </div>
-          <div class="thumb-item" onmouseover="scrollGallery(2, this)">
-            <img src="{{ 'cleanser-meet-2.jpg' | asset_url }}" alt="Cleanser Model 2">
-          </div>
-          <div class="thumb-item" onmouseover="scrollGallery(3, this)">
-            <img src="{{ 'cleanser-meet-3.jpg' | asset_url }}" alt="Cleanser Model 3">
-          </div>
-          <div class="thumb-item" onmouseover="scrollGallery(4, this)">
-            <img src="{{ 'cleanser-meet-4.jpg' | asset_url }}" alt="Cleanser Model 4">
-          </div>
-        {%- elsif product.handle == 'e7-korean-glass-skin-moisturizer' -%}
-          <div class="thumb-item active" onmouseover="scrollGallery(0, this)">
-            <img src="{{ 'moisturizer-100.jpg' | asset_url }}" alt="{{ product.title }}">
-          </div>
-          <div class="thumb-item" onmouseover="scrollGallery(1, this)">
-            <img src="{{ 'moisturizer-gallery-1.jpg' | asset_url }}" alt="Deep Hydration">
-          </div>
-          <div class="thumb-item" onmouseover="scrollGallery(2, this)">
-            <img src="{{ 'moisturizer-gallery-2.jpg' | asset_url }}" alt="Texture Jar">
-          </div>
-          <div class="thumb-item" onmouseover="scrollGallery(3, this)">
-            <img src="{{ 'moisturizer-gallery-3.jpg' | asset_url }}" alt="Lifestyle Shot">
-          </div>
-        {%- elsif product.handle == 'centella-skin-toner' -%}
-          <div class="thumb-item active" onmouseover="scrollGallery(0, this)">
-            <img src="{{ 'renewal toner-100.jpg' | asset_url }}" alt="{{ product.title }}">
-          </div>
-          <div class="thumb-item" onmouseover="scrollGallery(1, this)">
-            <img src="{{ 'toner-meet-1.jpg' | asset_url }}" alt="Toner Lifestyle 1">
-          </div>
-          <div class="thumb-item" onmouseover="scrollGallery(2, this)">
-            <img src="{{ 'toner-meet-2.jpg' | asset_url }}" alt="Toner Lifestyle 2">
-          </div>
-          <div class="thumb-item" onmouseover="scrollGallery(3, this)">
-            <img src="{{ 'toner-meet-3.jpg' | asset_url }}" alt="Toner Lifestyle 3">
-          </div>
-          <div class="thumb-item" onmouseover="scrollGallery(4, this)">
-            <img src="{{ 'toner-meet-4.jpg' | asset_url }}" alt="Toner Lifestyle 4">
-          </div>
-        {%- elsif product.handle == 'floral-blossom-hair-mist' -%}
-          <div class="thumb-item active" onmouseover="scrollGallery(0, this)">
-            <img src="{{ 'hair-mist.jpg' | asset_url }}" alt="{{ product.title }}">
-          </div>
-          <div class="thumb-item" onmouseover="scrollGallery(1, this)">
-            <img src="{{ 'hair-mist-hover.jpg' | asset_url }}" alt="Style 1">
-          </div>
-          <div class="thumb-item" onmouseover="scrollGallery(2, this)">
-            <img src="{{ 'hair-mist-hover-2.png' | asset_url }}" alt="Style 2">
-          </div>
-          <div class="thumb-item" onmouseover="scrollGallery(3, this)">
-            <img src="{{ 'hair-mist-meet-1.jpg' | asset_url }}" alt="Gallery 1">
-          </div>
-        {%- elsif product.handle == 'e7-complete-glass-skin-set' or product.handle == 'e7-glass-skin-set' or product.handle == 'e7-hair-care-set' or product.handle == 'elaris-7-korean-brightening-bundle' -%}
-          <div class="thumb-item active" onmouseover="scrollGallery(0, this)">
-            <img src="{{ 'new-bundle-banner.jpg' | asset_url }}" alt="{{ product.title }}">
-          </div>
-          <div class="thumb-item" onmouseover="scrollGallery(1, this)">
-            <img src="{{ 'new bundle banner-100.jpg' | asset_url }}" alt="Set View 2">
-          </div>
-          <div class="thumb-item" onmouseover="scrollGallery(2, this)">
-            <img src="{{ 'brightening bundle-100.jpg' | asset_url }}" alt="Set View 3">
-          </div>
-        {%- elsif product.handle == 'glutathione-cream' -%}
-          <div class="thumb-item active" onmouseover="scrollGallery(0, this)">
-            <img src="{{ 'glutathione-cream-100.jpg' | asset_url }}" alt="{{ product.title }}">
-          </div>
-          <div class="thumb-item" onmouseover="scrollGallery(1, this)">
-            <img src="{{ 'glutathione-meet-1.jpg' | asset_url }}" alt="Model View">
-          </div>
-          <div class="thumb-item" onmouseover="scrollGallery(2, this)">
-            <img src="{{ 'glutathione-meet-3.jpg' | asset_url }}" alt="Product Detail">
-          </div>
-          <div class="thumb-item" onmouseover="scrollGallery(3, this)">
-            <img src="{{ 'glutathione-meet-4.jpg' | asset_url }}" alt="Texture View">
-          </div>
-        {%- else -%}
-          {%- for image in product.images -%}
-            <div class="thumb-item {% if forloop.first %}active{% endif %}" 
-                 onmouseover="scrollGallery({{ forloop.index0 }}, this)"
-                 onclick="scrollGallery({{ forloop.index0 }}, this)">
-              <img src="{{ image | img_url: '100x100', crop: 'center' }}" alt="{{ image.alt | escape }}">
-            </div>
-          {%- else -%}
-            <!-- Fallback thumbs if no Shopify images uploaded yet -->
-            {%- assign handle_image = product.handle | append: '.jpg' -%}
-            {%- assign fallback_img = section.settings.asset_main_image | default: handle_image -%}
-            <div class="thumb-item active" onmouseover="scrollGallery(0, this)">
-              <img src="{{ fallback_img | asset_url }}" alt="{{ product.title }}">
-            </div>
-            <div class="thumb-item" onmouseover="scrollGallery(1, this)">
-              <img src="{{ 'night-cream-jar.jpg' | asset_url }}" alt="Jar">
-            </div>
-            <div class="thumb-item" onmouseover="scrollGallery(2, this)">
-              <img src="{{ 'night-cream-ba.jpg' | asset_url }}" alt="Before After">
-            </div>
-            <div class="thumb-item" onmouseover="scrollGallery(3, this)">
-              <img src="{{ 'night-cream-swatch.jpeg' | asset_url }}" alt="Swatch">
-            </div>
+        {%- assign valid_sidebar_count = 0 -%}
+        {%- for block in section.blocks -%}
+           {%- if block.type == 'gallery_image' -%}
+              {%- if block.settings.product_handle == blank or block.settings.product_handle == product.handle -%}
+                 {%- assign valid_sidebar_count = valid_sidebar_count | plus: 1 -%}
+              {%- endif -%}
+           {%- endif -%}
+        {%- endfor -%}
+
+        {%- if valid_sidebar_count > 0 -%}
+          {%- assign thumb_index = 0 -%}
+          {%- for block in section.blocks -%}
+            {%- if block.type == 'gallery_image' -%}
+              {%- if block.settings.product_handle == blank or block.settings.product_handle == product.handle -%}
+                <div class="thumb-item {% if thumb_index == 0 %}active{% endif %}" onmouseover="scrollGallery({{ thumb_index }}, this)" {{ block.shopify_attributes }}>
+                  {%- if block.settings.image != blank -%}
+                    <img src="{{ block.settings.image | img_url: '100x100', crop: 'center' }}" alt="{{ block.settings.image.alt | escape }}">
+                  {%- endif -%}
+                </div>
+                {%- assign thumb_index = thumb_index | plus: 1 -%}
+              {%- endif -%}
+            {%- endif -%}
           {%- endfor -%}
+        {%- elsif product.images.size > 0 -%}
+          {%- for image in product.images -%}
+            <div class="thumb-item {% if forloop.first %}active{% endif %}" onmouseover="scrollGallery({{ forloop.index0 }}, this)"><img src="{{ image | img_url: '100x100', crop: 'center' }}" alt="{{ image.alt | escape }}"></div>
+          {%- endfor -%}
+        {%- else -%}
+          {%- if product.handle == 'anti-frizz-keratin-serum' or product.handle == 'anti-frizz-serum' or product.handle == 'keratin-serum' -%}
+            <div class="thumb-item active" onmouseover="scrollGallery(0, this)"><img src="{{ 'keratin-serum.jpg' | asset_url }}" alt="{{ product.title }}"></div>
+            <div class="thumb-item" onmouseover="scrollGallery(1, this)"><img src="{{ 'keratin-meet-1.jpg' | asset_url }}" alt="Lifestyle View"></div>
+            <div class="thumb-item" onmouseover="scrollGallery(2, this)"><img src="{{ 'keratin-ba.jpg' | asset_url }}" alt="Before After"></div>
+            <div class="thumb-item" onmouseover="scrollGallery(3, this)"><img src="{{ 'keratin-1.jpg' | asset_url }}" alt="Close up 1"></div>
+            <div class="thumb-item" onmouseover="scrollGallery(4, this)"><img src="{{ 'keratin-2.jpg' | asset_url }}" alt="Close up 2"></div>
+          {%- elsif product.handle == 'tranexamic-serum' -%}
+            <div class="thumb-item active" onmouseover="scrollGallery(0, this)"><img src="{{ 'tranexamic-meet-1.jpg' | asset_url }}" alt="{{ product.title }}"></div>
+            <div class="thumb-item" onmouseover="scrollGallery(1, this)"><img src="{{ 'tranexamic-meet-2.jpg' | asset_url }}" alt="Meet Elaris 2"></div>
+            <div class="thumb-item" onmouseover="scrollGallery(2, this)"><img src="{{ 'tranexamic-meet-3.jpg' | asset_url }}" alt="Meet Elaris 3"></div>
+          {%- elsif product.handle == 'floral-blossom-hair-mist' or product.handle == 'hair-mist' -%}
+            <div class="thumb-item active" onmouseover="scrollGallery(0, this)"><img src="{{ 'hair-mist-main.jpg' | asset_url }}" alt="{{ product.title }}"></div>
+            <div class="thumb-item" onmouseover="scrollGallery(1, this)"><img src="{{ 'hair-mist-meet-1.jpg' | asset_url }}" alt="Lifestyle 1"></div>
+            <div class="thumb-item" onmouseover="scrollGallery(2, this)"><img src="{{ 'hair-mist-meet-2.jpg' | asset_url }}" alt="Lifestyle 2"></div>
+            <div class="thumb-item" onmouseover="scrollGallery(3, this)"><img src="{{ 'hair-mist-meet-3.jpg' | asset_url }}" alt="Lifestyle 3"></div>
+            <div class="thumb-item" onmouseover="scrollGallery(4, this)"><img src="{{ 'hair-mist-meet-4.jpg' | asset_url }}" alt="Lifestyle 4"></div>
+          {%- elsif is_centella_serum -%}
+            <div class="thumb-item active" onmouseover="scrollGallery(0, this)"><img src="{{ 'centella-serum-1.jpg' | asset_url }}" alt="{{ product.title }}"></div>
+            <div class="thumb-item" onmouseover="scrollGallery(1, this)"><img src="{{ 'centella-serum-2.jpg' | asset_url }}" alt="Serum 2"></div>
+            <div class="thumb-item" onmouseover="scrollGallery(2, this)"><img src="{{ 'centella-serum-3.jpg' | asset_url }}" alt="Serum 3"></div>
+            <div class="thumb-item" onmouseover="scrollGallery(3, this)"><img src="{{ 'glow-gallery-4.jpg' | asset_url }}" alt="Product Infographic"></div>
+          {%- elsif product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' or product.handle == 'night-cream' -%}
+            <div class="thumb-item active" onmouseover="scrollGallery(0, this)"><img src="{{ 'Artboard-1-100.jpg' | asset_url }}" alt="{{ product.title }}"></div>
+            <div class="thumb-item" onmouseover="scrollGallery(1, this)"><img src="{{ 'faq-100-nc.jpg' | asset_url }}" alt="FAQ"></div>
+            <div class="thumb-item" onmouseover="scrollGallery(2, this)"><img src="{{ 'night-cream-swatch-7-100.jpg' | asset_url }}" alt="Swatch"></div>
+            <div class="thumb-item" onmouseover="scrollGallery(3, this)"><img src="{{ 'nigh-suite-100.jpg' | asset_url }}" alt="Suite"></div>
+            <div class="thumb-item" onmouseover="scrollGallery(4, this)"><img src="{{ 'lifestyle-100.jpg' | asset_url }}" alt="Lifestyle"></div>
+          {%- elsif product.handle == 'e7-korean-glass-skin-centella-face-wash-copy' or product.handle == 'sunscreen' -%}
+            <div class="thumb-item active" onmouseover="scrollGallery(0, this)"><img src="{{ 'sunscreen-100.jpg' | asset_url }}" alt="{{ product.title }}"></div>
+            <div class="thumb-item" onmouseover="scrollGallery(1, this)"><img src="{{ 'sunscreen-lifestyle-1.jpg' | asset_url }}" alt="Lifestyle 1"></div>
+            <div class="thumb-item" onmouseover="scrollGallery(2, this)"><img src="{{ 'sunscreen-lifestyle-2.jpg' | asset_url }}" alt="Lifestyle 2"></div>
+            <div class="thumb-item" onmouseover="scrollGallery(3, this)"><img src="{{ 'sunscreen-lifestyle-3.jpg' | asset_url }}" alt="Lifestyle 3"></div>
+            <div class="thumb-item" onmouseover="scrollGallery(4, this)"><img src="{{ 'sunscreen-lifestyle-4.jpg' | asset_url }}" alt="Lifestyle 4"></div>
+          {%- elsif product.handle == 'centella-skin-toner-copy' or product.handle == 'renewal-cleanser' -%}
+            <div class="thumb-item active" onmouseover="scrollGallery(0, this)"><img src="{{ 'gel cleanser-100.jpg' | asset_url }}" alt="{{ product.title }}"></div>
+            <div class="thumb-item" onmouseover="scrollGallery(1, this)"><img src="{{ 'cleanser-meet-1.jpg' | asset_url }}" alt="Cleanser Model 1"></div>
+            <div class="thumb-item" onmouseover="scrollGallery(2, this)"><img src="{{ 'cleanser-meet-2.jpg' | asset_url }}" alt="Cleanser Model 2"></div>
+            <div class="thumb-item" onmouseover="scrollGallery(3, this)"><img src="{{ 'cleanser-meet-3.jpg' | asset_url }}" alt="Cleanser Model 3"></div>
+            <div class="thumb-item" onmouseover="scrollGallery(4, this)"><img src="{{ 'cleanser-meet-4.jpg' | asset_url }}" alt="Cleanser Model 4"></div>
+          {%- elsif product.handle == 'centella-skin-toner' or product.handle == 'renewal-toner' -%}
+            <div class="thumb-item active" onmouseover="scrollGallery(0, this)"><img src="{{ 'renewal toner-100.jpg' | asset_url }}" alt="{{ product.title }}"></div>
+            <div class="thumb-item" onmouseover="scrollGallery(1, this)"><img src="{{ 'toner-meet-1.jpg' | asset_url }}" alt="Toner Lifestyle 1"></div>
+            <div class="thumb-item" onmouseover="scrollGallery(2, this)"><img src="{{ 'toner-meet-2.jpg' | asset_url }}" alt="Toner Lifestyle 2"></div>
+            <div class="thumb-item" onmouseover="scrollGallery(3, this)"><img src="{{ 'toner-meet-3.jpg' | asset_url }}" alt="Toner Lifestyle 3"></div>
+            <div class="thumb-item" onmouseover="scrollGallery(4, this)"><img src="{{ 'toner-meet-4.jpg' | asset_url }}" alt="Toner Lifestyle 4"></div>
+          {%- elsif product.handle == 'e7-korean-glass-skin-moisturizer' or product.handle == 'hydra-burst-moisturizer' -%}
+            <div class="thumb-item active" onmouseover="scrollGallery(0, this)"><img src="{{ 'moisturizer-100.jpg' | asset_url }}" alt="{{ product.title }}"></div>
+            <div class="thumb-item" onmouseover="scrollGallery(1, this)"><img src="{{ 'moisturizer-gallery-1.jpg' | asset_url }}" alt="Deep Hydration"></div>
+            <div class="thumb-item" onmouseover="scrollGallery(2, this)"><img src="{{ 'moisturizer-gallery-2.jpg' | asset_url }}" alt="Texture Jar"></div>
+            <div class="thumb-item" onmouseover="scrollGallery(3, this)"><img src="{{ 'moisturizer-gallery-3.jpg' | asset_url }}" alt="Lifestyle Shot"></div>
+          {%- elsif product.handle == 'glutathione-cream' -%}
+            <div class="thumb-item active" onmouseover="scrollGallery(0, this)"><img src="{{ 'glutathione-cream-100.jpg' | asset_url }}" alt="{{ product.title }}"></div>
+            <div class="thumb-item" onmouseover="scrollGallery(1, this)"><img src="{{ 'glutathione-meet-1.jpg' | asset_url }}" alt="Model View"></div>
+            <div class="thumb-item" onmouseover="scrollGallery(2, this)"><img src="{{ 'glutathione-meet-3.jpg' | asset_url }}" alt="Product Detail"></div>
+            <div class="thumb-item" onmouseover="scrollGallery(3, this)"><img src="{{ 'glutathione-meet-4.jpg' | asset_url }}" alt="Texture View"></div>
+          {%- else -%}
+            <div class="thumb-item active" onmouseover="scrollGallery(0, this)"><img src="{{ 'night-cream-jar.jpg' | asset_url }}" alt="Jar"></div>
+          {%- endif -%}
         {%- endif -%}
       </div>
 
       <!-- Main Slider -->
       <div class="gallery-main-viewport">
         <div class="gallery-slider" id="productSlider">
-          {%- if product.handle == 'anti-frizz-keratin-serum' -%}
-            <div class="gallery-slide"><img src="{{ 'keratin-serum.jpg' | asset_url }}" alt="{{ product.title }}"></div>
-            <div class="gallery-slide"><img src="{{ 'keratin-meet-1.jpg' | asset_url }}" alt="Lifestyle View" style="object-fit: cover !important;"></div>
-            <div class="gallery-slide"><img src="{{ 'keratin-ba.jpg' | asset_url }}" alt="Before After" style="object-fit: cover !important;"></div>
-            <div class="gallery-slide"><img src="{{ 'keratin-1.jpg' | asset_url }}" alt="Close up 1" style="object-fit: cover !important;"></div>
-            <div class="gallery-slide"><img src="{{ 'keratin-2.jpg' | asset_url }}" alt="Close up 2" style="object-fit: cover !important;"></div>
-          {%- elsif product.handle == 'tranexamic-serum' -%}
-            <div class="gallery-slide"><img src="{{ 'tranexamic-meet-1.jpg' | asset_url }}" alt="{{ product.title }}"></div>
-            <div class="gallery-slide"><img src="{{ 'tranexamic-meet-1.jpg' | asset_url }}" alt="Meet Elaris 1"></div>
-            <div class="gallery-slide"><img src="{{ 'tranexamic-meet-2.jpg' | asset_url }}" alt="Meet Elaris 2"></div>
-            <div class="gallery-slide"><img src="{{ 'tranexamic-meet-3.jpg' | asset_url }}" alt="Meet Elaris 3"></div>
-          {%- elsif product.handle == 'e7-korean-glass-skin-centella-sunscreen-spf50-copy' -%}
-            <div class="gallery-slide"><img src="{{ 'glow-serum-100.jpg' | asset_url }}" alt="{{ product.title }}" style="object-fit: contain !important; background: #fff;"></div>
-            <div class="gallery-slide"><img src="{{ 'glow-gallery-2.jpg' | asset_url }}" alt="Glow Gift Set" style="object-fit: contain !important; background: #fff;"></div>
-            <div class="gallery-slide"><img src="{{ 'glow-gallery-3.jpg' | asset_url }}" alt="Before After Results" style="object-fit: contain !important; background: #fff;"></div>
-            <div class="gallery-slide"><img src="{{ 'glow-gallery-4.jpg' | asset_url }}" alt="Product Infographic" style="object-fit: contain !important; background: #fff;"></div>
-          {%- elsif product.handle == 'anti-acne' -%}
-            <div class="gallery-slide"><img src="{{ 'anti-acne-meet-1.jpg' | asset_url }}" alt="{{ product.title }}"></div>
-            <div class="gallery-slide"><img src="{{ 'anti-acne-meet-2.jpg' | asset_url }}" alt="Model View" style="object-fit: cover !important;"></div>
-            <div class="gallery-slide"><img src="{{ 'anti-acne-meet-3.jpg' | asset_url }}" alt="Social View" style="object-fit: cover !important;"></div>
-            <div class="gallery-slide"><img src="{{ 'anti-acne-meet-4.jpg' | asset_url }}" alt="Texture View"></div>
-          {%- elsif product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' or product.handle == 'night-cream' -%}
-            <div class="gallery-slide"><img src="{{ 'Artboard-1-100.jpg' | asset_url }}" alt="{{ product.title }}" style="object-fit: contain !important; background: #fff;"></div>
-            <div class="gallery-slide"><img src="{{ 'faq-100-nc.jpg' | asset_url }}" alt="FAQ" style="object-fit: cover !important;"></div>
-            <div class="gallery-slide"><img src="{{ 'night-cream-swatch-7-100.jpg' | asset_url }}" alt="Swatch" style="object-fit: cover !important;"></div>
-            <div class="gallery-slide"><img src="{{ 'nigh-suite-100.jpg' | asset_url }}" alt="Suite" style="object-fit: cover !important;"></div>
-            <div class="gallery-slide"><img src="{{ 'lifestyle-100.jpg' | asset_url }}" alt="Lifestyle" style="object-fit: cover !important;"></div>
-          {%- elsif product.handle == 'e7-korean-glass-skin-centella-face-wash-copy' -%}
-            <div class="gallery-slide"><img src="{{ 'sunscreen-100.jpg' | asset_url }}" alt="{{ product.title }}"></div>
-            <div class="gallery-slide"><img src="{{ 'sunscreen-lifestyle-1.jpg' | asset_url }}" alt="Suitcase Shot" style="object-fit: cover !important;"></div>
-            <div class="gallery-slide"><img src="{{ 'sunscreen-lifestyle-2.jpg' | asset_url }}" alt="Poolside Shot" style="object-fit: cover !important;"></div>
-            <div class="gallery-slide"><img src="{{ 'sunscreen-lifestyle-3.jpg' | asset_url }}" alt="Basket Shot" style="object-fit: cover !important;"></div>
-            <div class="gallery-slide"><img src="{{ 'sunscreen-lifestyle-4.jpg' | asset_url }}" alt="Action Shot" style="object-fit: cover !important;"></div>
-          {%- elsif product.handle == 'centella-skin-toner-copy' -%}
-            <div class="gallery-slide"><img src="{{ 'gel cleanser-100.jpg' | asset_url }}" alt="{{ product.title }}"></div>
-            <div class="gallery-slide"><img src="{{ 'cleanser-meet-1.jpg' | asset_url }}" alt="Cleanser Model 1" style="object-fit: cover !important;"></div>
-            <div class="gallery-slide"><img src="{{ 'cleanser-meet-2.jpg' | asset_url }}" alt="Cleanser Model 2" style="object-fit: cover !important;"></div>
-            <div class="gallery-slide"><img src="{{ 'cleanser-meet-3.jpg' | asset_url }}" alt="Cleanser Model 3" style="object-fit: cover !important;"></div>
-            <div class="gallery-slide"><img src="{{ 'cleanser-meet-4.jpg' | asset_url }}" alt="Cleanser Model 4" style="object-fit: cover !important;"></div>
-          {%- elsif product.handle == 'e7-korean-glass-skin-moisturizer' -%}
-            <div class="gallery-slide"><img src="{{ 'moisturizer-100.jpg' | asset_url }}" alt="{{ product.title }}"></div>
-            <div class="gallery-slide"><img src="{{ 'moisturizer-gallery-1.jpg' | asset_url }}" alt="Deep Hydration" style="object-fit: cover !important;"></div>
-            <div class="gallery-slide"><img src="{{ 'moisturizer-gallery-2.jpg' | asset_url }}" alt="Texture Jar" style="object-fit: cover !important;"></div>
-            <div class="gallery-slide"><img src="{{ 'moisturizer-gallery-3.jpg' | asset_url }}" alt="Lifestyle Shot" style="object-fit: cover !important;"></div>
-          {%- elsif product.handle == 'centella-skin-toner' -%}
-            <div class="gallery-slide"><img src="{{ 'renewal toner-100.jpg' | asset_url }}" alt="{{ product.title }}"></div>
-            <div class="gallery-slide"><img src="{{ 'toner-meet-1.jpg' | asset_url }}" alt="Toner Lifestyle 1" style="object-fit: cover !important;"></div>
-            <div class="gallery-slide"><img src="{{ 'toner-meet-2.jpg' | asset_url }}" alt="Toner Lifestyle 2" style="object-fit: cover !important;"></div>
-            <div class="gallery-slide"><img src="{{ 'toner-meet-3.jpg' | asset_url }}" alt="Toner Lifestyle 3" style="object-fit: cover !important;"></div>
-            <div class="gallery-slide"><img src="{{ 'toner-meet-4.jpg' | asset_url }}" alt="Toner Lifestyle 4" style="object-fit: cover !important;"></div>
-          {%- elsif product.handle == 'floral-blossom-hair-mist' -%}
-            <div class="gallery-slide"><img src="{{ 'hair-mist.jpg' | asset_url }}" alt="{{ product.title }}"></div>
-            <div class="gallery-slide"><img src="{{ 'hair-mist-hover.jpg' | asset_url }}" alt="Style 1" style="object-fit: cover !important;"></div>
-            <div class="gallery-slide"><img src="{{ 'hair-mist-hover-2.png' | asset_url }}" alt="Style 2" style="object-fit: cover !important;"></div>
-            <div class="gallery-slide"><img src="{{ 'hair-mist-meet-1.jpg' | asset_url }}" alt="Gallery 1" style="object-fit: cover !important;"></div>
-          {%- elsif product.handle == 'glutathione-cream' -%}
-            <div class="gallery-slide"><img src="{{ 'glutathione-cream-100.jpg' | asset_url }}" alt="{{ product.title }}" style="object-fit: contain !important; background: #fbfbfb;"></div>
-            <div class="gallery-slide"><img src="{{ 'glutathione-meet-1.jpg' | asset_url }}" alt="Model Focus" style="object-fit: cover !important;"></div>
-            <div class="gallery-slide"><img src="{{ 'glutathione-meet-3.jpg' | asset_url }}" alt="Label Detail" style="object-fit: cover !important;"></div>
-            <div class="gallery-slide"><img src="{{ 'glutathione-meet-4.jpg' | asset_url }}" alt="Texture Close-up" style="object-fit: cover !important;"></div>
-          {%- else -%}
+          {%- if product.images.size > 0 -%}
             {%- for image in product.images -%}
-              <div class="gallery-slide">
-                <img src="{{ image | img_url: 'master' }}" alt="{{ image.alt | escape }}">
-              </div>
-            {%- else -%}
-              {%- assign handle_image = product.handle | append: '.jpg' -%}
-              {%- assign fallback_img = section.settings.asset_main_image | default: handle_image -%}
-              <div class="gallery-slide"><img src="{{ fallback_img | asset_url }}" alt="{{ product.title }}"></div>
-              <div class="gallery-slide"><img src="{{ 'night-cream-jar.jpg' | asset_url }}" alt="Night Cream Jar"></div>
-              <div class="gallery-slide"><img src="{{ 'night-cream-ba.jpg' | asset_url }}" alt="Before After"></div>
-              <div class="gallery-slide"><img src="{{ 'night-cream-swatch.jpeg' | asset_url }}" alt="Swatch"></div>
+              <div class="gallery-slide"><img src="{{ image | img_url: 'master' }}" alt="{{ image.alt | escape }}"></div>
             {%- endfor -%}
+          {%- else -%}
+            {%- if product.handle == 'anti-frizz-keratin-serum' or product.handle == 'anti-frizz-serum' or product.handle == 'keratin-serum' -%}
+              <div class="gallery-slide"><img src="{{ 'keratin-serum.jpg' | asset_url }}" alt="{{ product.title }}"></div>
+              <div class="gallery-slide"><img src="{{ 'keratin-meet-1.jpg' | asset_url }}" alt="Lifestyle View" style="object-fit: cover !important;"></div>
+              <div class="gallery-slide"><img src="{{ 'keratin-ba.jpg' | asset_url }}" alt="Before After" style="object-fit: cover !important;"></div>
+              <div class="gallery-slide"><img src="{{ 'keratin-1.jpg' | asset_url }}" alt="Close up 1" style="object-fit: cover !important;"></div>
+              <div class="gallery-slide"><img src="{{ 'keratin-2.jpg' | asset_url }}" alt="Close up 2" style="object-fit: cover !important;"></div>
+            {%- elsif product.handle == 'tranexamic-serum' -%}
+              <div class="gallery-slide"><img src="{{ 'tranexamic-meet-1.jpg' | asset_url }}" alt="{{ product.title }}"></div>
+              <div class="gallery-slide"><img src="{{ 'tranexamic-meet-2.jpg' | asset_url }}" alt="Meet Elaris 2"></div>
+              <div class="gallery-slide"><img src="{{ 'tranexamic-meet-3.jpg' | asset_url }}" alt="Meet Elaris 3"></div>
+            {%- elsif product.handle == 'floral-blossom-hair-mist' or product.handle == 'hair-mist' -%}
+              <div class="gallery-slide"><img src="{{ 'hair-mist-main.jpg' | asset_url }}" alt="{{ product.title }}"></div>
+              <div class="gallery-slide"><img src="{{ 'hair-mist-meet-1.jpg' | asset_url }}" alt="Lifestyle 1" style="object-fit: cover !important;"></div>
+              <div class="gallery-slide"><img src="{{ 'hair-mist-meet-2.jpg' | asset_url }}" alt="Lifestyle 2" style="object-fit: cover !important;"></div>
+              <div class="gallery-slide"><img src="{{ 'hair-mist-meet-3.jpg' | asset_url }}" alt="Lifestyle 3" style="object-fit: cover !important;"></div>
+              <div class="gallery-slide"><img src="{{ 'hair-mist-meet-4.jpg' | asset_url }}" alt="Lifestyle 4" style="object-fit: cover !important;"></div>
+            {%- elsif is_centella_serum -%}
+              <div class="gallery-slide"><img src="{{ 'centella-serum-1.jpg' | asset_url }}" alt="{{ product.title }}" style="object-fit: contain !important; background: #fff;"></div>
+              <div class="gallery-slide"><img src="{{ 'centella-serum-2.jpg' | asset_url }}" alt="Serum 2" style="object-fit: contain !important; background: #fff;"></div>
+              <div class="gallery-slide"><img src="{{ 'centella-serum-3.jpg' | asset_url }}" alt="Serum 3" style="object-fit: contain !important; background: #fff;"></div>
+              <div class="gallery-slide"><img src="{{ 'glow-gallery-4.jpg' | asset_url }}" alt="Product Infographic" style="object-fit: contain !important; background: #fff;"></div>
+            {%- elsif product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' or product.handle == 'night-cream' -%}
+              <div class="gallery-slide"><img src="{{ 'Artboard-1-100.jpg' | asset_url }}" alt="{{ product.title }}" style="object-fit: contain !important; background: #fff;"></div>
+              <div class="gallery-slide"><img src="{{ 'faq-100-nc.jpg' | asset_url }}" alt="FAQ" style="object-fit: cover !important;"></div>
+              <div class="gallery-slide"><img src="{{ 'night-cream-swatch-7-100.jpg' | asset_url }}" alt="Swatch" style="object-fit: cover !important;"></div>
+              <div class="gallery-slide"><img src="{{ 'nigh-suite-100.jpg' | asset_url }}" alt="Suite" style="object-fit: cover !important;"></div>
+              <div class="gallery-slide"><img src="{{ 'lifestyle-100.jpg' | asset_url }}" alt="Lifestyle" style="object-fit: cover !important;"></div>
+            {%- elsif product.handle == 'e7-korean-glass-skin-centella-face-wash-copy' or product.handle == 'sunscreen' -%}
+              <div class="gallery-slide"><img src="{{ 'sunscreen-100.jpg' | asset_url }}" alt="{{ product.title }}"></div>
+              <div class="gallery-slide"><img src="{{ 'sunscreen-lifestyle-1.jpg' | asset_url }}" alt="Suitcase Shot" style="object-fit: cover !important;"></div>
+              <div class="gallery-slide"><img src="{{ 'sunscreen-lifestyle-2.jpg' | asset_url }}" alt="Poolside Shot" style="object-fit: cover !important;"></div>
+              <div class="gallery-slide"><img src="{{ 'sunscreen-lifestyle-3.jpg' | asset_url }}" alt="Basket Shot" style="object-fit: cover !important;"></div>
+              <div class="gallery-slide"><img src="{{ 'sunscreen-lifestyle-4.jpg' | asset_url }}" alt="Action Shot" style="object-fit: cover !important;"></div>
+            {%- elsif product.handle == 'centella-skin-toner-copy' or product.handle == 'renewal-cleanser' -%}
+              <div class="gallery-slide"><img src="{{ 'gel cleanser-100.jpg' | asset_url }}" alt="{{ product.title }}"></div>
+              <div class="gallery-slide"><img src="{{ 'cleanser-meet-1.jpg' | asset_url }}" alt="Cleanser Model 1" style="object-fit: cover !important;"></div>
+              <div class="gallery-slide"><img src="{{ 'cleanser-meet-2.jpg' | asset_url }}" alt="Cleanser Model 2" style="object-fit: cover !important;"></div>
+              <div class="gallery-slide"><img src="{{ 'cleanser-meet-3.jpg' | asset_url }}" alt="Cleanser Model 3" style="object-fit: cover !important;"></div>
+              <div class="gallery-slide"><img src="{{ 'cleanser-meet-4.jpg' | asset_url }}" alt="Cleanser Model 4" style="object-fit: cover !important;"></div>
+            {%- elsif product.handle == 'e7-korean-glass-skin-moisturizer' or product.handle == 'hydra-burst-moisturizer' -%}
+              <div class="gallery-slide"><img src="{{ 'moisturizer-100.jpg' | asset_url }}" alt="{{ product.title }}"></div>
+              <div class="gallery-slide"><img src="{{ 'moisturizer-gallery-1.jpg' | asset_url }}" alt="Deep Hydration" style="object-fit: cover !important;"></div>
+              <div class="gallery-slide"><img src="{{ 'moisturizer-gallery-2.jpg' | asset_url }}" alt="Texture Jar" style="object-fit: cover !important;"></div>
+              <div class="gallery-slide"><img src="{{ 'moisturizer-gallery-3.jpg' | asset_url }}" alt="Lifestyle Shot" style="object-fit: cover !important;"></div>
+            {%- elsif product.handle == 'centella-skin-toner' or product.handle == 'renewal-toner' -%}
+              <div class="gallery-slide"><img src="{{ 'renewal toner-100.jpg' | asset_url }}" alt="{{ product.title }}"></div>
+              <div class="gallery-slide"><img src="{{ 'toner-meet-1.jpg' | asset_url }}" alt="Toner Lifestyle 1" style="object-fit: cover !important;"></div>
+              <div class="gallery-slide"><img src="{{ 'toner-meet-2.jpg' | asset_url }}" alt="Toner Lifestyle 2" style="object-fit: cover !important;"></div>
+              <div class="gallery-slide"><img src="{{ 'toner-meet-3.jpg' | asset_url }}" alt="Toner Lifestyle 3" style="object-fit: cover !important;"></div>
+              <div class="gallery-slide"><img src="{{ 'toner-meet-4.jpg' | asset_url }}" alt="Toner Lifestyle 4" style="object-fit: cover !important;"></div>
+            {%- elsif product.handle == 'glutathione-cream' -%}
+              <div class="gallery-slide"><img src="{{ 'glutathione-cream-100.jpg' | asset_url }}" alt="{{ product.title }}" style="object-fit: contain !important; background: #fbfbfb;"></div>
+              <div class="gallery-slide"><img src="{{ 'glutathione-meet-1.jpg' | asset_url }}" alt="Model Focus" style="object-fit: cover !important;"></div>
+              <div class="gallery-slide"><img src="{{ 'glutathione-meet-3.jpg' | asset_url }}" alt="Label Detail" style="object-fit: cover !important;"></div>
+              <div class="gallery-slide"><img src="{{ 'glutathione-meet-4.jpg' | asset_url }}" alt="Texture Close-up" style="object-fit: cover !important;"></div>
+            {%- else -%}
+              <div class="gallery-slide"><img src="{{ 'night-cream-jar.jpg' | asset_url }}" alt="Jar"></div>
+            {%- endif -%}
           {%- endif -%}
         </div>
       </div>
@@ -745,78 +686,18 @@
   <div class="product-details">
 
       <div class="product-header">
-        {%- assign display_title = product.title -%}
-        {%- if product.handle == 'centella-skin-toner-copy' -%}
-          {%- assign display_title = "Elaris7 Brightening Gel Cleanser" -%}
-        {%- elsif product.handle == 'tranexamic-serum' -%}
-          {%- assign display_title = "Tranexamic Brightening Serum" -%}
-        {%- elsif product.handle == 'e7-korean-glass-skin-centella-sunscreen-spf50-copy' -%}
-          {%- assign display_title = "Centella Serum" -%}
-        {%- elsif product.handle == 'anti-acne' or product.handle == 'night-cream' or product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' -%}
-          {%- assign display_title = "Centella Night Cream" -%}
-        {%- endif -%}
         <h1 class="product-title" style="color: #003087; text-transform: lowercase; font-weight: 800; line-height: 0.9;">{{ display_title }}</h1>
       </div>
-
-      {%- assign display_subtitle = section.settings.subtitle | default: 'Night Renewal' -%}
-      {%- assign display_desc = section.settings.description -%}
-      {%- if display_desc == blank -%}
-        {%- assign display_desc = "Faith's Light. Korean Science. <br>Powered by Nature's Purest." -%}
-      {%- endif -%}
-      {%- assign display_reviews = section.settings.show_reviews -%}
-      {%- assign display_ingredients = section.settings.show_ingredients -%}
-
-      {%- if product.handle == 'tranexamic-serum' -%}
-        {%- assign display_subtitle = 'Targeted Brightening That Works' -%}
-        {%- assign display_desc = 'A serum for EVEN TONE + CLEAR, RADIANT SKIN.' -%}
-      {%- elsif product.handle == 'anti-acne' or product.handle == 'night-cream' or product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' -%}
-        {%- assign display_subtitle = 'Wake Up to Refreshed, Radiant Skin' -%}
-        {%- assign display_desc = 'An overnight formula for HYDRATION + REPAIR + RADIANT SKIN' -%}
-      {%- elsif product.handle == 'anti-frizz-keratin-serum' -%}
-        {%- assign display_subtitle = 'Keratin + Argan Oil' -%}
-        {%- assign display_desc = 'A smoothing hair serum designed to control frizz, protect against heat, and restore softness without weighing hair down. It seals moisture, enhances shine, and leaves hair silky, manageable, and smooth with every use.' -%}
-      {%- elsif product.handle == 'centella-skin-toner-copy' -%}
-        {%- assign display_subtitle = 'Cleanse & Glow' -%}
-      {%- elsif product.handle == 'e7-korean-glass-skin-centella-face-wash-copy' -%}
-        {%- assign display_subtitle = 'Centella Asiatica + UV Filters' -%}
-        {%- assign display_desc = 'A protective sunscreen infused with Centella Asiatica and advanced UV filters to defend against sun damage, hydrate deeply, and maintain a smooth, glass-like finish every day.' -%}
-        {%- assign display_ingredients = false -%}
-      {%- elsif product.handle == 'glutathione-cream' -%}
-        {%- assign display_subtitle = 'Glutathione + Hyaluronic Acid' -%}
-        {%- assign display_desc = 'A nourishing brightening cream designed to improve uneven tone, reduce dullness, and support skin repair. It helps fade the look of dark spots, restore radiance, and leave skin smoother and healthier with consistent use.' -%}
-        {%- assign display_ingredients = false -%}
-      {%- elsif product.handle == 'centella-skin-toner' -%}
-        {%- assign display_subtitle = '' -%}
-        {%- assign display_desc = 'A refining toner designed to clarify, smooth, and rebalance the skin while enhancing radiance. It gently exfoliates, hydrates, and helps improve overall tone for a clearer, glass-like finish with continued use.' -%}
-      {%- elsif product.handle == 'e7-hair-care-set' -%}
-        {%- assign display_subtitle = 'THE ULTIMATE HAIR REVIVAL' -%}
-        {%- assign display_desc = 'Transform your hair routine with the E7 Hair Care Set. This three-product collection is designed to control frizz, strengthen roots, and leave your hair feeling soft, shiny, and beautifully scented. Each product works on its own or together, making styling, protection, and daily care effortless—perfect for home or on-the-go use.' -%}
-        {%- assign display_ingredients = false -%}
-      {%- elsif product.handle == 'e7-complete-glass-skin-set' or product.handle == 'e7-glass-skin-set' or product.handle == 'elaris-7-korean-brightening-bundle' -%}
-        {%- assign display_subtitle = 'FOUR DAILY SKIN ESSENTIALS' -%}
-        {%- assign display_desc = 'Meet your new classics, all bundled up in the elaris7 bubble bag. Our tried-and-true skincare essentials are formulated for ultimate barrier nourishment.' -%}
-        {%- assign display_ingredients = false -%}
-      {%- elsif product.handle == 'floral-blossom-hair-mist' -%}
-        {%- assign display_subtitle = 'Floral Blossom + Pro-Vitamin B5' -%}
-        {%- assign display_desc = 'A light, refreshing hair mist infused with floral notes and nourishing vitamins to leave your hair smelling divine and feeling silky smooth throughout the day.' -%}
-        {%- assign display_ingredients = false -%}
-      {%- elsif product.handle == 'e7-korean-glass-skin-moisturizer' -%}
-        {%- assign display_subtitle = 'Centella Asiatica + Ceramide Repair' -%}
-        {%- assign display_desc = 'A lightweight, glow-enhancing moisturizer infused with Centella Asiatica, brightening complexes, and nourishing botanicals to hydrate, soothe, and refine your skin for a smooth, glass-like finish every day.' -%}
-        {%- assign display_ingredients = false -%}
-      {%- endif -%}
 
       <div class="product-meta" style="margin-top: 5px;">
         {%- if display_subtitle != blank -%}
           <div class="product-subtitle">{{ display_subtitle }}</div>
         {%- endif -%}
         
-        {%- if display_reviews != false -%}
-          <div class="product-reviews">
-            <span class="stars">★★★★★</span>
-            <span class="review-count">({{ section.settings.review_count | default: '16k' }})</span>
-          </div>
-        {%- endif -%}
+        <div class="product-reviews">
+          <span class="stars">★★★★★</span>
+          <span class="review-count">({{ section.settings.review_count | default: '16k' }})</span>
+        </div>
       </div>
 
       <div class="product-description" style="margin-top: 15px; font-weight: 600; color: #4a4a4a;">
@@ -1448,6 +1329,25 @@
       "id": "key_ingredients",
       "label": "Key Ingredients List text",
       "default": "Glutathione, Vitamin C, Alpha Arbutin, Centella Asiatica, Kojic Dipalmitate, Niacinamide, Honey, Hyaluronic Acid,"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "gallery_image",
+      "name": "Gallery Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "product_handle",
+          "label": "Product Handle (Optional)",
+          "info": "Type handle (e.g. hair-mist) to ONLY show this image on that product. Leave empty to show everywhere."
+        }
+      ]
     }
   ],
   "presets": [

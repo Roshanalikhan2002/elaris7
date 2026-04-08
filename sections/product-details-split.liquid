@@ -86,338 +86,130 @@
   }
 {%- endstyle -%}
 
+{%- comment -%}
+  CENTRALIZED PRODUCT DATA MAPPING
+  This ensures Title, List, and Image are always in sync.
+{%- endcomment -%}
+
+{%- assign ds_title = section.settings.title -%}
+{%- assign ds_image = section.settings.image -%}
+{%- assign use_custom_list = false -%}
+
+{%- if product.handle == 'centella-serum' -%}
+  {%- assign ds_title = "Glow That Transforms Over Time<br><span style='font-size: 0.7em;'>A daily serum for BRIGHTENING + EVEN, GLASS-LIKE SKIN.</span>" -%}
+  {%- assign ds_image_name = 'centella-serum-split.jpg' -%}
+  {%- assign use_custom_list = true -%}
+  {%- capture ds_list_content -%}
+    <div class="ds-row"><div class="ds-label">GOOD FOR:</div><div class="ds-value">Dullness, uneven tone, and loss of radiance</div></div>
+    <div class="ds-row"><div class="ds-label">FEELS LIKE:</div><div class="ds-value">A silky, fast-absorbing serum that hydrates instantly</div></div>
+    <div class="ds-row"><div class="ds-label">LOOKS LIKE:</div><div class="ds-value">Luminous, glass-like skin with improved clarity</div></div>
+    <div class="ds-row"><div class="ds-label">SMELLS LIKE:</div><div class="ds-value">Light, botanical freshness for a spa-like feel</div></div>
+    <div class="ds-row"><div class="ds-label">FYI:</div><div class="ds-value">Brightening-Focus • Gentle Formula • AM/PM Use • Barrier-Support</div></div>
+  {%- endcapture -%}
+
+{%- elsif product.handle == 'e7-korean-glass-skin-centella-sunscreen-spf50-copy' or product.handle == 'e7-korean-glass-skin-centella-sunscreen' or product.handle == 'sunscreen' -%}
+  {%- assign ds_title = "Protection That Feels Effortless<br><span style='font-size: 0.7em;'>A daily sunscreen for DEFENSE + HYDRATED, PROTECTED SKIN.</span>" -%}
+  {%- assign ds_image_name = 'sunscreen-100.jpg' -%}
+  {%- assign use_custom_list = true -%}
+  {%- capture ds_list_content -%}
+    <div class="ds-row"><div class="ds-label">GOOD FOR:</div><div class="ds-value">All skin types, including sensitive and acne-prone skin</div></div>
+    <div class="ds-row"><div class="ds-label">FEELS LIKE:</div><div class="ds-value">A lightweight, breathable layer that blends smoothly</div></div>
+    <div class="ds-row"><div class="ds-label">LOOKS LIKE:</div><div class="ds-value">A clear, natural finish with no white cast</div></div>
+    <div class="ds-row"><div class="ds-label">SMELLS LIKE:</div><div class="ds-value">Light, clean freshness with a soft finish</div></div>
+    <div class="ds-row"><div class="ds-label">FYI:</div><div class="ds-value">Halal-Friendly • Dermatologist-Tested • Non-Greasy • Makeup-Friendly</div></div>
+  {%- endcapture -%}
+
+{%- elsif product.handle == 'night-cream' or product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' -%}
+  {%- assign ds_title = "Deep Repair While You Sleep<br><span style='font-size: 0.7em;'>A rich cream for INTENSIVE REPAIR + BABY-SOFT SKIN.</span>" -%}
+  {%- assign ds_image_name = 'night-cream-suite.jpeg' -%}
+  {%- assign use_custom_list = true -%}
+  {%- capture ds_list_content -%}
+    <div class="ds-row"><div class="ds-label">GOOD FOR:</div><div class="ds-value">All skin types, including dry and sensitive skin</div></div>
+    <div class="ds-row"><div class="ds-label">FEELS LIKE:</div><div class="ds-value">A rich, creamy formula that melts effortlessly into the skin</div></div>
+    <div class="ds-row"><div class="ds-label">LOOKS LIKE:</div><div class="ds-value">Smooth, plump, and poreless skin by morning</div></div>
+    <div class="ds-row"><div class="ds-label">SMELLS LIKE:</div><div class="ds-value">Subtle, calming freshness for a relaxing nighttime routine</div></div>
+    <div class="ds-row"><div class="ds-label">FYI:</div><div class="ds-value">Halal-Friendly • Dermatologist-Tested • Non-Sticky • Repair-Focused</div></div>
+  {%- endcapture -%}
+
+{%- elsif product.handle == 'centella-skin-toner-copy' or product.handle == 'renewal-cleanser' -%}
+  {%- assign ds_title = "Your Daily Brightening Cleanse<br><span style='font-size: 0.7em;'>A gel cleanser for CLEAR, FRESH + RADIANT SKIN.</span>" -%}
+  {%- assign ds_image_name = 'gel cleanser-100.jpg' -%}
+  {%- assign use_custom_list = true -%}
+  {%- capture ds_list_content -%}
+    <div class="ds-row"><div class="ds-label">GOOD FOR:</div><div class="ds-value">All skin types, especially those needing a deep yet gentle cleanse</div></div>
+    <div class="ds-row"><div class="ds-label">FEELS LIKE:</div><div class="ds-value">A refreshing gel that lathers gently and rinses clean</div></div>
+    <div class="ds-row"><div class="ds-label">LOOKS LIKE:</div><div class="ds-value">Fresh, bright skin with a clean, healthy finish</div></div>
+    <div class="ds-row"><div class="ds-label">SMELLS LIKE:</div><div class="ds-value">A soft, clean scent with a refreshing touch</div></div>
+    <div class="ds-row"><div class="ds-label">FYI:</div><div class="ds-value">Gentle Cleanse • Non-Drying • Daily Use • Glow-Boosting</div></div>
+  {%- endcapture -%}
+
+{%- elsif product.handle == 'centella-skin-toner' or product.handle == 'renewal-toner' -%}
+  {%- assign ds_title = "Clarity You Can See<br><span style='font-size: 0.7em;'>A refining toner for SMOOTHING + CLEAR, EVEN SKIN.</span>" -%}
+  {%- assign ds_image_name = 'toner-meet-1.jpg' -%}
+  {%- assign use_custom_list = true -%}
+  {%- capture ds_list_content -%}
+    <div class="ds-row"><div class="ds-label">GOOD FOR:</div><div class="ds-value">All skin types, especially uneven and textured skin</div></div>
+    <div class="ds-row"><div class="ds-label">FEELS LIKE:</div><div class="ds-value">A refreshing, watery layer that absorbs quickly</div></div>
+    <div class="ds-row"><div class="ds-label">LOOKS LIKE:</div><div class="ds-value">Clearer, smoother skin with refined texture</div></div>
+    <div class="ds-row"><div class="ds-label">SMELLS LIKE:</div><div class="ds-value">Clean, subtle freshness with a calming touch</div></div>
+    <div class="ds-row"><div class="ds-label">FYI:</div><div class="ds-value">Halal-Friendly • Dermatologist-Tested • Non-Stripping • Pore-Refining</div></div>
+  {%- endcapture -%}
+
+{%- elsif product.handle == 'e7-korean-glass-skin-moisturizer' or product.handle == 'hydra-burst-moisturizer' -%}
+  {%- assign ds_title = "Glow That Lasts All Day<br><span style='font-size: 0.7em;'>A daily moisturizer for HYDRATION + SMOOTH, RADIANT SKIN.</span>" -%}
+  {%- assign ds_image_name = 'moisturizer-benefits.jpg' -%}
+  {%- assign use_custom_list = true -%}
+  {%- capture ds_list_content -%}
+    <div class="ds-row"><div class="ds-label">GOOD FOR:</div><div class="ds-value">All skin types, including sensitive and combination skin</div></div>
+    <div class="ds-row"><div class="ds-label">FEELS LIKE:</div><div class="ds-value">A light, refreshing cream that melts effortlessly into the skin</div></div>
+    <div class="ds-row"><div class="ds-label">LOOKS LIKE:</div><div class="ds-value">A soft, luminous finish with a naturally healthy glow</div></div>
+    <div class="ds-row"><div class="ds-label">SMELLS LIKE:</div><div class="ds-value">Clean, subtle freshness with no overpowering scent</div></div>
+    <div class="ds-row"><div class="ds-label">FYI:</div><div class="ds-value">Halal-Friendly • Dermatologist-Tested • Lightweight • Non-Sticky</div></div>
+  {%- endcapture -%}
+
+{%- elsif product.handle == 'tranexamic-serum' -%}
+  {%- assign ds_title = "Tranexamic Brightening Serum<br><span style='font-size: 0.7em;'>A serum for EVEN TONE + CLEAR, RADIANT SKIN.</span>" -%}
+  {%- assign ds_image_name = 'tranexamic-serum.jpg' -%}
+{%- elsif product.handle == 'anti-frizz-keratin-serum' or product.handle == 'keratin-serum' -%}
+  {%- assign ds_title = "Frizz-Free Confidence Every Day<br><span style='font-size: 0.7em;'>A daily serum for SMOOTHING + SOFT, SHINY HAIR.</span>" -%}
+  {%- assign ds_image_name = 'keratin-serum.jpg' -%}
+{%- elsif product.handle == 'floral-blossom-hair-mist' or product.handle == 'hair-mist' -%}
+  {%- assign ds_title = "Bloom With Every Move<br><span style='font-size: 0.7em;'>A hair mist for FRESHNESS + SOFT, SCENTED HAIR.</span>" -%}
+  {%- assign ds_image_name = 'hair-mist-main.jpg' -%}
+{%- elsif product.handle == 'glutathione-cream' -%}
+  {%- assign ds_title = "Repair Dullness. Reveal Glow.<br><span style='font-size: 0.7em;'>A brightening cream for EVEN TONE + RADIANT SKIN.</span>" -%}
+  {%- assign ds_image_name = 'glutathione-cream-100.jpg' -%}
+{%- endif -%}
+
 <section class="details-split-section">
   <div class="ds-left">
-    {%- assign ds_title = section.settings.title | default: 'A creamy blush for BUILDABLE color + BABY-SOFT cheeks.' -%}
-    {%- if product.handle == 'anti-frizz-keratin-serum' -%}
-      {%- assign ds_title = "Frizz-Free Confidence Every Day<br><span style='font-size: 0.7em;'>A daily serum for SMOOTHING + SOFT, SHINY HAIR.</span>" -%}
-    {%- elsif product.handle == 'e7-korean-glass-skin-centella-sunscreen-spf50-copy' -%}
-      {%- assign ds_title = "Glow That Transforms Over Time<br><span style='font-size: 0.7em;'>A daily serum for BRIGHTENING + EVEN, GLASS-LIKE SKIN.</span>" -%}
-    {%- elsif product.handle == 'glutathione-cream' -%}
-      {%- assign ds_title = "Deep Brightening With Skin Repair Care<br><span style='font-size: 0.7em;'>A cream for EVEN TONE + HYDRATION + RADIANT SKIN.</span>" -%}
-    {%- elsif product.handle == 'floral-blossom-hair-mist' -%}
-      {%- assign ds_title = "A Touch of Floral Freshness<br><span style='font-size: 0.7em;'>A daily hair mist for FRESH, FRAGRANT + NATURALLY SHINY HAIR.</span>" -%}
-    {%- elsif product.handle == 'anti-acne' -%}
-      {%- assign ds_title = "An overnight formula for <br><span style='font-size: 0.7em;'>HYDRATION + REPAIR + RADIANT SKIN.</span>" -%}
-      <div class="ds-row">
-        <div class="ds-label">GOOD FOR:</div>
-        <div class="ds-value">All skin types, including dry and sensitive skin</div>
-      </div>
-      <div class="ds-row">
-        <div class="ds-label">FEELS LIKE:</div>
-        <div class="ds-value">A rich, creamy formula that melts effortlessly into the skin</div>
-      </div>
-      <div class="ds-row">
-        <div class="ds-label">LOOKS LIKE:</div>
-        <div class="ds-value">Smooth, plump, and poreless skin by morning</div>
-      </div>
-      <div class="ds-row">
-        <div class="ds-label">SMELLS LIKE:</div>
-        <div class="ds-value">Subtle, calming freshness for a relaxing nighttime routine</div>
-      </div>
-      <div class="ds-row">
-        <div class="ds-label">FYI:</div>
-        <div class="ds-value">Halal-Friendly • Dermatologist-Tested • Non-Sticky • Repair-Focused</div>
-      </div>
-    {%- elsif product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' or product.handle == 'night-cream' -%}
-      {%- assign ds_title = "Deep Repair While You Sleep<br><span style='font-size: 0.7em;'>A rich cream for INTENSIVE REPAIR + BABY-SOFT SKIN.</span>" -%}
-    {%- elsif product.handle == 'e7-korean-glass-skin-centella-face-wash-copy' -%}
-      {%- assign ds_title = "Cleanse. Refresh. Glow.<br><span style='font-size: 0.7em;'>A daily face wash for CLEAN SKIN + BALANCED, RADIANT COMPLEXION.</span>" -%}
-    {%- elsif product.handle == 'e7-korean-glass-skin-centella-sunscreen-spf50-copy' -%}
-      {%- assign ds_title = "Protection That Feels Effortless<br><span style='font-size: 0.7em;'>A daily sunscreen for DEFENSE + HYDRATED, PROTECTED SKIN.</span>" -%}
-    {%- elsif product.handle == 'centella-skin-toner-copy' -%}
-      {%- assign ds_title = "Your Daily Brightening Cleanse<br><span style='font-size: 0.7em;'>A gel cleanser for CLEAR, FRESH + RADIANT SKIN.</span>" -%}
-    {%- elsif product.handle == 'e7-korean-glass-skin-moisturizer' -%}
-      {%- assign ds_title = "Glow That Lasts All Day<br><span style='font-size: 0.7em;'>A daily moisturizer for HYDRATION + SMOOTH, RADIANT SKIN.</span>" -%}
-    {%- elsif product.handle == 'centella-skin-toner' -%}
-      {%- assign ds_title = "Clarity You Can See<br><span style='font-size: 0.7em;'>A refining toner for SMOOTHING + CLEAR, EVEN SKIN.</span>" -%}
-    {%- endif -%}
-    <h2 class="ds-title">{{ ds_title }}</h2>
+    <h2 class="ds-title">{{ ds_title | default: section.settings.title }}</h2>
     <div class="ds-list">
-      {% if section.blocks.size > 0 %}
-        {% for block in section.blocks %}
-          <div class="ds-row">
-            <div class="ds-label">{{ block.settings.label }}</div>
-            <div class="ds-value">{{ block.settings.value }}</div>
-          </div>
-        {% endfor %}
-      {% else %}
-        {%- if product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' or product.handle == 'night-cream' -%}
-          <div class="ds-row">
-            <div class="ds-label">GOOD FOR:</div>
-            <div class="ds-value">All skin types, including dry and sensitive skin</div>
-          </div>
-          <div class="ds-row">
-            <div class="ds-label">FEELS LIKE:</div>
-            <div class="ds-value">A rich, creamy formula that melts effortlessly into the skin</div>
-          </div>
-          <div class="ds-row">
-            <div class="ds-label">LOOKS LIKE:</div>
-            <div class="ds-value">Smooth, plump, and poreless skin by morning</div>
-          </div>
-          <div class="ds-row">
-            <div class="ds-label">SMELLS LIKE:</div>
-            <div class="ds-value">Subtle, calming freshness for a relaxing nighttime routine</div>
-          </div>
-          <div class="ds-row">
-            <div class="ds-label">FYI:</div>
-            <div class="ds-value">Halal-Friendly • Dermatologist-Tested • Non-Sticky • Repair-Focused</div>
-          </div>
-        {%- elsif product.handle == 'e7-korean-glass-skin-centella-face-wash-copy' -%}
-          <div class="ds-row">
-            <div class="ds-label">GOOD FOR:</div>
-            <div class="ds-value">All skin types, especially dull, sensitive, or acne-prone skin</div>
-          </div>
-          <div class="ds-row">
-            <div class="ds-label">FEELS LIKE:</div>
-            <div class="ds-value">A soft, airy lather that cleanses gently without tightness</div>
-          </div>
-          <div class="ds-row">
-            <div class="ds-label">LOOKS LIKE:</div>
-            <div class="ds-value">Fresh, clear skin with a natural, healthy glow</div>
-          </div>
-          <div class="ds-row">
-            <div class="ds-label">SMELLS LIKE:</div>
-            <div class="ds-value">Light, clean freshness that feels calming and pure</div>
-          </div>
-          <div class="ds-row">
-            <div class="ds-label">FYI:</div>
-            <div class="ds-value">Halal-Friendly • Dermatologist-Tested • Non-Drying • Gentle for Daily Use</div>
-          </div>
-        {%- elsif product.handle == 'e7-korean-glass-skin-centella-sunscreen-spf50-copy' -%}
-          <div class="ds-row">
-            <div class="ds-label">GOOD FOR:</div>
-            <div class="ds-value">All skin types, including sensitive and acne-prone skin</div>
-          </div>
-          <div class="ds-row">
-            <div class="ds-label">FEELS LIKE:</div>
-            <div class="ds-value">A lightweight, breathable layer that blends smoothly</div>
-          </div>
-          <div class="ds-row">
-            <div class="ds-label">LOOKS LIKE:</div>
-            <div class="ds-value">A clear, natural finish with no white cast</div>
-          </div>
-          <div class="ds-row">
-            <div class="ds-label">SMELLS LIKE:</div>
-            <div class="ds-value">Light, clean freshness with a soft finish</div>
-          </div>
-          <div class="ds-row">
-            <div class="ds-label">FYI:</div>
-            <div class="ds-value">Halal-Friendly • Dermatologist-Tested • Non-Greasy • Makeup-Friendly</div>
-          </div>
-        {%- elsif product.handle == 'centella-skin-toner-copy' -%}
-          <div class="ds-row">
-            <div class="ds-label">GOOD FOR:</div>
-            <div class="ds-value">All skin types, especially dull and uneven skin</div>
-          </div>
-          <div class="ds-row">
-            <div class="ds-label">FEELS LIKE:</div>
-            <div class="ds-value">A light gel that lathers gently and rinses clean</div>
-          </div>
-          <div class="ds-row">
-            <div class="ds-label">LOOKS LIKE:</div>
-            <div class="ds-value">Fresh, bright skin with a clean finish</div>
-          </div>
-          <div class="ds-row">
-            <div class="ds-label">SMELLS LIKE:</div>
-            <div class="ds-value">A soft, clean scent with a refreshing touch</div>
-          </div>
-          <div class="ds-row">
-            <div class="ds-label">FYI:</div>
-            <div class="ds-value">Gentle Cleanse • Non-Drying • Daily Use • Glow-Boosting</div>
-          </div>
-        {%- elsif product.handle == 'anti-frizz-keratin-serum' -%}
-          <div class="ds-row">
-            <div class="ds-label">GOOD FOR:</div>
-            <div class="ds-value">All hair types, especially dry and frizzy hair</div>
-          </div>
-          <div class="ds-row">
-            <div class="ds-label">FEELS LIKE:</div>
-            <div class="ds-value">A silky, weightless layer that glides through hair</div>
-          </div>
-          <div class="ds-row">
-            <div class="ds-label">LOOKS LIKE:</div>
-            <div class="ds-value">Sleek, shiny hair with controlled frizz</div>
-          </div>
-          <div class="ds-row">
-            <div class="ds-label">SMELLS LIKE:</div>
-            <div class="ds-value">Soft, fresh scent with a clean finish</div>
-          </div>
-          <div class="ds-row">
-            <div class="ds-label">FYI:</div>
-            <div class="ds-value">Non-Greasy &bull; Lightweight Feel &bull; Heat-Protective &bull; No Buildup</div>
-          </div>
-        {%- elsif product.handle == 'floral-blossom-hair-mist' -%}
-          <div class="ds-row">
-            <div class="ds-label">GOOD FOR:</div>
-            <div class="ds-value">All hair types, especially dull or odor-prone hair</div>
-          </div>
-          <div class="ds-row">
-            <div class="ds-label">FEELS LIKE:</div>
-            <div class="ds-value">A fine, refreshing mist that settles gently on hair</div>
-          </div>
-          <div class="ds-row">
-            <div class="ds-label">LOOKS LIKE:</div>
-            <div class="ds-value">Soft, naturally shiny hair with a fresh finish</div>
-          </div>
-          <div class="ds-row">
-            <div class="ds-label">SMELLS LIKE:</div>
-            <div class="ds-value">A delicate floral scent that lingers beautifully</div>
-          </div>
-          <div class="ds-row">
-            <div class="ds-label">FYI:</div>
-            <div class="ds-value">Non-Sticky &bull; Fresh Feel &bull; No Residue &bull; Everyday Use</div>
-          </div>
-        {%- elsif product.handle == 'e7-korean-glass-skin-centella-sunscreen-spf50-copy' -%}
-          <div class="ds-row">
-            <div class="ds-label">GOOD FOR:</div>
-            <div class="ds-value">All skin types, including sensitive and uneven skin</div>
-          </div>
-          <div class="ds-row">
-            <div class="ds-label">FEELS LIKE:</div>
-            <div class="ds-value">A lightweight, silky serum that absorbs effortlessly</div>
-          </div>
-          <div class="ds-row">
-            <div class="ds-label">LOOKS LIKE:</div>
-            <div class="ds-value">A refined, radiant complexion with improved clarity</div>
-          </div>
-          <div class="ds-row">
-            <div class="ds-label">SMELLS LIKE:</div>
-            <div class="ds-value">Soft, fresh notes with a calming finish</div>
-          </div>
-          <div class="ds-row">
-            <div class="ds-label">FYI:</div>
-            <div class="ds-value">Halal-Friendly &bull; Dermatologist-Tested &bull; Fast-Absorbing &bull; Non-Greasy</div>
-          </div>
-        {%- elsif product.handle == 'glutathione-cream' -%}
-          <div class="ds-row">
-            <div class="ds-label">GOOD FOR:</div>
-            <div class="ds-value">All skin types, especially dull and uneven skin</div>
-          </div>
-          <div class="ds-row">
-            <div class="ds-label">FEELS LIKE:</div>
-            <div class="ds-value">A rich, smooth cream that absorbs comfortably into skin</div>
-          </div>
-          <div class="ds-row">
-            <div class="ds-label">LOOKS LIKE:</div>
-            <div class="ds-value">Brighter, clearer skin with improved tone and texture</div>
-          </div>
-          <div class="ds-row">
-            <div class="ds-label">SMELLS LIKE:</div>
-            <div class="ds-value">A soft, fresh scent with a soothing finish</div>
-          </div>
-          <div class="ds-row">
-            <div class="ds-label">FYI:</div>
-            <div class="ds-value">Non-Greasy &bull; Deep Hydration &bull; Daily Use &bull; Brightening Care</div>
-          </div>
-        {%- elsif product.handle == 'centella-skin-toner-copy' or product.handle == 'renewal-cleanser' -%}
-          <div class="ds-row">
-            <div class="ds-label">GOOD FOR:</div>
-            <div class="ds-value">All skin types, especially those needing a deep yet gentle cleanse</div>
-          </div>
-          <div class="ds-row">
-            <div class="ds-label">FEELS LIKE:</div>
-            <div class="ds-value">A refreshing gel that lathers gently and rinses clean</div>
-          </div>
-          <div class="ds-row">
-            <div class="ds-label">LOOKS LIKE:</div>
-            <div class="ds-value">Fresh, bright skin with a clean, healthy finish</div>
-          </div>
-          <div class="ds-row">
-            <div class="ds-label">SMELLS LIKE:</div>
-            <div class="ds-value">A soft, clean scent with a refreshing touch</div>
-          </div>
-          <div class="ds-row">
-            <div class="ds-label">FYI:</div>
-            <div class="ds-value">Gentle Cleanse • Non-Drying • Daily Use • Glow-Boosting</div>
-          </div>
-        {%- elsif product.handle == 'e7-korean-glass-skin-moisturizer' -%}
-          <div class="ds-row">
-            <div class="ds-label">GOOD FOR:</div>
-            <div class="ds-value">All skin types, including sensitive and combination skin</div>
-          </div>
-          <div class="ds-row">
-            <div class="ds-label">FEELS LIKE:</div>
-            <div class="ds-value">A light, refreshing cream that melts effortlessly into the skin</div>
-          </div>
-          <div class="ds-row">
-            <div class="ds-label">LOOKS LIKE:</div>
-            <div class="ds-value">A soft, luminous finish with a naturally healthy glow</div>
-          </div>
-          <div class="ds-row">
-            <div class="ds-label">SMELLS LIKE:</div>
-            <div class="ds-value">Clean, subtle freshness with no overpowering scent</div>
-          </div>
-          <div class="ds-row">
-            <div class="ds-label">FYI:</div>
-            <div class="ds-value">Halal-Friendly &bull; Dermatologist-Tested &bull; Lightweight &bull; Non-Sticky</div>
-          </div>
-        {%- elsif product.handle == 'centella-skin-toner' -%}
-          <div class="ds-row">
-            <div class="ds-label">GOOD FOR:</div>
-            <div class="ds-value">All skin types, especially uneven and textured skin</div>
-          </div>
-          <div class="ds-row">
-            <div class="ds-label">FEELS LIKE:</div>
-            <div class="ds-value">A refreshing, watery layer that absorbs quickly</div>
-          </div>
-          <div class="ds-row">
-            <div class="ds-label">LOOKS LIKE:</div>
-            <div class="ds-value">Clearer, smoother skin with refined texture</div>
-          </div>
-          <div class="ds-row">
-            <div class="ds-label">SMELLS LIKE:</div>
-            <div class="ds-value">Clean, subtle freshness with a calming touch</div>
-          </div>
-          <div class="ds-row">
-            <div class="ds-label">FYI:</div>
-            <div class="ds-value">Halal-Friendly &bull; Dermatologist-Tested &bull; Non-Stripping &bull; Pore-Refining</div>
-          </div>
+        {%- if use_custom_list -%}
+          {{ ds_list_content }}
+        {%- elsif section.blocks.size > 0 -%}
+          {% for block in section.blocks %}
+            <div class="ds-row">
+              <div class="ds-label">{{ block.settings.label }}</div>
+              <div class="ds-value">{{ block.settings.value }}</div>
+            </div>
+          {% endfor %}
         {%- else -%}
           <div class="ds-row">
             <div class="ds-label">GOOD FOR:</div>
             <div class="ds-value">All skin types, including dry and sensitive skin</div>
           </div>
-          <div class="ds-row">
-            <div class="ds-label">FEELS LIKE:</div>
-            <div class="ds-value">A rich, creamy formula that melts effortlessly into the skin</div>
-          </div>
-          <div class="ds-row">
-            <div class="ds-label">LOOKS LIKE:</div>
-            <div class="ds-value">Smooth, plump, and poreless skin by morning</div>
-          </div>
-          <div class="ds-row">
-            <div class="ds-label">SMELLS LIKE:</div>
-            <div class="ds-value">Subtle, calming freshness for a relaxing nighttime routine</div>
-          </div>
-          <div class="ds-row">
-            <div class="ds-label">FYI:</div>
-            <div class="ds-value">Halal-Friendly &bull; Dermatologist-Tested &bull; Non-Sticky &bull; Repair-Focused</div>
-          </div>
         {%- endif -%}
-      {% endif %}
     </div>
   </div>
   <div class="ds-right">
-    {% if section.settings.image != blank %}
-      {{ section.settings.image | image_url: width: 1000 | image_tag: class: 'ds-image', alt: section.settings.title }}
-    {% else %}
-      {%- if product.handle == 'e7-korean-glass-skin-centella-sunscreen-spf50-copy' -%}
-        <img class="ds-image" src="{{ 'sunscreen-100.jpg' | asset_url }}" alt="Sunscreen Application">
-      {%- elsif product.handle == 'e7-korean-glass-skin-centella-face-wash-copy' -%}
-        <img class="ds-image" src="{{ 'cleanser-meet-1.jpg' | asset_url }}" alt="Face Wash Texture">
-      {%- elsif product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' or product.handle == 'night-cream' -%}
-        <img class="ds-image" src="{{ 'night-cream-suite.jpeg' | asset_url }}" alt="Night Cream Suite">
-      {%- elsif product.handle == 'glutathione-cream' -%}
-        <img class="ds-image" src="{{ 'glutathione-cream-100.jpg' | asset_url }}" alt="Glutathione Cream Jar">
-      {%- elsif product.handle == 'e7-korean-glass-skin-moisturizer' -%}
-        <img class="ds-image" src="{{ 'moisturizer-benefits.jpg' | asset_url }}" alt="Moisturizer Texture">
-      {%- elsif product.handle == 'centella-skin-toner' -%}
-        <img class="ds-image" src="{{ 'toner-benefits.jpg' | asset_url }}" alt="Toner Result">
-      {%- else -%}
-        <img class="ds-image" src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?q=80&w=1000" alt="Glossier Cosmetic Layout">
-      {%- endif -%}
-    {% endif %}
+    {%- if ds_image_name != blank -%}
+      <img class="ds-image" src="{{ ds_image_name | asset_url }}" alt="{{ product.title }}">
+    {%- elsif ds_image != blank -%}
+      {{ ds_image | image_url: width: 1000 | image_tag: class: 'ds-image', alt: ds_title }}
+    {%- else -%}
+      <img class="ds-image" src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?q=80&w=1000" alt="Glossier Cosmetic Layout">
+    {%- endif -%}
   </div>
 </section>
 
