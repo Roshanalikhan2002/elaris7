@@ -110,7 +110,7 @@
 <section class="ingredients-section">
   <div class="ing-left">
     {%- if product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' or product.handle == 'e7-korean-glass-skin-centella-face-wash-copy' -%}
-      <img class="ing-image" src="{{ 'facewash-ingredients.jpg' | asset_url }}" alt="Face Wash Ingredients">
+      <img class="ing-image" src="{{ 'facewash-ingredients-v2.jpg' | asset_url }}" alt="Face Wash Ingredients">
     {%- elsif product.handle == 'centella-skin-toner' or product.handle == 'renewal-toner' -%}
       <img class="ing-image" src="{{ 'toner-whats-inside.jpg' | asset_url }}" alt="Toner Ingredients">
     {%- elsif product.handle == 'e7-korean-glass-skin-moisturizer' or product.handle == 'hydra-burst-moisturizer' -%}
@@ -155,7 +155,7 @@
       </div>
       
       <div class="ing-dynamic-blocks">
-        {%- elsif product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' or product.handle == 'e7-korean-glass-skin-centella-face-wash-copy' -%}
+        {%- if product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' or product.handle == 'e7-korean-glass-skin-centella-face-wash-copy' -%}
           <div class="hero-ingredient"><h3 class="hero-title">CENTELLA ASIATICA</h3><p class="hero-desc">calms and repairs the skin barrier during cleansing</p></div>
           <div class="hero-ingredient"><h3 class="hero-title">RICE EXTRACT</h3><p class="hero-desc">natural brightener for a clear, radiant after-wash glow</p></div>
         {%- elsif product.handle == 'centella-skin-toner' or product.handle == 'renewal-toner' -%}
@@ -165,8 +165,7 @@
           <div class="hero-ingredient"><h3 class="hero-title">PANTHENOL</h3><p class="hero-desc">hydrates and adds a healthy shine</p></div>
           <div class="hero-ingredient"><h3 class="hero-title">FLORAL EXTRACTS</h3><p class="hero-desc">provide a delicate, long-lasting scent</p></div>
         {%- else -%}
-          <!-- Default ingredients if no handle match -->
-           <div class="hero-ingredient"><h3 class="hero-title">CENTELLA ASIATICA</h3><p class="hero-desc">repairs and calms skin</p></div>
+          <div class="hero-ingredient"><h3 class="hero-title">CENTELLA ASIATICA</h3><p class="hero-desc">repairs and calms skin</p></div>
         {%- endif -%}
       </div>
 

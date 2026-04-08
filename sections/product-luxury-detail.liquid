@@ -469,10 +469,14 @@
   {%- assign display_title = "Centella Serum" -%}
   {%- assign display_subtitle = 'Glow That Transforms Over Time' -%}
   {%- assign display_desc = 'A daily serum for BRIGHTENING + EVEN, GLASS-LIKE SKIN.' -%}
-{%- elsif product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' or product.handle == 'renewal-cleanser' -%}
+{%- elsif product.handle == 'renewal-cleanser' -%}
   {%- assign display_title = "Renewal Cleanser" -%}
   {%- assign display_subtitle = 'Cleanse & Glow' -%}
   {%- assign display_desc = 'A refining gel cleanser designed to gently remove impurities while enhancing skin brightness.' -%}
+{%- elsif product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' -%}
+  {%- assign display_title = "Centella Face Wash" -%}
+  {%- assign display_subtitle = "Pure Start" -%}
+  {%- assign display_desc = 'A gentle, glow-reviving cleanser infused with Centella Asiatica, brightening actives, and hydrating botanicals to cleanse, soothe, and refresh your skin for a soft, balanced, and radiant look every day.' -%}
 {%- elsif product.handle == 'sunscreen' or product.handle == 'e7-korean-glass-skin-centella-face-wash-copy' -%}
   {%- assign display_title = "Sunscreen SPF60+" -%}
   {%- assign display_subtitle = 'Centella Asiatica + UV Filters' -%}
@@ -518,8 +522,8 @@
     <div class="product-gallery">
       <!-- Thumbnails on Left -->
         {%- if product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' -%}
-          <div class="thumb-item active" onmouseover="scrollGallery(0, this)"><img src="{{ 'facewash-100.jpg' | asset_url }}" alt="{{ product.title }}"></div>
-          <div class="thumb-item" onmouseover="scrollGallery(1, this)"><img src="{{ 'facewash-gallery-1.jpg' | asset_url }}" alt="Face Wash 1"></div>
+          <div class="thumb-item active" onmouseover="scrollGallery(0, this)"><img src="{{ 'facewash-gallery-1-v2.jpg' | asset_url }}" alt="{{ product.title }}"></div>
+          <div class="thumb-item" onmouseover="scrollGallery(1, this)"><img src="{{ 'facewash-gallery-1-v2.jpg' | asset_url }}" alt="Face Wash 1"></div>
           <div class="thumb-item" onmouseover="scrollGallery(2, this)"><img src="{{ 'facewash-gallery-2.jpg' | asset_url }}" alt="Face Wash 2"></div>
           <div class="thumb-item" onmouseover="scrollGallery(3, this)"><img src="{{ 'facewash-gallery-3.jpg' | asset_url }}" alt="Face Wash 3"></div>
           <div class="thumb-item" onmouseover="scrollGallery(4, this)"><img src="{{ 'facewash-gallery-4.jpg' | asset_url }}" alt="Face Wash 4"></div>
@@ -617,8 +621,8 @@
       <div class="gallery-main-viewport">
         <div class="gallery-slider" id="productSlider">
           {%- if product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' -%}
-            <div class="gallery-slide"><img src="{{ 'facewash-100.jpg' | asset_url }}" alt="{{ product.title }}"></div>
-            <div class="gallery-slide"><img src="{{ 'facewash-gallery-1.jpg' | asset_url }}" alt="Face Wash 1" style="object-fit: cover !important;"></div>
+            <div class="gallery-slide"><img src="{{ 'facewash-gallery-1-v2.jpg' | asset_url }}" alt="{{ product.title }}"></div>
+            <div class="gallery-slide"><img src="{{ 'facewash-gallery-1-v2.jpg' | asset_url }}" alt="Face Wash 1" style="object-fit: cover !important;"></div>
             <div class="gallery-slide"><img src="{{ 'facewash-gallery-2.jpg' | asset_url }}" alt="Face Wash 2" style="object-fit: cover !important;"></div>
             <div class="gallery-slide"><img src="{{ 'facewash-gallery-3.jpg' | asset_url }}" alt="Face Wash 3" style="object-fit: cover !important;"></div>
             <div class="gallery-slide"><img src="{{ 'facewash-gallery-4.jpg' | asset_url }}" alt="Face Wash 4" style="object-fit: cover !important;"></div>
