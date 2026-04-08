@@ -565,13 +565,13 @@
             <img src="{{ 'moisturizer-100.jpg' | asset_url }}" alt="{{ product.title }}">
           </div>
           <div class="thumb-item" onmouseover="scrollGallery(1, this)">
-            <img src="{{ 'gift-moisturizer.png' | asset_url }}" alt="Deep Hydration">
+            <img src="{{ 'moisturizer-gallery-1.jpg' | asset_url }}" alt="Deep Hydration">
           </div>
           <div class="thumb-item" onmouseover="scrollGallery(2, this)">
-            <img src="{{ 'night-cream-jar.jpg' | asset_url }}" alt="Texture Jar">
+            <img src="{{ 'moisturizer-gallery-2.jpg' | asset_url }}" alt="Texture Jar">
           </div>
           <div class="thumb-item" onmouseover="scrollGallery(3, this)">
-            <img src="{{ 'social-jar.jpg' | asset_url }}" alt="Lifestyle Shot">
+            <img src="{{ 'moisturizer-gallery-3.jpg' | asset_url }}" alt="Lifestyle Shot">
           </div>
         {%- elsif product.handle == 'centella-skin-toner' -%}
           <div class="thumb-item active" onmouseover="scrollGallery(0, this)">
@@ -1023,6 +1023,12 @@
                       <li>Helps refresh and revive tired-looking skin</li>
                       <li>Prepares skin for better absorption of skincare</li>
                     </ul>
+                  {%- elsif product.handle == 'e7-korean-glass-skin-moisturizer' -%}
+                    <ul>
+                      <li>Boosts natural radiance while improving overall skin clarity</li>
+                      <li>Delivers lasting hydration for a plump, soft, and dewy feel</li>
+                      <li>Smooths texture and helps reduce the appearance of uneven tone</li>
+                    </ul>
                   {%- else -%}
                     <ul>
                       <li>Boosts skin radiance for a naturally luminous glow</li>
@@ -1054,6 +1060,8 @@
                     <p style="margin:0;">After completing your skincare routine, apply a generous amount of Centella Sunscreen evenly onto your face and neck. Gently massage until fully absorbed and reapply throughout the day as needed.</p>
                   {%- elsif product.handle == 'centella-skin-toner-copy' -%}
                     <p style="margin:0;">Use morning and night. Apply a small amount to wet skin and gently massage over face and neck. Rinse thoroughly with lukewarm water and follow with toner, serum, and moisturizer.</p>
+                  {%- elsif product.handle == 'e7-korean-glass-skin-moisturizer' -%}
+                    <p style="margin:0;">After cleansing and applying serum, take a small amount of Centella Moisturizer and gently massage it onto slightly damp skin using upward motions. Allow it to absorb fully to lock in hydration.</p>
                   {%- else -%}
                     <p style="margin:0;">After cleansing and toning, take a small amount of Centella Night Cream and gently massage it upward onto your face and neck, avoiding the eye area. Leave it on overnight to fully absorb and lock in hydration, allowing your skin to repair, restore, and wake up looking radiant and smooth. Consistency is key for optimal results.</p>
                   {%- endif -%}
@@ -1119,6 +1127,12 @@
                       <li>Massage for 30–60 seconds for better results</li>
                       <li>Follow with toner to enhance brightness</li>
                       <li>Use consistently for a clearer-looking complexion</li>
+                    </ul>
+                  {%- elsif product.handle == 'e7-korean-glass-skin-moisturizer' -%}
+                    <ul>
+                      <li>Apply on damp skin to enhance absorption and maximize hydration</li>
+                      <li>Use a slightly thicker layer for an instant dewy glow finish</li>
+                      <li>Pair with sunscreen in the morning for protected, radiant skin</li>
                     </ul>
                   {%- else -%}
                     <ul>
@@ -1238,6 +1252,17 @@
                       <li>Chamomile Extract</li>
                       <li>Licorice Root Extract</li>
                       <li>Mild Cleansing Agents</li>
+                    </ul>
+                  {%- elsif product.handle == 'e7-korean-glass-skin-moisturizer' -%}
+                    <ul>
+                      <li>Hyaluronic Acid</li>
+                      <li>Vitamin C Complex</li>
+                      <li>Centella Asiatica</li>
+                      <li>Morus Alba Extract</li>
+                      <li>Broussonetia Root Extract</li>
+                      <li>Honey</li>
+                      <li>Galactoarabinan</li>
+                      <li>Vitamin E</li>
                     </ul>
                   {%- else -%}
                     <ul>
