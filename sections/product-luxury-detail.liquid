@@ -731,8 +731,11 @@
   <div class="product-details">
 
       <div class="product-header">
-        <h1 class="product-title" style="color: #003087; text-transform: lowercase; font-weight: 800; line-height: 0.9;">{{ product.title }}</h1>
-        <div class="product-award">BEST OF BEAUTY</div>
+        {%- assign display_title = product.title -%}
+        {%- if product.handle == 'centella-skin-toner-copy' -%}
+          {%- assign display_title = "Elaris7 Brightening Gel Cleanser" -%}
+        {%- endif -%}
+        <h1 class="product-title" style="color: #003087; text-transform: lowercase; font-weight: 800; line-height: 0.9;">{{ display_title }}</h1>
       </div>
 
       {%- assign display_subtitle = section.settings.subtitle | default: 'Night Renewal' -%}
@@ -752,6 +755,8 @@
       {%- elsif product.handle == 'anti-frizz-keratin-serum' -%}
         {%- assign display_subtitle = 'Keratin + Argan Oil' -%}
         {%- assign display_desc = 'A smoothing hair serum designed to control frizz, protect against heat, and restore softness without weighing hair down. It seals moisture, enhances shine, and leaves hair silky, manageable, and smooth with every use.' -%}
+      {%- elsif product.handle == 'centella-skin-toner-copy' -%}
+        {%- assign display_subtitle = 'Cleanse & Glow' -%}
       {%- elsif product.handle == 'e7-korean-glass-skin-centella-face-wash-copy' -%}
         {%- assign display_subtitle = 'Centella Asiatica + UV Filters' -%}
         {%- assign display_desc = 'A protective sunscreen infused with Centella Asiatica and advanced UV filters to defend against sun damage, hydrate deeply, and maintain a smooth, glass-like finish every day.' -%}
