@@ -748,7 +748,7 @@
         {%- assign display_title = product.title -%}
         {%- if product.handle == 'centella-skin-toner-copy' -%}
           {%- assign display_title = "Elaris7 Brightening Gel Cleanser" -%}
-        {%- elsif product.handle == 'anti-acne' -%}
+        {%- elsif product.handle == 'anti-acne' or product.handle == 'night-cream' or product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' -%}
           {%- assign display_title = "Centella Night Cream" -%}
         {%- endif -%}
         <h1 class="product-title" style="color: #003087; text-transform: lowercase; font-weight: 800; line-height: 0.9;">{{ display_title }}</h1>
