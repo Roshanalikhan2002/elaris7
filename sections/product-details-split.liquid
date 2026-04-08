@@ -95,18 +95,6 @@
 {%- assign ds_image = section.settings.image -%}
 {%- assign use_custom_list = false -%}
 
-{%- elsif product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' -%}
-  {%- assign ds_title = "Cleanse. Refresh. Glow.<br><span style='font-size: 0.7em;'>A daily face wash for CLEAN SKIN + BALANCED, RADIANT COMPLEXION.</span>" -%}
-  {%- assign ds_image_name = 'deep-hydration-facewash.jpg' -%}
-  {%- assign use_custom_list = true -%}
-  {%- capture ds_list_content -%}
-    <div class="ds-row"><div class="ds-label">GOOD FOR:</div><div class="ds-value">All skin types, especially dull, sensitive, or acne-prone skin</div></div>
-    <div class="ds-row"><div class="ds-label">FEELS LIKE:</div><div class="ds-value">A soft, airy lather that cleanses gently without tightness</div></div>
-    <div class="ds-row"><div class="ds-label">LOOKS LIKE:</div><div class="ds-value">Fresh, clear skin with a natural, healthy glow</div></div>
-    <div class="ds-row"><div class="ds-label">SMELLS LIKE:</div><div class="ds-value">Light, clean freshness that feels calming and pure</div></div>
-    <div class="ds-row"><div class="ds-label">FYI:</div><div class="ds-value">Halal-Friendly • Dermatologist-Tested • Non-Drying • Gentle for Daily Use</div></div>
-  {%- endcapture -%}
-
 {%- if product.handle == 'centella-serum' or product.handle == 'e7-korean-glass-skin-centella-sunscreen-spf50-copy' -%}
   {%- assign ds_title = "Glow That Transforms Over Time<br><span style='font-size: 0.7em;'>A daily serum for BRIGHTENING + EVEN, GLASS-LIKE SKIN.</span>" -%}
   {%- assign ds_image_name = 'centella-serum-split.jpg' -%}
@@ -118,7 +106,6 @@
     <div class="ds-row"><div class="ds-label">SMELLS LIKE:</div><div class="ds-value">Light, botanical freshness for a spa-like feel</div></div>
     <div class="ds-row"><div class="ds-label">FYI:</div><div class="ds-value">Brightening-Focus • Gentle Formula • AM/PM Use • Barrier-Support</div></div>
   {%- endcapture -%}
-
 {%- elsif product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' -%}
   {%- assign ds_title = "Cleanse. Refresh. Glow.<br><span style='font-size: 0.7em;'>A daily face wash for CLEAN SKIN + BALANCED, RADIANT COMPLEXION.</span>" -%}
   {%- assign ds_image_name = 'deep-hydration-facewash.jpg' -%}
@@ -133,7 +120,7 @@
 
 {%- elsif product.handle == 'e7-korean-glass-skin-centella-face-wash-copy' or product.handle == 'sunscreen' -%}
   {%- assign ds_title = "Protection That Feels Effortless<br><span style='font-size: 0.7em;'>A daily sunscreen for DEFENSE + HYDRATED, PROTECTED SKIN.</span>" -%}
-  {%- assign ds_image_name = 'sunscreen-100.jpg' -%}
+  {%- assign ds_image_name = 'sunscreen-plate.jpg' -%}
   {%- assign use_custom_list = true -%}
   {%- capture ds_list_content -%}
     <div class="ds-row"><div class="ds-label">GOOD FOR:</div><div class="ds-value">All skin types, including sensitive and acne-prone skin</div></div>
