@@ -567,17 +567,18 @@
             <div class="thumb-item" onmouseover="scrollGallery(1, this)"><img src="{{ 'centella-serum-2.jpg' | asset_url }}" alt="Serum 2"></div>
             <div class="thumb-item" onmouseover="scrollGallery(2, this)"><img src="{{ 'centella-serum-3.jpg' | asset_url }}" alt="Serum 3"></div>
             <div class="thumb-item" onmouseover="scrollGallery(3, this)"><img src="{{ 'glow-gallery-4.jpg' | asset_url }}" alt="Product Infographic"></div>
-          {%- elsif product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' or product.handle == 'night-cream' -%}
+          {%- elsif product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' -%}
+            <div class="thumb-item active" onmouseover="scrollGallery(0, this)"><img src="{{ 'facewash-100.jpg' | asset_url }}" alt="{{ product.title }}"></div>
+            <div class="thumb-item" onmouseover="scrollGallery(1, this)"><img src="{{ 'facewash-gallery-1.jpg' | asset_url }}" alt="Face Wash 1"></div>
+            <div class="thumb-item" onmouseover="scrollGallery(2, this)"><img src="{{ 'facewash-gallery-2.jpg' | asset_url }}" alt="Face Wash 2"></div>
+            <div class="thumb-item" onmouseover="scrollGallery(3, this)"><img src="{{ 'facewash-gallery-3.jpg' | asset_url }}" alt="Face Wash 3"></div>
+            <div class="thumb-item" onmouseover="scrollGallery(4, this)"><img src="{{ 'facewash-gallery-4.jpg' | asset_url }}" alt="Face Wash 4"></div>
+          {%- elsif product.handle == 'night-cream' -%}
             <div class="thumb-item active" onmouseover="scrollGallery(0, this)"><img src="{{ 'Artboard-1-100.jpg' | asset_url }}" alt="{{ product.title }}"></div>
             <div class="thumb-item" onmouseover="scrollGallery(1, this)"><img src="{{ 'faq-100-nc.jpg' | asset_url }}" alt="FAQ"></div>
             <div class="thumb-item" onmouseover="scrollGallery(2, this)"><img src="{{ 'night-cream-swatch-7-100.jpg' | asset_url }}" alt="Swatch"></div>
             <div class="thumb-item" onmouseover="scrollGallery(3, this)"><img src="{{ 'nigh-suite-100.jpg' | asset_url }}" alt="Suite"></div>
             <div class="thumb-item" onmouseover="scrollGallery(4, this)"><img src="{{ 'lifestyle-100.jpg' | asset_url }}" alt="Lifestyle"></div>
-          {%- elsif product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' -%}
-            <div class="thumb-item active" onmouseover="scrollGallery(0, this)"><img src="{{ 'facewash-gallery-1.jpg' | asset_url }}" alt="{{ product.title }}"></div>
-            <div class="thumb-item" onmouseover="scrollGallery(1, this)"><img src="{{ 'facewash-gallery-2.jpg' | asset_url }}" alt="Face Wash 2"></div>
-            <div class="thumb-item" onmouseover="scrollGallery(2, this)"><img src="{{ 'facewash-gallery-3.jpg' | asset_url }}" alt="Face Wash 3"></div>
-            <div class="thumb-item" onmouseover="scrollGallery(3, this)"><img src="{{ 'facewash-gallery-4.jpg' | asset_url }}" alt="Face Wash 4"></div>
           {%- elsif product.handle == 'sunscreen' or product.handle == 'e7-korean-glass-skin-centella-face-wash-copy' -%}
             <div class="thumb-item active" onmouseover="scrollGallery(0, this)"><img src="{{ 'sunscreen-100.jpg' | asset_url }}" alt="{{ product.title }}"></div>
             <div class="thumb-item" onmouseover="scrollGallery(1, this)"><img src="{{ 'sunscreen-lifestyle-1.jpg' | asset_url }}" alt="Lifestyle 1"></div>
@@ -641,17 +642,18 @@
               <div class="gallery-slide"><img src="{{ 'centella-serum-2.jpg' | asset_url }}" alt="Serum 2" style="object-fit: contain !important; background: #fff;"></div>
               <div class="gallery-slide"><img src="{{ 'centella-serum-3.jpg' | asset_url }}" alt="Serum 3" style="object-fit: contain !important; background: #fff;"></div>
               <div class="gallery-slide"><img src="{{ 'glow-gallery-4.jpg' | asset_url }}" alt="Product Infographic" style="object-fit: contain !important; background: #fff;"></div>
-            {%- elsif product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' or product.handle == 'night-cream' -%}
+            {%- elsif product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' -%}
+              <div class="gallery-slide"><img src="{{ 'facewash-100.jpg' | asset_url }}" alt="{{ product.title }}"></div>
+              <div class="gallery-slide"><img src="{{ 'facewash-gallery-1.jpg' | asset_url }}" alt="Face Wash 1" style="object-fit: cover !important;"></div>
+              <div class="gallery-slide"><img src="{{ 'facewash-gallery-2.jpg' | asset_url }}" alt="Face Wash 2" style="object-fit: cover !important;"></div>
+              <div class="gallery-slide"><img src="{{ 'facewash-gallery-3.jpg' | asset_url }}" alt="Face Wash 3" style="object-fit: cover !important;"></div>
+              <div class="gallery-slide"><img src="{{ 'facewash-gallery-4.jpg' | asset_url }}" alt="Face Wash 4" style="object-fit: cover !important;"></div>
+            {%- elsif product.handle == 'night-cream' -%}
               <div class="gallery-slide"><img src="{{ 'Artboard-1-100.jpg' | asset_url }}" alt="{{ product.title }}" style="object-fit: contain !important; background: #fff;"></div>
               <div class="gallery-slide"><img src="{{ 'faq-100-nc.jpg' | asset_url }}" alt="FAQ" style="object-fit: cover !important;"></div>
               <div class="gallery-slide"><img src="{{ 'night-cream-swatch-7-100.jpg' | asset_url }}" alt="Swatch" style="object-fit: cover !important;"></div>
               <div class="gallery-slide"><img src="{{ 'nigh-suite-100.jpg' | asset_url }}" alt="Suite" style="object-fit: cover !important;"></div>
               <div class="gallery-slide"><img src="{{ 'lifestyle-100.jpg' | asset_url }}" alt="Lifestyle" style="object-fit: cover !important;"></div>
-            {%- elsif product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' -%}
-              <div class="gallery-slide"><img src="{{ 'facewash-gallery-1.jpg' | asset_url }}" alt="{{ product.title }}" style="object-fit: cover !important;"></div>
-              <div class="gallery-slide"><img src="{{ 'facewash-gallery-2.jpg' | asset_url }}" alt="Face Wash 2" style="object-fit: cover !important;"></div>
-              <div class="gallery-slide"><img src="{{ 'facewash-gallery-3.jpg' | asset_url }}" alt="Face Wash 3" style="object-fit: cover !important;"></div>
-              <div class="gallery-slide"><img src="{{ 'facewash-gallery-4.jpg' | asset_url }}" alt="Face Wash 4" style="object-fit: cover !important;"></div>
             {%- elsif product.handle == 'sunscreen' or product.handle == 'e7-korean-glass-skin-centella-face-wash-copy' -%}
               <div class="gallery-slide"><img src="{{ 'sunscreen-100.jpg' | asset_url }}" alt="{{ product.title }}"></div>
               <div class="gallery-slide"><img src="{{ 'sunscreen-lifestyle-1.jpg' | asset_url }}" alt="Suitcase Shot" style="object-fit: cover !important;"></div>

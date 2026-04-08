@@ -174,7 +174,7 @@
         {%- if product.handle == 'e7-korean-glass-skin-centella-face-wash-copy' or product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' -%}
           also made with RICE EXTRACT, LICORICE EXTRACT, VITAMIN C, HONEY, D-PANTHENOL, GLYCERIN, APPLE EXTRACT, CENTELLA ASIATICA
         {%- else -%}
-          {{ section.settings.footer_text }}
+          {{ section.settings.footer_text | default: 'also made with VITAMIN C, HONEY, D-PANTHENOL, GLYCERIN, APPLE EXTRACT' }}
         {%- endif -%}
       </div>
     </div>
