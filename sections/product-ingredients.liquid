@@ -109,14 +109,14 @@
 
 <section class="ingredients-section">
   <div class="ing-left">
-    {%- if product.handle == 'centella-skin-toner' or product.handle == 'renewal-toner' -%}
+    {%- if product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' or product.handle == 'e7-korean-glass-skin-centella-face-wash-copy' -%}
+      <img class="ing-image" src="{{ 'facewash-ingredients.jpg' | asset_url }}" alt="Face Wash Ingredients">
+    {%- elsif product.handle == 'centella-skin-toner' or product.handle == 'renewal-toner' -%}
       <img class="ing-image" src="{{ 'toner-whats-inside.jpg' | asset_url }}" alt="Toner Ingredients">
     {%- elsif product.handle == 'e7-korean-glass-skin-moisturizer' or product.handle == 'hydra-burst-moisturizer' -%}
       <img class="ing-image" src="{{ 'moisturizer-whats-inside.jpg' | asset_url }}" alt="Moisturizer Ingredients">
     {%- elsif product.handle == 'floral-blossom-hair-mist' or product.handle == 'hair-mist' -%}
       <img class="ing-image" src="{{ 'hair-mist.jpg' | asset_url }}" alt="Hair Mist Ingredients">
-    {%- elsif product.handle == 'e7-korean-glass-skin-centella-face-wash-copy' or product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' -%}
-      <img class="ing-image" src="{{ 'facewash-ingredients.jpg' | asset_url }}" alt="Face Wash Ingredients">
     {%- elsif product.handle == 'e7-korean-glass-skin-centella-face-wash-copy-sunscreen' or product.handle == 'sunscreen' -%}
       <img class="ing-image" src="{{ 'sunscreen-100.jpg' | asset_url }}" alt="Sunscreen Ingredients">
     {%- elsif product.handle == 'e7-korean-glass-skin-centella-sunscreen-spf50-copy' or product.handle == 'centella-serum' -%}

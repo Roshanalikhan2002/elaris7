@@ -135,7 +135,9 @@
   </div>
   
   <div class="bf-right">
-    {%- if product.handle == 'centella-skin-toner' -%}
+    {%- if product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' or product.handle == 'e7-korean-glass-skin-centella-face-wash-copy' -%}
+      <img class="bf-image" src="{{ 'facewash-benefits.jpg' | asset_url }}" alt="Face Wash Shot">
+    {%- elsif product.handle == 'centella-skin-toner' -%}
       <img class="bf-image" src="{{ 'toner-deep-hydration.jpg' | asset_url }}" alt="Refined, balanced skin">
     {%- elsif product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' or product.handle == 'e7-korean-glass-skin-centella-face-wash-copy' -%}
       <img class="bf-image" src="{{ 'facewash-benefits.jpg' | asset_url }}" alt="Face Wash Shot">
