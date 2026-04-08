@@ -34,7 +34,7 @@
       "type": "product-details-split",
       "settings": {
         "title": "Wake Up to Refreshed, Radiant Skin",
-        "image": "shopify://shop_images/a_creamy_blush-100_10.jpg"
+        "image": "shopify://shop_images/a_creamy_blush-100_5.jpg"
       }
     },
     "ingredients": {
@@ -43,7 +43,7 @@
         "title": "what's inside",
         "intro": "A lightweight hair mist designed to revive hair instantly, leaving it soft, fragrant, and naturally shiny throughout the day.",
         "footer_text": "PANTHENOL\n hydrates and adds a healthy-looking shine\nPROPANEDIOL\n refreshes hair while helping the scent last longer\nalso made with subtle floral extracts for a delicate, long-lasting fragrance",
-        "image": "shopify://shop_images/whats_inside-100_9.jpg",
+        "image": "shopify://shop_images/deep_hydration-100_4.jpg",
         "show_btn": true,
         "btn_label": "FULL INGREDIENTS LIST"
       }
@@ -52,14 +52,14 @@
       "type": "product-benefits-focus",
       "settings": {
         "subtitle": "SPREAD IT ON FOR:",
-        "image": "shopify://shop_images/deep_hydration-100_12.jpg"
+        "image": "shopify://shop_images/faq-100_7.jpg"
       }
     },
     "study_results": {
       "type": "product-study-results",
       "settings": {
         "footnote": "Based on a 2-week consumer perception study with consistent nightly use.",
-        "image": "shopify://shop_images/before_after-100_9.jpg"
+        "image": "shopify://shop_images/before_after-100_10.jpg"
       }
     },
     "faq_split": {
@@ -67,7 +67,7 @@
       "settings": {
         "title": "FAQ",
         "subtitle": "Find out more about Barrier Butter.",
-        "image": "shopify://shop_images/faq-100_12.jpg"
+        "image": "shopify://shop_images/faq-100_13.jpg"
       }
     },
     "product_reviews": {
