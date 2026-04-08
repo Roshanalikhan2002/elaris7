@@ -92,27 +92,6 @@
             </a>
           </div>
         {% endfor %}
-        {% if collection.handle == 'sets' or collection.handle == 'set' %}
-          {% if collection.products.size == 0 %}
-            {% for i in (12..15) %}
-              <div class="coll-item">
-                <a href="/products/e7-complete-glass-skin-set" class="coll-card">
-                  <div class="coll-image">
-                    <img src="{{ fallback_images[i] | asset_url }}" alt="{{ fallback_names[i] }}" loading="lazy" class="main-img" style="object-fit: cover; padding: 0;">
-                    <div class="coll-badge-top">
-                       <div class="coll-brand">ELARIS7</div>
-                    </div>
-                  </div>
-                  <div class="coll-info">
-                     <div class="coll-stars">★ ★ ★ ★ ★ (12k)</div>
-                     <h3 class="coll-title">{{ fallback_names[i] | upcase }}</h3>
-                     <p class="coll-price">{{ fallback_prices[i] }}</p>
-                  </div>
-                </a>
-              </div>
-            {% endfor %}
-          {% endif %}
-        {% endif %}
       </div>
 
       {% if paginate.pages > 1 %}
