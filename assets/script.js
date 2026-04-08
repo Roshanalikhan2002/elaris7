@@ -244,9 +244,12 @@ document.addEventListener('DOMContentLoaded', () => {
   if (catLinks.length > 0 && productCards.length > 0) {
     catLinks.forEach(link => {
       link.addEventListener('click', (e) => {
-        // If it's a "local" filter (staying on homepage), prevent default
-        if (window.location.pathname === '/' || window.location.pathname.includes('index.html') || window.location.pathname.includes('.json')) {
+        // If it's a "local" filter (staying on homepage or specifically for SET interaction), prevent default
+        const isHomePage = window.location.pathname === '/' || window.location.pathname.includes('index.html') || window.location.pathname.endsWith('.json') || window.location.pathname.includes('/home');
+        
+        if (isHomePage) {
           e.preventDefault();
+          e.stopPropagation();
           
           // Toggle active class
           catLinks.forEach(l => l.classList.remove('active'));
