@@ -125,6 +125,8 @@
       {%- assign ds_title = "Protection That Feels Effortless<br><span style='font-size: 0.7em;'>A daily sunscreen for DEFENSE + HYDRATED, PROTECTED SKIN.</span>" -%}
     {%- elsif product.handle == 'centella-skin-toner-copy' -%}
       {%- assign ds_title = "Your Daily Brightening Cleanse<br><span style='font-size: 0.7em;'>A gel cleanser for CLEAR, FRESH + RADIANT SKIN.</span>" -%}
+    {%- elsif product.handle == 'e7-korean-glass-skin-moisturizer' -%}
+      {%- assign ds_title = "Glow That Lasts All Day<br><span style='font-size: 0.7em;'>A daily moisturizer for HYDRATION + SMOOTH, RADIANT SKIN.</span>" -%}
     {%- endif -%}
     <h2 class="ds-title">{{ ds_title }}</h2>
     <div class="ds-list">
@@ -283,6 +285,27 @@
             <div class="ds-label">FYI:</div>
             <div class="ds-value">Non-Greasy &bull; Deep Hydration &bull; Daily Use &bull; Brightening Care</div>
           </div>
+        {%- elsif product.handle == 'e7-korean-glass-skin-moisturizer' -%}
+          <div class="ds-row">
+            <div class="ds-label">GOOD FOR:</div>
+            <div class="ds-value">All skin types, including sensitive and combination skin</div>
+          </div>
+          <div class="ds-row">
+            <div class="ds-label">FEELS LIKE:</div>
+            <div class="ds-value">A light, refreshing cream that melts effortlessly into the skin</div>
+          </div>
+          <div class="ds-row">
+            <div class="ds-label">LOOKS LIKE:</div>
+            <div class="ds-value">A soft, luminous finish with a naturally healthy glow</div>
+          </div>
+          <div class="ds-row">
+            <div class="ds-label">SMELLS LIKE:</div>
+            <div class="ds-value">Clean, subtle freshness with no overpowering scent</div>
+          </div>
+          <div class="ds-row">
+            <div class="ds-label">FYI:</div>
+            <div class="ds-value">Halal-Friendly &bull; Dermatologist-Tested &bull; Lightweight &bull; Non-Sticky</div>
+          </div>
         {%- else -%}
           <div class="ds-row">
             <div class="ds-label">GOOD FOR:</div>
@@ -316,6 +339,8 @@
         <img class="ds-image" src="{{ 'social-jar.jpg' | asset_url }}" alt="Glow Serum Jar">
       {%- elsif product.handle == 'glutathione-cream' -%}
         <img class="ds-image" src="{{ 'glutathione-cream-100.jpg' | asset_url }}" alt="Glutathione Cream Jar">
+      {%- elsif product.handle == 'e7-korean-glass-skin-moisturizer' -%}
+        <img class="ds-image" src="{{ 'moisturizer-benefits.jpg' | asset_url }}" alt="Moisturizer Texture">
       {%- else -%}
         <img class="ds-image" src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?q=80&w=1000" alt="Glossier Cosmetic Layout">
       {%- endif -%}

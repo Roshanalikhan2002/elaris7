@@ -126,7 +126,11 @@
     {% if section.settings.image != blank %}
       {{ section.settings.image | image_url: width: 1000 | image_tag: class: 'ing-image', alt: 'Ingredients visual' }}
     {% else %}
-      <img class="ing-image" src="https://images.unsplash.com/photo-1541701494587-cb58502866ab?q=80&w=1000" alt="Abstract Paint Texture">
+      {%- if product.handle == 'e7-korean-glass-skin-moisturizer' -%}
+        <img class="ing-image" src="{{ 'moisturizer-whats-inside.jpg' | asset_url }}" alt="Moisturizer Ingredients">
+      {%- else -%}
+        <img class="ing-image" src="https://images.unsplash.com/photo-1541701494587-cb58502866ab?q=80&w=1000" alt="Abstract Paint Texture">
+      {%- endif -%}
     {% endif %}
     {% if section.settings.show_btn %}
       <button class="ing-full-btn">{{ section.settings.btn_label }}</button>
@@ -146,6 +150,8 @@
           A high-performance sun defense formula that protects, hydrates, and keeps your skin comfortable under daily sun exposure. Here are 2 standout ingredients powering your daily shield:
         {%- elsif product.handle == 'centella-skin-toner-copy' -%}
           A gentle gel cleanser formulated to wash away impurities, refresh the skin, and reveal a brighter, healthier-looking complexion.
+        {%- elsif product.handle == 'e7-korean-glass-skin-moisturizer' -%}
+          Our formula is powered by glow-enhancing hydrators and skin-refining botanicals. Meet 2 of our favorites for daily radiance.
         {%- else -%}
           {{ section.settings.intro }}
         {%- endif -%}
@@ -187,6 +193,15 @@
           <h3 class="hero-title">VITAMIN C (Sodium Ascorbyl Phosphate)</h3>
           <p class="hero-desc">supports brighter, radiant skin</p>
         </div>
+      {%- elsif product.handle == 'e7-korean-glass-skin-moisturizer' -%}
+        <div class="hero-ingredient">
+          <h3 class="hero-title">CENTELLA ASIATICA</h3>
+          <p class="hero-desc">a soothing plant extract that helps calm irritation, strengthen the skin barrier, and support a clearer, more balanced complexion</p>
+        </div>
+        <div class="hero-ingredient">
+          <h3 class="hero-title">HYALURONIC ACID</h3>
+          <p class="hero-desc">a powerful hydrator that helps attract and retain moisture, leaving skin plump, smooth, and refreshed throughout the day</p>
+        </div>
       {%- else -%}
         {% for block in section.blocks %}
           <div class="hero-ingredient" {{ block.shopify_attributes }}>
@@ -205,6 +220,8 @@
           also made with Tinosorb S, Avobenzone, Ethylhexyl Methoxycinnamate, Ceramides, Vitamin E, Centella Asiatica, Cyclopentasiloxane, C12-15 Alkyl Benzoate
         {%- elsif product.handle == 'centella-skin-toner-copy' -%}
           also made with glutathione, glycerin, sodium lactate, allantoin, chamomile extract, licorice root extract, and mild cleansing agents for hydration, calmness, and a gentle clean
+        {%- elsif product.handle == 'e7-korean-glass-skin-moisturizer' -%}
+          also made with VITAMIN C COMPLEX, MORUS ALBA EXTRACT, BROUSSONETIA ROOT EXTRACT, HONEY, GALACTOARABINAN, VITAMIN E
         {%- else -%}
           {{ section.settings.footer_text }}
         {%- endif -%}

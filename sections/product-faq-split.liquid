@@ -382,6 +382,76 @@
           {%- else -%}
             <div class="faq-acc-item active">
               <div class="faq-acc-header">
+                <span>Can I use this moisturizer with makeup?</span>
+                <div class="acc-icon-faq">
+                  <div class="line v-line"></div>
+                  <div class="line h-line"></div>
+                </div>
+              </div>
+              <div class="faq-acc-content">
+                <div class="faq-acc-content-inner">
+                  <p>Yes, it works perfectly as a base under makeup, helping create a smooth and hydrated canvas.</p>
+                </div>
+              </div>
+            </div>
+            <div class="faq-acc-item">
+              <div class="faq-acc-header">
+                <span>Is this suitable for oily skin?</span>
+                <div class="acc-icon-faq">
+                  <div class="line v-line"></div>
+                  <div class="line h-line"></div>
+                </div>
+              </div>
+              <div class="faq-acc-content">
+                <div class="faq-acc-content-inner">
+                  <p>Yes, the lightweight formula hydrates without clogging pores or leaving a greasy feel, making it suitable for oily skin.</p>
+                </div>
+              </div>
+            </div>
+            <div class="faq-acc-item">
+              <div class="faq-acc-header">
+                <span>Can I use it both morning and night?</span>
+                <div class="acc-icon-faq">
+                  <div class="line v-line"></div>
+                  <div class="line h-line"></div>
+                </div>
+              </div>
+              <div class="faq-acc-content">
+                <div class="faq-acc-content-inner">
+                  <p>Absolutely, it is designed for daily use and works well in both AM and PM routines.</p>
+                </div>
+              </div>
+            </div>
+            <div class="faq-acc-item">
+              <div class="faq-acc-header">
+                <span>Will it help with dull or tired-looking skin?</span>
+                <div class="acc-icon-faq">
+                  <div class="line v-line"></div>
+                  <div class="line h-line"></div>
+                </div>
+              </div>
+              <div class="faq-acc-content">
+                <div class="faq-acc-content-inner">
+                  <p>Yes, its brightening ingredients and hydration help revive dull skin and improve overall radiance over time.</p>
+                </div>
+              </div>
+            </div>
+            <div class="faq-acc-item">
+              <div class="faq-acc-header">
+                <span>Does it feel heavy on the skin in humid weather?</span>
+                <div class="acc-icon-faq">
+                  <div class="line v-line"></div>
+                  <div class="line h-line"></div>
+                </div>
+              </div>
+              <div class="faq-acc-content">
+                <div class="faq-acc-content-inner">
+                  <p>No, the formula is lightweight and breathable, making it comfortable even in warm or humid conditions.</p>
+                </div>
+              </div>
+            </div>
+            <div class="faq-acc-item active">
+              <div class="faq-acc-header">
                 <span>Can I use this night cream with my serum?</span>
                 <div class="acc-icon-faq">
                   <div class="line v-line"></div>
@@ -458,6 +528,8 @@
     <div class="faq-split-image">
       {%- if section.settings.image != blank -%}
         {{ section.settings.image | image_url: width: 1400 | image_tag: class: 'faq-bg-img', loading: 'lazy' }}
+      {%- elsif product.handle == 'e7-korean-glass-skin-moisturizer' -%}
+        <img src="{{ 'moisturizer-faq.jpg' | asset_url }}" class="faq-bg-img" alt="Moisturizer FAQ">
       {%- else -%}
         <img src="https://images.unsplash.com/photo-1615397323136-2eb83d8bdf9b?q=80&w=1200" class="faq-bg-img" alt="Products Placeholder">
       {%- endif -%}
