@@ -123,6 +123,8 @@
       {%- assign ds_title = "Cleanse. Refresh. Glow.<br><span style='font-size: 0.7em;'>A daily face wash for CLEAN SKIN + BALANCED, RADIANT COMPLEXION.</span>" -%}
     {%- elsif product.handle == 'e7-korean-glass-skin-centella-face-wash-copy' -%}
       {%- assign ds_title = "Protection That Feels Effortless<br><span style='font-size: 0.7em;'>A daily sunscreen for DEFENSE + HYDRATED, PROTECTED SKIN.</span>" -%}
+    {%- elsif product.handle == 'centella-skin-toner-copy' -%}
+      {%- assign ds_title = "Your Daily Brightening Cleanse<br><span style='font-size: 0.7em;'>A gel cleanser for CLEAR, FRESH + RADIANT SKIN.</span>" -%}
     {%- endif -%}
     <h2 class="ds-title">{{ ds_title }}</h2>
     <div class="ds-list">
@@ -175,6 +177,27 @@
           <div class="ds-row">
             <div class="ds-label">FYI:</div>
             <div class="ds-value">Halal-Friendly • Dermatologist-Tested • Non-Greasy • Makeup-Friendly</div>
+          </div>
+        {%- elsif product.handle == 'centella-skin-toner-copy' -%}
+          <div class="ds-row">
+            <div class="ds-label">GOOD FOR:</div>
+            <div class="ds-value">All skin types, especially dull and uneven skin</div>
+          </div>
+          <div class="ds-row">
+            <div class="ds-label">FEELS LIKE:</div>
+            <div class="ds-value">A light gel that lathers gently and rinses clean</div>
+          </div>
+          <div class="ds-row">
+            <div class="ds-label">LOOKS LIKE:</div>
+            <div class="ds-value">Fresh, bright skin with a clean finish</div>
+          </div>
+          <div class="ds-row">
+            <div class="ds-label">SMELLS LIKE:</div>
+            <div class="ds-value">A soft, clean scent with a refreshing touch</div>
+          </div>
+          <div class="ds-row">
+            <div class="ds-label">FYI:</div>
+            <div class="ds-value">Gentle Cleanse • Non-Drying • Daily Use • Glow-Boosting</div>
           </div>
         {%- elsif product.handle == 'anti-frizz-keratin-serum' -%}
           <div class="ds-row">

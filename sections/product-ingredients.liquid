@@ -144,6 +144,8 @@
           Our formula is powered by gentle cleansers and glow-boosting hydrators. Meet 2 of our favorites for a fresh, balanced cleanse.
         {%- elsif product.handle == 'e7-korean-glass-skin-centella-face-wash-copy' -%}
           A high-performance sun defense formula that protects, hydrates, and keeps your skin comfortable under daily sun exposure. Here are 2 standout ingredients powering your daily shield:
+        {%- elsif product.handle == 'centella-skin-toner-copy' -%}
+          A gentle gel cleanser formulated to wash away impurities, refresh the skin, and reveal a brighter, healthier-looking complexion.
         {%- else -%}
           {{ section.settings.intro }}
         {%- endif -%}
@@ -176,6 +178,15 @@
           <h3 class="hero-title">HYALURONIC ACID</h3>
           <p class="hero-desc">a hydration booster that locks in moisture, helping your skin stay soft, plump, and comfortable even under prolonged sun exposure</p>
         </div>
+      {%- elsif product.handle == 'centella-skin-toner-copy' -%}
+        <div class="hero-ingredient">
+          <h3 class="hero-title">NIACINAMIDE</h3>
+          <p class="hero-desc">helps even skin tone and reduce dullness</p>
+        </div>
+        <div class="hero-ingredient">
+          <h3 class="hero-title">VITAMIN C (Sodium Ascorbyl Phosphate)</h3>
+          <p class="hero-desc">supports brighter, radiant skin</p>
+        </div>
       {%- else -%}
         {% for block in section.blocks %}
           <div class="hero-ingredient" {{ block.shopify_attributes }}>
@@ -192,6 +203,8 @@
           also made with RICE EXTRACT, LICORICE EXTRACT, MORUS ALBA, HONEY, D-PANTHENOL, SODIUM PCA, GLYCERIN, APPLE EXTRACT, CENTELLA ASIATICA
         {%- elsif product.handle == 'e7-korean-glass-skin-centella-face-wash-copy' -%}
           also made with Tinosorb S, Avobenzone, Ethylhexyl Methoxycinnamate, Ceramides, Vitamin E, Centella Asiatica, Cyclopentasiloxane, C12-15 Alkyl Benzoate
+        {%- elsif product.handle == 'centella-skin-toner-copy' -%}
+          also made with glutathione, glycerin, sodium lactate, allantoin, chamomile extract, licorice root extract, and mild cleansing agents for hydration, calmness, and a gentle clean
         {%- else -%}
           {{ section.settings.footer_text }}
         {%- endif -%}
