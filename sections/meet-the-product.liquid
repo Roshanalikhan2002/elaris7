@@ -89,6 +89,8 @@
     {%- assign meet_title = "Your Invisible Daily Protection" -%}
   {%- elsif product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' -%}
     {%- assign meet_title = "Fresh Skin Begins Here" -%}
+  {%- elsif product.handle == 'centella-skin-toner-copy' -%}
+    {%- assign meet_title = "Wash Away Dullness. Reveal Your Glow." -%}
   {%- endif -%}
   <h2 class="meet-title">{{ meet_title }}</h2>
   <div class="meet-carousel-wrapper">
@@ -143,6 +145,11 @@
           <img src="{{ 'night-cream-swatch-7-100.jpg' | asset_url }}" alt="Night Cream Swatch">
           <img src="{{ 'nigh-suite-100.jpg' | asset_url }}" alt="Night Cream Suite">
           <img src="{{ 'lifestyle-100.jpg' | asset_url }}" alt="Night Cream Lifestyle">
+        {%- elsif product.handle == 'centella-skin-toner-copy' -%}
+          <img src="{{ 'cleanser-meet-1.jpg' | asset_url }}" alt="Cleanser Lifestyle 1">
+          <img src="{{ 'cleanser-meet-2.jpg' | asset_url }}" alt="Cleanser Lifestyle 2">
+          <img src="{{ 'cleanser-meet-3.jpg' | asset_url }}" alt="Cleanser Lifestyle 3">
+          <img src="{{ 'cleanser-meet-4.jpg' | asset_url }}" alt="Cleanser Lifestyle 4">
         {%- else -%}
           <img src="{{ 'meet-elaris-1.jpg' | asset_url }}" alt="Product Image 1">
           <img src="{{ 'meet-elaris-2.jpg' | asset_url }}" alt="Product Image 2">
