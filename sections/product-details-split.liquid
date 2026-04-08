@@ -119,9 +119,11 @@
         <div class="ds-label">FYI:</div>
         <div class="ds-value">Halal-Friendly • Dermatologist-Tested • Non-Sticky • Repair-Focused</div>
       </div>
-    {%- elsif product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' -%}
-      {%- assign ds_title = "Cleanse. Refresh. Glow.<br><span style='font-size: 0.7em;'>A daily face wash for CLEAN SKIN + BALANCED, RADIANT COMPLEXION.</span>" -%}
+    {%- elsif product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' or product.handle == 'night-cream' -%}
+      {%- assign ds_title = "Deep Repair While You Sleep<br><span style='font-size: 0.7em;'>A rich cream for INTENSIVE REPAIR + BABY-SOFT SKIN.</span>" -%}
     {%- elsif product.handle == 'e7-korean-glass-skin-centella-face-wash-copy' -%}
+      {%- assign ds_title = "Cleanse. Refresh. Glow.<br><span style='font-size: 0.7em;'>A daily face wash for CLEAN SKIN + BALANCED, RADIANT COMPLEXION.</span>" -%}
+    {%- elsif product.handle == 'e7-korean-glass-skin-centella-sunscreen-spf50-copy' -%}
       {%- assign ds_title = "Protection That Feels Effortless<br><span style='font-size: 0.7em;'>A daily sunscreen for DEFENSE + HYDRATED, PROTECTED SKIN.</span>" -%}
     {%- elsif product.handle == 'centella-skin-toner-copy' -%}
       {%- assign ds_title = "Your Daily Brightening Cleanse<br><span style='font-size: 0.7em;'>A gel cleanser for CLEAR, FRESH + RADIANT SKIN.</span>" -%}
@@ -140,7 +142,28 @@
           </div>
         {% endfor %}
       {% else %}
-        {%- if product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' -%}
+        {%- if product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' or product.handle == 'night-cream' -%}
+          <div class="ds-row">
+            <div class="ds-label">GOOD FOR:</div>
+            <div class="ds-value">All skin types, including dry and sensitive skin</div>
+          </div>
+          <div class="ds-row">
+            <div class="ds-label">FEELS LIKE:</div>
+            <div class="ds-value">A rich, creamy formula that melts effortlessly into the skin</div>
+          </div>
+          <div class="ds-row">
+            <div class="ds-label">LOOKS LIKE:</div>
+            <div class="ds-value">Smooth, plump, and poreless skin by morning</div>
+          </div>
+          <div class="ds-row">
+            <div class="ds-label">SMELLS LIKE:</div>
+            <div class="ds-value">Subtle, calming freshness for a relaxing nighttime routine</div>
+          </div>
+          <div class="ds-row">
+            <div class="ds-label">FYI:</div>
+            <div class="ds-value">Halal-Friendly • Dermatologist-Tested • Non-Sticky • Repair-Focused</div>
+          </div>
+        {%- elsif product.handle == 'e7-korean-glass-skin-centella-face-wash-copy' -%}
           <div class="ds-row">
             <div class="ds-label">GOOD FOR:</div>
             <div class="ds-value">All skin types, especially dull, sensitive, or acne-prone skin</div>
@@ -159,9 +182,9 @@
           </div>
           <div class="ds-row">
             <div class="ds-label">FYI:</div>
-            <div class="ds-value">Halal-Friendly &bull; Dermatologist-Tested &bull; Non-Drying &bull; Gentle for Daily Use</div>
+            <div class="ds-value">Halal-Friendly • Dermatologist-Tested • Non-Drying • Gentle for Daily Use</div>
           </div>
-        {%- elsif product.handle == 'e7-korean-glass-skin-centella-face-wash-copy' -%}
+        {%- elsif product.handle == 'e7-korean-glass-skin-centella-sunscreen-spf50-copy' -%}
           <div class="ds-row">
             <div class="ds-label">GOOD FOR:</div>
             <div class="ds-value">All skin types, including sensitive and acne-prone skin</div>
@@ -359,7 +382,11 @@
       {{ section.settings.image | image_url: width: 1000 | image_tag: class: 'ds-image', alt: section.settings.title }}
     {% else %}
       {%- if product.handle == 'e7-korean-glass-skin-centella-sunscreen-spf50-copy' -%}
-        <img class="ds-image" src="{{ 'social-jar.jpg' | asset_url }}" alt="Glow Serum Jar">
+        <img class="ds-image" src="{{ 'sunscreen-100.jpg' | asset_url }}" alt="Sunscreen Application">
+      {%- elsif product.handle == 'e7-korean-glass-skin-centella-face-wash-copy' -%}
+        <img class="ds-image" src="{{ 'cleanser-meet-1.jpg' | asset_url }}" alt="Face Wash Texture">
+      {%- elsif product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' or product.handle == 'night-cream' -%}
+        <img class="ds-image" src="{{ 'night-cream-suite.jpeg' | asset_url }}" alt="Night Cream Suite">
       {%- elsif product.handle == 'glutathione-cream' -%}
         <img class="ds-image" src="{{ 'glutathione-cream-100.jpg' | asset_url }}" alt="Glutathione Cream Jar">
       {%- elsif product.handle == 'e7-korean-glass-skin-moisturizer' -%}
