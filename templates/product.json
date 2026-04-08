@@ -26,6 +26,10 @@
       "type": "meet-the-product",
       "settings": {}
     },
+    "set_middle": {
+      "type": "product-set-middle-sections",
+      "settings": {}
+    },
     "details_split": {
       "type": "product-details-split",
       "settings": {
@@ -81,6 +85,7 @@
   "order": [
     "main",
     "carousel",
+    "set_middle",
     "details_split",
     "ingredients",
     "benefits_focus",

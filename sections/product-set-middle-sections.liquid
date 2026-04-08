@@ -1,0 +1,138 @@
+{%- style -%}
+  .set-middle-sections {
+    background-color: #fff;
+    padding: 0 16px;
+  }
+  .set-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 16px;
+    min-height: 600px;
+  }
+  .set-col {
+    position: relative;
+    border-radius: 14px;
+    overflow: hidden;
+    background-color: #f3f0ec;
+  }
+  .set-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  
+  /* Ingredients Specific Style */
+  .set-ingredients-col {
+    padding: 80px 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #f3f0ec;
+  }
+  .set-ing-label {
+    font-size: 0.8rem;
+    font-weight: 800;
+    color: #8c8b84;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 20px;
+  }
+  .set-ing-title {
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: #5b5a53;
+    line-height: 0.9;
+    letter-spacing: -0.04em;
+    text-transform: lowercase;
+  }
+  .set-ing-title.highlight {
+    color: #4a6741; /* Greenish for highlight ingredients */
+  }
+  
+  /* Tooltip/Badge on texture image */
+  .texture-overlay {
+    position: absolute;
+    bottom: 40px;
+    right: 40px;
+    max-width: 250px;
+    text-align: center;
+    color: #fff;
+  }
+  .texture-dot {
+    width: 10px;
+    height: 10px;
+    background: #fff;
+    border-radius: 50%;
+    margin: 0 auto 10px;
+  }
+  .texture-text {
+    font-size: 0.75rem;
+    font-weight: 500;
+    line-height: 1.4;
+  }
+
+  @media (max-width: 900px) {
+    .set-row {
+      grid-template-columns: 1fr;
+      min-height: auto;
+    }
+    .set-col {
+      aspect-ratio: 1/1;
+    }
+    .set-ingredients-col {
+      padding: 40px 24px;
+      aspect-ratio: auto;
+    }
+    .set-ing-title {
+      font-size: 2.5rem;
+    }
+  }
+{%- endstyle -%}
+
+{%- if product.handle == 'e7-complete-glass-skin-set' -%}
+<div class="set-middle-sections">
+  
+  <!-- Row 1: Lifestyle / Product Split (Image 2 in request) -->
+  <div class="set-row">
+    <div class="set-col">
+       <img src="{{ 'cleanser-meet-1.jpg' | asset_url }}" class="set-img" alt="Lifestyle Model">
+    </div>
+    <div class="set-col" style="background: #f7f7f7;">
+       <img src="{{ 'gel cleanser-100.jpg' | asset_url }}" class="set-img" style="object-fit: contain; padding: 60px;" alt="Product Shot">
+    </div>
+  </div>
+
+  <!-- Row 2: Ingredients (Image 3 in request) -->
+  <div class="set-row">
+    <div class="set-ingredients-col">
+       <div class="set-ing-label">RESEARCH-BACKED INGREDIENTS</div>
+       <h2 class="set-ing-title">peptide</h2>
+       <h2 class="set-ing-title">ceramide trio</h2>
+       <h2 class="set-ing-title highlight">polyglutamic acid</h2>
+       <h2 class="set-ing-title">shea butter</h2>
+    </div>
+    <div class="set-col">
+       <img src="{{ 'night-cream-swatch-7-100.jpg' | asset_url }}" class="set-img" alt="Texture">
+       <div class="texture-overlay">
+         <div class="texture-dot"></div>
+         <p class="texture-text">an ultra-hydrating, skin-plumping humectant that helps lock in moisture</p>
+       </div>
+    </div>
+  </div>
+
+</div>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Product Set Specifics",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Product Set Specifics"
+    }
+  ]
+}
+{% endschema %}

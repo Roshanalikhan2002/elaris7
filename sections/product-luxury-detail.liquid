@@ -602,6 +602,16 @@
           <div class="thumb-item" onmouseover="scrollGallery(3, this)">
             <img src="{{ 'hair-mist-meet-1.jpg' | asset_url }}" alt="Gallery 1">
           </div>
+        {%- elsif product.handle == 'e7-complete-glass-skin-set' -%}
+          <div class="thumb-item active" onmouseover="scrollGallery(0, this)">
+            <img src="{{ 'new-bundle-banner.jpg' | asset_url }}" alt="{{ product.title }}">
+          </div>
+          <div class="thumb-item" onmouseover="scrollGallery(1, this)">
+            <img src="{{ 'new bundle banner-100.jpg' | asset_url }}" alt="Set View 2">
+          </div>
+          <div class="thumb-item" onmouseover="scrollGallery(2, this)">
+            <img src="{{ 'brightening bundle-100.jpg' | asset_url }}" alt="Set View 3">
+          </div>
         {%- elsif product.handle == 'glutathione-cream' -%}
           <div class="thumb-item active" onmouseover="scrollGallery(0, this)">
             <img src="{{ 'glutathione-cream-100.jpg' | asset_url }}" alt="{{ product.title }}">
@@ -772,6 +782,10 @@
       {%- elsif product.handle == 'centella-skin-toner' -%}
         {%- assign display_subtitle = '' -%}
         {%- assign display_desc = 'A refining toner designed to clarify, smooth, and rebalance the skin while enhancing radiance. It gently exfoliates, hydrates, and helps improve overall tone for a clearer, glass-like finish with continued use.' -%}
+      {%- elsif product.handle == 'e7-complete-glass-skin-set' -%}
+        {%- assign display_subtitle = 'FOUR DAILY SKIN ESSENTIALS' -%}
+        {%- assign display_desc = 'Meet your new classics, all bundled up in the elaris7 bubble bag. Our tried-and-true skincare essentials are formulated for ultimate barrier nourishment, feel dreamy on your skin, and multitask in your routine. Reach for them morning and night, use solo or with other skincare, mix with makeup, and take on your travels.' -%}
+        {%- assign display_ingredients = false -%}
       {%- endif -%}
 
       <div class="product-meta" style="margin-top: 5px;">
@@ -793,6 +807,7 @@
       
       <hr class="divider">
 
+      {%- if product.handle != 'e7-complete-glass-skin-set' -%}
       <div class="bogo-offer-container">
         <!-- Main Offer Box -->
         <label class="bogo-main-offer">
@@ -936,6 +951,7 @@
           </div>
         </div>
       </div>
+      {%- endif -%}
 
       <button class="buy-button" style="white-space: nowrap;" data-variant-id="{{ product.selected_or_first_available_variant.id }}">ADD TO BAG - {{ product.price | money }}</button>
       
@@ -944,7 +960,11 @@
       <hr class="divider">
 
       <div class="accordions">
-        {%- assign accordion_titles = "BENEFITS,APPLICATION,ELARIS TRICKS,INGREDIENTS" | split: "," -%}
+        {%- if product.handle == 'e7-complete-glass-skin-set' -%}
+          {%- assign accordion_titles = "WHAT'S INSIDE,THE ROUTINE,BENEFITS,APPLICATION" | split: "," -%}
+        {%- else -%}
+          {%- assign accordion_titles = "BENEFITS,APPLICATION,ELARIS TRICKS,INGREDIENTS" | split: "," -%}
+        {%- endif -%}
         {%- for title in accordion_titles -%}
           <div class="accordion-item-wrap">
             <button class="accordion-trigger" onclick="toggleAccordion(this)">
@@ -953,7 +973,16 @@
             </button>
             <div class="accordion-content-panel">
               <div class="accordion-content-inner">
-                {%- if title == "BENEFITS" -%}
+                {%- if title == "WHAT'S INSIDE" -%}
+                  <p style="margin:0;">The elaris7 kit includes four full-size essentials: Centella Face Wash, Skin Refining Toner, Glow Serum, and Centella Night Cream. Plus, a limited edition grey bubble bag for your on-the-go routine.</p>
+                {%- elsif title == "THE ROUTINE" -%}
+                  <ol style="margin:0; padding-left: 20px;">
+                    <li><strong>Cleanse:</strong> Apply Centella Face Wash to damp skin, massage, and rinse.</li>
+                    <li><strong>Refine:</strong> Apply Skin Refining Toner with hands or cotton pad.</li>
+                    <li><strong>Treat:</strong> Apply 2-3 drops of Glow Serum.</li>
+                    <li><strong>Restore:</strong> Lock it all in with Centella Night Cream.</li>
+                  </ol>
+                {%- elsif title == "BENEFITS" -%}
                   {%- if product.handle == 'tranexamic-serum' -%}
                     <ul>
                       <li>Helps reduce the appearance of dark spots and discoloration</li>
@@ -1045,6 +1074,13 @@
                       <li>Boosts natural radiance while improving overall skin clarity</li>
                       <li>Delivers lasting hydration for a plump, soft, and dewy feel</li>
                       <li>Smooths texture and helps reduce the appearance of uneven tone</li>
+                    </ul>
+                   {%- elsif product.handle == 'e7-complete-glass-skin-set' -%}
+                    <ul>
+                      <li>Complete routine for a clearer, glass-like finish</li>
+                      <li>Deep hydration and intensive barrier repair</li>
+                      <li>Helps fade spots and brighten uneven skin tone</li>
+                      <li>Maintain skin balance and health day and night</li>
                     </ul>
                   {%- else -%}
                     <ul>
