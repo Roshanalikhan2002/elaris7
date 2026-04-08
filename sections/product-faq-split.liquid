@@ -379,6 +379,49 @@
                 </div>
               </div>
             </div>
+          {%- elsif product.handle == 'centella-skin-toner' -%}
+            <div class="faq-acc-item active">
+              <div class="faq-acc-header">
+                <span>Is this toner suitable for sensitive skin?</span>
+                <div class="acc-icon-faq">
+                  <div class="line v-line"></div>
+                  <div class="line h-line"></div>
+                </div>
+              </div>
+              <div class="faq-acc-content">
+                <div class="faq-acc-content-inner">
+                  <p>It contains a mild exfoliating complex designed to be gentle, but we recommend a patch test first if you have very sensitive skin.</p>
+                </div>
+              </div>
+            </div>
+            <div class="faq-acc-item">
+              <div class="faq-acc-header">
+                <span>How often should I use it?</span>
+                <div class="acc-icon-faq">
+                  <div class="line v-line"></div>
+                  <div class="line h-line"></div>
+                </div>
+              </div>
+              <div class="faq-acc-content">
+                <div class="faq-acc-content-inner">
+                  <p>Start with 2–3 times a week and increase frequency as your skin builds tolerance. Always allow it to absorb fully before the next step.</p>
+                </div>
+              </div>
+            </div>
+            <div class="faq-acc-item">
+              <div class="faq-acc-header">
+                <span>Should I use it on wet or dry skin?</span>
+                <div class="acc-icon-faq">
+                  <div class="line v-line"></div>
+                  <div class="line h-line"></div>
+                </div>
+              </div>
+              <div class="faq-acc-content">
+                <div class="faq-acc-content-inner">
+                  <p>Apply it to slightly damp skin after cleansing to help lock in hydration while it refines and clarifies the skin.</p>
+                </div>
+              </div>
+            </div>
           {%- else -%}
             <div class="faq-acc-item active">
               <div class="faq-acc-header">
@@ -529,7 +572,9 @@
       {%- if section.settings.image != blank -%}
         {{ section.settings.image | image_url: width: 1400 | image_tag: class: 'faq-bg-img', loading: 'lazy' }}
       {%- elsif product.handle == 'e7-korean-glass-skin-moisturizer' -%}
-        <img src="{{ 'moisturizer-faq.jpg' | asset_url }}" class="faq-bg-img" alt="Moisturizer FAQ">
+        <img class="faq-image" src="{{ 'moisturizer-faq.jpg' | asset_url }}" alt="FAQ Moisturizer Visual">
+      {%- elsif product.handle == 'centella-skin-toner' -%}
+        <img class="faq-image" src="{{ 'toner-faq.jpg' | asset_url }}" alt="FAQ Toner Visual">
       {%- else -%}
         <img src="https://images.unsplash.com/photo-1615397323136-2eb83d8bdf9b?q=80&w=1200" class="faq-bg-img" alt="Products Placeholder">
       {%- endif -%}

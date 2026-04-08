@@ -128,6 +128,8 @@
     {% else %}
       {%- if product.handle == 'e7-korean-glass-skin-moisturizer' -%}
         <img class="ing-image" src="{{ 'moisturizer-whats-inside.jpg' | asset_url }}" alt="Moisturizer Ingredients">
+      {%- elsif product.handle == 'centella-skin-toner' -%}
+        <img class="ing-image" src="{{ 'toner-whats-inside.jpg' | asset_url }}" alt="Toner Ingredients">
       {%- else -%}
         <img class="ing-image" src="https://images.unsplash.com/photo-1541701494587-cb58502866ab?q=80&w=1000" alt="Abstract Paint Texture">
       {%- endif -%}
@@ -152,6 +154,8 @@
           A gentle gel cleanser formulated to wash away impurities, refresh the skin, and reveal a brighter, healthier-looking complexion.
         {%- elsif product.handle == 'e7-korean-glass-skin-moisturizer' -%}
           Our formula is powered by glow-enhancing hydrators and skin-refining botanicals. Meet 2 of our favorites for daily radiance.
+        {%- elsif product.handle == 'centella-skin-toner' -%}
+          A gentle, clarifying toner that smooths, balances, and rehydrates skin. Here are 2 standout ingredients for refreshed, radiant skin:
         {%- else -%}
           {{ section.settings.intro }}
         {%- endif -%}
@@ -202,6 +206,15 @@
           <h3 class="hero-title">HYALURONIC ACID</h3>
           <p class="hero-desc">a powerful hydrator that helps attract and retain moisture, leaving skin plump, smooth, and refreshed throughout the day</p>
         </div>
+      {%- elsif product.handle == 'centella-skin-toner' -%}
+        <div class="hero-ingredient">
+          <h3 class="hero-title">NIACINAMIDE</h3>
+          <p class="hero-desc">helps visibly improve skin tone, refine pores, and reduce the appearance of unevenness</p>
+        </div>
+        <div class="hero-ingredient">
+          <h3 class="hero-title">MILD EXFOLIATING COMPLEX</h3>
+          <p class="hero-desc">gently removes buildup and dead skin cells to reveal smoother, brighter skin</p>
+        </div>
       {%- else -%}
         {% for block in section.blocks %}
           <div class="hero-ingredient" {{ block.shopify_attributes }}>
@@ -222,6 +235,8 @@
           also made with glutathione, glycerin, sodium lactate, allantoin, chamomile extract, licorice root extract, and mild cleansing agents for hydration, calmness, and a gentle clean
         {%- elsif product.handle == 'e7-korean-glass-skin-moisturizer' -%}
           also made with VITAMIN C COMPLEX, MORUS ALBA EXTRACT, BROUSSONETIA ROOT EXTRACT, HONEY, GALACTOARABINAN, VITAMIN E
+        {%- elsif product.handle == 'centella-skin-toner' -%}
+          also made with Centella Asiatica, Hydrating Agents, Botanical Extracts
         {%- else -%}
           {{ section.settings.footer_text }}
         {%- endif -%}

@@ -769,6 +769,9 @@
         {%- assign display_subtitle = 'Glutathione + Hyaluronic Acid' -%}
         {%- assign display_desc = 'A nourishing brightening cream designed to improve uneven tone, reduce dullness, and support skin repair. It helps fade the look of dark spots, restore radiance, and leave skin smoother and healthier with consistent use.' -%}
         {%- assign display_ingredients = false -%}
+      {%- elsif product.handle == 'centella-skin-toner' -%}
+        {%- assign display_subtitle = 'Glycolic Acid + Hyaluronic Acid' -%}
+        {%- assign display_desc = 'A refining toner designed to clarify, smooth, and rebalance the skin while enhancing radiance. It gently exfoliates, hydrates, and helps improve overall tone for a clearer, glass-like finish with continued use.' -%}
       {%- endif -%}
 
       <div class="product-meta" style="margin-top: 5px;">
@@ -1027,6 +1030,16 @@
                       <li>Helps refresh and revive tired-looking skin</li>
                       <li>Prepares skin for better absorption of skincare</li>
                     </ul>
+                  {%- elsif product.handle == 'centella-skin-toner' -%}
+                    <ul>
+                      <li>Helps fade the appearance of spots and uneven tone</li>
+                      <li>Clears pores and helps reduce future breakouts</li>
+                      <li>Smooths texture through gentle exfoliation</li>
+                      <li>Brightens dull skin for a more refined look</li>
+                      <li>Maintains hydration while balancing the skin</li>
+                      <li>Supports and soothes the skin barrier</li>
+                      <li>Reveals a clearer, radiant, glass-like glow</li>
+                    </ul>
                   {%- elsif product.handle == 'e7-korean-glass-skin-moisturizer' -%}
                     <ul>
                       <li>Boosts natural radiance while improving overall skin clarity</li>
@@ -1064,6 +1077,8 @@
                     <p style="margin:0;">After completing your skincare routine, apply a generous amount of Centella Sunscreen evenly onto your face and neck. Gently massage until fully absorbed and reapply throughout the day as needed.</p>
                   {%- elsif product.handle == 'centella-skin-toner-copy' -%}
                     <p style="margin:0;">Use morning and night. Apply a small amount to wet skin and gently massage over face and neck. Rinse thoroughly with lukewarm water and follow with toner, serum, and moisturizer.</p>
+                  {%- elsif product.handle == 'centella-skin-toner' -%}
+                    <p style="margin:0;">After cleansing, apply Skin Refining Toner using a cotton pad or gently press it into the skin with your hands. Allow it to absorb fully before applying serum and moisturizer.</p>
                   {%- elsif product.handle == 'e7-korean-glass-skin-moisturizer' -%}
                     <p style="margin:0;">After cleansing and applying serum, take a small amount of Centella Moisturizer and gently massage it onto slightly damp skin using upward motions. Allow it to absorb fully to lock in hydration.</p>
                   {%- else -%}
@@ -1131,6 +1146,13 @@
                       <li>Massage for 30–60 seconds for better results</li>
                       <li>Follow with toner to enhance brightness</li>
                       <li>Use consistently for a clearer-looking complexion</li>
+                    </ul>
+                  {%- elsif product.handle == 'centella-skin-toner' -%}
+                    <ul>
+                      <li>Use 2–3 times a week to avoid over-exfoliation</li>
+                      <li>Apply with hands for a more hydrating effect</li>
+                      <li>Focus on areas with texture or visible pores</li>
+                      <li>Follow with serum immediately to enhance absorption</li>
                     </ul>
                   {%- elsif product.handle == 'e7-korean-glass-skin-moisturizer' -%}
                     <ul>
@@ -1256,6 +1278,14 @@
                       <li>Chamomile Extract</li>
                       <li>Licorice Root Extract</li>
                       <li>Mild Cleansing Agents</li>
+                    </ul>
+                  {%- elsif product.handle == 'centella-skin-toner' -%}
+                    <ul>
+                      <li>Centella Asiatica</li>
+                      <li>Niacinamide</li>
+                      <li>Mild Exfoliating Complex</li>
+                      <li>Hydrating Agents</li>
+                      <li>Botanical Extracts</li>
                     </ul>
                   {%- elsif product.handle == 'e7-korean-glass-skin-moisturizer' -%}
                     <ul>

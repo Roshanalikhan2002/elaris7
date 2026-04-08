@@ -127,6 +127,8 @@
       {%- assign ds_title = "Your Daily Brightening Cleanse<br><span style='font-size: 0.7em;'>A gel cleanser for CLEAR, FRESH + RADIANT SKIN.</span>" -%}
     {%- elsif product.handle == 'e7-korean-glass-skin-moisturizer' -%}
       {%- assign ds_title = "Glow That Lasts All Day<br><span style='font-size: 0.7em;'>A daily moisturizer for HYDRATION + SMOOTH, RADIANT SKIN.</span>" -%}
+    {%- elsif product.handle == 'centella-skin-toner' -%}
+      {%- assign ds_title = "Clarity You Can See<br><span style='font-size: 0.7em;'>A refining toner for SMOOTHING + CLEAR, EVEN SKIN.</span>" -%}
     {%- endif -%}
     <h2 class="ds-title">{{ ds_title }}</h2>
     <div class="ds-list">
@@ -306,6 +308,27 @@
             <div class="ds-label">FYI:</div>
             <div class="ds-value">Halal-Friendly &bull; Dermatologist-Tested &bull; Lightweight &bull; Non-Sticky</div>
           </div>
+        {%- elsif product.handle == 'centella-skin-toner' -%}
+          <div class="ds-row">
+            <div class="ds-label">GOOD FOR:</div>
+            <div class="ds-value">All skin types, especially uneven and textured skin</div>
+          </div>
+          <div class="ds-row">
+            <div class="ds-label">FEELS LIKE:</div>
+            <div class="ds-value">A refreshing, watery layer that absorbs quickly</div>
+          </div>
+          <div class="ds-row">
+            <div class="ds-label">LOOKS LIKE:</div>
+            <div class="ds-value">Clearer, smoother skin with refined texture</div>
+          </div>
+          <div class="ds-row">
+            <div class="ds-label">SMELLS LIKE:</div>
+            <div class="ds-value">Clean, subtle freshness with a calming touch</div>
+          </div>
+          <div class="ds-row">
+            <div class="ds-label">FYI:</div>
+            <div class="ds-value">Halal-Friendly &bull; Dermatologist-Tested &bull; Non-Stripping &bull; Pore-Refining</div>
+          </div>
         {%- else -%}
           <div class="ds-row">
             <div class="ds-label">GOOD FOR:</div>
@@ -341,6 +364,8 @@
         <img class="ds-image" src="{{ 'glutathione-cream-100.jpg' | asset_url }}" alt="Glutathione Cream Jar">
       {%- elsif product.handle == 'e7-korean-glass-skin-moisturizer' -%}
         <img class="ds-image" src="{{ 'moisturizer-benefits.jpg' | asset_url }}" alt="Moisturizer Texture">
+      {%- elsif product.handle == 'centella-skin-toner' -%}
+        <img class="ds-image" src="{{ 'toner-benefits.jpg' | asset_url }}" alt="Toner Result">
       {%- else -%}
         <img class="ds-image" src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?q=80&w=1000" alt="Glossier Cosmetic Layout">
       {%- endif -%}

@@ -171,6 +171,23 @@
           <h3 class="sr-number">3 out of 4</h3>
           <p class="sr-desc">SAID THEY USED IT DAILY FOR QUICK REFRESH</p>
         </div>
+      {%- elsif product.handle == 'centella-skin-toner' -%}
+        <div class="sr-stat-block">
+          <h3 class="sr-number">99%</h3>
+          <p class="sr-desc">SAID THEIR SKIN FELT CLEANER + MORE BALANCED</p>
+        </div>
+        <div class="sr-stat-block">
+          <h3 class="sr-number">98%</h3>
+          <p class="sr-desc">SAID THEIR SKIN LOOKED CLEARER + MORE REFINED</p>
+        </div>
+        <div class="sr-stat-block">
+          <h3 class="sr-number">97%</h3>
+          <p class="sr-desc">SAID THEIR SKIN TEXTURE FELT SMOOTHER</p>
+        </div>
+        <div class="sr-stat-block">
+          <h3 class="sr-number">3 out of 4</h3>
+          <p class="sr-desc">SAID THEY NOTICED A HEALTHY, EVEN GLOW</p>
+        </div>
       {%- elsif product.handle == 'e7-korean-glass-skin-centella-face-wash-copy' -%}
         <div class="sr-stat-block">
           <h3 class="sr-number">99%</h3>
@@ -247,6 +264,8 @@
         Based on a 2-week consumer perception study with consistent use.
       {%- elsif product.handle == 'e7-korean-glass-skin-centella-sunscreen-spf50-copy' -%}
         Based on a 1-week consumer perception study with consistent use.
+      {%- elsif product.handle == 'centella-skin-toner' -%}
+        Based on a 2-week consumer perception study with consistent use.
       {%- elsif product.handle == 'glutathione-cream' -%}
         Based on a 2-week consumer perception study with consistent daily use.
       {%- elsif product.handle == 'floral-blossom-hair-mist' -%}
@@ -256,7 +275,7 @@
       {%- elsif product.handle == 'e7-korean-glass-skin-centella-face-wash-copy' -%}
         Based on a 2-week consumer perception study with consistent daily use.
       {%- elsif product.handle == 'centella-skin-toner' -%}
-        Based on a 4-week consumer perception study with daily application.
+        Based on a 2-week consumer perception study with consistent use.
       {%- elsif product.handle == 'e7-korean-glass-skin-moisturizer' -%}
         Based on a 2-week consumer perception study with consistent use.
       {%- elsif product.handle == 'centella-skin-toner-copy' -%}
@@ -275,6 +294,10 @@
         <img class="sr-image" src="{{ 'keratin-ba.jpg' | asset_url }}" alt="Before After Comparison">
       {%- elsif product.handle == 'e7-korean-glass-skin-centella-sunscreen-spf50-copy' -%}
         <img class="sr-image" src="{{ 'social-face.jpg' | asset_url }}" alt="Glow Result">
+      {%- elsif product.handle == 'e7-korean-glass-skin-moisturizer' -%}
+        <img class="sr-image" src="{{ 'moisturizer-before-after.jpg' | asset_url }}" alt="Moisturizer Results">
+      {%- elsif product.handle == 'centella-skin-toner' -%}
+        <img class="sr-image" src="{{ 'toner-before-after.jpg' | asset_url }}" alt="Toner Results">
       {%- else -%}
         <img class="sr-image" src="https://images.unsplash.com/photo-1549439602-43ebca2327af?q=80&w=1000" alt="Cosmetic application close up">
       {%- endif -%}
