@@ -115,7 +115,9 @@
       <img class="ing-image" src="{{ 'moisturizer-whats-inside.jpg' | asset_url }}" alt="Moisturizer Ingredients">
     {%- elsif product.handle == 'floral-blossom-hair-mist' or product.handle == 'hair-mist' -%}
       <img class="ing-image" src="{{ 'hair-mist.jpg' | asset_url }}" alt="Hair Mist Ingredients">
-    {%- elsif product.handle == 'e7-korean-glass-skin-centella-face-wash-copy' or product.handle == 'sunscreen' -%}
+    {%- elsif product.handle == 'e7-korean-glass-skin-centella-face-wash-copy' -%}
+      <img class="ing-image" src="{{ 'facewash-ingredients.jpg' | asset_url }}" alt="Face Wash Ingredients">
+    {%- elsif product.handle == 'e7-korean-glass-skin-centella-face-wash-copy-sunscreen' or product.handle == 'sunscreen' -%}
       <img class="ing-image" src="{{ 'sunscreen-100.jpg' | asset_url }}" alt="Sunscreen Ingredients">
     {%- elsif product.handle == 'e7-korean-glass-skin-centella-sunscreen-spf50-copy' or product.handle == 'centella-serum' -%}
       <img class="ing-image" src="{{ 'centella-serum-ingredients.jpg' | asset_url }}" alt="Serum Ingredients">
@@ -138,7 +140,9 @@
           A nourishing cream that brightens, repairs, and hydrates skin for a clearer, more even complexion.
         {%- elsif product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' -%}
           A gentle daily face wash that cleanses while repairing the skin barrier and revealing a radiant glow.
-        {%- elsif product.handle == 'e7-korean-glass-skin-centella-face-wash-copy' or product.handle == 'sunscreen' -%}
+        {%- elsif product.handle == 'e7-korean-glass-skin-centella-face-wash-copy' -%}
+          A gentle foam cleanser powered by Centella Asiatica and Hyaluronic Acid. Purifies pores, balances pH, and leaves skin fresh and radiant.
+        {%- elsif product.handle == 'sunscreen' -%}
           A high-protection formula that hydrates skin while defending against harmful UV rays and environmental stress.
         {%- elsif product.handle == 'e7-korean-glass-skin-centella-sunscreen-spf50-copy' or product.handle == 'centella-serum' -%}
           A concentrated serum designed to brighten dark spots, even skin tone, and restore a youthful, glass-like glow.
@@ -156,7 +160,10 @@
         {%- if product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' -%}
           <div class="hero-ingredient"><h3 class="hero-title">CENTELLA ASIATICA</h3><p class="hero-desc">calms and repairs the skin barrier</p></div>
           <div class="hero-ingredient"><h3 class="hero-title">HONEY EXTRACT</h3><p class="hero-desc">moisturizes and provides natural brightness</p></div>
-        {%- elsif product.handle == 'e7-korean-glass-skin-centella-face-wash-copy' or product.handle == 'sunscreen' -%}
+        {%- elsif product.handle == 'e7-korean-glass-skin-centella-face-wash-copy' -%}
+          <div class="hero-ingredient"><h3 class="hero-title">CENTELLA ASIATICA</h3><p class="hero-desc">soothes, repairs, and calms irritated skin</p></div>
+          <div class="hero-ingredient"><h3 class="hero-title">HYALURONIC ACID</h3><p class="hero-desc">deeply hydrates and keeps skin plump after cleansing</p></div>
+        {%- elsif product.handle == 'sunscreen' -%}
           <div class="hero-ingredient"><h3 class="hero-title">SPF 60 PA+++</h3><p class="hero-desc">maximum defense against aging sun rays</p></div>
           <div class="hero-ingredient"><h3 class="hero-title">CENTELLA ASIATICA</h3><p class="hero-desc">soothes and hydrates sensitive skin</p></div>
         {%- elsif product.handle == 'e7-korean-glass-skin-centella-sunscreen-spf50-copy' or product.handle == 'centella-serum' -%}
