@@ -602,7 +602,7 @@
           <div class="thumb-item" onmouseover="scrollGallery(3, this)">
             <img src="{{ 'hair-mist-meet-1.jpg' | asset_url }}" alt="Gallery 1">
           </div>
-        {%- elsif product.handle == 'e7-complete-glass-skin-set' -%}
+        {%- elsif product.handle == 'e7-complete-glass-skin-set' or product.handle == 'e7-glass-skin-set' or product.handle == 'e7-hair-care-set' or product.handle == 'elaris-7-korean-brightening-bundle' -%}
           <div class="thumb-item active" onmouseover="scrollGallery(0, this)">
             <img src="{{ 'new-bundle-banner.jpg' | asset_url }}" alt="{{ product.title }}">
           </div>
@@ -782,9 +782,9 @@
       {%- elsif product.handle == 'centella-skin-toner' -%}
         {%- assign display_subtitle = '' -%}
         {%- assign display_desc = 'A refining toner designed to clarify, smooth, and rebalance the skin while enhancing radiance. It gently exfoliates, hydrates, and helps improve overall tone for a clearer, glass-like finish with continued use.' -%}
-      {%- elsif product.handle == 'e7-complete-glass-skin-set' -%}
+      {%- elsif product.handle == 'e7-complete-glass-skin-set' or product.handle == 'e7-glass-skin-set' or product.handle == 'e7-hair-care-set' or product.handle == 'elaris-7-korean-brightening-bundle' -%}
         {%- assign display_subtitle = 'FOUR DAILY SKIN ESSENTIALS' -%}
-        {%- assign display_desc = 'Meet your new classics, all bundled up in the elaris7 bubble bag. Our tried-and-true skincare essentials are formulated for ultimate barrier nourishment, feel dreamy on your skin, and multitask in your routine. Reach for them morning and night, use solo or with other skincare, mix with makeup, and take on your travels.' -%}
+        {%- assign display_desc = 'Meet your new classics, all bundled up in the elaris7 bubble bag. Our tried-and-true skincare essentials are formulated for ultimate barrier nourishment.' -%}
         {%- assign display_ingredients = false -%}
       {%- endif -%}
 
@@ -807,7 +807,7 @@
       
       <hr class="divider">
 
-      {%- if product.handle != 'e7-complete-glass-skin-set' -%}
+      {%- if product.handle != 'e7-complete-glass-skin-set' and product.handle != 'e7-glass-skin-set' and product.handle != 'e7-hair-care-set' and product.handle != 'elaris-7-korean-brightening-bundle' -%}
       <div class="bogo-offer-container">
         <!-- Main Offer Box -->
         <label class="bogo-main-offer">
@@ -960,7 +960,7 @@
       <hr class="divider">
 
       <div class="accordions">
-        {%- if product.handle == 'e7-complete-glass-skin-set' -%}
+        {%- if product.handle == 'e7-complete-glass-skin-set' or product.handle == 'e7-glass-skin-set' or product.handle == 'e7-hair-care-set' or product.handle == 'elaris-7-korean-brightening-bundle' -%}
           {%- assign accordion_titles = "WHAT'S INSIDE,THE ROUTINE,BENEFITS,APPLICATION" | split: "," -%}
         {%- else -%}
           {%- assign accordion_titles = "BENEFITS,APPLICATION,ELARIS TRICKS,INGREDIENTS" | split: "," -%}
