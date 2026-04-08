@@ -135,13 +135,11 @@
   </div>
   
   <div class="bf-right">
-    {%- if product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' or product.handle == 'e7-korean-glass-skin-centella-face-wash-copy' -%}
+    {%- if product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' -%}
       <img class="bf-image" src="{{ 'facewash-benefits.jpg' | asset_url }}" alt="Face Wash Shot">
     {%- elsif product.handle == 'centella-skin-toner' -%}
       <img class="bf-image" src="{{ 'toner-deep-hydration.jpg' | asset_url }}" alt="Refined, balanced skin">
-    {%- elsif product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' or product.handle == 'e7-korean-glass-skin-centella-face-wash-copy' -%}
-      <img class="bf-image" src="{{ 'facewash-benefits.jpg' | asset_url }}" alt="Face Wash Shot">
-    {%- elsif product.handle == 'e7-korean-glass-skin-centella-sunscreen-spf50-copy' -%}
+    {%- elsif product.handle == 'e7-korean-glass-skin-centella-face-wash-copy' or product.handle == 'e7-korean-glass-skin-centella-sunscreen-spf50-copy' -%}
       <img class="bf-image" src="{{ 'centella-serum-benefits.jpg' | asset_url }}" alt="Serum Shot">
     {%- elsif product.handle == 'centella-skin-toner-copy' or product.handle == 'renewal-cleanser' -%}
       <img class="bf-image" src="{{ 'cleanser-meet-3.jpg' | asset_url }}" alt="Gel Cleanser Shot">
