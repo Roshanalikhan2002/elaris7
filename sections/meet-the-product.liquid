@@ -85,10 +85,10 @@
     {%- assign meet_title = "Repair Dullness. Reveal Glow." -%}
   {%- elsif product.handle == 'floral-blossom-hair-mist' -%}
     {%- assign meet_title = "Bloom With Every Move." -%}
-  {%- elsif product.handle == 'e7-korean-glass-skin-centella-face-wash-copy' -%}
-    {%- assign meet_title = "Meet Your Purest Clean" -%}
+  {%- elsif product.handle == 'e7-korean-glass-skin-centella-face-wash-copy' or product.handle == 'sunscreen' -%}
+    {%- assign meet_title = "Your Daily Sun Barrier" -%}
   {%- elsif product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' -%}
-    {%- assign meet_title = "Fresh Skin Begins Here" -%}
+    {%- assign meet_title = "Meet Your Purest Clean" -%}
   {%- elsif product.handle == 'centella-skin-toner' -%}
     {%- assign meet_title = "Clarity You Can See" -%}
   {%- elsif product.handle == 'e7-korean-glass-skin-moisturizer' -%}
@@ -97,17 +97,12 @@
   <h2 class="meet-title">{{ meet_title }}</h2>
   <div class="meet-carousel-wrapper">
     <div class="meet-carousel">
-        {%- if product.images.size > 5 -%}
-          {%- for image in product.images offset: 4 -%}
-            <img src="{{ image | img_url: '800x' }}" alt="{{ image.alt | escape }}">
-          {%- endfor -%}
-        {%- else -%}
           {%- assign product_key = 'default' -%}
           {%- if product.handle == 'tranexamic-serum' -%}
             {%- assign product_key = 'tranexamic' -%}
           {%- elsif product.handle == 'anti-frizz-keratin-serum' or product.handle == 'anti-frizz-serum' or product.handle == 'keratin-serum' -%}
             {%- assign product_key = 'keratin' -%}
-          {%- elsif product.handle == 'e7-korean-glass-skin-centella-sunscreen-spf50-copy' or product.handle == 'centella-serum' or product.handle == 'e7-korean-glass-skin-centella-sunscreen' -%}
+          {%- elsif product.handle == 'e7-korean-glass-skin-centella-sunscreen-spf50-copy' or product.handle == 'centella-serum' -%}
             {%- assign product_key = 'glow' -%}
           {%- elsif product.handle == 'glutathione-cream' -%}
             {%- assign product_key = 'glutathione' -%}
@@ -122,12 +117,17 @@
           {%- elsif product.handle == 'e7-korean-glass-skin-moisturizer' or product.handle == 'hydra-burst-moisturizer' -%}
             {%- assign product_key = 'moisturizer' -%}
           {%- elsif product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' or product.handle == 'night-cream' -%}
-            {%- assign product_key = 'night-cream' -%}
-          {%- elsif product.handle == 'e7-korean-glass-skin-centella-face-wash-copy' -%}
             {%- assign product_key = 'face-wash' -%}
+          {%- elsif product.handle == 'e7-korean-glass-skin-centella-face-wash-copy' or product.handle == 'sunscreen' -%}
+            {%- assign product_key = 'sunscreen' -%}
           {%- endif -%}
 
-          {%- if product_key == 'face-wash' -%}
+          {%- if product_key == 'sunscreen' -%}
+            <img src="{{ 'sunscreen-lifestyle-1.jpg' | asset_url }}" alt="Sunscreen 1">
+            <img src="{{ 'sunscreen-lifestyle-2.jpg' | asset_url }}" alt="Sunscreen 2">
+            <img src="{{ 'sunscreen-lifestyle-3.jpg' | asset_url }}" alt="Sunscreen 3">
+            <img src="{{ 'sunscreen-lifestyle-4.jpg' | asset_url }}" alt="Sunscreen 4">
+          {%- elsif product_key == 'face-wash' -%}
             <img src="{{ 'facewash-gallery-1.jpg' | asset_url }}" alt="Face Wash 1">
             <img src="{{ 'facewash-gallery-2.jpg' | asset_url }}" alt="Face Wash 2">
             <img src="{{ 'facewash-gallery-3.jpg' | asset_url }}" alt="Face Wash 3">
@@ -195,7 +195,6 @@
                <img src="{{ 'meet-elaris-4.jpg' | asset_url }}" alt="Initial Image 4">
             {%- endif -%}
           {%- endif -%}
-        {%- endif -%}
     </div>
     <div class="carousel-arrow">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#5b5a53" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>

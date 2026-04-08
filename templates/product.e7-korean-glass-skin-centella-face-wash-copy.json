@@ -4,19 +4,19 @@
     "main": {
       "type": "product-luxury-detail",
       "settings": {
-        "asset_main_image": "facewash-100.jpg",
-        "subtitle": "Pure Start",
+        "asset_main_image": "sunscreen-100.jpg",
+        "subtitle": "Centella Asiatica + UV Filters",
         "show_reviews": true,
-        "review_count": "16k",
-        "description": "A gentle, glow-reviving cleanser infused with Centella Asiatica, brightening actives, and hydrating botanicals to cleanse, soothe, and refresh your skin for a soft, balanced, and radiant look every day.",
+        "review_count": "11k",
+        "description": "A high-protection sunscreen infused with Centella Asiatica and advanced UV filters to defend your skin while maintaining a clear, hydrated finish.",
         "show_ingredients": true,
-        "key_ingredients": "3-0-Ethyl Ascorbic Acid, Hyaluronic Acid, Rice Extract, Licorice Extract, Morus Alba, Centella Asiatica, Honey, D-Panthenol, Sodium PCA, Glycerin, Apple Extract"
+        "key_ingredients": "SPF 60 PA+++, Centella Asiatica, Niacinamide, Hyaluronic Acid"
       }
     },
     "meet_product": {
       "type": "meet-the-product",
       "settings": {
-        "title": "Meet Your Purest Clean"
+        "title": "Your Daily Sun Barrier"
       }
     },
     "details_split": {
@@ -26,35 +26,35 @@
           "type": "detail_row",
           "settings": {
             "label": "GOOD FOR:",
-            "value": "All skin types, especially dull, sensitive, or acne-prone skin"
+            "value": "All skin types, including sensitive and acne-prone skin"
           }
         },
         "row_feels": {
           "type": "detail_row",
           "settings": {
             "label": "FEELS LIKE:",
-            "value": "A soft, airy lather that cleanses gently without tightness"
+            "value": "A lightweight, breathable layer that blends smoothly"
           }
         },
         "row_looks": {
           "type": "detail_row",
           "settings": {
             "label": "LOOKS LIKE:",
-            "value": "Fresh, clear skin with a natural, healthy glow"
+            "value": "A clear, natural finish with no white cast"
           }
         },
         "row_smells": {
           "type": "detail_row",
           "settings": {
             "label": "SMELLS LIKE:",
-            "value": "Light, clean freshness that feels calming and pure"
+            "value": "Light, clean freshness with a soft finish"
           }
         },
         "row_fyi": {
           "type": "detail_row",
           "settings": {
             "label": "FYI:",
-            "value": "Halal-Friendly • Dermatologist-Tested • Non-Drying • Gentle for Daily Use"
+            "value": "Halal-Friendly • Dermatologist-Tested • Non-Greasy • Makeup-Friendly"
           }
         }
       },
@@ -66,8 +66,8 @@
         "row_fyi"
       ],
       "settings": {
-        "title": "Cleanse. Refresh. Glow. A daily face wash for CLEAN SKIN + BALANCED, RADIANT COMPLEXION.",
-        "image": "shopify://shop_images/deep-hydration-facewash.jpg"
+        "title": "Protection That Feels Effortless. A daily sunscreen for DEFENSE + HYDRATED, PROTECTED SKIN.",
+        "image": "shopify://shop_images/sunscreen-100.jpg"
       }
     },
     "ingredients": {
@@ -76,15 +76,15 @@
         "ing_1": {
           "type": "ingredient",
           "settings": {
-            "title": "3-O-ETHYL ASCORBIC ACID",
-            "description": "a stable form of vitamin C that helps brighten the complexion, reduce dullness, and support a more radiant, even look"
+            "title": "SPF 60 PA+++",
+            "description": "provides maximum defense against harmful UVA and UVB rays"
           }
         },
         "ing_2": {
           "type": "ingredient",
           "settings": {
-            "title": "HYALURONIC ACID",
-            "description": "a moisture-binding ingredient that helps keep skin hydrated and plump while cleansing, preventing dryness and tightness"
+            "title": "CENTELLA ASIATICA",
+            "description": "soothes and calms skin while maintaining hydration throughout the day"
           }
         }
       },
@@ -94,9 +94,9 @@
       ],
       "settings": {
         "title": "what's inside",
-        "intro": "Our formula is powered by gentle cleansers and glow-boosting hydrators. Meet 2 of our favorites for a fresh, balanced cleanse.",
-        "footer_text": "also made with RICE EXTRACT, LICORICE EXTRACT, MORUS ALBA, HONEY, D-PANTHENOL, SODIUM PCA, GLYCERIN, APPLE EXTRACT, CENTELLA ASIATICA",
-        "image": "shopify://shop_images/facewash-ingredients.jpg"
+        "intro": "Our formula is powered by advanced filters and skin-soothing botanicals. Meet 2 of our favorites for daily protection.",
+        "footer_text": "also made with NIACINAMIDE, HYALURONIC ACID, VITAMIN E",
+        "image": "shopify://shop_images/sunscreen-100.jpg"
       }
     },
     "study_results": {
@@ -106,28 +106,28 @@
           "type": "stat_block",
           "settings": {
             "number": "99%",
-            "description": "SAID THEIR SKIN FELT CLEAN + REFRESHED AFTER EVERY WASH"
+            "description": "SAID IT LEFT ZERO WHITE CAST ON THEIR SKIN"
           }
         },
         "stat_2": {
           "type": "stat_block",
           "settings": {
             "number": "98%",
-            "description": "SAID IT DID NOT DRY OUT THEIR SKIN"
+            "description": "SAID IT FELT WEIGHTLESS AND BREATHABLE"
           }
         },
         "stat_3": {
           "type": "stat_block",
           "settings": {
             "number": "97%",
-            "description": "SAID THEIR SKIN LOOKED CLEARER + MORE BALANCED"
+            "description": "SAID IT WORKED PERFECTLY AS A MAKEUP PRIMER"
           }
         },
         "stat_4": {
           "type": "stat_block",
           "settings": {
             "number": "3 out of 4",
-            "description": "SAID THEY NOTICED LESS DULLNESS WITH DAILY USE"
+            "description": "SAID THEIR SKIN FELT CALM AND PROTECTED ALL DAY"
           }
         }
       },
@@ -139,7 +139,7 @@
       ],
       "settings": {
         "footnote": "Based on a 2-week consumer perception study with consistent daily use.",
-        "image": "shopify://shop_images/facewash-gallery-1.jpg"
+        "image": "shopify://shop_images/sunscreen-100.jpg"
       }
     },
     "faq_split": {
@@ -148,50 +148,26 @@
         "faq_1": {
           "type": "faq_item",
           "settings": {
-            "question": "Can I use this face wash twice a day?",
-            "answer": "Yes, it is gentle enough for both morning and evening use without over-drying your skin."
+            "question": "Does it leave a white cast?",
+            "answer": "No, it is formulated to blend invisibly into all skin tones for a smooth finish."
           }
         },
         "faq_2": {
           "type": "faq_item",
           "settings": {
-            "question": "Is it suitable for sensitive skin?",
-            "answer": "Yes, the formula includes calming ingredients like Centella Asiatica and honey, making it ideal for sensitive skin."
-          }
-        },
-        "faq_3": {
-          "type": "faq_item",
-          "settings": {
-            "question": "Will it help with acne or breakouts?",
-            "answer": "It helps cleanse pores, remove excess oil, and soothe irritation, which can support clearer skin over time."
-          }
-        },
-        "faq_4": {
-          "type": "faq_item",
-          "settings": {
-            "question": "Does it remove makeup?",
-            "answer": "It can remove light makeup, but for heavy or waterproof makeup, use a remover before cleansing."
-          }
-        },
-        "faq_5": {
-          "type": "faq_item",
-          "settings": {
-            "question": "Will my skin feel dry after washing?",
-            "answer": "No, it is designed to maintain hydration and leave your skin feeling soft and balanced."
+            "question": "Can I use it under makeup?",
+            "answer": "Yes, its weightless texture makes it a perfect primer for makeup application."
           }
         }
       },
       "block_order": [
         "faq_1",
-        "faq_2",
-        "faq_3",
-        "faq_4",
-        "faq_5"
+        "faq_2"
       ],
       "settings": {
         "title": "FAQ",
-        "subtitle": "Everything you need to know about Centella Face Wash.",
-        "image": "shopify://shop_images/faq-100-nc.jpg"
+        "subtitle": "Everything you need to know about Centella Sunscreen.",
+        "image": "shopify://shop_images/sunscreen-100.jpg"
       }
     },
     "product_reviews": {
