@@ -788,9 +788,17 @@
       {%- elsif product.handle == 'centella-skin-toner' -%}
         {%- assign display_subtitle = '' -%}
         {%- assign display_desc = 'A refining toner designed to clarify, smooth, and rebalance the skin while enhancing radiance. It gently exfoliates, hydrates, and helps improve overall tone for a clearer, glass-like finish with continued use.' -%}
-      {%- elsif product.handle == 'e7-complete-glass-skin-set' or product.handle == 'e7-glass-skin-set' or product.handle == 'e7-hair-care-set' or product.handle == 'elaris-7-korean-brightening-bundle' -%}
+      {%- elsif product.handle == 'e7-hair-care-set' -%}
+        {%- assign display_subtitle = 'THE ULTIMATE HAIR REVIVAL' -%}
+        {%- assign display_desc = 'Transform your hair routine with the E7 Hair Care Set. This three-product collection is designed to control frizz, strengthen roots, and leave your hair feeling soft, shiny, and beautifully scented. Each product works on its own or together, making styling, protection, and daily care effortless—perfect for home or on-the-go use.' -%}
+        {%- assign display_ingredients = false -%}
+      {%- elsif product.handle == 'e7-complete-glass-skin-set' or product.handle == 'e7-glass-skin-set' or product.handle == 'elaris-7-korean-brightening-bundle' -%}
         {%- assign display_subtitle = 'FOUR DAILY SKIN ESSENTIALS' -%}
         {%- assign display_desc = 'Meet your new classics, all bundled up in the elaris7 bubble bag. Our tried-and-true skincare essentials are formulated for ultimate barrier nourishment.' -%}
+        {%- assign display_ingredients = false -%}
+      {%- elsif product.handle == 'floral-blossom-hair-mist' -%}
+        {%- assign display_subtitle = 'Floral Blossom + Pro-Vitamin B5' -%}
+        {%- assign display_desc = 'A light, refreshing hair mist infused with floral notes and nourishing vitamins to leave your hair smelling divine and feeling silky smooth throughout the day.' -%}
         {%- assign display_ingredients = false -%}
       {%- endif -%}
 
