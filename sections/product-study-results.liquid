@@ -188,6 +188,23 @@
           <h3 class="sr-number">3 out of 4</h3>
           <p class="sr-desc">SAID THEY NOTICED A HEALTHY, PROTECTED GLOW</p>
         </div>
+      {%- elsif product.handle == 'centella-skin-toner-copy' -%}
+        <div class="sr-stat-block">
+          <h3 class="sr-number">99%</h3>
+          <p class="sr-desc">SAID THEIR SKIN FELT CLEAN + REFRESHED</p>
+        </div>
+        <div class="sr-stat-block">
+          <h3 class="sr-number">98%</h3>
+          <p class="sr-desc">SAID THEIR SKIN LOOKED BRIGHTER AFTER USE</p>
+        </div>
+        <div class="sr-stat-block">
+          <h3 class="sr-number">97%</h3>
+          <p class="sr-desc">SAID THEIR SKIN FELT SOFT + HYDRATED</p>
+        </div>
+        <div class="sr-stat-block">
+          <h3 class="sr-number">3 out of 4</h3>
+          <p class="sr-desc">SAID THEY NOTICED A HEALTHIER GLOW</p>
+        </div>
       {%- else -%}
         <div class="sr-stat-block">
           <h3 class="sr-number">97%</h3>
@@ -223,8 +240,10 @@
         Based on a 2-week consumer perception study with consistent daily use.
       {%- elsif product.handle == 'centella-skin-toner' -%}
         Based on a 4-week consumer perception study with daily application.
-      {%- elsif product.handle == 'e7-korean-glass-skin-moisturizer' or product.handle == 'centella-skin-toner-copy' -%}
+      {%- elsif product.handle == 'e7-korean-glass-skin-moisturizer' -%}
         Based on a 2-week consumer perception study with consistent use.
+      {%- elsif product.handle == 'centella-skin-toner-copy' -%}
+        Based on a 2-week consumer perception study with consistent daily use.
       {%- else -%}
         {{ section.settings.footnote | default: '*Based on a 32-subject consumer perception study after 2 weeks of use.' }}
       {%- endif -%}
