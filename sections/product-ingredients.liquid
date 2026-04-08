@@ -142,6 +142,8 @@
           A nourishing cream that brightens, repairs, and hydrates skin for a clearer, more even complexion.
         {%- elsif product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' -%}
           Our formula is powered by gentle cleansers and glow-boosting hydrators. Meet 2 of our favorites for a fresh, balanced cleanse.
+        {%- elsif product.handle == 'e7-korean-glass-skin-centella-face-wash-copy' -%}
+          A high-performance sun defense formula that protects, hydrates, and keeps your skin comfortable under daily sun exposure. Here are 2 standout ingredients powering your daily shield:
         {%- else -%}
           {{ section.settings.intro }}
         {%- endif -%}
@@ -165,6 +167,15 @@
           <h3 class="hero-title">3-O-ETHYL ASCORBIC ACID</h3>
           <p class="hero-desc">a stable form of vitamin C that helps brighten the complexion, reduce dullness, and support a more radiant, even look</p>
         </div>
+      {%- elsif product.handle == 'e7-korean-glass-skin-centella-face-wash-copy' -%}
+        <div class="hero-ingredient">
+          <h3 class="hero-title">TITANIUM DIOXIDE</h3>
+          <p class="hero-desc">a mineral-based UV filter that provides broad-spectrum protection against UVA and UVB rays while remaining gentle on the skin</p>
+        </div>
+        <div class="hero-ingredient">
+          <h3 class="hero-title">HYALURONIC ACID</h3>
+          <p class="hero-desc">a hydration booster that locks in moisture, helping your skin stay soft, plump, and comfortable even under prolonged sun exposure</p>
+        </div>
       {%- else -%}
         {% for block in section.blocks %}
           <div class="hero-ingredient" {{ block.shopify_attributes }}>
@@ -179,6 +190,8 @@
           also made with Centella Asiatica, Niacinamide, Vitamin C, Hyaluronic Acid, Glycerin, Vitamin E, and Amla Extract for hydration, skin barrier support, and smooth texture
         {%- elsif product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' -%}
           also made with RICE EXTRACT, LICORICE EXTRACT, MORUS ALBA, HONEY, D-PANTHENOL, SODIUM PCA, GLYCERIN, APPLE EXTRACT, CENTELLA ASIATICA
+        {%- elsif product.handle == 'e7-korean-glass-skin-centella-face-wash-copy' -%}
+          also made with Tinosorb S, Avobenzone, Ethylhexyl Methoxycinnamate, Ceramides, Vitamin E, Centella Asiatica, Cyclopentasiloxane, C12-15 Alkyl Benzoate
         {%- else -%}
           {{ section.settings.footer_text }}
         {%- endif -%}
