@@ -166,15 +166,11 @@
   <div class="bf-right">
     {%- if is_night_cream -%}
       <img class="bf-image" src="{{ 'night-cream-lifestyle.jpeg' | asset_url }}" alt="Night Cream Lifestyle">
+    {%- elsif is_face_wash -%}
+      <img class="bf-image" src="{{ 'meet-elaris-you-3-100-10.jpg' | asset_url }}" alt="Face Wash Shot">
     {%- elsif is_centella_serum -%}
       <img class="bf-image" src="{{ 'glow-meet-4.jpg' | asset_url }}" alt="Centella Serum Shot">
     {%- elsif is_glutathione_cream -%}
-      <img class="bf-image" src="{{ 'glutathione-cream-100.jpg' | asset_url }}" alt="Glutathione Cream Shot">
-    {%- elsif product.handle == 'e7-korean-glass-skin-centella-face-wash-copy' or product.handle == 'sunscreen' -%}
-      <img class="bf-image" src="{{ 'sunscreen-100.jpg' | asset_url }}" alt="Sunscreen Shot">
-    {%- elsif is_face_wash -%}
-      <img class="bf-image" src="{{ 'meet-elaris-you-3-100-10.jpg' | asset_url }}" alt="Face Wash Shot">
-    {%- elsif product.handle == 'centella-skin-toner' -%}
       <img class="bf-image" src="{{ 'toner-deep-hydration.jpg' | asset_url }}" alt="Refined, balanced skin">
     {%- elsif product.handle == 'centella-skin-toner-copy' or product.handle == 'renewal-cleanser' -%}
       <img class="bf-image" src="{{ 'cleanser-meet-3.jpg' | asset_url }}" alt="Gel Cleanser Shot">
