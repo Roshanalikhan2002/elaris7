@@ -118,10 +118,13 @@
 {%- assign title_up = product.title | upcase -%}
 {%- assign is_centella_serum = false -%}
 {%- assign is_glutathione_cream = false -%}
+{%- assign is_hair_mist = false -%}
 {%- if handle_down == 'centella-serum' or handle_down == 'e7-korean-glass-skin-centella-sunscreen-spf50-copy' or title_up contains 'CENTELLA SERUM' or title_up contains 'GLOW SERUM' -%}
   {%- assign is_centella_serum = true -%}
 {%- elsif handle_down == 'glutathione-cream' or title_up contains 'GLUTATHIONE' -%}
   {%- assign is_glutathione_cream = true -%}
+{%- elsif handle_down contains 'hair-mist' or title_up contains 'HAIR MIST' -%}
+  {%- assign is_hair_mist = true -%}
 {%- endif -%}
 
 <section class="ingredients-section" id="section-{{ section.id }}">
@@ -175,9 +178,8 @@
           A high-protection formula that hydrates skin while defending against harmful UV rays and environmental stress.
         {%- elsif product.handle == 'centella-skin-toner' or product.handle == 'renewal-toner' -%}
           A clarifying toner that smooths and rebalances the skin. Meet 2 standout ingredients:
-        {%- elsif product.handle == 'floral-blossom-hair-mist' or product.handle == 'hair-mist' -%}
-          {%- assign display_intro = "A weightless mist that refreshes your hair instantly with a delicate scent and nourishing finish." -%}
-          {{ display_intro }}
+        {%- elsif is_hair_mist -%}
+          A lightweight hair mist designed to revive hair instantly, leaving it soft, fragrant, and naturally shiny throughout the day.
         {%- else -%}
           {{ section.settings.intro | default: "Our formula is powered by gentle cleansers and glow-boosting hydrators." }}
         {%- endif -%}
@@ -199,9 +201,9 @@
         {%- elsif product.handle == 'centella-skin-toner' or product.handle == 'renewal-toner' -%}
           <div class="hero-ingredient"><h3 class="hero-title">CENTELLA ASIATICA</h3><p class="hero-desc">soothes and clarifies skin texture</p></div>
           <div class="hero-ingredient"><h3 class="hero-title">HYDRATION COMPLEXES</h3><p class="hero-desc">locks in moisture for a glass-like finish</p></div>
-        {%- elsif product.handle == 'floral-blossom-hair-mist' or product.handle == 'hair-mist' -%}
-          <div class="hero-ingredient"><h3 class="hero-title">PANTHENOL</h3><p class="hero-desc">hydrates and adds a healthy shine</p></div>
-          <div class="hero-ingredient"><h3 class="hero-title">FLORAL EXTRACTS</h3><p class="hero-desc">provide a delicate, long-lasting scent</p></div>
+        {%- elsif is_hair_mist -%}
+          <div class="hero-ingredient"><h3 class="hero-title">PANTHENOL</h3><p class="hero-desc">hydrates and adds a healthy-looking shine</p></div>
+          <div class="hero-ingredient"><h3 class="hero-title">PROPANEDIOL</h3><p class="hero-desc">refreshes hair while helping the scent last longer</p></div>
         {%- elsif is_centella_serum -%}
           <div class="hero-ingredient"><h3 class="hero-title">NIACINAMIDE</h3><p class="hero-desc">a multitasking ingredient that helps visibly even out skin tone, reduce the look of pores, and strengthen the skin barrier for a smoother, clearer complexion</p></div>
           <div class="hero-ingredient"><h3 class="hero-title">ALPHA ARBUTIN</h3><p class="hero-desc">a targeted brightening active known to help fade dark spots, post-acne marks, and discoloration for a more uniform, radiant look over time</p></div>
@@ -224,7 +226,11 @@
           also made with VITAMIN C, HYALURONIC ACID, ALOE VERA, ROSE EXTRACT, VITAMIN E, HONEY, PEPTIDES, CENTELLA ASIATICA, VITAMIN B5, WITCH HAZEL
         {%- elsif is_glutathione_cream -%}
           also made with Centella Asiatica, Niacinamide, Vitamin C, Hyaluronic Acid, Glycerin, Vitamin E, and Amla Extract for hydration, skin barrier support, and smooth texture
+        {%- elsif is_hair_mist -%}
+          also made with subtle floral extracts for a delicate, long-lasting fragrance
         {%- else -%}
+          {{ section.settings.footer_text | default: "also made with RICE EXTRACT, LICORICE EXTRACT, VITAMIN C, HONEY, D-PANTHENOL, GLYCERIN, APPLE EXTRACT, CENTELLA ASIATICA" }}
+        {%- endif -%}
       </div>
     </div>
   </div>
