@@ -108,7 +108,18 @@
 {%- endstyle -%}
 
 {%- assign title_color = '#003087' -%}
-{%- if product.handle == 'renewal-cleanser' or product.handle == 'centella-skin-toner-copy' or product.handle == 'night-cream' or product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' -%}
+{%- assign handle_down = product.handle | downcase -%}
+{%- assign title_up = product.title | upcase -%}
+{%- assign is_night_cream = false -%}
+{%- assign is_face_wash = false -%}
+{%- if handle_down == 'night-cream' or title_up contains 'NIGHT CREAM' -%}
+  {%- assign is_night_cream = true -%}
+{%- elsif title_up contains 'FACE WASH' or product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' or handle_down contains 'face-wash' or handle_down contains 'cleanser' -%}
+  {%- assign is_face_wash = true -%}
+{%- endif -%}
+
+{%- assign title_color = '#003087' -%}
+{%- if is_face_wash or product.handle == 'centella-skin-toner-copy' or is_night_cream -%}
   {%- assign title_color = '#333333' -%}
 {%- endif -%}
 
@@ -129,7 +140,7 @@
 
 <section class="ingredients-section" id="section-{{ section.id }}">
   <div class="ing-left">
-    {%- if product.handle == 'night-cream' or product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' -%}
+    {%- if is_night_cream -%}
       <img class="ing-image" src="{{ 'night-cream-last.jpeg' | asset_url }}" alt="Night Cream Ingredients">
     {%- elsif product.handle == 'tranexamic-serum' -%}
       <img class="ing-image" src="{{ 'tranexamic-serum.jpg' | asset_url }}" alt="Tranexamic Serum Ingredients">
@@ -139,8 +150,8 @@
       <img class="ing-image" src="{{ 'glow-meet-1.jpg' | asset_url }}" alt="Centella Serum Ingredients">
     {%- elsif is_glutathione_cream -%}
       <img class="ing-image" src="{{ 'glutathione-cream-100.jpg' | asset_url }}" alt="Glutathione Cream Ingredients">
-    {%- elsif product.handle == 'e7-korean-glass-skin-centella-face-wash-copy' -%}
-      <img class="ing-image" src="{{ 'facewash-ingredients-v2.jpg' | asset_url }}" alt="Face Wash Ingredients">
+    {%- elsif is_face_wash -%}
+      <img class="ing-image" src="{{ 'faq-100-13.jpg' | asset_url }}" alt="Face Wash Ingredients">
     {%- elsif product.handle == 'centella-skin-toner-copy' or product.handle == 'renewal-cleanser' -%}
       <img class="ing-image" src="{{ 'cleanser-meet-1.jpg' | asset_url }}" alt="Renewal Cleanser Ingredients">
     {%- elsif product.handle == 'e7-korean-glass-skin-moisturizer' or product.handle == 'hydra-burst-moisturizer' -%}
@@ -164,8 +175,10 @@
     <div class="ing-vertical-title">{{ section.settings.title }}</div>
     <div class="ing-content">
       <div class="ing-intro">
-        {%- if product.handle == 'night-cream' or product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' -%}
+        {%- if is_night_cream -%}
           Our formula is powered by advanced repair and brightening actives. Meet 2 of our favorites for overnight renewal.
+        {%- elsif is_face_wash -%}
+          Our formula is powered by gentle cleansers and glow-boosting botanicals. Meet 2 of our favorites for a pure, balanced clean.
         {%- elsif product.handle == 'tranexamic-serum' -%}
           A potent brightening serum formulated to target dark spots, even skin tone, and enhance natural radiance.
         {%- elsif product.handle == 'anti-frizz-keratin-serum' or product.handle == 'anti-frizz-serum' or product.handle == 'keratin-serum' -%}
@@ -186,7 +199,7 @@
       </div>
       
       <div class="ing-dynamic-blocks">
-        {%- if product.handle == 'night-cream' or product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' -%}
+        {%- if is_night_cream -%}
           <div class="hero-ingredient"><h3 class="hero-title">CENTELLA ASIATICA</h3><p class="hero-desc">a calming botanical that helps repair the skin barrier, reduce redness, and support healthier, more resilient skin overnight</p></div>
           <div class="hero-ingredient"><h3 class="hero-title">MOISTURE-LOCK TECHNOLOGY</h3><p class="hero-desc">a deep hydration system that helps retain moisture, prevent overnight dryness, and keep skin plump and smooth by morning</p></div>
         {%- elsif product.handle == 'tranexamic-serum' -%}
@@ -195,7 +208,7 @@
         {%- elsif product.handle == 'anti-frizz-keratin-serum' or product.handle == 'anti-frizz-serum' or product.handle == 'keratin-serum' -%}
           <div class="hero-ingredient"><h3 class="hero-title">ARGAN OIL</h3><p class="hero-desc">nourishes and softens hair while reducing breakage</p></div>
           <div class="hero-ingredient"><h3 class="hero-title">KERATIN COMPLEX</h3><p class="hero-desc">strengthens hair fibers for smoother, frizz-free strands</p></div>
-        {%- elsif product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' or product.handle == 'e7-korean-glass-skin-centella-face-wash-copy' -%}
+        {%- elsif is_face_wash -%}
           <div class="hero-ingredient"><h3 class="hero-title">CENTELLA ASIATICA</h3><p class="hero-desc">calms and repairs the skin barrier during cleansing</p></div>
           <div class="hero-ingredient"><h3 class="hero-title">RICE EXTRACT</h3><p class="hero-desc">natural brightener for a clear, radiant after-wash glow</p></div>
         {%- elsif product.handle == 'centella-skin-toner' or product.handle == 'renewal-toner' -%}
