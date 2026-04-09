@@ -2,7 +2,7 @@
   "layout": "theme",
   "sections": {
     "main": {
-      "type": "product-renewal-main",
+      "type": "product-luxury-detail",
       "settings": {}
     },
     "meet_product": {

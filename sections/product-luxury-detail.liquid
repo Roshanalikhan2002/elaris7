@@ -1,32 +1,42 @@
-{%- assign is_renewal_cleanser = false -%}
-{%- if product.handle contains 'cleanser' or product.handle == 'centella-skin-toner-copy' or product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' or product.handle == 'renewal-cleanser' -%}
-  {%- assign is_renewal_cleanser = true -%}
-{%- endif -%}
-
-{%- assign is_centella_serum = product.handle == 'centella-serum' or product.handle == 'e7-korean-glass-skin-centella-sunscreen-spf50-copy' -%}
-
-{%- assign display_title = product.title -%}
-{%- if is_renewal_cleanser -%}
-  {%- assign display_title = "Renewal Cleanser" -%}
-{%- elsif is_centella_serum -%}
-  {%- assign display_title = "Centella Serum" -%}
-{%- endif -%}
-
 <style>
-  .product-page { padding: 20px; max-width: 1400px; margin: 0 auto; background: #fff; }
-  .product-grid { display: grid; grid-template-columns: 100px 1fr 1fr; gap: 40px; }
-  .gallery-thumbnails { display: flex; flex-direction: column; gap: 15px; }
-  .thumb-item { width: 80px; height: 100px; cursor: pointer; border: 1px solid #eee; overflow: hidden; }
+  .product-page { padding: 40px 20px; max-width: 1400px; margin: 0 auto; background: #fff; }
+  .product-grid { display: grid; grid-template-columns: 80px 1fr 1fr; gap: 40px; }
+  
+  /* Thumbnails on the far left */
+  .gallery-thumbnails { display: flex; flex-direction: column; gap: 12px; }
+  .thumb-item { width: 60px; height: 60px; cursor: pointer; border-radius: 8px; overflow: hidden; border: 2px solid transparent; background: #f9f9f9; }
   .thumb-item img { width: 100%; height: 100%; object-fit: cover; }
-  .thumb-item.active { border: 2px solid #333; }
+  .thumb-item.active { border-color: #000; }
   
-  .gallery-main-viewport { width: 100%; overflow: hidden; border-radius: 12px; aspect-ratio: 4/5; }
-  .gallery-slider { display: flex; transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1); height: 100%; }
-  .gallery-slide { flex: 0 0 100%; height: 100%; }
-  .gallery-slide img { width: 100%; height: 100%; object-fit: cover !important; }
+  .gallery-main-viewport { width: 100%; border-radius: 20px; overflow: hidden; background: #f9f9f9; aspect-ratio: 1/1; display: flex; align-items: center; justify-content: center; }
+  .gallery-slider { display: flex; width: 100%; height: 100%; transition: transform 0.4s ease; }
+  .gallery-slide { flex: 0 0 100%; display: flex; align-items: center; justify-content: center; }
+  .gallery-slide img { max-width: 90%; max-height: 90%; object-fit: contain; }
   
-  .product-details { padding: 0 20px; }
-  .product-title { font-size: 3rem; margin: 0; color: #333; text-transform: lowercase; font-weight: 800; }
+  /* Details Column */
+  .product-details { background: #f3f3f3; border-radius: 20px; padding: 40px; position: sticky; top: 40px; height: fit-content; }
+  .product-title { font-size: 2.8rem; font-weight: 900; line-height: 1; color: #333; margin-bottom: 20px; text-transform: uppercase; }
+  .product-description { font-size: 1rem; line-height: 1.5; color: #444; margin-bottom: 30px; }
+  
+  /* Variant Selector */
+  .variant-selector { margin-bottom: 30px; }
+  .selector-group { display: flex; gap: 12px; margin-bottom: 20px; }
+  .selection-btn { border: 1px solid #ccc; padding: 12px 24px; border-radius: 30px; background: #fff; cursor: pointer; font-weight: 600; font-size: 0.9rem; }
+  .selection-btn.active { background: #000; color: #fff; border-color: #000; }
+  
+  .shape-swatches { display: flex; gap: 15px; flex-wrap: wrap; margin-bottom: 30px; }
+  .shape-item { display: flex; flex-direction: column; align-items: center; gap: 8px; cursor: pointer; }
+  .shape-icon { width: 45px; height: 45px; border-radius: 50%; background: #fff; display: flex; align-items: center; justify-content: center; border: 2px solid transparent; }
+  .shape-icon.active { border-color: #000; }
+  .shape-label { font-size: 0.75rem; font-weight: 700; text-transform: lowercase; color: #666; }
+  
+  .buy-button { width: 100%; background: #ffb800; color: #002d5f; border: none; padding: 22px; border-radius: 30px; font-weight: 900; font-size: 1.2rem; cursor: pointer; text-transform: uppercase; letter-spacing: 0.05em; box-shadow: 0 4px 12px rgba(255,184,0,0.3); }
+  
+  /* Accordions */
+  .product-accordions { margin-top: 30px; border-top: 1px solid #ddd; }
+  .accordion-item { border-bottom: 1px solid #ddd; padding: 15px 0; }
+  .accordion-summary { display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-weight: 800; font-size: 1rem; color: #555; text-transform: uppercase; }
+  .accordion-summary span:last-child { font-size: 1.2rem; color: #999; }
   
   @media (max-width: 1024px) {
     .product-grid { grid-template-columns: 1fr; }
@@ -37,91 +47,78 @@
 <main class="product-page">
   <div class="product-grid">
     <div class="gallery-thumbnails">
-      {%- if is_renewal_cleanser -%}
-        <div class="thumb-item active" onmouseover="scrollGallery(0, this)"><img src="{{ 'gel cleanser-100.jpg' | asset_url }}" alt="Cleanser Main"></div>
-        <div class="thumb-item" onmouseover="scrollGallery(1, this)"><img src="{{ 'cleanser-meet-1.jpg' | asset_url }}" alt="Cleanser Model 1"></div>
-        <div class="thumb-item" onmouseover="scrollGallery(2, this)"><img src="{{ 'cleanser-meet-2.jpg' | asset_url }}" alt="Cleanser Model 2"></div>
-        <div class="thumb-item" onmouseover="scrollGallery(3, this)"><img src="{{ 'cleanser-meet-3.jpg' | asset_url }}" alt="Cleanser Model 3"></div>
-      {%- else -%}
-        {%- for image in product.images -%}
-          <div class="thumb-item {% if forloop.first %}active{% endif %}" onmouseover="scrollGallery({{ forloop.index0 }}, this)"><img src="{{ image | img_url: '200x200', crop: 'center' }}" alt="{{ image.alt }}"></div>
-        {%- endfor -%}
-      {%- endif -%}
+      {%- for image in product.images -%}
+        <div class="thumb-item {% if forloop.first %}active{% endif %}" onmouseover="scrollGallery({{ forloop.index0 }}, this)"><img src="{{ image | img_url: '200x200', crop: 'center' }}" alt="{{ image.alt }}"></div>
+      {%- endfor -%}
     </div>
 
     <div class="gallery-main-viewport">
       <div class="gallery-slider" id="productSlider">
-        {%- if is_renewal_cleanser -%}
-          <div class="gallery-slide"><img src="{{ 'gel cleanser-100.jpg' | asset_url }}" class="force-pink" alt="Main Pink Cleanser"></div>
-          <div class="gallery-slide"><img src="{{ 'cleanser-meet-1.jpg' | asset_url }}" alt="Model Shot 1"></div>
-          <div class="gallery-slide"><img src="{{ 'cleanser-meet-2.jpg' | asset_url }}" alt="Model Shot 2"></div>
-          <div class="gallery-slide"><img src="{{ 'cleanser-meet-3.jpg' | asset_url }}" alt="Model Shot 3"></div>
-        {%- else -%}
-          {%- for image in product.images -%}
-            <div class="gallery-slide"><img src="{{ image | img_url: 'master' }}" alt="{{ image.alt }}"></div>
-          {%- endfor -%}
-        {%- endif -%}
+        {%- for image in product.images -%}
+          <div class="gallery-slide"><img src="{{ image | img_url: 'master' }}" alt="{{ image.alt }}"></div>
+        {%- endfor -%}
       </div>
     </div>
 
     <div class="product-details">
-      <div class="product-details-inner">
-        <div class="product-header">
-          <h1 class="product-title">{{ display_title }}</h1>
-          {%- if is_renewal_cleanser or is_centella_serum -%}
-            <div class="product-award"><div class="award-seal">BEST OF BEAUTY</div></div>
-          {%- endif -%}
+      <h1 class="product-title">{{ product.title }}</h1>
+      <div class="product-description">
+        <p>{{ product.description }}</p>
+      </div>
+
+      <div class="variant-selector">
+        <div class="selector-group">
+          <button class="selection-btn active">solo</button>
+          <button class="selection-btn">all five shapes <span style="background: #eee; border-radius: 4px; padding: 2px 6px; font-size: 0.7rem;">SAVE 10%</span></button>
         </div>
-
-        <div class="product-meta" style="margin-top: 15px; display: flex; align-items: center; gap: 15px;">
-          <span class="product-subtitle" style="font-weight: 700; color: #8c8b84; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.05em;">{{ section.settings.subtitle | default: "Premium Formula" }}</span>
-          <div class="product-reviews" style="font-size: 0.9rem; color: #5b5a53;">
-            <span class="stars">★★★★★</span>
-            <span class="review-count">({{ section.settings.review_count | default: "1.2k" }})</span>
-          </div>
+        
+        <div class="shape-swatches">
+           {%- comment -%} Sample swatches to match reference image {%- endcomment -%}
+           <div class="shape-item">
+             <div class="shape-icon active" style="background: #ffb800;"><svg width="24" height="24" viewBox="0 0 24 24" fill="#fff"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+             <span class="shape-label">daisy</span>
+           </div>
+           <div class="shape-item">
+             <div class="shape-icon" style="background: #ccc;"></div>
+             <span class="shape-label">bubble</span>
+           </div>
+           <div class="shape-item">
+             <div class="shape-icon" style="background: #00a86b;"></div>
+             <span class="shape-label">shroom</span>
+           </div>
+           <div class="shape-item">
+             <div class="shape-icon" style="background: #a2c2e1;"></div>
+             <span class="shape-label">curve</span>
+           </div>
+           <div class="shape-item">
+             <div class="shape-icon" style="background: #f4c2c2;"></div>
+             <span class="shape-label">jelly bean</span>
+           </div>
         </div>
+      </div>
 
-        <div class="product-description" style="margin-top: 25px;">
-           <p style="font-size: 1.1rem; line-height: 1.6; color: #555;">{{ product.description }}</p>
-        </div>
+      {%- form 'product', product -%}
+        <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+        <button type="submit" class="buy-button">JOIN THE WAITLIST — {{ product.price | money }}</button>
+      {%- endform -%}
 
-        <hr style="border: none; border-top: 1px solid rgba(0,0,0,0.06); margin: 30px 0;">
-
-        {%- form 'product', product, id: "product-main-form" -%}
-          <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
-          <div class="product-actions">
-            <button type="submit" name="add" class="buy-button" style="width: 100%; background: #002d5f; color: #fff; border: none; padding: 20px; border-radius: 50px; font-weight: 700; font-size: 1.1rem; cursor: pointer; transition: transform 0.2s, background 0.2s;">
-              ADD TO BAG — {{ product.price | money }}
-            </button>
-          </div>
-        {%- endform -%}
-
-        <hr style="border: none; border-top: 1px solid rgba(0,0,0,0.06); margin: 30px 0;">
-
-        <div class="product-accordions">
-          <details style="margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 10px;">
-            <summary style="display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-weight: 700; color: #333; list-style: none;">
-              <span>BENEFITS</span>
-              <span>+</span>
-            </summary>
-            <div style="padding-top: 15px; color: #666; line-height: 1.6;">
-              <p>Experience deep hydration and visible radiance with our advanced formula.</p>
-            </div>
-          </details>
-          <details style="margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 10px;">
-            <summary style="display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-weight: 700; color: #333; list-style: none;">
-              <span>HOW TO USE</span>
-              <span>+</span>
-            </summary>
-            <div style="padding-top: 15px; color: #666; line-height: 1.6;">
-              <p>Apply to clean skin in the AM and PM for best results.</p>
-            </div>
-          </details>
-        </div>
+      <div class="product-accordions">
+        <div class="accordion-item"><div class="accordion-summary"><span>BENEFITS</span><span>+</span></div></div>
+        <div class="accordion-item"><div class="accordion-summary"><span>APPLICATION</span><span>+</span></div></div>
+        <div class="accordion-item"><div class="accordion-summary"><span>KEY INGREDIENTS</span><span>+</span></div></div>
       </div>
     </div>
   </div>
 </main>
+
+<script>
+  function scrollGallery(index, thumb) {
+    const slider = document.getElementById('productSlider');
+    if (slider) slider.style.transform = `translateX(-${index * 100}%)`;
+    document.querySelectorAll('.thumb-item').forEach(t => t.classList.remove('active'));
+    if (thumb) thumb.classList.add('active');
+  }
+</script>
 
 <script>
   function scrollGallery(index, thumb) {
