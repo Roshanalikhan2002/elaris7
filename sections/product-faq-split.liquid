@@ -75,7 +75,7 @@
                 <div class="faq-acc-content-inner"><p>It works best on dry hair for instant fragrance and shine refresh.</p></div>
               </div>
             </div>
-          {%- elsif product.handle == 'anti-frizz-keratin-serum' -%}
+          {%- elsif product.handle == 'anti-frizz-keratin-serum' or product.handle == 'anti-frizz-serum' or product.handle == 'keratin-serum' -%}
             <div class="faq-acc-item"><div class="faq-acc-header"><span>Can I use this serum on dry hair?</span><div class="acc-icon-faq"><div class="line v-line"></div><div class="line h-line"></div></div></div><div class="faq-acc-content"><div class="faq-acc-content-inner"><p>Yes, it works well on both damp and dry hair to control frizz and add shine.</p></div></div></div>
             <div class="faq-acc-item"><div class="faq-acc-header"><span>Will it make my hair greasy?</span><div class="acc-icon-faq"><div class="line v-line"></div><div class="line h-line"></div></div></div><div class="faq-acc-content"><div class="faq-acc-content-inner"><p>No, the formula is designed to be non-greasy and does not weigh hair down.</p></div></div></div>
             <div class="faq-acc-item"><div class="faq-acc-header"><span>Can I use it before heat styling?</span><div class="acc-icon-faq"><div class="line v-line"></div><div class="line h-line"></div></div></div><div class="faq-acc-content"><div class="faq-acc-content-inner"><p>Yes, it acts as a heat protectant and helps reduce damage from styling tools.</p></div></div></div>
@@ -117,7 +117,7 @@
     </div>
 
     <div class="faq-split-image">
-      {%- if product.handle == 'anti-frizz-keratin-serum' -%}
+      {%- if product.handle == 'anti-frizz-keratin-serum' or product.handle == 'anti-frizz-serum' or product.handle == 'keratin-serum' -%}
         <img class="faq-image faq-bg-img" src="{{ 'keratin-serum.jpg' | asset_url }}" alt="FAQ Keratin Serum Visual">
       {%- elsif product.handle == 'tranexamic-serum' -%}
         <img class="faq-image faq-bg-img" src="{{ 'tranexamic-meet-2.jpg' | asset_url }}" alt="FAQ Tranexamic Serum Visual">
