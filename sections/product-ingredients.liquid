@@ -114,7 +114,17 @@
 
 {%- assign display_title = product.title -%}
 
-<section class="ingredients-section">
+{%- assign handle_down = product.handle | downcase -%}
+{%- assign title_up = product.title | upcase -%}
+{%- assign is_centella_serum = false -%}
+{%- assign is_glutathione_cream = false -%}
+{%- if handle_down == 'centella-serum' or handle_down == 'e7-korean-glass-skin-centella-sunscreen-spf50-copy' or title_up contains 'CENTELLA SERUM' or title_up contains 'GLOW SERUM' -%}
+  {%- assign is_centella_serum = true -%}
+{%- elsif handle_down == 'glutathione-cream' or title_up contains 'GLUTATHIONE' -%}
+  {%- assign is_glutathione_cream = true -%}
+{%- endif -%}
+
+<section class="ingredients-section" id="section-{{ section.id }}">
   <div class="ing-left">
     {%- if product.handle == 'night-cream' or product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' -%}
       <img class="ing-image" src="{{ 'night-cream-last.jpeg' | asset_url }}" alt="Night Cream Ingredients">
@@ -122,8 +132,10 @@
       <img class="ing-image" src="{{ 'tranexamic-serum.jpg' | asset_url }}" alt="Tranexamic Serum Ingredients">
     {%- elsif product.handle == 'anti-frizz-keratin-serum' or product.handle == 'anti-frizz-serum' or product.handle == 'keratin-serum' -%}
       <img class="ing-image" src="{{ 'keratin-serum.jpg' | asset_url }}" alt="Keratin Serum Ingredients">
-    {%- elsif product.handle == 'centella-serum' or product.handle == 'e7-korean-glass-skin-centella-sunscreen-spf50-copy' -%}
+    {%- elsif is_centella_serum -%}
       <img class="ing-image" src="{{ 'glow-meet-1.jpg' | asset_url }}" alt="Centella Serum Ingredients">
+    {%- elsif is_glutathione_cream -%}
+      <img class="ing-image" src="{{ 'glutathione-cream-100.jpg' | asset_url }}" alt="Glutathione Cream Ingredients">
     {%- elsif product.handle == 'e7-korean-glass-skin-centella-face-wash-copy' -%}
       <img class="ing-image" src="{{ 'facewash-ingredients-v2.jpg' | asset_url }}" alt="Face Wash Ingredients">
     {%- elsif product.handle == 'centella-skin-toner-copy' or product.handle == 'renewal-cleanser' -%}
@@ -159,8 +171,10 @@
           A nourishing cream that brightens, repairs, and hydrates skin for a clearer, more even complexion.
         {%- elsif product.handle == 'e7-korean-glass-skin-centella-face-wash-copy' or product.handle == 'centella-skin-toner-copy' or product.handle == 'renewal-cleanser' -%}
           Our formula is powered by gentle cleansers and glow-boosting hydrators. Meet 2 of our favorites for a fresh, balanced cleanse.
-        {%- elsif product.handle == 'centella-serum' or product.handle == 'e7-korean-glass-skin-centella-sunscreen-spf50-copy' -%}
-          A concentrated serum designed to brighten dark spots, even skin tone, and restore a youthful, glass-like glow.
+        {%- elsif is_centella_serum -%}
+          A powerful blend of tone-correcting actives and skin-repairing hydrators designed to target dullness, uneven tone, and texture. Here are 2 key ingredients behind the glow transformation:
+        {%- elsif is_glutathione_cream -%}
+          Powered by whitening agents and moisture-locking hydrators, this cream targets uneven tone and skin repair. Meet the hero ingredients:
         {%- elsif product.handle == 'sunscreen' -%}
           A high-protection formula that hydrates skin while defending against harmful UV rays and environmental stress.
         {%- elsif product.handle == 'centella-skin-toner' or product.handle == 'renewal-toner' -%}
@@ -192,8 +206,12 @@
         {%- elsif product.handle == 'floral-blossom-hair-mist' or product.handle == 'hair-mist' -%}
           <div class="hero-ingredient"><h3 class="hero-title">PANTHENOL</h3><p class="hero-desc">hydrates and adds a healthy shine</p></div>
           <div class="hero-ingredient"><h3 class="hero-title">FLORAL EXTRACTS</h3><p class="hero-desc">provide a delicate, long-lasting scent</p></div>
-        {%- else -%}
-          <div class="hero-ingredient"><h3 class="hero-title">CENTELLA ASIATICA</h3><p class="hero-desc">repairs and calms skin</p></div>
+        {%- elsif is_centella_serum -%}
+          <div class="hero-ingredient"><h3 class="hero-title">NIACINAMIDE</h3><p class="hero-desc">a multitasking ingredient that helps visibly even out skin tone, reduce the look of pores, and strengthen the skin barrier for a smoother, clearer complexion</p></div>
+          <div class="hero-ingredient"><h3 class="hero-title">ALPHA ARBUTIN</h3><p class="hero-desc">a targeted brightening active known to help fade dark spots, post-acne marks, and discoloration for a more uniform, radiant look over time</p></div>
+        {%- elsif is_glutathione_cream -%}
+          <div class="hero-ingredient"><h3 class="hero-title">GLUTATHIONE</h3><p class="hero-desc">a powerful antioxidant known for its brightening properties, helping to reduce the look of dark spots and promote an even, glowing skin tone</p></div>
+          <div class="hero-ingredient"><h3 class="hero-title">VITAMIN E</h3><p class="hero-desc">deeply nourishes and protects the skin while supporting repair for a smoother, healthier complexion</p></div>
         {%- endif -%}
       </div>
 
@@ -206,9 +224,9 @@
           also made with Wheat Germ Oil, Almond Oil, Olive Oil, Grapeseed Oil, Coconut Oil, Flaxseed Oil, Safflower Oil, Shea Butter, Squalene, Niacinamide
         {%- elsif product.handle == 'e7-korean-glass-skin-centella-face-wash-copy' or product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' -%}
           also made with RICE EXTRACT, LICORICE EXTRACT, VITAMIN C, HONEY, D-PANTHENOL, GLYCERIN, APPLE EXTRACT, CENTELLA ASIATICA
+        {%- elsif product.handle == 'centella-serum' or product.handle == 'e7-korean-glass-skin-centella-sunscreen-spf50-copy' -%}
+          also made with VITAMIN C, HYALURONIC ACID, ALOE VERA, ROSE EXTRACT, VITAMIN E, HONEY, PEPTIDES, CENTELLA ASIATICA, VITAMIN B5, WITCH HAZEL
         {%- else -%}
-          {{ section.settings.footer_text | default: 'also made with VITAMIN C, HONEY, D-PANTHENOL, GLYCERIN, APPLE EXTRACT' }}
-        {%- endif -%}
       </div>
     </div>
   </div>

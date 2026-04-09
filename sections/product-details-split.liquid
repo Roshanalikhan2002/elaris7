@@ -95,16 +95,48 @@
 {%- assign ds_image = section.settings.image -%}
 {%- assign use_custom_list = false -%}
 
-{%- if product.handle == 'centella-serum' or product.handle == 'e7-korean-glass-skin-centella-sunscreen-spf50-copy' or product.handle == 'sunscreen' -%}
+{%- assign handle_down = product.handle | downcase -%}
+{%- assign title_up = product.title | upcase -%}
+{%- assign is_centella_serum = false -%}
+{%- assign is_glutathione_cream = false -%}
+{%- if handle_down == 'centella-serum' or handle_down == 'e7-korean-glass-skin-centella-sunscreen-spf50-copy' or title_up contains 'CENTELLA SERUM' or title_up contains 'GLOW SERUM' -%}
+  {%- assign is_centella_serum = true -%}
+{%- elsif handle_down == 'glutathione-cream' or title_up contains 'GLUTATHIONE' -%}
+  {%- assign is_glutathione_cream = true -%}
+{%- endif -%}
+
+{%- if is_centella_serum -%}
   {%- assign ds_title = "Glow That Transforms Over Time<br><span style='font-size: 0.7em;'>A daily serum for BRIGHTENING + EVEN, GLASS-LIKE SKIN.</span>" -%}
   {%- assign ds_image_name = 'sunscreen-plate.jpg' -%}
   {%- assign use_custom_list = true -%}
   {%- capture ds_list_content -%}
-    <div class="ds-row"><div class="ds-label">GOOD FOR:</div><div class="ds-value">Dullness, uneven tone, and loss of radiance</div></div>
-    <div class="ds-row"><div class="ds-label">FEELS LIKE:</div><div class="ds-value">A silky, fast-absorbing serum that hydrates instantly</div></div>
-    <div class="ds-row"><div class="ds-label">LOOKS LIKE:</div><div class="ds-value">Luminous, glass-like skin with improved clarity</div></div>
-    <div class="ds-row"><div class="ds-label">SMELLS LIKE:</div><div class="ds-value">Light, botanical freshness for a spa-like feel</div></div>
-    <div class="ds-row"><div class="ds-label">FYI:</div><div class="ds-value">Brightening-Focus • Gentle Formula • AM/PM Use • Barrier-Support</div></div>
+    <div class="ds-row"><div class="ds-label">GOOD FOR:</div><div class="ds-value">All skin types, including sensitive and uneven skin</div></div>
+    <div class="ds-row"><div class="ds-label">FEELS LIKE:</div><div class="ds-value">A lightweight, silky serum that absorbs effortlessly</div></div>
+    <div class="ds-row"><div class="ds-label">LOOKS LIKE:</div><div class="ds-value">A refined, radiant complexion with improved clarity</div></div>
+    <div class="ds-row"><div class="ds-label">SMELLS LIKE:</div><div class="ds-value">Soft, fresh notes with a calming finish</div></div>
+    <div class="ds-row"><div class="ds-label">FYI:</div><div class="ds-value">Halal-Friendly • Dermatologist-Tested • Fast-Absorbing • Non-Greasy</div></div>
+  {%- endcapture -%}
+{%- elsif is_glutathione_cream -%}
+  {%- assign ds_title = "Restore Your Skin's Natural Radiance<br><span style='font-size: 0.7em;'>A targeted cream for BRIGHTENING + REPAIR.</span>" -%}
+  {%- assign ds_image_name = 'glutathione-cream-100.jpg' -%}
+  {%- assign use_custom_list = true -%}
+  {%- capture ds_list_content -%}
+    <div class="ds-row"><div class="ds-label">GOOD FOR:</div><div class="ds-value">Improving uneven tone and boosting skin radiance</div></div>
+    <div class="ds-row"><div class="ds-label">FEELS LIKE:</div><div class="ds-value">A rich, nourishing cream that melts into the skin</div></div>
+    <div class="ds-row"><div class="ds-label">LOOKS LIKE:</div><div class="ds-value">Smooth, healthier, and glowing skin over time</div></div>
+    <div class="ds-row"><div class="ds-label">SMELLS LIKE:</div><div class="ds-value">Delicate and refreshing floral notes</div></div>
+    <div class="ds-row"><div class="ds-label">FYI:</div><div class="ds-value">Brightness-Focused • Repair-Support • Gentle Formula</div></div>
+  {%- endcapture -%}
+{%- elsif product.handle == 'sunscreen' -%}
+  {%- assign ds_title = "Protection That Feels Effortless<br><span style='font-size: 0.7em;'>A daily sunscreen for DEFENSE + HYDRATED, PROTECTED SKIN.</span>" -%}
+  {%- assign ds_image_name = 'sunscreen-plate.jpg' -%}
+  {%- assign use_custom_list = true -%}
+  {%- capture ds_list_content -%}
+    <div class="ds-row"><div class="ds-label">GOOD FOR:</div><div class="ds-value">All skin types, including sensitive and acne-prone skin</div></div>
+    <div class="ds-row"><div class="ds-label">FEELS LIKE:</div><div class="ds-value">A lightweight, breathable layer that blends smoothly</div></div>
+    <div class="ds-row"><div class="ds-label">LOOKS LIKE:</div><div class="ds-value">A clear, natural finish with no white cast</div></div>
+    <div class="ds-row"><div class="ds-label">SMELLS LIKE:</div><div class="ds-value">Light, clean freshness with a soft finish</div></div>
+    <div class="ds-row"><div class="ds-label">FYI:</div><div class="ds-value">Halal-Friendly • Dermatologist-Tested • Non-Greasy • Makeup-Friendly</div></div>
   {%- endcapture -%}
 {%- elsif product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' -%}
   {%- assign ds_title = "Cleanse. Refresh. Glow.<br><span style='font-size: 0.7em;'>A daily face wash for CLEAN SKIN + BALANCED, RADIANT COMPLEXION.</span>" -%}

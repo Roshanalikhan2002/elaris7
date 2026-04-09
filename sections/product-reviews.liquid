@@ -189,7 +189,9 @@
           <p class="pr-review-text">“It keeps my hair smooth throughout the day without buildup. My hair looks shinier and feels much softer.”</p>
         </div>
       </div>
-    {% elsif product.handle == 'e7-korean-glass-skin-centella-sunscreen-spf50-copy' or product.handle == 'centella-serum' or product.handle == 'e7-korean-glass-skin-centella-sunscreen' %}
+    {% assign handle_down = product.handle | downcase %}
+    {% assign title_up = product.title | upcase %}
+    {% if handle_down == 'e7-korean-glass-skin-centella-sunscreen-spf50-copy' or handle_down == 'centella-serum' or title_up contains 'CENTELLA SERUM' or title_up contains 'GLOW SERUM' %}
       <!-- Glow Serum Reviews -->
       <div class="pr-item">
         <div class="pr-item-sidebar">
@@ -280,7 +282,7 @@
           <p class="pr-review-text">“After a couple of weeks, my skin looks healthier and more radiant. It’s simple to use and gives visible results.”</p>
         </div>
       </div>
-    {% elsif product.handle == 'glutathione-cream' %}
+    {% elsif handle_down == 'glutathione-cream' or title_up contains 'GLUTATHIONE' %}
       <!-- Glutathione Cream Reviews -->
       <div class="pr-item">
         <div class="pr-item-sidebar">

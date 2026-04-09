@@ -84,8 +84,10 @@
   CENTRALIZED STUDY RESULTS MAPPING
 {%- endcomment -%}
 
+{%- assign handle_down = product.handle | downcase -%}
+{%- assign title_up = product.title | upcase -%}
 {%- assign is_serum = false -%}
-{%- if product.handle == 'centella-serum' or product.handle == 'e7-korean-glass-skin-centella-sunscreen-spf50-copy' -%}
+{%- if handle_down == 'centella-serum' or handle_down == 'e7-korean-glass-skin-centella-sunscreen-spf50-copy' or title_up contains 'CENTELLA SERUM' or title_up contains 'GLOW SERUM' -%}
   {%- assign is_serum = true -%}
 {%- endif -%}
 
@@ -122,10 +124,10 @@
         <div class="sr-stat-block"><h3 class="sr-number">3 out of 4</h3><p class="sr-desc">said they noticed improved skin clarity</p></div>
         {%- assign has_custom_stats = true -%}
       {%- elsif is_serum -%}
-        <div class="sr-stat-block"><h3 class="sr-number">99%</h3><p class="sr-desc">said their skin looked more radiant</p></div>
-        <div class="sr-stat-block"><h3 class="sr-number">98%</h3><p class="sr-desc">noticed a smoother, more even skin tone</p></div>
-        <div class="sr-stat-block"><h3 class="sr-number">97%</h3><p class="sr-desc">said it felt deeply hydrating and soothing</p></div>
-        <div class="sr-stat-block"><h3 class="sr-number">3 out of 4</h3><p class="sr-desc">reported a visible glass-skin glow</p></div>
+        <div class="sr-stat-block"><h3 class="sr-number">99%</h3><p class="sr-desc">SAID THEIR SKIN LOOKED BRIGHTER + MORE EVEN</p></div>
+        <div class="sr-stat-block"><h3 class="sr-number">98%</h3><p class="sr-desc">SAID DARK SPOTS APPEARED VISIBLY REDUCED</p></div>
+        <div class="sr-stat-block"><h3 class="sr-number">97%</h3><p class="sr-desc">SAID THEIR SKIN FELT SMOOTHER + MORE REFINED</p></div>
+        <div class="sr-stat-block"><h3 class="sr-number">3 out of 4</h3><p class="sr-desc">SAID THEY NOTICED A HEALTHY, GLASS-LIKE GLOW</p></div>
         {%- assign has_custom_stats = true -%}
       {%- elsif is_sunscreen -%}
         <div class="sr-stat-block"><h3 class="sr-number">99%</h3><p class="sr-desc">SAID THEIR SKIN FELT PROTECTED + COMFORTABLE</p></div>
