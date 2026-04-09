@@ -97,26 +97,30 @@
 
 {%- assign handle_down = product.handle | downcase -%}
 {%- assign title_up = product.title | upcase -%}
-{%- assign is_centella_serum = false -%}
-{%- assign is_glutathione_cream = false -%}
-{%- assign is_hair_mist = false -%}
-{%- if handle_down == 'centella-serum' or handle_down == 'e7-korean-glass-skin-centella-sunscreen-spf50-copy' or title_up contains 'CENTELLA SERUM' or title_up contains 'GLOW SERUM' -%}
-  {%- assign is_centella_serum = true -%}
-{%- elsif handle_down == 'glutathione-cream' or title_up contains 'GLUTATHIONE' -%}
-  {%- assign is_glutathione_cream = true -%}
-{%- elsif handle_down contains 'hair-mist' or title_up contains 'HAIR MIST' -%}
-  {%- assign is_hair_mist = true -%}
-{%- endif -%}
-
 {%- assign is_sunscreen = false -%}
-{%- if title_up contains 'SUNSCREEN' or product.handle == 'sunscreen' or product.handle == 'e7-korean-glass-skin-centella-face-wash-copy' -%}
+{%- if product.handle == 'e7-korean-glass-skin-centella-face-wash-copy' or product.handle == 'sunscreen' or title_up contains 'SUNSCREEN' -%}
   {%- assign is_sunscreen = true -%}
 {%- endif -%}
 
-{%- if (title_up contains 'FACE WASH' or title_up contains 'CLEANSER' or product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' or handle_down contains 'face-wash' or handle_down contains 'cleanser') and is_sunscreen == false -%}
+{%- assign is_night_cream = false -%}
+{%- assign is_face_wash = false -%}
+{%- if (title_up contains 'FACE WASH' or title_up contains 'CLEANSER' or product.handle == 'e7-korean-glass-skin-centella-night-cream-copy') and is_sunscreen == false -%}
   {%- assign is_face_wash = true -%}
-{%- elsif handle_down == 'night-cream' or title_up contains 'NIGHT CREAM' -%}
+{%- elsif product.handle == 'night-cream' or title_up contains 'NIGHT CREAM' -%}
   {%- assign is_night_cream = true -%}
+{%- endif -%}
+
+{%- assign is_centella_serum = false -%}
+{%- assign is_glutathione_cream = false -%}
+{%- assign is_hair_mist = false -%}
+{%- if is_sunscreen == false -%}
+  {%- if handle_down == 'centella-serum' or handle_down == 'e7-korean-glass-skin-centella-sunscreen-spf50-copy' or title_up contains 'CENTELLA SERUM' or title_up contains 'GLOW SERUM' -%}
+    {%- assign is_centella_serum = true -%}
+  {%- elsif handle_down == 'glutathione-cream' or title_up contains 'GLUTATHIONE' -%}
+    {%- assign is_glutathione_cream = true -%}
+  {%- elsif handle_down contains 'hair-mist' or title_up contains 'HAIR MIST' -%}
+    {%- assign is_hair_mist = true -%}
+  {%- endif -%}
 {%- endif -%}
 
 {%- if is_centella_serum -%}
