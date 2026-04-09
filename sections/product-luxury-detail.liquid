@@ -1,62 +1,60 @@
 <style>
   .product-page { padding: 40px 20px; max-width: 1400px; margin: 0 auto; background: #fff; }
-  .product-grid { display: grid; grid-template-columns: 80px 1fr 1fr; gap: 40px; }
+  .product-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
   
-  /* Thumbnails on the far left */
-  .gallery-thumbnails { display: flex; flex-direction: column; gap: 12px; }
-  .thumb-item { width: 60px; height: 60px; cursor: pointer; border-radius: 8px; overflow: hidden; border: 2px solid transparent; background: #f9f9f9; }
-  .thumb-item img { width: 100%; height: 100%; object-fit: cover; }
-  .thumb-item.active { border-color: #000; }
-  
-  .gallery-main-viewport { width: 100%; border-radius: 20px; overflow: hidden; background: #f9f9f9; aspect-ratio: 1/1; display: flex; align-items: center; justify-content: center; }
-  .gallery-slider { display: flex; width: 100%; height: 100%; transition: transform 0.4s ease; }
-  .gallery-slide { flex: 0 0 100%; display: flex; align-items: center; justify-content: center; }
-  .gallery-slide img { max-width: 90%; max-height: 90%; object-fit: contain; }
+  .gallery-side { position: sticky; top: 40px; }
+  .gallery-main-viewport { width: 100%; border-radius: 14px; overflow: hidden; background: #fff; border: 1px solid #f0f0f0; }
+  .gallery-main-viewport img { width: 100%; height: auto; display: block; object-fit: contain; }
   
   /* Details Column */
-  .product-details { background: #f3f3f3; border-radius: 20px; padding: 40px; position: sticky; top: 40px; height: fit-content; }
-  .product-title { font-size: 2.8rem; font-weight: 900; line-height: 1; color: #333; margin-bottom: 20px; text-transform: uppercase; }
-  .product-description { font-size: 1rem; line-height: 1.5; color: #444; margin-bottom: 30px; }
+  .product-details { padding: 0; }
+  .product-title { font-size: 2.8rem; font-weight: 800; color: #1a1a1a; margin-bottom: 20px; text-transform: uppercase; }
+  .product-description { font-size: 1.1rem; line-height: 1.6; color: #444; margin-bottom: 30px; letter-spacing: -0.01em; }
   
-  /* Variant Selector */
-  .variant-selector { margin-bottom: 30px; }
-  .selector-group { display: flex; gap: 12px; margin-bottom: 20px; }
-  .selection-btn { border: 1px solid #ccc; padding: 12px 24px; border-radius: 30px; background: #fff; cursor: pointer; font-weight: 600; font-size: 0.9rem; }
-  .selection-btn.active { background: #000; color: #fff; border-color: #000; }
+  /* BOGO Section */
+  .bogo-container { border: 2px solid #004d3d; border-radius: 12px; padding: 24px; background: #fff; margin-bottom: 30px; }
+  .bogo-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; cursor: pointer; }
+  .bogo-title { display: flex; align-items: center; gap: 12px; font-size: 1.25rem; font-weight: 700; color: #004d3d; }
+  .bogo-radio-main { width: 22px; height: 22px; accent-color: #004d3d; cursor: pointer; }
+  .bogo-price { font-weight: 700; font-size: 1.25rem; color: #000; }
   
-  .shape-swatches { display: flex; gap: 15px; flex-wrap: wrap; margin-bottom: 30px; }
-  .shape-item { display: flex; flex-direction: column; align-items: center; gap: 8px; cursor: pointer; }
-  .shape-icon { width: 45px; height: 45px; border-radius: 50%; background: #fff; display: flex; align-items: center; justify-content: center; border: 2px solid transparent; }
-  .shape-icon.active { border-color: #000; }
-  .shape-label { font-size: 0.75rem; font-weight: 700; text-transform: lowercase; color: #666; }
+  .bogo-instruction { display: flex; align-items: center; gap: 8px; font-size: 0.95rem; font-weight: 700; color: #444; margin-bottom: 15px; }
   
-  .buy-button { width: 100%; background: #ffb800; color: #002d5f; border: none; padding: 22px; border-radius: 30px; font-weight: 900; font-size: 1.2rem; cursor: pointer; text-transform: uppercase; letter-spacing: 0.05em; box-shadow: 0 4px 12px rgba(255,184,0,0.3); }
+  .gift-list { display: flex; flex-direction: column; gap: 12px; }
+  .gift-item { border: 1px solid #e0e0e0; border-radius: 10px; padding: 14px; display: flex; align-items: center; gap: 15px; cursor: pointer; transition: all 0.2s ease; }
+  .gift-item:hover { border-color: #b0b0b0; background: #fcfcfc; }
+  .gift-item.selected { border-width: 2px; border-color: #004d3d; background: #f4fffb; }
+  .gift-radio { width: 18px; height: 18px; accent-color: #004d3d; }
+  .gift-thumb { width: 55px; height: 55px; border-radius: 6px; overflow: hidden; background: #f9f9f9; border: 1px solid #eee; }
+  .gift-thumb img { width: 100%; height: 100%; object-fit: cover; }
+  .gift-info { flex: 1; }
+  .gift-name { font-weight: 700; font-size: 1rem; color: #1a1a1a; margin-bottom: 2px; }
+  .gift-price { font-size: 0.9rem; color: #666; font-weight: 500; }
+  .gift-badge { font-weight: 800; color: #004d3d; margin-left: 8px; font-size: 0.85rem; }
   
-  /* Accordions */
-  .product-accordions { margin-top: 30px; border-top: 1px solid #ddd; }
-  .accordion-item { border-bottom: 1px solid #ddd; padding: 15px 0; }
-  .accordion-summary { display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-weight: 800; font-size: 1rem; color: #555; text-transform: uppercase; }
-  .accordion-summary span:last-child { font-size: 1.2rem; color: #999; }
+  .add-to-cart-btn { width: 100%; background: #004d40; color: #fff; border: none; padding: 22px; border-radius: 50px; font-weight: 700; font-size: 1.3rem; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px; transition: transform 0.2s, opacity 0.2s; margin-top: 10px; }
+  .add-to-cart-btn:hover { opacity: 0.9; transform: translateY(-2px); }
   
-  @media (max-width: 1024px) {
-    .product-grid { grid-template-columns: 1fr; }
-    .gallery-thumbnails { order: 2; flex-direction: row; justify-content: center; }
+  /* Modern Accordions matching reference image 2 */
+  .modern-accordions { margin-top: 50px; border-top: 1px solid #eee; }
+  .acc-item { border-bottom: 1px solid #eee; }
+  .acc-summary { display: flex; justify-content: space-between; align-items: center; padding: 25px 0; cursor: pointer; font-weight: 700; font-size: 1.2rem; color: #1a1a1a; list-style: none; }
+  .acc-summary::-webkit-details-marker { display: none; }
+  .acc-icon { color: #004d40; font-size: 1.5rem; transition: transform 0.3s ease; }
+  details[open] .acc-icon { transform: rotate(45deg); }
+  .acc-content { padding-bottom: 25px; color: #555; line-height: 1.7; font-size: 1.05rem; }
+
+  @media (max-width: 900px) {
+    .product-grid { grid-template-columns: 1fr; gap: 30px; }
+    .product-title { font-size: 2.2rem; }
   }
 </style>
 
 <main class="product-page">
   <div class="product-grid">
-    <div class="gallery-thumbnails">
-      {%- for image in product.images -%}
-        <div class="thumb-item {% if forloop.first %}active{% endif %}" onmouseover="scrollGallery({{ forloop.index0 }}, this)"><img src="{{ image | img_url: '200x200', crop: 'center' }}" alt="{{ image.alt }}"></div>
-      {%- endfor -%}
-    </div>
-
-    <div class="gallery-main-viewport">
-      <div class="gallery-slider" id="productSlider">
-        {%- for image in product.images -%}
-          <div class="gallery-slide"><img src="{{ image | img_url: 'master' }}" alt="{{ image.alt }}"></div>
-        {%- endfor -%}
+    <div class="gallery-side">
+      <div class="gallery-main-viewport">
+        <img src="{{ product.featured_image | img_url: '1000x' }}" alt="{{ product.title }}">
       </div>
     </div>
 
@@ -66,65 +64,78 @@
         <p>{{ product.description }}</p>
       </div>
 
-      <div class="variant-selector">
-        <div class="selector-group">
-          <button class="selection-btn active">solo</button>
-          <button class="selection-btn">all five shapes <span style="background: #eee; border-radius: 4px; padding: 2px 6px; font-size: 0.7rem;">SAVE 10%</span></button>
+      <div class="bogo-container">
+        <div class="bogo-header" onclick="document.querySelector('.bogo-radio-main').click()">
+          <div class="bogo-title">
+            <input type="radio" name="offer_type" value="bogo" checked class="bogo-radio-main">
+            Buy 1 Get 1 FREE Offer
+          </div>
+          <div class="bogo-price">{{ product.price | money }}</div>
         </div>
         
-        <div class="shape-swatches">
-           {%- comment -%} Sample swatches to match reference image {%- endcomment -%}
-           <div class="shape-item">
-             <div class="shape-icon active" style="background: #ffb800;"><svg width="24" height="24" viewBox="0 0 24 24" fill="#fff"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
-             <span class="shape-label">daisy</span>
-           </div>
-           <div class="shape-item">
-             <div class="shape-icon" style="background: #ccc;"></div>
-             <span class="shape-label">bubble</span>
-           </div>
-           <div class="shape-item">
-             <div class="shape-icon" style="background: #00a86b;"></div>
-             <span class="shape-label">shroom</span>
-           </div>
-           <div class="shape-item">
-             <div class="shape-icon" style="background: #a2c2e1;"></div>
-             <span class="shape-label">curve</span>
-           </div>
-           <div class="shape-item">
-             <div class="shape-icon" style="background: #f4c2c2;"></div>
-             <span class="shape-label">jelly bean</span>
-           </div>
+        <div class="bogo-content">
+          <div class="bogo-instruction">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12V8H6a2 2 0 0 1-2-2c0-1.1.9-2 2-2h12v4"></path><path d="M4 6v12c0 1.1.9 2 2 2h14v-4"></path><path d="M18 12a2 2 0 0 0-2 2c0 1.1.9 2 2 2h4v-4h-4z"></path></svg>
+            Choose your free item
+          </div>
+          
+          <div class="gift-list">
+             {%- comment -%} Dynamically fetching products from the store for the gift selection {%- endcomment -%}
+             {%- assign gift_handles = "centella-serum,renewal-cleanser,centella-skin-toner,anti-frizz-keratin-serum" | split: ',' -%}
+             {%- assign count = 0 -%}
+             {%- for gift_handle in gift_handles -%}
+               {%- assign gift_prod = all_products[gift_handle] -%}
+               {%- if gift_prod != empty and gift_prod.handle != product.handle and count < 3 -%}
+                 {%- assign count = count | plus: 1 -%}
+                 <label class="gift-item {% if count == 1 %}selected{% endif %}" onclick="selectGift(this)">
+                   <div class="gift-radio-wrap"><input type="radio" name="free_gift" value="{{ gift_prod.id }}" {% if count == 1 %}checked{% endif %} class="gift-radio"></div>
+                   <div class="gift-thumb"><img src="{{ gift_prod.featured_image | img_url: '100x100' }}" alt="{{ gift_prod.title }}"></div>
+                   <div class="gift-info">
+                     <div class="gift-name">{{ gift_prod.title }}</div>
+                     <div class="gift-price"><span style="text-decoration: line-through; opacity: 0.6;">{{ gift_prod.price | money }}</span><span class="gift-badge">FREE</span></div>
+                   </div>
+                 </label>
+               {%- endif -%}
+             {%- endfor -%}
+          </div>
         </div>
       </div>
 
       {%- form 'product', product -%}
         <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
-        <button type="submit" class="buy-button">JOIN THE WAITLIST — {{ product.price | money }}</button>
+        <button type="submit" class="add-to-cart-btn">Add to Cart &rarr;</button>
       {%- endform -%}
 
-      <div class="product-accordions">
-        <div class="accordion-item"><div class="accordion-summary"><span>BENEFITS</span><span>+</span></div></div>
-        <div class="accordion-item"><div class="accordion-summary"><span>APPLICATION</span><span>+</span></div></div>
-        <div class="accordion-item"><div class="accordion-summary"><span>KEY INGREDIENTS</span><span>+</span></div></div>
+      <div class="modern-accordions">
+        <details class="acc-item" open>
+          <summary class="acc-summary">What is it? <span class="acc-icon">+</span></summary>
+          <div class="acc-content"><p>{{ product.description }}</p></div>
+        </details>
+        <details class="acc-item">
+          <summary class="acc-summary">Who's it for? <span class="acc-icon">+</span></summary>
+          <div class="acc-content"><p>Designed for individuals looking for effective results and a premium skincare experience. This formula is suitable for all skin types and addresses multiple concerns simultaneously.</p></div>
+        </details>
+        <details class="acc-item">
+          <summary class="acc-summary">Benefits <span class="acc-icon">+</span></summary>
+          <div class="acc-content">
+            <ul style="padding-left: 20px;">
+              <li>Delivers immediate and long-lasting hydration</li>
+              <li>Visible improvement in skin clarity and tone</li>
+              <li>Stronger skin barrier and improved resilience</li>
+              <li>Lightweight, fast-absorbing texture</li>
+            </ul>
+          </div>
+        </details>
       </div>
     </div>
   </div>
 </main>
 
 <script>
-  function scrollGallery(index, thumb) {
-    const slider = document.getElementById('productSlider');
-    if (slider) slider.style.transform = `translateX(-${index * 100}%)`;
-    document.querySelectorAll('.thumb-item').forEach(t => t.classList.remove('active'));
-    if (thumb) thumb.classList.add('active');
-  }
-</script>
-
-<script>
-  function scrollGallery(index, thumb) {
-    const slider = document.getElementById('productSlider');
-    if (slider) slider.style.transform = `translateX(-${index * 100}%)`;
-    document.querySelectorAll('.thumb-item').forEach(t => t.classList.remove('active'));
-    if (thumb) thumb.classList.add('active');
+  function selectGift(el) {
+    document.querySelectorAll('.gift-item').forEach(item => item.classList.remove('selected'));
+    el.classList.add('selected');
+    const radio = el.querySelector('.gift-radio');
+    if (radio) radio.checked = true;
   }
 </script>
