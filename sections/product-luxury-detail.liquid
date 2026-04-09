@@ -1,0 +1,81 @@
+{%- assign is_renewal_cleanser = false -%}
+{%- if product.handle contains 'cleanser' or product.handle == 'centella-skin-toner-copy' or product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' or product.handle == 'renewal-cleanser' -%}
+  {%- assign is_renewal_cleanser = true -%}
+{%- endif -%}
+
+{%- assign is_centella_serum = product.handle == 'centella-serum' or product.handle == 'e7-korean-glass-skin-centella-sunscreen-spf50-copy' -%}
+
+{%- assign display_title = product.title -%}
+{%- if is_renewal_cleanser -%}
+  {%- assign display_title = "Renewal Cleanser" -%}
+{%- elsif is_centella_serum -%}
+  {%- assign display_title = "Centella Serum" -%}
+{%- endif -%}
+
+<style>
+  .product-page { padding: 20px; max-width: 1400px; margin: 0 auto; background: #fff; }
+  .product-grid { display: grid; grid-template-columns: 100px 1fr 1fr; gap: 40px; }
+  .gallery-thumbnails { display: flex; flex-direction: column; gap: 15px; }
+  .thumb-item { width: 80px; height: 100px; cursor: pointer; border: 1px solid #eee; overflow: hidden; }
+  .thumb-item img { width: 100%; height: 100%; object-fit: cover; }
+  .thumb-item.active { border: 2px solid #333; }
+  
+  .gallery-main-viewport { width: 100%; overflow: hidden; border-radius: 12px; aspect-ratio: 4/5; }
+  .gallery-slider { display: flex; transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1); height: 100%; }
+  .gallery-slide { flex: 0 0 100%; height: 100%; }
+  .gallery-slide img { width: 100%; height: 100%; object-fit: cover !important; }
+  
+  .product-details { padding: 0 20px; }
+  .product-title { font-size: 3rem; margin: 0; color: #333; text-transform: lowercase; font-weight: 800; }
+  
+  @media (max-width: 1024px) {
+    .product-grid { grid-template-columns: 1fr; }
+    .gallery-thumbnails { order: 2; flex-direction: row; justify-content: center; }
+  }
+</style>
+
+<main class="product-page">
+  <div class="product-grid">
+    <div class="gallery-thumbnails">
+      {%- if is_renewal_cleanser -%}
+        <div class="thumb-item active" onmouseover="scrollGallery(0, this)"><img src="{{ 'gel cleanser-100.jpg' | asset_url }}" alt="Cleanser Main"></div>
+        <div class="thumb-item" onmouseover="scrollGallery(1, this)"><img src="{{ 'cleanser-meet-1.jpg' | asset_url }}" alt="Cleanser Model 1"></div>
+        <div class="thumb-item" onmouseover="scrollGallery(2, this)"><img src="{{ 'cleanser-meet-2.jpg' | asset_url }}" alt="Cleanser Model 2"></div>
+        <div class="thumb-item" onmouseover="scrollGallery(3, this)"><img src="{{ 'cleanser-meet-3.jpg' | asset_url }}" alt="Cleanser Model 3"></div>
+      {%- else -%}
+        {%- for image in product.images -%}
+          <div class="thumb-item {% if forloop.first %}active{% endif %}" onmouseover="scrollGallery({{ forloop.index0 }}, this)"><img src="{{ image | img_url: '200x200', crop: 'center' }}" alt="{{ image.alt }}"></div>
+        {%- endfor -%}
+      {%- endif -%}
+    </div>
+
+    <div class="gallery-main-viewport">
+      <div class="gallery-slider" id="productSlider">
+        {%- if is_renewal_cleanser -%}
+          <div class="gallery-slide"><img src="{{ 'gel cleanser-100.jpg' | asset_url }}" class="force-pink" alt="Main Pink Cleanser"></div>
+          <div class="gallery-slide"><img src="{{ 'cleanser-meet-1.jpg' | asset_url }}" alt="Model Shot 1"></div>
+          <div class="gallery-slide"><img src="{{ 'cleanser-meet-2.jpg' | asset_url }}" alt="Model Shot 2"></div>
+          <div class="gallery-slide"><img src="{{ 'cleanser-meet-3.jpg' | asset_url }}" alt="Model Shot 3"></div>
+        {%- else -%}
+          {%- for image in product.images -%}
+            <div class="gallery-slide"><img src="{{ image | img_url: 'master' }}" alt="{{ image.alt }}"></div>
+          {%- endfor -%}
+        {%- endif -%}
+      </div>
+    </div>
+
+    <div class="product-details">
+      <h1 class="product-title">{{ display_title }}</h1>
+      <p style="margin-top: 20px; font-size: 1.1rem; line-height: 1.6; color: #555;">{{ product.description }}</p>
+    </div>
+  </div>
+</main>
+
+<script>
+  function scrollGallery(index, thumb) {
+    const slider = document.getElementById('productSlider');
+    if (slider) slider.style.transform = `translateX(-${index * 100}%)`;
+    document.querySelectorAll('.thumb-item').forEach(t => t.classList.remove('active'));
+    if (thumb) thumb.classList.add('active');
+  }
+</script>
