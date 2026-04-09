@@ -1,3 +1,22 @@
+{%- assign handle_down = product.handle | downcase -%}
+{%- assign title_up = product.title | upcase -%}
+{%- assign is_night_cream = false -%}
+{%- assign is_face_wash = false -%}
+{%- assign is_centella_serum = false -%}
+{%- assign is_glutathione_cream = false -%}
+
+{%- if title_up contains 'FACE WASH' or product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' or handle_down contains 'face-wash' or handle_down contains 'cleanser' -%}
+  {%- assign is_face_wash = true -%}
+{%- elsif handle_down == 'night-cream' or title_up contains 'NIGHT CREAM' -%}
+  {%- assign is_night_cream = true -%}
+{%- endif -%}
+
+{%- if handle_down == 'centella-serum' or handle_down == 'e7-korean-glass-skin-centella-sunscreen-spf50-copy' or title_up contains 'CENTELLA SERUM' or title_up contains 'GLOW SERUM' -%}
+  {%- assign is_centella_serum = true -%}
+{%- elsif handle_down contains 'glutathione' or title_up contains 'GLUTATHIONE' -%}
+  {%- assign is_glutathione_cream = true -%}
+{%- endif -%}
+
 <div class="faq-split-wrapper">
   <div class="faq-split-grid">
     <div class="faq-split-content">
@@ -166,23 +185,7 @@
             <div class="faq-acc-item"><div class="faq-acc-header"><span>Does it help with dark spots and pigmentation?</span><div class="acc-icon-faq"><div class="line v-line"></div><div class="line h-line"></div></div></div><div class="faq-acc-content"><div class="faq-acc-content-inner"><p>Yes, it is designed to target discoloration and improve uneven tone.</p></div></div></div>
             <div class="faq-acc-item"><div class="faq-acc-header"><span>Can I layer it with other skincare products?</span><div class="acc-icon-faq"><div class="line v-line"></div><div class="line h-line"></div></div></div><div class="faq-acc-content"><div class="faq-acc-content-inner"><p>Yes, it works well with moisturizers, sunscreens, and other gentle actives.</p></div></div></div>
             <div class="faq-acc-item"><div class="faq-acc-header"><span>Do I need to use sunscreen with this?</span><div class="acc-icon-faq"><div class="line v-line"></div><div class="line h-line"></div></div></div><div class="faq-acc-content"><div class="faq-acc-content-inner"><p>Yes, sunscreen is essential during the day to protect and maintain results.</p></div></div></div>
-          {%- assign handle_down = product.handle | downcase -%}
-          {%- assign title_up = product.title | upcase -%}
-          {%- assign is_night_cream = false -%}
-          {%- assign is_face_wash = false -%}
-          {%- if title_up contains 'FACE WASH' or product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' or handle_down contains 'face-wash' or handle_down contains 'cleanser' -%}
-            {%- assign is_face_wash = true -%}
-          {%- elsif handle_down == 'night-cream' or title_up contains 'NIGHT CREAM' -%}
-            {%- assign is_night_cream = true -%}
-          {%- endif -%}
-
-          {%- if handle_down == 'centella-serum' or handle_down == 'e7-korean-glass-skin-centella-sunscreen-spf50-copy' or title_up contains 'CENTELLA SERUM' or title_up contains 'GLOW SERUM' -%}
-            {%- assign is_centella_serum = true -%}
-          {%- elsif handle_down contains 'glutathione' or title_up contains 'GLUTATHIONE' -%}
-            {%- assign is_glutathione_cream = true -%}
-          {%- endif -%}
-
-          {%- if is_centella_serum -%}
+          {%- elsif is_centella_serum -%}
             <div class="faq-acc-item"><div class="faq-acc-header"><span>Can I use this serum with other active ingredients?</span><div class="acc-icon-faq"><div class="line v-line"></div><div class="line h-line"></div></div></div><div class="faq-acc-content"><div class="faq-acc-content-inner"><p>Yes, it layers well with most skincare actives. For stronger treatments like retinol, apply them separately and allow time before layering.</p></div></div></div>
             <div class="faq-acc-item"><div class="faq-acc-header"><span>Is this suitable for acne-prone or sensitive skin?</span><div class="acc-icon-faq"><div class="line v-line"></div><div class="line h-line"></div></div></div><div class="faq-acc-content"><div class="faq-acc-content-inner"><p>Yes, the formula includes calming ingredients like Centella Asiatica and Aloe Vera, making it suitable for sensitive and acne-prone skin.</p></div></div></div>
             <div class="faq-acc-item"><div class="faq-acc-header"><span>Can I use this serum both morning and night?</span><div class="acc-icon-faq"><div class="line v-line"></div><div class="line h-line"></div></div></div><div class="faq-acc-content"><div class="faq-acc-content-inner"><p>Absolutely, it is designed for daily use and works effectively in both AM and PM routines.</p></div></div></div>
