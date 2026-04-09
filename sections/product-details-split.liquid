@@ -99,10 +99,13 @@
 {%- assign title_up = product.title | upcase -%}
 {%- assign is_centella_serum = false -%}
 {%- assign is_glutathione_cream = false -%}
+{%- assign is_hair_mist = false -%}
 {%- if handle_down == 'centella-serum' or handle_down == 'e7-korean-glass-skin-centella-sunscreen-spf50-copy' or title_up contains 'CENTELLA SERUM' or title_up contains 'GLOW SERUM' -%}
   {%- assign is_centella_serum = true -%}
 {%- elsif handle_down == 'glutathione-cream' or title_up contains 'GLUTATHIONE' -%}
   {%- assign is_glutathione_cream = true -%}
+{%- elsif handle_down contains 'hair-mist' or title_up contains 'HAIR MIST' -%}
+  {%- assign is_hair_mist = true -%}
 {%- endif -%}
 
 {%- if is_centella_serum -%}
@@ -126,6 +129,17 @@
     <div class="ds-row"><div class="ds-label">LOOKS LIKE:</div><div class="ds-value">Smooth, healthier, and glowing skin over time</div></div>
     <div class="ds-row"><div class="ds-label">SMELLS LIKE:</div><div class="ds-value">Delicate and refreshing floral notes</div></div>
     <div class="ds-row"><div class="ds-label">FYI:</div><div class="ds-value">Brightness-Focused • Repair-Support • Gentle Formula</div></div>
+  {%- endcapture -%}
+{%- elsif is_hair_mist -%}
+  {%- assign ds_title = "Instant Scented Refreshment<br><span style='font-size: 0.7em;'>A weightless mist for SHINE + FLORAL SCENT.</span>" -%}
+  {%- assign ds_image_name = 'hair-mist-lifestyle.jpg' -%}
+  {%- assign use_custom_list = true -%}
+  {%- capture ds_list_content -%}
+    <div class="ds-row"><div class="ds-label">GOOD FOR:</div><div class="ds-value">Refreshing hair between washes and adding subtle shine</div></div>
+    <div class="ds-row"><div class="ds-label">FEELS LIKE:</div><div class="ds-value">A weightless, fine mist that absorbs quickly</div></div>
+    <div class="ds-row"><div class="ds-label">LOOKS LIKE:</div><div class="ds-value">Healthy, shiny, and refreshed hair</div></div>
+    <div class="ds-row"><div class="ds-label">SMELLS LIKE:</div><div class="ds-value">A soft, fresh floral bouquet</div></div>
+    <div class="ds-row"><div class="ds-label">FYI:</div><div class="ds-value">Alcohol-Free • Non-Sticky • Travel-Friendly • Long-Lasting Scent</div></div>
   {%- endcapture -%}
 {%- elsif product.handle == 'sunscreen' -%}
   {%- assign ds_title = "Protection That Feels Effortless<br><span style='font-size: 0.7em;'>A daily sunscreen for DEFENSE + HYDRATED, PROTECTED SKIN.</span>" -%}

@@ -84,10 +84,13 @@
       {%- assign title_up = product.title | upcase -%}
       {%- assign is_centella_serum = false -%}
       {%- assign is_glutathione_cream = false -%}
+      {%- assign is_hair_mist = false -%}
       {%- if handle_down contains 'centella-serum' or handle_down contains 'spf50-copy' or title_up contains 'CENTELLA' and title_up contains 'SERUM' or title_up contains 'GLOW SERUM' -%}
         {%- assign is_centella_serum = true -%}
       {%- elsif handle_down contains 'glutathione' or title_up contains 'GLUTATHIONE' -%}
         {%- assign is_glutathione_cream = true -%}
+      {%- elsif handle_down contains 'hair-mist' or title_up contains 'HAIR MIST' -%}
+        {%- assign is_hair_mist = true -%}
       {%- endif -%}
 
       {%- if product.handle == 'night-cream' or product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' -%}
@@ -100,6 +103,8 @@
         <div class="catchy-title" style="font-size: 1.2rem; font-weight: 700; color: #a09d94; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.05em;">Targeted Glow. Visible Clarity.</div>
       {%- elsif is_glutathione_cream -%}
         <div class="catchy-title" style="font-size: 1.2rem; font-weight: 700; color: #a09d94; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.05em;">Brighten & Repair</div>
+      {%- elsif is_hair_mist -%}
+        <div class="catchy-title" style="font-size: 1.2rem; font-weight: 700; color: #a09d94; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.05em;">Refresh & Revive</div>
       {%- endif -%}
       <h1 class="product-title" style="margin-bottom: 5px;">{% if product.handle == 'tranexamic-serum' %}Elaris7 Tranexamic Brightening Serum{% else %}{{ product.title }}{% endif %}</h1>
       {%- if product.handle == 'night-cream' or product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' -%}
@@ -112,6 +117,8 @@
         <div style="font-size: 1.5rem; font-weight: 600; color: #444; margin-bottom: 25px; font-style: italic;">Radiance Reset</div>
       {%- elsif is_glutathione_cream -%}
         <div style="font-size: 1.5rem; font-weight: 600; color: #444; margin-bottom: 25px; font-style: italic;">Even & Radiant</div>
+      {%- elsif is_hair_mist -%}
+        <div style="font-size: 1.5rem; font-weight: 600; color: #444; margin-bottom: 25px; font-style: italic;">Scented Shine</div>
       {%- endif -%}
       
       <div class="product-description" style="margin-top: 20px; margin-bottom: 40px;">
@@ -126,6 +133,8 @@
              A concentrated, glow-correcting serum infused with Centella Asiatica and advanced brightening actives to visibly even tone, fade dark spots, and restore a smooth, glass-like complexion over time.
           {%- elsif is_glutathione_cream -%}
              A nourishing brightening cream designed to improve uneven tone, reduce dullness, and support skin repair. It helps fade the look of dark spots, restore radiance, and leave skin smoother and healthier with consistent use.
+          {%- elsif is_hair_mist -%}
+             A refreshing hair mist designed to instantly revive your hair with a soft floral scent. It helps add a natural shine, refresh between washes, and keep your hair feeling clean and beautifully scented all day.
           {%- else -%}
             {{ product.description }}
           {%- endif -%}
@@ -225,6 +234,13 @@
                 <li>Leaves skin soft, smooth and radiant</li>
                 <li>Helps restore skin clarity and evenness over time</li>
                 <li>Promotes a naturally healthy, luminous glow</li>
+              {%- elsif is_hair_mist -%}
+                <li>Instantly refreshes hair with a soft floral scent</li>
+                <li>Adds a natural, healthy shine without grease</li>
+                <li>Helps revive hair between washes</li>
+                <li>Keeps hair smelling beautiful all day</li>
+                <li>Lightweight formula that doesn't weigh hair down</li>
+                <li>Suitable for all hair types</li>
               {%- endif -%}
             </ul>
           </div>
@@ -249,6 +265,8 @@
                 <li>In the morning, follow with sunscreen</li>
               </ul>
               <p>Suitable for daily use.</p>
+            {%- elsif is_hair_mist -%}
+              <p>Mist evenly over dry or damp hair from 6-8 inches away. Use throughout the day as needed to refresh and scent your hair.</p>
             {%- endif -%}
           </div>
         </details>
@@ -291,6 +309,12 @@
                 <li>Use sunscreen daily to maintain an even tone</li>
                 <li>Massage gently to boost skin absorption</li>
               </ul>
+            {%- elsif is_hair_mist -%}
+              <ul style="padding-left: 20px;">
+                <li>Spray on your hairbrush before brushing for an even distribution</li>
+                <li>Use after styling to add a final touch of shine and fragrance</li>
+                <li>Keep in your bag for an instant on-the-go refresh</li>
+              </ul>
             {%- endif -%}
           </div>
         </details>
@@ -308,6 +332,8 @@
               <p>Niacinamide, Vitamin C, Alpha Arbutin, Hyaluronic Acid, Centella Asiatica, Aloe Vera, Rose Extract, Vitamin E, Honey, Peptides, Vitamin B5, Witch Hazel</p>
             {%- elsif is_glutathione_cream -%}
               <p>Honey, Centella Asiatica, Glutathione, Alpha Arbutin, Kojic Acid Dipalmitate, Niacinamide, Vitamin C, Hyaluronic Acid, Glycerin, Vitamin E, Amla Extract</p>
+            {%- elsif is_hair_mist -%}
+              <p>PANTHENOL, GLYCERIN, ALOE VERA, VITAMIN E, ROSE WATER, JASMINE EXTRACT, PEPTIDES</p>
             {%- endif -%}
           </div>
         </details>
