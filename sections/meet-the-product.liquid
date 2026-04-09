@@ -199,16 +199,20 @@
                 <img src="{{ 'moisturizer-meet-1.jpg' | asset_url }}" alt="Moisturizer 1">
              {%- endif -%}
           {%- else -%}
-            {%- if section.blocks.size > 0 -%}
-               {%- for block in section.blocks -%}
-                  {{ block.settings.image | image_url: width: 800 | image_tag: alt: block.settings.image.alt, loading: 'lazy' }}
-               {%- endfor -%}
-            {%- else -%}
-               <img src="{{ 'meet-elaris-1.jpg' | asset_url }}" alt="Initial Image 1">
-               <img src="{{ 'meet-elaris-2.jpg' | asset_url }}" alt="Initial Image 2">
-               <img src="{{ 'meet-elaris-3.jpg' | asset_url }}" alt="Initial Image 3">
-               <img src="{{ 'meet-elaris-4.jpg' | asset_url }}" alt="Initial Image 4">
-            {%- endif -%}
+             {%- if section.blocks.size > 0 and is_sunscreen == false -%}
+                {%- for block in section.blocks -%}
+                   {{ block.settings.image | image_url: width: 800 | image_tag: alt: block.settings.image.alt, loading: 'lazy' }}
+                {%- endfor -%}
+             {%- else -%}
+                {%- if is_sunscreen -%}
+                  {%- comment -%} Forced images already rendered above, doing nothing here to avoid duplicates {%- endcomment -%}
+                {%- else -%}
+                  <img src="{{ 'meet-elaris-1.jpg' | asset_url }}" alt="Initial Image 1">
+                  <img src="{{ 'meet-elaris-2.jpg' | asset_url }}" alt="Initial Image 2">
+                  <img src="{{ 'meet-elaris-3.jpg' | asset_url }}" alt="Initial Image 3">
+                  <img src="{{ 'meet-elaris-4.jpg' | asset_url }}" alt="Initial Image 4">
+                {%- endif -%}
+             {%- endif -%}
           {%- endif -%}
     </div>
     <div class="carousel-arrow">
