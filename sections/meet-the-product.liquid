@@ -89,7 +89,7 @@
     {%- assign meet_title = "Your Daily Sun Barrier" -%}
   {%- elsif product.handle == 'night-cream' or product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' -%}
     {%- assign meet_title = "Your Overnight Glow Secret" -%}
-  {%- elsif product.handle == 'centella-skin-toner' -%}
+  {%- elsif product.handle == 'centella-skin-toner' or product.handle == 'centella-skin-toner-copy' or product.handle == 'renewal-cleanser' -%}
     {%- assign meet_title = "Clarity You Can See" -%}
   {%- elsif product.handle == 'e7-korean-glass-skin-moisturizer' -%}
     {%- assign meet_title = "Your Everyday Glow Essential" -%}
@@ -135,10 +135,10 @@
           {%- endif -%}
 
           {%- if product.handle == 'centella-skin-toner-copy' or product.handle == 'renewal-cleanser' -%}
-             <img src="{{ 'meet-elaris-you-1-100-12.jpg' | asset_url }}" alt="Cleanser 1">
-             <img src="{{ 'meet-elaris-you-3-100-10.jpg' | asset_url }}" alt="Cleanser 2">
-             <img src="{{ 'meet-elaris-you-2-100-10.jpg' | asset_url }}" alt="Cleanser 3">
-             <img src="{{ 'facewash-gallery-1.jpg' | asset_url }}" alt="Cleanser 4">
+             <img src="{{ 'toner-meet-1.jpg' | asset_url }}" alt="Toner 1">
+             <img src="{{ 'toner-meet-2.jpg' | asset_url }}" alt="Toner 2">
+             <img src="{{ 'toner-meet-3.jpg' | asset_url }}" alt="Toner 3">
+             <img src="{{ 'toner-meet-4.jpg' | asset_url }}" alt="Toner 4">
           {%- elsif product.handle == 'e7-korean-glass-skin-centella-face-wash-copy' or product.handle == 'sunscreen' -%}
              <img src="{{ 'sunscreen-lifestyle-1.jpg' | asset_url }}" alt="Sunscreen 1">
              <img src="{{ 'sunscreen-lifestyle-2.jpg' | asset_url }}" alt="Sunscreen 2">
