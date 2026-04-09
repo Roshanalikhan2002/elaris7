@@ -144,14 +144,10 @@
           <div class="bf-line">refined, balanced skin</div>
           <div class="bf-line">smoother texture</div>
           <div class="bf-line bf-line-highlight">clear, radiant glow</div>
-        {%- elsif product.handle == 'sunscreen' or product.handle == 'e7-korean-glass-skin-centella-sunscreen-spf50-copy' -%}
+        {%- elsif product.handle == 'e7-korean-glass-skin-centella-face-wash-copy' -%}
            <div class="bf-line">daily defense</div>
            <div class="bf-line">weightless feel</div>
            <div class="bf-line bf-line-highlight">complete protection</div>
-        {%- elsif product.handle == 'e7-korean-glass-skin-centella-face-wash-copy' -%}
-           <div class="bf-line">gentle daily cleansing</div>
-           <div class="bf-line">soothed inflammation</div>
-           <div class="bf-line bf-line-highlight">natural, radiant glow</div>
         {%- else -%}
           {%- for block in section.blocks -%}
              <div class="bf-line {% if block.settings.highlight %}bf-line-highlight{% endif %}" {{ block.shopify_attributes }}>
@@ -180,8 +176,6 @@
       <img class="bf-image" src="{{ 'cleanser-meet-3.jpg' | asset_url }}" alt="Gel Cleanser Shot">
     {%- elsif product.handle == 'e7-korean-glass-skin-moisturizer' -%}
       <img class="bf-image" src="{{ 'moisturizer-deep-hydration.jpg' | asset_url }}" alt="Moisturizer Shot">
-    {%- elsif product.handle == 'sunscreen' or product.handle == 'e7-korean-glass-skin-centella-sunscreen-spf50-copy' -%}
-      <img class="bf-image" src="{{ 'meet-elaris-you-3-100-8.jpg' | asset_url }}" alt="Sunscreen Lifestyle">
     {%- elsif product.handle == 'floral-blossom-hair-mist' -%}
       <img class="bf-image" src="{{ 'hair-mist-meet-1.jpg' | asset_url }}" alt="Hair Mist Shot">
     {%- elsif product.handle == 'anti-frizz-keratin-serum' -%}
