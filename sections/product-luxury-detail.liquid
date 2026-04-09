@@ -60,17 +60,18 @@
 
     <div class="product-details">
       <h1 class="product-title">{{ product.title }}</h1>
-      <div class="product-description">
-        <p>{{ product.description }}</p>
+      
+      <div class="product-description" style="margin-top: 20px; margin-bottom: 40px;">
+        <p style="font-size: 1.15rem; line-height: 1.6; color: #444;">{{ product.description | default: "Experience the ultimate skin renewal with our advanced formula, designed to hydrate, brighten, and restore your natural glow overnight." }}</p>
       </div>
 
       <div class="bogo-container">
-        <div class="bogo-header" onclick="document.querySelector('.bogo-radio-main').click()">
+        <div class="bogo-header" style="margin-bottom: 25px;">
           <div class="bogo-title">
             <input type="radio" name="offer_type" value="bogo" checked class="bogo-radio-main">
-            Buy 1 Get 1 FREE Offer
+            <span style="font-size: 1.3rem;">Buy 1 Get 1 FREE Offer</span>
           </div>
-          <div class="bogo-price">{{ product.price | money }}</div>
+          <div class="bogo-price" style="font-size: 1.3rem;">{{ product.price | money }}</div>
         </div>
         
         <div class="bogo-content">
