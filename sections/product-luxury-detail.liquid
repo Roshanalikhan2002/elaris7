@@ -92,9 +92,18 @@
       {%- elsif handle_down contains 'hair-mist' or title_up contains 'HAIR MIST' -%}
         {%- assign is_hair_mist = true -%}
       {%- endif -%}
+      {%- assign is_night_cream = false -%}
+      {%- assign is_face_wash = false -%}
+      {%- if handle_down == 'night-cream' or title_up contains 'NIGHT CREAM' -%}
+        {%- assign is_night_cream = true -%}
+      {%- elsif title_up contains 'FACE WASH' or product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' or handle_down contains 'face-wash' -%}
+        {%- assign is_face_wash = true -%}
+      {%- endif -%}
 
-      {%- if product.handle == 'night-cream' or product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' -%}
+      {%- if is_night_cream -%}
         <div class="catchy-title" style="font-size: 1.2rem; font-weight: 700; color: #a09d94; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.05em;">Your Overnight Glow Secret</div>
+      {%- elsif is_face_wash -%}
+        <div class="catchy-title" style="font-size: 1.2rem; font-weight: 700; color: #a09d94; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.05em;">Meet Your Purest Clean</div>
       {%- elsif product.handle == 'tranexamic-serum' -%}
         <div class="catchy-title" style="font-size: 1.2rem; font-weight: 700; color: #a09d94; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.05em;">Fade Spots. Reveal Clarity.</div>
       {%- elsif product.handle == 'anti-frizz-keratin-serum' or product.handle == 'anti-frizz-serum' or product.handle == 'keratin-serum' -%}
@@ -107,8 +116,10 @@
         <div class="catchy-title" style="font-size: 1.2rem; font-weight: 700; color: #a09d94; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.05em;">Refresh & Revive</div>
       {%- endif -%}
       <h1 class="product-title" style="margin-bottom: 5px;">{% if product.handle == 'tranexamic-serum' %}Elaris7 Tranexamic Brightening Serum{% else %}{{ product.title }}{% endif %}</h1>
-      {%- if product.handle == 'night-cream' or product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' -%}
+      {%- if is_night_cream -%}
         <div style="font-size: 1.5rem; font-weight: 600; color: #444; margin-bottom: 25px; font-style: italic;">Night Renewal</div>
+      {%- elsif is_face_wash -%}
+        <div style="font-size: 1.5rem; font-weight: 600; color: #444; margin-bottom: 25px; font-style: italic;">Gentle Cleansing + pH Balance</div>
       {%- elsif product.handle == 'tranexamic-serum' -%}
         <div style="font-size: 1.5rem; font-weight: 600; color: #444; margin-bottom: 25px; font-style: italic;">Even & Illuminate</div>
       {%- elsif product.handle == 'anti-frizz-keratin-serum' or product.handle == 'anti-frizz-serum' or product.handle == 'keratin-serum' -%}
@@ -123,8 +134,10 @@
       
       <div class="product-description" style="margin-top: 20px; margin-bottom: 40px;">
         <p style="font-size: 1.15rem; line-height: 1.6; color: #444;">
-          {%- if product.handle == 'night-cream' or product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' -%}
+          {%- if is_night_cream -%}
             An intensive overnight formula designed to rejuvenate your skin while you sleep. Infused with Centella Asiatica, brightening complexes, and repair-focused botanicals, this night cream hydrates deeply, improves skin texture, and helps reveal a smoother, luminous, and refreshed complexion by morning.
+          {%- elsif is_face_wash -%}
+            A gentle, glow-reviving cleanser infused with Centella Asiatica, brightening actives, and hydrating botanicals to cleanse, soothe, and refresh your skin for a soft, balanced, and radiant look every day.
           {%- elsif product.handle == 'tranexamic-serum' -%}
              A targeted brightening serum designed to reduce the appearance of dark spots and uneven tone. It helps improve clarity, boost radiance, and support a smoother, more even-looking complexion with consistent use.
           {%- elsif product.handle == 'anti-frizz-keratin-serum' or product.handle == 'anti-frizz-serum' or product.handle == 'keratin-serum' -%}
