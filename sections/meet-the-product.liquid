@@ -134,7 +134,12 @@
             {%- assign product_key = 'night-cream' -%}
           {%- endif -%}
 
-          {%- if product.handle == 'e7-korean-glass-skin-centella-face-wash-copy' or product.handle == 'sunscreen' -%}
+          {%- if product.handle == 'centella-skin-toner-copy' or product.handle == 'renewal-cleanser' -%}
+             <img src="{{ 'meet-elaris-you-1-100-12.jpg' | asset_url }}" alt="Cleanser 1">
+             <img src="{{ 'meet-elaris-you-3-100-10.jpg' | asset_url }}" alt="Cleanser 2">
+             <img src="{{ 'meet-elaris-you-2-100-10.jpg' | asset_url }}" alt="Cleanser 3">
+             <img src="{{ 'facewash-gallery-1.jpg' | asset_url }}" alt="Cleanser 4">
+          {%- elsif product.handle == 'e7-korean-glass-skin-centella-face-wash-copy' or product.handle == 'sunscreen' -%}
              <img src="{{ 'sunscreen-lifestyle-1.jpg' | asset_url }}" alt="Sunscreen 1">
              <img src="{{ 'sunscreen-lifestyle-2.jpg' | asset_url }}" alt="Sunscreen 2">
              <img src="{{ 'sunscreen-lifestyle-3.jpg' | asset_url }}" alt="Sunscreen 3">
@@ -199,12 +204,12 @@
                 <img src="{{ 'moisturizer-meet-1.jpg' | asset_url }}" alt="Moisturizer 1">
              {%- endif -%}
           {%- else -%}
-             {%- if section.blocks.size > 0 and is_sunscreen == false -%}
+             {%- if section.blocks.size > 0 and is_sunscreen == false and product.handle != 'centella-skin-toner-copy' and product.handle != 'renewal-cleanser' -%}
                 {%- for block in section.blocks -%}
                    {{ block.settings.image | image_url: width: 800 | image_tag: alt: block.settings.image.alt, loading: 'lazy' }}
                 {%- endfor -%}
              {%- else -%}
-                {%- if is_sunscreen -%}
+                {%- if is_sunscreen or product.handle == 'centella-skin-toner-copy' or product.handle == 'renewal-cleanser' -%}
                   {%- comment -%} Forced images already rendered above, doing nothing here to avoid duplicates {%- endcomment -%}
                 {%- else -%}
                   <img src="{{ 'meet-elaris-1.jpg' | asset_url }}" alt="Initial Image 1">
