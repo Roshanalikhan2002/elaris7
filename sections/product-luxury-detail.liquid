@@ -81,16 +81,20 @@
           </div>
           
           <div class="gift-list">
-             {%- comment -%} Dynamically fetching products from the store for the gift selection {%- endcomment -%}
-             {%- assign gift_handles = "centella-serum,renewal-cleanser,centella-skin-toner,anti-frizz-keratin-serum" | split: ',' -%}
+             {%- comment -%} Dynamically fetching ALL products from the store for the gift selection {%- endcomment -%}
              {%- assign count = 0 -%}
-             {%- for gift_handle in gift_handles -%}
-               {%- assign gift_prod = all_products[gift_handle] -%}
-               {%- if gift_prod != empty and gift_prod.handle != product.handle and count < 3 -%}
+             {%- for gift_prod in collections.all.products -%}
+               {%- if gift_prod.available and gift_prod.handle != product.handle -%}
                  {%- assign count = count | plus: 1 -%}
                  <label class="gift-item {% if count == 1 %}selected{% endif %}" onclick="selectGift(this)">
                    <div class="gift-radio-wrap"><input type="radio" name="free_gift" value="{{ gift_prod.id }}" {% if count == 1 %}checked{% endif %} class="gift-radio"></div>
-                   <div class="gift-thumb"><img src="{{ gift_prod.featured_image | img_url: '100x100' }}" alt="{{ gift_prod.title }}"></div>
+                   <div class="gift-thumb">
+                     {%- if gift_prod.featured_image -%}
+                       <img src="{{ gift_prod.featured_image | img_url: '100x100' }}" alt="{{ gift_prod.title }}">
+                     {%- else -%}
+                       <div style="width:100%; height:100%; background:#eee; display:flex; align-items:center; justify-content:center; font-size:10px; color:#999;">No Image</div>
+                     {%- endif -%}
+                   </div>
                    <div class="gift-info">
                      <div class="gift-name">{{ gift_prod.title }}</div>
                      <div class="gift-price"><span style="text-decoration: line-through; opacity: 0.6;">{{ gift_prod.price | money }}</span><span class="gift-badge">FREE</span></div>
