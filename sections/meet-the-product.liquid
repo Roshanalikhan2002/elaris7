@@ -134,16 +134,17 @@
             {%- assign product_key = 'night-cream' -%}
           {%- endif -%}
 
-          {%- if product_key == 'night-cream' -%}
-            <img src="{{ 'night-cream-swatch-7-100.jpg' | asset_url }}" alt="Night Cream Swatch">
-            <img src="{{ 'nigh-suite-100.jpg' | asset_url }}" alt="Night Suite">
-            <img src="{{ 'lifestyle-100.jpg' | asset_url }}" alt="Lifestyle Shot">
-            <img src="{{ 'night-cream-last.jpeg' | asset_url }}" alt="Featured Detail">
-          {%- elsif product_key == 'sunscreen' -%}
-            <img src="{{ 'sunscreen-lifestyle-1.jpg' | asset_url }}" alt="Sunscreen 1">
-            <img src="{{ 'sunscreen-lifestyle-2.jpg' | asset_url }}" alt="Sunscreen 2">
-            <img src="{{ 'sunscreen-lifestyle-3.jpg' | asset_url }}" alt="Sunscreen 3">
-            <img src="{{ 'sunscreen-lifestyle-4.jpg' | asset_url }}" alt="Sunscreen 4">
+          {%- if product.handle == 'e7-korean-glass-skin-centella-face-wash-copy' or product.handle == 'sunscreen' -%}
+             <img src="{{ 'sunscreen-lifestyle-1.jpg' | asset_url }}" alt="Sunscreen 1">
+             <img src="{{ 'sunscreen-lifestyle-2.jpg' | asset_url }}" alt="Sunscreen 2">
+             <img src="{{ 'sunscreen-lifestyle-3.jpg' | asset_url }}" alt="Sunscreen 3">
+             <img src="{{ 'sunscreen-lifestyle-4.jpg' | asset_url }}" alt="Sunscreen 4">
+          {%- elsif product_key == 'night-cream' -%}
+             <img src="{{ 'night-cream-swatch-7-100.jpg' | asset_url }}" alt="Night Cream Swatch">
+             <img src="{{ 'nigh-suite-100.jpg' | asset_url }}" alt="Night Suite">
+             <img src="{{ 'lifestyle-100.jpg' | asset_url }}" alt="Lifestyle Shot">
+             <img src="{{ 'night-cream-last.jpeg' | asset_url }}" alt="Featured Detail">
+          {%- elsif product_key == 'glow' -%}
           {%- elsif product_key == 'face-wash' -%}
             <img src="{{ 'meet-elaris-you-1-100-12.jpg' | asset_url }}" alt="Face Wash App">
             <img src="{{ 'meet-elaris-you-3-100-10.jpg' | asset_url }}" alt="Face Wash Suite">

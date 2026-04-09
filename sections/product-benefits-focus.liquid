@@ -169,10 +169,9 @@
   </div>
   
   <div class="bf-right">
-    {%- if is_night_cream -%}
-      <img class="bf-image" src="{{ 'night-cream-lifestyle.jpeg' | asset_url }}" alt="Night Cream Lifestyle">
-    {%- elsif is_sunscreen -%}
+    {%- if product.handle == 'e7-korean-glass-skin-centella-face-wash-copy' or product.handle == 'sunscreen' or is_sunscreen -%}
       <img class="bf-image" src="{{ 'sunscreen-lifestyle-1.jpg' | asset_url }}" alt="Sunscreen Protection">
+    {%- elsif is_night_cream -%}
     {%- elsif is_face_wash -%}
       <img class="bf-image" src="{{ 'faq-100-13.jpg' | asset_url }}" alt="Face Wash Shot">
     {%- elsif is_centella_serum -%}
