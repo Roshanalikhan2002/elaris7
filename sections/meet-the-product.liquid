@@ -89,7 +89,7 @@
     {%- assign meet_title = "Your Daily Sun Barrier" -%}
   {%- elsif product.handle == 'night-cream' or product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' -%}
     {%- assign meet_title = "Your Overnight Glow Secret" -%}
-  {%- elsif product.handle == 'centella-skin-toner' or product.handle == 'centella-skin-toner-copy' or product.handle == 'renewal-cleanser' -%}
+  {%- elsif product.handle contains 'centella-skin-toner' or product.handle contains 'renewal-cleanser' -%}
     {%- assign meet_title = "Clarity You Can See" -%}
   {%- elsif product.handle == 'e7-korean-glass-skin-moisturizer' -%}
     {%- assign meet_title = "Your Everyday Glow Essential" -%}
@@ -134,11 +134,11 @@
             {%- assign product_key = 'night-cream' -%}
           {%- endif -%}
 
-          {%- if product.handle == 'centella-skin-toner-copy' or product.handle == 'renewal-cleanser' -%}
-             <img src="{{ 'toner-meet-1.jpg' | asset_url }}" alt="Toner 1">
-             <img src="{{ 'toner-meet-2.jpg' | asset_url }}" alt="Toner 2">
-             <img src="{{ 'toner-meet-3.jpg' | asset_url }}" alt="Toner 3">
-             <img src="{{ 'toner-meet-4.jpg' | asset_url }}" alt="Toner 4">
+          {%- if product.handle contains 'centella-skin-toner-copy' or product.handle contains 'renewal-cleanser' -%}
+             <img src="{{ 'cleanser-meet-1.jpg' | asset_url }}" alt="Cleanser 1">
+             <img src="{{ 'cleanser-meet-2.jpg' | asset_url }}" alt="Cleanser 2">
+             <img src="{{ 'cleanser-meet-3.jpg' | asset_url }}" alt="Cleanser 3">
+             <img src="{{ 'cleanser-meet-4.jpg' | asset_url }}" alt="Cleanser 4">
           {%- elsif product.handle == 'e7-korean-glass-skin-centella-face-wash-copy' or product.handle == 'sunscreen' -%}
              <img src="{{ 'sunscreen-lifestyle-1.jpg' | asset_url }}" alt="Sunscreen 1">
              <img src="{{ 'sunscreen-lifestyle-2.jpg' | asset_url }}" alt="Sunscreen 2">
@@ -204,7 +204,7 @@
                 <img src="{{ 'moisturizer-meet-1.jpg' | asset_url }}" alt="Moisturizer 1">
              {%- endif -%}
           {%- else -%}
-             {%- if section.blocks.size > 0 and is_sunscreen == false and product.handle != 'centella-skin-toner-copy' and product.handle != 'renewal-cleanser' -%}
+             {%- if section.blocks.size > 0 and is_sunscreen == false and product.handle contains 'centella-skin-toner-copy' == false and product.handle contains 'renewal-cleanser' == false -%}
                 {%- for block in section.blocks -%}
                    {{ block.settings.image | image_url: width: 800 | image_tag: alt: block.settings.image.alt, loading: 'lazy' }}
                 {%- endfor -%}
