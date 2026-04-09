@@ -54,7 +54,28 @@
   <div class="product-grid">
     <div class="gallery-side">
       <div class="gallery-main-viewport">
-        <img src="{{ product.featured_image | img_url: '1000x' }}" alt="{{ product.title }}">
+        {%- assign asset_image_name = '' -%}
+        {%- case product.handle -%}
+          {%- when 'night-cream' -%}{%- assign asset_image_name = 'night-cream.jpg' -%}
+          {%- when 'tranexamic-serum' -%}{%- assign asset_image_name = 'tranexamic-serum.jpg' -%}
+          {%- when 'anti-frizz-keratin-serum' -%}{%- assign asset_image_name = 'keratin-serum.jpg' -%}
+          {%- when 'e7-korean-glass-skin-centella-sunscreen-spf50-copy' -%}{%- assign asset_image_name = 'glow-serum-100.jpg' -%}
+          {%- when 'glutathione-cream' -%}{%- assign asset_image_name = 'glutathione-cream-100.jpg' -%}
+          {%- when 'hair-mist' -%}{%- assign asset_image_name = 'hair-mist.jpg' -%}
+          {%- when 'e7-korean-glass-skin-centella-night-cream-copy' -%}{%- assign asset_image_name = 'facewash-100.jpg' -%}
+          {%- when 'e7-korean-glass-skin-centella-face-wash-copy' -%}{%- assign asset_image_name = 'sunscreen-100.jpg' -%}
+          {%- when 'centella-skin-toner-copy' or 'renewal-cleanser' -%}{%- assign asset_image_name = 'gel cleanser-100.jpg' -%}
+          {%- when 'e7-korean-glass-skin-moisturizer' -%}{%- assign asset_image_name = 'moisturizer-100.jpg' -%}
+          {%- when 'centella-skin-toner' or 'renewal-toner' -%}{%- assign asset_image_name = 'renewal toner-100.jpg' -%}
+        {%- endcase -%}
+
+        {%- if asset_image_name != blank -%}
+          <img src="{{ asset_image_name | asset_url }}" alt="{{ product.title }}">
+        {%- elsif product.featured_image != blank -%}
+          <img src="{{ product.featured_image | img_url: '1200x' }}" alt="{{ product.title }}">
+        {%- else -%}
+          <img src="https://images.unsplash.com/photo-1541701494587-cb58502866ab?q=80&w=1000" alt="Fallback Product Image">
+        {%- endif -%}
       </div>
     </div>
 
