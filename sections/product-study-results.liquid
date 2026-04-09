@@ -101,10 +101,10 @@
 
 {%- assign is_night_cream = false -%}
 {%- assign is_face_wash = false -%}
-{%- if handle_down == 'night-cream' or title_up contains 'NIGHT CREAM' -%}
-  {%- assign is_night_cream = true -%}
-{%- elsif title_up contains 'FACE WASH' or product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' or handle_down contains 'face-wash' or handle_down contains 'cleanser' -%}
+{%- if title_up contains 'FACE WASH' or product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' or handle_down contains 'face-wash' or handle_down contains 'cleanser' -%}
   {%- assign is_face_wash = true -%}
+{%- elsif handle_down == 'night-cream' or title_up contains 'NIGHT CREAM' -%}
+  {%- assign is_night_cream = true -%}
 {%- endif -%}
 
 {%- assign is_cleanser = false -%}
