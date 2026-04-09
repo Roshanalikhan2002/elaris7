@@ -84,7 +84,17 @@
 <section class="benefits-focus-section">
   <div class="bf-left">
     {%- assign bf_subtitle = section.settings.subtitle | default: 'SPREAD IT ON FOR:' -%}
-    {%- if product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' -%}
+    {%- assign handle_down = product.handle | downcase -%}
+    {%- assign title_up = product.title | upcase -%}
+    {%- assign is_night_cream = false -%}
+    {%- assign is_face_wash = false -%}
+    {%- if handle_down == 'night-cream' or title_up contains 'NIGHT CREAM' -%}
+      {%- assign is_night_cream = true -%}
+    {%- elsif title_up contains 'FACE WASH' or product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' or handle_down contains 'face-wash' or handle_down contains 'cleanser' -%}
+      {%- assign is_face_wash = true -%}
+    {%- endif -%}
+
+    {%- if is_night_cream or is_face_wash -%}
       {%- assign bf_subtitle = 'WASH IT ON TO:' -%}
     {%- elsif product.handle == 'floral-blossom-hair-mist' -%}
       {%- assign bf_subtitle = 'MIST IT ON TO:' -%}
@@ -101,12 +111,12 @@
       {%- assign is_glutathione_cream = true -%}
     {%- endif -%}
 
-    {%- if product.handle == 'night-cream' or product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' -%}
+    {%- if is_night_cream -%}
       <div class="bf-line">deep repair</div>
       <div class="bf-line">overnight hydration</div>
       <div class="bf-line bf-line-highlight">revitalized, luminous skin</div>
       <div class="bf-line">baby-soft skin</div>
-    {%- elsif product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' -%}
+    {%- elsif is_face_wash -%}
       <div class="bf-line">fresh, balanced skin</div>
       <div class="bf-line">gentle daily cleansing</div>
       <div class="bf-line bf-line-highlight">natural, radiant glow</div>
@@ -154,7 +164,7 @@
   </div>
   
   <div class="bf-right">
-    {%- if product.handle == 'night-cream' or product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' -%}
+    {%- if is_night_cream -%}
       <img class="bf-image" src="{{ 'night-cream-lifestyle.jpeg' | asset_url }}" alt="Night Cream Lifestyle">
     {%- elsif is_centella_serum -%}
       <img class="bf-image" src="{{ 'glow-meet-4.jpg' | asset_url }}" alt="Centella Serum Shot">
@@ -162,8 +172,8 @@
       <img class="bf-image" src="{{ 'glutathione-cream-100.jpg' | asset_url }}" alt="Glutathione Cream Shot">
     {%- elsif product.handle == 'e7-korean-glass-skin-centella-face-wash-copy' or product.handle == 'sunscreen' -%}
       <img class="bf-image" src="{{ 'sunscreen-100.jpg' | asset_url }}" alt="Sunscreen Shot">
-    {%- elsif product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' -%}
-      <img class="bf-image" src="{{ 'facewash-benefits.jpg' | asset_url }}" alt="Face Wash Shot">
+    {%- elsif is_face_wash -%}
+      <img class="bf-image" src="{{ 'meet-elaris-you-3-100-10.jpg' | asset_url }}" alt="Face Wash Shot">
     {%- elsif product.handle == 'centella-skin-toner' -%}
       <img class="bf-image" src="{{ 'toner-deep-hydration.jpg' | asset_url }}" alt="Refined, balanced skin">
     {%- elsif product.handle == 'centella-skin-toner-copy' or product.handle == 'renewal-cleanser' -%}
