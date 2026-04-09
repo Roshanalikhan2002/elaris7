@@ -120,6 +120,8 @@
       <img class="ing-image" src="{{ 'night-cream-last.jpeg' | asset_url }}" alt="Night Cream Ingredients">
     {%- elsif product.handle == 'tranexamic-serum' -%}
       <img class="ing-image" src="{{ 'tranexamic-serum.jpg' | asset_url }}" alt="Tranexamic Serum Ingredients">
+    {%- elsif product.handle == 'anti-frizz-keratin-serum' -%}
+      <img class="ing-image" src="{{ 'keratin-serum.jpg' | asset_url }}" alt="Keratin Serum Ingredients">
     {%- elsif product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' -%}
       <img class="ing-image" src="{{ 'facewash-ingredients-v2.jpg' | asset_url }}" alt="Face Wash Ingredients">
     {%- elsif product.handle == 'centella-skin-toner-copy' or product.handle == 'renewal-cleanser' -%}
@@ -151,6 +153,8 @@
           Our formula is powered by advanced repair and brightening actives. Meet 2 of our favorites for overnight renewal.
         {%- elsif product.handle == 'tranexamic-serum' -%}
           A potent brightening serum formulated to target dark spots, even skin tone, and enhance natural radiance.
+        {%- elsif product.handle == 'anti-frizz-keratin-serum' -%}
+          A lightweight, smoothing hair serum that tames frizz, protects strands, and enhances shine without weighing hair down.
         {%- elsif product.handle == 'glutathione-cream' -%}
           A nourishing cream that brightens, repairs, and hydrates skin for a clearer, more even complexion.
         {%- elsif product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' or product.handle == 'e7-korean-glass-skin-centella-face-wash-copy' -%}
@@ -176,6 +180,9 @@
         {%- elsif product.handle == 'tranexamic-serum' -%}
           <div class="hero-ingredient"><h3 class="hero-title">TRANEXAMIC ACID (4%)</h3><p class="hero-desc">helps visibly reduce dark spots and discoloration</p></div>
           <div class="hero-ingredient"><h3 class="hero-title">NIACINAMIDE (10%)</h3><p class="hero-desc">supports even tone and improves dullness</p></div>
+        {%- elsif product.handle == 'anti-frizz-keratin-serum' -%}
+          <div class="hero-ingredient"><h3 class="hero-title">ARGAN OIL</h3><p class="hero-desc">nourishes and softens hair while reducing breakage</p></div>
+          <div class="hero-ingredient"><h3 class="hero-title">KERATIN COMPLEX</h3><p class="hero-desc">strengthens hair fibers for smoother, frizz-free strands</p></div>
         {%- elsif product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' or product.handle == 'e7-korean-glass-skin-centella-face-wash-copy' -%}
           <div class="hero-ingredient"><h3 class="hero-title">CENTELLA ASIATICA</h3><p class="hero-desc">calms and repairs the skin barrier during cleansing</p></div>
           <div class="hero-ingredient"><h3 class="hero-title">RICE EXTRACT</h3><p class="hero-desc">natural brightener for a clear, radiant after-wash glow</p></div>
@@ -195,6 +202,8 @@
           also made with BRIGHTENING COMPLEX, COLLAGEN SUPPORT BLEND, SPOT-CORRECTIVE ACTIVES, LINE-REDUCING COMPLEX, BARRIER REPAIR ACTIVES, EVEN-TONE ENHANCERS
         {%- elsif product.handle == 'tranexamic-serum' -%}
           also made with Vitamin C, Alpha Arbutin, Hyaluronic Acid, Glycerin, Panthenol, Vitamin E, peptides, and botanical extracts for hydration, barrier support, and glowing skin
+        {%- elsif product.handle == 'anti-frizz-keratin-serum' -%}
+          also made with Wheat Germ Oil, Almond Oil, Olive Oil, Grapeseed Oil, Coconut Oil, Flaxseed Oil, Safflower Oil, Shea Butter, Squalene, Niacinamide
         {%- elsif product.handle == 'e7-korean-glass-skin-centella-face-wash-copy' or product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' -%}
           also made with RICE EXTRACT, LICORICE EXTRACT, VITAMIN C, HONEY, D-PANTHENOL, GLYCERIN, APPLE EXTRACT, CENTELLA ASIATICA
         {%- else -%}

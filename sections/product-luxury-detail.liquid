@@ -84,12 +84,16 @@
         <div class="catchy-title" style="font-size: 1.2rem; font-weight: 700; color: #a09d94; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.05em;">Your Overnight Glow Secret</div>
       {%- elsif product.handle == 'tranexamic-serum' -%}
         <div class="catchy-title" style="font-size: 1.2rem; font-weight: 700; color: #a09d94; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.05em;">Fade Spots. Reveal Clarity.</div>
+      {%- elsif product.handle == 'anti-frizz-keratin-serum' -%}
+        <div class="catchy-title" style="font-size: 1.2rem; font-weight: 700; color: #a09d94; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.05em;">Smooth Hair. Zero Frizz.</div>
       {%- endif -%}
       <h1 class="product-title" style="margin-bottom: 5px;">{% if product.handle == 'tranexamic-serum' %}Elaris7 Tranexamic Brightening Serum{% else %}{{ product.title }}{% endif %}</h1>
       {%- if product.handle == 'night-cream' -%}
         <div style="font-size: 1.5rem; font-weight: 600; color: #444; margin-bottom: 25px; font-style: italic;">Night Renewal</div>
       {%- elsif product.handle == 'tranexamic-serum' -%}
         <div style="font-size: 1.5rem; font-weight: 600; color: #444; margin-bottom: 25px; font-style: italic;">Even & Illuminate</div>
+      {%- elsif product.handle == 'anti-frizz-keratin-serum' -%}
+        <div style="font-size: 1.5rem; font-weight: 600; color: #444; margin-bottom: 25px; font-style: italic;">Smooth Control</div>
       {%- endif -%}
       
       <div class="product-description" style="margin-top: 20px; margin-bottom: 40px;">
@@ -98,6 +102,8 @@
             An intensive overnight formula designed to rejuvenate your skin while you sleep. Infused with Centella Asiatica, brightening complexes, and repair-focused botanicals, this night cream hydrates deeply, improves skin texture, and helps reveal a smoother, luminous, and refreshed complexion by morning.
           {%- elsif product.handle == 'tranexamic-serum' -%}
              A targeted brightening serum designed to reduce the appearance of dark spots and uneven tone. It helps improve clarity, boost radiance, and support a smoother, more even-looking complexion with consistent use.
+          {%- elsif product.handle == 'anti-frizz-keratin-serum' -%}
+             A smoothing hair serum designed to control frizz, protect against heat, and restore softness without weighing hair down. It seals moisture, enhances shine, and leaves hair silky, manageable, and smooth with every use.
           {%- else -%}
             {{ product.description | default: "Experience the ultimate skin renewal with our advanced formula, designed to hydrate, brighten, and restore your natural glow overnight." }}
           {%- endif -%}
@@ -175,6 +181,13 @@
                 <li>Hydrates while supporting the skin barrier</li>
                 <li>Helps smooth and refine the skin surface</li>
                 <li>Promotes a healthier, more luminous glow</li>
+              {%- elsif product.handle == 'anti-frizz-keratin-serum' -%}
+                <li>Instantly controls frizz for a smoother look</li>
+                <li>Helps reduce hair breakage and split ends</li>
+                <li>Protects hair from heat styling damage</li>
+                <li>Locks in moisture for long-lasting smoothness</li>
+                <li>Enhances shine and softness without heaviness</li>
+                <li>Keeps hair manageable and easy to style</li>
               {%- endif -%}
             </ul>
           </div>
@@ -187,6 +200,8 @@
               <p>After cleansing and toning, take a small amount of Centella Night Cream and gently massage it upward onto your face and neck, avoiding the eye area. Leave it on overnight to fully absorb and lock in hydration, allowing your skin to repair, restore, and wake up looking radiant and smooth. Consistency is key for optimal results.</p>
             {%- elsif product.handle == 'tranexamic-serum' -%}
               <p>Use morning and night after cleansing and toning. Apply 2–3 drops to face and neck and gently press into the skin. Follow with moisturizer and use sunscreen during the day.</p>
+            {%- elsif product.handle == 'anti-frizz-keratin-serum' -%}
+              <p>After washing or styling, take a small amount of Anti Frizz Keratin Serum and apply evenly through damp or dry hair, focusing on mid-lengths and ends. Avoid the roots and style as desired.</p>
             {%- endif -%}
           </div>
         </details>
@@ -204,6 +219,11 @@
                 <li>Use consistently for visible brightening results</li>
                 <li>Pair with sunscreen daily to prevent further discoloration</li>
                 <li>Layer with moisturizer to lock in hydration</li>
+              {%- elsif product.handle == 'anti-frizz-keratin-serum' -%}
+                <li>Apply on slightly damp hair for better absorption and control</li>
+                <li>Use a small amount to avoid product buildup</li>
+                <li>Apply before heat styling for added protection</li>
+                <li>Use on dry hair to tame flyaways instantly</li>
               {%- endif -%}
             </ul>
           </div>
@@ -216,6 +236,8 @@
               <p>Centella Asiatica, Brightening Complex, Moisture-Lock Technology, Collagen Support Blend, Spot-Corrective Blend, Barrier Repair Actives, Line-Reducing Complex, Even-Tone Enhancer</p>
             {%- elsif product.handle == 'tranexamic-serum' -%}
               <p>Tranexamic Acid (4%), Niacinamide (10%), Vitamin C, Alpha Arbutin, Hyaluronic Acid, Glycerin, Panthenol (Vitamin B5), Vitamin E, Peptides, Botanical Extracts</p>
+            {%- elsif product.handle == 'anti-frizz-keratin-serum' -%}
+              <p>Argan Oil, Wheat Germ Oil, Almond Oil, Olive Oil, Grapeseed Oil, Coconut Oil, Flaxseed Oil, Safflower Oil, Shea Butter, Squalene, Niacinamide</p>
             {%- endif -%}
           </div>
         </details>

@@ -75,6 +75,12 @@
                 <div class="faq-acc-content-inner"><p>It works best on dry hair for instant fragrance and shine refresh.</p></div>
               </div>
             </div>
+          {%- elsif product.handle == 'anti-frizz-keratin-serum' -%}
+            <div class="faq-acc-item"><div class="faq-acc-header"><span>Can I use this serum on dry hair?</span><div class="acc-icon-faq"><div class="line v-line"></div><div class="line h-line"></div></div></div><div class="faq-acc-content"><div class="faq-acc-content-inner"><p>Yes, it works well on both damp and dry hair to control frizz and add shine.</p></div></div></div>
+            <div class="faq-acc-item"><div class="faq-acc-header"><span>Will it make my hair greasy?</span><div class="acc-icon-faq"><div class="line v-line"></div><div class="line h-line"></div></div></div><div class="faq-acc-content"><div class="faq-acc-content-inner"><p>No, the formula is designed to be non-greasy and does not weigh hair down.</p></div></div></div>
+            <div class="faq-acc-item"><div class="faq-acc-header"><span>Can I use it before heat styling?</span><div class="acc-icon-faq"><div class="line v-line"></div><div class="line h-line"></div></div></div><div class="faq-acc-content"><div class="faq-acc-content-inner"><p>Yes, it acts as a heat protectant and helps reduce damage from styling tools.</p></div></div></div>
+            <div class="faq-acc-item"><div class="faq-acc-header"><span>Is it suitable for all hair types?</span><div class="acc-icon-faq"><div class="line v-line"></div><div class="line h-line"></div></div></div><div class="faq-acc-content"><div class="faq-acc-content-inner"><p>Yes, it works for all hair types, especially dry, frizzy, or damaged hair.</p></div></div></div>
+            <div class="faq-acc-item"><div class="faq-acc-header"><span>How often should I use it?</span><div class="acc-icon-faq"><div class="line v-line"></div><div class="line h-line"></div></div></div><div class="faq-acc-content"><div class="faq-acc-content-inner"><p>You can use it daily or whenever your hair needs smoothness and control.</p></div></div></div>
           {%- elsif product.handle == 'tranexamic-serum' -%}
             <div class="faq-acc-item"><div class="faq-acc-header"><span>Can I use this serum every day?</span><div class="acc-icon-faq"><div class="line v-line"></div><div class="line h-line"></div></div></div><div class="faq-acc-content"><div class="faq-acc-content-inner"><p>Yes, it is suitable for daily use, both morning and night.</p></div></div></div>
             <div class="faq-acc-item"><div class="faq-acc-header"><span>Is it suitable for sensitive skin?</span><div class="acc-icon-faq"><div class="line v-line"></div><div class="line h-line"></div></div></div><div class="faq-acc-content"><div class="faq-acc-content-inner"><p>Yes, it includes soothing ingredients, but patch testing is recommended.</p></div></div></div>
@@ -111,7 +117,9 @@
     </div>
 
     <div class="faq-split-image">
-      {%- if product.handle == 'tranexamic-serum' -%}
+      {%- if product.handle == 'anti-frizz-keratin-serum' -%}
+        <img class="faq-image faq-bg-img" src="{{ 'keratin-serum.jpg' | asset_url }}" alt="FAQ Keratin Serum Visual">
+      {%- elsif product.handle == 'tranexamic-serum' -%}
         <img class="faq-image faq-bg-img" src="{{ 'tranexamic-meet-2.jpg' | asset_url }}" alt="FAQ Tranexamic Serum Visual">
       {%- elsif product.handle == 'night-cream' or product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' -%}
         <img class="faq-image faq-bg-img" src="{{ 'faq-100-nc.jpg' | asset_url }}" alt="FAQ Night Cream Visual">
