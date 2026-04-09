@@ -90,8 +90,11 @@
           {%- assign handle_down = product.handle | downcase -%}
           {%- assign title_up = product.title | upcase -%}
           {%- assign is_centella_serum = false -%}
+          {%- assign is_glutathione_cream = false -%}
           {%- if handle_down == 'centella-serum' or handle_down == 'e7-korean-glass-skin-centella-sunscreen-spf50-copy' or title_up contains 'CENTELLA SERUM' or title_up contains 'GLOW SERUM' -%}
             {%- assign is_centella_serum = true -%}
+          {%- elsif handle_down contains 'glutathione' or title_up contains 'GLUTATHIONE' -%}
+            {%- assign is_glutathione_cream = true -%}
           {%- endif -%}
 
           {%- if is_centella_serum -%}
@@ -100,6 +103,12 @@
             <div class="faq-acc-item"><div class="faq-acc-header"><span>Can I use this serum both morning and night?</span><div class="acc-icon-faq"><div class="line v-line"></div><div class="line h-line"></div></div></div><div class="faq-acc-content"><div class="faq-acc-content-inner"><p>Absolutely, it is designed for daily use and works effectively in both AM and PM routines.</p></div></div></div>
             <div class="faq-acc-item"><div class="faq-acc-header"><span>Will it help with hyperpigmentation and acne marks?</span><div class="acc-icon-faq"><div class="line v-line"></div><div class="line h-line"></div></div></div><div class="faq-acc-content"><div class="faq-acc-content-inner"><p>Yes, brightening ingredients like Niacinamide, Vitamin C, and Alpha Arbutin help visibly reduce dark spots and uneven tone over time.</p></div></div></div>
             <div class="faq-acc-item"><div class="faq-acc-header"><span>Does it feel heavy or sticky on the skin?</span><div class="acc-icon-faq"><div class="line v-line"></div><div class="line h-line"></div></div></div><div class="faq-acc-content"><div class="faq-acc-content-inner"><p>No, the formula is lightweight and fast-absorbing, leaving the skin smooth without any sticky residue.</p></div></div></div>
+          {%- elsif is_glutathione_cream -%}
+            <div class="faq-acc-item"><div class="faq-acc-header"><span>Can I use this cream every day?</span><div class="acc-icon-faq"><div class="line v-line"></div><div class="line h-line"></div></div></div><div class="faq-acc-content"><div class="faq-acc-content-inner"><p>Yes, it is suitable for daily use, both morning and evening.</p></div></div></div>
+            <div class="faq-acc-item"><div class="faq-acc-header"><span>Is it suitable for dull and uneven skin?</span><div class="acc-icon-faq"><div class="line v-line"></div><div class="line h-line"></div></div></div><div class="faq-acc-content"><div class="faq-acc-content-inner"><p>Yes, it is designed to target dullness, pigmentation, and uneven tone.</p></div></div></div>
+            <div class="faq-acc-item"><div class="faq-acc-header"><span>Will it feel heavy on my skin?</span><div class="acc-icon-faq"><div class="line v-line"></div><div class="line h-line"></div></div></div><div class="faq-acc-content"><div class="faq-acc-content-inner"><p>No, it absorbs well while still providing deep hydration and comfort.</p></div></div></div>
+            <div class="faq-acc-item"><div class="faq-acc-header"><span>Can I use it with other skincare products?</span><div class="acc-icon-faq"><div class="line v-line"></div><div class="line h-line"></div></div></div><div class="faq-acc-content"><div class="faq-acc-content-inner"><p>Yes, it works well with serums, toners, and sunscreen.</p></div></div></div>
+            <div class="faq-acc-item"><div class="faq-acc-header"><span>Do I need sunscreen while using this?</span><div class="acc-icon-faq"><div class="line v-line"></div><div class="line h-line"></div></div></div><div class="faq-acc-content"><div class="faq-acc-content-inner"><p>Yes, sunscreen is essential during the day to protect and maintain results.</p></div></div></div>
           {%- elsif product.handle == 'night-cream' or product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' -%}
             <div class="faq-acc-item"><div class="faq-acc-header"><span>Can I use this night cream with my serum?</span><div class="acc-icon-faq"><div class="line v-line"></div><div class="line h-line"></div></div></div><div class="faq-acc-content"><div class="faq-acc-content-inner"><p>Yes, applying serum before the night cream enhances hydration and repair benefits.</p></div></div></div>
             <div class="faq-acc-item"><div class="faq-acc-header"><span>Is it suitable for oily skin at night?</span><div class="acc-icon-faq"><div class="line v-line"></div><div class="line h-line"></div></div></div><div class="faq-acc-content"><div class="faq-acc-content-inner"><p>Absolutely, it hydrates without clogging pores or leaving a greasy residue.</p></div></div></div>
@@ -147,6 +156,8 @@
         <img class="faq-image faq-bg-img" src="{{ 'facewash-faq-squeeze.jpg' | asset_url }}" alt="FAQ Face Wash Visual">
       {%- elsif product.handle == 'e7-korean-glass-skin-centella-sunscreen-spf50-copy' -%}
         <img class="faq-image faq-bg-img" src="{{ 'glow-meet-4.jpg' | asset_url }}" alt="FAQ Serum Visual">
+      {%- elsif handle_down contains 'glutathione' -%}
+        <img class="faq-image faq-bg-img" src="{{ 'glutathione-cream-100.jpg' | asset_url }}" alt="FAQ Glutathione Cream Visual">
       {%- elsif product.handle == 'floral-blossom-hair-mist' -%}
         <img class="faq-image faq-bg-img" src="{{ 'hair-mist-faq.jpg' | asset_url }}" alt="FAQ Hair Mist Visual">
       {%- elsif product.handle == 'anti-frizz-keratin-serum' -%}

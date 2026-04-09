@@ -167,14 +167,10 @@
           A potent brightening serum formulated to target dark spots, even skin tone, and enhance natural radiance.
         {%- elsif product.handle == 'anti-frizz-keratin-serum' or product.handle == 'anti-frizz-serum' or product.handle == 'keratin-serum' -%}
           A lightweight, smoothing hair serum that tames frizz, protects strands, and enhances shine without weighing hair down.
-        {%- elsif product.handle == 'glutathione-cream' -%}
-          A nourishing cream that brightens, repairs, and hydrates skin for a clearer, more even complexion.
-        {%- elsif product.handle == 'e7-korean-glass-skin-centella-face-wash-copy' or product.handle == 'centella-skin-toner-copy' or product.handle == 'renewal-cleanser' -%}
-          Our formula is powered by gentle cleansers and glow-boosting hydrators. Meet 2 of our favorites for a fresh, balanced cleanse.
         {%- elsif is_centella_serum -%}
           A powerful blend of tone-correcting actives and skin-repairing hydrators designed to target dullness, uneven tone, and texture. Here are 2 key ingredients behind the glow transformation:
         {%- elsif is_glutathione_cream -%}
-          Powered by whitening agents and moisture-locking hydrators, this cream targets uneven tone and skin repair. Meet the hero ingredients:
+          A nourishing cream that brightens, repairs, and hydrates skin for a clearer, more even complexion.
         {%- elsif product.handle == 'sunscreen' -%}
           A high-protection formula that hydrates skin while defending against harmful UV rays and environmental stress.
         {%- elsif product.handle == 'centella-skin-toner' or product.handle == 'renewal-toner' -%}
@@ -224,8 +220,10 @@
           also made with Wheat Germ Oil, Almond Oil, Olive Oil, Grapeseed Oil, Coconut Oil, Flaxseed Oil, Safflower Oil, Shea Butter, Squalene, Niacinamide
         {%- elsif product.handle == 'e7-korean-glass-skin-centella-face-wash-copy' or product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' -%}
           also made with RICE EXTRACT, LICORICE EXTRACT, VITAMIN C, HONEY, D-PANTHENOL, GLYCERIN, APPLE EXTRACT, CENTELLA ASIATICA
-        {%- elsif product.handle == 'centella-serum' or product.handle == 'e7-korean-glass-skin-centella-sunscreen-spf50-copy' -%}
+        {%- elsif is_centella_serum -%}
           also made with VITAMIN C, HYALURONIC ACID, ALOE VERA, ROSE EXTRACT, VITAMIN E, HONEY, PEPTIDES, CENTELLA ASIATICA, VITAMIN B5, WITCH HAZEL
+        {%- elsif is_glutathione_cream -%}
+          also made with Centella Asiatica, Niacinamide, Vitamin C, Hyaluronic Acid, Glycerin, Vitamin E, and Amla Extract for hydration, skin barrier support, and smooth texture
         {%- else -%}
       </div>
     </div>

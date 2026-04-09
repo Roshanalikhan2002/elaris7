@@ -87,8 +87,11 @@
 {%- assign handle_down = product.handle | downcase -%}
 {%- assign title_up = product.title | upcase -%}
 {%- assign is_serum = false -%}
-{%- if handle_down == 'centella-serum' or handle_down == 'e7-korean-glass-skin-centella-sunscreen-spf50-copy' or title_up contains 'CENTELLA SERUM' or title_up contains 'GLOW SERUM' -%}
+{%- assign is_glutathione_cream = false -%}
+{%- if handle_down contains 'centella-serum' or handle_down contains 'spf50-copy' or title_up contains 'CENTELLA' and title_up contains 'SERUM' or title_up contains 'GLOW SERUM' -%}
   {%- assign is_serum = true -%}
+{%- elsif handle_down contains 'glutathione' or title_up contains 'GLUTATHIONE' -%}
+  {%- assign is_glutathione_cream = true -%}
 {%- endif -%}
 
 {%- assign is_sunscreen = false -%}
@@ -140,9 +143,11 @@
         <div class="sr-stat-block"><h3 class="sr-number">98%</h3><p class="sr-desc">SAID IT REDUCED FRIZZ EFFECTIVELY</p></div>
         <div class="sr-stat-block"><h3 class="sr-number">97%</h3><p class="sr-desc">SAID THEIR HAIR LOOKED SHINIER + HEALTHIER</p></div>
         {%- assign has_custom_stats = true -%}
-      {%- elsif product.handle == 'glutathione-cream' -%}
+      {%- elsif is_glutathione_cream -%}
         <div class="sr-stat-block"><h3 class="sr-number">99%</h3><p class="sr-desc">SAID THEIR SKIN LOOKED MORE RADIANT</p></div>
         <div class="sr-stat-block"><h3 class="sr-number">98%</h3><p class="sr-desc">SAID THEIR SKIN FELT MORE HYDRATED</p></div>
+        <div class="sr-stat-block"><h3 class="sr-number">97%</h3><p class="sr-desc">SAID THEIR SKIN APPEARED MORE EVEN</p></div>
+        <div class="sr-stat-block"><h3 class="sr-number">3 out of 4</h3><p class="sr-desc">SAID THEY NOTICED IMPROVED SKIN CLARITY</p></div>
         {%- assign has_custom_stats = true -%}
       {%- elsif product.handle == 'floral-blossom-hair-mist' or product.handle == 'hair-mist' -%}
         <div class="sr-stat-block"><h3 class="sr-number">99%</h3><p class="sr-desc">SAID THEIR HAIR FELT FRESHER INSTANTLY</p></div>
