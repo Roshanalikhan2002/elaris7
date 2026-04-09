@@ -94,7 +94,7 @@
       {%- endif -%}
       {%- assign is_night_cream = false -%}
       {%- assign is_face_wash = false -%}
-      {%- if title_up contains 'FACE WASH' or product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' or handle_down contains 'face-wash' -%}
+      {%- if title_up contains 'FACE WASH' or product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' or handle_down contains 'face-wash' or product.handle == 'centella-skin-toner-copy' or product.handle == 'renewal-cleanser' -%}
         {%- assign is_face_wash = true -%}
       {%- elsif handle_down == 'night-cream' or title_up contains 'NIGHT CREAM' -%}
         {%- assign is_night_cream = true -%}
@@ -134,7 +134,9 @@
       
       <div class="product-description" style="margin-top: 20px; margin-bottom: 40px;">
         <p style="font-size: 1.15rem; line-height: 1.6; color: #444;">
-          {%- if is_night_cream -%}
+          {%- if section.settings.description != blank -%}
+            {{ section.settings.description }}
+          {%- elsif is_night_cream -%}
             An intensive overnight formula designed to rejuvenate your skin while you sleep. Infused with Centella Asiatica, brightening complexes, and repair-focused botanicals, this night cream hydrates deeply, improves skin texture, and helps reveal a smoother, luminous, and refreshed complexion by morning.
           {%- elsif is_face_wash -%}
             A gentle, glow-reviving cleanser infused with Centella Asiatica, brightening actives, and hydrating botanicals to cleanse, soothe, and refresh your skin for a soft, balanced, and radiant look every day.

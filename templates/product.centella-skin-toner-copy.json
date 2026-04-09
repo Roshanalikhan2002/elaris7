@@ -3,7 +3,9 @@
   "sections": {
     "main": {
       "type": "product-luxury-detail",
-      "settings": {}
+      "settings": {
+        "description": "A refreshing gel cleanser designed to gently remove impurities while enhancing skin brightness. It helps clear excess oil, improve dullness, and leave the skin feeling soft, fresh, and visibly more radiant with daily use."
+      }
     },
     "meet_product": {
       "type": "meet-the-product",
