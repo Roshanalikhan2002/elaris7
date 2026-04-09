@@ -108,6 +108,14 @@
   {%- assign is_hair_mist = true -%}
 {%- endif -%}
 
+{%- assign is_night_cream = false -%}
+{%- assign is_face_wash = false -%}
+{%- if handle_down == 'night-cream' or title_up contains 'NIGHT CREAM' -%}
+  {%- assign is_night_cream = true -%}
+{%- elsif title_up contains 'FACE WASH' or product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' or handle_down contains 'face-wash' or handle_down contains 'cleanser' -%}
+  {%- assign is_face_wash = true -%}
+{%- endif -%}
+
 {%- if is_centella_serum -%}
   {%- assign ds_title = "Glow That Transforms Over Time<br><span style='font-size: 0.7em;'>A daily serum for BRIGHTENING + EVEN, GLASS-LIKE SKIN.</span>" -%}
   {%- assign ds_image_name = 'sunscreen-plate.jpg' -%}
@@ -152,7 +160,7 @@
     <div class="ds-row"><div class="ds-label">SMELLS LIKE:</div><div class="ds-value">Light, clean freshness with a soft finish</div></div>
     <div class="ds-row"><div class="ds-label">FYI:</div><div class="ds-value">Halal-Friendly • Dermatologist-Tested • Non-Greasy • Makeup-Friendly</div></div>
   {%- endcapture -%}
-{%- elsif product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' -%}
+{%- elsif is_face_wash -%}
   {%- assign ds_title = "Cleanse. Refresh. Glow.<br><span style='font-size: 0.7em;'>A daily face wash for CLEAN SKIN + BALANCED, RADIANT COMPLEXION.</span>" -%}
   {%- assign ds_image_name = 'facewash-100.jpg' -%}
   {%- assign use_custom_list = true -%}
@@ -176,7 +184,7 @@
     <div class="ds-row"><div class="ds-label">FYI:</div><div class="ds-value">Halal-Friendly • Dermatologist-Tested • Non-Greasy • Makeup-Friendly</div></div>
   {%- endcapture -%}
 
-{%- elsif product.handle == 'night-cream' or product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' -%}
+{%- elsif is_night_cream -%}
   {%- assign ds_title = "Deep Repair While You Sleep<br><span style='font-size: 0.7em;'>A rich cream for INTENSIVE REPAIR + BABY-SOFT SKIN.</span>" -%}
   {%- assign ds_image_name = 'night-cream-suite.jpeg' -%}
   {%- assign use_custom_list = true -%}
