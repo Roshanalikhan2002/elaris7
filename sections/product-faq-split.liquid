@@ -75,9 +75,13 @@
                 <div class="faq-acc-content-inner"><p>It works best on dry hair for instant fragrance and shine refresh.</p></div>
               </div>
             </div>
+          {%- elsif product.handle == 'tranexamic-serum' -%}
+            <div class="faq-acc-item"><div class="faq-acc-header"><span>Can I use this serum every day?</span><div class="acc-icon-faq"><div class="line v-line"></div><div class="line h-line"></div></div></div><div class="faq-acc-content"><div class="faq-acc-content-inner"><p>Yes, it is suitable for daily use, both morning and night.</p></div></div></div>
+            <div class="faq-acc-item"><div class="faq-acc-header"><span>Is it suitable for sensitive skin?</span><div class="acc-icon-faq"><div class="line v-line"></div><div class="line h-line"></div></div></div><div class="faq-acc-content"><div class="faq-acc-content-inner"><p>Yes, it includes soothing ingredients, but patch testing is recommended.</p></div></div></div>
+            <div class="faq-acc-item"><div class="faq-acc-header"><span>Does it help with dark spots and pigmentation?</span><div class="acc-icon-faq"><div class="line v-line"></div><div class="line h-line"></div></div></div><div class="faq-acc-content"><div class="faq-acc-content-inner"><p>Yes, it is designed to target discoloration and improve uneven tone.</p></div></div></div>
+            <div class="faq-acc-item"><div class="faq-acc-header"><span>Can I layer it with other skincare products?</span><div class="acc-icon-faq"><div class="line v-line"></div><div class="line h-line"></div></div></div><div class="faq-acc-content"><div class="faq-acc-content-inner"><p>Yes, it works well with moisturizers, sunscreens, and other gentle actives.</p></div></div></div>
+            <div class="faq-acc-item"><div class="faq-acc-header"><span>Do I need to use sunscreen with this?</span><div class="acc-icon-faq"><div class="line v-line"></div><div class="line h-line"></div></div></div><div class="faq-acc-content"><div class="faq-acc-content-inner"><p>Yes, sunscreen is essential during the day to protect and maintain results.</p></div></div></div>
           {%- elsif product.handle == 'centella-serum' or product.handle == 'e7-korean-glass-skin-centella-sunscreen-spf50-copy' -%}
-            <div class="faq-acc-item"><div class="faq-acc-header"><span>When should I apply this serum?</span><div class="acc-icon-faq"><div class="line v-line"></div><div class="line h-line"></div></div></div><div class="faq-acc-content"><div class="faq-acc-content-inner"><p>Apply it to clean skin, before your moisturizer, in both morning and evening routines.</p></div></div></div>
-            <div class="faq-acc-item"><div class="faq-acc-header"><span>Will it help with dark spots?</span><div class="acc-icon-faq"><div class="line v-line"></div><div class="line h-line"></div></div></div><div class="faq-acc-content"><div class="faq-acc-content-inner"><p>Yes, it contains brightening complexes designed to even out skin tone and fade dullness over time.</p></div></div></div>
           {%- elsif product.handle == 'night-cream' or product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' -%}
             <div class="faq-acc-item"><div class="faq-acc-header"><span>Can I use this night cream with my serum?</span><div class="acc-icon-faq"><div class="line v-line"></div><div class="line h-line"></div></div></div><div class="faq-acc-content"><div class="faq-acc-content-inner"><p>Yes, applying serum before the night cream enhances hydration and repair benefits.</p></div></div></div>
             <div class="faq-acc-item"><div class="faq-acc-header"><span>Is it suitable for oily skin at night?</span><div class="acc-icon-faq"><div class="line v-line"></div><div class="line h-line"></div></div></div><div class="faq-acc-content"><div class="faq-acc-content-inner"><p>Absolutely, it hydrates without clogging pores or leaving a greasy residue.</p></div></div></div>
@@ -107,7 +111,9 @@
     </div>
 
     <div class="faq-split-image">
-      {%- if product.handle == 'night-cream' or product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' -%}
+      {%- if product.handle == 'tranexamic-serum' -%}
+        <img class="faq-image faq-bg-img" src="{{ 'tranexamic-meet-2.jpg' | asset_url }}" alt="FAQ Tranexamic Serum Visual">
+      {%- elsif product.handle == 'night-cream' or product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' -%}
         <img class="faq-image faq-bg-img" src="{{ 'faq-100-nc.jpg' | asset_url }}" alt="FAQ Night Cream Visual">
       {%- elsif product.handle == 'centella-skin-toner-copy' or product.handle == 'renewal-cleanser' -%}
         <img class="faq-image faq-bg-img" src="{{ 'cleanser-meet-1.jpg' | asset_url }}" alt="FAQ Cleanser Visual">

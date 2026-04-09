@@ -109,13 +109,13 @@
         <div class="sr-stat-block"><h3 class="sr-number">94%</h3><p class="sr-desc">noticed smoother, softer, and refined skin by morning</p></div>
         <div class="sr-stat-block"><h3 class="sr-number">3 out of 4</h3><p class="sr-desc">reported a visible reduction in fine lines and dark spots</p></div>
         {%- assign has_custom_stats = true -%}
-      {%- elsif is_serum -%}
-        <div class="sr-stat-block"><h3 class="sr-number">99%</h3><p class="sr-desc">SAID THEIR SKIN LOOKED BRIGHTER + MORE EVEN</p></div>
-        <div class="sr-stat-block"><h3 class="sr-number">98%</h3><p class="sr-desc">SAID DARK SPOTS APPEARED VISIBLY REDUCED</p></div>
-        <div class="sr-stat-block"><h3 class="sr-number">97%</h3><p class="sr-desc">SAID THEIR SKIN FELT SMOOTHER + MORE REFINED</p></div>
-        <div class="sr-stat-block"><h3 class="sr-number">3 out of 4</h3><p class="sr-desc">SAID THEY NOTICED A HEALTHY, GLASS-LIKE GLOW</p></div>
+      {%- elsif product.handle == 'tranexamic-serum' -%}
+        <div class="sr-stat-block"><h3 class="sr-number">99%</h3><p class="sr-desc">said their skin looked more even</p></div>
+        <div class="sr-stat-block"><h3 class="sr-number">98%</h3><p class="sr-desc">said their skin appeared brighter</p></div>
+        <div class="sr-stat-block"><h3 class="sr-number">97%</h3><p class="sr-desc">said dark spots looked less visible</p></div>
+        <div class="sr-stat-block"><h3 class="sr-number">3 out of 4</h3><p class="sr-desc">said they noticed improved skin clarity</p></div>
         {%- assign has_custom_stats = true -%}
-      {%- elsif is_cleanser -%}
+      {%- elsif is_serum -%}
         <div class="sr-stat-block"><h3 class="sr-number">99%</h3><p class="sr-desc">SAID THEIR SKIN FELT CLEAN + REFRESHED AFTER EVERY WASH</p></div>
         <div class="sr-stat-block"><h3 class="sr-number">98%</h3><p class="sr-desc">SAID IT DID NOT DRY OUT THEIR SKIN</p></div>
         <div class="sr-stat-block"><h3 class="sr-number">97%</h3><p class="sr-desc">SAID THEIR SKIN LOOKED CLEARER + MORE BALANCED</p></div>
@@ -180,6 +180,8 @@
   <div class="sr-right">
     {%- if product.handle == 'night-cream' -%}
       <img class="sr-image" src="{{ 'night-cream-ba.jpg' | asset_url }}" alt="Night Cream Result">
+    {%- elsif product.handle == 'tranexamic-serum' -%}
+      <img class="sr-image" src="{{ 'tranexamic-meet-3.jpg' | asset_url }}" alt="Tranexamic Serum Result">
     {%- elsif is_serum -%}
       <img class="sr-image" src="{{ 'social-face.jpg' | asset_url }}" alt="Serum Result">
     {%- elsif is_sunscreen -%}
