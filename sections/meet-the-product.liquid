@@ -98,6 +98,13 @@
   <div class="meet-carousel-wrapper">
     <div class="meet-carousel">
           {%- assign product_key = 'default' -%}
+          {%- assign handle_down = product.handle | downcase -%}
+          {%- assign title_up = product.title | upcase -%}
+          {%- assign is_face_wash = false -%}
+          {%- if title_up contains 'FACE WASH' or product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' or handle_down contains 'face-wash' or handle_down contains 'cleanser' -%}
+            {%- assign is_face_wash = true -%}
+          {%- endif -%}
+
           {%- if product.handle == 'tranexamic-serum' -%}
             {%- assign product_key = 'tranexamic' -%}
           {%- elsif product.handle == 'anti-frizz-keratin-serum' or product.handle == 'anti-frizz-serum' or product.handle == 'keratin-serum' -%}
@@ -110,13 +117,13 @@
             {%- assign product_key = 'anti-acne' -%}
           {%- elsif product.handle == 'floral-blossom-hair-mist' or product.handle == 'hair-mist' -%}
             {%- assign product_key = 'hair-mist' -%}
-          {%- elsif product.handle == 'centella-skin-toner-copy' or product.handle == 'renewal-cleanser' -%}
-            {%- assign product_key = 'cleanser' -%}
           {%- elsif product.handle == 'centella-skin-toner' or product.handle == 'renewal-toner' -%}
             {%- assign product_key = 'toner' -%}
           {%- elsif product.handle == 'e7-korean-glass-skin-moisturizer' or product.handle == 'hydra-burst-moisturizer' -%}
             {%- assign product_key = 'moisturizer' -%}
-          {%- elsif product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' or product.handle == 'night-cream' -%}
+          {%- elsif is_face_wash -%}
+            {%- assign product_key = 'face-wash' -%}
+          {%- elsif product.handle == 'night-cream' -%}
             {%- assign product_key = 'night-cream' -%}
           {%- elsif product.handle == 'e7-korean-glass-skin-centella-face-wash-copy' or product.handle == 'sunscreen' -%}
             {%- assign product_key = 'sunscreen' -%}
@@ -133,10 +140,10 @@
             <img src="{{ 'sunscreen-lifestyle-3.jpg' | asset_url }}" alt="Sunscreen 3">
             <img src="{{ 'sunscreen-lifestyle-4.jpg' | asset_url }}" alt="Sunscreen 4">
           {%- elsif product_key == 'face-wash' -%}
-            <img src="{{ 'facewash-gallery-1.jpg' | asset_url }}" alt="Face Wash 1">
-            <img src="{{ 'facewash-gallery-2.jpg' | asset_url }}" alt="Face Wash 2">
-            <img src="{{ 'facewash-gallery-3.jpg' | asset_url }}" alt="Face Wash 3">
-            <img src="{{ 'facewash-gallery-4.jpg' | asset_url }}" alt="Face Wash 4">
+            <img src="{{ 'meet-elaris-you-1-100-12.jpg' | asset_url }}" alt="Face Wash App">
+            <img src="{{ 'meet-elaris-you-3-100-10.jpg' | asset_url }}" alt="Face Wash Suite">
+            <img src="{{ 'facewash-gallery-1.jpg' | asset_url }}" alt="Face Wash Texture">
+            <img src="{{ 'facewash-gallery-2.jpg' | asset_url }}" alt="Face Wash 4">
           {%- elsif product_key != 'default' -%}
              {%- if product_key == 'tranexamic' -%}
                 <img src="{{ 'tranexamic-meet-4.jpg' | asset_url }}" alt="Serum 4">

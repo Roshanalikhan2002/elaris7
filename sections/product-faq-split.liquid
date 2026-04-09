@@ -168,8 +168,14 @@
             <div class="faq-acc-item"><div class="faq-acc-header"><span>Do I need to use sunscreen with this?</span><div class="acc-icon-faq"><div class="line v-line"></div><div class="line h-line"></div></div></div><div class="faq-acc-content"><div class="faq-acc-content-inner"><p>Yes, sunscreen is essential during the day to protect and maintain results.</p></div></div></div>
           {%- assign handle_down = product.handle | downcase -%}
           {%- assign title_up = product.title | upcase -%}
-          {%- assign is_centella_serum = false -%}
-          {%- assign is_glutathione_cream = false -%}
+          {%- assign is_night_cream = false -%}
+          {%- assign is_face_wash = false -%}
+          {%- if handle_down == 'night-cream' or title_up contains 'NIGHT CREAM' -%}
+            {%- assign is_night_cream = true -%}
+          {%- elsif title_up contains 'FACE WASH' or product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' or handle_down contains 'face-wash' or handle_down contains 'cleanser' -%}
+            {%- assign is_face_wash = true -%}
+          {%- endif -%}
+
           {%- if handle_down == 'centella-serum' or handle_down == 'e7-korean-glass-skin-centella-sunscreen-spf50-copy' or title_up contains 'CENTELLA SERUM' or title_up contains 'GLOW SERUM' -%}
             {%- assign is_centella_serum = true -%}
           {%- elsif handle_down contains 'glutathione' or title_up contains 'GLUTATHIONE' -%}
@@ -188,7 +194,7 @@
             <div class="faq-acc-item"><div class="faq-acc-header"><span>Will it feel heavy on my skin?</span><div class="acc-icon-faq"><div class="line v-line"></div><div class="line h-line"></div></div></div><div class="faq-acc-content"><div class="faq-acc-content-inner"><p>No, it absorbs well while still providing deep hydration and comfort.</p></div></div></div>
             <div class="faq-acc-item"><div class="faq-acc-header"><span>Can I use it with other skincare products?</span><div class="acc-icon-faq"><div class="line v-line"></div><div class="line h-line"></div></div></div><div class="faq-acc-content"><div class="faq-acc-content-inner"><p>Yes, it works well with serums, toners, and sunscreen.</p></div></div></div>
             <div class="faq-acc-item"><div class="faq-acc-header"><span>Do I need sunscreen while using this?</span><div class="acc-icon-faq"><div class="line v-line"></div><div class="line h-line"></div></div></div><div class="faq-acc-content"><div class="faq-acc-content-inner"><p>Yes, sunscreen is essential during the day to protect and maintain results.</p></div></div></div>
-          {%- elsif product.handle == 'night-cream' or product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' -%}
+          {%- elsif is_night_cream -%}
             <div class="faq-acc-item"><div class="faq-acc-header"><span>Can I use this night cream with my serum?</span><div class="acc-icon-faq"><div class="line v-line"></div><div class="line h-line"></div></div></div><div class="faq-acc-content"><div class="faq-acc-content-inner"><p>Yes, applying serum before the night cream enhances hydration and repair benefits.</p></div></div></div>
             <div class="faq-acc-item"><div class="faq-acc-header"><span>Is it suitable for oily skin at night?</span><div class="acc-icon-faq"><div class="line v-line"></div><div class="line h-line"></div></div></div><div class="faq-acc-content"><div class="faq-acc-content-inner"><p>Absolutely, it hydrates without clogging pores or leaving a greasy residue.</p></div></div></div>
             <div class="faq-acc-item"><div class="faq-acc-header"><span>How often should I use it?</span><div class="acc-icon-faq"><div class="line v-line"></div><div class="line h-line"></div></div></div><div class="faq-acc-content"><div class="faq-acc-content-inner"><p>For optimal results, use every night as the final step in your evening routine.</p></div></div></div>
@@ -221,7 +227,7 @@
         <img class="faq-image faq-bg-img" src="{{ 'keratin-serum.jpg' | asset_url }}" alt="FAQ Keratin Serum Visual">
       {%- elsif product.handle == 'tranexamic-serum' -%}
         <img class="faq-image faq-bg-img" src="{{ 'tranexamic-meet-2.jpg' | asset_url }}" alt="FAQ Tranexamic Serum Visual">
-      {%- elsif product.handle == 'night-cream' or product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' -%}
+      {%- elsif is_night_cream -%}
         <img class="faq-image faq-bg-img" src="{{ 'faq-100-nc.jpg' | asset_url }}" alt="FAQ Night Cream Visual">
       {%- elsif product.handle == 'centella-skin-toner-copy' or product.handle == 'renewal-cleanser' -%}
         <img class="faq-image faq-bg-img" src="{{ 'cleanser-meet-1.jpg' | asset_url }}" alt="FAQ Cleanser Visual">
@@ -231,8 +237,8 @@
         <img class="faq-image faq-bg-img" src="{{ 'toner-meet-4.jpg' | asset_url }}" alt="FAQ Toner Visual">
       {%- elsif product.handle == 'e7-korean-glass-skin-moisturizer' -%}
         <img class="faq-image faq-bg-img" src="{{ 'moisturizer-faq.jpg' | asset_url }}" alt="FAQ Moisturizer Visual">
-      {%- elsif product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' or product.handle == 'e7-korean-glass-skin-centella-face-wash-copy' -%}
-        <img class="faq-image faq-bg-img" src="{{ 'facewash-faq-squeeze.jpg' | asset_url }}" alt="FAQ Face Wash Visual">
+      {%- elsif is_face_wash -%}
+        <img class="faq-image faq-bg-img" src="{{ 'faq-100-13.jpg' | asset_url }}" alt="FAQ Face Wash Visual">
       {%- elsif product.handle == 'e7-korean-glass-skin-centella-sunscreen-spf50-copy' -%}
         <img class="faq-image faq-bg-img" src="{{ 'glow-meet-4.jpg' | asset_url }}" alt="FAQ Serum Visual">
       {%- elsif handle_down contains 'glutathione' -%}

@@ -99,8 +99,16 @@
   {%- assign is_sunscreen = true -%}
 {%- endif -%}
 
+{%- assign is_night_cream = false -%}
+{%- assign is_face_wash = false -%}
+{%- if handle_down == 'night-cream' or title_up contains 'NIGHT CREAM' -%}
+  {%- assign is_night_cream = true -%}
+{%- elsif title_up contains 'FACE WASH' or product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' or handle_down contains 'face-wash' or handle_down contains 'cleanser' -%}
+  {%- assign is_face_wash = true -%}
+{%- endif -%}
+
 {%- assign is_cleanser = false -%}
-{%- if product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' or product.handle == 'renewal-cleanser' -%}
+{%- if is_face_wash or product.handle == 'renewal-cleanser' -%}
   {%- assign is_cleanser = true -%}
 {%- endif -%}
 
@@ -108,11 +116,16 @@
   <div class="sr-left">
     {%- assign has_custom_stats = false -%}
     {%- capture sr_stats -%}
-      {%- if product.handle == 'night-cream' or product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' -%}
+      {%- if is_night_cream -%}
         <div class="sr-stat-block"><h3 class="sr-number">97%</h3><p class="sr-desc">said their skin felt deeply hydrated and nourished</p></div>
         <div class="sr-stat-block"><h3 class="sr-number">95%</h3><p class="sr-desc">said it absorbed well without heaviness</p></div>
         <div class="sr-stat-block"><h3 class="sr-number">94%</h3><p class="sr-desc">noticed smoother, softer, and refined skin by morning</p></div>
         <div class="sr-stat-block"><h3 class="sr-number">3 out of 4</h3><p class="sr-desc">reported a visible reduction in fine lines and dark spots</p></div>
+        {%- assign has_custom_stats = true -%}
+      {%- elsif is_face_wash -%}
+        <div class="sr-stat-block"><h3 class="sr-number">99%</h3><p class="sr-desc">SAID THEIR SKIN FELT CLEAN + REFRESHED AFTER EVERY WASH</p></div>
+        <div class="sr-stat-block"><h3 class="sr-number">98%</h3><p class="sr-desc">SAID IT DID NOT DRY OUT THEIR SKIN</p></div>
+        <div class="sr-stat-block"><h3 class="sr-number">97%</h3><p class="sr-desc">SAID THEIR SKIN LOOKED CLEARER + MORE BALANCED</p></div>
         {%- assign has_custom_stats = true -%}
       {%- elsif product.handle == 'anti-frizz-keratin-serum' or product.handle == 'anti-frizz-serum' or product.handle == 'keratin-serum' -%}
         <div class="sr-stat-block"><h3 class="sr-number">99%</h3><p class="sr-desc">said their hair felt smoother + more manageable</p></div>
@@ -182,7 +195,7 @@
     {%- endif -%}
     
     <div class="sr-footnote">
-      {%- if product.handle == 'night-cream' -%}
+      {%- if is_night_cream -%}
         Based on a 2-week consumer perception study with consistent nightly use.
       {%- elsif is_serum or is_sunscreen or is_cleanser or product.handle contains 'serum' or product.handle contains 'mist' or product.handle contains 'toner' or product.handle contains 'moisturizer' or product.handle contains 'cream' -%}
         Based on a 2-week consumer perception study with consistent daily use.
@@ -193,8 +206,10 @@
   </div>
   
   <div class="sr-right">
-    {%- if product.handle == 'night-cream' or product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' -%}
+    {%- if is_night_cream -%}
       <img class="sr-image" src="{{ 'night-cream-ba.jpg' | asset_url }}" alt="Night Cream Result">
+    {%- elsif is_face_wash -%}
+      <img class="sr-image" src="{{ 'before-after-100-10.jpg' | asset_url }}" alt="Face Wash Result">
     {%- elsif product.handle == 'anti-frizz-keratin-serum' or product.handle == 'anti-frizz-serum' or product.handle == 'keratin-serum' -%}
       <img class="sr-image" src="{{ 'keratin-ba.jpg' | asset_url }}" alt="Keratin Serum Result">
     {%- elsif product.handle == 'tranexamic-serum' -%}
@@ -211,7 +226,7 @@
     {%- elsif product.handle == 'e7-korean-glass-skin-centella-face-wash-copy' -%}
        <img class="sr-image" src="{{ 'facewash-gallery-2.jpg' | asset_url }}" alt="Face Wash Result">
     {%- elsif is_cleanser -%}
-       <img class="sr-image" src="{{ 'facewash-gallery-1.jpg' | asset_url }}" alt="Cleanser Result">
+       <img class="sr-image" src="{{ 'before-after-100-10.jpg' | asset_url }}" alt="Cleanser Result">
     {%- elsif product.handle == 'centella-skin-toner' or product.handle == 'renewal-toner' -%}
       <img class="sr-image" src="{{ 'toner-before-after.jpg' | asset_url }}" alt="Toner Results">
     {%- elsif product.handle == 'e7-korean-glass-skin-moisturizer' or product.handle == 'hydra-burst-moisturizer' -%}
