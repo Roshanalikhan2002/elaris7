@@ -511,6 +511,8 @@
 {%- elsif product.handle == 'floral-blossom-hair-mist' or product.handle == 'hair-mist' -%}
   {%- assign display_title = "Floral Blossom Hair Mist" -%}
   {%- assign display_subtitle = 'Bloom With Every Move' -%}
+{%- else -%}
+  {%- assign display_title = product.title | append: " (DEBUG: " | append: product.handle | append: ")" -%}
 {%- endif -%}
 
 {%- if display_desc == blank -%}
