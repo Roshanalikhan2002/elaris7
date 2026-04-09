@@ -95,7 +95,7 @@
 {%- endif -%}
 
 {%- assign is_sunscreen = false -%}
-{%- if product.handle == 'sunscreen' or product.handle == 'e7-korean-glass-skin-centella-face-wash-copy' -%}
+{%- if product.handle == 'sunscreen' -%}
   {%- assign is_sunscreen = true -%}
 {%- endif -%}
 
@@ -223,10 +223,8 @@
       {%- endif -%}
     {%- elsif is_sunscreen -%}
       <img class="sr-image" src="{{ 'sunscreen-lifestyle-4.jpg' | asset_url }}" alt="Sunscreen Result">
-    {%- elsif product.handle == 'e7-korean-glass-skin-centella-face-wash-copy' -%}
-       <img class="sr-image" src="{{ 'facewash-gallery-2.jpg' | asset_url }}" alt="Face Wash Result">
-    {%- elsif is_cleanser -%}
-       <img class="sr-image" src="{{ 'before-after-100-10.jpg' | asset_url }}" alt="Cleanser Result">
+    {%- elsif is_face_wash or product.handle == 'renewal-cleanser' -%}
+       <img class="sr-image" src="{{ 'before-after-100-10.jpg' | asset_url }}" alt="Face Wash Result">
     {%- elsif product.handle == 'centella-skin-toner' or product.handle == 'renewal-toner' -%}
       <img class="sr-image" src="{{ 'toner-before-after.jpg' | asset_url }}" alt="Toner Results">
     {%- elsif product.handle == 'e7-korean-glass-skin-moisturizer' or product.handle == 'hydra-burst-moisturizer' -%}
