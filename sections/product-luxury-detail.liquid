@@ -256,6 +256,14 @@
                 <li>Keeps hair smelling beautiful all day</li>
                 <li>Lightweight formula that doesn't weigh hair down</li>
                 <li>Suitable for all hair types</li>
+              {%- elsif product.handle == 'centella-skin-toner-copy' or product.handle == 'renewal-cleanser' -%}
+                <li>Gently removes dirt, oil, and daily buildup</li>
+                <li>Helps improve dull and uneven skin tone</li>
+                <li>Supports a clearer, brighter-looking complexion</li>
+                <li>Maintains hydration while cleansing the skin</li>
+                <li>Leaves skin feeling soft and comfortable</li>
+                <li>Helps refresh and revive tired-looking skin</li>
+                <li>Prepares skin for better absorption of skincare</li>
               {%- endif -%}
             </ul>
           </div>
@@ -282,6 +290,8 @@
               <p>Suitable for daily use.</p>
             {%- elsif is_hair_mist -%}
               <p>Mist evenly over dry or damp hair from 6-8 inches away. Use throughout the day as needed to refresh and scent your hair.</p>
+            {%- elsif product.handle == 'centella-skin-toner-copy' or product.handle == 'renewal-cleanser' -%}
+              <p>Use morning and night. Apply a small amount to wet skin and gently massage over face and neck. Rinse thoroughly with lukewarm water and follow with toner, serum, and moisturizer.</p>
             {%- endif -%}
           </div>
         </details>
@@ -330,6 +340,13 @@
                 <li>Use after styling to add a final touch of shine and fragrance</li>
                 <li>Keep in your bag for an instant on-the-go refresh</li>
               </ul>
+            {%- elsif product.handle == 'centella-skin-toner-copy' or product.handle == 'renewal-cleanser' -%}
+              <ul style="padding-left: 20px;">
+                <li>Use on damp skin for a gentle, effective cleanse</li>
+                <li>Massage for 30–60 seconds for better results</li>
+                <li>Follow with toner to enhance brightness</li>
+                <li>Use consistently for a clearer-looking complexion</li>
+              </ul>
             {%- endif -%}
           </div>
         </details>
@@ -349,6 +366,8 @@
               <p>Honey, Centella Asiatica, Glutathione, Alpha Arbutin, Kojic Acid Dipalmitate, Niacinamide, Vitamin C, Hyaluronic Acid, Glycerin, Vitamin E, Amla Extract</p>
             {%- elsif is_hair_mist -%}
               <p>PANTHENOL, GLYCERIN, ALOE VERA, VITAMIN E, ROSE WATER, JASMINE EXTRACT, PEPTIDES</p>
+            {%- elsif product.handle == 'centella-skin-toner-copy' or product.handle == 'renewal-cleanser' -%}
+              <p>Niacinamide, Vitamin C (Sodium Ascorbyl Phosphate), Glutathione, Glycerin, Sodium Lactate, Allantoin, Chamomile Extract, Licorice Root Extract, Mild Cleansing Agents</p>
             {%- endif -%}
           </div>
         </details>
