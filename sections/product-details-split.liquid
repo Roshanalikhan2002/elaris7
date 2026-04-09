@@ -108,9 +108,12 @@
   {%- assign is_hair_mist = true -%}
 {%- endif -%}
 
-{%- assign is_night_cream = false -%}
-{%- assign is_face_wash = false -%}
-{%- if title_up contains 'FACE WASH' or product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' or handle_down contains 'face-wash' or handle_down contains 'cleanser' -%}
+{%- assign is_sunscreen = false -%}
+{%- if product.handle == 'sunscreen' or product.handle == 'e7-korean-glass-skin-centella-face-wash-copy' -%}
+  {%- assign is_sunscreen = true -%}
+{%- endif -%}
+
+{%- if title_up contains 'FACE WASH' or product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' or (handle_down contains 'face-wash' and is_sunscreen == false) or handle_down contains 'cleanser' -%}
   {%- assign is_face_wash = true -%}
 {%- elsif handle_down == 'night-cream' or title_up contains 'NIGHT CREAM' -%}
   {%- assign is_night_cream = true -%}
@@ -149,7 +152,7 @@
     <div class="ds-row"><div class="ds-label">SMELLS LIKE:</div><div class="ds-value">A soft, fresh floral bouquet</div></div>
     <div class="ds-row"><div class="ds-label">FYI:</div><div class="ds-value">Alcohol-Free • Non-Sticky • Travel-Friendly • Long-Lasting Scent</div></div>
   {%- endcapture -%}
-{%- elsif product.handle == 'sunscreen' -%}
+{%- elsif is_sunscreen -%}
   {%- assign ds_title = "Protection That Feels Effortless<br><span style='font-size: 0.7em;'>A daily sunscreen for DEFENSE + HYDRATED, PROTECTED SKIN.</span>" -%}
   {%- assign ds_image_name = 'sunscreen-plate.jpg' -%}
   {%- assign use_custom_list = true -%}

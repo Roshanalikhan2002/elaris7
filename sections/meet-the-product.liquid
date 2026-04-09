@@ -101,7 +101,12 @@
           {%- assign handle_down = product.handle | downcase -%}
           {%- assign title_up = product.title | upcase -%}
           {%- assign is_face_wash = false -%}
-          {%- if title_up contains 'FACE WASH' or product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' or handle_down contains 'face-wash' or handle_down contains 'cleanser' -%}
+          {%- assign is_sunscreen = false -%}
+          {%- if product.handle == 'sunscreen' or product.handle == 'e7-korean-glass-skin-centella-face-wash-copy' -%}
+            {%- assign is_sunscreen = true -%}
+          {%- endif -%}
+
+          {%- if title_up contains 'FACE WASH' or product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' or (handle_down contains 'face-wash' and is_sunscreen == false) or handle_down contains 'cleanser' -%}
             {%- assign is_face_wash = true -%}
           {%- endif -%}
 
@@ -121,12 +126,12 @@
             {%- assign product_key = 'toner' -%}
           {%- elsif product.handle == 'e7-korean-glass-skin-moisturizer' or product.handle == 'hydra-burst-moisturizer' -%}
             {%- assign product_key = 'moisturizer' -%}
+          {%- elsif is_sunscreen -%}
+            {%- assign product_key = 'sunscreen' -%}
           {%- elsif is_face_wash -%}
             {%- assign product_key = 'face-wash' -%}
           {%- elsif product.handle == 'night-cream' -%}
             {%- assign product_key = 'night-cream' -%}
-          {%- elsif product.handle == 'e7-korean-glass-skin-centella-face-wash-copy' or product.handle == 'sunscreen' -%}
-            {%- assign product_key = 'sunscreen' -%}
           {%- endif -%}
 
           {%- if product_key == 'night-cream' -%}
