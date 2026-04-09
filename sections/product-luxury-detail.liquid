@@ -80,10 +80,22 @@
     </div>
 
     <div class="product-details">
-      <h1 class="product-title">{{ product.title }}</h1>
+      {%- if product.handle == 'night-cream' -%}
+        <div class="catchy-title" style="font-size: 1.2rem; font-weight: 700; color: #a09d94; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.05em;">Your Overnight Glow Secret</div>
+      {%- endif -%}
+      <h1 class="product-title" style="margin-bottom: 5px;">{{ product.title }}</h1>
+      {%- if product.handle == 'night-cream' -%}
+        <div style="font-size: 1.5rem; font-weight: 600; color: #444; margin-bottom: 25px; font-style: italic;">Night Renewal</div>
+      {%- endif -%}
       
       <div class="product-description" style="margin-top: 20px; margin-bottom: 40px;">
-        <p style="font-size: 1.15rem; line-height: 1.6; color: #444;">{{ product.description | default: "Experience the ultimate skin renewal with our advanced formula, designed to hydrate, brighten, and restore your natural glow overnight." }}</p>
+        <p style="font-size: 1.15rem; line-height: 1.6; color: #444;">
+          {%- if product.handle == 'night-cream' -%}
+            An intensive overnight formula designed to rejuvenate your skin while you sleep. Infused with Centella Asiatica, brightening complexes, and repair-focused botanicals, this night cream hydrates deeply, improves skin texture, and helps reveal a smoother, luminous, and refreshed complexion by morning.
+          {%- else -%}
+            {{ product.description | default: "Experience the ultimate skin renewal with our advanced formula, designed to hydrate, brighten, and restore your natural glow overnight." }}
+          {%- endif -%}
+        </p>
       </div>
 
       <div class="bogo-container">
@@ -127,28 +139,53 @@
         </div>
       </div>
 
-      {%- form 'product', product -%}
-        <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
-        <button type="submit" class="add-to-cart-btn">Add to Cart &rarr;</button>
-      {%- endform -%}
+      <div class="action-buttons" style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 20px;">
+        {%- form 'product', product -%}
+          <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+          <button type="submit" class="add-to-cart-btn" style="margin-top: 0; width: 100%;">ADD TO CART</button>
+        {%- endform -%}
+        <button type="button" class="buy-now-btn" style="width: 100%; background: #fff; color: #002d5f; border: 2px solid #002d5f; padding: 22px; border-radius: 50px; font-weight: 700; font-size: 1.3rem; cursor: pointer; transition: all 0.2s;">BUY NOW</button>
+      </div>
 
       <div class="modern-accordions">
         <details class="acc-item" open>
           <summary class="acc-summary">What is it? <span class="acc-icon">+</span></summary>
-          <div class="acc-content"><p>{{ product.description }}</p></div>
+          <div class="acc-content">
+            <p><strong>Night Renewal</strong></p>
+            <p>An intensive overnight formula designed to rejuvenate your skin while you sleep. Infused with Centella Asiatica, brightening complexes, and repair-focused botanicals, this night cream hydrates deeply, improves skin texture, and helps reveal a smoother, luminous, and refreshed complexion by morning.</p>
+          </div>
         </details>
+        
         <details class="acc-item">
-          <summary class="acc-summary">Who's it for? <span class="acc-icon">+</span></summary>
-          <div class="acc-content"><p>Designed for individuals looking for effective results and a premium skincare experience. This formula is suitable for all skin types and addresses multiple concerns simultaneously.</p></div>
+          <summary class="acc-summary">How to Use <span class="acc-icon">+</span></summary>
+          <div class="acc-content">
+            <p>After cleansing and toning, take a small amount of Centella Night Cream and gently massage it upward onto your face and neck, avoiding the eye area. Leave it on overnight to fully absorb and lock in hydration, allowing your skin to repair, restore, and wake up looking radiant and smooth. Consistency is key for optimal results.</p>
+          </div>
         </details>
+
+        <details class="acc-item">
+          <summary class="acc-summary">Important Info <span class="acc-icon">+</span></summary>
+          <div class="acc-content" style="font-size: 0.95rem;">
+            <p><strong>GOOD FOR:</strong> All skin types, including dry and sensitive skin</p>
+            <p><strong>FEELS LIKE:</strong> A rich, creamy formula that melts effortlessly into the skin</p>
+            <p><strong>LOOKS LIKE:</strong> Smooth, plump, and poreless skin by morning</p>
+            <p><strong>SMELLS LIKE:</strong> Subtle, calming freshness for a relaxing nighttime routine</p>
+            <p><strong>FYI:</strong> Halal-Friendly • Dermatologist-Tested • Non-Sticky • Repair-Focused</p>
+          </div>
+        </details>
+
         <details class="acc-item">
           <summary class="acc-summary">Benefits <span class="acc-icon">+</span></summary>
           <div class="acc-content">
             <ul style="padding-left: 20px;">
-              <li>Delivers immediate and long-lasting hydration</li>
-              <li>Visible improvement in skin clarity and tone</li>
-              <li>Stronger skin barrier and improved resilience</li>
-              <li>Lightweight, fast-absorbing texture</li>
+              <li>Boosts skin radiance for a naturally luminous glow</li>
+              <li>Provides 72-hour hydration with a moisture-locking formula</li>
+              <li>Supports collagen to improve skin firmness and elasticity</li>
+              <li>Helps fade dark spots, acne scars, and discoloration</li>
+              <li>Repairs and strengthens the skin barrier overnight</li>
+              <li>Delivers a soft, smooth, poreless finish by morning</li>
+              <li>Reduces the appearance of fine lines and wrinkles</li>
+              <li>Promotes a more even-toned, youthful-looking complexion over time</li>
             </ul>
           </div>
         </details>

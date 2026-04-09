@@ -116,7 +116,9 @@
 
 <section class="ingredients-section">
   <div class="ing-left">
-    {%- if product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' -%}
+    {%- if product.handle == 'night-cream' -%}
+      <img class="ing-image" src="{{ 'night-cream-last.jpeg' | asset_url }}" alt="Night Cream Ingredients">
+    {%- elsif product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' -%}
       <img class="ing-image" src="{{ 'facewash-ingredients-v2.jpg' | asset_url }}" alt="Face Wash Ingredients">
     {%- elsif product.handle == 'centella-skin-toner-copy' or product.handle == 'renewal-cleanser' -%}
       <img class="ing-image" src="{{ 'cleanser-meet-1.jpg' | asset_url }}" alt="Renewal Cleanser Ingredients">
@@ -143,7 +145,9 @@
     <div class="ing-vertical-title">{{ section.settings.title }}</div>
     <div class="ing-content">
       <div class="ing-intro">
-        {%- if product.handle == 'glutathione-cream' -%}
+        {%- if product.handle == 'night-cream' -%}
+          Our formula is powered by advanced repair and brightening actives. Meet 2 of our favorites for overnight renewal.
+        {%- elsif product.handle == 'glutathione-cream' -%}
           A nourishing cream that brightens, repairs, and hydrates skin for a clearer, more even complexion.
         {%- elsif product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' or product.handle == 'e7-korean-glass-skin-centella-face-wash-copy' -%}
           Our formula is powered by gentle cleansers and glow-boosting hydrators. Meet 2 of our favorites for a fresh, balanced cleanse.
@@ -157,12 +161,15 @@
           {%- assign display_intro = "A weightless mist that refreshes your hair instantly with a delicate scent and nourishing finish." -%}
           {{ display_intro }}
         {%- else -%}
-          {{ section.settings.intro }}
+          {{ section.settings.intro | default: "Our formula is powered by gentle cleansers and glow-boosting hydrators." }}
         {%- endif -%}
       </div>
       
       <div class="ing-dynamic-blocks">
-        {%- if product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' or product.handle == 'e7-korean-glass-skin-centella-face-wash-copy' -%}
+        {%- if product.handle == 'night-cream' -%}
+          <div class="hero-ingredient"><h3 class="hero-title">CENTELLA ASIATICA</h3><p class="hero-desc">a calming botanical that helps repair the skin barrier, reduce redness, and support healthier, more resilient skin overnight</p></div>
+          <div class="hero-ingredient"><h3 class="hero-title">MOISTURE-LOCK TECHNOLOGY</h3><p class="hero-desc">a deep hydration system that helps retain moisture, prevent overnight dryness, and keep skin plump and smooth by morning</p></div>
+        {%- elsif product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' or product.handle == 'e7-korean-glass-skin-centella-face-wash-copy' -%}
           <div class="hero-ingredient"><h3 class="hero-title">CENTELLA ASIATICA</h3><p class="hero-desc">calms and repairs the skin barrier during cleansing</p></div>
           <div class="hero-ingredient"><h3 class="hero-title">RICE EXTRACT</h3><p class="hero-desc">natural brightener for a clear, radiant after-wash glow</p></div>
         {%- elsif product.handle == 'centella-skin-toner' or product.handle == 'renewal-toner' -%}
@@ -177,7 +184,9 @@
       </div>
 
       <div class="ing-footer">
-        {%- if product.handle == 'e7-korean-glass-skin-centella-face-wash-copy' or product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' -%}
+        {%- if product.handle == 'night-cream' -%}
+          also made with BRIGHTENING COMPLEX, COLLAGEN SUPPORT BLEND, SPOT-CORRECTIVE ACTIVES, LINE-REDUCING COMPLEX, BARRIER REPAIR ACTIVES, EVEN-TONE ENHANCERS
+        {%- elsif product.handle == 'e7-korean-glass-skin-centella-face-wash-copy' or product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' -%}
           also made with RICE EXTRACT, LICORICE EXTRACT, VITAMIN C, HONEY, D-PANTHENOL, GLYCERIN, APPLE EXTRACT, CENTELLA ASIATICA
         {%- else -%}
           {{ section.settings.footer_text | default: 'also made with VITAMIN C, HONEY, D-PANTHENOL, GLYCERIN, APPLE EXTRACT' }}
