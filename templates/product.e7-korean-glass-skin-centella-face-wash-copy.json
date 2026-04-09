@@ -170,6 +170,13 @@
         "image": "shopify://shop_images/sunscreen-100.jpg"
       }
     },
+    "benefits_focus": {
+      "type": "product-benefits-focus",
+      "settings": {
+        "subtitle": "WASH IT ON TO:",
+        "image": "shopify://shop_images/facewash-benefits.jpg"
+      }
+    },
     "product_reviews": {
       "type": "product-reviews",
       "settings": {}
@@ -180,6 +187,7 @@
     "meet_product",
     "details_split",
     "ingredients",
+    "benefits_focus",
     "study_results",
     "faq_split",
     "product_reviews"

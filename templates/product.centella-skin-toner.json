@@ -108,6 +108,13 @@
         "btn_label": "FULL INGREDIENTS LIST"
       }
     },
+    "benefits_focus": {
+      "type": "product-benefits-focus",
+      "settings": {
+        "subtitle": "SPREAD IT ON FOR:",
+        "image": "shopify://shop_images/toner-deep-hydration.jpg"
+      }
+    },
     "study_results": {
       "type": "product-study-results",
       "blocks": {
@@ -196,6 +203,7 @@
     "meet_product",
     "details_split",
     "ingredients",
+    "benefits_focus",
     "study_results",
     "faq_split",
     "product_reviews",
