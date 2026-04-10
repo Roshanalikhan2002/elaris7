@@ -1288,23 +1288,23 @@
       }
     ],
     "Images": {
-      "Hero": "v2-cleanser-1.jpeg",
+      "Hero": "renewal-cleanser-1.jpg",
       "Gallery": [
-        "v2-cleanser-1.jpeg",
-        "v2-cleanser-2.jpg",
-        "v2-cleanser-3.jpg",
-        "v2-cleanser-4.jpg"
+        "renewal-cleanser-1.jpg",
+        "renewal-cleanser-2.jpg",
+        "renewal-cleanser-3.jpg",
+        "renewal-cleanser-4.jpg"
       ],
-      "Breakdown": "v2-cleanser-plate.jpg",
-      "WhatsInside": "v2-cleanser-spoon.jpg",
-      "Spread": "v2-cleanser-spread.jpg",
-      "Stats": "v2-cleanser-stats.jpg",
-      "FAQ": "v2-cleanser-faq.jpg",
+      "Breakdown": "renewal-cleanser-plate.jpg",
+      "WhatsInside": "renewal-cleanser-spoon.jpg",
+      "Spread": "renewal-cleanser-spread.jpg",
+      "Stats": "renewal-cleanser-percent.jpg",
+      "FAQ": "renewal-cleanser-faq.jpg",
       "Carousel": [
-        "v2-cleanser-1.jpeg",
-        "v2-cleanser-2.jpg",
-        "v2-cleanser-3.jpg",
-        "v2-cleanser-4.jpg"
+        "renewal-cleanser-1.jpg",
+        "renewal-cleanser-2.jpg",
+        "renewal-cleanser-3.jpg",
+        "renewal-cleanser-4.jpg"
       ]
     }
   },
