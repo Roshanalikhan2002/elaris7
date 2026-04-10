@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hydra Burst Moisturizer | elaris7</title>
+  <title>Centella Moisturizer | elaris7</title>
   <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
 
@@ -2305,16 +2305,16 @@ a { color: inherit; text-decoration: none; }
       <!-- Thumbnails on Left -->
       <div class="gallery-thumbnails">
         <div class="thumb-item active" onmouseover="scrollGallery(0, this)">
-          <img src="{{ "v2-moisturizer-1.jpeg" | asset_url }}" alt="Thumb 1">
+          <img src="{{ "moisturizer-100.jpg" | asset_url }}" alt="Thumb 1">
         </div>
         <div class="thumb-item" onmouseover="scrollGallery(1, this)">
-          <img src="{{ "v2-moisturizer-2.jpg" | asset_url }}" alt="Thumb 2">
+          <img src="{{ "moisturizer-gallery-2.jpg" | asset_url }}" alt="Thumb 2">
         </div>
         <div class="thumb-item" onmouseover="scrollGallery(2, this)">
-          <img src="{{ "v2-moisturizer-3.jpg" | asset_url }}" alt="Thumb 3">
+          <img src="{{ "moisturizer-gallery-3.jpg" | asset_url }}" alt="Thumb 3">
         </div>
         <div class="thumb-item" onmouseover="scrollGallery(3, this)">
-          <img src="{{ "v2-moisturizer-4.jpg" | asset_url }}" alt="Thumb 4">
+          <img src="{{ "moisturizer-gallery-4.jpg" | asset_url }}" alt="Thumb 4">
         </div>
       </div>
 
@@ -2322,16 +2322,16 @@ a { color: inherit; text-decoration: none; }
       <div class="gallery-main-viewport">
         <div class="gallery-slider" id="productSlider">
           <div class="gallery-slide">
-            <img src="{{ "v2-moisturizer-1.jpeg" | asset_url }}" alt="Main View 1">
+            <img src="{{ "moisturizer-100.jpg" | asset_url }}" alt="Main View 1">
           </div>
           <div class="gallery-slide">
-            <img src="{{ "v2-moisturizer-2.jpg" | asset_url }}" alt="Main View 2">
+            <img src="{{ "moisturizer-gallery-2.jpg" | asset_url }}" alt="Main View 2">
           </div>
           <div class="gallery-slide">
-            <img src="{{ "v2-moisturizer-3.jpg" | asset_url }}" alt="Main View 3">
+            <img src="{{ "moisturizer-gallery-3.jpg" | asset_url }}" alt="Main View 3">
           </div>
           <div class="gallery-slide">
-            <img src="{{ "v2-moisturizer-4.jpg" | asset_url }}" alt="Main View 4">
+            <img src="{{ "moisturizer-gallery-4.jpg" | asset_url }}" alt="Main View 4">
           </div>
         </div>
       </div>
@@ -2352,11 +2352,11 @@ a { color: inherit; text-decoration: none; }
       <div class="product-details">
         <div class="product-details-inner">
           <div class="product-header">
-            <h1 class="product-title">Hydra<br>Burst<br>Moisturizer</h1>
+            <h1 class="product-title">Centella<br>Moisturizer</h1>
           </div>
 
           <div class="product-meta">
-            <span class="product-subtitle">Glass Skin Finish</p>
+            <span class="product-subtitle">Daily Dew</p>
             <p class="disclaimer">*with continued daily use</p>
           </div>
 
@@ -2368,7 +2368,7 @@ a { color: inherit; text-decoration: none; }
               
               <div class="bogo-inline-card" onclick="selectBogo(this)">
                 <input type="radio" name="free_gift" data-gift-handle="night-cream" style="display:none;">
-                <img src="{{ "v2-moisturizer-1.jpeg" | asset_url }}" alt="Centella Night Cream">
+                <img src="{{ "moisturizer-100.jpg" | asset_url }}" alt="Centella Night Cream">
                 <div class="bogo-inline-info">
                   <span class="bogo-inline-name">Centella Night Cream</span>
                   <span class="bogo-inline-tag">Night Renewal</span>
@@ -2532,6 +2532,16 @@ a { color: inherit; text-decoration: none; }
                 <div class="bogo-inline-info">
                   <span class="bogo-inline-name">Hydra Burst Moisturizer</span>
                   <span class="bogo-inline-tag">Glass Skin Finish</span>
+                </div>
+                <div class="bogo-select-indicator"></div>
+              </div>
+
+              <div class="bogo-inline-card" onclick="selectBogo(this)">
+                <input type="radio" name="free_gift" data-gift-handle="centella-moisturiser" style="display:none;">
+                <img src="{{ "moisturizer-100.jpg" | asset_url }}" alt="Centella Moisturizer">
+                <div class="bogo-inline-info">
+                  <span class="bogo-inline-name">Centella Moisturizer</span>
+                  <span class="bogo-inline-tag">Daily Dew</span>
                 </div>
                 <div class="bogo-select-indicator"></div>
               </div>
@@ -2762,7 +2772,7 @@ a { color: inherit; text-decoration: none; }
               <!-- Cards will be populated dynamically or via migration -->
 
               <div class="bogo-card">
-                <img src="{{ "v2-moisturizer-1.jpeg" | asset_url }}" alt="Centella Night Cream">
+                <img src="{{ "moisturizer-100.jpg" | asset_url }}" alt="Centella Night Cream">
                 <span class="bogo-product-name">Centella Night Cream</span>
                 <button class="bogo-add-btn">Select</button>
               </div>
@@ -2862,6 +2872,12 @@ a { color: inherit; text-decoration: none; }
                 <span class="bogo-product-name">Hydra Burst Moisturizer</span>
                 <button class="bogo-add-btn">Select</button>
               </div>
+
+              <div class="bogo-card">
+                <img src="{{ "moisturizer-100.jpg" | asset_url }}" alt="Centella Moisturizer">
+                <span class="bogo-product-name">Centella Moisturizer</span>
+                <button class="bogo-add-btn">Select</button>
+              </div>
           </div>
         </div>
 
@@ -2928,22 +2944,27 @@ a { color: inherit; text-decoration: none; }
           </style>
           <div class="product-accordions accordions">
             <details class="accordion-item">
-              <summary><span>BENEFITS</span><span>+</span></summary><div class="accordion-content"><ul>                  <li>Gives an instant dewy glow</li>
-                  <li>72-hour deep hydration</li>
-                  <li>Minimizes pore appearance</li></ul></div>
+              <summary><span>BENEFITS</span><span>+</span></summary><div class="accordion-content"><ul>                  <li>Boosts natural radiance while improving overall skin clarity</li>
+                  <li>Delivers lasting hydration for a plump, soft, and dewy feel</li>
+                  <li>Smooths texture and helps reduce the appearance of uneven tone</li></ul></div>
             </details>
             <details class="accordion-item">
-              <summary><span>APPLICATION</span><span>+</span></summary><div class="accordion-content"><p style="margin:0;">Apply onto damp skin morning and night after serum.</p></div>
+              <summary><span>APPLICATION</span><span>+</span></summary><div class="accordion-content"><p style="margin:0;">After cleansing and applying serum, take a small amount of Centella Moisturizer and gently massage it onto slightly damp skin using upward motions. Allow it to absorb fully to lock in hydration.</p></div>
             </details>
             <details class="accordion-item">
-              <summary><span>TRICK</span><span>+</span></summary><div class="accordion-content"><ul>                  <li>Mix with highlight for extra glow</li>
-                  <li>Store in fridge for cooling effect</li></ul></div>
+              <summary><span>TRICK</span><span>+</span></summary><div class="accordion-content"><ul>                  <li>Apply on damp skin to enhance absorption and maximize hydration</li>
+                  <li>Use a slightly thicker layer for an instant dewy glow finish</li>
+                  <li>Pair with sunscreen in the morning for protected, radiant skin</li></ul></div>
             </details>
             <details class="accordion-item">
               <summary><span>KEY INGREDIENTS</span><span>+</span></summary><div class="accordion-content"><ul>                  <li>Hyaluronic Acid</li>
-                  <li>Ceramides</li>
+                  <li>Vitamin C Complex</li>
                   <li>Centella Asiatica</li>
-                  <li>Peptides</li></ul></div>
+                  <li>Morus Alba Extract</li>
+                  <li>Broussonetia Root Extract</li>
+                  <li>Honey</li>
+                  <li>Galactoarabinan</li>
+                  <li>Vitamin E</li></ul></div>
             </details>
           </div>
 
@@ -2953,14 +2974,14 @@ a { color: inherit; text-decoration: none; }
 
     <!-- Meet the Product Section -->
     <section class="meet-product-section">
-      <h2 class="meet-title">The Ultimate Glass Skin Secret</h2>
+      <h2 class="meet-title">Your Everyday Glow Essential</h2>
       <div class="meet-carousel-wrapper">
         <div class="carousel-swipe-indicator">SWIPE →</div>
         <div class="meet-carousel">
-          <img src="{{ "v2-moisturizer-1.jpeg" | asset_url }}" alt="Product Image 1">
-          <img src="{{ "TranexamicSerum2.jpg" | asset_url }}" alt="Product Image 2">
-          <img src="{{ "TranexamicSerum3.jpg" | asset_url }}" alt="Product Image 3">
-          <img src="{{ "TranexamicSerum4.jpg" | asset_url }}" alt="Product Image 4">
+          <img src="{{ "moisturizer-100.jpg" | asset_url }}" alt="Product Image 1">
+          <img src="{{ "moisturizer-meet-2.jpg" | asset_url }}" alt="Product Image 2">
+          <img src="{{ "moisturizer-meet-3.jpg" | asset_url }}" alt="Product Image 3">
+          <img src="{{ "moisturizer-meet-4.jpg" | asset_url }}" alt="Product Image 4">
         </div>
         <!-- Right Arrow Overlay -->
         <div class="carousel-arrow">
@@ -2972,29 +2993,27 @@ a { color: inherit; text-decoration: none; }
     <!-- Product Breakdown Section -->
     <section class="breakdown-section">
       <div class="breakdown-content">
-        <h2 class="bd-title">Peak Hydration & Glow</h2>
+        <h2 class="bd-title">Glow That Lasts All Day</h2>
         <div class="bd-table">
           <div class="bd-row">
-            <span class="bd-label">GOOD FOR:</span><span class="bd-val">Dry, oily, and combination skin</span>
+            <span class="bd-label">GOOD FOR:</span><span class="bd-val">All skin types, including sensitive and combination skin</span>
           </div>
           <div class="bd-row">
-            <span class="bd-label">FEELS LIKE:</span><span class="bd-val">A cool, watery cream that absorbs instantly</span>
+            <span class="bd-label">FEELS LIKE:</span><span class="bd-val">A light, refreshing cream that melts effortlessly into the skin</span>
           </div>
           <div class="bd-row">
-            <span class="bd-label">LOOKS LIKE:</span>
-            <span class="bd-val">Smooth, plump, and poreless skin by morning</span>
+            <span class="bd-label">LOOKS LIKE:</span><span class="bd-val">A soft, luminous finish with a naturally healthy glow</span>
           </div>
           <div class="bd-row">
-            <span class="bd-label">SMELLS LIKE:</span>
-            <span class="bd-val">Subtle, calming freshness for a relaxing nighttime routine</span>
+            <span class="bd-label">SMELLS LIKE:</span><span class="bd-val">Clean, subtle freshness with no overpowering scent</span>
           </div>
           <div class="bd-row">
-            <span class="bd-label">FYI:</span><span class="bd-val">Glass Skin • Ultra-Hydrating • Lightweight</span>
+            <span class="bd-label">FYI:</span><span class="bd-val">Halal-Friendly • Dermatologist-Tested • Lightweight • Non-Sticky</span>
           </div>
         </div>
       </div>
       <div class="breakdown-image">
-        <img src="{{ "v2-moisturizer-plate.jpg" | asset_url }}" alt="Plate View">
+        <img src="{{ "moisturizer-before-after.jpg" | asset_url }}" alt="Plate View">
       </div>
     </section>
 
@@ -3002,27 +3021,27 @@ a { color: inherit; text-decoration: none; }
     <!-- What's Inside Section -->
     <section class="whats-inside-section">
       <div class="wi-image-col">
-        <img src="{{ "v2-moisturizer-spoon.jpg" | asset_url }}" alt="Spoon View" class="wi-image">
+        <img src="{{ "moisturizer-whats-inside.jpg" | asset_url }}" alt="Spoon View" class="wi-image">
         <button class="wi-full-ingredients-btn">FULL INGREDIENTS LIST</button>
       </div>
       <div class="wi-content-col">
         <div class="wi-vertical-text">what's inside</div>
         <div class="wi-details">
-          <p class="wi-intro">A blend of moisture-locking technology and skin-barrier repair.</p>
+          <p class="wi-intro">Our formula is powered by glow-enhancing hydrators and skin-refining botanicals. Meet 2 of our favorites for daily radiance.</p>
           
           <div class="wi-ingredient-block">
-            <h3 class="wi-ingred-title">ceramides</h3><p class="wi-ingred-desc">essential lipids that strengthen the skin barrier and lock in moisture</p>
+            <h3 class="wi-ingred-title">centella asiatica</h3><p class="wi-ingred-desc">a soothing plant extract that helps calm irritation, strengthen the skin barrier, and support a clearer, more balanced complexion</p>
           </div>
           
           <hr class="wi-divider">
           
           <div class="wi-ingredient-block">
-            <h3 class="wi-ingred-title">peptides</h3><p class="wi-ingred-desc">help support skin elasticity and smooth out fine lines</p>
+            <h3 class="wi-ingred-title">hyaluronic acid</h3><p class="wi-ingred-desc">a powerful hydrator that helps attract and retain moisture, leaving skin plump, smooth, and refreshed throughout the day</p>
           </div>
           
           <hr class="wi-divider">
           
-          <p class="wi-also-made">also made with <strong>Hyaluronic Acid, Panthenol, Squalane</strong></p>
+          <p class="wi-also-made">also made with <strong>VITAMIN C COMPLEX, MORUS ALBA EXTRACT, BROUSSONETIA ROOT EXTRACT, HONEY, GALACTOARABINAN, VITAMIN E</strong></p>
         </div>
       </div>
     </section>
@@ -3031,12 +3050,12 @@ a { color: inherit; text-decoration: none; }
     <section class="spread-section">
       <div class="spread-content">
         <span class="spread-label">SPREAD IT ON FOR:</span>
-        <h2 class="spread-heading">glass skin glow</h2>
+        <h2 class="spread-heading">all-day hydration</h2>
         <h2 class="spread-heading">overnight hydration</h2>
-        <h2 class="spread-heading spread-green">plump hydration</h2>
+        <h2 class="spread-heading spread-green">soft, glass-like skin</h2>
       </div>
       <div class="spread-image-col">
-        <img src="{{ "v2-moisturizer-spread.jpg" | asset_url }}" alt="Spread View">
+        <img src="{{ "moisturizer-deep-hydration.jpg" | asset_url }}" alt="Spread View">
       </div>
     </section>
 
@@ -3046,30 +3065,32 @@ a { color: inherit; text-decoration: none; }
       <div class="stats-content">
         
         <div class="stat-item">
-          <div class="stat-pct">98%</div>
-          <div class="stat-desc">SAID IT GAVE AN INSTANT DEWY GLOW</div>
+          <div class="stat-pct">99%</div>
+          <div class="stat-desc">SAID THEIR SKIN FELT MORE HYDRATED + REFRESHED</div>
         </div>
         
         <div class="stat-item">
-          <div class="stat-pct">96%</div>
-          <div class="stat-desc">SAID THEIR SKIN FELT PLUMP AND HYDRATED</div>
+          <div class="stat-pct">98%</div>
+          <div class="stat-desc">SAID IT ABSORBS QUICKLY WITHOUT ANY HEAVINESS</div>
         </div>
         
-        
-          <div class="stat-desc">NOTICED SMOOTHER, SOFTER, AND REFINED SKIN BY MORNING</div>
+        <div class="stat-item">
+          <div class="stat-pct">97%</div>
+          <div class="stat-desc">SAID THEIR SKIN LOOKED SMOOTHER + MORE EVEN</div>
         </div>
         
-        
-          <div class="stat-desc">REPORTED A VISIBLE REDUCTION IN FINE LINES AND DARK SPOTS</div>
+        <div class="stat-item">
+          <div class="stat-pct">3 out of 4</div>
+          <div class="stat-desc">SAID THEY NOTICED A HEALTHY, NATURAL GLOW</div>
         </div>
         
         <div class="stat-disclaimer">
-          *Results may vary.
+          *Based on a 2-week consumer perception study with consistent daily use.
         </div>
       </div>
       
       <div class="stats-image">
-        <img src="{{ "percentage.jpeg" | asset_url }}" alt="Percentage View">
+        <img src="{{ "moisturizer-benefits.jpg" | asset_url }}" alt="Percentage View">
       </div>
     </section>
 
@@ -3081,8 +3102,8 @@ a { color: inherit; text-decoration: none; }
         <div class="faq-accordion">
           <div class="faq-item">
             <div class="faq-qa">
-              <span class="faq-question">Is it suitable for daily use?</span>
-              <p class="faq-answer">Yes, absolutely.</p>
+              <span class="faq-question">Can I use this moisturizer with makeup?</span>
+              <p class="faq-answer">Yes, it works perfectly as a base under makeup, helping create a smooth and hydrated canvas.</p>
             </div>
             <span class="faq-icon">+</span>
           </div>
@@ -3107,7 +3128,7 @@ a { color: inherit; text-decoration: none; }
 
       <div class="review-card">
         <div class="rv-sidebar">
-          <div class="rv-author">Customer</div>
+          <div class="rv-author">Sana</div>
           <div class="rv-verified">Verified Buyer</div>
         </div>
         <div class="rv-main">
@@ -3115,7 +3136,7 @@ a { color: inherit; text-decoration: none; }
             <div class="rv-stars">★★★★★</div>
           </div>
           <div class="rv-title">Verified Selection</div>
-          <div class="rv-body">"Excellent product, highly recommended!"</div>
+          <div class="rv-body">"It feels so light on my skin and gives me a soft, natural glow throughout the day. My skin looks healthier and more refreshed."</div>
         </div>
       </div>
 
@@ -3143,7 +3164,7 @@ a { color: inherit; text-decoration: none; }
               <span class="card-brand-label">NIGHT CREAM</span>
             </div>
             <div class="card-rhode-image">
-              <img src="{{ "v2-moisturizer-1.jpeg" | asset_url }}" alt="Centella Night Cream" class="product-main-img">
+              <img src="{{ "moisturizer-100.jpg" | asset_url }}" alt="Centella Night Cream" class="product-main-img">
             </div>
             <div class="card-rhode-footer">
               <div class="card-meta">
@@ -3508,13 +3529,35 @@ a { color: inherit; text-decoration: none; }
                 BUY Hydra Burst Moisturizer - RS. 2,499
             </div>
           </a>
+        </div>
+
+        <div class="card card-rhode" data-category="skincare">
+          <a href="/products/centella-moisturiser" class="card-link-wrapper">
+            <img src="{{ "moisturizer-meet-2.jpg" | asset_url }}" class="card-hover-bg" alt="Centella Moisturizer Hover">
+            <div class="card-rhode-top">
+              <span class="card-brand-label">Daily Dew</span>
+            </div>
+            <div class="card-rhode-image">
+              <img src="{{ "moisturizer-100.jpg" | asset_url }}" alt="Centella Moisturizer" class="product-main-img">
+            </div>
+            <div class="card-rhode-footer">
+              <div class="card-meta">
+                <div class="card-stars">★★★★★ <span class="review-count">(10k+)</span></div>
+                <h3 class="card-name">Centella Moisturizer</h3>
+              </div>
+              <span class="btn-rhode-buy-pill">BUY - RS. 1,800</span>
+            </div>
+            <div class="buy-button-hover">
+                BUY Centella Moisturizer - RS. 1,800
+            </div>
+          </a>
         </div></div>
     </section>
 
 
     <!-- Mobile Sticky Cart -->
     <div class="mobile-sticky-cart">
-      <button class="buy-button">ADD TO BAG - RS. 2,499</button>
+      <button class="buy-button">ADD TO BAG - RS. 1,800</button>
     </div>
   </main>
 
