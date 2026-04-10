@@ -1222,7 +1222,7 @@
     }
   },
   {
-    "File": "product.renewal-cleanser.liquid",
+    "File": "product.renewal-cleanser-v2.liquid",
     "Title": "Renewal Cleanser",
     "Subtitle": "Deep Brightening",
     "Price": "2,850",
@@ -1393,7 +1393,89 @@
     "StatsDisclaimer": "*Results may vary."
   },
   {
-    "File": "product.centella-skin-toner.liquid",
+    "File": "product.renewal-toner-v2.liquid",
+    "Title": "Renewal Toner",
+    "Subtitle": "Pore Refining",
+    "Price": "2,670",
+    "Description": "A gentle exfoliating toner that sweeps away dead skin cells and tightens pores to reveal a smoother, brighter complexion.",
+    "Benefits": [
+      "Refines pore size",
+      "Smooths skin texture",
+      "Prepares skin for hydration"
+    ],
+    "Application": "Apply with a cotton pad or hands onto clean, dry skin.",
+    "Ingredients": [
+      "Glycolic Acid",
+      "Lactic Acid",
+      "Witch Hazel",
+      "Honey"
+    ],
+    "CatchyLine": "Smooth. Refine. Renew.",
+    "ImportantInfo": {
+      "Headline": "Clear & Refine",
+      "GoodFor": "Enlarged pores and dull skin texture",
+      "FeelsLike": "A cool, refreshing splash of goodness",
+      "FYI": "Exfoliating • Alcohol-Free • Pore-Tightening"
+    },
+    "WhatsInside": {
+      "Intro": "A balanced blend of AHAs and soothing botanicals for skin renewal.",
+      "I1Title": "glycolic acid",
+      "I1Desc": "exfoliates the surface to reveal fresh, glowing skin",
+      "I2Title": "witch hazel",
+      "I2Desc": "helps tighten pores and control excess oil",
+      "Also": "Lactic Acid, Aloe Vera, Honey"
+    },
+    "SpreadItOn": [
+      "pore refining",
+      "smooth texture",
+      "bright skin"
+    ],
+    "Stats": [
+      {
+        "Pct": "98%",
+        "Desc": "SAID THEIR PORES LOOKED SMALLER"
+      },
+      {
+        "Pct": "96%",
+        "Desc": "NOTICED SMOOTHER SKIN TEXTURE"
+      }
+    ],
+    "StatsDisclaimer": "*Based on consumer perception study.",
+    "FAQs": [
+      {
+        "Q": "When should I use it?",
+        "A": "Use it after cleansing and before serum, once or twice daily."
+      }
+    ],
+    "Reviews": [
+      {
+        "Name": "Zainab",
+        "Text": "This toner has really helped with my blackheads and large pores. It doesn't sting at all!"
+      }
+    ],
+    "Images": {
+      "Hero": "v2-toner-1.jpeg",
+      "Gallery": [
+        "v2-toner-1.jpeg",
+        "v2-toner-2.jpg",
+        "v2-toner-3.jpg",
+        "v2-toner-4.jpg"
+      ],
+      "Breakdown": "v2-toner-plate.jpg",
+      "WhatsInside": "v2-toner-spoon.jpg",
+      "Spread": "v2-toner-spread.jpg",
+      "Stats": "v2-toner-stats.jpg",
+      "FAQ": "v2-toner-faq.jpg",
+      "Carousel": [
+        "v2-toner-1.jpeg",
+        "v2-toner-2.jpg",
+        "v2-toner-3.jpg",
+        "v2-toner-4.jpg"
+      ]
+    }
+  },
+  {
+    "File": "product.centella-skin-toner-copy.liquid",
     "Title": "Renewal Toner",
     "Subtitle": "Pore Refining",
     "Price": "2,670",
