@@ -343,49 +343,52 @@
      }
   },
   {
-     "File": "product.hair-mist-v2.liquid",
-     "Title": "Hair Mist",
+     "File": "product.hair-mist.liquid",
+     "Title": "Floral Blossom Hair Mist",
      "Subtitle": "Fresh Floral Touch",
      "Price": "1,200",
-     "Description": "A refreshing hair mist designed to instantly revive your hair with a soft floral scent.",
-     "Benefits": ["Long-lasting fragrance", "Natural shine"],
-     "Application": "Spray evenly onto dry hair from a short distance.",
-     "Tricks": ["Spray lightly", "Use anytime daily"],
-     "Ingredients": ["Panthenol", "Propanediol"],
+     "Description": "A refreshing hair mist designed to instantly revive your hair with a soft, long-lasting floral scent. Infused with panthenol and refreshing botanicals, it adds a natural-looking shine while keeping your hair smelling fresh and feeling soft throughout the day.",
+     "Benefits": ["Long-lasting floral fragrance", "Instant hair refresher", "Adds natural shine", "Lightweight and non-sticky"],
+     "Application": "Hold the bottle 6–8 inches away from dry or damp hair and spray evenly. Use anytime throughout the day for a quick refresh or as the final step in your hair care routine.",
+     "Tricks": ["Spray onto your hairbrush before brushing for even distribution", "Use consistently to keep hair smelling blossom-fresh all day"],
+     "Ingredients": ["Panthenol (Vitamin B5)", "Propanediol", "Floral Extracts", "Glycerin"],
      "CatchyLine": "Bloom With Every Move.",
      "ImportantInfo": {
        "Headline": "A Touch of Floral Freshness",
-       "GoodFor": "All hair types",
-       "FeelsLike": "A fine, refreshing mist",
-       "FYI": "Non-Sticky \u2022 Everyday Use"
+       "GoodFor": "All hair types seeking a fresh scent and shine",
+       "FeelsLike": "A fine, weightless mist that dries instantly",
+       "FYI": "Non-Sticky • Everyday Use • Lightweight"
      },
      "WhatsInside": {
-       "Intro": "A lightweight hair mist.",
+       "Intro": "A lightweight hair mist powered by shine-enhancing hydrators.",
        "I1Title": "panthenol",
-       "I1Desc": "hydrates and adds shine",
-       "I2Title": "propanediol",
-       "I2Desc": "refreshes hair and helps scent last",
-       "Also": "subtle floral extracts"
+       "I1Desc": "helps hydrate hair strands and add a healthy, natural-looking shine",
+       "I2Title": "floral extracts",
+       "I2Desc": "provide a delicate, long-lasting fragrance without weighing hair down",
+       "Also": "Propanediol, Glycerin, and subtle botanical refreshers"
      },
      "SpreadItOn": ["hair refresh", "floral scent", "natural shine"],
      "Stats": [
-       { "Pct": "99%", "Desc": "SAID HAIR FELT FRESHER" }
+       { "Pct": "99%", "Desc": "SAID HAIR FELT INSTANTLY REFRESHED" },
+       { "Pct": "97%", "Desc": "LOVED THE LONG-LASTING FLORAL SCENT" }
      ],
-     "StatsDisclaimer": "*Study done over 2 weeks.",
+     "StatsDisclaimer": "*Based on a 2-week perception study.",
      "FAQs": [
-       { "Q": "Can I use this hair mist daily?", "A": "Yes, it is safe for daily use." }
+       { "Q": "Can I use this hair mist daily?", "A": "Yes, it is gentle and safe for multiple applications daily." },
+       { "Q": "Will it make my hair greasy?", "A": "No, the formula is oil-free and designed to be weightless." }
      ],
      "Reviews": [
-       { "Name": "Areeba", "Text": "I love how fresh my hair feels." }
+       { "Name": "Areeba", "Text": "I love how fresh my hair feels and the scent is so lovely!" }
      ],
      "Images": {
-       "Hero": "hair-mist.jpg",
-       "Gallery": ["hair-mist-main.jpg", "hair-mist-plate.jpg", "hair-mist-faq.jpg", "hair-mist-hover.jpg"],
-       "Breakdown": "hair-mist-hover.jpg",
-       "WhatsInside": "hair-mist-plate.jpg",
-       "Spread": "hair-mist-main.jpg",
-       "Stats": "hair-mist-faq.jpg",
-       "Carousel": ["hair-mist-meet-1.jpg", "hair-mist-meet-2.jpg", "hair-mist-meet-3.jpg", "hair-mist-meet-4.jpg"]
+       "Hero": "hairmist-1.jpeg",
+       "Gallery": ["hairmist-1.jpeg", "hairmist-2.jpg", "hairmist-3.jpg", "hairmist-4.jpg"],
+       "Breakdown": "hairmist-plate.jpg",
+       "WhatsInside": "hairmist-spoon.jpg",
+       "Spread": "hairmist-spread.jpg",
+       "Stats": "hairmist-2.jpg",
+       "FAQ": "hairmist-faq.jpg",
+       "Carousel": ["hairmist-1.jpeg", "hairmist-2.jpg", "hairmist-3.jpg", "hairmist-4.jpg"]
      }
   },
   {
