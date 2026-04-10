@@ -136,7 +136,17 @@ function updateTemplate(p) {
     console.log(`Syncing ${p.File}...`);
     let c = '{% layout none %}\n' + masterCleaned;
 
-    // 1. Generate BOGO Cards (Horizontal/Vertical variant for Selection)
+    // 1. Asset Image Overrides (Safer Direct Mapping)
+    if (p.Images) {
+        if (p.Images.Hero) c = c.split('nightcream-v3-1.jpeg').join(p.Images.Hero);
+        if (p.Images.Breakdown) c = c.split('plate.jpeg').join(p.Images.Breakdown);
+        if (p.Images.WhatsInside) c = c.split('spoon.jpeg').join(p.Images.WhatsInside);
+        if (p.Images.Spread) c = c.split('spread.jpeg').join(p.Images.Spread);
+        if (p.Images.Stats) c = c.split('percentage.jpeg').join(p.Images.Stats);
+        if (p.Images.FAQ) c = c.split('faq.jpeg').join(p.Images.FAQ);
+    }
+
+    // 2. Generate BOGO Cards (Horizontal/Vertical variant for Selection)
     const bogoCardsHtml = products.map(prod => {
         const handle = getHandle(prod.File);
         return `
@@ -279,20 +289,10 @@ function updateTemplate(p) {
         c = c.replace(/<h2 class="spread-heading spread-green">[\s\S]*?<\/h2>/, `<h2 class="spread-heading spread-green">${p.SpreadItOn[2]}</h2>`);
     }
 
-    // 10. Stats
-    if(p.Stats && p.Stats.length > 0) {
-        // Replace all percentages in order
-        p.Stats.forEach((stat, idx) => {
-            // Find the nth occurrence of a percentage or "3 out of 4" like pattern
-            // For simplicity, we'll try to find the standard text patterns in master
-        });
-        
-        // Let's use exact strings from master for first and second 
-        c = c.replace(/\d+%/g, (match, offset) => {
-             // This is tricky without a loop. Let's just do the specific ones.
-             return match; 
-        });
 
+
+    // 10. Statistics
+    if (p.Stats) {
         p.Stats.forEach((st, i) => {
             if (i === 0) {
                 c = c.replace(/97%/, st.Pct);
@@ -309,26 +309,34 @@ function updateTemplate(p) {
             }
         });
         for (let j = p.Stats.length; j < 4; j++) {
-            if (j === 3) c = c.replace(/<div class="stat-item">\s*<div class="stat-pct">3 out of 4[\s\S]*?<\/div>\s*<\/div>/, '');
-            else if (j === 2) c = c.replace(/<div class="stat-item">\s*<div class="stat-pct">94%[\s\S]*?<\/div>\s*<\/div>/, '');
-            else if (j === 1) c = c.replace(/<div class="stat-item">\s*<div class="stat-pct">95%[\s\S]*?<\/div>\s*<\/div>/, '');
+            if (j === 3) c = c.replace(/<div class="stat-item">\s*<div class="stat-pct">3 out of 4[\s\S]*?<\/div>(\s*<\/div>)?/, '');
+            else if (j === 2) c = c.replace(/<div class="stat-item">\s*<div class="stat-pct">94%[\s\S]*?<\/div>(\s*<\/div>)?/, '');
+            else if (j === 1) c = c.replace(/<div class="stat-item">\s*<div class="stat-pct">95%[\s\S]*?<\/div>(\s*<\/div>)?/, '');
+        }
+        if (p.StatsDisclaimer) {
+            c = c.replace(/\*Based on a 2-week consumer perception study with consistent nightly use\./, p.StatsDisclaimer);
+        }
+        if (p.Images && p.Images.Stats) {
+            c = c.replace(/<div class="stats-image">[\s\S]*?src="([^"]*)"/, `<div class="stats-image">\n        <img src="{{ "${p.Images.Stats}" | asset_url }}"`);
         }
     }
 
     // 11. FAQs
-    const faqHtml = p.FAQs.map(f => `          <div class="faq-item">
+    if (p.FAQs) {
+        const faqHtml = p.FAQs.map(f => `          <div class="faq-item">
             <div class="faq-qa">
               <span class="faq-question">${f.Q}</span>
               <p class="faq-answer">${f.A}</p>
             </div>
             <span class="faq-icon">+</span>
           </div>`).join('\n');
-    c = c.replace(/<div class="faq-accordion">[\s\S]*?<\/div>\s*<\/div>/, `<div class="faq-accordion">\n${faqHtml}\n        </div>\n      </div>`);
-    // Cleanup Sweep (prevents stray closing divs from breaking layout)
-    c = c.replace(/<\/div>\s*<\/div>\s*<\/div>\s*<\/div>\s*<div class="faq-image-col">/, "</div>\n    </div>\n    <div class=\"faq-image-col\">");
-    c = c.replace(/<\/div>\s*<\/div>\s*<\/div>\s*<div class="faq-image-col">/, "</div>\n    </div>\n    <div class=\"faq-image-col\">");
-    c = c.replace(/<\/div>\s*<\/div>\s*<\/div>\s*<\/div>\s*<div class="stats-image">/, "</div>\n    </div>\n    <div class=\"stats-image\">");
-    c = c.replace(/<\/div>\s*<\/div>\s*<\/div>\s*<div class="stats-image">/, "</div>\n    </div>\n    <div class=\"stats-image\">");
+        
+        c = c.replace(/<div class="faq-accordion">[\s\S]*?<\/div>\s*<\/div>/, `<div class="faq-accordion">\n${faqHtml}\n        </div>\n      </div>`);
+    }
+
+    // FINAL LAYOUT CLEANUP - Ensure everything is tidy
+    c = c.replace(/<\/div>\s*<\/div>\s*<\/div>\s*<div class="faq-image-col">/, "</div>\n      </div>\n      <div class=\"faq-image-col\">");
+    c = c.replace(/<\/div>\s*<\/div>\s*<\/div>\s*<div class="stats-image">/, "</div>\n      </div>\n      <div class=\"stats-image\">");
 
     // 12. Reviews
     const reviewHtml = p.Reviews.map(r => `      <div class="review-card">

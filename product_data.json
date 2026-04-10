@@ -253,6 +253,7 @@
        "WhatsInside": "v2-sunscreen-spoon.jpg",
        "Spread": "v2-sunscreen-spread.jpg",
        "Stats": "v2-sunscreen-stats.jpg",
+       "FAQ": "v2-sunscreen-faq.jpg",
        "Carousel": ["v2-sunscreen-1.jpeg", "v2-sunscreen-2.jpg", "v2-sunscreen-3.jpg", "v2-sunscreen-4.jpg"]
     }
   },
@@ -558,14 +559,15 @@
      ],
      "Reviews": [
        { "Name": "Mahnoor", "Text": "My breakouts have reduced a lot." }
-     ],
-     "Images": {
+      ],
+      "Images": {
        "Hero": "v2-antiacne-1.jpeg",
        "Gallery": ["v2-antiacne-1.jpeg", "v2-antiacne-2.jpg", "v2-antiacne-3.jpg", "v2-antiacne-4.jpg"],
        "Breakdown": "v2-antiacne-plate.jpg",
-       "WhatsInside": "v2-antiacne-3.jpg",
-       "Spread": "v2-antiacne-4.jpg",
+       "WhatsInside": "v2-antiacne-spoon.jpg",
+       "Spread": "v2-antiacne-spread.jpg",
        "Stats": "v2-antiacne-stats.jpg",
+       "FAQ": "v2-antiacne-faq.jpg",
        "Carousel": ["v2-antiacne-1.jpeg", "v2-antiacne-2.jpg", "v2-antiacne-3.jpg", "v2-antiacne-4.jpg"]
      }
   },
