@@ -316,6 +316,8 @@ function updateTemplate(p) {
             <span class="faq-icon">+</span>
           </div>`).join('\n');
     c = c.replace(/<div class="faq-accordion">[\s\S]*?<\/div>\s*<\/div>/, `<div class="faq-accordion">\n${faqHtml}\n        </div>\n      </div>`);
+    // Safety check: if we somehow have a triple </div>, clean it up
+    c = c.replace(/<\/div>\s*<\/div>\s*<\/div>\s*<div class="faq-image-col">/, "</div>\n      </div>\n      <div class=\"faq-image-col\">");
 
     // 12. Reviews
     const reviewHtml = p.Reviews.map(r => `<div class="customer-review-card">
