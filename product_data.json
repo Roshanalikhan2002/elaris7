@@ -141,16 +141,18 @@
       { "Q": "Can I use this face wash twice a day?", "A": "Yes, it is gentle enough for both morning and evening use without over-drying your skin." }
     ],
     "Reviews": [
-      { "Name": "Areeba", "Text": "I love how gentle this face wash feels on my skin. It cleans properly without making my skin dry, and my face looks fresh after every wash." }
+      { "Name": "Alishba", "Text": "I'm genuinely in love with this face wash. It's so gentle but cleanses deeply without leaving my skin feeling tight or dry. My face feels soft and balanced!" },
+      { "Name": "Sara", "Text": "Finally found a cleanser that doesn't irritate my sensitive skin. The texture is amazing and it leaves a subtle glow after washing. A 10/10 product for me!" }
     ],
     "Images": {
-       "Hero": "facewash-100.jpg",
-       "Gallery": ["facewash-gallery-1.jpg", "facewash-gallery-2.jpg", "facewash-gallery-3.jpg", "facewash-gallery-4.jpg"],
-       "Breakdown": "deep-hydration-facewash.jpg",
-       "WhatsInside": "facewash-ingredients.jpg",
-       "Spread": "facewash-benefits.jpg",
-       "Stats": "facewash-faq-squeeze.jpg",
-       "Carousel": ["cleanser-meet-1.jpg", "cleanser-meet-2.jpg", "cleanser-meet-3.jpg", "cleanser-meet-4.jpg"]
+       "Hero": "facewash1.jpeg",
+       "Gallery": ["facewash1.jpeg", "facewash2.jpg", "facewash3.jpg", "facewash4.jpg"],
+       "Breakdown": "facewash-plate.jpg",
+       "WhatsInside": "facewash-spoon.jpg",
+       "Spread": "facewash-spread.jpg",
+       "Stats": "facewash2.jpg",
+       "FAQ": "facewash-faq.jpg",
+       "Carousel": ["facewash1.jpeg", "facewash2.jpg", "facewash3.jpg", "facewash4.jpg"]
     }
   },
   {
