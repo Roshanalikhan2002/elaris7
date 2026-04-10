@@ -434,39 +434,66 @@
   },
   {
      "File": "product.tranexamic-serum-v2.liquid",
-     "Title": "Tranexamic Serum",
+     "Title": "Elaris7 Tranexamic Brightening Serum",
      "Subtitle": "Even & Illuminate",
      "Price": "2,400",
-     "Description": "A targeted brightening serum designed to reduce the appearance of dark spots.",
-     "Benefits": ["Reduces dark spots", "Improves clarity"],
-     "Application": "Apply 2-3 drops morning and night.",
-     "Tricks": ["Apply on damp skin", "Use sunscreen daily"],
-     "Ingredients": ["Tranexamic Acid (4%)", "Niacinamide", "Vitamin C"],
+     "Description": "A targeted brightening serum designed to reduce the appearance of dark spots and uneven tone. It helps improve clarity, boost radiance, and support a smoother, more even-looking complexion with consistent use.",
+     "Benefits": [
+       "Helps reduce the appearance of dark spots and discoloration",
+       "Supports a brighter, more even skin tone",
+       "Improves dullness and uneven texture",
+       "Enhances overall skin clarity and radiance",
+       "Hydrates while supporting the skin barrier",
+       "Helps smooth and refine the skin surface",
+       "Promotes a healthier, more luminous glow"
+     ],
+     "Application": "Use morning and night after cleansing and toning. Apply 2–3 drops to face and neck and gently press into the skin. Follow with moisturizer and use sunscreen during the day.",
+     "Tricks": [
+       "Apply on slightly damp skin for better absorption",
+       "Use consistently for visible brightening results",
+       "Pair with sunscreen daily to prevent further discoloration",
+       "Layer with moisturizer to lock in hydration"
+     ],
+     "Ingredients": ["Tranexamic Acid (4%)", "Niacinamide (10%)", "Vitamin C", "Alpha Arbutin", "Hyaluronic Acid", "Glycerin", "Panthenol (Vitamin B5)", "Vitamin E", "Peptides", "Botanical Extracts"],
      "CatchyLine": "Fade Spots. Reveal Clarity.",
      "ImportantInfo": {
-       "Headline": "Targeted Brightening",
-       "GoodFor": "Uneven tone and dark spots",
-       "FeelsLike": "A smooth, fast-absorbing serum",
-       "FYI": "Tone-Correcting • Fast Absorbing"
+       "Headline": "Targeted Brightening That Works",
+       "Description": "A serum for EVEN TONE + CLEAR, RADIANT SKIN.",
+       "GoodFor": "All skin types, especially uneven tone and dark spots",
+       "FeelsLike": "A smooth, fast-absorbing serum that layers easily",
+       "LooksLike": "Brighter, clearer skin with improved tone",
+       "SmellsLike": "A soft, clean scent with a subtle finish",
+       "FYI": "Non-Greasy • Fast Absorbing • Daily Use • Tone-Correcting"
      },
      "WhatsInside": {
-       "Intro": "A potent brightening serum.",
-       "I1Title": "tranexamic acid",
+       "Intro": "A potent brightening serum formulated to target dark spots, even skin tone, and enhance natural radiance.",
+       "I1Title": "TRANEXAMIC ACID (4%)",
        "I1Desc": "helps visibly reduce dark spots and discoloration",
-       "I2Title": "niacinamide",
+       "I2Title": "NIACINAMIDE (10%)",
        "I2Desc": "supports even tone and improves dullness",
-       "Also": "Vitamin C, Alpha Arbutin, Hyaluronic Acid"
+       "Also": "Vitamin C, Alpha Arbutin, Hyaluronic Acid, Glycerin, Panthenol, Vitamin E, peptides, and botanical extracts for hydration, barrier support, and glowing skin"
      },
      "SpreadItOn": ["dark spot care", "even skin tone", "radiant glow"],
      "Stats": [
-       { "Pct": "99%", "Desc": "SAID SKIN LOOKED MORE EVEN" }
+       { "Pct": "99%", "Desc": "SAID THEIR SKIN LOOKED MORE EVEN" },
+       { "Pct": "98%", "Desc": "SAID THEIR SKIN APPEARED BRIGHTER" },
+       { "Pct": "97%", "Desc": "SAID DARK SPOTS LOOKED LESS VISIBLE" },
+       { "Pct": "3 out of 4", "Desc": "SAID THEY NOTICED IMPROVED SKIN CLARITY" }
      ],
-     "StatsDisclaimer": "*2-week perception study.",
+     "StatsDisclaimer": "Based on a 2-week consumer perception study with consistent daily use.",
      "FAQs": [
-       { "Q": "Is it suitable for sensitive skin?", "A": "Yes, but patch testing is recommended." }
+       { "Q": "Can I use this serum every day?", "A": "Yes, it is suitable for daily use, both morning and night." },
+       { "Q": "Is it suitable for sensitive skin?", "A": "Yes, it includes soothing ingredients, but patch testing is recommended." },
+       { "Q": "Does it help with dark spots and pigmentation?", "A": "Yes, it is designed to target discoloration and improve uneven tone." },
+       { "Q": "Can I layer it with other skincare products?", "A": "Yes, it works well with moisturizers, sunscreens, and other gentle actives." },
+       { "Q": "Do I need to use sunscreen with this?", "A": "Yes, sunscreen is essential during the day to protect and maintain results." }
      ],
      "Reviews": [
-       { "Name": "Nimra", "Text": "I've seen a noticeable difference in my dark spots." }
+       { "Name": "Nimra", "Text": "I've seen a noticeable difference in my dark spots. My skin looks clearer and more even now." },
+       { "Name": "Laiba", "Text": "This serum has really helped brighten my complexion. My skin feels smoother and looks more radiant." },
+       { "Name": "Sumbul", "Text": "My uneven tone has improved a lot since I started using this. It feels gentle and effective." },
+       { "Name": "Faizan", "Text": "After a few weeks, my skin looks more balanced and fresh. It has reduced the appearance of marks." },
+       { "Name": "Rehan", "Text": "It absorbs quickly and gives a nice glow to my skin. My complexion looks healthier overall." }
      ],
      "Images": {
        "Hero": "TranexamicSerum1.jpg",
