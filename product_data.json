@@ -591,13 +591,14 @@
        { "Name": "Areeba", "Text": "My skin looks much brighter." }
      ],
      "Images": {
-       "Hero": "glutathione-cream-100.jpg",
-       "Gallery": ["glutathione-meet-1.jpg", "glutathione-meet-2.jpg", "glutathione-meet-3.jpg", "glutathione-meet-4.jpg"],
-       "Breakdown": "barrier-new.png",
-       "WhatsInside": "glutathione-meet-2.jpg",
-       "Spread": "glutathione-meet-3.jpg",
-       "Stats": "glutathione-meet-4.jpg",
-       "Carousel": ["glutathione-meet-1.jpg", "glutathione-meet-2.jpg", "glutathione-meet-3.jpg", "glutathione-meet-4.jpg"]
+       "Hero": "glutathione-1.jpeg",
+       "Gallery": ["glutathione-1.jpeg", "glutathione-2.jpg", "glutathione-3.jpg", "glutathione-4.jpg"],
+       "Breakdown": "glutathione-plate.jpg",
+       "WhatsInside": "glutathione-spoon.jpg",
+       "Spread": "glutathione-spread.jpg",
+       "Stats": "glutathione-2.jpg",
+       "FAQ": "glutathione-faq.jpg",
+       "Carousel": ["glutathione-1.jpeg", "glutathione-2.jpg", "glutathione-3.jpg", "glutathione-4.jpg"]
      }
   }
 ]
