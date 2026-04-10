@@ -469,13 +469,13 @@
        { "Name": "Nimra", "Text": "I've seen a noticeable difference in my dark spots." }
      ],
      "Images": {
-       "Hero": "tranexamic-serum.jpg",
-       "Gallery": ["tranexamic-meet-1.jpg", "tranexamic-meet-2.jpg", "tranexamic-meet-3.jpg", "tranexamic-meet-4.jpg"],
-       "Breakdown": "tranexamic-meet-1.jpg",
-       "WhatsInside": "tranexamic-meet-2.jpg",
-       "Spread": "tranexamic-meet-3.jpg",
-       "Stats": "tranexamic-meet-4.jpg",
-       "Carousel": ["tranexamic-meet-1.jpg", "tranexamic-meet-2.jpg", "tranexamic-meet-3.jpg", "tranexamic-meet-4.jpg"]
+       "Hero": "TranexamicSerum1.jpg",
+       "Gallery": ["TranexamicSerum1.jpg", "TranexamicSerum2.jpg", "TranexamicSerum3.jpg", "TranexamicSerum4.jpg"],
+       "Breakdown": "plate.jpg",
+       "WhatsInside": "spoon.jpg",
+       "Spread": "spread.jpg",
+       "Stats": "percentage.jpg",
+       "Carousel": ["TranexamicSerum1.jpg", "TranexamicSerum2.jpg", "TranexamicSerum3.jpg", "TranexamicSerum4.jpg"]
      }
   },
   {
