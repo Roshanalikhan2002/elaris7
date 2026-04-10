@@ -104,7 +104,7 @@
             "reviews": "12k",
             "asset_image": "glow-serum-100.jpg",
             "asset_hover_image": "glow-serum-hover.jpg",
-            "product_link": "/products/e7-korean-glass-skin-centella-sunscreen-spf50-copy"
+            "product_link": "/products/glow-serum"
           }
         },
         "block_glutathione": {
@@ -146,7 +146,7 @@
             "reviews": "11k",
             "asset_image": "facewash-100.jpg",
             "asset_hover_image": "deep-hydration-facewash.jpg",
-            "product_link": "/products/e7-korean-glass-skin-centella-night-cream-copy"
+            "product_link": "/products/face-wash"
           }
         },
         "block_anti_acne": {
@@ -174,7 +174,7 @@
             "reviews": "7k",
             "asset_image": "sunscreen-100.jpg",
             "asset_hover_image": "sunscreen-hover.jpg",
-            "product_link": "/products/e7-korean-glass-skin-centella-face-wash-copy"
+            "product_link": "/products/sunscreen-v2"
           }
         },
         "block_cleanser": {
