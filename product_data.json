@@ -216,39 +216,44 @@
     "Ingredients": ["Titanium Dioxide", "Tinosorb S", "Avobenzone", "Hyaluronic Acid", "Ceramides", "Centella Asiatica"],
     "CatchyLine": "Your Invisible Daily Protection",
     "ImportantInfo": {
-      "Headline": "Protection That Feels Effortless",
-      "GoodFor": "All skin types",
-      "FeelsLike": "A lightweight, breathable layer",
-      "LooksLike": "A clear, natural finish",
-      "FYI": "Halal-Friendly \u2022 Non-Greasy \u2022 Makeup-Friendly"
+      "Headline": "High-Performance Sun Protection",
+      "GoodFor": "All skin types needing daily UV defense",
+      "FeelsLike": "A weightless, non-greasy lotion that blends instantly",
+      "LooksLike": "A velvet-smooth finish with zero white cast",
+      "SmellsLike": "A light, clean, and refreshing scent",
+      "FYI": "Broad Spectrum • SPF 60+ • Makeup-Friendly • Hydrating"
     },
     "WhatsInside": {
-      "Intro": "A high-performance sun defense formula.",
+      "Intro": "Advanced UV filters combined with hydrating actives.",
       "I1Title": "titanium dioxide",
-      "I1Desc": "a mineral-based UV filter that provides broad-spectrum protection",
-      "I2Title": "hyaluronic acid",
-      "I2Desc": "a hydration booster that locks in moisture",
-      "Also": "Ceramides, Vitamin E, Centella Asiatica"
+      "I1Desc": "provides reliable broad-spectrum protection against UVA and UVB rays",
+      "I2Title": "ceramides",
+      "I2Desc": "help strengthen the skin barrier and lock in moisture while you wear it",
+      "Also": "Tinosorb S, Avobenzone, Hyaluronic Acid, Centella Asiatica"
     },
     "SpreadItOn": ["daily sun protection", "long-lasting hydration", "smooth, protected glow"],
     "Stats": [
-      { "Pct": "99%", "Desc": "SAID THEIR SKIN FELT PROTECTED" }
+      { "Pct": "100%", "Desc": "SAID IT LEFT NO WHITE CAST ON THEIR SKIN" },
+      { "Pct": "98%", "Desc": "SAID IT FELT LIGHTWEIGHT AND BREATHABLE" },
+      { "Pct": "97%", "Desc": "NOTICED THEIR SKIN LOOKED MORE RADIANT" }
     ],
-    "StatsDisclaimer": "*Consumer perception study.",
+    "StatsDisclaimer": "*Based on a 2-week consumer perception study.",
     "FAQs": [
-      { "Q": "Can I use this sunscreen under makeup?", "A": "Yes, it creates a smooth and lightweight base." }
+      { "Q": "Will it leave a white cast?", "A": "No, our formula is designed to blend seamlessly into all skin tones for a clear finish." },
+      { "Q": "Can I use it as a primer?", "A": "Yes, it has a smooth, velvet-like finish that makes it an excellent base for makeup." }
     ],
     "Reviews": [
-      { "Name": "Ahmed", "Text": "It feels super light on my skin and doesn\u2019t leave any white cast." }
+      { "Name": "Mariam", "Text": "Finally a sunscreen that doesn't feel sticky! It absorbs so quickly and my makeup goes on perfectly over it. Highly recommend!" },
+      { "Name": "Zain", "Text": "I use this every day now. It's very hydrating and doesn't break me out like other sunscreens did. Great product." }
     ],
     "Images": {
-       "Hero": "sunscreen-100.jpg",
-       "Gallery": ["sunscreen-lifestyle-1.jpg", "sunscreen-lifestyle-2.jpg", "sunscreen-lifestyle-3.jpg", "sunscreen-lifestyle-4.jpg"],
-       "Breakdown": "sunscreen-plate.jpg",
-       "WhatsInside": "Artboard-1-100.jpg",
-       "Spread": "sunscreen-hover.jpg",
-       "Stats": "social-face.jpg",
-       "Carousel": ["sunscreen-lifestyle-1.jpg", "sunscreen-lifestyle-2.jpg", "sunscreen-lifestyle-3.jpg", "sunscreen-lifestyle-4.jpg"]
+       "Hero": "v2-sunscreen-1.jpeg",
+       "Gallery": ["v2-sunscreen-1.jpeg", "v2-sunscreen-2.jpg", "v2-sunscreen-3.jpg", "v2-sunscreen-4.jpg"],
+       "Breakdown": "v2-sunscreen-plate.jpg",
+       "WhatsInside": "v2-sunscreen-spoon.jpg",
+       "Spread": "v2-sunscreen-spread.jpg",
+       "Stats": "v2-sunscreen-stats.jpg",
+       "Carousel": ["v2-sunscreen-1.jpeg", "v2-sunscreen-2.jpg", "v2-sunscreen-3.jpg", "v2-sunscreen-4.jpg"]
     }
   },
   {
@@ -555,13 +560,13 @@
        { "Name": "Mahnoor", "Text": "My breakouts have reduced a lot." }
      ],
      "Images": {
-       "Hero": "anti-acne-100.jpg",
-       "Gallery": ["anti-acne-meet-1.jpg", "anti-acne-meet-2.jpg", "anti-acne-meet-3.jpg", "anti-acne-meet-4.jpg"],
-       "Breakdown": "hover-anti-acne.png",
-       "WhatsInside": "anti-acne-meet-3.jpg",
-       "Spread": "anti-acne-meet-4.jpg",
-       "Stats": "social-anti-acne.png",
-       "Carousel": ["anti-acne-meet-1.jpg", "anti-acne-meet-2.jpg", "anti-acne-meet-3.jpg", "anti-acne-meet-4.jpg"]
+       "Hero": "v2-antiacne-1.jpeg",
+       "Gallery": ["v2-antiacne-1.jpeg", "v2-antiacne-2.jpg", "v2-antiacne-3.jpg", "v2-antiacne-4.jpg"],
+       "Breakdown": "v2-antiacne-plate.jpg",
+       "WhatsInside": "v2-antiacne-3.jpg",
+       "Spread": "v2-antiacne-4.jpg",
+       "Stats": "v2-antiacne-stats.jpg",
+       "Carousel": ["v2-antiacne-1.jpeg", "v2-antiacne-2.jpg", "v2-antiacne-3.jpg", "v2-antiacne-4.jpg"]
      }
   },
   {
