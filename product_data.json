@@ -192,13 +192,14 @@
       { "Name": "Iqra", "Text": "My skin looks brighter and more even after using this regularly." }
     ],
     "Images": {
-       "Hero": "glow-serum-100.jpg",
-       "Gallery": ["glow-gallery-2.jpg", "glow-gallery-3.jpg", "glow-gallery-4.jpg", "centella-serum-main.png"],
-       "Breakdown": "centella-serum-split.jpg",
-       "WhatsInside": "centella-serum-ingredients.jpg",
-       "Spread": "centella-serum-benefits.jpg",
-       "Stats": "social-hand.jpg",
-       "Carousel": ["glow-meet-1.jpg", "glow-meet-2.jpg", "glow-meet-3.jpg", "glow-meet-4.jpg"]
+       "Hero": "glowserum-1.png",
+       "Gallery": ["glowserum-1.png", "glowserum-2.jpg", "glowserum-3.jpg", "glowserum-4.jpg"],
+       "Breakdown": "glowserum-plate.jpg",
+       "WhatsInside": "glowserum-spoon.jpg",
+       "Spread": "glowserum-spread.jpg",
+       "Stats": "glowserum-stats.jpg",
+       "FAQ": "glowserum-faq.jpg",
+       "Carousel": ["glowserum-1.png", "glowserum-2.jpg", "glowserum-3.jpg", "glowserum-4.jpg"]
     }
   },
   {
