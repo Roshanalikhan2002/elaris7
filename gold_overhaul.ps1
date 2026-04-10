@@ -17,6 +17,7 @@ $products = @{
     "product.retinol-night-cream.liquid" = @{ "title" = "Retinol Night Cream"; "price" = "2,800"; "img" = "retinol-1.png" }
     "product.sunscreen-v2.liquid" = @{ "title" = "Sunscreen SPF60+"; "price" = "2,500"; "img" = "sunscreen-100.jpg" }
     "product.skin-refining-toner.liquid" = @{ "title" = "Skin Refining Toner"; "price" = "1,800"; "img" = "toner-1.png" }
+    "product.tranexamic-serum-v2.liquid" = @{ "title" = "Tranexamic Brightening Serum"; "price" = "2,200"; "img" = "brightening-serum.png" }
 }
 
 foreach ($filename in $products.Keys) {
@@ -46,4 +47,4 @@ foreach ($filename in $products.Keys) {
     Set-Content -Path $targetPath -Value $newContent -Encoding UTF8
 }
 
-Write-Host "Gold Standard Deployment Complete."
+Write-Host "Gold Standard Deployment Complete with Tranexamic Serum."
