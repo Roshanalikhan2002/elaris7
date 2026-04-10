@@ -310,10 +310,23 @@ function updateTemplate(p) {
         c = c.replace(/nightcream-v3-4.jpeg/g, img.Gallery[3]);
     }
     if(img.Hero) c = c.split('night-cream-suite.jpeg').join(img.Hero);
+    
+    // Carousel Images
+    if(img.Carousel && img.Carousel.length >= 4) {
+        c = c.split('night-cream-swatch.jpeg').join(img.Carousel[1]);
+        c = c.split('night-cream-lifestyle.jpeg').join(img.Carousel[2]);
+        c = c.split('night-cream-last.jpeg').join(img.Carousel[3]);
+    }
+
     if(img.Breakdown) c = c.split('plate.jpeg').join(img.Breakdown);
     if(img.WhatsInside) c = c.split('spoon.jpeg').join(img.WhatsInside);
     if(img.Spread) c = c.split('spread.jpeg').join(img.Spread);
     if(img.Stats) c = c.split('percentage.jpeg').join(img.Stats);
+    
+    // FAQ Image (use provided FAQ mapping or fallback to faq.jpeg)
+    if(img.FAQ) {
+        c = c.split('faq.jpeg').join(img.FAQ);
+    }
 
     // 14. Asset URL Conversion (Final Sweep)
     c = c.replace(/src="(?:\.\/assets\/|)([\w\.-]+\.(?:jpg|png|jpeg|webp|gif|svg))"/g, 'src="{{ "$1" | asset_url }}"');
