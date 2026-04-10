@@ -293,17 +293,25 @@ function updateTemplate(p) {
              return match; 
         });
 
-        if (p.Stats[0]) {
-            c = c.replace(/97%/, p.Stats[0].Pct);
-            c = c.replace(/SAID THEIR SKIN FELT DEEPLY HYDRATED AND NOURISHED/, p.Stats[0].Desc);
-        }
-        if (p.Stats[1]) {
-            c = c.replace(/95%/, p.Stats[1].Pct);
-            c = c.replace(/SAID IT ABSORBED WELL WITHOUT HEAVINESS/, p.Stats[1].Desc);
-        }
-        if (p.Stats[2]) {
-            c = c.replace(/94%/, p.Stats[2].Pct);
-            c = c.replace(/NOTICED SMOOTHER, SOFTER, AND REFINED SKIN BY MORNING/, p.Stats[2].Desc);
+        p.Stats.forEach((st, i) => {
+            if (i === 0) {
+                c = c.replace(/97%/, st.Pct);
+                c = c.replace(/SAID THEIR SKIN FELT DEEPLY HYDRATED AND NOURISHED/, st.Desc);
+            } else if (i === 1) {
+                c = c.replace(/95%/, st.Pct);
+                c = c.replace(/SAID IT ABSORBED WELL WITHOUT HEAVINESS/, st.Desc);
+            } else if (i === 2) {
+                c = c.replace(/94%/, st.Pct);
+                c = c.replace(/NOTICED SMOOTHER, SOFTER, AND REFINED SKIN BY MORNING/, st.Desc);
+            } else if (i === 3) {
+                c = c.replace(/3 out of 4/, st.Pct);
+                c = c.replace(/REPORTED A VISIBLE REDUCTION IN FINE LINES AND DARK SPOTS/, st.Desc);
+            }
+        });
+        for (let j = p.Stats.length; j < 4; j++) {
+            if (j === 3) c = c.replace(/<div class="stat-item">\s*<div class="stat-pct">3 out of 4<\/div>[\s\S]*?<\/div>/, '');
+            else if (j === 2) c = c.replace(/<div class="stat-item">\s*<div class="stat-pct">94%<\/div>[\s\S]*?<\/div>/, '');
+            else if (j === 1) c = c.replace(/<div class="stat-item">\s*<div class="stat-pct">95%<\/div>[\s\S]*?<\/div>/, '');
         }
     }
 
@@ -320,12 +328,22 @@ function updateTemplate(p) {
     c = c.replace(/<\/div>\s*<\/div>\s*<\/div>\s*<div class="faq-image-col">/, "</div>\n      </div>\n      <div class=\"faq-image-col\">");
 
     // 12. Reviews
-    const reviewHtml = p.Reviews.map(r => `<div class="customer-review-card">
-          <div class="review-stars">★★★★★</div>
-          <p class="review-text">“${r.Text}”</p>
-          <p class="review-author">— ${r.Name}</p>
-        </div>`).join('\n');
-    c = c.replace(/<div class="reviews-scroll">[\s\S]*?<\/div>/, `<div class="reviews-scroll">\n        ${reviewHtml}\n      </div>`);
+    const reviewHtml = p.Reviews.map(r => `      <div class="review-card">
+        <div class="rv-sidebar">
+          <div class="rv-author">${r.Name}</div>
+          <div class="rv-verified">Verified Buyer</div>
+        </div>
+        <div class="rv-main">
+          <div class="rv-main-header">
+            <div class="rv-stars">★★★★★</div>
+          </div>
+          <div class="rv-title">Verified Selection</div>
+          <div class="rv-body">"${r.Text}"</div>
+        </div>
+      </div>`).join('\n\n      <hr class="rv-divider">\n\n');
+    
+    // Replace the entire area between the header and the closing tag
+    c = c.replace(/<hr class="rv-divider">[\s\S]*?<hr class="rv-divider" style="margin-bottom: 40px;">/, `<hr class="rv-divider">\n\n${reviewHtml}\n\n      <hr class="rv-divider" style="margin-bottom: 40px;">`);
 
     // 13. IMAGES (PER-PRODUCT OVERRIDES)
     const img = p.Images;
