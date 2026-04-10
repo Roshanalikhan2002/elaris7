@@ -286,11 +286,14 @@ function updateTemplate(p) {
     }
 
     // 11. FAQs
-    const faqHtml = p.FAQs.map(f => `<details class="faq-item">
-          <summary><span>${f.Q}</span><span>+</span></summary>
-          <div class="faq-answer">${f.A}</div>
-        </details>`).join('\n');
-    c = c.replace(/<div class="faq-list">[\s\S]*?<\/div>/, `<div class="faq-list">\n        ${faqHtml}\n      </div>`);
+    const faqHtml = p.FAQs.map(f => `          <div class="faq-item">
+            <div class="faq-qa">
+              <span class="faq-question">${f.Q}</span>
+              <p class="faq-answer">${f.A}</p>
+            </div>
+            <span class="faq-icon">+</span>
+          </div>`).join('\n');
+    c = c.replace(/<div class="faq-accordion">[\s\S]*?<\/div>\s*<\/div>/, `<div class="faq-accordion">\n${faqHtml}\n        </div>\n      </div>`);
 
     // 12. Reviews
     const reviewHtml = p.Reviews.map(r => `<div class="customer-review-card">
