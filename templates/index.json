@@ -179,7 +179,7 @@
             "reviews": "10k",
             "asset_image": "gel cleanser-100.jpg",
             "asset_hover_image": "gel-cleanser-hover.jpg",
-            "product_link": "/products/renewal-cleanser-v2"
+            "product_link": "/products/renewal-cleanser"
           }
         },
         "block_moisturizer": {
@@ -207,7 +207,7 @@
             "reviews": "8k",
             "asset_image": "renewal toner-100.jpg",
             "asset_hover_image": "toner-hover.jpg",
-            "product_link": "/products/centella-skin-toner-v2"
+            "product_link": "/products/renewal-toner"
           }
         },
         "block_set_1": {
