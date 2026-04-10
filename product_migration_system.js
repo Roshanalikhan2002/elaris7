@@ -248,7 +248,11 @@ function updateTemplate(p) {
     // 7. Important Info
     const info = p.ImportantInfo;
     c = c.replace(/<h2 class="bd-title">[\s\S]*?<\/h2>/, `<h2 class="bd-title">${info.Headline}</h2>`);
-    // Note: These replacements rely on exact strings in master. Since we just updated master, it should work.
+    c = c.replace(/<span class="bd-label">GOOD FOR:<\/span>\s*<span class="bd-val">[\s\S]*?<\/span>/, `<span class="bd-label">GOOD FOR:</span><span class="bd-val">${info.GoodFor}</span>`);
+    c = c.replace(/<span class="bd-label">FEELS LIKE:<\/span>\s*<span class="bd-val">[\s\S]*?<\/span>/, `<span class="bd-label">FEELS LIKE:</span><span class="bd-val">${info.FeelsLike}</span>`);
+    if(info.LooksLike) c = c.replace(/<span class="bd-label">LOOKS LIKE:<\/span>\s*<span class="bd-val">[\s\S]*?<\/span>/, `<span class="bd-label">LOOKS LIKE:</span><span class="bd-val">${info.LooksLike}</span>`);
+    if(info.SmellsLike) c = c.replace(/<span class="bd-label">SMELLS LIKE:<\/span>\s*<span class="bd-val">[\s\S]*?<\/span>/, `<span class="bd-label">SMELLS LIKE:</span><span class="bd-val">${info.SmellsLike}</span>`);
+    c = c.replace(/<span class="bd-label">FYI:<\/span>\s*<span class="bd-val">[\s\S]*?<\/span>/, `<span class="bd-label">FYI:</span><span class="bd-val">${info.FYI}</span>`);
     
     // 8. What's Inside
     const wi = p.WhatsInside;
@@ -277,11 +281,25 @@ function updateTemplate(p) {
 
     // 10. Stats
     if(p.Stats && p.Stats.length > 0) {
-        c = c.replace(/\d+%/, p.Stats[0].Pct);
-        c = c.replace(/SAID THEIR SKIN FELT DEEPLY HYDRATED AND NOURISHED/, p.Stats[0].Desc);
-        if (p.Stats.length > 1) {
-            c = c.replace(/\d+%/, p.Stats[1].Pct);
-            // Replace matching desc
+        // Replace all percentages in order
+        p.Stats.forEach((stat, idx) => {
+            // Find the nth occurrence of a percentage or "3 out of 4" like pattern
+            // For simplicity, we'll try to find the standard text patterns in master
+        });
+        
+        // Let's use exact strings from master for first and second 
+        c = c.replace(/\d+%/g, (match, offset) => {
+             // This is tricky without a loop. Let's just do the specific ones.
+             return match; 
+        });
+
+        if (p.Stats[0]) {
+            c = c.replace(/97%/, p.Stats[0].Pct);
+            c = c.replace(/SAID THEIR SKIN FELT DEEPLY HYDRATED AND NOURISHED/, p.Stats[0].Desc);
+        }
+        if (p.Stats[1]) {
+            c = c.replace(/95%/, p.Stats[1].Pct);
+            c = c.replace(/SAID IT ABSORBED WELL WITHOUT HEAVINESS/, p.Stats[1].Desc);
         }
     }
 

@@ -354,10 +354,12 @@
      "Ingredients": ["Panthenol (Vitamin B5)", "Propanediol", "Floral Extracts", "Glycerin"],
      "CatchyLine": "Bloom With Every Move.",
      "ImportantInfo": {
-       "Headline": "A Touch of Floral Freshness",
-       "GoodFor": "All hair types seeking a fresh scent and shine",
-       "FeelsLike": "A fine, weightless mist that dries instantly",
-       "FYI": "Non-Sticky • Everyday Use • Lightweight"
+       "Headline": "Freshness in Every Spray",
+       "GoodFor": "All hair types seeking instant refresh and shine",
+       "FeelsLike": "A weightless mist that adds soft, silky shine",
+       "LooksLike": "Healthy, glossy, and vibrant hair",
+       "SmellsLike": "A delicate, long-lasting floral blossom scent",
+       "FYI": "Cruelty-Free • Lightweight • Refreshing • Non-Greasy"
      },
      "WhatsInside": {
        "Intro": "A lightweight hair mist powered by shine-enhancing hydrators.",
@@ -383,13 +385,13 @@
      ],
      "Images": {
        "Hero": "hairmist-1.jpeg",
-       "Gallery": ["hairmist-1.jpeg", "hairmist-2.jpg", "hairmist-3.jpg", "hairmist-4.jpg"],
+       "Gallery": ["hairmist-1.jpeg", "hairmist-2.jpg", "hairmist-4.jpg", "hairmist-1.jpeg"],
        "Breakdown": "hairmist-plate.jpg",
        "WhatsInside": "hairmist-spoon.jpg",
        "Spread": "hairmist-spread.jpg",
        "Stats": "hairmist-2.jpg",
        "FAQ": "hairmist-faq.jpg",
-       "Carousel": ["hairmist-1.jpeg", "hairmist-2.jpg", "hairmist-3.jpg", "hairmist-4.jpg"]
+       "Carousel": ["hairmist-1.jpeg", "hairmist-2.jpg", "hairmist-4.jpg", "hairmist-1.jpeg"]
      }
   },
   {
@@ -573,7 +575,9 @@
        "Headline": "Deep Brightening & Repair",
        "GoodFor": "Dull and uneven skin",
        "FeelsLike": "A rich, smooth cream that absorbs deeply",
-       "FYI": "Repair Care \u2022 Deep Hydration \u2022 Brightening"
+       "LooksLike": "Even-toned, glowing, and healthy skin",
+       "SmellsLike": "A clean, subtle freshness",
+       "FYI": "Repair Care • Deep Hydration • Brightening"
      },
      "WhatsInside": {
        "Intro": "A nourishing cream that brightens and repairs.",
