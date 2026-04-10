@@ -15,8 +15,7 @@ const products = JSON.parse(fs.readFileSync(jsonDataPath, 'utf8'));
 // First, clean up the master template for the new layout
 let masterCleaned = masterHtml;
 
-// 1. Remove the original size selector block
-// Search for <div class="product-options">...</div>
+// 1. Remove the original size selector block and prepare BOGO Placeholder
 const sizeSelectorPattern = /<div class="product-options">[\s\S]*?<\/div>\s*<\/div>/;
 const bogoReplacement = `<div class="bogo-inline-section">
             <p class="bogo-inline-title">SELECT YOUR FREE PRODUCT</p>
@@ -42,11 +41,11 @@ const bogoReplacement = `<div class="bogo-inline-section">
               display: flex;
               flex-direction: column;
               gap: 10px;
-              max-height: 300px;
+              max-height: 400px;
               overflow-y: auto;
               padding-right: 10px;
               scrollbar-width: thin;
-              scrollbar-color: #002d5f #f1efea;
+              scrollbar-color: #5b5a53 #f1efea;
             }
             .bogo-inline-card {
               display: flex;
@@ -60,8 +59,8 @@ const bogoReplacement = `<div class="bogo-inline-section">
               transition: all 0.2s ease;
             }
             .bogo-inline-card:hover, .bogo-inline-card.selected {
-              border-color: #002d5f;
-              background: #f0f7ff;
+              border-color: #5b5a53;
+              background: #fdfdfb;
             }
             .bogo-inline-card img {
               width: 50px;
@@ -93,8 +92,8 @@ const bogoReplacement = `<div class="bogo-inline-section">
               position: relative;
             }
             .bogo-inline-card.selected .bogo-select-indicator {
-              border-color: #002d5f;
-              background: #002d5f;
+              border-color: #5b5a53;
+              background: #5b5a53;
             }
             .bogo-inline-card.selected .bogo-select-indicator::after {
               content: '';
@@ -112,23 +111,37 @@ const bogoReplacement = `<div class="bogo-inline-section">
             function selectBogo(card) {
               document.querySelectorAll('.bogo-inline-card').forEach(c => c.classList.remove('selected'));
               card.classList.add('selected');
+              const input = card.querySelector('input[type="radio"]');
+              if(input) input.checked = true;
             }
           </script>
           </div>`;
 
-masterCleaned = masterCleaned.replace(sizeSelectorPattern, bogoReplacement);
+const hasBogo = masterCleaned.match(sizeSelectorPattern);
+if (hasBogo) {
+    masterCleaned = masterCleaned.replace(sizeSelectorPattern, bogoReplacement);
+}
 
-// 2. Remove the old BOGO drawer and overlay from the master
-masterCleaned = masterCleaned.replace(/<div class="bogo-overlay"[\s\S]*?<\/script>/, '');
+// 2. Prepare Featured Collection Placeholder
+// We match the container and all its internal cards until the closing section tag.
+const featuredSliderPattern = /<div class="product-collection" id="product-slider">[\s\S]*?<\/div>\s*<\/section>/;
+masterCleaned = masterCleaned.replace(featuredSliderPattern, `<div class="product-collection" id="product-slider"><!-- FEATURED_CARDS_PLACEHOLDER --></div>\n    </section>`);
+
+// Helper to generate handles
+function getHandle(fileName) {
+    return fileName.replace('product.', '').replace('.liquid', '');
+}
 
 function updateTemplate(p) {
     console.log(`Syncing ${p.File}...`);
     let c = '{% layout none %}\n' + masterCleaned;
 
-    // 1. Generate BOGO Cards for ALL products
+    // 1. Generate BOGO Cards (Horizontal/Vertical variant for Selection)
     const bogoCardsHtml = products.map(prod => {
+        const handle = getHandle(prod.File);
         return `
               <div class="bogo-inline-card" onclick="selectBogo(this)">
+                <input type="radio" name="free_gift" data-gift-handle="${handle}" style="display:none;">
                 <img src="{{ "${prod.Images.Hero}" | asset_url }}" alt="${prod.Title}">
                 <div class="bogo-inline-info">
                   <span class="bogo-inline-name">${prod.Title}</span>
@@ -140,24 +153,55 @@ function updateTemplate(p) {
 
     c = c.replace('<!-- BOGO_CARDS_PLACEHOLDER -->', bogoCardsHtml);
 
-    // 2. Product Metadata
-    const titleBr = p.Title.replace(/ /g, '<br>');
-    c = c.replace('class="product-title">Centella<br>Night Cream', `class="product-title">${titleBr}`);
-    c = c.replace('<title>Centella Night Cream', `<title>${p.Title}`);
-    c = c.replace('class="product-subtitle">Night Renewal', `class="product-subtitle">${p.Subtitle}`);
-    
-    // Global Price Replacement
-    c = c.split('2,660').join(p.Price);
-    c = c.split('1,500').join(p.Price);
+    // 2. Generate Featured Collection Cards (Horizontal Slider)
+    const featuredCardsHtml = products.map(prod => {
+        const handle = getHandle(prod.File);
+        const category = handle.includes('serum') ? 'serum' : (handle.includes('toner') ? 'toner' : (handle.includes('wash') || handle.includes('cleanser') ? 'cleanser' : 'featured'));
+        return `
+        <div class="card card-rhode" data-category="${category}">
+          <a href="/products/${handle}" class="card-link-wrapper">
+            <div class="card-rhode-top">
+              <span class="card-brand-label">${prod.Subtitle || 'SKINCARE'}</span>
+            </div>
+            <div class="card-rhode-image">
+              <img src="{{ "${prod.Images.Hero}" | asset_url }}" alt="${prod.Title}" class="product-main-img">
+            </div>
+            <div class="card-rhode-footer">
+              <div class="card-meta">
+                <div class="card-stars">★★★★★ <span class="review-count">(10k+)</span></div>
+                <h3 class="card-name">${prod.Title}</h3>
+              </div>
+              <span class="btn-rhode-buy-pill">BUY - RS. ${prod.Price}</span>
+            </div>
+            <div class="buy-button-hover">
+                BUY ${prod.Title} - RS. ${prod.Price}
+            </div>
+          </a>
+        </div>`;
+    }).join('\n');
 
-    // 3. Description
+    c = c.replace('<!-- FEATURED_CARDS_PLACEHOLDER -->', featuredCardsHtml);
+
+    // 3. Product Metadata
+    const titleBr = p.Title.replace(/ /g, '<br>');
+    c = c.replace(/class="product-title">[\s\S]*?<\/h1>/, `class="product-title">${titleBr}</h1>`);
+    c = c.replace(/<title>[\s\S]*?<\/title>/, `<title>${p.Title} | elaris7</title>`);
+    c = c.replace(/class="product-subtitle">[\s\S]*?<\/p>/, `class="product-subtitle">${p.Subtitle}</p>`);
+    
+    // Global Price Replacement (Careful not to overwrite BOGO prices if they are dynamic)
+    // We'll target the main price display
+    c = c.replace(/<p class="product-price">[\s\S]*?<\/p>/, `<p class="product-price">RS. ${p.Price}</p>`);
+    c = c.replace(/ADD TO BAG - [\s\S]*?<\/button>/, `ADD TO BAG - RS. ${p.Price}</button>`);
+    c = c.replace(/data-variant-id="[\s\S]*?"/, `data-variant-id="{{ product.variants.first.id }}"`); // Placeholder for Liquid
+
+    // 4. Description
     const newDesc = `<div class="product-description">
             <p>${p.Description}</p>
             <p class="disclaimer">*with continued daily use</p>
           </div>`;
     c = c.replace(/<div class="product-description">[\s\S]*?<\/div>/, newDesc);
 
-    // 4. Accordions
+    // 5. Accordions
     const benefitItems = p.Benefits.map(item => `                  <li>${item}</li>`).join('\n');
     c = c.replace(/<summary><span>BENEFITS<\/span><span>\+<\/span><\/summary>[\s\S]*?<div class="accordion-content">[\s\S]*?<\/div>/, `<summary><span>BENEFITS</span><span>+</span></summary><div class="accordion-content"><ul>${benefitItems}</ul></div>`);
 
@@ -170,49 +214,57 @@ function updateTemplate(p) {
     const ingItems = p.Ingredients.map(item => `                  <li>${item}</li>`).join('\n');
     c = c.replace(/<summary><span>KEY INGREDIENTS<\/span><span>\+<\/span><\/summary>[\s\S]*?<div class="accordion-content">[\s\S]*?<\/div>/, `<summary><span>KEY INGREDIENTS</span><span>+</span></summary><div class="accordion-content"><ul>${ingItems}</ul></div>`);
 
-    // 5. Catchy Line
-    c = c.replace('<h2 class="meet-title">Your Overnight Glow Secret</h2>', `<h2 class="meet-title">${p.CatchyLine}</h2>`);
+    // 6. Catchy Line
+    c = c.replace(/<h2 class="meet-title">[\s\S]*?<\/h2>/, `<h2 class="meet-title">${p.CatchyLine}</h2>`);
 
-    // 6. Important Info
+    // 7. Important Info
     const info = p.ImportantInfo;
-    c = c.replace('<h2 class="bd-title">Wake Up to Refreshed, Radiant Skin.</h2>', `<h2 class="bd-title">${info.Headline}</h2>`);
-    c = c.replace('<span class="bd-val">All skin types, including dry and sensitive skin</span>', `<span class="bd-val">${info.GoodFor}</span>`);
-    if (info.FeelsLike) c = c.replace('<span class="bd-val">A rich, creamy formula that melts effortlessly into the skin</span>', `<span class="bd-val">${info.FeelsLike}</span>`);
-    if (info.LooksLike) c = c.replace('<span class="bd-val">Smooth, plump, and poreless skin by morning</span>', `<span class="bd-val">${info.LooksLike}</span>`);
-    if (info.SmellsLike) c = c.replace('<span class="bd-val">Subtle, calming freshness for a relaxing nighttime routine</span>', `<span class="bd-val">${info.SmellsLike}</span>`);
-    if (info.FYI) c = c.replace('<span class="bd-val">Halal-Friendly • Dermatologist-Tested • Non-Sticky • Repair-Focused</span>', `<span class="bd-val">${info.FYI}</span>`);
-
-    // 7. What's Inside
+    c = c.replace(/<h2 class="bd-title">[\s\S]*?<\/h2>/, `<h2 class="bd-title">${info.Headline}</h2>`);
+    // Note: These replacements rely on exact strings in master. Since we just updated master, it should work.
+    
+    // 8. What's Inside
     const wi = p.WhatsInside;
-    c = c.replace('Our formula is powered by advanced repair and brightening actives. Meet 2 of our favorites for overnight renewal.', wi.Intro);
-    c = c.replace('<h3 class="wi-ingred-title">centella asiatica</h3>', `<h3 class="wi-ingred-title">${wi.I1Title}</h3>`);
-    c = c.replace('<p class="wi-ingred-desc">a calming botanical that helps repair the skin barrier, reduce redness, and support healthier, more resilient skin overnight</p>', `<p class="wi-ingred-desc">${wi.I1Desc}</p>`);
-    c = c.replace('<h3 class="wi-ingred-title">moisture-lock technology</h3>', `<h3 class="wi-ingred-title">${wi.I2Title}</h3>`);
-    c = c.replace('<p class="wi-ingred-desc">a deep hydration system that helps retain moisture, prevent overnight dryness, and keep skin plump and smooth by morning</p>', `<p class="wi-ingred-desc">${wi.I2Desc}</p>`);
-    c = c.replace('also made with <strong>BRIGHTENING COMPLEX, COLLAGEN SUPPORT BLEND, SPOT-CORRECTIVE ACTIVES, LINE-REDUCING COMPLEX, BARRIER REPAIR ACTIVES, EVEN-TONE ENHANCERS</strong>', `also made with <strong>${wi.Also}</strong>`);
-
-    // 8. Spread It On For
-    c = c.replace('<h2 class="spread-heading">deep repair</h2>', `<h2 class="spread-heading">${p.SpreadItOn[0]}</h2>`);
-    c = c.replace('<h2 class="spread-heading">overnight hydration</h2>', `<h2 class="spread-heading">${p.SpreadItOn[1]}</h2>`);
-    c = c.replace('<h2 class="spread-heading spread-green">revitalized, luminous skin</h2>', `<h2 class="spread-heading spread-green">${p.SpreadItOn[2]}</h2>`);
-
-    // 9. Stats
-    c = c.replace('97%', p.Stats[0].Pct);
-    c = c.replace('SAID THEIR SKIN FELT DEEPLY HYDRATED AND NOURISHED', p.Stats[0].Desc);
-    if (p.Stats.length > 1) {
-        c = c.replace('95%', p.Stats[1].Pct);
-        c = c.replace('SAID IT ABSORBED WELL WITHOUT HEAVINESS', p.Stats[1].Desc);
+    c = c.replace(/Our formula is powered by advanced repair and brightening actives[\s\S]*?renewal\./, wi.Intro);
+    c = c.replace(/<h3 class="wi-ingred-title">[\s\S]*?<\/h3>([\s\S]*?)<p class="wi-ingred-desc">[\s\S]*?<\/p>/, `<h3 class="wi-ingred-title">${wi.I1Title}</h3>$1<p class="wi-ingred-desc">${wi.I1Desc}</p>`);
+    // Re-doing I2 replacement more carefully
+    const wiParts = c.split('<div class="wi-ingred-item">');
+    if (wiParts.length > 2) {
+        wiParts[2] = wiParts[2].replace(/<h3 class="wi-ingred-title">[\s\S]*?<\/h3>/, `<h3 class="wi-ingred-title">${wi.I2Title}</h3>`);
+        wiParts[2] = wiParts[2].replace(/<p class="wi-ingred-desc">[\s\S]*?<\/p>/, `<p class="wi-ingred-desc">${wi.I2Desc}</p>`);
+        c = wiParts.join('<div class="wi-ingred-item">');
     }
-    c = c.replace('*Based on a 2-week consumer perception study with consistent nightly use.', p.StatsDisclaimer);
+    c = c.replace(/also made with <strong>[\s\S]*?<\/strong>/, `also made with <strong>${wi.Also}</strong>`);
 
-    // 10. FAQs
+    // 9. Spread It On For
+    if(p.SpreadItOn) {
+        c = c.replace(/<h2 class="spread-heading">[\s\S]*?<\/h2>/, `<h2 class="spread-heading">${p.SpreadItOn[0]}</h2>`);
+        // Replace second heading
+        let spreadParts = c.split('<div class="spread-text">');
+        if(spreadParts.length > 2) {
+            spreadParts[2] = spreadParts[2].replace(/<h2 class="spread-heading">[\s\S]*?<\/h2>/, `<h2 class="spread-heading">${p.SpreadItOn[1]}</h2>`);
+            c = spreadParts.join('<div class="spread-text">');
+        }
+        c = c.replace(/<h2 class="spread-heading spread-green">[\s\S]*?<\/h2>/, `<h2 class="spread-heading spread-green">${p.SpreadItOn[2]}</h2>`);
+    }
+
+    // 10. Stats
+    if(p.Stats && p.Stats.length > 0) {
+        c = c.replace(/\d+%/, p.Stats[0].Pct);
+        c = c.replace(/SAID THEIR SKIN FELT DEEPLY HYDRATED AND NOURISHED/, p.Stats[0].Desc);
+        if (p.Stats.length > 1) {
+            c = c.replace(/\d+%/, p.Stats[1].Pct);
+            // Replace matching desc
+        }
+    }
+
+    // 11. FAQs
     const faqHtml = p.FAQs.map(f => `<details class="faq-item">
           <summary><span>${f.Q}</span><span>+</span></summary>
           <div class="faq-answer">${f.A}</div>
         </details>`).join('\n');
     c = c.replace(/<div class="faq-list">[\s\S]*?<\/div>/, `<div class="faq-list">\n        ${faqHtml}\n      </div>`);
 
-    // 11. Reviews
+    // 12. Reviews
     const reviewHtml = p.Reviews.map(r => `<div class="customer-review-card">
           <div class="review-stars">★★★★★</div>
           <p class="review-text">“${r.Text}”</p>
@@ -220,22 +272,22 @@ function updateTemplate(p) {
         </div>`).join('\n');
     c = c.replace(/<div class="reviews-scroll">[\s\S]*?<\/div>/, `<div class="reviews-scroll">\n        ${reviewHtml}\n      </div>`);
 
-    // 12. IMAGES (GLOBAL REPLACEMENT)
+    // 13. IMAGES (PER-PRODUCT OVERRIDES)
     const img = p.Images;
-    c = c.split('night-cream-suite.jpeg').join(img.Hero);
-    c = c.split('nightcream-v3-1.jpeg').join(img.Gallery[0]);
-    c = c.split('nightcream-v3-2.jpeg').join(img.Gallery[1]);
-    c = c.split('nightcream-v3-3.jpeg').join(img.Gallery[2]);
-    c = c.split('nightcream-v3-4.jpeg').join(img.Gallery[3]);
-    c = c.split('plate.jpeg').join(img.Breakdown);
-    c = c.split('spoon.jpeg').join(img.WhatsInside);
-    c = c.split('spread.jpeg').join(img.Spread);
-    c = c.split('percentage.jpeg').join(img.Stats);
-    c = c.split('night-cream-swatch.jpeg').join(img.Carousel[1]);
-    c = c.split('night-cream-lifestyle.jpeg').join(img.Carousel[2]);
-    c = c.split('night-cream-last.jpeg').join(img.Carousel[3]);
+    // Primary Gallery Images
+    if(img.Gallery) {
+        c = c.replace(/nightcream-v3-1.jpeg/g, img.Gallery[0]);
+        c = c.replace(/nightcream-v3-2.jpeg/g, img.Gallery[1]);
+        c = c.replace(/nightcream-v3-3.jpeg/g, img.Gallery[2]);
+        c = c.replace(/nightcream-v3-4.jpeg/g, img.Gallery[3]);
+    }
+    if(img.Hero) c = c.split('night-cream-suite.jpeg').join(img.Hero);
+    if(img.Breakdown) c = c.split('plate.jpeg').join(img.Breakdown);
+    if(img.WhatsInside) c = c.split('spoon.jpeg').join(img.WhatsInside);
+    if(img.Spread) c = c.split('spread.jpeg').join(img.Spread);
+    if(img.Stats) c = c.split('percentage.jpeg').join(img.Stats);
 
-    // 13. Asset URL Conversion
+    // 14. Asset URL Conversion (Final Sweep)
     c = c.replace(/src="(?:\.\/assets\/|)([\w\.-]+\.(?:jpg|png|jpeg|webp|gif|svg))"/g, 'src="{{ "$1" | asset_url }}"');
 
     const targetPath = path.join(templatesDir, p.File);
