@@ -157,15 +157,39 @@ function updateTemplate(p) {
     const featuredCardsHtml = products.map(prod => {
         const handle = getHandle(prod.File);
         const category = prod.Category || (prod.Title.toLowerCase().includes('serum') ? 'serum' : 'skincare');
-        // Use Carousel[1] as hover image if it exists, fallback to Hero
-        const hoverImg = (prod.Images.Carousel && prod.Images.Carousel[1]) ? prod.Images.Carousel[1] : prod.Images.Hero;
+        
+        // Exact mapping from index.html to ensure "same to same" experience
+        const homeHoverMap = {
+            'night-cream': 'night-cream-hover.jpg',
+            'tranexamic-serum': 'tranexamic-meet-1.jpg',
+            'keratin-serum': 'keratin-serum-hover.jpg',
+            'glow-serum': 'glow-serum-hover.jpg',
+            'glutathione-cream': 'deep-hydration-100.jpg',
+            'face-wash': 'facewash-shot.png',
+            'anti-acne-serum': 'hover-anti-acne.png'
+        };
+
+        const homeLabelMap = {
+            'night-cream': 'NIGHT CREAM',
+            'tranexamic-serum': 'serum',
+            'keratin-serum': 'haircare',
+            'glow-serum': 'serum',
+            'glutathione-cream': 'repair',
+            'face-wash': 'cleanser',
+            'anti-acne-serum': 'antiacne',
+            'sunscreen-v2': 'sunscreen',
+            'hair-mist-v2': 'haircare'
+        };
+
+        const hoverImg = homeHoverMap[handle] || ((prod.Images.Carousel && prod.Images.Carousel[1]) ? prod.Images.Carousel[1] : prod.Images.Hero);
+        const brandLabel = homeLabelMap[handle] || prod.Subtitle || 'SKINCARE';
 
         return `
         <div class="card card-rhode" data-category="${category}">
           <a href="/products/${handle}" class="card-link-wrapper">
             <img src="{{ "${hoverImg}" | asset_url }}" class="card-hover-bg" alt="${prod.Title} Hover">
             <div class="card-rhode-top">
-              <span class="card-brand-label">${prod.Subtitle || 'SKINCARE'}</span>
+              <span class="card-brand-label">${brandLabel}</span>
             </div>
             <div class="card-rhode-image">
               <img src="{{ "${prod.Images.Hero}" | asset_url }}" alt="${prod.Title}" class="product-main-img">
