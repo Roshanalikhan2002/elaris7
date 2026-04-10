@@ -156,10 +156,14 @@ function updateTemplate(p) {
     // 2. Generate Featured Collection Cards (Horizontal Slider)
     const featuredCardsHtml = products.map(prod => {
         const handle = getHandle(prod.File);
-        const category = handle.includes('serum') ? 'serum' : (handle.includes('toner') ? 'toner' : (handle.includes('wash') || handle.includes('cleanser') ? 'cleanser' : 'featured'));
+        const category = prod.Category || (prod.Title.toLowerCase().includes('serum') ? 'serum' : 'skincare');
+        // Use Carousel[1] as hover image if it exists, fallback to Hero
+        const hoverImg = (prod.Images.Carousel && prod.Images.Carousel[1]) ? prod.Images.Carousel[1] : prod.Images.Hero;
+
         return `
         <div class="card card-rhode" data-category="${category}">
           <a href="/products/${handle}" class="card-link-wrapper">
+            <img src="{{ "${hoverImg}" | asset_url }}" class="card-hover-bg" alt="${prod.Title} Hover">
             <div class="card-rhode-top">
               <span class="card-brand-label">${prod.Subtitle || 'SKINCARE'}</span>
             </div>
