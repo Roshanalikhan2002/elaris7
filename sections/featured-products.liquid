@@ -14,9 +14,6 @@
       {% for block in section.blocks %}
         <div class="card card-rhode" data-category="{{ block.settings.brand_label | handleize }}" {{ block.shopify_attributes }}>
           {%- assign final_link = block.settings.product_link | default: '#' -%}
-          {%- if final_link contains 'renewal-cleanser' -%}
-            {%- assign final_link = '/products/centella-skin-toner-copy' -%}
-          {%- endif -%}
           <a href="{{ final_link }}" class="card-link-wrapper">
             {% if block.settings.hover_image != blank %}
               {{ block.settings.hover_image | image_url: width: 1200 | image_tag: class: 'card-hover-bg', alt: block.settings.title }}
@@ -77,7 +74,7 @@
         {%- elsif pname == "Sunscreen SPF60+" -%}
           {%- assign phandle = "e7-korean-glass-skin-centella-face-wash-copy" -%}
         {%- elsif pname == "Renewal Cleanser" -%}
-          {%- assign phandle = "centella-skin-toner-copy" -%}
+          {%- assign phandle = "renewal-cleanser" -%}
         {%- elsif pname == "Hydra Burst Moisturizer" -%}
           {%- assign phandle = "e7-korean-glass-skin-moisturizer" -%}
         {%- elsif pname == "Renewal Toner" -%}
