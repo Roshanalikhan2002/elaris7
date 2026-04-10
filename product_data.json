@@ -1222,7 +1222,7 @@
     }
   },
   {
-    "File": "product.renewal-cleanser.liquid",
+    "File": "product.renewal-cleanser-v2.liquid",
     "Title": "Renewal Cleanser",
     "Subtitle": "Deep Brightening",
     "Price": "2,850",
@@ -1393,7 +1393,7 @@
     "StatsDisclaimer": "*Results may vary."
   },
   {
-    "File": "product.centella-skin-toner.liquid",
+    "File": "product.centella-skin-toner-v2.liquid",
     "Title": "Renewal Toner",
     "Subtitle": "Pore Refining",
     "Price": "2,670",
