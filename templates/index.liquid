@@ -1,9 +1,10 @@
-﻿<!DOCTYPE html>
+﻿{% layout none %}
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>sets | elaris7</title>
+  <title>elaris7 | Korean Skincare</title>
   <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
 
@@ -2130,156 +2131,671 @@ a { color: inherit; text-decoration: none; }
   }
 }
 
-    @media (max-width: 768px) {
-      .meet-carousel img {
-        flex: 0 0 85% !important;
-        min-width: unset !important;
-        scroll-snap-align: start;
-      }
-      .meet-carousel {
-        padding-left: 16px;
-        scroll-padding-left: 16px;
-      }
-      .carousel-swipe-indicator {
-        display: block;
-        text-align: right;
-        font-size: 0.75rem;
-        font-weight: 800;
-        color: #7a7873;
-        padding-right: 16px;
-        margin-bottom: 12px;
-        letter-spacing: 0.05em;
-      }
-      .carousel-arrow {
-        display: none;
-      }
-    }
-    @media (min-width: 769px) {
-      .carousel-swipe-indicator {
-        display: none;
-      }
-    }
-  </style>
-  <script src="./assets/script.js" defer></script>
+</style>
+  <script src="{{ 'script.js' | asset_url }}" defer></script>
 </head>
 <body>
 
-  <header class="site-header scrolled-bg">
-    <div class="announcement-bar">
-      free shipping on all orders over rs. 2000
-    </div>
-    <div class="header-main">
-      <nav class="header-nav">
-        <ul class="desktop-only">
-          <li><a href="index.html">HOME</a></li>
-          <li><a href="#">SHOP</a></li>
-        </ul>
-      </nav>
-      <div class="header-logo"><a href="index.html" class="logo-text">elaris7</a></div>
-      <nav class="header-nav header-right">
-        <ul class="desktop-only">
-          <li><a href="#">SEARCH</a></li>
-          <li><a href="#">CART (0)</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+  <div id="custom-cursor" class="custom-cursor">swipe</div>
 
-  <main class="page-wrapper" style="padding-top: 155px;">
-    
-    <section class="product-grid-section">
-      <div class="product-grid-header">
-        <h1 class="product-grid-title">sets</h1>
+  <div id="mobile-menu" class="mobile-menu-drawer">
+    <div class="menu-inner">
+      <!-- Header of Drawer -->
+      <div class="menu-top">
+        <div class="menu-close" id="menu-close">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </div>
+        <div class="menu-logo-small">elaris7</div>
+        <div class="menu-icons">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+        </div>
       </div>
 
-      <div class="product-grid">
-        <!-- Card 1 -->
-        <div class="card card-rhode">
-          <a href="night-cream.html" class="card-link-wrapper">
-            <div class="card-rhode-top"><span class="card-brand-label">NIGHT CREAM</span></div>
-            <div class="card-rhode-image"><img src="./assets/night-cream.jpg" alt="Night Cream" class="product-main-img"></div>
+      <!-- Categories Tabs (Scrollable) -->
+      <div class="menu-tabs-container">
+        <div class="menu-tabs">
+          <div class="tab active">FEATURED</div>
+          <div class="tab">SKIN</div>
+          <div class="tab">LIP+CHEEK</div>
+          <div class="tab">SETS</div>
+          <div class="tab">COLOUR</div>
+        </div>
+      </div>
+
+      <!-- Product Callouts (5 Sections) -->
+      <div class="menu-products">
+        <div class="menu-product-row">
+          <div class="mini-thumb"><img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?q=80&w=100" alt="p1"></div>
+          <div class="mini-details">
+            <div class="mini-title">PEPTIDE LIP TINT</div>
+            <div class="mini-tag">limited edition</div>
+          </div>
+        </div>
+        <div class="menu-product-row">
+          <div class="mini-thumb"><img src="{{ 'facewash-shot.png' | asset_url }}" alt="p2"></div>
+          <div class="mini-details">
+            <div class="mini-title">CENTELLA WASH</div>
+            <div class="mini-tag">new shades</div>
+          </div>
+        </div>
+        <div class="menu-product-row">
+          <div class="mini-thumb"><img src="https://images.unsplash.com/photo-1552046122-03184de85e08?q=80&w=100" alt="p3"></div>
+          <div class="mini-details">
+            <div class="mini-title">THE EDITS</div>
+            <div class="mini-tag">top set</div>
+          </div>
+        </div>
+        <div class="menu-product-row">
+          <div class="mini-thumb"><img src="https://images.unsplash.com/photo-1570194065650-d99fb4b8ccb0?q=80&w=100" alt="p4"></div>
+          <div class="mini-details">
+            <div class="mini-title">BARRIER CREAM</div>
+            <div class="mini-tag">restoring</div>
+          </div>
+        </div>
+        <div class="menu-product-row">
+          <div class="mini-thumb"><img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?q=80&w=100" alt="p5"></div>
+          <div class="mini-details">
+            <div class="mini-title">SKIN PACK</div>
+            <div class="mini-tag">limited</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mega-shop-btn">
+        <a href="#" class="btn-pill-hollow" style="width: 100%; text-align: center;">SHOP ELARIS7</a>
+      </div>
+
+      <!-- Secondary Links -->
+      <div class="menu-secondary">
+        <a href="#">ABOUT</a>
+        <a href="#">E7 FUTURES</a>
+        <a href="#">IMPACT</a>
+        <a href="#">FAQ</a>
+        <a href="#">ACCOUNT</a>
+      </div>
+
+      <!-- Footer of Drawer -->
+      <div class="menu-footer">
+        <div class="region-selector">
+          Country/region: <span>Pakistan (PKR Rs)</span> âŒµ
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <header class="site-header">
+      <div class="announcement-bar">
+        free shipping on all orders over rs. 2000
+      </div>
+      <div class="header-main">
+        <nav class="header-nav">
+          <div class="menu-trigger" id="menu-open">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <ul class="desktop-only">
+            <li><a href="#">SHOP</a></li>
+            <li><a href="#">ABOUT</a></li>
+            <li><a href="#">FUTURES</a></li>
+          </ul>
+        </nav>
+        <div class="header-logo"><a href="/" class="logo-text">elaris7</a></div>
+        <nav class="header-nav header-right">
+          <ul class="desktop-only">
+            <li><a href="#">SEARCH</a></li>
+            <li><a href="#">ACCOUNT</a></li>
+            <li><a href="#">CART (0)</a></li>
+          </ul>
+          <div class="mobile-only mobile-header-icons">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            <div class="cart-icon-wrapper">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+              <span class="cart-count">0</span>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+  <div class="page-wrapper">
+    
+    <!-- 1. Hero Section -->
+    <section class="hero-block">
+      <img src="https://www.rhodeskin.com/cdn/shop/files/hp-hero-mobile_e647d87c-0df0-4e10-aacf-23a662557c7a_1024x.jpg?v=1774896241" class="hero-video-bg" alt="Glass Skin">
+      <div class="hero-overlay">
+
+        <div class="hero-bottom">
+          <h1 class="hero-title">E7's all-over glass skin look.</h1>
+          <a href="#" class="btn-pill-outline">SHOP THE LOOK</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Category Navigation Bar -->
+    <nav class="category-bar">
+      <ul class="category-list">
+        <li><a href="featured.html" class="cat-link active">FEATURED</a></li>
+        <li><a href="korean-glass-skin.html" class="cat-link">KOREAN GLASS SKIN</a></li>
+        <li><a href="anti-acne.html" class="cat-link">ANTI ACNE</a></li>
+        <li><a href="korean-brightening.html" class="cat-link">KOREAN BRIGHTENING</a></li>
+        <li><a href="hair-care.html" class="cat-link">HAIR CARE</a></li>
+        <li><a href="#" class="cat-link" data-category="set">SET</a></li>
+      </ul>
+    </nav>
+
+    <!-- 2. Product Selection Carousel -->
+    <section class="section-container product-scroll-section">
+      <div class="product-scroll-controls desktop-only">
+        <button class="scroll-arrow prev" id="scroll-prev">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+        </button>
+        <button class="scroll-arrow next" id="scroll-next">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </button>
+      </div>
+
+      <div class="product-collection" id="product-slider">
+        <!-- Card 1: Night Cream -->
+        <div class="card card-rhode" data-category="nightcream">
+          <a href="/products/night-cream" class="card-link-wrapper">
+            <img src="{{ 'night-cream-hover.jpg' | asset_url }}" class="card-hover-bg" alt="Night Cream Hover">
+            <div class="card-rhode-top">
+              <span class="card-brand-label">NIGHT CREAM</span>
+            </div>
+            <div class="card-rhode-image">
+              <img src="{{ 'night-cream.jpg' | asset_url }}" alt="Night Cream" class="product-main-img">
+            </div>
             <div class="card-rhode-footer">
               <div class="card-meta">
                 <div class="card-stars">â˜…â˜…â˜…â˜…â˜… <span class="review-count">(16k)</span></div>
                 <h3 class="card-name">NIGHT CREAM</h3>
               </div>
-              <a href="night-cream.html" class="btn-rhode-buy-pill">BUY - RS. 1,500</a>
+              <a href="/products/night-cream" class="btn-rhode-buy-pill">BUY - RS. 1,500</a>
+            </div>
+            <div class="buy-button-hover" style="position: absolute; bottom: 25px; left: 50%; transform: translateX(-50%) translateY(20px); width: 88%; background: white; color: #2c2b28; padding: 14px 20px; border-radius: 40px; text-align: center; font-size: 0.72rem; font-weight: 800; letter-spacing: 0.05em; opacity: 0; z-index: 20; transition: all 0.4s cubic-bezier(0.16,1,0.3,1); box-shadow: 0 4px 15px rgba(0,0,0,0.08);">
+                BUY NIGHT CREAM - RS. 1,500
             </div>
           </a>
         </div>
 
-        <!-- Card 2 -->
-        <div class="card card-rhode">
-          <a href="tranexamic-serum.html" class="card-link-wrapper">
-            <div class="card-rhode-top"><span class="card-brand-label">serum</span></div>
-            <div class="card-rhode-image"><img src="./assets/tranexamic-serum.jpg" alt="Tranexamic Serum" class="product-main-img"></div>
+        <!-- Card 2: Tranexamic Serum -->
+        <div class="card card-rhode" data-category="serum">
+          <a href="/products/tranexamic-serum" class="card-link-wrapper">
+            <img src="{{ 'tranexamic-meet-1.jpg' | asset_url }}" class="card-hover-bg" alt="Tranexamic Serum Hover">
+            <div class="card-rhode-top">
+              <span class="card-brand-label">serum</span>
+            </div>
+            <div class="card-rhode-image">
+              <img src="{{ 'tranexamic-serum.jpg' | asset_url }}" alt="Tranexamic Serum" class="product-main-img">
+            </div>
             <div class="card-rhode-footer">
               <div class="card-meta">
                 <div class="card-stars">â˜…â˜…â˜…â˜…â˜… <span class="review-count">(16k)</span></div>
                 <h3 class="card-name">TRANEXAMIC SERUM</h3>
               </div>
-              <a href="tranexamic-serum.html" class="btn-rhode-buy-pill">BUY - RS. 1,500</a>
+              <a href="/products/tranexamic-serum" class="btn-rhode-buy-pill">BUY - RS. 1,500</a>
+            </div>
+            <div class="buy-button-hover">
+                BUY TRANEXAMIC - RS. 1,500
             </div>
           </a>
         </div>
 
-        <!-- Card 3 -->
-        <div class="card card-rhode">
-          <a href="keratin-serum.html" class="card-link-wrapper">
-            <div class="card-rhode-top"><span class="card-brand-label">haircare</span></div>
-            <div class="card-rhode-image"><img src="./assets/keratin-serum.jpg" alt="Keratin Serum" class="product-main-img"></div>
+        <!-- Card 3: Keratin Serum -->
+        <div class="card card-rhode" data-category="haircare">
+          <a href="/products/keratin-serum" class="card-link-wrapper">
+            <img src="{{ 'keratin-serum-hover.jpg' | asset_url }}" class="card-hover-bg" alt="Keratin Serum Hover">
+            <div class="card-rhode-top">
+              <span class="card-brand-label">haircare</span>
+            </div>
+            <div class="card-rhode-image">
+              <img src="{{ 'keratin-serum.jpg' | asset_url }}" alt="Keratin Serum" class="product-main-img">
+            </div>
             <div class="card-rhode-footer">
               <div class="card-meta">
                 <div class="card-stars">â˜…â˜…â˜…â˜…â˜… <span class="review-count">(16k)</span></div>
                 <h3 class="card-name">KERATIN SERUM</h3>
               </div>
-              <a href="keratin-serum.html" class="btn-rhode-buy-pill">BUY - RS. 1,500</a>
+              <a href="/products/keratin-serum" class="btn-rhode-buy-pill">BUY - RS. 1,500</a>
+            </div>
+            <div class="buy-button-hover" style="position: absolute; bottom: 25px; left: 50%; transform: translateX(-50%) translateY(20px); width: 88%; background: white; color: #2c2b28; padding: 14px 20px; border-radius: 40px; text-align: center; font-size: 0.72rem; font-weight: 800; letter-spacing: 0.05em; opacity: 0; z-index: 20; transition: all 0.4s cubic-bezier(0.16,1,0.3,1); box-shadow: 0 4px 15px rgba(0,0,0,0.08);">
+                BUY KERATIN SERUM - RS. 1,500
             </div>
           </a>
         </div>
 
-        <!-- Card 4 -->
-        <div class="card card-rhode">
-          <a href="glow-serum.html" class="card-link-wrapper">
-            <div class="card-rhode-top"><span class="card-brand-label">serum</span></div>
-            <div class="card-rhode-image"><img src="./assets/glow-serum-100.jpg" alt="Glow Serum" class="product-main-img"></div>
+        <!-- Card 4: Glow Serum -->
+        <div class="card card-rhode" data-category="serum">
+          <a href="/products/glow-serum" class="card-link-wrapper">
+            <img src="{{ 'glow-serum-hover.jpg' | asset_url }}" class="card-hover-bg" alt="Glow Serum Hover">
+            <div class="card-rhode-top">
+              <span class="card-brand-label">serum</span>
+            </div>
+            <div class="card-rhode-image">
+              <img src="{{ 'glow-serum-100.jpg' | asset_url }}" alt="Glow Serum" class="product-main-img">
+            </div>
             <div class="card-rhode-footer">
               <div class="card-meta">
                 <div class="card-stars">â˜…â˜…â˜…â˜…â˜… <span class="review-count">(16k)</span></div>
                 <h3 class="card-name">GLOW SERUM</h3>
               </div>
-              <a href="glow-serum.html" class="btn-rhode-buy-pill">BUY - RS. 1,500</a>
+              <a href="/products/glow-serum" class="btn-rhode-buy-pill">BUY - RS. 1,500</a>
+            </div>
+            <div class="buy-button-hover">
+                BUY GLOW SERUM - RS. 1,500
             </div>
           </a>
         </div>
 
-        <!-- Card 5 -->
-        <div class="card card-rhode">
-          <a href="face-wash.html" class="card-link-wrapper">
-            <div class="card-rhode-top"><span class="card-brand-label">cleanser</span></div>
-            <div class="card-rhode-image"><img src="./assets/facewash-100.jpg" alt="Face Wash" class="product-main-img"></div>
+        <!-- Card 5: Glutathione Cream -->
+        <div class="card card-rhode" data-category="repair">
+          <a href="/products/glutathione-cream" class="card-link-wrapper">
+            <img src="{{ 'deep-hydration-100.jpg' | asset_url }}" class="card-hover-bg" alt="Glutathione Cream Hover">
+            <div class="card-rhode-top">
+              <span class="card-brand-label">repair</span>
+            </div>
+            <div class="card-rhode-image">
+              <img src="{{ 'glutathione-cream-100.jpg' | asset_url }}" alt="Glutathione Cream" class="product-main-img">
+            </div>
+            <div class="card-rhode-footer">
+              <div class="card-meta">
+                <div class="card-stars">â˜…â˜…â˜…â˜…â˜… <span class="review-count">(16k)</span></div>
+                <h3 class="card-name">GLUTATHIONE CREAM</h3>
+              </div>
+              <a href="/products/glutathione-cream" class="btn-rhode-buy-pill">BUY - RS. 1,500</a>
+            </div>
+            <div class="buy-button-hover">
+                BUY GLUTATHIONE - RS. 1,500
+            </div>
+          </a>
+        </div>
+
+        <!-- Card 6: Hair Mist -->
+        <div class="card card-rhode" data-category="haircare">
+          <a href="/products/hair-mist" class="card-link-wrapper">
+            <div class="card-rhode-top">
+              <span class="card-brand-label">haircare</span>
+            </div>
+            <div class="card-rhode-image">
+              <img src="{{ 'hair-mist.jpg' | asset_url }}" alt="Hair Mist" class="product-main-img">
+            </div>
+            <div class="card-rhode-footer">
+              <div class="card-meta">
+                <div class="card-stars">â˜…â˜…â˜…â˜…â˜… <span class="review-count">(16k)</span></div>
+                <h3 class="card-name">HAIR MIST</h3>
+              </div>
+              <a href="/products/hair-mist" class="btn-rhode-buy-pill">BUY - RS. 1,500</a>
+            </div>
+          </a>
+        </div>
+
+        <!-- Card 7: Face Wash -->
+        <div class="card card-rhode" data-category="cleanser">
+          <a href="/products/face-wash" class="card-link-wrapper">
+            <img src="{{ 'facewash-shot.png' | asset_url }}" class="card-hover-bg" alt="Face Wash Hover">
+            <div class="card-rhode-top">
+              <span class="card-brand-label">cleanser</span>
+            </div>
+            <div class="card-rhode-image">
+              <img src="{{ 'facewash-100.jpg' | asset_url }}" alt="Face Wash" class="product-main-img">
+            </div>
             <div class="card-rhode-footer">
               <div class="card-meta">
                 <div class="card-stars">â˜…â˜…â˜…â˜…â˜… <span class="review-count">(16k)</span></div>
                 <h3 class="card-name">CENTELLA WASH</h3>
               </div>
-              <a href="face-wash.html" class="btn-rhode-buy-pill">BUY - RS. 1,500</a>
+              <a href="/products/face-wash" class="btn-rhode-buy-pill">BUY - RS. 1,500</a>
+            </div>
+            <div class="buy-button-hover">
+                BUY FACE WASH - RS. 1,500
+            </div>
+          </a>
+        </div>
+
+        <!-- Card 8: Anti Acne Serum -->
+        <div class="card card-rhode" data-category="antiacne">
+          <a href="/products/anti-acne-serum" class="card-link-wrapper">
+            <img src="{{ 'hover-anti-acne.png' | asset_url }}" class="card-hover-bg" alt="Anti Acne Hover">
+            <div class="card-rhode-top">
+              <span class="card-brand-label">antiacne</span>
+            </div>
+            <div class="card-rhode-image">
+              <img src="{{ 'anti-acne-100.jpg' | asset_url }}" alt="Anti Acne Serum" class="product-main-img">
+            </div>
+            <div class="card-rhode-footer">
+              <div class="card-meta">
+                <div class="card-stars">â˜…â˜…â˜…â˜…â˜… <span class="review-count">(16k)</span></div>
+                <h3 class="card-name">ANTI ACNE SERUM</h3>
+              </div>
+              <a href="/products/anti-acne-serum" class="btn-rhode-buy-pill">BUY - RS. 1,500</a>
+            </div>
+            <div class="buy-button-hover" style="position: absolute; bottom: 25px; left: 50%; transform: translateX(-50%) translateY(20px); width: 88%; background: white; color: #2c2b28; padding: 14px 20px; border-radius: 40px; text-align: center; font-size: 0.72rem; font-weight: 800; letter-spacing: 0.05em; opacity: 0; z-index: 20; transition: all 0.4s cubic-bezier(0.16,1,0.3,1); box-shadow: 0 4px 15px rgba(0,0,0,0.08);">
+                BUY ANTI ACNE - RS. 1,500
+            </div>
+          </a>
+        </div>
+
+        <!-- Card 9: Sunscreen -->
+        <div class="card card-rhode" data-category="sunscreen">
+          <a href="/products/sunscreen" class="card-link-wrapper">
+            <div class="card-rhode-top">
+              <span class="card-brand-label">sunscreen</span>
+            </div>
+            <div class="card-rhode-image">
+              <img src="{{ 'sunscreen-100.jpg' | asset_url }}" alt="Sunscreen" class="product-main-img">
+            </div>
+            <div class="card-rhode-footer">
+              <div class="card-meta">
+                <div class="card-stars">â˜…â˜…â˜…â˜…â˜… <span class="review-count">(16k)</span></div>
+                <h3 class="card-name">SUNSCREEN</h3>
+              </div>
+              <a href="/products/sunscreen" class="btn-rhode-buy-pill">BUY - RS. 1,500</a>
+            </div>
+          </a>
+        </div>
+
+        <!-- Card 10: Renewal Cleanser -->
+        <div class="card card-rhode" data-category="cleanser">
+          <a href="/products/renewal-cleanser" class="card-link-wrapper">
+            <div class="card-rhode-top">
+              <span class="card-brand-label">cleanser</span>
+            </div>
+            <div class="card-rhode-image">
+              <img src="{{ 'gel cleanser-100.jpg' | asset_url }}" alt="Renewal Cleanser" class="product-main-img">
+            </div>
+            <div class="card-rhode-footer">
+              <div class="card-meta">
+                <div class="card-stars">â˜…â˜…â˜…â˜…â˜… <span class="review-count">(16k)</span></div>
+                <h3 class="card-name">RENEWAL CLEANSER</h3>
+              </div>
+              <a href="/products/renewal-cleanser" class="btn-rhode-buy-pill">BUY - RS. 1,500</a>
+            </div>
+          </a>
+        </div>
+
+        <!-- Card 11: Hydra Burst Moisturizer -->
+        <div class="card card-rhode" data-category="moisturizer">
+          <a href="/products/moisturizer" class="card-link-wrapper">
+            <div class="card-rhode-top">
+              <span class="card-brand-label">moisturizer</span>
+            </div>
+            <div class="card-rhode-image">
+              <img src="{{ 'moisturizer-100.jpg' | asset_url }}" alt="Hydra Burst Moisturizer" class="product-main-img">
+            </div>
+            <div class="card-rhode-footer">
+              <div class="card-meta">
+                <div class="card-stars">â˜…â˜…â˜…â˜…â˜… <span class="review-count">(16k)</span></div>
+                <h3 class="card-name">HYDRA BURST</h3>
+              </div>
+              <a href="/products/moisturizer" class="btn-rhode-buy-pill">BUY - RS. 1,500</a>
+            </div>
+          </a>
+        </div>
+
+        <!-- Card 12: Renewal Toner -->
+        <div class="card card-rhode" data-category="toner">
+          <a href="/products/renewal-toner" class="card-link-wrapper">
+            <div class="card-rhode-top">
+              <span class="card-brand-label">toner</span>
+            </div>
+            <div class="card-rhode-image">
+              <img src="{{ 'renewal toner-100.jpg' | asset_url }}" alt="Renewal Toner" class="product-main-img">
+            </div>
+            <div class="card-rhode-footer">
+              <div class="card-meta">
+                <div class="card-stars">â˜…â˜…â˜…â˜…â˜… <span class="review-count">(16k)</span></div>
+                <h3 class="card-name">RENEWAL TONER</h3>
+              </div>
+              <a href="/products/renewal-toner" class="btn-rhode-buy-pill">BUY - RS. 1,500</a>
+            </div>
+          </a>
+        </div>
+
+        <!-- Card 13: Skin Refining Toner -->
+        <div class="card card-rhode" data-category="toner">
+          <a href="/products/skin-refining-toner" class="card-link-wrapper">
+            <div class="card-rhode-top">
+              <span class="card-brand-label">toner</span>
+            </div>
+            <div class="card-rhode-image">
+              <img src="{{ 'essence-white.png' | asset_url }}" alt="Skin Refining Toner" class="product-main-img">
+            </div>
+            <div class="card-rhode-footer">
+              <div class="card-meta">
+                <div class="card-stars">â˜…â˜…â˜…â˜…â˜… <span class="review-count">(16k)</span></div>
+                <h3 class="card-name">SKIN REFINING TONER</h3>
+              </div>
+              <a href="/products/skin-refining-toner" class="btn-rhode-buy-pill">BUY - RS. 1,500</a>
+            </div>
+          </a>
+        </div>
+
+        <!-- 4 BUNDLE SETS -->
+        <div class="card card-rhode" data-category="set">
+          <a href="/products/e7-complete-glass-skin-set" class="card-link-wrapper">
+            <div class="card-rhode-top">
+              <span class="card-brand-label">SET</span>
+            </div>
+            <div class="card-rhode-image">
+              <div class="product-placeholder-img" style="background: #f2f2f0; height: 100%;"></div>
+            </div>
+            <div class="card-rhode-footer">
+              <div class="card-meta">
+                <div class="card-stars">â˜…â˜…â˜…â˜…â˜… <span class="review-count">(12k)</span></div>
+                <h3 class="card-name">E7 GLASS SKIN SET</h3>
+              </div>
+              <span class="btn-rhode-buy-pill">BUY - RS. 4,500</span>
+            </div>
+          </a>
+        </div>
+        <div class="card card-rhode" data-category="set">
+          <a href="/products/e7-complete-glass-skin-set" class="card-link-wrapper">
+            <div class="card-rhode-top">
+              <span class="card-brand-label">SET</span>
+            </div>
+            <div class="card-rhode-image">
+              <div class="product-placeholder-img" style="background: #f2f2f0; height: 100%;"></div>
+            </div>
+            <div class="card-rhode-footer">
+              <div class="card-meta">
+                <div class="card-stars">â˜…â˜…â˜…â˜…â˜… <span class="review-count">(8k)</span></div>
+                <h3 class="card-name">E7 COMPLETE GLASS SKIN SET</h3>
+              </div>
+              <span class="btn-rhode-buy-pill">BUY - RS. 7,500</span>
+            </div>
+          </a>
+        </div>
+        <div class="card card-rhode" data-category="set">
+          <a href="/products/e7-complete-glass-skin-set" class="card-link-wrapper">
+            <div class="card-rhode-top">
+              <span class="card-brand-label">SET</span>
+            </div>
+            <div class="card-rhode-image">
+              <div class="product-placeholder-img" style="background: #f2f2f0; height: 100%;"></div>
+            </div>
+            <div class="card-rhode-footer">
+              <div class="card-meta">
+                <div class="card-stars">â˜…â˜…â˜…â˜…â˜… <span class="review-count">(5k)</span></div>
+                <h3 class="card-name">E7 HAIR CARE SET</h3>
+              </div>
+              <span class="btn-rhode-buy-pill">BUY - RS. 3,200</span>
+            </div>
+          </a>
+        </div>
+        <div class="card card-rhode" data-category="set">
+          <a href="/products/e7-complete-glass-skin-set" class="card-link-wrapper">
+            <div class="card-rhode-top">
+              <span class="card-brand-label">SET</span>
+            </div>
+            <div class="card-rhode-image">
+              <div class="product-placeholder-img" style="background: #f2f2f0; height: 100%;"></div>
+            </div>
+            <div class="card-rhode-footer">
+              <div class="card-meta">
+                <div class="card-stars">â˜…â˜…â˜…â˜…â˜… <span class="review-count">(15k)</span></div>
+                <h3 class="card-name">ELARIS 7 KOREAN BRIGHTENING BUNDLE</h3>
+              </div>
+              <span class="btn-rhode-buy-pill">BUY - RS. 5,900</span>
             </div>
           </a>
         </div>
       </div>
     </section>
 
-  </main>
 
-  <footer class="site-footer-rhode">
-    <div class="footer-logo-massive">
-      <h1 class="logo-text-giant">elaris7</h1>
+
+    <div class="section-grid">
+      <div style="position: relative; height: 100%; width: 100%; border-radius: 12px; overflow: hidden;">
+        <img src="{{ 'new-bundle-banner.jpg' | asset_url }}" alt="Banner" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+      </div>
+      <div style="position: relative; height: 100%; width: 100%; border-radius: 12px; overflow: hidden;">
+        <img src="https://images.unsplash.com/photo-1629198688000-71f23e745b6e?q=80&w=1200" alt="Product" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+      </div>
     </div>
-    <div class="footer-bottom-info">
-      &copy; 2026 ELARIS7. ALL RIGHTS RESERVED.
+
+    <!-- 5. Product Showcase Split (Slide 2) -->
+    <div class="section-grid" style="margin-top: 12px;">
+      <div style="position: relative; height: 100%; width: 100%; border-radius: 12px; overflow: hidden;">
+        <img src="https://images.pexels.com/photos/4465124/pexels-photo-4465124.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Model Skin Care" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+      </div>
+      <div style="position: relative; height: 100%; width: 100%; border-radius: 12px; overflow: hidden;">
+        <img src="{{ 'essence-white.png' | asset_url }}" alt="Essence" style="width: 100%; height: 100%; object-fit: contain; display: block; background: #f2f2f0;">
+        
+        <!-- Product Details Overlay (White for Dark Backgrounds) -->
+        <div class="product-overlay-details" style="position: absolute; bottom: 25px; left: 25px; text-align: left; z-index: 10;">
+          <div class="stars-row" style="font-size: 0.65rem; color: #ffffff !important; margin-bottom: 6px; opacity: 0.9;">â˜… â˜… â˜… â˜… â˜… (8,945)</div>
+          <h2 class="showcase-title" style="font-size: 1.15rem; font-weight: 800; color: #ffffff !important; margin-bottom: 15px; letter-spacing: -0.01em;">REFINING TONER</h2>
+          <a href="#" class="btn-pill-buy" style="display: inline-block; padding: 10px 24px; border: 1.2px solid #ffffff !important; border-radius: 50px; font-size: 0.75rem; font-weight: 700; color: #ffffff !important; text-decoration: none;">
+            BUY GLOW â€” RS. 2,500
+          </a>
+        </div>
+        <div class="page-count" style="color: #ffffff !important;">2/4</div>
+      </div>
     </div>
-  </footer>
+
+    <!-- 5. Social Grid -->
+    <section class="card social-section">
+      <div class="social-header">
+        <h2 class="logo-text" style="font-size: 2.5rem;">elaris7 + you</h2>
+        <a href="#" class="btn-pill-outline">FIND US ON SOCIAL</a>
+      </div>
+      <div class="social-scroll" style="display: flex; gap: 16px; overflow-x: auto; scrollbar-width: none;">
+        <div class="social-thumb" style="flex: 0 0 calc(25% - 12px); border-radius: 12px; overflow: hidden; aspect-ratio: 1/1;"><img src="{{ 'model.png' | asset_url }}" alt="E7 Beauty" style="width:100%;height:100%;object-fit:cover;"></div>
+        <div class="social-thumb" style="flex: 0 0 calc(25% - 12px); border-radius: 12px; overflow: hidden; aspect-ratio: 1/1;"><img src="{{ 'social-hand.jpg' | asset_url }}" alt="Brand Aesthetic" style="width:100%;height:100%;object-fit:cover;"></div>
+        <div class="social-thumb" style="flex: 0 0 calc(25% - 12px); border-radius: 12px; overflow: hidden; aspect-ratio: 1/1;"><img src="{{ 'social-anti-acne.png' | asset_url }}" alt="Product Formulation" style="width:100%;height:100%;object-fit:cover;"></div>
+        <div class="social-thumb" style="flex: 0 0 calc(25% - 12px); border-radius: 12px; overflow: hidden; aspect-ratio: 1/1;"><img src="{{ 'social-jar.jpg' | asset_url }}" alt="Product Texture" style="width:100%;height:100%;object-fit:cover;"></div>
+        <div class="social-thumb" style="flex: 0 0 calc(25% - 12px); border-radius: 12px; overflow: hidden; aspect-ratio: 1/1;"><img src="{{ 'social-face.jpg' | asset_url }}" alt="Results" style="width:100%;height:100%;object-fit:cover;"></div>
+      </div>
+    </section>
+
+    <!-- Values / Mission Section (Rhode-style, above footer) -->
+    <section class="values-section">
+      <!-- On Desktop: Left column (Content), Right column (Image) -->
+      
+      <!-- Content Column -->
+      <div class="values-content-col">
+        <!-- Mission statement -->
+        <div class="values-content">
+          <p class="values-statement">At Elaris7, We believe beauty is a journey of care, confidence & conscious choices, blending Sunnah wisdom with modern skincare.</p>
+          <a href="#" class="btn-pill-values">Discover Who We Are</a>
+        </div>
+
+        <!-- Accordion: mission / philanthropy / sustainability -->
+        <div class="values-accordion">
+          <div class="values-accordion-item" onclick="this.classList.toggle('active')">
+            <span class="accordion-label">mission</span>
+            <span class="accordion-icon">+</span>
+          </div>
+          <div class="values-accordion-item" onclick="this.classList.toggle('active')">
+            <span class="accordion-label">Innovation</span>
+            <span class="accordion-icon">+</span>
+          </div>
+          <div class="values-accordion-item" onclick="this.classList.toggle('active')">
+            <span class="accordion-label">sustainability</span>
+            <span class="accordion-icon">+</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Image Column -->
+      <div class="values-image-wrap">
+        <img src="{{ 'mission-flatlay.png' | asset_url }}" alt="Elaris7 Skincare Products">
+      </div>
+    </section>
+
+    <!-- Footer - High Impact Rhode Style -->
+    <footer class="site-footer-rhode">
+      <!-- Massive Logo Header -->
+      <div class="footer-logo-massive">
+        <h1 class="logo-text-giant">elaris7</h1>
+      </div>
+
+      <div class="footer-main-grid">
+        <!-- Newsletter & Intro -->
+        <div class="footer-column newsletter-column">
+          <p class="newsletter-intro">Join us on the rhode to an effortless glow.</p>
+          <p class="newsletter-sub">Glaze your inbox with tips, tricks & exclusive content from Elaris7.</p>
+          
+          <form class="footer-newsletter-form">
+            <input type="email" placeholder="Email Address" required>
+            <button type="submit">SUBSCRIBE</button>
+          </form>
+          
+          <p class="newsletter-disclaimer">By signing up, you agree to our Privacy Policy*.</p>
+        </div>
+
+        <!-- Navigate -->
+        <div class="footer-column">
+          <h4>NAVIGATE</h4>
+          <ul>
+            <li><a href="#">Shop</a></li>
+            <li><a href="#">Our Story</a></li>
+            <li><a href="#">Rhode Futures</a></li>
+            <li><a href="#">Impact</a></li>
+            <li><a href="#">VLOG</a></li>
+            <li><a href="#">Where to Find Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Social -->
+        <div class="footer-column">
+          <h4>SOCIAL</h4>
+          <ul class="social-links-list">
+            <li><a href="#"><svg class="icon-social" viewBox="0 0 24 24" style="width:18px;height:18px;fill:#7A7973;margin-right:10px;"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.585.07-4.849.149-3.224 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>Instagram</a></li>
+            <li><a href="#"><svg class="icon-social" viewBox="0 0 24 24" style="width:18px;height:18px;fill:#7A7973;margin-right:10px;"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg>Youtube</a></li>
+            <li><a href="#"><svg class="icon-social" viewBox="0 0 24 24" style="width:18px;height:18px;fill:#7A7973;margin-right:10px;"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.92-2.13 6.12-1.77.02 1.48-.02 2.95-.03 4.42-.7-.19-1.45-.19-2.16-.01-1.34.33-2.45 1.45-2.73 2.81-.16.64-.15 1.33.04 1.97.28.91.93 1.69 1.78 2.12.75.4 1.64.51 2.47.31 1.05-.22 1.96-.91 2.4-1.87.31-.63.43-1.34.42-2.04-.01-3.38.01-6.75-.01-10.13z"/></svg>TikTok</a></li>
+            <li><a href="#"><svg class="icon-social" viewBox="0 0 24 24" style="width:18px;height:18px;fill:#7A7973;margin-right:10px;"><path d="M12 0c-6.627 0-12 5.372-12 12 0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738.098.119.112.224.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.135-2.607 7.462-6.223 7.462-1.215 0-2.358-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146 1.124.347 2.317.535 3.554.535 6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12z"/></svg>Pinterest</a></li>
+          </ul>
+        </div>
+
+        <!-- Official -->
+        <div class="footer-column">
+          <h4>OFFICIAL</h4>
+          <ul>
+            <li><a href="#">Privacy</a></li>
+            <li><a href="#">Terms</a></li>
+            <li><a href="#">Accessibility</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Support -->
+        <div class="footer-column support-column">
+          <h4>SUPPORT</h4>
+          <p>We're here M-F 9am - 5pm PKT.</p>
+          <p>Drop us a note anytime.</p>
+        </div>
+      </div>
+      
+      <div class="footer-bottom-info">
+        &copy; 2026 ELARIS7. ALL RIGHTS RESERVED.
+      </div>
+    </footer>
+
+  </div>
 
 </body>
 </html>

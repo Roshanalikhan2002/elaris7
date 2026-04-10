@@ -1,9 +1,10 @@
-﻿<!DOCTYPE html>
+﻿{% layout none %}
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>sets | elaris7</title>
+  <title>korean brightening | elaris7</title>
   <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
 
@@ -2160,7 +2161,7 @@ a { color: inherit; text-decoration: none; }
       }
     }
   </style>
-  <script src="./assets/script.js" defer></script>
+  <script src="{{ 'script.js' | asset_url }}" defer></script>
 </head>
 <body>
 
@@ -2189,7 +2190,7 @@ a { color: inherit; text-decoration: none; }
     
     <section class="product-grid-section">
       <div class="product-grid-header">
-        <h1 class="product-grid-title">sets</h1>
+        <h1 class="product-grid-title">korean brightening</h1>
       </div>
 
       <div class="product-grid">
@@ -2197,7 +2198,7 @@ a { color: inherit; text-decoration: none; }
         <div class="card card-rhode">
           <a href="night-cream.html" class="card-link-wrapper">
             <div class="card-rhode-top"><span class="card-brand-label">NIGHT CREAM</span></div>
-            <div class="card-rhode-image"><img src="./assets/night-cream.jpg" alt="Night Cream" class="product-main-img"></div>
+            <div class="card-rhode-image"><img src="{{ 'night-cream.jpg' | asset_url }}" alt="Night Cream" class="product-main-img"></div>
             <div class="card-rhode-footer">
               <div class="card-meta">
                 <div class="card-stars">â˜…â˜…â˜…â˜…â˜… <span class="review-count">(16k)</span></div>
@@ -2212,7 +2213,7 @@ a { color: inherit; text-decoration: none; }
         <div class="card card-rhode">
           <a href="tranexamic-serum.html" class="card-link-wrapper">
             <div class="card-rhode-top"><span class="card-brand-label">serum</span></div>
-            <div class="card-rhode-image"><img src="./assets/tranexamic-serum.jpg" alt="Tranexamic Serum" class="product-main-img"></div>
+            <div class="card-rhode-image"><img src="{{ 'tranexamic-serum.jpg' | asset_url }}" alt="Tranexamic Serum" class="product-main-img"></div>
             <div class="card-rhode-footer">
               <div class="card-meta">
                 <div class="card-stars">â˜…â˜…â˜…â˜…â˜… <span class="review-count">(16k)</span></div>
@@ -2227,7 +2228,7 @@ a { color: inherit; text-decoration: none; }
         <div class="card card-rhode">
           <a href="keratin-serum.html" class="card-link-wrapper">
             <div class="card-rhode-top"><span class="card-brand-label">haircare</span></div>
-            <div class="card-rhode-image"><img src="./assets/keratin-serum.jpg" alt="Keratin Serum" class="product-main-img"></div>
+            <div class="card-rhode-image"><img src="{{ 'keratin-serum.jpg' | asset_url }}" alt="Keratin Serum" class="product-main-img"></div>
             <div class="card-rhode-footer">
               <div class="card-meta">
                 <div class="card-stars">â˜…â˜…â˜…â˜…â˜… <span class="review-count">(16k)</span></div>
@@ -2242,7 +2243,7 @@ a { color: inherit; text-decoration: none; }
         <div class="card card-rhode">
           <a href="glow-serum.html" class="card-link-wrapper">
             <div class="card-rhode-top"><span class="card-brand-label">serum</span></div>
-            <div class="card-rhode-image"><img src="./assets/glow-serum-100.jpg" alt="Glow Serum" class="product-main-img"></div>
+            <div class="card-rhode-image"><img src="{{ 'glow-serum-100.jpg' | asset_url }}" alt="Glow Serum" class="product-main-img"></div>
             <div class="card-rhode-footer">
               <div class="card-meta">
                 <div class="card-stars">â˜…â˜…â˜…â˜…â˜… <span class="review-count">(16k)</span></div>
@@ -2257,7 +2258,7 @@ a { color: inherit; text-decoration: none; }
         <div class="card card-rhode">
           <a href="face-wash.html" class="card-link-wrapper">
             <div class="card-rhode-top"><span class="card-brand-label">cleanser</span></div>
-            <div class="card-rhode-image"><img src="./assets/facewash-100.jpg" alt="Face Wash" class="product-main-img"></div>
+            <div class="card-rhode-image"><img src="{{ 'facewash-100.jpg' | asset_url }}" alt="Face Wash" class="product-main-img"></div>
             <div class="card-rhode-footer">
               <div class="card-meta">
                 <div class="card-stars">â˜…â˜…â˜…â˜…â˜… <span class="review-count">(16k)</span></div>
@@ -2283,6 +2284,7 @@ a { color: inherit; text-decoration: none; }
 
 </body>
 </html>
+
 
 
 

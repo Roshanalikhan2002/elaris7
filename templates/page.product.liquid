@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿{% layout none %}
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -2160,7 +2161,7 @@ a { color: inherit; text-decoration: none; }
       }
     }
   </style>
-  <script src="./assets/script.js" defer></script>
+  <script src="{{ 'script.js' | asset_url }}" defer></script>
 </head>
 <body>
 
@@ -2206,7 +2207,7 @@ a { color: inherit; text-decoration: none; }
       <!-- Left Column: Sticky Gallery -->
       <div class="product-gallery">
         <div class="product-gallery-inner">
-           <img src="./assets/night-cream.jpg" alt="Elaris7 Advanced Night Cream" class="main-product-img" style="object-fit: contain; background: #f2f0ed;">
+           <img src="{{ 'night-cream.jpg' | asset_url }}" alt="Elaris7 Advanced Night Cream" class="main-product-img" style="object-fit: contain; background: #f2f0ed;">
         </div>
       </div>
 
@@ -2349,7 +2350,7 @@ a { color: inherit; text-decoration: none; }
     <!-- Video Action Section -->
     <section class="video-action-section">
       <!-- Background placeholder (can be a <video autoplay muted loop> later) -->
-      <img src="./assets/blush-video-frame.png" alt="Blush Products Background" class="video-bg">
+      <img src="{{ 'blush-video-frame.png' | asset_url }}" alt="Blush Products Background" class="video-bg">
       <div class="video-overlay">
         <h2 class="video-text">See POCKET BLUSH in action.</h2>
         <button class="video-play-btn">
@@ -2642,7 +2643,7 @@ a { color: inherit; text-decoration: none; }
             <span class="card-badge">bestseller</span>
           </div>
           <div class="card-rhode-image">
-            <img src="./assets/wash-white.png" alt="Face Wash" class="product-main-img">
+            <img src="{{ 'wash-white.png' | asset_url }}" alt="Face Wash" class="product-main-img">
           </div>
           <div class="card-rhode-details">
             <div class="card-stars">â˜…â˜…â˜…â˜…â˜… <span>(16,042)</span></div>
@@ -2664,7 +2665,7 @@ a { color: inherit; text-decoration: none; }
             <span class="card-badge">new shades</span>
           </div>
           <div class="card-rhode-image">
-            <img src="./assets/essence-white.png" alt="Toner" class="product-main-img">
+            <img src="{{ 'essence-white.png' | asset_url }}" alt="Toner" class="product-main-img">
           </div>
           <div class="card-rhode-details">
             <div class="card-stars">â˜…â˜…â˜…â˜…Â½ <span>(8,945)</span></div>
@@ -2686,7 +2687,7 @@ a { color: inherit; text-decoration: none; }
             <span class="card-badge">limited edition</span>
           </div>
           <div class="card-rhode-image">
-            <img src="./assets/barrier-white.png" alt="Cream" class="product-main-img">
+            <img src="{{ 'barrier-white.png' | asset_url }}" alt="Cream" class="product-main-img">
           </div>
           <div class="card-rhode-details">
             <div class="card-stars">â˜…â˜…â˜…â˜…â˜… <span>(12,120)</span></div>
@@ -3938,5 +3939,6 @@ a { color: inherit; text-decoration: none; }
   </style>
 </body>
 </html>
+
 
 

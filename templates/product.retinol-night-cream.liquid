@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿{% layout none %}
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -1958,7 +1959,7 @@ a { color: inherit; text-decoration: none; }
   
   /* On mobile, place the image on top */
   .values-image-wrap {
-    order: 1;
+    order: -1;
     aspect-ratio: 1 / 1;
   }
 
@@ -2130,37 +2131,8 @@ a { color: inherit; text-decoration: none; }
   }
 }
 
-    @media (max-width: 768px) {
-      .meet-carousel img {
-        flex: 0 0 85% !important;
-        min-width: unset !important;
-        scroll-snap-align: start;
-      }
-      .meet-carousel {
-        padding-left: 16px;
-        scroll-padding-left: 16px;
-      }
-      .carousel-swipe-indicator {
-        display: block;
-        text-align: right;
-        font-size: 0.75rem;
-        font-weight: 800;
-        color: #7a7873;
-        padding-right: 16px;
-        margin-bottom: 12px;
-        letter-spacing: 0.05em;
-      }
-      .carousel-arrow {
-        display: none;
-      }
-    }
-    @media (min-width: 769px) {
-      .carousel-swipe-indicator {
-        display: none;
-      }
-    }
-  </style>
-  <script src="./assets/script.js" defer></script>
+</style>
+  <script src="{{ 'script.js' | asset_url }}" defer></script>
 </head>
 <body>
 
@@ -2206,7 +2178,7 @@ a { color: inherit; text-decoration: none; }
       <!-- Left Column: Sticky Gallery -->
       <div class="product-gallery">
         <div class="product-gallery-inner">
-           <img src="./assets/night-cream.jpg" alt="Elaris7 Advanced Night Cream" class="main-product-img" style="object-fit: contain; background: #f2f0ed;">
+           <img src="{{ 'night-cream.jpg' | asset_url }}" alt="Elaris7 Advanced Night Cream" class="main-product-img" style="object-fit: contain; background: #f2f0ed;">
         </div>
       </div>
 
@@ -2300,7 +2272,6 @@ a { color: inherit; text-decoration: none; }
     <section class="meet-product-section">
       <h2 class="meet-title">meet juice box â€”<br>a hot pink blush</h2>
       <div class="meet-carousel-wrapper">
-        <div class="carousel-swipe-indicator">SWIPE &rarr;</div>
         <div class="meet-carousel">
           <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?q=80&w=400" alt="Texture swatch pink">
           <img src="https://images.unsplash.com/photo-1549439602-43ebca2327af?q=80&w=400" alt="Model wearing blush">
@@ -2349,7 +2320,7 @@ a { color: inherit; text-decoration: none; }
     <!-- Video Action Section -->
     <section class="video-action-section">
       <!-- Background placeholder (can be a <video autoplay muted loop> later) -->
-      <img src="./assets/blush-video-frame.png" alt="Blush Products Background" class="video-bg">
+      <img src="{{ 'blush-video-frame.png' | asset_url }}" alt="Blush Products Background" class="video-bg">
       <div class="video-overlay">
         <h2 class="video-text">See POCKET BLUSH in action.</h2>
         <button class="video-play-btn">
@@ -2642,7 +2613,7 @@ a { color: inherit; text-decoration: none; }
             <span class="card-badge">bestseller</span>
           </div>
           <div class="card-rhode-image">
-            <img src="./assets/wash-white.png" alt="Face Wash" class="product-main-img">
+            <img src="{{ 'wash-white.png' | asset_url }}" alt="Face Wash" class="product-main-img">
           </div>
           <div class="card-rhode-details">
             <div class="card-stars">â˜…â˜…â˜…â˜…â˜… <span>(16,042)</span></div>
@@ -2664,7 +2635,7 @@ a { color: inherit; text-decoration: none; }
             <span class="card-badge">new shades</span>
           </div>
           <div class="card-rhode-image">
-            <img src="./assets/essence-white.png" alt="Toner" class="product-main-img">
+            <img src="{{ 'essence-white.png' | asset_url }}" alt="Toner" class="product-main-img">
           </div>
           <div class="card-rhode-details">
             <div class="card-stars">â˜…â˜…â˜…â˜…Â½ <span>(8,945)</span></div>
@@ -2686,7 +2657,7 @@ a { color: inherit; text-decoration: none; }
             <span class="card-badge">limited edition</span>
           </div>
           <div class="card-rhode-image">
-            <img src="./assets/barrier-white.png" alt="Cream" class="product-main-img">
+            <img src="{{ 'barrier-white.png' | asset_url }}" alt="Cream" class="product-main-img">
           </div>
           <div class="card-rhode-details">
             <div class="card-stars">â˜…â˜…â˜…â˜…â˜… <span>(12,120)</span></div>
@@ -2855,7 +2826,7 @@ a { color: inherit; text-decoration: none; }
         grid-template-columns: 1fr;
       }
       .breakdown-image {
-        order: 1; /* image on top on mobile */
+        order: -1; /* image on top on mobile */
       }
       .bd-title {
         font-size: 1.6rem;
@@ -3388,7 +3359,7 @@ a { color: inherit; text-decoration: none; }
         grid-template-columns: 1fr;
       }
       .wi-image-col {
-        order: 1;
+        order: -1;
       }
       .wi-vertical-text {
         writing-mode: horizontal-tb;
@@ -3460,7 +3431,7 @@ a { color: inherit; text-decoration: none; }
         grid-template-columns: 1fr;
       }
       .spread-image-col {
-        order: 1;
+        order: -1;
       }
       .spread-content {
         padding: 40px 24px;
@@ -3531,7 +3502,7 @@ a { color: inherit; text-decoration: none; }
         grid-template-columns: 1fr;
       }
       .stats-image {
-        order: 1; 
+        order: -1; 
       }
     }
 
@@ -3623,7 +3594,7 @@ a { color: inherit; text-decoration: none; }
         grid-template-columns: 1fr;
       }
       .faq-image-col {
-        order: 1;
+        order: -1;
       }
       .faq-content {
         padding: 40px 24px;
@@ -3905,35 +3876,6 @@ a { color: inherit; text-decoration: none; }
       color: #6a6863;
       margin-bottom: 24px;
       letter-spacing: -0.02em;
-    }
-      @media (max-width: 768px) {
-      .meet-carousel img {
-        flex: 0 0 85% !important;
-        min-width: unset !important;
-        scroll-snap-align: start;
-      }
-      .meet-carousel {
-        padding-left: 16px;
-        scroll-padding-left: 16px;
-      }
-      .carousel-swipe-indicator {
-        display: block;
-        text-align: right;
-        font-size: 0.75rem;
-        font-weight: 800;
-        color: #7a7873;
-        padding-right: 16px;
-        margin-bottom: 12px;
-        letter-spacing: 0.05em;
-      }
-      .carousel-arrow {
-        display: none;
-      }
-    }
-    @media (min-width: 769px) {
-      .carousel-swipe-indicator {
-        display: none;
-      }
     }
   </style>
 </body>

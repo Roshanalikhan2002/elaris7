@@ -1,9 +1,10 @@
-﻿<!DOCTYPE html>
+﻿{% layout none %}
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>sets | elaris7</title>
+  <title>Centella Face Wash | elaris7</title>
   <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
 
@@ -2160,127 +2161,495 @@ a { color: inherit; text-decoration: none; }
       }
     }
   </style>
-  <script src="./assets/script.js" defer></script>
+  <script src="{{ 'script.js' | asset_url }}" defer></script>
 </head>
 <body>
 
-  <header class="site-header scrolled-bg">
-    <div class="announcement-bar">
-      free shipping on all orders over rs. 2000
-    </div>
+  <header class="site-header">
+    <div class="announcement-bar">free shipping on all orders over rs. 2000</div>
     <div class="header-main">
       <nav class="header-nav">
-        <ul class="desktop-only">
-          <li><a href="index.html">HOME</a></li>
-          <li><a href="#">SHOP</a></li>
-        </ul>
+        <div class="menu-trigger" id="menu-open-product"><span></span><span></span><span></span></div>
+        <ul class="desktop-only"><li><a href="index.html">SHOP</a></li><li><a href="#">ABOUT</a></li><li><a href="#">FUTURES</a></li></ul>
       </nav>
       <div class="header-logo"><a href="index.html" class="logo-text">elaris7</a></div>
       <nav class="header-nav header-right">
-        <ul class="desktop-only">
-          <li><a href="#">SEARCH</a></li>
-          <li><a href="#">CART (0)</a></li>
-        </ul>
+        <ul class="desktop-only"><li><a href="#">SEARCH</a></li><li><a href="#">ACCOUNT</a></li><li><a href="#">CART (0)</a></li></ul>
+        <div class="mobile-only mobile-header-icons">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <div class="cart-icon-wrapper">
+             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+            <span class="cart-count">0</span>
+          </div>
+        </div>
       </nav>
     </div>
   </header>
 
-  <main class="page-wrapper" style="padding-top: 155px;">
-    
-    <section class="product-grid-section">
-      <div class="product-grid-header">
-        <h1 class="product-grid-title">sets</h1>
+  <main class="product-page">
+    <!-- Catchy Line Above Main Product -->
+    <div class="catchy-line-container">
+      <span class="catchy-line">Fresh Skin Begins Here</span>
+    </div>
+
+    <div class="product-grid">
+      <!-- Left Column: Sticky Gallery -->
+      <div class="product-gallery">
+        <div class="product-gallery-inner">
+           <img src="{{ 'facewash-100.jpg' | asset_url }}" alt="Centella Face Wash" class="main-product-img">
+        </div>
       </div>
 
-      <div class="product-grid">
-        <!-- Card 1 -->
-        <div class="card card-rhode">
-          <a href="night-cream.html" class="card-link-wrapper">
-            <div class="card-rhode-top"><span class="card-brand-label">NIGHT CREAM</span></div>
-            <div class="card-rhode-image"><img src="./assets/night-cream.jpg" alt="Night Cream" class="product-main-img"></div>
-            <div class="card-rhode-footer">
-              <div class="card-meta">
-                <div class="card-stars">â˜…â˜…â˜…â˜…â˜… <span class="review-count">(16k)</span></div>
-                <h3 class="card-name">NIGHT CREAM</h3>
-              </div>
-              <a href="night-cream.html" class="btn-rhode-buy-pill">BUY - RS. 1,500</a>
-            </div>
-          </a>
-        </div>
+      <!-- Right Column: Scrollable Content -->
+      <div class="product-details">
+        <div class="product-details-inner">
+          <div class="product-header">
+            <h1 class="product-title">centella<br>face wash</h1>
+            <div class="product-award"><div class="award-seal">BEST OF BEAUTY</div></div>
+          </div>
 
-        <!-- Card 2 -->
-        <div class="card card-rhode">
-          <a href="tranexamic-serum.html" class="card-link-wrapper">
-            <div class="card-rhode-top"><span class="card-brand-label">serum</span></div>
-            <div class="card-rhode-image"><img src="./assets/tranexamic-serum.jpg" alt="Tranexamic Serum" class="product-main-img"></div>
-            <div class="card-rhode-footer">
-              <div class="card-meta">
-                <div class="card-stars">â˜…â˜…â˜…â˜…â˜… <span class="review-count">(16k)</span></div>
-                <h3 class="card-name">TRANEXAMIC SERUM</h3>
-              </div>
-              <a href="tranexamic-serum.html" class="btn-rhode-buy-pill">BUY - RS. 1,500</a>
-            </div>
-          </a>
-        </div>
+          <div class="product-meta">
+            <span class="product-subtitle">PURE START</span>
+            <div class="product-reviews"><span class="stars">â˜…â˜…â˜…â˜…â˜…</span><span class="review-count">(16k)</span></div>
+          </div>
 
-        <!-- Card 3 -->
-        <div class="card card-rhode">
-          <a href="keratin-serum.html" class="card-link-wrapper">
-            <div class="card-rhode-top"><span class="card-brand-label">haircare</span></div>
-            <div class="card-rhode-image"><img src="./assets/keratin-serum.jpg" alt="Keratin Serum" class="product-main-img"></div>
-            <div class="card-rhode-footer">
-              <div class="card-meta">
-                <div class="card-stars">â˜…â˜…â˜…â˜…â˜… <span class="review-count">(16k)</span></div>
-                <h3 class="card-name">KERATIN SERUM</h3>
-              </div>
-              <a href="keratin-serum.html" class="btn-rhode-buy-pill">BUY - RS. 1,500</a>
-            </div>
-          </a>
-        </div>
+          <div class="product-description">
+            <p>A gentle, glow-reviving cleanser infused with Centella Asiatica, brightening actives, and hydrating botanicals to cleanse, soothe, and refresh your skin for a soft, balanced, and radiant look every day.</p>
+          </div>
 
-        <!-- Card 4 -->
-        <div class="card card-rhode">
-          <a href="glow-serum.html" class="card-link-wrapper">
-            <div class="card-rhode-top"><span class="card-brand-label">serum</span></div>
-            <div class="card-rhode-image"><img src="./assets/glow-serum-100.jpg" alt="Glow Serum" class="product-main-img"></div>
-            <div class="card-rhode-footer">
-              <div class="card-meta">
-                <div class="card-stars">â˜…â˜…â˜…â˜…â˜… <span class="review-count">(16k)</span></div>
-                <h3 class="card-name">GLOW SERUM</h3>
-              </div>
-              <a href="glow-serum.html" class="btn-rhode-buy-pill">BUY - RS. 1,500</a>
-            </div>
-          </a>
-        </div>
+          <hr class="divider">
 
-        <!-- Card 5 -->
-        <div class="card card-rhode">
-          <a href="face-wash.html" class="card-link-wrapper">
-            <div class="card-rhode-top"><span class="card-brand-label">cleanser</span></div>
-            <div class="card-rhode-image"><img src="./assets/facewash-100.jpg" alt="Face Wash" class="product-main-img"></div>
-            <div class="card-rhode-footer">
-              <div class="card-meta">
-                <div class="card-stars">â˜…â˜…â˜…â˜…â˜… <span class="review-count">(16k)</span></div>
-                <h3 class="card-name">CENTELLA WASH</h3>
+          <div class="bogo-offer-highlight">
+            <div class="bogo-selector active">
+              <div class="bogo-radio"></div>
+              <div class="bogo-text-content">
+                <span class="bogo-label">Buy 1 Get 1 FREE Offer</span>
+                <span class="bogo-price">Rs.1,690</span>
               </div>
-              <a href="face-wash.html" class="btn-rhode-buy-pill">BUY - RS. 1,500</a>
             </div>
-          </a>
+          </div>
+
+          <button class="buy-button">ADD TO BAG - Rs. 1,690</button>
+          
+          <hr class="divider">
+
+          <div class="product-accordions">
+            <details class="p-accordion">
+              <summary class="p-accordion-header"><span>BENEFITS</span><span class="acc-icon">+</span></summary>
+              <div class="accordion-content">
+                <ul>
+                  <li>Gently removes dirt, oil, and impurities without stripping the skin</li>
+                  <li>Helps brighten complexion and revive dull, tired-looking skin</li>
+                  <li>Supports hydration for a soft, fresh, and balanced feel</li>
+                  <li>Calms irritation and reduces the look of redness</li>
+                  <li>Helps maintain a healthy skin barrier for daily protection</li>
+                </ul>
+              </div>
+            </details>
+            <details class="p-accordion">
+              <summary class="p-accordion-header"><span>APPLICATION</span><span class="acc-icon">+</span></summary>
+              <div class="accordion-content">
+                <p>After wetting your face, take a small amount of Centella Face Wash and gently massage onto skin in circular motions for about 60 seconds. Rinse thoroughly with water and pat dry, then follow with your skincare routine.</p>
+              </div>
+            </details>
+            <details class="p-accordion">
+              <summary class="p-accordion-header"><span>ELARIS TRICKS</span><span class="acc-icon">+</span></summary>
+              <div class="accordion-content">
+                <ul>
+                  <li>Use lukewarm water to avoid drying out your skin while cleansing</li>
+                  <li>Massage gently for a full 60 seconds to allow ingredients to work effectively</li>
+                  <li>Follow immediately with serum or moisturizer on damp skin to lock in hydration</li>
+                </ul>
+              </div>
+            </details>
+            <details class="p-accordion">
+              <summary class="p-accordion-header"><span>INGREDIENTS</span><span class="acc-icon">+</span></summary>
+              <div class="accordion-content">
+                <p>3-0-Ethyl Ascorbic Acid, Hyaluronic Acid, Rice Extract, Licorice Extract, Morus Alba, Centella Asiatica, Honey, D-Panthenol, Sodium PCA, Glycerin, Apple Extract</p>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Meet the Product Section -->
+    <section class="meet-product-section">
+      <h2 class="meet-title">Meet Your Purest Clean</h2>
+      <div class="meet-carousel-wrapper">
+        <div class="carousel-swipe-indicator">SWIPE &rarr;</div>
+        <div class="meet-carousel">
+          <img src="{{ 'cleanser-meet-1.jpg' | asset_url }}" alt="Cleanser Texture">
+          <img src="{{ 'cleanser-meet-2.jpg' | asset_url }}" alt="Model using cleanser">
+          <img src="{{ 'cleanser-meet-3.jpg' | asset_url }}" alt="Lather close-up">
+          <img src="{{ 'cleanser-meet-4.jpg' | asset_url }}" alt="Fresh skin result">
+        </div>
+        <div class="carousel-arrow">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#5b5a53" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
         </div>
       </div>
     </section>
 
+    <!-- Important Info / Breakdown Section -->
+    <section class="breakdown-section">
+      <div class="breakdown-content">
+        <span class="bd-intro">Cleanse. Refresh. Glow.</span>
+        <h2 class="bd-title">A daily face wash for CLEAN SKIN + BALANCED, RADIANT COMPLEXION.</h2>
+        <div class="bd-table">
+          <div class="bd-row">
+            <span class="bd-label">GOOD FOR:</span>
+            <span class="bd-val">All skin types, especially dull, sensitive, or acne-prone skin</span>
+          </div>
+          <div class="bd-row">
+            <span class="bd-label">FEELS LIKE:</span>
+            <span class="bd-val">A soft, airy lather that cleanses gently without tightness</span>
+          </div>
+          <div class="bd-row">
+            <span class="bd-label">LOOKS LIKE:</span>
+            <span class="bd-val">Fresh, clear skin with a natural, healthy glow</span>
+          </div>
+          <div class="bd-row">
+            <span class="bd-label">SMELLS LIKE:</span>
+            <span class="bd-val">Light, clean freshness that feels calming and pure</span>
+          </div>
+          <div class="bd-row">
+            <span class="bd-label">FYI:</span>
+            <span class="bd-val">Halal-Friendly â€¢ Dermatologist-Tested â€¢ Non-Drying â€¢ Gentle for Daily Use</span>
+          </div>
+        </div>
+      </div>
+      <div class="breakdown-image">
+        <img src="{{ 'deep-hydration-facewash.jpg' | asset_url }}" alt="Centella Face Wash Texture">
+      </div>
+    </section>
+
+    <!-- What's Inside Section -->
+    <section class="whats-inside-section">
+      <div class="wi-image-col">
+        <img src="{{ 'facewash-ingredients.jpg' | asset_url }}" alt="Glow-boosting Ingredients" class="wi-image">
+      </div>
+      <div class="wi-content-col">
+        <div class="wi-vertical-text">what's inside</div>
+        <div class="wi-details">
+          <p class="wi-intro">Our formula is powered by gentle cleansers and glow-boosting hydrators. Meet 2 of our favorites for a fresh, balanced cleanse.</p>
+          
+          <div class="wi-ingredient-block">
+            <h3 class="wi-ingred-title">hyaluronic acid</h3>
+            <p class="wi-ingred-desc">a moisture-binding ingredient that helps keep skin hydrated and plump while cleansing, preventing dryness and tightness</p>
+          </div>
+          
+          <hr class="wi-divider">
+          
+          <div class="wi-ingredient-block">
+            <h3 class="wi-ingred-title">3-o-ethyl ascorbic acid</h3>
+            <p class="wi-ingred-desc">a stable form of vitamin C that helps brighten the complexion, reduce dullness, and support a more radiant, even look</p>
+          </div>
+          
+          <hr class="wi-divider">
+          
+          <p class="wi-also-made">also made with <strong>RICE EXTRACT, LICORICE EXTRACT, MORUS ALBA, HONEY, D-PANTHENOL, SODIUM PCA, GLYCERIN, APPLE EXTRACT, CENTELLA ASIATICA</strong></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Spread It On For Section -->
+    <section class="spread-section">
+      <div class="spread-content">
+        <span class="spread-label">SPREAD IT ON FOR:</span>
+        <h2 class="spread-heading">fresh, balanced skin</h2>
+        <h2 class="spread-heading">gentle daily cleansing</h2>
+        <h2 class="spread-heading spread-green">natural, radiant glow</h2>
+      </div>
+      <div class="spread-image-col">
+        <img src="{{ 'facewash-benefits.jpg' | asset_url }}" alt="Radiant Skin Result">
+      </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="stats-section">
+      <div class="stats-content">
+        <div class="stat-item">
+          <div class="stat-pct">99%</div>
+          <div class="stat-desc">SAID THEIR SKIN FELT CLEAN + REFRESHED AFTER EVERY WASH</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-pct">98%</div>
+          <div class="stat-desc">SAID IT DID NOT DRY OUT THEIR SKIN</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-pct">97%</div>
+          <div class="stat-desc">SAID THEIR SKIN LOOKED CLEARER + MORE BALANCED</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-pct">3 out of 4</div>
+          <div class="stat-desc">SAID THEY NOTICED LESS DULLNESS WITH DAILY USE</div>
+        </div>
+        <div class="stat-disclaimer">
+          Based on a 2-week consumer perception study with consistent daily use.
+        </div>
+      </div>
+      <div class="stats-image">
+        <img src="{{ 'facewash-gallery-1.jpg' | asset_url }}" alt="Study Participants Result">
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+      <div class="faq-content">
+        <h2 class="faq-title">FAQ</h2>
+        <p class="faq-subtitle">Everything you need to know about Centella Face Wash.</p>
+        <div class="faq-accordion">
+          <details class="faq-item-details">
+            <summary class="faq-item">
+              <span class="faq-question">CAN I USE THIS FACE WASH TWICE A DAY?</span>
+              <span class="faq-icon">+</span>
+            </summary>
+            <div class="faq-answer">Yes, it is gentle enough for both morning and evening use without over-drying your skin.</div>
+          </details>
+          <details class="faq-item-details">
+            <summary class="faq-item">
+              <span class="faq-question">IS IT SUITABLE FOR SENSITIVE SKIN?</span>
+              <span class="faq-icon">+</span>
+            </summary>
+            <div class="faq-answer">Yes, the formula includes calming ingredients like Centella Asiatica and honey, making it ideal for sensitive skin.</div>
+          </details>
+          <details class="faq-item-details">
+            <summary class="faq-item">
+              <span class="faq-question">WILL IT HELP WITH ACNE OR BREAKOUTS?</span>
+              <span class="faq-icon">+</span>
+            </summary>
+            <div class="faq-answer">It helps cleanse pores, remove excess oil, and soothe irritation, which can support clearer skin over time.</div>
+          </details>
+          <details class="faq-item-details">
+            <summary class="faq-item">
+              <span class="faq-question">DOES IT REMOVE MAKEUP?</span>
+              <span class="faq-icon">+</span>
+            </summary>
+            <div class="faq-answer">It can remove light makeup, but for heavy or waterproof makeup, use a remover before cleansing.</div>
+          </details>
+          <details class="faq-item-details">
+            <summary class="faq-item">
+              <span class="faq-question">WILL MY SKIN FEEL DRY AFTER WASHING?</span>
+              <span class="faq-icon">+</span>
+            </summary>
+            <div class="faq-answer">No, it is designed to maintain hydration and leave your skin feeling soft and balanced.</div>
+          </details>
+        </div>
+      </div>
+      <div class="faq-image-col">
+        <img src="{{ 'faq-100-nc.jpg' | asset_url }}" alt="FAQs">
+      </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="reviews-section">
+      <div class="reviews-header">
+        <div class="rv-overall">
+          <div class="rv-score">5.0 <span class="rv-stars">â˜…â˜…â˜…â˜…â˜…</span></div>
+          <div class="rv-avg-text">AVERAGE RATING</div>
+          <div class="rv-count">Based on latest customer feedback</div>
+        </div>
+      </div>
+      <hr class="rv-divider">
+      
+      <div class="review-card">
+        <div class="rv-main">
+          <div class="rv-stars">â˜…â˜…â˜…â˜…â˜…</div>
+          <div class="rv-body">â€œI love how gentle this face wash feels on my skin. It cleans properly without making my skin dry, and my face looks fresh after every wash.â€</div>
+          <div class="rv-author">â€” Areeba</div>
+        </div>
+      </div>
+      <hr class="rv-divider">
+      <div class="review-card">
+        <div class="rv-main">
+          <div class="rv-stars">â˜…â˜…â˜…â˜…â˜…</div>
+          <div class="rv-body">â€œMy skin feels so soft and clean after using it. Iâ€™ve noticed less dullness and my complexion looks more even now.â€</div>
+          <div class="rv-author">â€” Mehwish</div>
+        </div>
+      </div>
+      <hr class="rv-divider">
+      <div class="review-card">
+        <div class="rv-main">
+          <div class="rv-stars">â˜…â˜…â˜…â˜…â˜…</div>
+          <div class="rv-body">â€œItâ€™s very mild yet effective. My skin doesnâ€™t feel tight anymore after washing, and it actually feels hydrated.â€</div>
+          <div class="rv-author">â€” Kiran</div>
+        </div>
+      </div>
+      <hr class="rv-divider">
+      <div class="review-card">
+        <div class="rv-main">
+          <div class="rv-stars">â˜…â˜…â˜…â˜…â˜…</div>
+          <div class="rv-body">â€œThis face wash gives a really clean feeling without irritation. My skin looks clearer and feels balanced throughout the day.â€</div>
+          <div class="rv-author">â€” Bilal</div>
+        </div>
+      </div>
+      <hr class="rv-divider">
+      <div class="review-card">
+        <div class="rv-main">
+          <div class="rv-stars">â˜…â˜…â˜…â˜…â˜…</div>
+          <div class="rv-body">â€œIâ€™ve been using it daily and my skin feels healthier overall. Itâ€™s simple, gentle, and does exactly what I needed.â€</div>
+          <div class="rv-author">â€” Hamza</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="mobile-sticky-cart"><button class="buy-button">ADD TO BAG - Rs. 1,690</button></div>
   </main>
 
-  <footer class="site-footer-rhode">
-    <div class="footer-logo-massive">
-      <h1 class="logo-text-giant">elaris7</h1>
-    </div>
-    <div class="footer-bottom-info">
-      &copy; 2026 ELARIS7. ALL RIGHTS RESERVED.
+  <footer class="footer-block">
+    <div class="footer-logo-massive"><span class="logo-text">elaris7</span></div>
+    <div class="footer-grid-container">
+      <div class="footer-grid-col newsletter-box">
+        <p>Join us on the road to an effortless glow.</p>
+        <div class="newsletter-input-group">
+          <input type="email" placeholder="Email Address">
+          <button type="submit">SUBSCRIBE</button>
+        </div>
+      </div>
+      <div class="footer-grid-col"><h4>NAVIGATE</h4><ul><li><a href="index.html">Home</a></li><li><a href="#">Shop</a></li></ul></div>
+      <div class="footer-grid-col"><h4>SOCIAL</h4><ul><li><a href="#">Instagram</a></li><li><a href="#">TikTok</a></li></ul></div>
     </div>
   </footer>
 
+  <style>
+    /* Premium Design System */
+    body { background-color: #fff; margin: 0; font-family: 'Inter', -apple-system, sans-serif; color: #333; }
+    .product-page { padding: 16px; max-width: 1400px; margin: 0 auto; }
+    
+    .catchy-line-container { text-align: center; padding: 10px 0; margin-bottom: 20px; }
+    .catchy-line { font-size: 0.75rem; font-weight: 800; color: #5b5a53; text-transform: uppercase; letter-spacing: 0.1em; }
+
+    .product-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 16px; margin-bottom: 16px; }
+    
+    /* Gallery */
+    .product-gallery-inner { position: sticky; top: 110px; height: calc(100vh - 140px); border-radius: 14px; overflow: hidden; background: #f2f0ed; display: flex; align-items: center; justify-content: center; }
+    .main-product-img { max-width: 90%; max-height: 90%; object-fit: contain; }
+
+    /* Details */
+    .product-details { background-color: #f3f0ec; border-radius: 14px; padding: 60px 40px; }
+    .product-title { font-weight: 900; font-size: 4rem; color: #002d5f; margin: 0; line-height: 1.1; letter-spacing: -0.04em; transform: scaleX(1.1); transform-origin: left; text-transform: lowercase; }
+    .product-meta { display: flex; justify-content: space-between; align-items: center; margin-top: 24px; }
+    .product-subtitle { font-size: 0.9rem; font-weight: 700; color: #5b5a53; letter-spacing: 0.05em; }
+    .product-reviews { font-size: 0.85rem; color: #5b5a53; }
+    .product-description { margin: 32px 0; font-size: 1.1rem; line-height: 1.5; color: #5b5a53; }
+    .divider { border: none; border-top: 1px solid rgba(91,90,83,0.2); margin: 32px 0; }
+    
+    .bogo-offer-highlight { margin-bottom: 24px; }
+    .bogo-selector { border: 2px solid #002d5f; border-radius: 12px; padding: 16px; display: flex; align-items: center; gap: 12px; background: #fff; }
+    .bogo-radio { width: 20px; height: 20px; border: 6px solid #002d5f; border-radius: 50%; }
+    .bogo-text-content { flex: 1; display: flex; justify-content: space-between; font-weight: 700; color: #002d5f; }
+
+    .buy-button { width: 100%; background: #333; color: #fff; padding: 20px; border-radius: 50px; border: none; font-size: 1rem; font-weight: 700; cursor: pointer; letter-spacing: 0.05em; }
+    
+    /* Accordions */
+    .p-accordion { border-bottom: 1px solid rgba(91,90,83,0.15); }
+    .p-accordion-header { display: flex; justify-content: space-between; padding: 20px 0; font-weight: 700; color: #5b5a53; cursor: pointer; list-style: none; }
+    .p-accordion-header::-webkit-details-marker { display: none; }
+    .accordion-content { padding-bottom: 20px; color: #5b5a53; line-height: 1.6; }
+    .accordion-content ul { padding-left: 20px; }
+
+    /* Meet Section */
+    .meet-product-section { background: #f3f0ec; border-radius: 14px; padding: 60px 40px; margin-bottom: 16px; }
+    .meet-title { font-size: 2.5rem; font-weight: 900; color: #5b5a53; margin-bottom: 40px; }
+    .meet-carousel { display: flex; gap: 16px; overflow-x: auto; scrollbar-width: none; }
+    .meet-carousel img { width: 300px; height: 400px; object-fit: cover; border-radius: 12px; }
+
+    /* Breakdown Section */
+    .breakdown-section { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+    .breakdown-content { background: #f3f0ec; border-radius: 14px; padding: 60px 40px; }
+    .bd-intro { font-weight: 700; color: #6a6863; text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.8rem; }
+    .bd-title { font-size: 2rem; font-weight: 500; color: #6a6863; margin: 20px 0 40px; line-height: 1.25; }
+    .bd-row { display: flex; justify-content: space-between; padding: 16px 0; border-bottom: 1px solid rgba(91,90,83,0.15); align-items: flex-start; }
+    .bd-label { font-weight: 700; font-size: 0.85rem; color: #5b5a53; width: 30%; }
+    .bd-val { font-size: 0.85rem; color: #5b5a53; text-align: right; width: 65%; line-height: 1.4; }
+    .breakdown-image img { width: 100%; height: 100%; object-fit: cover; border-radius: 14px; }
+
+    /* What's Inside */
+    .whats-inside-section { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+    .wi-content-col { background: #f3f0ec; border-radius: 14px; padding: 60px 40px; display: flex; }
+    .wi-vertical-text { writing-mode: vertical-rl; font-weight: 900; font-size: 2.5rem; color: #7a7873; margin-right: 40px; transform: rotate(180deg); opacity: 0.3; }
+    .wi-details { flex: 1; display: flex; flex-direction: column; justify-content: center; }
+    .wi-ingred-title { font-weight: 900; font-size: 2rem; color: #7a7873; margin: 0 0 10px; transform: scaleX(1.1); transform-origin: left; letter-spacing: -0.02em; }
+    .wi-ingred-desc { color: #5b5a53; line-height: 1.5; margin-bottom: 24px; }
+    .wi-image img { width: 100%; height: 100%; object-fit: cover; border-radius: 14px; }
+
+    /* Spread Section */
+    .spread-section { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+    .spread-content { background: #f3f0ec; border-radius: 14px; padding: 80px 40px; text-align: center; }
+    .spread-heading { font-weight: 900; font-size: 3.5rem; color: #8c8a86; line-height: 1; letter-spacing: -0.04em; transform: scaleX(1.1); margin-bottom: 15px; }
+    .spread-green { color: #54664c; }
+    .spread-image-col img { width: 100%; height: 100%; object-fit: cover; border-radius: 14px; }
+
+    /* Stats Section */
+    .stats-section { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+    .stats-content { background: #f3f0ec; border-radius: 14px; padding: 60px 40px; display: flex; flex-direction: column; justify-content: center; }
+    .stat-pct { font-size: 3rem; font-weight: 900; color: #002d5f; margin-bottom: 8px; }
+    .stat-desc { font-weight: 700; color: #7a7873; font-size: 0.9rem; text-transform: uppercase; }
+    .stats-image img { width: 100%; height: 100%; object-fit: cover; border-radius: 14px; }
+
+    /* FAQ */
+    .faq-section { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+    .faq-content { background: #f3f0ec; border-radius: 14px; padding: 60px 40px; }
+    .faq-title { font-size: 3rem; font-weight: 900; color: #6a6863; margin-bottom: 40px; }
+    .faq-item { display: flex; justify-content: space-between; padding: 20px 0; border-bottom: 1px solid rgba(0,0,0,0.1); cursor: pointer; list-style: none; }
+    .faq-item::-webkit-details-marker { display: none; }
+    .faq-question { font-weight: 700; font-size: 0.9rem; color: #7a7873; }
+    .faq-icon { background: #9c9a96; color: #fff; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+    .faq-answer { padding: 20px 0; line-height: 1.6; color: #5b5a53; }
+    .faq-image-col img { width: 100%; height: 100%; object-fit: cover; border-radius: 14px; }
+
+    /* Reviews */
+    .reviews-section { background: #f3f0ec; border-radius: 14px; padding: 60px 40px; }
+    .review-card { padding: 32px 0; }
+    .rv-stars { color: #002d5f; font-size: 1.2rem; margin-bottom: 12px; }
+    .rv-body { font-size: 1.2rem; line-height: 1.5; font-style: italic; margin-bottom: 12px; }
+    .rv-author { font-weight: 700; color: #7a7873; }
+
+    /* Footer */
+    .footer-block { background: #f3f0ec; padding: 80px 40px; border-radius: 14px 14px 0 0; }
+    .footer-logo-massive { font-size: 6rem; font-weight: 900; color: #002d5f; text-align: center; margin-bottom: 60px; }
+    .footer-grid-container { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; }
+    .newsletter-input-group { display: flex; gap: 10px; margin-top: 20px; }
+    .newsletter-input-group input { flex: 1; padding: 12px; border-radius: 50px; border: 1px solid #c9c7c3; }
+    .newsletter-input-group button { padding: 12px 30px; border-radius: 50px; border: none; background: #333; color: #fff; font-weight: 700; cursor: pointer; }
+
+    @media (max-width: 900px) {
+      .product-grid, .breakdown-section, .whats-inside-section, .spread-section, .stats-section, .faq-section, .footer-grid-container { grid-template-columns: 1fr; }
+      .product-gallery-inner { top: 0; height: auto; aspect-ratio: 4/5; }
+      .wi-vertical-text { writing-mode: horizontal-tb; transform: none; margin-bottom: 20px; }
+      .spread-heading { font-size: 2.5rem; }
+      .footer-logo-massive { font-size: 3rem; }
+    }
+      @media (max-width: 768px) {
+      .meet-carousel img {
+        flex: 0 0 85% !important;
+        min-width: unset !important;
+        scroll-snap-align: start;
+      }
+      .meet-carousel {
+        padding-left: 16px;
+        scroll-padding-left: 16px;
+      }
+      .carousel-swipe-indicator {
+        display: block;
+        text-align: right;
+        font-size: 0.75rem;
+        font-weight: 800;
+        color: #7a7873;
+        padding-right: 16px;
+        margin-bottom: 12px;
+        letter-spacing: 0.05em;
+      }
+      .carousel-arrow {
+        display: none;
+      }
+    }
+    @media (min-width: 769px) {
+      .carousel-swipe-indicator {
+        display: none;
+      }
+    }
+  </style>
 </body>
 </html>
 

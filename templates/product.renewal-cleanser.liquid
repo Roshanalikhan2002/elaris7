@@ -1,9 +1,10 @@
-﻿<!DOCTYPE html>
+﻿{% layout none %}
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>sets | elaris7</title>
+  <title>Renewal Cleanser | elaris7</title>
   <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
 
@@ -2160,127 +2161,123 @@ a { color: inherit; text-decoration: none; }
       }
     }
   </style>
-  <script src="./assets/script.js" defer></script>
+  <script src="{{ 'script.js' | asset_url }}" defer></script>
 </head>
 <body>
-
-  <header class="site-header scrolled-bg">
-    <div class="announcement-bar">
-      free shipping on all orders over rs. 2000
-    </div>
+  <header class="site-header">
+    <div class="announcement-bar">free shipping on all orders over rs. 2000</div>
     <div class="header-main">
       <nav class="header-nav">
-        <ul class="desktop-only">
-          <li><a href="index.html">HOME</a></li>
-          <li><a href="#">SHOP</a></li>
-        </ul>
+        <div class="menu-trigger" id="menu-open-product"><span></span><span></span><span></span></div>
+        <ul class="desktop-only"><li><a href="#">SHOP</a></li><li><a href="#">ABOUT</a></li><li><a href="#">FUTURES</a></li></ul>
       </nav>
       <div class="header-logo"><a href="index.html" class="logo-text">elaris7</a></div>
       <nav class="header-nav header-right">
-        <ul class="desktop-only">
-          <li><a href="#">SEARCH</a></li>
-          <li><a href="#">CART (0)</a></li>
-        </ul>
+        <ul class="desktop-only"><li><a href="#">SEARCH</a></li><li><a href="#">ACCOUNT</a></li><li><a href="#">CART (0)</a></li></ul>
+        <div class="mobile-only mobile-header-icons">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <div class="cart-icon-wrapper">
+             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+            <span class="cart-count">0</span>
+          </div>
+        </div>
       </nav>
     </div>
   </header>
 
-  <main class="page-wrapper" style="padding-top: 155px;">
+  <main class="product-page">
+    <div class="product-grid">
+      <div class="product-gallery">
+        <div class="gallery-thumbnails">
+          <div class="thumb-item active"><img src="{{ 'gel cleanser-100.jpg' | asset_url }}" alt="Thumb 1"></div>
+        </div>
+        <div class="gallery-main-viewport">
+          <div class="gallery-slider"><div class="gallery-slide"><img src="{{ 'gel cleanser-100.jpg' | asset_url }}" alt="Main View 1"></div></div>
+        </div>
+      </div>
+      <div class="product-details">
+        <div class="product-details-inner">
+          <div class="product-header">
+            <h1 class="product-title">Renewal<br>Cleanser</h1>
+            <div class="product-award"><div class="award-seal">BEST OF BEAUTY</div></div>
+          </div>
+          <div class="product-meta">
+            <span class="product-subtitle">Gel Cleansing</span>
+            <div class="product-reviews"><span class="stars">â˜…â˜…â˜…â˜…â˜…</span><span class="review-count">(16k)</span></div>
+          </div>
+          <div class="product-description">
+            <p>Our Renewal Cleanser is a gel-based formula that deeply cleanses and refreshes the skin without causing dryness. Infused with natural extracts to promote skin renewal.</p>
+          </div>
+          <hr class="divider">
+          <button class="buy-button">ADD TO BAG - Rs. 1,500</button>
+          <hr class="divider">
+          <div class="product-accordions accordions">
+            <details class="accordion-item"><summary><span>BENEFITS</span><span>+</span></summary><div class="accordion-content"><ul><li>Deeply cleanses pores</li><li>Promotes skin renewal</li><li>Maintains skin's natural moisture</li></ul></div></details>
+          </div>
+        </div>
+      </div>
+    </div>
     
-    <section class="product-grid-section">
-      <div class="product-grid-header">
-        <h1 class="product-grid-title">sets</h1>
-      </div>
-
-      <div class="product-grid">
-        <!-- Card 1 -->
-        <div class="card card-rhode">
-          <a href="night-cream.html" class="card-link-wrapper">
-            <div class="card-rhode-top"><span class="card-brand-label">NIGHT CREAM</span></div>
-            <div class="card-rhode-image"><img src="./assets/night-cream.jpg" alt="Night Cream" class="product-main-img"></div>
-            <div class="card-rhode-footer">
-              <div class="card-meta">
-                <div class="card-stars">â˜…â˜…â˜…â˜…â˜… <span class="review-count">(16k)</span></div>
-                <h3 class="card-name">NIGHT CREAM</h3>
-              </div>
-              <a href="night-cream.html" class="btn-rhode-buy-pill">BUY - RS. 1,500</a>
-            </div>
-          </a>
-        </div>
-
-        <!-- Card 2 -->
-        <div class="card card-rhode">
-          <a href="tranexamic-serum.html" class="card-link-wrapper">
-            <div class="card-rhode-top"><span class="card-brand-label">serum</span></div>
-            <div class="card-rhode-image"><img src="./assets/tranexamic-serum.jpg" alt="Tranexamic Serum" class="product-main-img"></div>
-            <div class="card-rhode-footer">
-              <div class="card-meta">
-                <div class="card-stars">â˜…â˜…â˜…â˜…â˜… <span class="review-count">(16k)</span></div>
-                <h3 class="card-name">TRANEXAMIC SERUM</h3>
-              </div>
-              <a href="tranexamic-serum.html" class="btn-rhode-buy-pill">BUY - RS. 1,500</a>
-            </div>
-          </a>
-        </div>
-
-        <!-- Card 3 -->
-        <div class="card card-rhode">
-          <a href="keratin-serum.html" class="card-link-wrapper">
-            <div class="card-rhode-top"><span class="card-brand-label">haircare</span></div>
-            <div class="card-rhode-image"><img src="./assets/keratin-serum.jpg" alt="Keratin Serum" class="product-main-img"></div>
-            <div class="card-rhode-footer">
-              <div class="card-meta">
-                <div class="card-stars">â˜…â˜…â˜…â˜…â˜… <span class="review-count">(16k)</span></div>
-                <h3 class="card-name">KERATIN SERUM</h3>
-              </div>
-              <a href="keratin-serum.html" class="btn-rhode-buy-pill">BUY - RS. 1,500</a>
-            </div>
-          </a>
-        </div>
-
-        <!-- Card 4 -->
-        <div class="card card-rhode">
-          <a href="glow-serum.html" class="card-link-wrapper">
-            <div class="card-rhode-top"><span class="card-brand-label">serum</span></div>
-            <div class="card-rhode-image"><img src="./assets/glow-serum-100.jpg" alt="Glow Serum" class="product-main-img"></div>
-            <div class="card-rhode-footer">
-              <div class="card-meta">
-                <div class="card-stars">â˜…â˜…â˜…â˜…â˜… <span class="review-count">(16k)</span></div>
-                <h3 class="card-name">GLOW SERUM</h3>
-              </div>
-              <a href="glow-serum.html" class="btn-rhode-buy-pill">BUY - RS. 1,500</a>
-            </div>
-          </a>
-        </div>
-
-        <!-- Card 5 -->
-        <div class="card card-rhode">
-          <a href="face-wash.html" class="card-link-wrapper">
-            <div class="card-rhode-top"><span class="card-brand-label">cleanser</span></div>
-            <div class="card-rhode-image"><img src="./assets/facewash-100.jpg" alt="Face Wash" class="product-main-img"></div>
-            <div class="card-rhode-footer">
-              <div class="card-meta">
-                <div class="card-stars">â˜…â˜…â˜…â˜…â˜… <span class="review-count">(16k)</span></div>
-                <h3 class="card-name">CENTELLA WASH</h3>
-              </div>
-              <a href="face-wash.html" class="btn-rhode-buy-pill">BUY - RS. 1,500</a>
-            </div>
-          </a>
-        </div>
-      </div>
-    </section>
-
+    <section class="meet-product-section"><h2 class="meet-title">Ready for Renewal?</h2></section>
+    
+    <div class="mobile-sticky-cart"><button class="buy-button">ADD TO BAG - Rs. 1,500</button></div>
   </main>
 
-  <footer class="site-footer-rhode">
-    <div class="footer-logo-massive">
-      <h1 class="logo-text-giant">elaris7</h1>
-    </div>
-    <div class="footer-bottom-info">
-      &copy; 2026 ELARIS7. ALL RIGHTS RESERVED.
+  <footer class="footer-block">
+    <div class="footer-logo-massive"><span class="logo-text">elaris7</span></div>
+    <div class="footer-grid-container">
+      <div class="footer-grid-col"><h4>NAVIGATE</h4><ul><li><a href="index.html">Home</a></li><li><a href="#">Shop</a></li></ul></div>
     </div>
   </footer>
 
+  <style>
+    body { margin: 0; font-family: sans-serif; background-color: #fff; }
+    .product-page { padding: 16px; }
+    .product-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 12px; max-width: 1400px; margin: 0 auto; }
+    .product-gallery { position: sticky; top: 20px; height: calc(100vh - 40px); display: flex; gap: 15px; background: #f2f0ed; padding: 15px; border-radius: 14px; }
+    .gallery-thumbnails { display: flex; flex-direction: column; gap: 12px; width: 60px; }
+    .thumb-item { width: 50px; height: 50px; border-radius: 8px; overflow: hidden; background: white; border: 2px solid transparent; }
+    .thumb-item.active { border-color: #002d5f; }
+    .thumb-item img { width: 100%; height: 100%; object-fit: cover; }
+    .gallery-main-viewport { flex: 1; border-radius: 12px; overflow: hidden; background: #fff; display: flex; align-items: center; justify-content: center; }
+    .gallery-main-viewport img { max-width: 90%; max-height: 90%; object-fit: contain; }
+    .product-details { background-color: #f3f0ec; border-radius: 14px; padding: 40px; }
+    .product-title { font-weight: 900; font-size: 3rem; color: #002d5f; margin: 0; line-height: 1.1; letter-spacing: -0.04em; transform: scaleX(1.1); transform-origin: left; }
+    .buy-button { width: 100%; background: #fff; border: 1px solid #333; padding: 18px; border-radius: 50px; font-weight: 700; cursor: pointer; letter-spacing: 0.05em; color: #5b5a53; }
+    .divider { border: none; border-top: 1px solid rgba(91,90,83,0.2); margin: 24px 0; }
+    .footer-block { background-color: #f3f0ec; padding: 60px 40px; text-align: center; border-radius: 14px 14px 0 0; }
+    .footer-logo-massive .logo-text { font-size: 6rem; font-weight: 900; color: #002d5f; }
+    @media (max-width: 900px) { .product-grid { grid-template-columns: 1fr; } .product-gallery { position: relative; height: auto; aspect-ratio: 1/1; } }
+      @media (max-width: 768px) {
+      .meet-carousel img {
+        flex: 0 0 85% !important;
+        min-width: unset !important;
+        scroll-snap-align: start;
+      }
+      .meet-carousel {
+        padding-left: 16px;
+        scroll-padding-left: 16px;
+      }
+      .carousel-swipe-indicator {
+        display: block;
+        text-align: right;
+        font-size: 0.75rem;
+        font-weight: 800;
+        color: #7a7873;
+        padding-right: 16px;
+        margin-bottom: 12px;
+        letter-spacing: 0.05em;
+      }
+      .carousel-arrow {
+        display: none;
+      }
+    }
+    @media (min-width: 769px) {
+      .carousel-swipe-indicator {
+        display: none;
+      }
+    }
+  </style>
 </body>
 </html>
 
