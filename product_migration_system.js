@@ -309,9 +309,9 @@ function updateTemplate(p) {
             }
         });
         for (let j = p.Stats.length; j < 4; j++) {
-            if (j === 3) c = c.replace(/<div class="stat-item">\s*<div class="stat-pct">3 out of 4<\/div>[\s\S]*?<\/div>/, '');
-            else if (j === 2) c = c.replace(/<div class="stat-item">\s*<div class="stat-pct">94%<\/div>[\s\S]*?<\/div>/, '');
-            else if (j === 1) c = c.replace(/<div class="stat-item">\s*<div class="stat-pct">95%<\/div>[\s\S]*?<\/div>/, '');
+            if (j === 3) c = c.replace(/<div class="stat-item">\s*<div class="stat-pct">3 out of 4[\s\S]*?<\/div>\s*<\/div>/, '');
+            else if (j === 2) c = c.replace(/<div class="stat-item">\s*<div class="stat-pct">94%[\s\S]*?<\/div>\s*<\/div>/, '');
+            else if (j === 1) c = c.replace(/<div class="stat-item">\s*<div class="stat-pct">95%[\s\S]*?<\/div>\s*<\/div>/, '');
         }
     }
 
@@ -324,8 +324,11 @@ function updateTemplate(p) {
             <span class="faq-icon">+</span>
           </div>`).join('\n');
     c = c.replace(/<div class="faq-accordion">[\s\S]*?<\/div>\s*<\/div>/, `<div class="faq-accordion">\n${faqHtml}\n        </div>\n      </div>`);
-    // Safety check: if we somehow have a triple </div>, clean it up
-    c = c.replace(/<\/div>\s*<\/div>\s*<\/div>\s*<div class="faq-image-col">/, "</div>\n      </div>\n      <div class=\"faq-image-col\">");
+    // Cleanup Sweep (prevents stray closing divs from breaking layout)
+    c = c.replace(/<\/div>\s*<\/div>\s*<\/div>\s*<\/div>\s*<div class="faq-image-col">/, "</div>\n    </div>\n    <div class=\"faq-image-col\">");
+    c = c.replace(/<\/div>\s*<\/div>\s*<\/div>\s*<div class="faq-image-col">/, "</div>\n    </div>\n    <div class=\"faq-image-col\">");
+    c = c.replace(/<\/div>\s*<\/div>\s*<\/div>\s*<\/div>\s*<div class="stats-image">/, "</div>\n    </div>\n    <div class=\"stats-image\">");
+    c = c.replace(/<\/div>\s*<\/div>\s*<\/div>\s*<div class="stats-image">/, "</div>\n    </div>\n    <div class=\"stats-image\">");
 
     // 12. Reviews
     const reviewHtml = p.Reviews.map(r => `      <div class="review-card">
