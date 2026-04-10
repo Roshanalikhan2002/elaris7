@@ -189,22 +189,23 @@
       }
     ],
     "Images": {
-      "Hero": "moisturizer-100.jpg",
+      "Hero": "moisturizer1.jpeg",
       "Gallery": [
-        "moisturizer-gallery-1.jpg",
-        "moisturizer-gallery-2.jpg",
-        "moisturizer-gallery-3.jpg",
-        "moisturizer-gallery-4.jpg"
+        "moisturizer1.jpeg",
+        "moisturizer2.jpg",
+        "moisturizer3.jpg",
+        "moisturizer4.jpg"
       ],
-      "Breakdown": "moisturizer-before-after.jpg",
-      "WhatsInside": "moisturizer-whats-inside.jpg",
-      "Spread": "moisturizer-deep-hydration.jpg",
-      "Stats": "moisturizer-benefits.jpg",
+      "Breakdown": "moisturizer-plate.jpg",
+      "WhatsInside": "moisturizer-spoon.jpeg",
+      "Spread": "moisturizer-spread.jpg",
+      "Stats": "moisturizer-percentage.jpg",
+      "FAQ": "moisturizer-faq.jpg",
       "Carousel": [
-        "moisturizer-meet-1.jpg",
-        "moisturizer-meet-2.jpg",
-        "moisturizer-meet-3.jpg",
-        "moisturizer-meet-4.jpg"
+        "moisturizer1.jpeg",
+        "moisturizer2.jpg",
+        "moisturizer3.jpg",
+        "moisturizer4.jpg"
       ]
     }
   },
@@ -1361,21 +1362,23 @@
       }
     ],
     "Images": {
-      "Hero": "v2-moisturizer-1.jpeg",
+      "Hero": "moisturizer1.jpeg",
       "Gallery": [
-        "v2-moisturizer-1.jpeg",
-        "v2-moisturizer-2.jpg",
-        "v2-moisturizer-3.jpg",
-        "v2-moisturizer-4.jpg"
+        "moisturizer1.jpeg",
+        "moisturizer2.jpg",
+        "moisturizer3.jpg",
+        "moisturizer4.jpg"
       ],
-      "Breakdown": "v2-moisturizer-plate.jpg",
-      "WhatsInside": "v2-moisturizer-spoon.jpg",
-      "Spread": "v2-moisturizer-spread.jpg",
+      "Breakdown": "moisturizer-plate.jpg",
+      "WhatsInside": "moisturizer-spoon.jpeg",
+      "Spread": "moisturizer-spread.jpg",
+      "Stats": "moisturizer-percentage.jpg",
+      "FAQ": "moisturizer-faq.jpg",
       "Carousel": [
-        "TranexamicSerum1.jpg",
-        "TranexamicSerum2.jpg",
-        "TranexamicSerum3.jpg",
-        "TranexamicSerum4.jpg"
+        "moisturizer1.jpeg",
+        "moisturizer2.jpg",
+        "moisturizer3.jpg",
+        "moisturizer4.jpg"
       ]
     },
     "Reviews": [
