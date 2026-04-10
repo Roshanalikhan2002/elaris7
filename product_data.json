@@ -551,14 +551,20 @@
      },
      "SpreadItOn": ["acne control", "oil balance", "clear pores"],
      "Stats": [
-       { "Pct": "99%", "Desc": "SAID BREAKOUTS APPEARED REDUCED" }
-     ],
-     "StatsDisclaimer": "*Consistent use results.",
-     "FAQs": [
-       { "Q": "Will it dry out my skin?", "A": "No, it includes hydrating ingredients." }
-     ],
-     "Reviews": [
-       { "Name": "Mahnoor", "Text": "My breakouts have reduced a lot." }
+        { "Pct": "98%", "Desc": "SAID BREAKOUTS APPEARED VISIBLY REDUCED" },
+        { "Pct": "97%", "Desc": "NOTICED LESS OILINESS THROUGHOUT THE DAY" },
+        { "Pct": "95%", "Desc": "SAID THEIR SKIN FELT SOOTHED AND BALANCED" },
+        { "Pct": "3 out of 4", "Desc": "SAID IT HELPED PREVENT NEW BREAKOUTS FROM FORMING" }
+      ],
+      "StatsDisclaimer": "*Based on a 2-week consumer perception study.",
+      "FAQs": [
+        { "Q": "Will it dry out my skin?", "A": "No, it contains soothing Aloe and Niacinamide to maintain moisture while fighting acne." },
+        { "Q": "How often should I use it?", "A": "Start once a day (evening) and work up to twice daily if your skin tolerates it well." },
+        { "Q": "Can I use it with other serums?", "A": "Yes, but avoid using it with highly acidic treatments at the same time." }
+      ],
+      "Reviews": [
+        { "Name": "Mahnoor", "Text": "I've struggled with acne for years, but this serum has finally cleared my skin without irritating it. My pores look much smaller too!" },
+        { "Name": "Hassan", "Text": "Best acne serum I've used. It's not sticky at all and really helps with redness and active breakouts within a few days." }
       ],
       "Images": {
        "Hero": "v2-antiacne-1.jpeg",
