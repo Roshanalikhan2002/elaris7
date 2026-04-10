@@ -331,13 +331,14 @@
        { "Name": "Alina", "Text": "My hair feels so much smoother after using this." }
      ],
      "Images": {
-       "Hero": "keratin-serum.jpg",
-       "Gallery": ["keratin-1.jpg", "keratin-2.jpg", "keratin-ba.jpg", "keratin-plate.jpg"],
-       "Breakdown": "keratin-serum-hover.jpg",
-       "WhatsInside": "keratin-plate.jpg",
-       "Spread": "keratin-1.jpg",
-       "Stats": "keratin-2.jpg",
-       "Carousel": ["keratin-meet-1.jpg", "keratin-1.jpg", "keratin-2.jpg", "keratin-plate.jpg"]
+       "Hero": "antifrizz-1.jpg",
+       "Gallery": ["antifrizz-1.jpg", "antifrizz-2.jpg", "antifrizz-3.jpg", "antifrizz-4.jpg"],
+       "Breakdown": "antifrizz-plate.jpg",
+       "WhatsInside": "antifrizz-spoon.jpg",
+       "Spread": "antifrizz-spread.jpg",
+       "Stats": "antifrizz-stats.jpg",
+       "FAQ": "antifrizz-faq.jpg",
+       "Carousel": ["antifrizz-1.jpg", "antifrizz-2.jpg", "antifrizz-3.jpg", "antifrizz-4.jpg"]
      }
   },
   {
