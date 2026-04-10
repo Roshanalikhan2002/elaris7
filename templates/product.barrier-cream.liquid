@@ -1,10 +1,10 @@
-﻿{% layout none %}
+{% layout none %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Barrier Repair Cream | elaris7</title>
+  <title>night cream | elaris7</title>
   <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
 
@@ -560,14 +560,14 @@ a { color: inherit; text-decoration: none; }
 
   .hero-block {
     height: auto;
-    aspect-ratio: 1 / 1.5; /* Tallest portrait-style matching your vertical image move moved moves move move move */
+    aspect-ratio: 1 / 1;
     margin: 0;
     border-radius: 14px;
     background-color: #fff;
   }
 
   .hero-video-bg {
-    object-fit: contain;
+    object-fit: cover;
   }
 
   /* Rhode layout: text wraps 2 lines on RIGHT, button stacked BELOW Ã¢â‚¬â€ column, right-aligned */
@@ -2264,16 +2264,39 @@ a { color: inherit; text-decoration: none; }
         .product-details::-webkit-scrollbar { display: none; }
       }
 
-      @media (max-width: 850px) {
+      @media (max-width: 900px) {
+        .product-page {
+          margin: 100px 0 0;
+          padding: 0;
+          background-color: #fff;
+        }
+        .product-grid {
+          display: flex;
+          flex-direction: column;
+          height: auto;
+        }
         .product-gallery {
           flex-direction: column-reverse;
           height: auto;
-          aspect-ratio: 1/1.2;
+          aspect-ratio: 1 / 1.1;
+          border-radius: 0;
+          padding: 10px;
         }
         .gallery-thumbnails {
           flex-direction: row;
           width: 100%;
+          height: 70px;
           justify-content: center;
+          padding: 5px 0;
+          gap: 10px;
+        }
+        .gallery-main-viewport {
+          border-radius: 0;
+        }
+        .product-details {
+          padding: 24px 20px;
+          height: auto;
+          overflow: visible;
         }
       }
     </style>
@@ -2282,16 +2305,16 @@ a { color: inherit; text-decoration: none; }
       <!-- Thumbnails on Left -->
       <div class="gallery-thumbnails">
         <div class="thumb-item active" onmouseover="scrollGallery(0, this)">
-          <img src="{{ 'nightcream-v3-1.jpeg' | asset_url }}" alt="Thumb 1">
+          <img src="{{ "glutathione-meet-1.jpg" | asset_url }}" alt="Thumb 1">
         </div>
         <div class="thumb-item" onmouseover="scrollGallery(1, this)">
-          <img src="{{ 'nightcream-v3-2.jpeg' | asset_url }}" alt="Thumb 2">
+          <img src="{{ "glutathione-meet-2.jpg" | asset_url }}" alt="Thumb 2">
         </div>
         <div class="thumb-item" onmouseover="scrollGallery(2, this)">
-          <img src="{{ 'nightcream-v3-3.jpeg' | asset_url }}" alt="Thumb 3">
+          <img src="{{ "glutathione-meet-3.jpg" | asset_url }}" alt="Thumb 3">
         </div>
         <div class="thumb-item" onmouseover="scrollGallery(3, this)">
-          <img src="{{ 'nightcream-v3-4.jpeg' | asset_url }}" alt="Thumb 4">
+          <img src="{{ "glutathione-meet-4.jpg" | asset_url }}" alt="Thumb 4">
         </div>
       </div>
 
@@ -2299,16 +2322,16 @@ a { color: inherit; text-decoration: none; }
       <div class="gallery-main-viewport">
         <div class="gallery-slider" id="productSlider">
           <div class="gallery-slide">
-            <img src="{{ 'nightcream-v3-1.jpeg' | asset_url }}" alt="Main View 1">
+            <img src="{{ "glutathione-meet-1.jpg" | asset_url }}" alt="Main View 1">
           </div>
           <div class="gallery-slide">
-            <img src="{{ 'nightcream-v3-2.jpeg' | asset_url }}" alt="Main View 2">
+            <img src="{{ "glutathione-meet-2.jpg" | asset_url }}" alt="Main View 2">
           </div>
           <div class="gallery-slide">
-            <img src="{{ 'nightcream-v3-3.jpeg' | asset_url }}" alt="Main View 3">
+            <img src="{{ "glutathione-meet-3.jpg" | asset_url }}" alt="Main View 3">
           </div>
           <div class="gallery-slide">
-            <img src="{{ 'nightcream-v3-4.jpeg' | asset_url }}" alt="Main View 4">
+            <img src="{{ "glutathione-meet-4.jpg" | asset_url }}" alt="Main View 4">
           </div>
         </div>
       </div>
@@ -2329,11 +2352,11 @@ a { color: inherit; text-decoration: none; }
       <div class="product-details">
         <div class="product-details-inner">
           <div class="product-header">
-            <h1 class="product-title">Barrier Repair Cream</h1>
+            <h1 class="product-title">Repair<br>Cream</h1>
           </div>
 
           <div class="product-meta">
-            <span class="product-subtitle">Night Renewal</span>
+            <span class="product-subtitle">Glow & Repair</span>
             <div class="product-reviews">
               <span class="stars">★★★★★</span>
               <span class="review-count">(16k)</span>
@@ -2341,7 +2364,7 @@ a { color: inherit; text-decoration: none; }
           </div>
 
           <div class="product-description">
-            <p>An intensive overnight formula designed to rejuvenate your skin while you sleep. Infused with Centella Asiatica, brightening complexes, and repair-focused botanicals, this night cream hydrates deeply, improves skin texture, and helps reveal a smoother, luminous, and refreshed complexion by morning.</p>
+            <p>A nourishing brightening cream designed to improve uneven tone and support skin repair.</p>
             <p class="disclaimer">*with continued daily use</p>
           </div>
 
@@ -2361,7 +2384,7 @@ a { color: inherit; text-decoration: none; }
             </div>
           </div>
 
-          <button class="buy-button" style="white-space: nowrap;">ADD TO BAG - <span>Rs. 1,500</span></button>
+          <button class="buy-button" style="white-space: nowrap;">ADD TO BAG - <span>Rs. 2,400</span></button>
           
 
 
@@ -2420,46 +2443,31 @@ a { color: inherit; text-decoration: none; }
               <summary><span>BENEFITS</span><span>+</span></summary>
               <div class="accordion-content">
                 <ul>
-                  <li>Boosts skin radiance for a naturally luminous glow</li>
-                  <li>Provides 72-hour hydration with a moisture-locking formula</li>
-                  <li>Supports collagen to improve skin firmness and elasticity</li>
-                  <li>Helps fade dark spots, acne scars, and discoloration</li>
-                  <li>Repairs and strengthens the skin barrier overnight</li>
-                  <li>Delivers a soft, smooth, poreless finish by morning</li>
-                  <li>Reduces the appearance of fine lines and wrinkles</li>
-                  <li>Promotes a more even-toned, youthful-looking complexion over time</li>
-                </ul>
+                  <li>Brightens dull skin</li>
+                  <li>Barrier support</li>                </ul>
               </div>
             </details>
             <details class="accordion-item">
               <summary><span>APPLICATION</span><span>+</span></summary>
               <div class="accordion-content">
-                <p style="margin:0;">After cleansing and toning, take a small amount of Barrier Repair Cream and gently massage it upward onto your face and neck, avoiding the eye area. Leave it on overnight to fully absorb and lock in hydration, allowing your skin to repair, restore, and wake up looking radiant and smooth. Consistency is key for optimal results.</p>
+                <p style="margin:0;">Apply a small amount morning and evening.</p>
               </div>
             </details>
             <details class="accordion-item">
               <summary><span>TRICK</span><span>+</span></summary>
               <div class="accordion-content">
                 <ul>
-                  <li>Apply a slightly thicker layer on dry areas to maximize overnight hydration</li>
-                  <li>Combine with your serum for enhanced repair benefits</li>
-                  <li>Use consistently to see a reduction in fine lines and dark spots</li>
-                </ul>
+                  <li>Apply on damp skin</li>
+                  <li>Pair with serum</li>                </ul>
               </div>
             </details>
             <details class="accordion-item">
               <summary><span>KEY INGREDIENTS</span><span>+</span></summary>
               <div class="accordion-content">
                 <ul>
-                  <li>Centella Asiatica</li>
-                  <li>Brightening Complex</li>
-                  <li>Moisture-Lock Technology</li>
-                  <li>Collagen Support Blend</li>
-                  <li>Spot-Corrective Blend</li>
-                  <li>Barrier Repair Actives</li>
-                  <li>Line-Reducing Complex</li>
-                  <li>Even-Tone Enhancer</li>
-                </ul>
+                  <li>Glutathione</li>
+                  <li>Alpha Arbutin</li>
+                  <li>Honey</li>                </ul>
               </div>
             </details>
           </div>
@@ -2470,14 +2478,14 @@ a { color: inherit; text-decoration: none; }
 
     <!-- Meet the Product Section -->
     <section class="meet-product-section">
-      <h2 class="meet-title">Your Overnight Glow Secret</h2>
+      <h2 class="meet-title">Repair Dullness. Reveal Glow.</h2>
       <div class="meet-carousel-wrapper">
         <div class="carousel-swipe-indicator">SWIPE &rarr;</div>
         <div class="meet-carousel">
-          <img src="{{ 'barrier-cream.jpg' | asset_url }}" alt="Product Image 1">
-          <img src="{{ 'night-cream-swatch.jpeg' | asset_url }}" alt="Product Image 2">
-          <img src="{{ 'night-cream-lifestyle.jpeg' | asset_url }}" alt="Product Image 3">
-          <img src="{{ 'night-cream-last.jpeg' | asset_url }}" alt="Product Image 4">
+          <img src="{{ "glutathione-cream-100.jpg" | asset_url }}" alt="Product Image 1">
+          <img src="{{ "glutathione-meet-2.jpg" | asset_url }}" alt="Product Image 2">
+          <img src="{{ "glutathione-meet-3.jpg" | asset_url }}" alt="Product Image 3">
+          <img src="{{ "glutathione-meet-4.jpg" | asset_url }}" alt="Product Image 4">
         </div>
         <!-- Right Arrow Overlay -->
         <div class="carousel-arrow">
@@ -2489,15 +2497,15 @@ a { color: inherit; text-decoration: none; }
     <!-- Product Breakdown Section -->
     <section class="breakdown-section">
       <div class="breakdown-content">
-        <h2 class="bd-title">Wake Up to Refreshed, Radiant Skin.</h2>
+        <h2 class="bd-title">Deep Brightening</h2>
         <div class="bd-table">
           <div class="bd-row">
             <span class="bd-label">GOOD FOR:</span>
-            <span class="bd-val">All skin types, including dry and sensitive skin</span>
+            <span class="bd-val">Dull and uneven skin</span>
           </div>
           <div class="bd-row">
             <span class="bd-label">FEELS LIKE:</span>
-            <span class="bd-val">A rich, creamy formula that melts effortlessly into the skin</span>
+            <span class="bd-val">A rich, smooth cream</span>
           </div>
           <div class="bd-row">
             <span class="bd-label">LOOKS LIKE:</span>
@@ -2509,12 +2517,12 @@ a { color: inherit; text-decoration: none; }
           </div>
           <div class="bd-row">
             <span class="bd-label">FYI:</span>
-            <span class="bd-val">Halal-Friendly • Dermatologist-Tested • Non-Sticky • Repair-Focused</span>
+            <span class="bd-val">Repair Care • Deep Hydration</span>
           </div>
         </div>
       </div>
       <div class="breakdown-image">
-        <img src="{{ 'plate.jpeg' | asset_url }}" alt="Plate View">
+        <img src="{{ "barrier-new.png" | asset_url }}" alt="Plate View">
       </div>
     </section>
 
@@ -2522,29 +2530,29 @@ a { color: inherit; text-decoration: none; }
     <!-- What's Inside Section -->
     <section class="whats-inside-section">
       <div class="wi-image-col">
-        <img src="{{ 'spoon.jpeg' | asset_url }}" alt="Spoon View" class="wi-image">
+        <img src="{{ "glutathione-meet-2.jpg" | asset_url }}" alt="Spoon View" class="wi-image">
         <button class="wi-full-ingredients-btn">FULL INGREDIENTS LIST</button>
       </div>
       <div class="wi-content-col">
         <div class="wi-vertical-text">what's inside</div>
         <div class="wi-details">
-          <p class="wi-intro">Our formula is powered by advanced repair and brightening actives. Meet 2 of our favorites for overnight renewal.</p>
+          <p class="wi-intro">A nourishing cream that brightens and repairs.</p>
           
           <div class="wi-ingredient-block">
-            <h3 class="wi-ingred-title">centella asiatica</h3>
-            <p class="wi-ingred-desc">a calming botanical that helps repair the skin barrier, reduce redness, and support healthier, more resilient skin overnight</p>
+            <h3 class="wi-ingred-title">honey & glutathione</h3>
+            <p class="wi-ingred-desc">help restore radiance and fade dullness</p>
           </div>
           
           <hr class="wi-divider">
           
           <div class="wi-ingredient-block">
-            <h3 class="wi-ingred-title">moisture-lock technology</h3>
-            <p class="wi-ingred-desc">a deep hydration system that helps retain moisture, prevent overnight dryness, and keep skin plump and smooth by morning</p>
+            <h3 class="wi-ingred-title">alpha arbutin</h3>
+            <p class="wi-ingred-desc">work to reduce dark spots and pigmentation</p>
           </div>
           
           <hr class="wi-divider">
           
-          <p class="wi-also-made">also made with <strong>BRIGHTENING COMPLEX, COLLAGEN SUPPORT BLEND, SPOT-CORRECTIVE ACTIVES, LINE-REDUCING COMPLEX, BARRIER REPAIR ACTIVES, EVEN-TONE ENHANCERS</strong></p>
+          <p class="wi-also-made">also made with <strong>Niacinamide, Vitamin C, Hyaluronic Acid</strong></p>
         </div>
       </div>
     </section>
@@ -2553,12 +2561,12 @@ a { color: inherit; text-decoration: none; }
     <section class="spread-section">
       <div class="spread-content">
         <span class="spread-label">SPREAD IT ON FOR:</span>
-        <h2 class="spread-heading">deep repair</h2>
-        <h2 class="spread-heading">overnight hydration</h2>
-        <h2 class="spread-heading spread-green">revitalized, luminous skin</h2>
+        <h2 class="spread-heading">brightening care</h2>
+        <h2 class="spread-heading">even skin tone</h2>
+        <h2 class="spread-heading spread-green">skin repair</h2>
       </div>
       <div class="spread-image-col">
-        <img src="{{ 'spread.jpeg' | asset_url }}" alt="Spread View">
+        <img src="{{ "glutathione-meet-3.jpg" | asset_url }}" alt="Spread View">
       </div>
     </section>
 
@@ -2567,8 +2575,8 @@ a { color: inherit; text-decoration: none; }
       <div class="stats-content">
         
         <div class="stat-item">
-          <div class="stat-pct">97%</div>
-          <div class="stat-desc">SAID THEIR SKIN FELT DEEPLY HYDRATED AND NOURISHED</div>
+          <div class="stat-pct">99%</div>
+          <div class="stat-desc">SAID SKIN LOOKED MORE RADIANT</div>
         </div>
         
         <div class="stat-item">
@@ -2587,12 +2595,12 @@ a { color: inherit; text-decoration: none; }
         </div>
         
         <div class="stat-disclaimer">
-          *Based on a 2-week consumer perception study with consistent nightly use.
+          *2-week perception study.
         </div>
       </div>
       
       <div class="stats-image">
-        <img src="{{ 'percentage.jpeg' | asset_url }}" alt="Percentage View">
+        <img src="{{ "glutathione-meet-4.jpg" | asset_url }}" alt="Percentage View">
       </div>
     </section>
 
@@ -2640,7 +2648,7 @@ a { color: inherit; text-decoration: none; }
         </div>
       </div>
       <div class="faq-image-col">
-        <img src="{{ 'faq.jpeg' | asset_url }}" alt="FAQ View">
+        <img src="{{ "faq.jpeg" | asset_url }}" alt="FAQ View">
       </div>
     </section>
 
@@ -2761,18 +2769,18 @@ a { color: inherit; text-decoration: none; }
             <span class="card-badge">bestseller</span>
           </div>
           <div class="card-rhode-image">
-            <img src="{{ 'wash-white.png' | asset_url }}" alt="Face Wash" class="product-main-img">
+            <img src="{{ "wash-white.png" | asset_url }}" alt="Face Wash" class="product-main-img">
           </div>
           <div class="card-rhode-details">
             <div class="card-stars">★★★★★ <span>(16,042)</span></div>
             <div class="card-name-row">
               <h3 class="card-name">Centella Face Wash</h3>
-              <span class="card-price">RS. 1,500</span>
+              <span class="card-price">RS. 2,400</span>
             </div>
             <p class="card-desc">The gentle foaming cleanser</p>
           </div>
           <div class="card-rhode-hover">
-            <a href="#" class="btn-rhode-buy">Add to bag — RS. 1,500</a>
+            <a href="#" class="btn-rhode-buy">Add to bag — RS. 2,400</a>
           </div>
         </div>
 
@@ -2783,7 +2791,7 @@ a { color: inherit; text-decoration: none; }
             <span class="card-badge">new shades</span>
           </div>
           <div class="card-rhode-image">
-            <img src="{{ 'essence-white.png' | asset_url }}" alt="Toner" class="product-main-img">
+            <img src="{{ "essence-white.png" | asset_url }}" alt="Toner" class="product-main-img">
           </div>
           <div class="card-rhode-details">
             <div class="card-stars">★★★★½ <span>(8,945)</span></div>
@@ -2805,7 +2813,7 @@ a { color: inherit; text-decoration: none; }
             <span class="card-badge">limited edition</span>
           </div>
           <div class="card-rhode-image">
-            <img src="{{ 'barrier-white.png' | asset_url }}" alt="Cream" class="product-main-img">
+            <img src="{{ "barrier-white.png" | asset_url }}" alt="Cream" class="product-main-img">
           </div>
           <div class="card-rhode-details">
             <div class="card-stars">★★★★★ <span>(12,120)</span></div>
@@ -2825,7 +2833,7 @@ a { color: inherit; text-decoration: none; }
 
     <!-- Mobile Sticky Cart -->
     <div class="mobile-sticky-cart">
-      <button class="buy-button">ADD TO BAG - RS. 1,800</button>
+      <button class="buy-button">ADD TO BAG - $36.00</button>
     </div>
   </main>
 
@@ -4155,5 +4163,4 @@ a { color: inherit; text-decoration: none; }
   </style>
 </body>
 </html>
-
 

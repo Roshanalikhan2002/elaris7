@@ -1,13 +1,11 @@
-﻿{% layout none %}
+{% layout none %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Anti Acne Serum | elaris7</title>
-  
-  <script src="{{ 'script.js' | asset_url }}" defer></script>
-<style>
+  <title>night cream | elaris7</title>
+  <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
 
 :root {
@@ -34,6 +32,11 @@ body {
   font-size: 14px;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+html {
+  overflow-x: hidden;
 }
 
 a { color: inherit; text-decoration: none; }
@@ -557,14 +560,14 @@ a { color: inherit; text-decoration: none; }
 
   .hero-block {
     height: auto;
-    aspect-ratio: 1 / 1.5; /* Tallest portrait-style matching your vertical image move moved moves move move move */
+    aspect-ratio: 1 / 1;
     margin: 0;
     border-radius: 14px;
     background-color: #fff;
   }
 
   .hero-video-bg {
-    object-fit: contain;
+    object-fit: cover;
   }
 
   /* Rhode layout: text wraps 2 lines on RIGHT, button stacked BELOW Ã¢â‚¬â€ column, right-aligned */
@@ -2134,16 +2137,58 @@ a { color: inherit; text-decoration: none; }
 }
 
 </style>
-<style>
+  <script src="./assets/script.js" defer></script>
+</head>
+<body>
+
+  <!-- Re-using existing header structure exactly -->
+  <header class="site-header">
+    <div class="announcement-bar">
+      free shipping on all orders over rs. 2000
+    </div>
+    <div class="header-main">
+      <nav class="header-nav">
+        <div class="menu-trigger" id="menu-open-product">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <ul class="desktop-only">
+          <li><a href="#">SHOP</a></li>
+          <li><a href="#">ABOUT</a></li>
+          <li><a href="#">FUTURES</a></li>
+        </ul>
+      </nav>
+      <div class="header-logo"><a href="index.html" class="logo-text">elaris7</a></div>
+      <nav class="header-nav header-right">
+        <ul class="desktop-only">
+          <li><a href="#">SEARCH</a></li>
+          <li><a href="#">ACCOUNT</a></li>
+          <li><a href="#">CART (0)</a></li>
+        </ul>
+        <div class="mobile-only mobile-header-icons">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <div class="cart-icon-wrapper">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+            <span class="cart-count">0</span>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="product-page">
+    <div class="product-grid">
+      
+    <style>
+      /* Main Product Gallery Styling */
       .product-gallery {
-        position: sticky;
-        top: 20px;
-        height: calc(100vh - 40px);
         display: flex;
         gap: 15px;
-        background: #f2f0ed;
-        padding: 15px;
-        border-radius: 14px;
+        background: #fff;
+        padding: 10px;
+        border-radius: 12px;
+        height: 100%;
       }
       .gallery-thumbnails {
         display: flex;
@@ -2153,8 +2198,8 @@ a { color: inherit; text-decoration: none; }
         width: 60px;
       }
       .thumb-item {
-        width: 50px;
-        height: 50px;
+        width: 55px;
+        height: 55px;
         border-radius: 8px;
         overflow: hidden;
         cursor: pointer;
@@ -2164,7 +2209,6 @@ a { color: inherit; text-decoration: none; }
       }
       .thumb-item:hover, .thumb-item.active {
         border-color: #002d5f;
-        transform: scale(1.1);
       }
       .thumb-item img {
         width: 100%;
@@ -2191,24 +2235,174 @@ a { color: inherit; text-decoration: none; }
         justify-content: center;
       }
       .gallery-slide img {
-        max-width: 90%;
-        max-height: 90%;
+        max-width: 100%;
+        max-height: 100%;
         object-fit: contain;
       }
-      @media (max-width: 850px) {
+
+      /* Desktop Fixed-Height Internal Scroll Logic */
+      @media (min-width: 901px) {
+        .product-page {
+          background-color: #f3f0ec; 
+          margin: 115px 12px 12px;
+          padding: 0;
+          border-radius: 14px;
+          overflow: hidden;
+        }
+        .product-grid {
+          display: grid;
+          grid-template-columns: 1.1fr 0.9fr;
+          height: 700px; /* Fixed height for parity */
+          gap: 0;
+        }
+        .product-details {
+          height: 100%;
+          min-height: auto !important;
+          overflow-y: auto;
+          scrollbar-width: none;
+        }
+        .product-details::-webkit-scrollbar { display: none; }
+      }
+
+      @media (max-width: 900px) {
+        .product-page {
+          margin: 100px 0 0;
+          padding: 0;
+          background-color: #fff;
+        }
+        .product-grid {
+          display: flex;
+          flex-direction: column;
+          height: auto;
+        }
         .product-gallery {
           flex-direction: column-reverse;
           height: auto;
-          aspect-ratio: 1/1.2;
+          aspect-ratio: 1 / 1.1;
+          border-radius: 0;
+          padding: 10px;
         }
         .gallery-thumbnails {
           flex-direction: row;
           width: 100%;
+          height: 70px;
           justify-content: center;
+          padding: 5px 0;
+          gap: 10px;
+        }
+        .gallery-main-viewport {
+          border-radius: 0;
+        }
+        .product-details {
+          padding: 24px 20px;
+          height: auto;
+          overflow: visible;
         }
       }
     </style>
-<style>
+
+    <div class="product-gallery">
+      <!-- Thumbnails on Left -->
+      <div class="gallery-thumbnails">
+        <div class="thumb-item active" onmouseover="scrollGallery(0, this)">
+          <img src="{{ "anti-acne-meet-1.jpg" | asset_url }}" alt="Thumb 1">
+        </div>
+        <div class="thumb-item" onmouseover="scrollGallery(1, this)">
+          <img src="{{ "anti-acne-meet-2.jpg" | asset_url }}" alt="Thumb 2">
+        </div>
+        <div class="thumb-item" onmouseover="scrollGallery(2, this)">
+          <img src="{{ "anti-acne-meet-3.jpg" | asset_url }}" alt="Thumb 3">
+        </div>
+        <div class="thumb-item" onmouseover="scrollGallery(3, this)">
+          <img src="{{ "anti-acne-meet-4.jpg" | asset_url }}" alt="Thumb 4">
+        </div>
+      </div>
+
+      <!-- Main Slider -->
+      <div class="gallery-main-viewport">
+        <div class="gallery-slider" id="productSlider">
+          <div class="gallery-slide">
+            <img src="{{ "anti-acne-meet-1.jpg" | asset_url }}" alt="Main View 1">
+          </div>
+          <div class="gallery-slide">
+            <img src="{{ "anti-acne-meet-2.jpg" | asset_url }}" alt="Main View 2">
+          </div>
+          <div class="gallery-slide">
+            <img src="{{ "anti-acne-meet-3.jpg" | asset_url }}" alt="Main View 3">
+          </div>
+          <div class="gallery-slide">
+            <img src="{{ "anti-acne-meet-4.jpg" | asset_url }}" alt="Main View 4">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function scrollGallery(index, thumb) {
+        const slider = document.getElementById('productSlider');
+        slider.style.transform = `translateX(-${index * 100}%)`;
+        
+        // Update active class
+        document.querySelectorAll('.thumb-item').forEach(t => t.classList.remove('active'));
+        thumb.classList.add('active');
+      }
+    </script>
+
+      <!-- Right Column: Scrollable Content -->
+      <div class="product-details">
+        <div class="product-details-inner">
+          <div class="product-header">
+            <h1 class="product-title">Anti-Acne<br>Serum</h1>
+          </div>
+
+          <div class="product-meta">
+            <span class="product-subtitle">Clear & Control</span>
+            <div class="product-reviews">
+              <span class="stars">★★★★★</span>
+              <span class="review-count">(16k)</span>
+            </div>
+          </div>
+
+          <div class="product-description">
+            <p>A targeted clarifying serum formulated to reduce acne and calm inflammation.</p>
+            <p class="disclaimer">*with continued daily use</p>
+          </div>
+
+          <hr class="divider">
+
+          <div class="product-options">
+            <p class="option-label">Select size:</p>
+            <div class="size-selector">
+              <button class="size-btn active">
+                <span class="size-title">big (3.4 oz)</span>
+                <span class="size-desc">for your shelf</span>
+              </button>
+              <button class="size-btn">
+                <span class="size-title">little (1.35 oz)</span>
+                <span class="size-desc">for on-the-go</span>
+              </button>
+            </div>
+          </div>
+
+          <button class="buy-button" style="white-space: nowrap;">ADD TO BAG - <span>Rs. 2,200</span></button>
+          
+
+
+          <hr class="divider">
+
+          <div class="core-lineup">
+            <h3>ADD THE CORE LINEUP</h3>
+            <div class="lineup-item">
+              <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?q=80&w=150" alt="Core Lineup Kit">
+              <span class="lineup-title">THE ELARIS KIT</span>
+              <button class="add-lineup-btn">ADD - $117.00</button>
+            </div>
+          </div>
+
+          <hr class="divider">
+
+          <!-- Accordions -->
+          <style>
             .accordion-item {
               border-bottom: 1px solid rgba(0,0,0,0.1);
               padding: 18px 0;
@@ -2244,7 +2438,548 @@ a { color: inherit; text-decoration: none; }
               margin-bottom: 8px;
             }
           </style>
-<style>
+          <div class="product-accordions accordions">
+            <details class="accordion-item">
+              <summary><span>BENEFITS</span><span>+</span></summary>
+              <div class="accordion-content">
+                <ul>
+                  <li>Reduces breakouts</li>
+                  <li>Controls excess oil</li>                </ul>
+              </div>
+            </details>
+            <details class="accordion-item">
+              <summary><span>APPLICATION</span><span>+</span></summary>
+              <div class="accordion-content">
+                <p style="margin:0;">Apply 2-3 drops morning or evening.</p>
+              </div>
+            </details>
+            <details class="accordion-item">
+              <summary><span>TRICK</span><span>+</span></summary>
+              <div class="accordion-content">
+                <ul>
+                  <li>Start once daily</li>
+                  <li>Use sunscreen daily</li>                </ul>
+              </div>
+            </details>
+            <details class="accordion-item">
+              <summary><span>KEY INGREDIENTS</span><span>+</span></summary>
+              <div class="accordion-content">
+                <ul>
+                  <li>Neem Extract</li>
+                  <li>Tea Tree Oil</li>
+                  <li>Mandelic Acid</li>                </ul>
+              </div>
+            </details>
+          </div>
+
+        </div><!-- End Details -->
+      </div><!-- End Grid -->
+    </div><!-- End Page -->
+
+    <!-- Meet the Product Section -->
+    <section class="meet-product-section">
+      <h2 class="meet-title">Clear Breakouts. Restore Balance.</h2>
+      <div class="meet-carousel-wrapper">
+        <div class="carousel-swipe-indicator">SWIPE &rarr;</div>
+        <div class="meet-carousel">
+          <img src="{{ "anti-acne-100.jpg" | asset_url }}" alt="Product Image 1">
+          <img src="{{ "anti-acne-meet-2.jpg" | asset_url }}" alt="Product Image 2">
+          <img src="{{ "anti-acne-meet-3.jpg" | asset_url }}" alt="Product Image 3">
+          <img src="{{ "anti-acne-meet-4.jpg" | asset_url }}" alt="Product Image 4">
+        </div>
+        <!-- Right Arrow Overlay -->
+        <div class="carousel-arrow">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#5b5a53" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- Product Breakdown Section -->
+    <section class="breakdown-section">
+      <div class="breakdown-content">
+        <h2 class="bd-title">Targeted Acne Care</h2>
+        <div class="bd-table">
+          <div class="bd-row">
+            <span class="bd-label">GOOD FOR:</span>
+            <span class="bd-val">Acne-prone and oily skin</span>
+          </div>
+          <div class="bd-row">
+            <span class="bd-label">FEELS LIKE:</span>
+            <span class="bd-val">A smooth, fast-absorbing serum</span>
+          </div>
+          <div class="bd-row">
+            <span class="bd-label">LOOKS LIKE:</span>
+            <span class="bd-val">Smooth, plump, and poreless skin by morning</span>
+          </div>
+          <div class="bd-row">
+            <span class="bd-label">SMELLS LIKE:</span>
+            <span class="bd-val">Subtle, calming freshness for a relaxing nighttime routine</span>
+          </div>
+          <div class="bd-row">
+            <span class="bd-label">FYI:</span>
+            <span class="bd-val">Acne-Control • Non-Greasy</span>
+          </div>
+        </div>
+      </div>
+      <div class="breakdown-image">
+        <img src="{{ "hover-anti-acne.png" | asset_url }}" alt="Plate View">
+      </div>
+    </section>
+
+
+    <!-- What's Inside Section -->
+    <section class="whats-inside-section">
+      <div class="wi-image-col">
+        <img src="{{ "anti-acne-meet-3.jpg" | asset_url }}" alt="Spoon View" class="wi-image">
+        <button class="wi-full-ingredients-btn">FULL INGREDIENTS LIST</button>
+      </div>
+      <div class="wi-content-col">
+        <div class="wi-vertical-text">what's inside</div>
+        <div class="wi-details">
+          <p class="wi-intro">A targeted serum to reduce acne.</p>
+          
+          <div class="wi-ingredient-block">
+            <h3 class="wi-ingred-title">neem extract</h3>
+            <p class="wi-ingred-desc">helps combat breakouts and soothe irritated skin</p>
+          </div>
+          
+          <hr class="wi-divider">
+          
+          <div class="wi-ingredient-block">
+            <h3 class="wi-ingred-title">mandelic acid</h3>
+            <p class="wi-ingred-desc">refines pores and balance oil</p>
+          </div>
+          
+          <hr class="wi-divider">
+          
+          <p class="wi-also-made">also made with <strong>Tea Tree Oil, Niacinamide, Aloe Vera</strong></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Spread It On For Section -->
+    <section class="spread-section">
+      <div class="spread-content">
+        <span class="spread-label">SPREAD IT ON FOR:</span>
+        <h2 class="spread-heading">acne control</h2>
+        <h2 class="spread-heading">oil balance</h2>
+        <h2 class="spread-heading spread-green">clear pores</h2>
+      </div>
+      <div class="spread-image-col">
+        <img src="{{ "anti-acne-meet-4.jpg" | asset_url }}" alt="Spread View">
+      </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="stats-section">
+      <div class="stats-content">
+        
+        <div class="stat-item">
+          <div class="stat-pct">99%</div>
+          <div class="stat-desc">SAID BREAKOUTS APPEARED REDUCED</div>
+        </div>
+        
+        <div class="stat-item">
+          <div class="stat-pct">95%</div>
+          <div class="stat-desc">SAID IT ABSORBED WELL WITHOUT HEAVINESS</div>
+        </div>
+        
+        <div class="stat-item">
+          <div class="stat-pct">94%</div>
+          <div class="stat-desc">NOTICED SMOOTHER, SOFTER, AND REFINED SKIN BY MORNING</div>
+        </div>
+        
+        <div class="stat-item">
+          <div class="stat-pct">3 out of 4</div>
+          <div class="stat-desc">REPORTED A VISIBLE REDUCTION IN FINE LINES AND DARK SPOTS</div>
+        </div>
+        
+        <div class="stat-disclaimer">
+          *Consistent use results.
+        </div>
+      </div>
+      
+      <div class="stats-image">
+        <img src="{{ "social-anti-acne.png" | asset_url }}" alt="Percentage View">
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+      <div class="faq-content">
+        <h2 class="faq-title">FAQ</h2>
+        
+        <div class="faq-accordion">
+          <div class="faq-item">
+            <div class="faq-qa">
+              <span class="faq-question">Can I use this night cream with my serum?</span>
+              <p class="faq-answer">Yes, applying serum before the night cream enhances hydration and repair benefits.</p>
+            </div>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-item">
+            <div class="faq-qa">
+              <span class="faq-question">Is it suitable for oily skin at night?</span>
+              <p class="faq-answer">Absolutely, it hydrates without clogging pores or leaving a greasy residue.</p>
+            </div>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-item">
+            <div class="faq-qa">
+              <span class="faq-question">How often should I use it?</span>
+              <p class="faq-answer">For optimal results, use every night as the final step in your evening routine.</p>
+            </div>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-item">
+            <div class="faq-qa">
+              <span class="faq-question">Will it help with dull or uneven skin tone?</span>
+              <p class="faq-answer">Yes, its brightening and repair ingredients work overnight to improve radiance and evenness.</p>
+            </div>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-item">
+            <div class="faq-qa">
+              <span class="faq-question">Can it reduce the appearance of fine lines?</span>
+              <p class="faq-answer">Yes, regular use helps visibly minimize fine lines and promotes firmer, youthful-looking skin.</p>
+            </div>
+            <span class="faq-icon">+</span>
+          </div>
+        </div>
+      </div>
+      <div class="faq-image-col">
+        <img src="{{ "faq.jpeg" | asset_url }}" alt="FAQ View">
+      </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="reviews-section">
+      <h2 style="text-align:center; font-size: 2rem; margin-bottom: 40px; color: #5B5A53; font-weight: 800;">Customer Reviews</h2>
+      <div class="reviews-header">
+        <div class="rv-overall">
+          <div class="rv-score">4.7 <span class="rv-stars">★★★★★</span></div>
+          <div class="rv-avg-text">AVERAGE RATING</div>
+        </div>
+      </div>
+
+      <hr class="rv-divider">
+
+      <!-- Review 1 -->
+      <div class="review-card">
+        <div class="rv-sidebar">
+          <div class="rv-author">Fatima</div>
+          <div class="rv-verified">Verified Buyer</div>
+        </div>
+        <div class="rv-main">
+          <div class="rv-main-header">
+            <div class="rv-stars">★★★★★</div>
+          </div>
+          <div class="rv-title">Stronger Skin Barrier</div>
+          <div class="rv-body">"I've been using it for 2 weeks, and my skin barrier feels so much stronger and healthier. My skin looks brighter, more even-toned, and I'm genuinely loving the glow."</div>
+        </div>
+      </div>
+
+      <hr class="rv-divider">
+
+      <!-- Review 2 -->
+      <div class="review-card">
+        <div class="rv-sidebar">
+          <div class="rv-author">Ayesha</div>
+          <div class="rv-verified">Verified Buyer</div>
+        </div>
+        <div class="rv-main">
+          <div class="rv-main-header">
+            <div class="rv-stars">★★★★★</div>
+          </div>
+          <div class="rv-title">Love the texture!</div>
+          <div class="rv-body">"I'm honestly in love with the texture - it's lightweight, smooth, and absorbs instantly without any greasiness. My skin feels soft, hydrated, and has a natural glow every morning."</div>
+        </div>
+      </div>
+
+      <hr class="rv-divider">
+
+      <!-- Review 3 -->
+      <div class="review-card">
+        <div class="rv-sidebar">
+          <div class="rv-author">Fiza</div>
+          <div class="rv-verified">Verified Buyer</div>
+        </div>
+        <div class="rv-main">
+          <div class="rv-main-header">
+            <div class="rv-stars">★★★★★</div>
+          </div>
+          <div class="rv-title">10/10 Experience</div>
+          <div class="rv-body">"Received my order and I'm super impressed with both the product and packaging. Everything feels premium - definitely a 10/10 experience for me!"</div>
+        </div>
+      </div>
+
+      <hr class="rv-divider">
+
+      <!-- Review 4 -->
+      <div class="review-card">
+        <div class="rv-sidebar">
+          <div class="rv-author">Razish</div>
+          <div class="rv-verified">Verified Buyer</div>
+        </div>
+        <div class="rv-main">
+          <div class="rv-main-header">
+            <div class="rv-stars">★★★★★</div>
+          </div>
+          <div class="rv-title">Visible improvement</div>
+          <div class="rv-body">"After consistent use, my skin feels deeply hydrated and looks much more refreshed. I've noticed a visible improvement in texture and overall glow."</div>
+        </div>
+      </div>
+
+      <hr class="rv-divider">
+
+      <!-- Review 5 -->
+      <div class="review-card">
+        <div class="rv-sidebar">
+          <div class="rv-author">Arsalan</div>
+          <div class="rv-verified">Verified Buyer</div>
+        </div>
+        <div class="rv-main">
+          <div class="rv-main-header">
+            <div class="rv-stars">★★★★★</div>
+          </div>
+          <div class="rv-title">Gentle yet effective</div>
+          <div class="rv-body">"The night cream feels very gentle yet effective - my skin looks brighter and healthier with regular use. Waking up to soft, smooth skin has become part of my routine now."</div>
+        </div>
+      </div>
+
+      <hr class="rv-divider" style="margin-bottom: 40px;">
+
+      <!-- Show More Button -->
+      <div class="rv-footer">
+        <button class="btn-show-more">SHOW MORE</button>
+      </div>
+
+    </section>
+
+    <!-- Cross-Sell Section -->
+    <section class="cross-sell-section">
+      <h2 class="cross-sell-title">you may also like</h2>
+      <div class="product-collection">
+
+        <!-- Card 1: Face Wash -->
+        <div class="card card-rhode" onclick="window.location.href='product.html'" style="cursor: pointer;">
+          <img src="https://images.unsplash.com/photo-1556228578-0d85b1a4d571?q=80&w=800" alt="Texture Model" class="card-hover-bg">
+          <div class="card-rhode-top">
+            <span class="card-brand-label">wash</span>
+            <span class="card-badge">bestseller</span>
+          </div>
+          <div class="card-rhode-image">
+            <img src="{{ "wash-white.png" | asset_url }}" alt="Face Wash" class="product-main-img">
+          </div>
+          <div class="card-rhode-details">
+            <div class="card-stars">★★★★★ <span>(16,042)</span></div>
+            <div class="card-name-row">
+              <h3 class="card-name">Centella Face Wash</h3>
+              <span class="card-price">RS. 2,200</span>
+            </div>
+            <p class="card-desc">The gentle foaming cleanser</p>
+          </div>
+          <div class="card-rhode-hover">
+            <a href="#" class="btn-rhode-buy">Add to bag — RS. 2,200</a>
+          </div>
+        </div>
+
+        <!-- Card 2: Essence -->
+        <div class="card card-rhode" onclick="window.location.href='product.html'" style="cursor: pointer;">
+          <div class="card-rhode-top">
+            <span class="card-brand-label">essence</span>
+            <span class="card-badge">new shades</span>
+          </div>
+          <div class="card-rhode-image">
+            <img src="{{ "essence-white.png" | asset_url }}" alt="Toner" class="product-main-img">
+          </div>
+          <div class="card-rhode-details">
+            <div class="card-stars">★★★★½ <span>(8,945)</span></div>
+            <div class="card-name-row">
+              <h3 class="card-name">Refining Toner</h3>
+              <span class="card-price">RS. 1,800</span>
+            </div>
+            <p class="card-desc">Ceramide facial essence</p>
+          </div>
+          <div class="card-rhode-hover">
+            <a href="#" class="btn-rhode-buy">Add to bag — RS. 1,800</a>
+          </div>
+        </div>
+
+        <!-- Card 3: Barrier -->
+        <div class="card card-rhode" onclick="window.location.href='product.html'" style="cursor: pointer;">
+          <div class="card-rhode-top">
+            <span class="card-brand-label">barrier</span>
+            <span class="card-badge">limited edition</span>
+          </div>
+          <div class="card-rhode-image">
+            <img src="{{ "barrier-white.png" | asset_url }}" alt="Cream" class="product-main-img">
+          </div>
+          <div class="card-rhode-details">
+            <div class="card-stars">★★★★★ <span>(12,120)</span></div>
+            <div class="card-name-row">
+              <h3 class="card-name">Barrier Cream</h3>
+              <span class="card-price">RS. 2,200</span>
+            </div>
+            <p class="card-desc">Intensive recovery moisturizer</p>
+          </div>
+          <div class="card-rhode-hover">
+            <a href="#" class="btn-rhode-buy">Add to bag — RS. 2,200</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Mobile Sticky Cart -->
+    <div class="mobile-sticky-cart">
+      <button class="buy-button">ADD TO BAG - $36.00</button>
+    </div>
+  </main>
+
+    <style>
+      .site-footer-rhode {
+        background-color: #f2f2ef;
+        color: #7A7973;
+        padding: 80px 40px 40px;
+        border-top: 1px solid rgba(0,0,0,0.05);
+        margin-top: 60px;
+      }
+      .footer-logo-massive {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 80px;
+        padding: 40px 20px;
+      }
+      .logo-text-giant {
+        font-size: 18vw; /* Reduced from 24vw to prevent overflow */
+        font-weight: 800;
+        color: #7A7973;
+        letter-spacing: -0.06em;
+        margin: 0;
+        line-height: 0.7;
+        text-transform: lowercase;
+      }
+      .footer-main-grid {
+        display: grid;
+        grid-template-columns: 1.5fr 1fr 1fr 1fr 1.2fr;
+        gap: 40px;
+        border-top: 1px solid #d1d1cf;
+        padding-top: 60px;
+      }
+      .footer-column h4 {
+        font-size: 0.85rem;
+        font-weight: 800;
+        color: #555;
+        margin-bottom: 24px;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+      }
+      .footer-column ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .footer-column ul li {
+        margin-bottom: 12px;
+      }
+      .footer-column ul li a {
+        font-size: 0.9rem;
+        color: #7A7973;
+        text-decoration: none;
+      }
+      .footer-newsletter-form {
+        display: flex;
+        background: #fff;
+        border: 1px solid rgba(0,0,0,0.1);
+        border-radius: 4px;
+        overflow: hidden;
+        margin-bottom: 16px;
+      }
+      .footer-newsletter-form input {
+        flex: 1;
+        border: none;
+        padding: 12px 16px;
+        outline: none;
+      }
+      .footer-newsletter-form button {
+        background: transparent;
+        border: none;
+        padding: 0 24px;
+        font-size: 0.7rem;
+        font-weight: 800;
+        cursor: pointer;
+      }
+      .footer-bottom-info {
+        margin-top: 60px;
+        padding-top: 20px;
+        border-top: 1px solid rgba(0,0,0,0.05);
+        font-size: 0.8rem;
+      }
+      @media (max-width: 900px) {
+        .footer-main-grid {
+          grid-template-columns: 1fr 1fr;
+          gap: 40px;
+        }
+        .logo-text-giant { font-size: 15vw; } /* Even smaller on mobile to be safe */
+      }
+      @media (max-width: 600px) {
+        .footer-main-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+
+    <footer class="site-footer-rhode">
+      <div class="footer-logo-massive">
+        <h1 class="logo-text-giant">elaris7</h1>
+      </div>
+      <div class="footer-main-grid">
+        <div class="footer-column">
+          <p class="newsletter-intro" style="font-weight:800; color:#333; margin-bottom:10px;">Join us on the road to an effortless glow.</p>
+          <form class="footer-newsletter-form">
+            <input type="email" placeholder="Email Address">
+            <button type="submit">SUBSCRIBE</button>
+          </form>
+          <p style="font-size:0.75rem; opacity:0.8;">By signing up, you agree to our Privacy Policy*.</p>
+        </div>
+        <div class="footer-column">
+          <h4>NAVIGATE</h4>
+          <ul>
+            <li><a href="#">Shop</a></li>
+            <li><a href="#">Our Story</a></li>
+            <li><a href="#">Impact</a></li>
+            <li><a href="#">Where to Find Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>SOCIAL</h4>
+          <ul>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">Youtube</a></li>
+            <li><a href="#">TikTok</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>OFFICIAL</h4>
+          <ul>
+            <li><a href="#">Privacy</a></li>
+            <li><a href="#">Terms</a></li>
+            <li><a href="#">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>SUPPORT</h4>
+          <p style="font-size:0.9rem;">We're here M-F 9am - 5pm PKT.</p>
+          <p style="font-size:0.9rem;">Drop us a note anytime.</p>
+          <div class="footer-bottom-info">
+            &copy; 2026 ELARIS7
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  <style>
     /* Breakdown Section Styles */
     .breakdown-section {
       display: grid;
@@ -3426,151 +4161,6 @@ a { color: inherit; text-decoration: none; }
       }
     }
   </style>
-
-</head>
-<body>
-  <header class="site-header">
-    <div class="announcement-bar">
-      free shipping on all orders over rs. 2000
-    </div>
-    <div class="header-main">
-      <nav class="header-nav">
-        <div class="menu-trigger" id="menu-open-product">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-        <ul class="desktop-only">
-          <li><a href="#">SHOP</a></li>
-          <li><a href="#">ABOUT</a></li>
-          <li><a href="#">FUTURES</a></li>
-        </ul>
-      </nav>
-      <div class="header-logo"><a href="index.html" class="logo-text">elaris7</a></div>
-      <nav class="header-nav header-right">
-        <ul class="desktop-only">
-          <li><a href="#">SEARCH</a></li>
-          <li><a href="#">ACCOUNT</a></li>
-          <li><a href="#">CART (0)</a></li>
-        </ul>
-        <div class="mobile-only mobile-header-icons">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-          <div class="cart-icon-wrapper">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
-            <span class="cart-count">0</span>
-          </div>
-        </div>
-      </nav>
-    </div>
-  </header>
-
-  <main class="product-page">
-    <div class="product-grid">
-      <div class="product-gallery">
-        <div class="gallery-thumbnails">
-          <div class="thumb-item active"><img src="{{ 'anti-acne-100.jpg' | asset_url }}" alt="Thumb 1"></div>
-        </div>
-        <div class="gallery-main-viewport">
-          <div class="gallery-slider"><div class="gallery-slide"><img src="{{ 'anti-acne-100.jpg' | asset_url }}" alt="Main View 1"></div></div>
-        </div>
-      </div>
-      <div class="product-details">
-        <div class="product-details-inner">
-          <div class="product-header">
-            <h1 class="product-title">Anti Acne<br>Serum</h1>
-            <div class="product-award"><div class="award-seal">BEST OF BEAUTY</div></div>
-          </div>
-          <div class="product-meta">
-            <span class="product-subtitle">Blemish Control</span>
-            <div class="product-reviews"><span class="stars">â˜…â˜…â˜…â˜…â˜…</span><span class="review-count">(16k)</span></div>
-          </div>
-          <div class="product-description">
-            <p>Our Anti Acne Serum is a powerful formula designed to target blemishes, reduce redness, and prevent future breakouts. Infused with salicylic acid and soothing botanicals.</p>
-          </div>
-          <hr class="divider">
-          <button class="buy-button">ADD TO BAG - Rs. 1,500</button>
-          <hr class="divider">
-          <div class="product-accordions accordions">
-            <details class="accordion-item"><summary><span>BENEFITS</span><span>+</span></summary><div class="accordion-content"><ul><li>Targets active breakouts</li><li>Reduces redness and inflammation</li><li>Prevents future blemishes</li></ul></div></details>
-          </div>
-        </div>
-      </div>
-    </div>
-    
-    <section class="meet-product-section"><h2 class="meet-title">Clearer Skin Starts Here</h2></section>
-    
-    <div class="mobile-sticky-cart"><button class="buy-button">ADD TO BAG - Rs. 1,500</button></div>
-  </main>
-
-  <footer class="footer-block">
-    <div class="footer-logo-massive">
-      <span class="logo-text">elaris7</span>
-    </div>
-    
-    <div class="footer-grid-container">
-      <!-- Col 1: Newsletter -->
-      <div class="footer-grid-col newsletter-box">
-        <p>Join us on the road to an effortless glow.</p>
-        <div class="newsletter-input-group">
-          <input type="email" placeholder="Email Address">
-          <button type="submit">SUBSCRIBE</button>
-        </div>
-        <p style="font-size: 0.7rem; color: #999;">By signing up, you agree to our Privacy Policy*.</p>
-      </div>
-
-      <!-- Col 2: Navigate -->
-      <div class="footer-grid-col">
-        <h4>NAVIGATE</h4>
-        <ul>
-          <li><a href="#">Shop</a></li>
-          <li><a href="#">Our Story</a></li>
-          <li><a href="#">E7 Futures</a></li>
-          <li><a href="#">Impact</a></li>
-          <li><a href="#">Where to Find Us</a></li>
-        </ul>
-      </div>
-
-      <!-- Col 3: Social -->
-      <div class="footer-grid-col">
-        <h4>SOCIAL</h4>
-        <ul>
-          <li><a href="#">Instagram</a></li>
-          <li><a href="#">Youtube</a></li>
-          <li><a href="#">TikTok</a></li>
-          <li><a href="#">Pinterest</a></li>
-        </ul>
-      </div>
-
-      <!-- Col 4: Official -->
-      <div class="footer-grid-col">
-        <h4>OFFICIAL</h4>
-        <ul>
-          <li><a href="#">Privacy</a></li>
-          <li><a href="#">Terms</a></li>
-          <li><a href="#">Accessibility</a></li>
-          <li><a href="#">FAQ</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-      </div>
-
-      <!-- Col 5: Support -->
-      <div class="footer-grid-col">
-        <h4>SUPPORT</h4>
-        <div class="support-text">
-          <p>We're here M-F 9am - 5pm PKT.</p>
-          <p style="margin-top: 15px;">Drop us a note anytime.</p>
-        </div>
-        <div class="footer-bottom-info">
-          Ã‚Â© ELARIS7 2026
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  
 </body>
 </html>
-
-
-
 
