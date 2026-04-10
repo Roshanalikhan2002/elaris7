@@ -109,7 +109,7 @@
     }
   },
   {
-    "File": "product.moisturizer.liquid",
+    "File": "product.e7-korean-glass-skin-moisturizer.liquid",
     "Title": "Centella Moisturizer",
     "Subtitle": "Daily Dew",
     "Price": "1,800",
@@ -209,7 +209,7 @@
     }
   },
   {
-    "File": "product.face-wash.liquid",
+    "File": "product.e7-korean-glass-skin-centella-face-wash-copy.liquid",
     "Title": "Centella Face Wash",
     "Subtitle": "Pure Start",
     "Price": "1,800",
@@ -319,7 +319,7 @@
     }
   },
   {
-    "File": "product.glow-serum.liquid",
+    "File": "product.centella-serum.liquid",
     "Title": "Centella Serum",
     "Subtitle": "Radiance Reset",
     "Price": "2,200",
@@ -418,7 +418,7 @@
     }
   },
   {
-    "File": "product.sunscreen-v2.liquid",
+    "File": "product.e7-korean-glass-skin-centella-sunscreen-spf50-copy.liquid",
     "Title": "Sunscreen SPF60+",
     "Subtitle": "Daily Shield",
     "Price": "2,500",
@@ -530,7 +530,7 @@
     }
   },
   {
-    "File": "product.skin-refining-toner.liquid",
+    "File": "product.centella-skin-toner.liquid",
     "Title": "Refining Toner",
     "Subtitle": "Clarity Reset",
     "Price": "1,800",
@@ -610,7 +610,7 @@
     }
   },
   {
-    "File": "product.keratin-serum-v2.liquid",
+    "File": "product.anti-frizz-keratin-serum.liquid",
     "Title": "Keratin Serum",
     "Subtitle": "Smooth Control",
     "Price": "1,800",
@@ -689,7 +689,7 @@
     }
   },
   {
-    "File": "product.hair-mist.liquid",
+    "File": "product.floral-blossom-hair-mist.liquid",
     "Title": "Floral Blossom Hair Mist",
     "Subtitle": "Fresh Floral Touch",
     "Price": "1,200",
@@ -873,7 +873,7 @@
     }
   },
   {
-    "File": "product.tranexamic-serum-v2.liquid",
+    "File": "product.tranexamic-serum.liquid",
     "Title": "Elaris7 Tranexamic Brightening Serum",
     "Subtitle": "Even & Illuminate",
     "Price": "2,400",
@@ -1014,7 +1014,7 @@
     }
   },
   {
-    "File": "product.anti-acne.liquid",
+    "File": "product.anti-acne-cream.liquid",
     "Title": "Anti-Acne Serum",
     "Subtitle": "Clear & Control",
     "Price": "2,200",
@@ -1473,7 +1473,7 @@
     }
   },
   {
-    "File": "product.centella-moisturizer.liquid",
+    "File": "product.e7-korean-glass-skin-moisturizer.liquid",
     "Title": "Centella Moisturizer",
     "Subtitle": "Daily Dew",
     "Price": "1,800",

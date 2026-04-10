@@ -184,25 +184,25 @@ function updateTemplate(p) {
         // Exact mapping from index.html to ensure "same to same" experience
         const homeHoverMap = {
             'night-cream': 'night-cream-hover.jpg',
-            'tranexamic-serum-v2': 'tranexamic-meet-1.jpg',
-            'keratin-serum-v2': 'keratin-serum-hover.jpg',
-            'glow-serum': 'glow-serum-hover.jpg',
+            'tranexamic-serum': 'tranexamic-meet-1.jpg',
+            'anti-frizz-keratin-serum': 'keratin-serum-hover.jpg',
+            'centella-serum': 'glow-serum-hover.jpg',
             'glutathione-cream': 'deep-hydration-100.jpg',
-            'face-wash': 'facewash-shot.png',
-            'anti-acne-serum-v2': 'hover-anti-acne.png',
-            'sunscreen-v2': 'v2-sunscreen-2.jpg'
+            'e7-korean-glass-skin-centella-face-wash-copy': 'facewash-shot.png',
+            'anti-acne-cream': 'hover-anti-acne.png',
+            'e7-korean-glass-skin-centella-sunscreen-spf50-copy': 'v2-sunscreen-2.jpg'
         };
 
         const homeLabelMap = {
             'night-cream': 'NIGHT CREAM',
-            'tranexamic-serum-v2': 'serum',
-            'keratin-serum-v2': 'haircare',
-            'glow-serum': 'serum',
+            'tranexamic-serum': 'serum',
+            'anti-frizz-keratin-serum': 'haircare',
+            'centella-serum': 'serum',
             'glutathione-cream': 'repair',
-            'face-wash': 'cleanser',
-            'anti-acne-serum-v2': 'antiacne',
-            'sunscreen-v2': 'sunscreen',
-            'hair-mist-v2': 'haircare'
+            'e7-korean-glass-skin-centella-face-wash-copy': 'cleanser',
+            'anti-acne-cream': 'antiacne',
+            'e7-korean-glass-skin-centella-sunscreen-spf50-copy': 'sunscreen',
+            'floral-blossom-hair-mist': 'haircare'
         };
 
         const hoverImg = homeHoverMap[handle] || ((prod.Images.Carousel && prod.Images.Carousel[1]) ? prod.Images.Carousel[1] : prod.Images.Hero);
