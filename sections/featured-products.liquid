@@ -14,7 +14,9 @@
       {% for block in section.blocks %}
         <div class="card card-rhode" data-category="{{ block.settings.brand_label | handleize }}" {{ block.shopify_attributes }}>
           {%- assign final_link = block.settings.product_link | default: '#' -%}
-          {%- assign final_link = block.settings.product_link | default: '#' -%}
+          {%- if final_link contains 'renewal-cleanser' -%}
+            {%- assign final_link = '/products/centella-skin-toner-copy' -%}
+          {%- endif -%}
           <a href="{{ final_link }}" class="card-link-wrapper">
             {% if block.settings.hover_image != blank %}
               {{ block.settings.hover_image | image_url: width: 1200 | image_tag: class: 'card-hover-bg', alt: block.settings.title }}
@@ -69,13 +71,13 @@
         {%- if pname contains "Keratin Serum" -%}
           {%- assign phandle = "anti-frizz-keratin-serum" -%}
         {%- elsif pname == "Glow Serum" -%}
-          {%- assign phandle = "glow-serum" -%}
+          {%- assign phandle = "e7-korean-glass-skin-centella-sunscreen-spf50-copy" -%}
         {%- elsif pname == "Face Wash" -%}
-          {%- assign phandle = "face-wash" -%}
+          {%- assign phandle = "e7-korean-glass-skin-centella-night-cream-copy" -%}
         {%- elsif pname == "Sunscreen SPF60+" -%}
-          {%- assign phandle = "sunscreen-v2" -%}
+          {%- assign phandle = "e7-korean-glass-skin-centella-face-wash-copy" -%}
         {%- elsif pname == "Renewal Cleanser" -%}
-          {%- assign phandle = "renewal-cleanser" -%}
+          {%- assign phandle = "centella-skin-toner-copy" -%}
         {%- elsif pname == "Hydra Burst Moisturizer" -%}
           {%- assign phandle = "e7-korean-glass-skin-moisturizer" -%}
         {%- elsif pname == "Renewal Toner" -%}
