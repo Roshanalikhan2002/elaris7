@@ -301,6 +301,10 @@ function updateTemplate(p) {
             c = c.replace(/95%/, p.Stats[1].Pct);
             c = c.replace(/SAID IT ABSORBED WELL WITHOUT HEAVINESS/, p.Stats[1].Desc);
         }
+        if (p.Stats[2]) {
+            c = c.replace(/94%/, p.Stats[2].Pct);
+            c = c.replace(/NOTICED SMOOTHER, SOFTER, AND REFINED SKIN BY MORNING/, p.Stats[2].Desc);
+        }
     }
 
     // 11. FAQs

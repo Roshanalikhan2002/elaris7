@@ -372,26 +372,28 @@
      "SpreadItOn": ["hair refresh", "floral scent", "natural shine"],
      "Stats": [
        { "Pct": "99%", "Desc": "SAID HAIR FELT INSTANTLY REFRESHED" },
-       { "Pct": "97%", "Desc": "LOVED THE LONG-LASTING FLORAL SCENT" }
+       { "Pct": "97%", "Desc": "LOVED THE LONG-LASTING FLORAL SCENT" },
+       { "Pct": "94%", "Desc": "NOTICED HEALTHIER LOOKING SHINE" }
      ],
-     "StatsDisclaimer": "*Based on a 2-week perception study.",
+     "StatsDisclaimer": "*Based on a 1-week consumer perception study.",
      "FAQs": [
        { "Q": "Can I use this hair mist daily?", "A": "Yes, it is designed for multiple daily uses without weighing your hair down." },
        { "Q": "Does it have a strong scent?", "A": "It has a delicate, fresh floral fragrance that is long-lasting but never overpowering." },
        { "Q": "Will it make my hair oily?", "A": "No, the formula is lightweight and oil-free, adding shine without any greasiness." }
      ],
      "Reviews": [
-       { "Name": "Areeba", "Text": "I love how fresh my hair feels and the scent is so lovely!" }
+       { "Name": "Fatima", "Text": "Received my order and I'm super impressed. My hair feels so refreshed and the blossom scent is amazing! 10/10 experience." },
+       { "Name": "Ayesha", "Text": "I'm in love with the texture - it's lightweight and absorbs instantly without any greasiness. Waking up to soft, shiny hair is the best!" }
      ],
      "Images": {
        "Hero": "hairmist-1.jpeg",
-       "Gallery": ["hairmist-1.jpeg", "hairmist-2.jpg", "hairmist-4.jpg", "hairmist-1.jpeg"],
+       "Gallery": ["hairmist-1.jpeg", "hairmist-2.jpg", "hairmist-3.jpg", "hairmist-4.jpg"],
        "Breakdown": "hairmist-plate.jpg",
        "WhatsInside": "hairmist-spoon.jpg",
        "Spread": "hairmist-spread.jpg",
        "Stats": "hairmist-2.jpg",
        "FAQ": "hairmist-faq.jpg",
-       "Carousel": ["hairmist-1.jpeg", "hairmist-2.jpg", "hairmist-4.jpg", "hairmist-1.jpeg"]
+       "Carousel": ["hairmist-1.jpeg", "hairmist-2.jpg", "hairmist-3.jpg", "hairmist-4.jpg"]
      }
   },
   {
