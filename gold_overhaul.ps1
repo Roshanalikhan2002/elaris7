@@ -1,7 +1,7 @@
 $sourceFile = "c:\Users\MY PC\OneDrive\Desktop\Elaris7\night-cream.html"
 $templatesDir = "c:\Users\MY PC\OneDrive\Desktop\Elaris7\templates"
 
-$masterHtml = Get-Content -Path $sourceFile -Raw
+$masterHtml = Get-Content -Path $sourceFile -Raw -Encoding UTF8
 
 $products = @{
     "product.night-cream.liquid" = @{ "title" = "Centella Night Cream"; "price" = "2,660"; "img" = "night-cream-suite.jpeg"; "gallery" = @("nightcream1.jpeg", "nightcream2.jpeg", "nightcream3.jpeg", "nightcream4.jpeg") }
