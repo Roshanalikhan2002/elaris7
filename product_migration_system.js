@@ -399,7 +399,17 @@ function updateTemplate(p) {
     }
 
     // 14. Asset URL Conversion (Final Sweep)
-    c = c.replace(/src="(?:\.\/assets\/|)([\w\.-]+\.(?:jpg|png|jpeg|webp|gif|svg))"/g, 'src="{{ "$1" | asset_url }}"');
+    c = c.replace(/src="(?:\.\/assets\/|)([\w\.\s-]+\.(?:jpg|png|jpeg|webp|gif|svg))"/g, 'src="{{ "$1" | asset_url }}"');
+    
+    // 14.1. Navigation Cleanup for Shopify
+    c = c.replace(/href="index\.html"/g, 'href="{{ routes.root_url }}"');
+
+    // 15. Aggressive Residual Cleanup - Final Sweep
+    // Only replace if it's not the actual Night Cream product
+    if (p.Title !== "Centella Night Cream") {
+        c = c.replace(/Centella Night Cream/g, p.Title);
+        c = c.replace(/NIGHT CREAM/g, p.Title.toUpperCase());
+    }
 
     const targetPath = path.join(templatesDir, p.File);
     fs.writeFileSync(targetPath, c, 'utf8');

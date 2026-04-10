@@ -1,12 +1,15 @@
-﻿<!DOCTYPE html>
+
+
+
+
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Glow Serum | elaris7</title>
-  
-  <script src="./assets/script.js" defer></script>
-<style>
+  <title>Centella Serum | elaris7</title>
+  <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
 
 :root {
@@ -33,6 +36,11 @@ body {
   font-size: 14px;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+html {
+  overflow-x: hidden;
 }
 
 a { color: inherit; text-decoration: none; }
@@ -556,14 +564,14 @@ a { color: inherit; text-decoration: none; }
 
   .hero-block {
     height: auto;
-    aspect-ratio: 1 / 1.5; /* Tallest portrait-style matching your vertical image move moved moves move move move */
+    aspect-ratio: 1 / 1;
     margin: 0;
     border-radius: 14px;
     background-color: #fff;
   }
 
   .hero-video-bg {
-    object-fit: contain;
+    object-fit: cover;
   }
 
   /* Rhode layout: text wraps 2 lines on RIGHT, button stacked BELOW Ã¢â‚¬â€ column, right-aligned */
@@ -2133,16 +2141,58 @@ a { color: inherit; text-decoration: none; }
 }
 
 </style>
-<style>
+  <script src="./assets/script.js" defer></script>
+</head>
+<body>
+
+  <!-- Re-using existing header structure exactly -->
+  <header class="site-header">
+    <div class="announcement-bar">
+      free shipping on all orders over rs. 2000
+    </div>
+    <div class="header-main">
+      <nav class="header-nav">
+        <div class="menu-trigger" id="menu-open-product">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <ul class="desktop-only">
+          <li><a href="#">SHOP</a></li>
+          <li><a href="#">ABOUT</a></li>
+          <li><a href="#">FUTURES</a></li>
+        </ul>
+      </nav>
+      <div class="header-logo"><a href="{{ routes.root_url }}" class="logo-text">elaris7</a></div>
+      <nav class="header-nav header-right">
+        <ul class="desktop-only">
+          <li><a href="#">SEARCH</a></li>
+          <li><a href="#">ACCOUNT</a></li>
+          <li><a href="#">CART (0)</a></li>
+        </ul>
+        <div class="mobile-only mobile-header-icons">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <div class="cart-icon-wrapper">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+            <span class="cart-count">0</span>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="product-page">
+    <div class="product-grid">
+      
+    <style>
+      /* Main Product Gallery Styling */
       .product-gallery {
-        position: sticky;
-        top: 20px;
-        height: calc(100vh - 40px);
         display: flex;
         gap: 15px;
-        background: #f2f0ed;
-        padding: 15px;
-        border-radius: 14px;
+        background: #fff;
+        padding: 10px;
+        border-radius: 12px;
+        height: 100%;
       }
       .gallery-thumbnails {
         display: flex;
@@ -2152,8 +2202,8 @@ a { color: inherit; text-decoration: none; }
         width: 60px;
       }
       .thumb-item {
-        width: 50px;
-        height: 50px;
+        width: 55px;
+        height: 55px;
         border-radius: 8px;
         overflow: hidden;
         cursor: pointer;
@@ -2163,7 +2213,6 @@ a { color: inherit; text-decoration: none; }
       }
       .thumb-item:hover, .thumb-item.active {
         border-color: #002d5f;
-        transform: scale(1.1);
       }
       .thumb-item img {
         width: 100%;
@@ -2190,24 +2239,646 @@ a { color: inherit; text-decoration: none; }
         justify-content: center;
       }
       .gallery-slide img {
-        max-width: 90%;
-        max-height: 90%;
+        max-width: 100%;
+        max-height: 100%;
         object-fit: contain;
       }
-      @media (max-width: 850px) {
+
+      /* Desktop Fixed-Height Internal Scroll Logic */
+      @media (min-width: 901px) {
+        .product-page {
+          background-color: #f3f0ec; 
+          margin: 115px 12px 12px;
+          padding: 0;
+          border-radius: 14px;
+          overflow: hidden;
+        }
+        .product-grid {
+          display: grid;
+          grid-template-columns: 1.1fr 0.9fr;
+          height: 700px; /* Fixed height for parity */
+          gap: 0;
+        }
+        .product-details {
+          height: 100%;
+          min-height: auto !important;
+          overflow-y: auto;
+          scrollbar-width: none;
+        }
+        .product-details::-webkit-scrollbar { display: none; }
+      }
+
+      @media (max-width: 900px) {
+        .product-page {
+          margin: 100px 0 0;
+          padding: 0;
+          background-color: #fff;
+        }
+        .product-grid {
+          display: flex;
+          flex-direction: column;
+          height: auto;
+        }
         .product-gallery {
           flex-direction: column-reverse;
           height: auto;
-          aspect-ratio: 1/1.2;
+          aspect-ratio: 1 / 1.1;
+          border-radius: 0;
+          padding: 10px;
         }
         .gallery-thumbnails {
           flex-direction: row;
           width: 100%;
+          height: 70px;
           justify-content: center;
+          padding: 5px 0;
+          gap: 10px;
+        }
+        .gallery-main-viewport {
+          border-radius: 0;
+        }
+        .product-details {
+          padding: 24px 20px;
+          height: auto;
+          overflow: visible;
         }
       }
     </style>
-<style>
+
+    <div class="product-gallery">
+      <!-- Thumbnails on Left -->
+      <div class="gallery-thumbnails">
+        <div class="thumb-item active" onmouseover="scrollGallery(0, this)">
+          <img src="./assets/glowserum-1.png" alt="Thumb 1">
+        </div>
+        <div class="thumb-item" onmouseover="scrollGallery(1, this)">
+          <img src="./assets/glowserum-2.jpg" alt="Thumb 2">
+        </div>
+        <div class="thumb-item" onmouseover="scrollGallery(2, this)">
+          <img src="./assets/glowserum-3.jpg" alt="Thumb 3">
+        </div>
+        <div class="thumb-item" onmouseover="scrollGallery(3, this)">
+          <img src="./assets/glowserum-4.jpg" alt="Thumb 4">
+        </div>
+      </div>
+
+      <!-- Main Slider -->
+      <div class="gallery-main-viewport">
+        <div class="gallery-slider" id="productSlider">
+          <div class="gallery-slide">
+            <img src="./assets/glowserum-1.png" alt="Main View 1">
+          </div>
+          <div class="gallery-slide">
+            <img src="./assets/glowserum-2.jpg" alt="Main View 2">
+          </div>
+          <div class="gallery-slide">
+            <img src="./assets/glowserum-3.jpg" alt="Main View 3">
+          </div>
+          <div class="gallery-slide">
+            <img src="./assets/glowserum-4.jpg" alt="Main View 4">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function scrollGallery(index, thumb) {
+        const slider = document.getElementById('productSlider');
+        slider.style.transform = `translateX(-${index * 100}%)`;
+        
+        // Update active class
+        document.querySelectorAll('.thumb-item').forEach(t => t.classList.remove('active'));
+        thumb.classList.add('active');
+      }
+    </script>
+
+      <!-- Right Column: Scrollable Content -->
+      <div class="product-details">
+        <div class="product-details-inner">
+          <div class="product-header">
+            <h1 class="product-title">Centella<br>Serum</h1>
+          </div>
+
+          <div class="product-meta">
+            <span class="product-subtitle">Radiance Reset</p>
+            <p class="disclaimer">*with continued daily use</p>
+          </div>
+
+          <hr class="divider">
+
+          <div class="bogo-inline-section">
+            <p class="bogo-inline-title">SELECT YOUR FREE PRODUCT</p>
+            <div class="bogo-vertical-scroll">
+              
+              <div class="bogo-inline-card" onclick="selectBogo(this)">
+                <input type="radio" name="free_gift" data-gift-handle="night-cream" style="display:none;">
+                <img src="./assets/glowserum-1.png" alt="Centella Serum">
+                <div class="bogo-inline-info">
+                  <span class="bogo-inline-name">Centella Serum</span>
+                  <span class="bogo-inline-tag">Night Renewal</span>
+                </div>
+                <div class="bogo-select-indicator"></div>
+              </div>
+
+              <div class="bogo-inline-card" onclick="selectBogo(this)">
+                <input type="radio" name="free_gift" data-gift-handle="moisturizer" style="display:none;">
+                <img src="./assets/moisturizer-100.jpg" alt="Centella Moisturizer">
+                <div class="bogo-inline-info">
+                  <span class="bogo-inline-name">Centella Moisturizer</span>
+                  <span class="bogo-inline-tag">Daily Dew</span>
+                </div>
+                <div class="bogo-select-indicator"></div>
+              </div>
+
+              <div class="bogo-inline-card" onclick="selectBogo(this)">
+                <input type="radio" name="free_gift" data-gift-handle="face-wash" style="display:none;">
+                <img src="./assets/facewash1.jpeg" alt="Centella Face Wash">
+                <div class="bogo-inline-info">
+                  <span class="bogo-inline-name">Centella Face Wash</span>
+                  <span class="bogo-inline-tag">Pure Start</span>
+                </div>
+                <div class="bogo-select-indicator"></div>
+              </div>
+
+              <div class="bogo-inline-card" onclick="selectBogo(this)">
+                <input type="radio" name="free_gift" data-gift-handle="glow-serum" style="display:none;">
+                <img src="./assets/glowserum-1.png" alt="Centella Serum">
+                <div class="bogo-inline-info">
+                  <span class="bogo-inline-name">Centella Serum</span>
+                  <span class="bogo-inline-tag">Radiance Reset</span>
+                </div>
+                <div class="bogo-select-indicator"></div>
+              </div>
+
+              <div class="bogo-inline-card" onclick="selectBogo(this)">
+                <input type="radio" name="free_gift" data-gift-handle="sunscreen-v2" style="display:none;">
+                <img src="./assets/v2-sunscreen-1.jpeg" alt="Sunscreen SPF60+">
+                <div class="bogo-inline-info">
+                  <span class="bogo-inline-name">Sunscreen SPF60+</span>
+                  <span class="bogo-inline-tag">Daily Shield</span>
+                </div>
+                <div class="bogo-select-indicator"></div>
+              </div>
+
+              <div class="bogo-inline-card" onclick="selectBogo(this)">
+                <input type="radio" name="free_gift" data-gift-handle="skin-refining-toner" style="display:none;">
+                <img src="./assets/skin refining-100.jpg" alt="Refining Toner">
+                <div class="bogo-inline-info">
+                  <span class="bogo-inline-name">Refining Toner</span>
+                  <span class="bogo-inline-tag">Clarity Reset</span>
+                </div>
+                <div class="bogo-select-indicator"></div>
+              </div>
+
+              <div class="bogo-inline-card" onclick="selectBogo(this)">
+                <input type="radio" name="free_gift" data-gift-handle="keratin-serum-v2" style="display:none;">
+                <img src="./assets/antifrizz-1.jpg" alt="Keratin Serum">
+                <div class="bogo-inline-info">
+                  <span class="bogo-inline-name">Keratin Serum</span>
+                  <span class="bogo-inline-tag">Smooth Control</span>
+                </div>
+                <div class="bogo-select-indicator"></div>
+              </div>
+
+              <div class="bogo-inline-card" onclick="selectBogo(this)">
+                <input type="radio" name="free_gift" data-gift-handle="hair-mist" style="display:none;">
+                <img src="./assets/v2-hair-1.jpeg" alt="Floral Blossom Hair Mist">
+                <div class="bogo-inline-info">
+                  <span class="bogo-inline-name">Floral Blossom Hair Mist</span>
+                  <span class="bogo-inline-tag">Fresh Floral Touch</span>
+                </div>
+                <div class="bogo-select-indicator"></div>
+              </div>
+
+              <div class="bogo-inline-card" onclick="selectBogo(this)">
+                <input type="radio" name="free_gift" data-gift-handle="aha-exfoliant" style="display:none;">
+                <img src="./assets/renewal toner-100.jpg" alt="Glycolic Toner">
+                <div class="bogo-inline-info">
+                  <span class="bogo-inline-name">Glycolic Toner</span>
+                  <span class="bogo-inline-tag">Renew & Refine</span>
+                </div>
+                <div class="bogo-select-indicator"></div>
+              </div>
+
+              <div class="bogo-inline-card" onclick="selectBogo(this)">
+                <input type="radio" name="free_gift" data-gift-handle="tranexamic-serum-v2" style="display:none;">
+                <img src="./assets/TranexamicSerum1.jpg" alt="Elaris7 Tranexamic Brightening Serum">
+                <div class="bogo-inline-info">
+                  <span class="bogo-inline-name">Elaris7 Tranexamic Brightening Serum</span>
+                  <span class="bogo-inline-tag">Even & Illuminate</span>
+                </div>
+                <div class="bogo-select-indicator"></div>
+              </div>
+
+              <div class="bogo-inline-card" onclick="selectBogo(this)">
+                <input type="radio" name="free_gift" data-gift-handle="anti-acne" style="display:none;">
+                <img src="./assets/v2-antiacne-1.jpeg" alt="Anti-Acne Serum">
+                <div class="bogo-inline-info">
+                  <span class="bogo-inline-name">Anti-Acne Serum</span>
+                  <span class="bogo-inline-tag">Clear & Control</span>
+                </div>
+                <div class="bogo-select-indicator"></div>
+              </div>
+
+              <div class="bogo-inline-card" onclick="selectBogo(this)">
+                <input type="radio" name="free_gift" data-gift-handle="glutathione-cream" style="display:none;">
+                <img src="./assets/glutathione-1.jpeg" alt="Glutathione Cream">
+                <div class="bogo-inline-info">
+                  <span class="bogo-inline-name">Glutathione Cream</span>
+                  <span class="bogo-inline-tag">Even & Radiant</span>
+                </div>
+                <div class="bogo-select-indicator"></div>
+              </div>
+
+              <div class="bogo-inline-card" onclick="selectBogo(this)">
+                <input type="radio" name="free_gift" data-gift-handle="renewal-cleanser" style="display:none;">
+                <img src="./assets/v2-cleanser-1.jpeg" alt="Renewal Cleanser">
+                <div class="bogo-inline-info">
+                  <span class="bogo-inline-name">Renewal Cleanser</span>
+                  <span class="bogo-inline-tag">Deep Brightening</span>
+                </div>
+                <div class="bogo-select-indicator"></div>
+              </div>
+
+              <div class="bogo-inline-card" onclick="selectBogo(this)">
+                <input type="radio" name="free_gift" data-gift-handle="centella-skin-toner" style="display:none;">
+                <img src="./assets/v2-toner-1.jpeg" alt="Renewal Toner">
+                <div class="bogo-inline-info">
+                  <span class="bogo-inline-name">Renewal Toner</span>
+                  <span class="bogo-inline-tag">Pore Refining</span>
+                </div>
+                <div class="bogo-select-indicator"></div>
+              </div>
+
+              <div class="bogo-inline-card" onclick="selectBogo(this)">
+                <input type="radio" name="free_gift" data-gift-handle="renewal-toner" style="display:none;">
+                <img src="./assets/v2-toner-1.jpeg" alt="Renewal Toner">
+                <div class="bogo-inline-info">
+                  <span class="bogo-inline-name">Renewal Toner</span>
+                  <span class="bogo-inline-tag">Pore Refining</span>
+                </div>
+                <div class="bogo-select-indicator"></div>
+              </div>
+
+              <div class="bogo-inline-card" onclick="selectBogo(this)">
+                <input type="radio" name="free_gift" data-gift-handle="centella-moisturizer" style="display:none;">
+                <img src="./assets/moisturizer-100.jpg" alt="Centella Moisturizer">
+                <div class="bogo-inline-info">
+                  <span class="bogo-inline-name">Centella Moisturizer</span>
+                  <span class="bogo-inline-tag">Daily Dew</span>
+                </div>
+                <div class="bogo-select-indicator"></div>
+              </div>
+            </div>
+          </div>
+          
+          <style>
+            .bogo-inline-section {
+              margin-top: 20px;
+              margin-bottom: 20px;
+            }
+            .bogo-inline-title {
+              font-size: 0.75rem;
+              font-weight: 800;
+              color: #5b5a53;
+              letter-spacing: 0.08em;
+              margin-bottom: 12px;
+              text-transform: uppercase;
+            }
+            .bogo-vertical-scroll {
+              display: flex;
+              flex-direction: column;
+              gap: 10px;
+              max-height: 400px;
+              overflow-y: auto;
+              padding-right: 10px;
+              scrollbar-width: thin;
+              scrollbar-color: #5b5a53 #f1efea;
+            }
+            .bogo-inline-card {
+              display: flex;
+              align-items: center;
+              gap: 15px;
+              background: #fff;
+              border: 1px solid #d1d1cf;
+              border-radius: 12px;
+              padding: 10px;
+              cursor: pointer;
+              transition: all 0.2s ease;
+            }
+            .bogo-inline-card:hover, .bogo-inline-card.selected {
+              border-color: #5b5a53;
+              background: #fdfdfb;
+            }
+            .bogo-inline-card img {
+              width: 50px;
+              height: 50px;
+              object-fit: contain;
+              border-radius: 6px;
+              background: #f9f9f9;
+            }
+            .bogo-inline-info {
+              flex: 1;
+              display: flex;
+              flex-direction: column;
+            }
+            .bogo-inline-name {
+              font-size: 0.85rem;
+              font-weight: 700;
+              color: #333;
+            }
+            .bogo-inline-tag {
+              font-size: 0.65rem;
+              color: #777;
+              text-transform: uppercase;
+            }
+            .bogo-select-indicator {
+              width: 18px;
+              height: 18px;
+              border: 2px solid #d1d1cf;
+              border-radius: 50%;
+              position: relative;
+            }
+            .bogo-inline-card.selected .bogo-select-indicator {
+              border-color: #5b5a53;
+              background: #5b5a53;
+            }
+            .bogo-inline-card.selected .bogo-select-indicator::after {
+              content: '';
+              position: absolute;
+              top: 3px;
+              left: 3px;
+              width: 8px;
+              height: 8px;
+              background: #fff;
+              border-radius: 50%;
+            }
+          </style>
+          
+          <script>
+            function selectBogo(card) {
+              document.querySelectorAll('.bogo-inline-card').forEach(c => c.classList.remove('selected'));
+              card.classList.add('selected');
+              const input = card.querySelector('input[type="radio"]');
+              if(input) input.checked = true;
+            }
+          </script>
+          </div>
+
+          <div class="product-actions-grid">
+            <button class="buy-button add-to-cart-btn" style="white-space: nowrap;">ADD TO CART - <span>Rs. 2,660</span></button>
+            <button class="buy-button bogo-btn" id="openBogo">BUY 1 GET 1 FREE</button>
+          </div>
+          
+          <style>
+            .product-actions-grid {
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 12px;
+              margin-bottom: 20px;
+            }
+            .add-to-cart-btn {
+              background-color: #002d5f !important; /* Standout blue */
+              color: #fff !important;
+            }
+            .bogo-btn {
+              background-color: #fff !important;
+              color: #002d5f !important;
+              border: 1px solid #002d5f !important;
+            }
+            @media (max-width: 600px) {
+              .product-actions-grid {
+                grid-template-columns: 1fr;
+              }
+            }
+
+            /* BOGO Drawer Styling */
+            .bogo-drawer {
+              position: fixed;
+              bottom: 0;
+              left: 0;
+              right: 0;
+              background: #fff;
+              z-index: 3000;
+              border-radius: 24px 24px 0 0;
+              box-shadow: 0 -10px 40px rgba(0,0,0,0.15);
+              padding: 30px 20px;
+              transform: translateY(100%);
+              transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+              max-height: 80vh;
+              overflow-y: auto;
+            }
+            .bogo-drawer.open {
+              transform: translateY(0);
+            }
+            .bogo-overlay {
+              position: fixed;
+              top: 0;
+              left: 0;
+              right: 0;
+              bottom: 0;
+              background: rgba(0,0,0,0.4);
+              z-index: 2900;
+              display: none;
+            }
+            .bogo-overlay.open {
+              display: block;
+            }
+            .bogo-header {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              margin-bottom: 20px;
+            }
+            .bogo-title {
+              font-size: 1.2rem;
+              font-weight: 800;
+              color: #002d5f;
+              letter-spacing: -0.02em;
+            }
+            .bogo-close {
+              cursor: pointer;
+              font-weight: 800;
+              font-size: 1.5rem;
+              color: #5b5a53;
+            }
+            .bogo-scroll-area {
+              display: flex;
+              gap: 16px;
+              overflow-x: auto;
+              padding-bottom: 10px;
+              scrollbar-width: thin;
+            }
+            .bogo-card {
+              flex: 0 0 200px;
+              background: #f1efea;
+              border-radius: 12px;
+              padding: 12px;
+              display: flex;
+              flex-direction: column;
+              gap: 8px;
+              cursor: pointer;
+              border: 2px solid transparent;
+            }
+            .bogo-card:hover {
+              border-color: #002d5f;
+            }
+            .bogo-card img {
+              width: 100%;
+              height: 140px;
+              object-fit: contain;
+              background: #fff;
+              border-radius: 8px;
+            }
+            .bogo-product-name {
+              font-size: 0.85rem;
+              font-weight: 700;
+              color: #333;
+            }
+            .bogo-add-btn {
+              background: #002d5f;
+              color: #fff;
+              border: none;
+              padding: 6px;
+              border-radius: 6px;
+              font-size: 0.75rem;
+              font-weight: 600;
+            }
+          </style>
+
+          <div class="bogo-overlay" id="bogoOverlay"></div>
+          <div class="bogo-drawer" id="bogoDrawer">
+            <div class="bogo-header">
+              <span class="bogo-title">Select Your Free Product</span>
+              <span class="bogo-close" id="closeBogo">&times;</span>
+            </div>
+            <div class="bogo-scroll-area">
+              <!-- Cards will be populated dynamically or via migration -->
+
+              <div class="bogo-card">
+                <img src="./assets/glowserum-1.png" alt="Centella Serum">
+                <span class="bogo-product-name">Centella Serum</span>
+                <button class="bogo-add-btn">Select</button>
+              </div>
+
+              <div class="bogo-card">
+                <img src="./assets/moisturizer-100.jpg" alt="Centella Moisturizer">
+                <span class="bogo-product-name">Centella Moisturizer</span>
+                <button class="bogo-add-btn">Select</button>
+              </div>
+
+              <div class="bogo-card">
+                <img src="./assets/facewash1.jpeg" alt="Centella Face Wash">
+                <span class="bogo-product-name">Centella Face Wash</span>
+                <button class="bogo-add-btn">Select</button>
+              </div>
+
+              <div class="bogo-card">
+                <img src="./assets/glowserum-1.png" alt="Centella Serum">
+                <span class="bogo-product-name">Centella Serum</span>
+                <button class="bogo-add-btn">Select</button>
+              </div>
+
+              <div class="bogo-card">
+                <img src="./assets/v2-sunscreen-1.jpeg" alt="Sunscreen SPF60+">
+                <span class="bogo-product-name">Sunscreen SPF60+</span>
+                <button class="bogo-add-btn">Select</button>
+              </div>
+
+              <div class="bogo-card">
+                <img src="./assets/skin refining-100.jpg" alt="Refining Toner">
+                <span class="bogo-product-name">Refining Toner</span>
+                <button class="bogo-add-btn">Select</button>
+              </div>
+
+              <div class="bogo-card">
+                <img src="./assets/antifrizz-1.jpg" alt="Keratin Serum">
+                <span class="bogo-product-name">Keratin Serum</span>
+                <button class="bogo-add-btn">Select</button>
+              </div>
+
+              <div class="bogo-card">
+                <img src="./assets/v2-hair-1.jpeg" alt="Floral Blossom Hair Mist">
+                <span class="bogo-product-name">Floral Blossom Hair Mist</span>
+                <button class="bogo-add-btn">Select</button>
+              </div>
+
+              <div class="bogo-card">
+                <img src="./assets/renewal toner-100.jpg" alt="Glycolic Toner">
+                <span class="bogo-product-name">Glycolic Toner</span>
+                <button class="bogo-add-btn">Select</button>
+              </div>
+
+              <div class="bogo-card">
+                <img src="./assets/TranexamicSerum1.jpg" alt="Elaris7 Tranexamic Brightening Serum">
+                <span class="bogo-product-name">Elaris7 Tranexamic Brightening Serum</span>
+                <button class="bogo-add-btn">Select</button>
+              </div>
+
+              <div class="bogo-card">
+                <img src="./assets/v2-antiacne-1.jpeg" alt="Anti-Acne Serum">
+                <span class="bogo-product-name">Anti-Acne Serum</span>
+                <button class="bogo-add-btn">Select</button>
+              </div>
+
+              <div class="bogo-card">
+                <img src="./assets/glutathione-1.jpeg" alt="Glutathione Cream">
+                <span class="bogo-product-name">Glutathione Cream</span>
+                <button class="bogo-add-btn">Select</button>
+              </div>
+
+              <div class="bogo-card">
+                <img src="./assets/v2-cleanser-1.jpeg" alt="Renewal Cleanser">
+                <span class="bogo-product-name">Renewal Cleanser</span>
+                <button class="bogo-add-btn">Select</button>
+              </div>
+
+              <div class="bogo-card">
+                <img src="./assets/v2-toner-1.jpeg" alt="Renewal Toner">
+                <span class="bogo-product-name">Renewal Toner</span>
+                <button class="bogo-add-btn">Select</button>
+              </div>
+
+              <div class="bogo-card">
+                <img src="./assets/v2-toner-1.jpeg" alt="Renewal Toner">
+                <span class="bogo-product-name">Renewal Toner</span>
+                <button class="bogo-add-btn">Select</button>
+              </div>
+
+              <div class="bogo-card">
+                <img src="./assets/moisturizer-100.jpg" alt="Centella Moisturizer">
+                <span class="bogo-product-name">Centella Moisturizer</span>
+                <button class="bogo-add-btn">Select</button>
+              </div>
+          </div>
+        </div>
+
+          <script>
+            const openBogo = document.getElementById('openBogo');
+            const closeBogo = document.getElementById('closeBogo');
+            const bogoDrawer = document.getElementById('bogoDrawer');
+            const bogoOverlay = document.getElementById('bogoOverlay');
+
+            openBogo.addEventListener('click', () => {
+              bogoDrawer.classList.add('open');
+              bogoOverlay.classList.add('open');
+            });
+
+            const hideBogo = () => {
+              bogoDrawer.classList.remove('open');
+              bogoOverlay.classList.remove('open');
+            };
+
+            closeBogo.addEventListener('click', hideBogo);
+            bogoOverlay.addEventListener('click', hideBogo);
+          </script>
+          
+
+
+
+
+          <!-- Accordions -->
+          <style>
             .accordion-item {
               border-bottom: 1px solid rgba(0,0,0,0.1);
               padding: 18px 0;
@@ -2243,7 +2914,729 @@ a { color: inherit; text-decoration: none; }
               margin-bottom: 8px;
             }
           </style>
-<style>
+          <div class="product-accordions accordions">
+            <details class="accordion-item">
+              <summary><span>BENEFITS</span><span>+</span></summary><div class="accordion-content"><ul>                  <li>Helps brighten skin and improve overall tone clarity</li>
+                  <li>Fades the appearance of dark spots and post-acne marks</li>
+                  <li>Supports firmness while enhancing skin elasticity</li>
+                  <li>Delivers deep hydration for a plump, radiant finish</li>
+                  <li>Helps calm sensitivity and strengthen the skin barrier</li>
+                  <li>Refines pores and smooths uneven texture</li></ul></div>
+            </details>
+            <details class="accordion-item">
+              <summary><span>APPLICATION</span><span>+</span></summary><div class="accordion-content"><p style="margin:0;">After cleansing, take 3–4 drops of Centella Serum and gently press onto slightly damp skin across the face and neck. Allow it to absorb fully, then follow with your moisturizer to seal in hydration.</p></div>
+            </details>
+            <details class="accordion-item">
+              <summary><span>TRICK</span><span>+</span></summary><div class="accordion-content"><ul>                  <li>Apply on damp skin to boost absorption and enhance glow</li>
+                  <li>Layer with a moisturizer to lock in active ingredients effectively</li>
+                  <li>Use day and night consistently for more visible tone correction</li></ul></div>
+            </details>
+            <details class="accordion-item">
+              <summary><span>KEY INGREDIENTS</span><span>+</span></summary><div class="accordion-content"><ul>                  <li>Niacinamide</li>
+                  <li>Vitamin C</li>
+                  <li>Alpha Arbutin</li>
+                  <li>Hyaluronic Acid</li>
+                  <li>Centella Asiatica</li>
+                  <li>Aloe Vera</li>
+                  <li>Rose Extract</li>
+                  <li>Vitamin E</li>
+                  <li>Honey</li>
+                  <li>Peptides</li>
+                  <li>Vitamin B5</li>
+                  <li>Witch Hazel</li></ul></div>
+            </details>
+          </div>
+
+        </div><!-- End Details -->
+      </div><!-- End Grid -->
+    </div><!-- End Page -->
+
+    <!-- Meet the Product Section -->
+    <section class="meet-product-section">
+      <h2 class="meet-title">Targeted Glow. Visible Clarity.</h2>
+      <div class="meet-carousel-wrapper">
+        <div class="carousel-swipe-indicator">SWIPE →</div>
+        <div class="meet-carousel">
+          <img src="./assets/glowserum-1.png" alt="Product Image 1">
+          <img src="./assets/glowserum-2.jpg" alt="Product Image 2">
+          <img src="./assets/glowserum-3.jpg" alt="Product Image 3">
+          <img src="./assets/glowserum-4.jpg" alt="Product Image 4">
+        </div>
+        <!-- Right Arrow Overlay -->
+        <div class="carousel-arrow">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#5b5a53" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- Product Breakdown Section -->
+    <section class="breakdown-section">
+      <div class="breakdown-content">
+        <h2 class="bd-title">Glow That Transforms Over Time</h2>
+        <div class="bd-table">
+          <div class="bd-row">
+            <span class="bd-label">GOOD FOR:</span><span class="bd-val">All skin types, including sensitive and uneven skin</span>
+          </div>
+          <div class="bd-row">
+            <span class="bd-label">FEELS LIKE:</span><span class="bd-val">A lightweight, silky serum that absorbs effortlessly</span>
+          </div>
+          <div class="bd-row">
+            <span class="bd-label">LOOKS LIKE:</span><span class="bd-val">A refined, radiant complexion with improved clarity</span>
+          </div>
+          <div class="bd-row">
+            <span class="bd-label">SMELLS LIKE:</span><span class="bd-val">Subtle, calming freshness for a relaxing nighttime routine</span>
+          </div>
+          <div class="bd-row">
+            <span class="bd-label">FYI:</span><span class="bd-val">Halal-Friendly • Dermatologist-Tested • Fast-Absorbing • Non-Greasy</span>
+          </div>
+        </div>
+      </div>
+      <div class="breakdown-image">
+        <img src="./assets/glowserum-plate.jpg" alt="Plate View">
+      </div>
+    </section>
+
+
+    <!-- What's Inside Section -->
+    <section class="whats-inside-section">
+      <div class="wi-image-col">
+        <img src="./assets/glowserum-spoon.jpg" alt="Spoon View" class="wi-image">
+        <button class="wi-full-ingredients-btn">FULL INGREDIENTS LIST</button>
+      </div>
+      <div class="wi-content-col">
+        <div class="wi-vertical-text">what's inside</div>
+        <div class="wi-details">
+          <p class="wi-intro">A powerful blend of tone-correcting actives and skin-repairing hydrators designed to target dullness.</p>
+          
+          <div class="wi-ingredient-block">
+            <h3 class="wi-ingred-title">niacinamide</h3><p class="wi-ingred-desc">helps visibly even out skin tone and strengthen the skin barrier</p>
+          </div>
+          
+          <hr class="wi-divider">
+          
+          <div class="wi-ingredient-block">
+            <h3 class="wi-ingred-title">alpha arbutin</h3><p class="wi-ingred-desc">known to help fade dark spots and discoloration for a more uniform look</p>
+          </div>
+          
+          <hr class="wi-divider">
+          
+          <p class="wi-also-made">also made with <strong>VITAMIN C, HYALURONIC ACID, ALOE VERA, ROSE EXTRACT, VITAMIN E, HONEY, PEPTIDES, CENTELLA ASIATICA</strong></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Spread It On For Section -->
+    <section class="spread-section">
+      <div class="spread-content">
+        <span class="spread-label">SPREAD IT ON FOR:</span>
+        <h2 class="spread-heading">evened-out tone</h2>
+        <h2 class="spread-heading">overnight hydration</h2>
+        <h2 class="spread-heading spread-green">smooth, glass-like finish</h2>
+      </div>
+      <div class="spread-image-col">
+        <img src="./assets/glowserum-spread.jpg" alt="Spread View">
+      </div>
+    </section>
+
+
+    <!-- Statistics Section -->
+    <section class="stats-section">
+      <div class="stats-content">
+        
+        <div class="stat-item">
+          <div class="stat-pct">99%</div>
+          <div class="stat-desc">SAID THEIR SKIN LOOKED BRIGHTER + MORE EVEN</div>
+        </div>
+        
+        
+          <div class="stat-desc">SAID THEY NOTICED A HEALTHY, GLASS-LIKE GLOW</div>
+        </div>
+        
+        
+          <div class="stat-desc">NOTICED SMOOTHER, SOFTER, AND REFINED SKIN BY MORNING</div>
+        </div>
+        
+        <div class="stat-item">
+          <div class="stat-pct">3 out of 4</div>
+          <div class="stat-desc">REPORTED A VISIBLE REDUCTION IN FINE LINES AND DARK SPOTS</div>
+        </div>
+        
+        <div class="stat-disclaimer">
+          *Based on a 2-week consumer perception study.
+        </div>
+      </div>
+      
+      <div class="stats-image">
+        <img src="./assets/glowserum-stats.jpg" alt="Percentage View">
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+      <div class="faq-content">
+        <h2 class="faq-title">FAQ</h2>
+        
+        <div class="faq-accordion">
+          <div class="faq-item">
+            <div class="faq-qa">
+              <span class="faq-question">Can I use this serum both morning and night?</span>
+              <p class="faq-answer">Absolutely, it is designed for daily use and works effectively in both AM and PM routines.</p>
+            </div>
+            <span class="faq-icon">+</span>
+          </div>
+        </div>
+      </div>
+      <div class="faq-image-col">
+        <img src="./assets/glowserum-faq.jpg" alt="FAQ View">
+      </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="reviews-section">
+      <h2 style="text-align:center; font-size: 2rem; margin-bottom: 40px; color: #5B5A53; font-weight: 800;">Customer Reviews</h2>
+      <div class="reviews-header">
+        <div class="rv-overall">
+          <div class="rv-score">4.7 <span class="rv-stars">★★★★★</span></div>
+          <div class="rv-avg-text">AVERAGE RATING</div>
+        </div>
+      </div>
+
+      <hr class="rv-divider">
+
+      <div class="review-card">
+        <div class="rv-sidebar">
+          <div class="rv-author">Iqra</div>
+          <div class="rv-verified">Verified Buyer</div>
+        </div>
+        <div class="rv-main">
+          <div class="rv-main-header">
+            <div class="rv-stars">★★★★★</div>
+          </div>
+          <div class="rv-title">Verified Selection</div>
+          <div class="rv-body">"My skin looks brighter and more even after using this regularly."</div>
+        </div>
+      </div>
+
+      <hr class="rv-divider" style="margin-bottom: 40px;">
+
+
+    </section>
+
+    <!-- 2. Product Selection Carousel -->
+    <section class="section-container product-scroll-section" style="margin-bottom: 60px;">
+      <div class="product-scroll-controls desktop-only">
+        <button class="scroll-arrow prev" id="scroll-prev">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+        </button>
+        <button class="scroll-arrow next" id="scroll-next">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </button>
+      </div>
+
+      <div class="product-collection" id="product-slider">
+        <div class="card card-rhode" data-category="skincare">
+          <a href="/products/night-cream" class="card-link-wrapper">
+            <img src="./assets/night-cream-hover.jpg" class="card-hover-bg" alt="Centella Serum Hover">
+            <div class="card-rhode-top">
+              <span class="card-brand-label">CENTELLA SERUM</span>
+            </div>
+            <div class="card-rhode-image">
+              <img src="./assets/glowserum-1.png" alt="Centella Serum" class="product-main-img">
+            </div>
+            <div class="card-rhode-footer">
+              <div class="card-meta">
+                <div class="card-stars">★★★★★ <span class="review-count">(10k+)</span></div>
+                <h3 class="card-name">Centella Serum</h3>
+              </div>
+              <span class="btn-rhode-buy-pill">BUY - RS. 2,660</span>
+            </div>
+            <div class="buy-button-hover">
+                BUY Centella Serum - RS. 2,660
+            </div>
+          </a>
+        </div>
+
+        <div class="card card-rhode" data-category="skincare">
+          <a href="/products/moisturizer" class="card-link-wrapper">
+            <img src="./assets/moisturizer-meet-2.jpg" class="card-hover-bg" alt="Centella Moisturizer Hover">
+            <div class="card-rhode-top">
+              <span class="card-brand-label">Daily Dew</span>
+            </div>
+            <div class="card-rhode-image">
+              <img src="./assets/moisturizer-100.jpg" alt="Centella Moisturizer" class="product-main-img">
+            </div>
+            <div class="card-rhode-footer">
+              <div class="card-meta">
+                <div class="card-stars">★★★★★ <span class="review-count">(10k+)</span></div>
+                <h3 class="card-name">Centella Moisturizer</h3>
+              </div>
+              <span class="btn-rhode-buy-pill">BUY - RS. 1,800</span>
+            </div>
+            <div class="buy-button-hover">
+                BUY Centella Moisturizer - RS. 1,800
+            </div>
+          </a>
+        </div>
+
+        <div class="card card-rhode" data-category="skincare">
+          <a href="/products/face-wash" class="card-link-wrapper">
+            <img src="./assets/facewash-shot.png" class="card-hover-bg" alt="Centella Face Wash Hover">
+            <div class="card-rhode-top">
+              <span class="card-brand-label">cleanser</span>
+            </div>
+            <div class="card-rhode-image">
+              <img src="./assets/facewash1.jpeg" alt="Centella Face Wash" class="product-main-img">
+            </div>
+            <div class="card-rhode-footer">
+              <div class="card-meta">
+                <div class="card-stars">★★★★★ <span class="review-count">(10k+)</span></div>
+                <h3 class="card-name">Centella Face Wash</h3>
+              </div>
+              <span class="btn-rhode-buy-pill">BUY - RS. 1,800</span>
+            </div>
+            <div class="buy-button-hover">
+                BUY Centella Face Wash - RS. 1,800
+            </div>
+          </a>
+        </div>
+
+        <div class="card card-rhode" data-category="serum">
+          <a href="/products/glow-serum" class="card-link-wrapper">
+            <img src="./assets/glow-serum-hover.jpg" class="card-hover-bg" alt="Centella Serum Hover">
+            <div class="card-rhode-top">
+              <span class="card-brand-label">serum</span>
+            </div>
+            <div class="card-rhode-image">
+              <img src="./assets/glowserum-1.png" alt="Centella Serum" class="product-main-img">
+            </div>
+            <div class="card-rhode-footer">
+              <div class="card-meta">
+                <div class="card-stars">★★★★★ <span class="review-count">(10k+)</span></div>
+                <h3 class="card-name">Centella Serum</h3>
+              </div>
+              <span class="btn-rhode-buy-pill">BUY - RS. 2,200</span>
+            </div>
+            <div class="buy-button-hover">
+                BUY Centella Serum - RS. 2,200
+            </div>
+          </a>
+        </div>
+
+        <div class="card card-rhode" data-category="skincare">
+          <a href="/products/sunscreen-v2" class="card-link-wrapper">
+            <img src="./assets/v2-sunscreen-2.jpg" class="card-hover-bg" alt="Sunscreen SPF60+ Hover">
+            <div class="card-rhode-top">
+              <span class="card-brand-label">sunscreen</span>
+            </div>
+            <div class="card-rhode-image">
+              <img src="./assets/v2-sunscreen-1.jpeg" alt="Sunscreen SPF60+" class="product-main-img">
+            </div>
+            <div class="card-rhode-footer">
+              <div class="card-meta">
+                <div class="card-stars">★★★★★ <span class="review-count">(10k+)</span></div>
+                <h3 class="card-name">Sunscreen SPF60+</h3>
+              </div>
+              <span class="btn-rhode-buy-pill">BUY - RS. 2,500</span>
+            </div>
+            <div class="buy-button-hover">
+                BUY Sunscreen SPF60+ - RS. 2,500
+            </div>
+          </a>
+        </div>
+
+        <div class="card card-rhode" data-category="skincare">
+          <a href="/products/skin-refining-toner" class="card-link-wrapper">
+            <img src="./assets/toner-meet-2.jpg" class="card-hover-bg" alt="Refining Toner Hover">
+            <div class="card-rhode-top">
+              <span class="card-brand-label">Clarity Reset</span>
+            </div>
+            <div class="card-rhode-image">
+              <img src="./assets/skin refining-100.jpg" alt="Refining Toner" class="product-main-img">
+            </div>
+            <div class="card-rhode-footer">
+              <div class="card-meta">
+                <div class="card-stars">★★★★★ <span class="review-count">(10k+)</span></div>
+                <h3 class="card-name">Refining Toner</h3>
+              </div>
+              <span class="btn-rhode-buy-pill">BUY - RS. 1,800</span>
+            </div>
+            <div class="buy-button-hover">
+                BUY Refining Toner - RS. 1,800
+            </div>
+          </a>
+        </div>
+
+        <div class="card card-rhode" data-category="serum">
+          <a href="/products/keratin-serum-v2" class="card-link-wrapper">
+            <img src="./assets/keratin-serum-hover.jpg" class="card-hover-bg" alt="Keratin Serum Hover">
+            <div class="card-rhode-top">
+              <span class="card-brand-label">haircare</span>
+            </div>
+            <div class="card-rhode-image">
+              <img src="./assets/antifrizz-1.jpg" alt="Keratin Serum" class="product-main-img">
+            </div>
+            <div class="card-rhode-footer">
+              <div class="card-meta">
+                <div class="card-stars">★★★★★ <span class="review-count">(10k+)</span></div>
+                <h3 class="card-name">Keratin Serum</h3>
+              </div>
+              <span class="btn-rhode-buy-pill">BUY - RS. 1,800</span>
+            </div>
+            <div class="buy-button-hover">
+                BUY Keratin Serum - RS. 1,800
+            </div>
+          </a>
+        </div>
+
+        <div class="card card-rhode" data-category="skincare">
+          <a href="/products/hair-mist" class="card-link-wrapper">
+            <img src="./assets/v2-hair-2.jpg" class="card-hover-bg" alt="Floral Blossom Hair Mist Hover">
+            <div class="card-rhode-top">
+              <span class="card-brand-label">Fresh Floral Touch</span>
+            </div>
+            <div class="card-rhode-image">
+              <img src="./assets/v2-hair-1.jpeg" alt="Floral Blossom Hair Mist" class="product-main-img">
+            </div>
+            <div class="card-rhode-footer">
+              <div class="card-meta">
+                <div class="card-stars">★★★★★ <span class="review-count">(10k+)</span></div>
+                <h3 class="card-name">Floral Blossom Hair Mist</h3>
+              </div>
+              <span class="btn-rhode-buy-pill">BUY - RS. 1,200</span>
+            </div>
+            <div class="buy-button-hover">
+                BUY Floral Blossom Hair Mist - RS. 1,200
+            </div>
+          </a>
+        </div>
+
+        <div class="card card-rhode" data-category="skincare">
+          <a href="/products/aha-exfoliant" class="card-link-wrapper">
+            <img src="./assets/toner-meet-2.jpg" class="card-hover-bg" alt="Glycolic Toner Hover">
+            <div class="card-rhode-top">
+              <span class="card-brand-label">Renew & Refine</span>
+            </div>
+            <div class="card-rhode-image">
+              <img src="./assets/renewal toner-100.jpg" alt="Glycolic Toner" class="product-main-img">
+            </div>
+            <div class="card-rhode-footer">
+              <div class="card-meta">
+                <div class="card-stars">★★★★★ <span class="review-count">(10k+)</span></div>
+                <h3 class="card-name">Glycolic Toner</h3>
+              </div>
+              <span class="btn-rhode-buy-pill">BUY - RS. 2,000</span>
+            </div>
+            <div class="buy-button-hover">
+                BUY Glycolic Toner - RS. 2,000
+            </div>
+          </a>
+        </div>
+
+        <div class="card card-rhode" data-category="serum">
+          <a href="/products/tranexamic-serum-v2" class="card-link-wrapper">
+            <img src="./assets/tranexamic-meet-1.jpg" class="card-hover-bg" alt="Elaris7 Tranexamic Brightening Serum Hover">
+            <div class="card-rhode-top">
+              <span class="card-brand-label">serum</span>
+            </div>
+            <div class="card-rhode-image">
+              <img src="./assets/TranexamicSerum1.jpg" alt="Elaris7 Tranexamic Brightening Serum" class="product-main-img">
+            </div>
+            <div class="card-rhode-footer">
+              <div class="card-meta">
+                <div class="card-stars">★★★★★ <span class="review-count">(10k+)</span></div>
+                <h3 class="card-name">Elaris7 Tranexamic Brightening Serum</h3>
+              </div>
+              <span class="btn-rhode-buy-pill">BUY - RS. 2,400</span>
+            </div>
+            <div class="buy-button-hover">
+                BUY Elaris7 Tranexamic Brightening Serum - RS. 2,400
+            </div>
+          </a>
+        </div>
+
+        <div class="card card-rhode" data-category="serum">
+          <a href="/products/anti-acne" class="card-link-wrapper">
+            <img src="./assets/v2-antiacne-2.jpg" class="card-hover-bg" alt="Anti-Acne Serum Hover">
+            <div class="card-rhode-top">
+              <span class="card-brand-label">Clear & Control</span>
+            </div>
+            <div class="card-rhode-image">
+              <img src="./assets/v2-antiacne-1.jpeg" alt="Anti-Acne Serum" class="product-main-img">
+            </div>
+            <div class="card-rhode-footer">
+              <div class="card-meta">
+                <div class="card-stars">★★★★★ <span class="review-count">(10k+)</span></div>
+                <h3 class="card-name">Anti-Acne Serum</h3>
+              </div>
+              <span class="btn-rhode-buy-pill">BUY - RS. 2,200</span>
+            </div>
+            <div class="buy-button-hover">
+                BUY Anti-Acne Serum - RS. 2,200
+            </div>
+          </a>
+        </div>
+
+        <div class="card card-rhode" data-category="skincare">
+          <a href="/products/glutathione-cream" class="card-link-wrapper">
+            <img src="./assets/deep-hydration-100.jpg" class="card-hover-bg" alt="Glutathione Cream Hover">
+            <div class="card-rhode-top">
+              <span class="card-brand-label">repair</span>
+            </div>
+            <div class="card-rhode-image">
+              <img src="./assets/glutathione-1.jpeg" alt="Glutathione Cream" class="product-main-img">
+            </div>
+            <div class="card-rhode-footer">
+              <div class="card-meta">
+                <div class="card-stars">★★★★★ <span class="review-count">(10k+)</span></div>
+                <h3 class="card-name">Glutathione Cream</h3>
+              </div>
+              <span class="btn-rhode-buy-pill">BUY - RS. 2,400</span>
+            </div>
+            <div class="buy-button-hover">
+                BUY Glutathione Cream - RS. 2,400
+            </div>
+          </a>
+        </div>
+
+        <div class="card card-rhode" data-category="skincare">
+          <a href="/products/renewal-cleanser" class="card-link-wrapper">
+            <img src="./assets/v2-cleanser-2.jpg" class="card-hover-bg" alt="Renewal Cleanser Hover">
+            <div class="card-rhode-top">
+              <span class="card-brand-label">Deep Brightening</span>
+            </div>
+            <div class="card-rhode-image">
+              <img src="./assets/v2-cleanser-1.jpeg" alt="Renewal Cleanser" class="product-main-img">
+            </div>
+            <div class="card-rhode-footer">
+              <div class="card-meta">
+                <div class="card-stars">★★★★★ <span class="review-count">(10k+)</span></div>
+                <h3 class="card-name">Renewal Cleanser</h3>
+              </div>
+              <span class="btn-rhode-buy-pill">BUY - RS. 2,850</span>
+            </div>
+            <div class="buy-button-hover">
+                BUY Renewal Cleanser - RS. 2,850
+            </div>
+          </a>
+        </div>
+
+        <div class="card card-rhode" data-category="skincare">
+          <a href="/products/centella-skin-toner" class="card-link-wrapper">
+            <img src="./assets/v2-toner-2.jpg" class="card-hover-bg" alt="Renewal Toner Hover">
+            <div class="card-rhode-top">
+              <span class="card-brand-label">Pore Refining</span>
+            </div>
+            <div class="card-rhode-image">
+              <img src="./assets/v2-toner-1.jpeg" alt="Renewal Toner" class="product-main-img">
+            </div>
+            <div class="card-rhode-footer">
+              <div class="card-meta">
+                <div class="card-stars">★★★★★ <span class="review-count">(10k+)</span></div>
+                <h3 class="card-name">Renewal Toner</h3>
+              </div>
+              <span class="btn-rhode-buy-pill">BUY - RS. 2,670</span>
+            </div>
+            <div class="buy-button-hover">
+                BUY Renewal Toner - RS. 2,670
+            </div>
+          </a>
+        </div>
+
+        <div class="card card-rhode" data-category="skincare">
+          <a href="/products/renewal-toner" class="card-link-wrapper">
+            <img src="./assets/v2-toner-2.jpg" class="card-hover-bg" alt="Renewal Toner Hover">
+            <div class="card-rhode-top">
+              <span class="card-brand-label">Pore Refining</span>
+            </div>
+            <div class="card-rhode-image">
+              <img src="./assets/v2-toner-1.jpeg" alt="Renewal Toner" class="product-main-img">
+            </div>
+            <div class="card-rhode-footer">
+              <div class="card-meta">
+                <div class="card-stars">★★★★★ <span class="review-count">(10k+)</span></div>
+                <h3 class="card-name">Renewal Toner</h3>
+              </div>
+              <span class="btn-rhode-buy-pill">BUY - RS. 2,670</span>
+            </div>
+            <div class="buy-button-hover">
+                BUY Renewal Toner - RS. 2,670
+            </div>
+          </a>
+        </div>
+
+        <div class="card card-rhode" data-category="skincare">
+          <a href="/products/centella-moisturizer" class="card-link-wrapper">
+            <img src="./assets/moisturizer-meet-2.jpg" class="card-hover-bg" alt="Centella Moisturizer Hover">
+            <div class="card-rhode-top">
+              <span class="card-brand-label">Daily Dew</span>
+            </div>
+            <div class="card-rhode-image">
+              <img src="./assets/moisturizer-100.jpg" alt="Centella Moisturizer" class="product-main-img">
+            </div>
+            <div class="card-rhode-footer">
+              <div class="card-meta">
+                <div class="card-stars">★★★★★ <span class="review-count">(10k+)</span></div>
+                <h3 class="card-name">Centella Moisturizer</h3>
+              </div>
+              <span class="btn-rhode-buy-pill">BUY - RS. 1,800</span>
+            </div>
+            <div class="buy-button-hover">
+                BUY Centella Moisturizer - RS. 1,800
+            </div>
+          </a>
+        </div></div>
+    </section>
+
+
+    <!-- Mobile Sticky Cart -->
+    <div class="mobile-sticky-cart">
+      <button class="buy-button">ADD TO BAG - RS. 2,200</button>
+    </div>
+  </main>
+
+    <style>
+      .site-footer-rhode {
+        background-color: #f2f2ef;
+        color: #7A7973;
+        padding: 80px 40px 40px;
+        border-top: 1px solid rgba(0,0,0,0.05);
+        margin-top: 60px;
+      }
+      .footer-logo-massive {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 80px;
+        padding: 40px 20px;
+      }
+      .logo-text-giant {
+        font-size: 18vw; /* Reduced from 24vw to prevent overflow */
+        font-weight: 800;
+        color: #7A7973;
+        letter-spacing: -0.06em;
+        margin: 0;
+        line-height: 0.7;
+        text-transform: lowercase;
+      }
+      .footer-main-grid {
+        display: grid;
+        grid-template-columns: 1.5fr 1fr 1fr 1fr 1.2fr;
+        gap: 40px;
+        border-top: 1px solid #d1d1cf;
+        padding-top: 60px;
+      }
+      .footer-column h4 {
+        font-size: 0.85rem;
+        font-weight: 800;
+        color: #555;
+        margin-bottom: 24px;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+      }
+      .footer-column ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .footer-column ul li {
+        margin-bottom: 12px;
+      }
+      .footer-column ul li a {
+        font-size: 0.9rem;
+        color: #7A7973;
+        text-decoration: none;
+      }
+      .footer-newsletter-form {
+        display: flex;
+        background: #fff;
+        border: 1px solid rgba(0,0,0,0.1);
+        border-radius: 4px;
+        overflow: hidden;
+        margin-bottom: 16px;
+      }
+      .footer-newsletter-form input {
+        flex: 1;
+        border: none;
+        padding: 12px 16px;
+        outline: none;
+      }
+      .footer-newsletter-form button {
+        background: transparent;
+        border: none;
+        padding: 0 24px;
+        font-size: 0.7rem;
+        font-weight: 800;
+        cursor: pointer;
+      }
+      .footer-bottom-info {
+        margin-top: 60px;
+        padding-top: 20px;
+        border-top: 1px solid rgba(0,0,0,0.05);
+        font-size: 0.8rem;
+      }
+      @media (max-width: 900px) {
+        .footer-main-grid {
+          grid-template-columns: 1fr 1fr;
+          gap: 40px;
+        }
+        .logo-text-giant { font-size: 15vw; } /* Even smaller on mobile to be safe */
+      }
+      @media (max-width: 600px) {
+        .footer-main-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+
+    <footer class="site-footer-rhode">
+      <div class="footer-logo-massive">
+        <h1 class="logo-text-giant">elaris7</h1>
+      </div>
+      <div class="footer-main-grid">
+        <div class="footer-column">
+          <p class="newsletter-intro" style="font-weight:800; color:#333; margin-bottom:10px;">Join us on the road to an effortless glow.</p>
+          <form class="footer-newsletter-form">
+            <input type="email" placeholder="Email Address">
+            <button type="submit">SUBSCRIBE</button>
+          </form>
+          <p style="font-size:0.75rem; opacity:0.8;">By signing up, you agree to our Privacy Policy*.</p>
+        </div>
+        <div class="footer-column">
+          <h4>NAVIGATE</h4>
+          <ul>
+            <li><a href="#">Shop</a></li>
+            <li><a href="#">Our Story</a></li>
+            <li><a href="#">Impact</a></li>
+            <li><a href="#">Where to Find Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>SOCIAL</h4>
+          <ul>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">Youtube</a></li>
+            <li><a href="#">TikTok</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>OFFICIAL</h4>
+          <ul>
+            <li><a href="#">Privacy</a></li>
+            <li><a href="#">Terms</a></li>
+            <li><a href="#">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>SUPPORT</h4>
+          <p style="font-size:0.9rem;">We're here M-F 9am - 5pm PKT.</p>
+          <p style="font-size:0.9rem;">Drop us a note anytime.</p>
+          <div class="footer-bottom-info">
+            &copy; 2026 ELARIS7
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  <style>
     /* Breakdown Section Styles */
     .breakdown-section {
       display: grid;
@@ -3424,165 +4817,294 @@ a { color: inherit; text-decoration: none; }
         display: none;
       }
     }
+    /* Category Navigation Bar */
+    .category-bar {
+      padding: 20px 12px 15px;
+    }
+
+    .category-list {
+      display: flex;
+      gap: 10px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+
+    .category-list::-webkit-scrollbar { display: none; }
+
+    .cat-link {
+      font-size: 0.65rem;
+      font-weight: 700;
+      color: #5b5a53;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 8px 18px;
+      border: 1px solid #d1d1cf;
+      border-radius: 50px;
+      transition: all 0.3s ease;
+      white-space: nowrap;
+      display: inline-block;
+    }
+
+    .cat-link.active {
+      background-color: #5b5a53;
+      color: #fff;
+      border-color: #5b5a53;
+    }
+
+    @media (max-width: 768px) {
+      .category-bar {
+        padding: 15px 16px;
+      }
+    }
+
+    /* Product Selection Carousel */
+    .product-scroll-section {
+      position: relative;
+      margin-top: 20px;
+    }
+
+    .product-scroll-controls {
+      position: absolute;
+      top: 50%;
+      left: 15px;
+      right: 15px;
+      transform: translateY(-50%);
+      display: flex;
+      justify-content: space-between;
+      pointer-events: none;
+      z-index: 500;
+    }
+
+    .scroll-arrow {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: #ffffff;
+      border: 1px solid rgba(0,0,0,0.06);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      pointer-events: auto;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+      opacity: 1;
+    }
+
+    .scroll-arrow svg {
+      color: #333;
+      stroke-width: 2.5px;
+      width: 22px;
+      height: 22px;
+    }
+
+    .scroll-arrow:hover {
+      background: #fff;
+      transform: scale(1.1);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+    }
+
+    .product-collection {
+      display: flex;
+      gap: 16px;
+      overflow-x: auto;
+      scrollbar-width: none;
+      scroll-behavior: smooth;
+      padding: 10px 40px 30px;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .product-collection::-webkit-scrollbar { display: none; }
+
+    /* High Fidelity Product Cards (Rhode Style) */
+    .card-rhode {
+      flex: 0 0 30%;
+      min-width: 330px;
+      height: 600px;
+      background-color: #f6f5f3;
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      scroll-snap-align: start;
+      text-decoration: none;
+    }
+
+    .card-rhode:hover {
+      background-color: #f0eeeb;
+    }
+
+    .card-link-wrapper {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      padding: 24px;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .card-hover-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      z-index: 20;
+      pointer-events: none;
+      transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .card-rhode:hover .card-hover-bg {
+      opacity: 1;
+    }
+
+    .card-rhode-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 20px;
+      position: relative;
+      z-index: 10;
+    }
+
+    .card-brand-label {
+      font-size: 3.2rem;
+      font-weight: 900;
+      letter-spacing: -0.06em;
+      text-transform: lowercase;
+      color: #2c2b28;
+      line-height: 0.9;
+    }
+
+    .card-rhode-image {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      padding: 0;
+      overflow: hidden;
+    }
+
+    .product-main-img {
+      max-height: 380px;
+      max-width: 100%;
+      object-fit: contain;
+      transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.5s ease;
+    }
+
+    .card-rhode:hover .product-main-img {
+      opacity: 0;
+      transform: scale(1.05);
+    }
+
+    .card-rhode-footer {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: auto;
+      transition: opacity 0.3s ease;
+    }
+
+    .card-rhode:hover .card-rhode-footer {
+      opacity: 0;
+    }
+
+    .card-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .card-stars {
+      font-size: 0.65rem;
+      color: #333;
+      letter-spacing: 0.1em;
+    }
+
+    .review-count {
+      color: #7A7973;
+      margin-left: 4px;
+    }
+
+    .card-name {
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #333;
+    }
+
+    .btn-rhode-buy-pill {
+      width: 100%;
+      padding: 10px;
+      background: transparent;
+      border: 1px solid #333;
+      color: #333;
+      border-radius: 50px;
+      text-align: center;
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      transition: all 0.3s ease;
+    }
+
+    /* Buy Button Pop-up */
+    .buy-button-hover {
+      position: absolute;
+      bottom: 25px;
+      left: 50%;
+      transform: translateX(-50%) translateY(20px);
+      width: auto;
+      min-width: 80%;
+      white-space: nowrap;
+      background: white;
+      color: #2c2b28;
+      padding: 11px 24px;
+      border-radius: 40px;
+      text-align: center;
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      opacity: 0;
+      z-index: 30;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      border: 1px solid rgba(0,0,0,0.05);
+    }
+
+    .card-rhode:hover .buy-button-hover {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    @media (max-width: 768px) {
+      .card-rhode {
+        flex: 0 0 80%;
+        height: auto;
+        min-width: unset;
+        min-height: 480px;
+        overflow: visible !important;
+      }
+      .card-brand-label {
+        font-size: 1.8rem;
+      }
+      .product-collection {
+        padding: 10px 16px 30px;
+      }
+    }
   </style>
-
-</head>
-<body>
-  <header class="site-header">
-    <div class="announcement-bar">
-      free shipping on all orders over rs. 2000
-    </div>
-    <div class="header-main">
-      <nav class="header-nav">
-        <div class="menu-trigger" id="menu-open-product">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-        <ul class="desktop-only">
-          <li><a href="#">SHOP</a></li>
-          <li><a href="#">ABOUT</a></li>
-          <li><a href="#">FUTURES</a></li>
-        </ul>
-      </nav>
-      <div class="header-logo"><a href="index.html" class="logo-text">elaris7</a></div>
-      <nav class="header-nav header-right">
-        <ul class="desktop-only">
-          <li><a href="#">SEARCH</a></li>
-          <li><a href="#">ACCOUNT</a></li>
-          <li><a href="#">CART (0)</a></li>
-        </ul>
-        <div class="mobile-only mobile-header-icons">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-          <div class="cart-icon-wrapper">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
-            <span class="cart-count">0</span>
-          </div>
-        </div>
-      </nav>
-    </div>
-  </header>
-
-  <main class="product-page">
-    <div class="product-grid">
-      <div class="product-gallery">
-        <div class="gallery-thumbnails">
-          <div class="thumb-item active"><img src="./assets/glow-serum-100.jpg" alt="Thumb 1"></div>
-        </div>
-        <div class="gallery-main-viewport">
-          <div class="gallery-slider"><div class="gallery-slide"><img src="./assets/glow-serum-100.jpg" alt="Main View 1"></div></div>
-        </div>
-      </div>
-      <div class="product-details">
-        <div class="product-details-inner">
-          <div class="product-header">
-            <h1 class="product-title">Glow<br>Serum</h1>
-            <div class="product-award"><div class="award-seal">BEST OF BEAUTY</div></div>
-          </div>
-          <div class="product-meta">
-            <span class="product-subtitle">Radiance Renewal</span>
-            <div class="product-reviews"><span class="stars">â˜…â˜…â˜…â˜…â˜…</span><span class="review-count">(16k)</span></div>
-          </div>
-          <div class="product-description">
-            <p>Our Glow Serum is a high-performance formula designed to give your skin a natural, healthy radiance. Infused with brightening complexes and hydrating botanicals, it helps reveal a smoother and more luminous complexion.</p>
-          </div>
-          <hr class="divider">
-          <button class="buy-button">ADD TO BAG - Rs. 1,500</button>
-          <hr class="divider">
-          <div class="product-accordions accordions">
-            <details class="accordion-item"><summary><span>BENEFITS</span><span>+</span></summary><div class="accordion-content"><ul><li>Boosts skin radiance</li><li>Provides intensive hydration</li><li>Improves skin texture</li></ul></div></details>
-          </div>
-        </div>
-      </div>
-    </div>
-    
-    <section class="meet-product-section"><h2 class="meet-title">Your Secret to Glowing Skin</h2></section>
-
-    <!-- Product Breakdown Section -->
-    <section class="breakdown-section" style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 16px;">
-      <div class="breakdown-content" style="background-color: #f3f0ec; border-radius: 14px; padding: 60px 40px;">
-        <h2 class="bd-title" style="font-size: 2rem; font-weight: 500; color: #6a6863; margin-bottom: 40px;">A potent serum for building a healthy, radiant glow.</h2>
-        <div class="bd-table">
-          <div class="bd-row" style="display: flex; justify-content: space-between; border-bottom: 1px solid rgba(91,90,83,0.15); padding: 16px 0;">
-            <span class="bd-label" style="font-weight: 700; font-size: 0.85rem; color: #5b5a53;">GOOD FOR:</span>
-            <span class="bd-val" style="font-size: 0.85rem; color: #5b5a53; text-align: right;">All skin types</span>
-          </div>
-        </div>
-      </div>
-      <div class="breakdown-image" style="border-radius: 14px; overflow: hidden;"><img src="https://images.unsplash.com/photo-1629198688000-71f23e745b6e?q=80&w=600" alt="Product Detail" style="width: 100%; height: 100%; object-fit: cover;"></div>
-    </section>
-    
-    <div class="mobile-sticky-cart"><button class="buy-button">ADD TO BAG - Rs. 1,500</button></div>
-  </main>
-
-  <footer class="footer-block">
-    <div class="footer-logo-massive">
-      <span class="logo-text">elaris7</span>
-    </div>
-    
-    <div class="footer-grid-container">
-      <!-- Col 1: Newsletter -->
-      <div class="footer-grid-col newsletter-box">
-        <p>Join us on the road to an effortless glow.</p>
-        <div class="newsletter-input-group">
-          <input type="email" placeholder="Email Address">
-          <button type="submit">SUBSCRIBE</button>
-        </div>
-        <p style="font-size: 0.7rem; color: #999;">By signing up, you agree to our Privacy Policy*.</p>
-      </div>
-
-      <!-- Col 2: Navigate -->
-      <div class="footer-grid-col">
-        <h4>NAVIGATE</h4>
-        <ul>
-          <li><a href="#">Shop</a></li>
-          <li><a href="#">Our Story</a></li>
-          <li><a href="#">E7 Futures</a></li>
-          <li><a href="#">Impact</a></li>
-          <li><a href="#">Where to Find Us</a></li>
-        </ul>
-      </div>
-
-      <!-- Col 3: Social -->
-      <div class="footer-grid-col">
-        <h4>SOCIAL</h4>
-        <ul>
-          <li><a href="#">Instagram</a></li>
-          <li><a href="#">Youtube</a></li>
-          <li><a href="#">TikTok</a></li>
-          <li><a href="#">Pinterest</a></li>
-        </ul>
-      </div>
-
-      <!-- Col 4: Official -->
-      <div class="footer-grid-col">
-        <h4>OFFICIAL</h4>
-        <ul>
-          <li><a href="#">Privacy</a></li>
-          <li><a href="#">Terms</a></li>
-          <li><a href="#">Accessibility</a></li>
-          <li><a href="#">FAQ</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-      </div>
-
-      <!-- Col 5: Support -->
-      <div class="footer-grid-col">
-        <h4>SUPPORT</h4>
-        <div class="support-text">
-          <p>We're here M-F 9am - 5pm PKT.</p>
-          <p style="margin-top: 15px;">Drop us a note anytime.</p>
-        </div>
-        <div class="footer-bottom-info">
-          Ã‚Â© ELARIS7 2026
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  
+  <script src="./assets/script.js" defer></script>
 </body>
 </html>
-
-
 
