@@ -1454,23 +1454,23 @@
       }
     ],
     "Images": {
-      "Hero": "v2-toner-1.jpeg",
+      "Hero": "toner1.jpeg",
       "Gallery": [
-        "v2-toner-1.jpeg",
-        "v2-toner-2.jpg",
-        "v2-toner-3.jpg",
-        "v2-toner-4.jpg"
+        "toner1.jpeg",
+        "toner2.jpg",
+        "toner3.jpg",
+        "toner4.jpg"
       ],
-      "Breakdown": "v2-toner-plate.jpg",
-      "WhatsInside": "v2-toner-spoon.jpg",
-      "Spread": "v2-toner-spread.jpg",
-      "Stats": "v2-toner-stats.jpg",
-      "FAQ": "v2-toner-faq.jpg",
+      "Breakdown": "plate.jpg",
+      "WhatsInside": "spoon.jpg",
+      "Spread": "spread.jpg",
+      "Stats": "percentage.jpg",
+      "FAQ": "faq.jpg",
       "Carousel": [
-        "v2-toner-1.jpeg",
-        "v2-toner-2.jpg",
-        "v2-toner-3.jpg",
-        "v2-toner-4.jpg"
+        "toner1.jpeg",
+        "toner2.jpg",
+        "toner3.jpg",
+        "toner4.jpg"
       ]
     }
   },
@@ -1536,23 +1536,23 @@
       }
     ],
     "Images": {
-      "Hero": "v2-toner-1.jpeg",
+      "Hero": "toner1.jpeg",
       "Gallery": [
-        "v2-toner-1.jpeg",
-        "v2-toner-2.jpg",
-        "v2-toner-3.jpg",
-        "v2-toner-4.jpg"
+        "toner1.jpeg",
+        "toner2.jpg",
+        "toner3.jpg",
+        "toner4.jpg"
       ],
-      "Breakdown": "v2-toner-plate.jpg",
-      "WhatsInside": "v2-toner-spoon.jpg",
-      "Spread": "v2-toner-spread.jpg",
-      "Stats": "v2-toner-stats.jpg",
-      "FAQ": "v2-toner-faq.jpg",
+      "Breakdown": "plate.jpg",
+      "WhatsInside": "spoon.jpg",
+      "Spread": "spread.jpg",
+      "Stats": "percentage.jpg",
+      "FAQ": "faq.jpg",
       "Carousel": [
-        "v2-toner-1.jpeg",
-        "v2-toner-2.jpg",
-        "v2-toner-3.jpg",
-        "v2-toner-4.jpg"
+        "toner1.jpeg",
+        "toner2.jpg",
+        "toner3.jpg",
+        "toner4.jpg"
       ]
     }
   }
