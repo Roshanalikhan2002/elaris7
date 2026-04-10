@@ -399,10 +399,7 @@ function updateTemplate(p) {
     }
 
     // 14. Asset URL Conversion (Final Sweep)
-    c = c.replace(/src="(?:\.\/assets\/|)([\w\.\s-]+\.(?:jpg|png|jpeg|webp|gif|svg))"/g, 'src="{{ "$1" | asset_url }}"');
-    
-    // 14.1. Navigation Cleanup for Shopify
-    c = c.replace(/href="index\.html"/g, 'href="{{ routes.root_url }}"');
+    c = c.replace(/src="(?:\.\/assets\/|)([\w\.-]+\.(?:jpg|png|jpeg|webp|gif|svg))"/g, 'src="{{ "$1" | asset_url }}"');
 
     const targetPath = path.join(templatesDir, p.File);
     fs.writeFileSync(targetPath, c, 'utf8');
