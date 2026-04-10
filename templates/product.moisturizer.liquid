@@ -182,7 +182,7 @@ a { color: inherit; text-decoration: none; }
   /*
    * Rhode-exact layout:
    * - Announcement bar: on white bg, in normal flow
-   * - Header-main: absolute, top:100% Ã¢â€ â€™ floats RIGHT ON TOP of the hero image
+   * - Header-main: absolute, top:100% ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬â„¢ floats RIGHT ON TOP of the hero image
    * - Hero card: starts immediately after announcement bar
    */
   .site-header {
@@ -565,7 +565,7 @@ a { color: inherit; text-decoration: none; }
     object-fit: contain;
   }
 
-  /* Rhode layout: text wraps 2 lines on RIGHT, button stacked BELOW Ã¢â‚¬â€ column, right-aligned */
+  /* Rhode layout: text wraps 2 lines on RIGHT, button stacked BELOW ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â column, right-aligned */
   .hero-bottom {
     position: absolute;
     left: 0;
@@ -576,7 +576,7 @@ a { color: inherit; text-decoration: none; }
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    align-items: flex-end; /* RIGHT-aligned Ã¢â‚¬â€ matches Rhode BOTTOM_RIGHT class */
+    align-items: flex-end; /* RIGHT-aligned ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â matches Rhode BOTTOM_RIGHT class */
     gap: 8px;
     background: transparent;
     text-align: right;
@@ -827,7 +827,7 @@ a { color: inherit; text-decoration: none; }
   }
 }
 
-/* Ã¢â€â‚¬Ã¢â€â‚¬ Rhode-style product cards (High Fidelity) Ã¢â€â‚¬Ã¢â€â‚¬ */
+/* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ Rhode-style product cards (High Fidelity) ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
 .card-rhode {
   flex: 0 0 30%; /* Clearly shows peek on most screens move move moved moves move move move move move move */
   min-width: 330px;
@@ -1169,7 +1169,7 @@ a { color: inherit; text-decoration: none; }
   margin-top: 8px;
 }
 
-/* Product image Ã¢â‚¬â€ centered, transparent bg, fills remaining space */
+/* Product image ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â centered, transparent bg, fills remaining space */
 .card-rhode-image {
   flex: 1;
   display: flex;
@@ -1213,7 +1213,7 @@ a { color: inherit; text-decoration: none; }
   opacity: 0;
 }
 
-/* Ã¢â€â‚¬Ã¢â€â‚¬ Buy Button Pop-up Ã¢â€â‚¬Ã¢â€â‚¬ */
+/* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ Buy Button Pop-up ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
 .buy-button-hover {
   position: absolute;
   bottom: 25px;
@@ -1293,7 +1293,7 @@ a { color: inherit; text-decoration: none; }
   margin-top: 4px;
 }
 
-/* Hover CTA Ã¢â‚¬â€ slides up from bottom */
+/* Hover CTA ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â slides up from bottom */
 .card-rhode-hover {
   position: absolute;
   bottom: 0;
@@ -2069,7 +2069,7 @@ a { color: inherit; text-decoration: none; }
   color: #2c2b28;
 }
 
-/* Ã¢â€â‚¬Ã¢â€â‚¬ Mobile: seamlessly connected, zero gap Ã¢â€â‚¬Ã¢â€â‚¬ */
+/* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ Mobile: seamlessly connected, zero gap ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
 @media (max-width: 768px) {
   .split-category-wrapper {
     margin: 0 0 12px; /* flush to screen edges */
@@ -2176,15 +2176,14 @@ a { color: inherit; text-decoration: none; }
     <div class="product-grid">
       
     <style>
+      /* Main Product Gallery Styling */
       .product-gallery {
-        position: sticky;
-        top: 20px;
-        height: calc(100vh - 40px);
         display: flex;
         gap: 15px;
-        background: #f2f0ed;
-        padding: 15px;
-        border-radius: 14px;
+        background: #fff;
+        padding: 10px;
+        border-radius: 12px;
+        height: 100%;
       }
       .gallery-thumbnails {
         display: flex;
@@ -2194,8 +2193,8 @@ a { color: inherit; text-decoration: none; }
         width: 60px;
       }
       .thumb-item {
-        width: 50px;
-        height: 50px;
+        width: 55px;
+        height: 55px;
         border-radius: 8px;
         overflow: hidden;
         cursor: pointer;
@@ -2205,7 +2204,6 @@ a { color: inherit; text-decoration: none; }
       }
       .thumb-item:hover, .thumb-item.active {
         border-color: #002d5f;
-        transform: scale(1.1);
       }
       .thumb-item img {
         width: 100%;
@@ -2232,10 +2230,35 @@ a { color: inherit; text-decoration: none; }
         justify-content: center;
       }
       .gallery-slide img {
-        max-width: 90%;
-        max-height: 90%;
+        max-width: 100%;
+        max-height: 100%;
         object-fit: contain;
       }
+
+      /* Desktop Fixed-Height Internal Scroll Logic */
+      @media (min-width: 901px) {
+        .product-page {
+          background-color: #f3f0ec; 
+          margin: 115px 12px 12px;
+          padding: 0;
+          border-radius: 14px;
+          overflow: hidden;
+        }
+        .product-grid {
+          display: grid;
+          grid-template-columns: 1.1fr 0.9fr;
+          height: 700px; /* Fixed height for parity */
+          gap: 0;
+        }
+        .product-details {
+          height: 100%;
+          min-height: auto !important;
+          overflow-y: auto;
+          scrollbar-width: none;
+        }
+        .product-details::-webkit-scrollbar { display: none; }
+      }
+
       @media (max-width: 850px) {
         .product-gallery {
           flex-direction: column-reverse;
@@ -2311,7 +2334,7 @@ a { color: inherit; text-decoration: none; }
           <div class="product-meta">
             <span class="product-subtitle">Night Renewal</span>
             <div class="product-reviews">
-              <span class="stars">Ã¢Ëœâ€¦Ã¢Ëœâ€¦Ã¢Ëœâ€¦Ã¢Ëœâ€¦Ã¢Ëœâ€¦</span>
+              <span class="stars">ÃƒÂ¢Ã‹Å“Ã¢â‚¬Â¦ÃƒÂ¢Ã‹Å“Ã¢â‚¬Â¦ÃƒÂ¢Ã‹Å“Ã¢â‚¬Â¦ÃƒÂ¢Ã‹Å“Ã¢â‚¬Â¦ÃƒÂ¢Ã‹Å“Ã¢â‚¬Â¦</span>
               <span class="review-count">(16k)</span>
             </div>
           </div>
@@ -2440,10 +2463,9 @@ a { color: inherit; text-decoration: none; }
             </details>
           </div>
 
-        </div>
-      </div>
-
-    </div>
+        </div><!-- End Details -->
+      </div><!-- End Grid -->
+    </div><!-- End Page -->
 
     <!-- Meet the Product Section -->
     <section class="meet-product-section">
@@ -2486,7 +2508,7 @@ a { color: inherit; text-decoration: none; }
           </div>
           <div class="bd-row">
             <span class="bd-label">FYI:</span>
-            <span class="bd-val">Halal-Friendly Ã¢â‚¬Â¢ Dermatologist-Tested Ã¢â‚¬Â¢ Non-Sticky Ã¢â‚¬Â¢ Repair-Focused</span>
+            <span class="bd-val">Halal-Friendly ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ Dermatologist-Tested ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ Non-Sticky ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ Repair-Focused</span>
           </div>
         </div>
       </div>
@@ -2639,7 +2661,7 @@ a { color: inherit; text-decoration: none; }
     <section class="reviews-section">
       <div class="reviews-header">
         <div class="rv-overall">
-          <div class="rv-score">4.7 <span class="rv-stars">Ã¢Ëœâ€¦Ã¢Ëœâ€¦Ã¢Ëœâ€¦Ã¢Ëœâ€¦Ã¢Ëœâ€¦</span></div>
+          <div class="rv-score">4.7 <span class="rv-stars">ÃƒÂ¢Ã‹Å“Ã¢â‚¬Â¦ÃƒÂ¢Ã‹Å“Ã¢â‚¬Â¦ÃƒÂ¢Ã‹Å“Ã¢â‚¬Â¦ÃƒÂ¢Ã‹Å“Ã¢â‚¬Â¦ÃƒÂ¢Ã‹Å“Ã¢â‚¬Â¦</span></div>
           <div class="rv-avg-text">AVERAGE RATING</div>
         </div>
       </div>
@@ -2662,10 +2684,10 @@ a { color: inherit; text-decoration: none; }
         </div>
         <div class="rv-main">
           <div class="rv-main-header">
-            <div class="rv-stars">Ã¢Ëœâ€¦Ã¢Ëœâ€¦Ã¢Ëœâ€¦Ã¢Ëœâ€¦Ã¢Ëœâ€¦</div>
+            <div class="rv-stars">ÃƒÂ¢Ã‹Å“Ã¢â‚¬Â¦ÃƒÂ¢Ã‹Å“Ã¢â‚¬Â¦ÃƒÂ¢Ã‹Å“Ã¢â‚¬Â¦ÃƒÂ¢Ã‹Å“Ã¢â‚¬Â¦ÃƒÂ¢Ã‹Å“Ã¢â‚¬Â¦</div>
           </div>
           <div class="rv-title">Stronger Skin Barrier</div>
-          <div class="rv-body">Ã¢â‚¬Å“IÃ¢â‚¬â„¢ve been using it for 2 weeks, and my skin barrier feels so much stronger and healthier. My skin looks brighter, more even-toned, and IÃ¢â‚¬â„¢m genuinely loving the glow. Ã¢â‚¬ </div>
+          <div class="rv-body">ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œIÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ve been using it for 2 weeks, and my skin barrier feels so much stronger and healthier. My skin looks brighter, more even-toned, and IÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢m genuinely loving the glow. ÃƒÂ¢Ã¢â€šÂ¬ </div>
         </div>
       </div>
 
@@ -2679,10 +2701,10 @@ a { color: inherit; text-decoration: none; }
         </div>
         <div class="rv-main">
           <div class="rv-main-header">
-            <div class="rv-stars">Ã¢Ëœâ€¦Ã¢Ëœâ€¦Ã¢Ëœâ€¦Ã¢Ëœâ€¦Ã¢Ëœâ€¦</div>
+            <div class="rv-stars">ÃƒÂ¢Ã‹Å“Ã¢â‚¬Â¦ÃƒÂ¢Ã‹Å“Ã¢â‚¬Â¦ÃƒÂ¢Ã‹Å“Ã¢â‚¬Â¦ÃƒÂ¢Ã‹Å“Ã¢â‚¬Â¦ÃƒÂ¢Ã‹Å“Ã¢â‚¬Â¦</div>
           </div>
           <div class="rv-title">Love the texture!</div>
-          <div class="rv-body">Ã¢â‚¬Å“IÃ¢â‚¬â„¢m honestly in love with the texture Ã¢â‚¬â€ itÃ¢â‚¬â„¢s lightweight, smooth, and absorbs instantly without any greasiness. My skin feels soft, hydrated, and has a natural glow every morning.Ã¢â‚¬ </div>
+          <div class="rv-body">ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œIÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢m honestly in love with the texture ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â itÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢s lightweight, smooth, and absorbs instantly without any greasiness. My skin feels soft, hydrated, and has a natural glow every morning.ÃƒÂ¢Ã¢â€šÂ¬ </div>
         </div>
       </div>
 
@@ -2696,10 +2718,10 @@ a { color: inherit; text-decoration: none; }
         </div>
         <div class="rv-main">
           <div class="rv-main-header">
-            <div class="rv-stars">Ã¢Ëœâ€¦Ã¢Ëœâ€¦Ã¢Ëœâ€¦Ã¢Ëœâ€¦Ã¢Ëœâ€¦</div>
+            <div class="rv-stars">ÃƒÂ¢Ã‹Å“Ã¢â‚¬Â¦ÃƒÂ¢Ã‹Å“Ã¢â‚¬Â¦ÃƒÂ¢Ã‹Å“Ã¢â‚¬Â¦ÃƒÂ¢Ã‹Å“Ã¢â‚¬Â¦ÃƒÂ¢Ã‹Å“Ã¢â‚¬Â¦</div>
           </div>
           <div class="rv-title">10/10 Experience</div>
-          <div class="rv-body">Ã¢â‚¬Å“Received my order and IÃ¢â‚¬â„¢m super impressed with both the product and packaging. Everything feels premium Ã¢â‚¬â€ definitely a 10/10 experience for me!Ã¢â‚¬ </div>
+          <div class="rv-body">ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œReceived my order and IÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢m super impressed with both the product and packaging. Everything feels premium ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â definitely a 10/10 experience for me!ÃƒÂ¢Ã¢â€šÂ¬ </div>
         </div>
       </div>
 
@@ -2713,10 +2735,10 @@ a { color: inherit; text-decoration: none; }
         </div>
         <div class="rv-main">
           <div class="rv-main-header">
-            <div class="rv-stars">Ã¢Ëœâ€¦Ã¢Ëœâ€¦Ã¢Ëœâ€¦Ã¢Ëœâ€¦Ã¢Ëœâ€¦</div>
+            <div class="rv-stars">ÃƒÂ¢Ã‹Å“Ã¢â‚¬Â¦ÃƒÂ¢Ã‹Å“Ã¢â‚¬Â¦ÃƒÂ¢Ã‹Å“Ã¢â‚¬Â¦ÃƒÂ¢Ã‹Å“Ã¢â‚¬Â¦ÃƒÂ¢Ã‹Å“Ã¢â‚¬Â¦</div>
           </div>
           <div class="rv-title">Visible improvement</div>
-          <div class="rv-body">Ã¢â‚¬Å“After consistent use, my skin feels deeply hydrated and looks much more refreshed. IÃ¢â‚¬â„¢ve noticed a visible improvement in texture and overall glow.Ã¢â‚¬ </div>
+          <div class="rv-body">ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œAfter consistent use, my skin feels deeply hydrated and looks much more refreshed. IÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ve noticed a visible improvement in texture and overall glow.ÃƒÂ¢Ã¢â€šÂ¬ </div>
         </div>
       </div>
 
@@ -2730,10 +2752,10 @@ a { color: inherit; text-decoration: none; }
         </div>
         <div class="rv-main">
           <div class="rv-main-header">
-            <div class="rv-stars">Ã¢Ëœâ€¦Ã¢Ëœâ€¦Ã¢Ëœâ€¦Ã¢Ëœâ€¦Ã¢Ëœâ€¦</div>
+            <div class="rv-stars">ÃƒÂ¢Ã‹Å“Ã¢â‚¬Â¦ÃƒÂ¢Ã‹Å“Ã¢â‚¬Â¦ÃƒÂ¢Ã‹Å“Ã¢â‚¬Â¦ÃƒÂ¢Ã‹Å“Ã¢â‚¬Â¦ÃƒÂ¢Ã‹Å“Ã¢â‚¬Â¦</div>
           </div>
           <div class="rv-title">Gentle yet effective</div>
-          <div class="rv-body">Ã¢â‚¬Å“The night cream feels very gentle yet effective Ã¢â‚¬â€ my skin looks brighter and healthier with regular use. Waking up to soft, smoother skin is the best!Ã¢â‚¬ </div>
+          <div class="rv-body">ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œThe night cream feels very gentle yet effective ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â my skin looks brighter and healthier with regular use. Waking up to soft, smoother skin is the best!ÃƒÂ¢Ã¢â€šÂ¬ </div>
         </div>
       </div>
 
@@ -2762,7 +2784,7 @@ a { color: inherit; text-decoration: none; }
             <img src="./assets/wash-white.png" alt="Face Wash" class="product-main-img">
           </div>
           <div class="card-rhode-details">
-            <div class="card-stars">Ã¢Ëœâ€¦Ã¢Ëœâ€¦Ã¢Ëœâ€¦Ã¢Ëœâ€¦Ã¢Ëœâ€¦ <span>(16,042)</span></div>
+            <div class="card-stars">ÃƒÂ¢Ã‹Å“Ã¢â‚¬Â¦ÃƒÂ¢Ã‹Å“Ã¢â‚¬Â¦ÃƒÂ¢Ã‹Å“Ã¢â‚¬Â¦ÃƒÂ¢Ã‹Å“Ã¢â‚¬Â¦ÃƒÂ¢Ã‹Å“Ã¢â‚¬Â¦ <span>(16,042)</span></div>
             <div class="card-name-row">
               <h3 class="card-name">Centella Face Wash</h3>
               <span class="card-price">RS. 1,500</span>
@@ -2770,7 +2792,7 @@ a { color: inherit; text-decoration: none; }
             <p class="card-desc">The gentle foaming cleanser</p>
           </div>
           <div class="card-rhode-hover">
-            <a href="#" class="btn-rhode-buy">Add to bag Ã¢â‚¬â€ RS. 1,500</a>
+            <a href="#" class="btn-rhode-buy">Add to bag ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â RS. 1,500</a>
           </div>
         </div>
 
@@ -2784,7 +2806,7 @@ a { color: inherit; text-decoration: none; }
             <img src="./assets/essence-white.png" alt="Toner" class="product-main-img">
           </div>
           <div class="card-rhode-details">
-            <div class="card-stars">Ã¢Ëœâ€¦Ã¢Ëœâ€¦Ã¢Ëœâ€¦Ã¢Ëœâ€¦Ã‚Â½ <span>(8,945)</span></div>
+            <div class="card-stars">ÃƒÂ¢Ã‹Å“Ã¢â‚¬Â¦ÃƒÂ¢Ã‹Å“Ã¢â‚¬Â¦ÃƒÂ¢Ã‹Å“Ã¢â‚¬Â¦ÃƒÂ¢Ã‹Å“Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â½ <span>(8,945)</span></div>
             <div class="card-name-row">
               <h3 class="card-name">Refining Toner</h3>
               <span class="card-price">RS. 1,800</span>
@@ -2792,7 +2814,7 @@ a { color: inherit; text-decoration: none; }
             <p class="card-desc">Ceramide facial essence</p>
           </div>
           <div class="card-rhode-hover">
-            <a href="#" class="btn-rhode-buy">Add to bag Ã¢â‚¬â€ RS. 1,800</a>
+            <a href="#" class="btn-rhode-buy">Add to bag ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â RS. 1,800</a>
           </div>
         </div>
 
@@ -2806,14 +2828,14 @@ a { color: inherit; text-decoration: none; }
             <img src="./assets/barrier-white.png" alt="Cream" class="product-main-img">
           </div>
           <div class="card-rhode-details">
-            <div class="card-stars">Ã¢Ëœâ€¦Ã¢Ëœâ€¦Ã¢Ëœâ€¦Ã¢Ëœâ€¦Ã¢Ëœâ€¦ <span>(12,120)</span></div>
+            <div class="card-stars">ÃƒÂ¢Ã‹Å“Ã¢â‚¬Â¦ÃƒÂ¢Ã‹Å“Ã¢â‚¬Â¦ÃƒÂ¢Ã‹Å“Ã¢â‚¬Â¦ÃƒÂ¢Ã‹Å“Ã¢â‚¬Â¦ÃƒÂ¢Ã‹Å“Ã¢â‚¬Â¦ <span>(12,120)</span></div>
             <div class="card-name-row">
               <h3 class="card-name">Barrier Cream</h3>
               <span class="card-price">RS. 2,200</span>
             </div>
             <p class="card-desc">Intensive recovery moisturizer</p>
           <div class="card-rhode-hover">
-            <a href="#" class="btn-rhode-buy">Add to bag Ã¢â‚¬â€ RS. 2,200</a>
+            <a href="#" class="btn-rhode-buy">Add to bag ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â RS. 2,200</a>
           </div>
         </div>
 
@@ -2886,7 +2908,7 @@ a { color: inherit; text-decoration: none; }
           <p style="margin-top: 15px;">Drop us a note anytime.</p>
         </div>
         <div class="footer-bottom-info">
-          Ã‚Â© ELARIS7 2026
+          Ãƒâ€šÃ‚Â© ELARIS7 2026
         </div>
       </div>
     </div>
