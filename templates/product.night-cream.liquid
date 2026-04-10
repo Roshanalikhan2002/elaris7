@@ -2384,7 +2384,177 @@ a { color: inherit; text-decoration: none; }
             </div>
           </div>
 
-          <button class="buy-button" style="white-space: nowrap;">ADD TO BAG - <span>Rs. 2,660</span></button>
+          <div class="product-actions-grid">
+            <button class="buy-button add-to-cart-btn" style="white-space: nowrap;">ADD TO CART - <span>Rs. 2,660</span></button>
+            <button class="buy-button bogo-btn" id="openBogo">BUY 1 GET 1 FREE</button>
+          </div>
+          
+          <style>
+            .product-actions-grid {
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 12px;
+              margin-bottom: 20px;
+            }
+            .add-to-cart-btn {
+              background-color: #002d5f !important; /* Standout blue */
+              color: #fff !important;
+            }
+            .bogo-btn {
+              background-color: #fff !important;
+              color: #002d5f !important;
+              border: 1px solid #002d5f !important;
+            }
+            @media (max-width: 600px) {
+              .product-actions-grid {
+                grid-template-columns: 1fr;
+              }
+            }
+
+            /* BOGO Drawer Styling */
+            .bogo-drawer {
+              position: fixed;
+              bottom: 0;
+              left: 0;
+              right: 0;
+              background: #fff;
+              z-index: 3000;
+              border-radius: 24px 24px 0 0;
+              box-shadow: 0 -10px 40px rgba(0,0,0,0.15);
+              padding: 30px 20px;
+              transform: translateY(100%);
+              transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+              max-height: 80vh;
+              overflow-y: auto;
+            }
+            .bogo-drawer.open {
+              transform: translateY(0);
+            }
+            .bogo-overlay {
+              position: fixed;
+              top: 0;
+              left: 0;
+              right: 0;
+              bottom: 0;
+              background: rgba(0,0,0,0.4);
+              z-index: 2900;
+              display: none;
+            }
+            .bogo-overlay.open {
+              display: block;
+            }
+            .bogo-header {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              margin-bottom: 20px;
+            }
+            .bogo-title {
+              font-size: 1.2rem;
+              font-weight: 800;
+              color: #002d5f;
+              letter-spacing: -0.02em;
+            }
+            .bogo-close {
+              cursor: pointer;
+              font-weight: 800;
+              font-size: 1.5rem;
+              color: #5b5a53;
+            }
+            .bogo-scroll-area {
+              display: flex;
+              gap: 16px;
+              overflow-x: auto;
+              padding-bottom: 10px;
+              scrollbar-width: thin;
+            }
+            .bogo-card {
+              flex: 0 0 200px;
+              background: #f1efea;
+              border-radius: 12px;
+              padding: 12px;
+              display: flex;
+              flex-direction: column;
+              gap: 8px;
+              cursor: pointer;
+              border: 2px solid transparent;
+            }
+            .bogo-card:hover {
+              border-color: #002d5f;
+            }
+            .bogo-card img {
+              width: 100%;
+              height: 140px;
+              object-fit: contain;
+              background: #fff;
+              border-radius: 8px;
+            }
+            .bogo-product-name {
+              font-size: 0.85rem;
+              font-weight: 700;
+              color: #333;
+            }
+            .bogo-add-btn {
+              background: #002d5f;
+              color: #fff;
+              border: none;
+              padding: 6px;
+              border-radius: 6px;
+              font-size: 0.75rem;
+              font-weight: 600;
+            }
+          </style>
+
+          <div class="bogo-overlay" id="bogoOverlay"></div>
+          <div class="bogo-drawer" id="bogoDrawer">
+            <div class="bogo-header">
+              <span class="bogo-title">Select Your Free Product</span>
+              <span class="bogo-close" id="closeBogo">&times;</span>
+            </div>
+            <div class="bogo-scroll-area">
+              <!-- Cards will be populated dynamically or via migration -->
+              <div class="bogo-card">
+                <img src="{{ "nightcream-v3-1.jpeg" | asset_url }}" alt="Product">
+                <span class="bogo-product-name">Centella Night Cream</span>
+                <button class="bogo-add-btn">Select</button>
+              </div>
+              <div class="bogo-card">
+                <img src="{{ "nightcream-v3-1.jpeg" | asset_url }}" alt="Product">
+                <span class="bogo-product-name">Centella Moisturizer</span>
+                <button class="bogo-add-btn">Select</button>
+              </div>
+              <div class="bogo-card">
+                <img src="{{ "nightcream-v3-1.jpeg" | asset_url }}" alt="Product">
+                <span class="bogo-product-name">Centella Face Wash</span>
+                <button class="bogo-add-btn">Select</button>
+              </div>
+               <div class="bogo-card">
+                <img src="{{ "nightcream-v3-1.jpeg" | asset_url }}" alt="Product">
+                <span class="bogo-product-name">Centella Glow Serum</span>
+                <button class="bogo-add-btn">Select</button>
+              </div>
+            </div>
+          </div>
+
+          <script>
+            const openBogo = document.getElementById('openBogo');
+            const closeBogo = document.getElementById('closeBogo');
+            const bogoDrawer = document.getElementById('bogoDrawer');
+            const bogoOverlay = document.getElementById('bogoOverlay');
+
+            openBogo.addEventListener('click', () => {
+              bogoDrawer.classList.add('open');
+              bogoOverlay.classList.add('open');
+            });
+
+            const hideBogo = () => {
+              bogoDrawer.classList.remove('open');
+              bogoOverlay.classList.remove('open');
+            };
+
+            closeBogo.addEventListener('click', hideBogo);
+            bogoOverlay.addEventListener('click', hideBogo);
+          </script>
           
 
 

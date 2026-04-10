@@ -22,7 +22,7 @@ function updateTemplate(p) {
     c = c.replace('<title>Centella Night Cream', `<title>${p.Title}`);
     c = c.replace('class="product-subtitle">Night Renewal', `class="product-subtitle">${p.Subtitle}`);
     
-    // Global Price Replacement (Be careful with strings like "2,660")
+    // Global Price Replacement
     c = c.split('2,660').join(p.Price);
     c = c.split('1,500').join(p.Price);
 
@@ -75,18 +75,10 @@ ${ingItems}                </ul>
     c = c.replace('<h2 class="bd-title">Wake Up to Refreshed, Radiant Skin.</h2>', `<h2 class="bd-title">${info.Headline}</h2>`);
     c = c.replace('<span class="bd-val">All skin types, including dry and sensitive skin</span>', `<span class="bd-val">${info.GoodFor}</span>`);
     
-    if (info.FeelsLike) {
-        c = c.replace('<span class="bd-val">A rich, creamy formula that melts effortlessly into the skin</span>', `<span class="bd-val">${info.FeelsLike}</span>`);
-    }
-    if (info.LooksLike) {
-        c = c.replace('<span class="bd-val">Smooth, plump, and poreless skin by morning</span>', `<span class="bd-val">${info.LooksLike}</span>`);
-    }
-    if (info.SmellsLike) {
-        c = c.replace('<span class="bd-val">Subtle, calming freshness for a relaxing nighttime routine</span>', `<span class="bd-val">${info.SmellsLike}</span>`);
-    }
-    if (info.FYI) {
-        c = c.replace('<span class="bd-val">Halal-Friendly • Dermatologist-Tested • Non-Sticky • Repair-Focused</span>', `<span class="bd-val">${info.FYI}</span>`);
-    }
+    if (info.FeelsLike) c = c.replace('<span class="bd-val">A rich, creamy formula that melts effortlessly into the skin</span>', `<span class="bd-val">${info.FeelsLike}</span>`);
+    if (info.LooksLike) c = c.replace('<span class="bd-val">Smooth, plump, and poreless skin by morning</span>', `<span class="bd-val">${info.LooksLike}</span>`);
+    if (info.SmellsLike) c = c.replace('<span class="bd-val">Subtle, calming freshness for a relaxing nighttime routine</span>', `<span class="bd-val">${info.SmellsLike}</span>`);
+    if (info.FYI) c = c.replace('<span class="bd-val">Halal-Friendly • Dermatologist-Tested • Non-Sticky • Repair-Focused</span>', `<span class="bd-val">${info.FYI}</span>`);
 
     // 9. What's Inside
     const wi = p.WhatsInside;
