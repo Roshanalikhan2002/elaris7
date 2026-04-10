@@ -4,17 +4,26 @@ import json
 templates_dir = r"c:\Users\MY PC\OneDrive\Desktop\Elaris7\templates"
 product_files = [f for f in os.listdir(templates_dir) if f.startswith("product.") and f.endswith(".json")]
 
-# Skip the ones we already handled or special ones if needed
-# But better to just check if 'benefits_focus' is already there
-already_updated = []
+# Load product data for dynamic images
+data_path = r"c:\Users\MY PC\OneDrive\Desktop\Elaris7\product_data.json"
+try:
+    with open(data_path, 'r', encoding='utf-8') as f:
+        product_data = json.load(f)
+except Exception as e:
+    print(f"Could not load {data_path}: {e}")
+    product_data = []
 
-benefits_focus_section = {
-    "type": "product-benefits-focus",
-    "settings": {
-        "subtitle": "SPREAD IT ON FOR:",
-        "image": "shopify://shop_images/night_cream_4-100_jpg.jpg"
-    }
-}
+# Create a mapping from template filename to Spread image
+image_map = {}
+for pd in product_data:
+    file_liquid = pd.get("File", "")
+    # e.g. product.night-cream.liquid -> product.night-cream.json
+    if file_liquid.endswith(".liquid"):
+        file_json = file_liquid.replace(".liquid", ".json")
+        img = pd.get("Images", {}).get("Spread", "spread.jpeg")
+        image_map[file_json] = f"shopify://shop_images/{img}"
+
+already_updated = []
 
 for filename in product_files:
     if filename == "product.json": continue # handled manually or skip
@@ -35,6 +44,17 @@ for filename in product_files:
     except json.JSONDecodeError:
         print(f"Skipping {filename} due to JSON error")
         continue
+
+    # Get the correct image or use a fallback
+    spread_img = image_map.get(filename, "shopify://shop_images/spread.jpeg")
+
+    benefits_focus_section = {
+        "type": "product-benefits-focus",
+        "settings": {
+            "subtitle": "SPREAD IT ON FOR:",
+            "image": spread_img
+        }
+    }
 
     if "benefits_focus" not in data["sections"]:
         data["sections"]["benefits_focus"] = benefits_focus_section

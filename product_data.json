@@ -498,10 +498,10 @@
      "Images": {
        "Hero": "TranexamicSerum1.jpg",
        "Gallery": ["TranexamicSerum1.jpg", "TranexamicSerum2.jpg", "TranexamicSerum3.jpg", "TranexamicSerum4.jpg"],
-       "Breakdown": "plate.jpg",
-       "WhatsInside": "spoon.jpg",
-       "Spread": "spread.jpg",
-       "Stats": "percentage.jpg",
+       "Breakdown": "tranexamic-plate.jpg",
+       "WhatsInside": "tranexamic-spoon.jpg",
+       "Spread": "tranexamic-spread.jpg",
+       "Stats": "tranexamic-stats.jpg",
        "Carousel": ["TranexamicSerum1.jpg", "TranexamicSerum2.jpg", "TranexamicSerum3.jpg", "TranexamicSerum4.jpg"]
      }
   },
