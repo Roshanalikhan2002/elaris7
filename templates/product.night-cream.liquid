@@ -2485,6 +2485,36 @@ a { color: inherit; text-decoration: none; }
                 </div>
                 <div class="bogo-select-indicator"></div>
               </div>
+
+              <div class="bogo-inline-card" onclick="selectBogo(this)">
+                <input type="radio" name="free_gift" data-gift-handle="renewal-cleanser-v2" style="display:none;">
+                <img src="{{ "v2-cleanser-1.jpeg" | asset_url }}" alt="Renewal Cleanser">
+                <div class="bogo-inline-info">
+                  <span class="bogo-inline-name">Renewal Cleanser</span>
+                  <span class="bogo-inline-tag">Deep Brightening</span>
+                </div>
+                <div class="bogo-select-indicator"></div>
+              </div>
+
+              <div class="bogo-inline-card" onclick="selectBogo(this)">
+                <input type="radio" name="free_gift" data-gift-handle="e7-korean-glass-skin-moisturizer" style="display:none;">
+                <img src="{{ "v2-moisturizer-1.jpeg" | asset_url }}" alt="Hydra Burst Moisturizer">
+                <div class="bogo-inline-info">
+                  <span class="bogo-inline-name">Hydra Burst Moisturizer</span>
+                  <span class="bogo-inline-tag">Glass Skin Finish</span>
+                </div>
+                <div class="bogo-select-indicator"></div>
+              </div>
+
+              <div class="bogo-inline-card" onclick="selectBogo(this)">
+                <input type="radio" name="free_gift" data-gift-handle="renewal-toner-v2" style="display:none;">
+                <img src="{{ "v2-toner-1.jpeg" | asset_url }}" alt="Renewal Toner">
+                <div class="bogo-inline-info">
+                  <span class="bogo-inline-name">Renewal Toner</span>
+                  <span class="bogo-inline-tag">Pore Refining</span>
+                </div>
+                <div class="bogo-select-indicator"></div>
+              </div>
             </div>
           </div>
           
@@ -2780,6 +2810,24 @@ a { color: inherit; text-decoration: none; }
               <div class="bogo-card">
                 <img src="{{ "glutathione-1.jpeg" | asset_url }}" alt="Glutathione Cream">
                 <span class="bogo-product-name">Glutathione Cream</span>
+                <button class="bogo-add-btn">Select</button>
+              </div>
+
+              <div class="bogo-card">
+                <img src="{{ "v2-cleanser-1.jpeg" | asset_url }}" alt="Renewal Cleanser">
+                <span class="bogo-product-name">Renewal Cleanser</span>
+                <button class="bogo-add-btn">Select</button>
+              </div>
+
+              <div class="bogo-card">
+                <img src="{{ "v2-moisturizer-1.jpeg" | asset_url }}" alt="Hydra Burst Moisturizer">
+                <span class="bogo-product-name">Hydra Burst Moisturizer</span>
+                <button class="bogo-add-btn">Select</button>
+              </div>
+
+              <div class="bogo-card">
+                <img src="{{ "v2-toner-1.jpeg" | asset_url }}" alt="Renewal Toner">
+                <span class="bogo-product-name">Renewal Toner</span>
                 <button class="bogo-add-btn">Select</button>
               </div>
           </div>
@@ -3333,6 +3381,72 @@ a { color: inherit; text-decoration: none; }
             </div>
             <div class="buy-button-hover">
                 BUY Glutathione Cream - RS. 2,400
+            </div>
+          </a>
+        </div>
+
+        <div class="card card-rhode" data-category="skincare">
+          <a href="/products/renewal-cleanser-v2" class="card-link-wrapper">
+            <img src="{{ "v2-cleanser-2.jpg" | asset_url }}" class="card-hover-bg" alt="Renewal Cleanser Hover">
+            <div class="card-rhode-top">
+              <span class="card-brand-label">Deep Brightening</span>
+            </div>
+            <div class="card-rhode-image">
+              <img src="{{ "v2-cleanser-1.jpeg" | asset_url }}" alt="Renewal Cleanser" class="product-main-img">
+            </div>
+            <div class="card-rhode-footer">
+              <div class="card-meta">
+                <div class="card-stars">★★★★★ <span class="review-count">(10k+)</span></div>
+                <h3 class="card-name">Renewal Cleanser</h3>
+              </div>
+              <span class="btn-rhode-buy-pill">BUY - RS. 2,850</span>
+            </div>
+            <div class="buy-button-hover">
+                BUY Renewal Cleanser - RS. 2,850
+            </div>
+          </a>
+        </div>
+
+        <div class="card card-rhode" data-category="skincare">
+          <a href="/products/e7-korean-glass-skin-moisturizer" class="card-link-wrapper">
+            <img src="{{ "TranexamicSerum2.jpg" | asset_url }}" class="card-hover-bg" alt="Hydra Burst Moisturizer Hover">
+            <div class="card-rhode-top">
+              <span class="card-brand-label">Glass Skin Finish</span>
+            </div>
+            <div class="card-rhode-image">
+              <img src="{{ "v2-moisturizer-1.jpeg" | asset_url }}" alt="Hydra Burst Moisturizer" class="product-main-img">
+            </div>
+            <div class="card-rhode-footer">
+              <div class="card-meta">
+                <div class="card-stars">★★★★★ <span class="review-count">(10k+)</span></div>
+                <h3 class="card-name">Hydra Burst Moisturizer</h3>
+              </div>
+              <span class="btn-rhode-buy-pill">BUY - RS. 2,499</span>
+            </div>
+            <div class="buy-button-hover">
+                BUY Hydra Burst Moisturizer - RS. 2,499
+            </div>
+          </a>
+        </div>
+
+        <div class="card card-rhode" data-category="skincare">
+          <a href="/products/renewal-toner-v2" class="card-link-wrapper">
+            <img src="{{ "v2-toner-2.jpg" | asset_url }}" class="card-hover-bg" alt="Renewal Toner Hover">
+            <div class="card-rhode-top">
+              <span class="card-brand-label">Pore Refining</span>
+            </div>
+            <div class="card-rhode-image">
+              <img src="{{ "v2-toner-1.jpeg" | asset_url }}" alt="Renewal Toner" class="product-main-img">
+            </div>
+            <div class="card-rhode-footer">
+              <div class="card-meta">
+                <div class="card-stars">★★★★★ <span class="review-count">(10k+)</span></div>
+                <h3 class="card-name">Renewal Toner</h3>
+              </div>
+              <span class="btn-rhode-buy-pill">BUY - RS. 2,670</span>
+            </div>
+            <div class="buy-button-hover">
+                BUY Renewal Toner - RS. 2,670
             </div>
           </a>
         </div></div>

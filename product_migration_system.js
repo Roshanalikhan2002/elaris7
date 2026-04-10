@@ -255,16 +255,16 @@ function updateTemplate(p) {
     c = c.replace(/<div class="product-description">[\s\S]*?<\/div>/, newDesc);
 
     // 5. Accordions
-    const benefitItems = p.Benefits.map(item => `                  <li>${item}</li>`).join('\n');
+    const benefitItems = (p.Benefits || []).map(item => `                  <li>${item}</li>`).join('\n');
     c = c.replace(/<summary><span>BENEFITS<\/span><span>\+<\/span><\/summary>[\s\S]*?<div class="accordion-content">[\s\S]*?<\/div>/, `<summary><span>BENEFITS</span><span>+</span></summary><div class="accordion-content"><ul>${benefitItems}</ul></div>`);
 
-    const appItems = `<summary><span>APPLICATION</span><span>+</span></summary><div class="accordion-content"><p style="margin:0;">${p.Application}</p></div>`;
+    const appItems = `<summary><span>APPLICATION</span><span>+</span></summary><div class="accordion-content"><p style="margin:0;">${p.Application || 'Apply as directed.'}</p></div>`;
     c = c.replace(/<summary><span>APPLICATION<\/span><span>\+<\/span><\/summary>[\s\S]*?<div class="accordion-content">[\s\S]*?<\/div>/, appItems);
 
-    const trickItems = p.Tricks.map(item => `                  <li>${item}</li>`).join('\n');
+    const trickItems = (p.Tricks || []).map(item => `                  <li>${item}</li>`).join('\n');
     c = c.replace(/<summary><span>TRICK<\/span><span>\+<\/span><\/summary>[\s\S]*?<div class="accordion-content">[\s\S]*?<\/div>/, `<summary><span>TRICK</span><span>+</span></summary><div class="accordion-content"><ul>${trickItems}</ul></div>`);
 
-    const ingItems = p.Ingredients.map(item => `                  <li>${item}</li>`).join('\n');
+    const ingItems = (p.Ingredients || []).map(item => `                  <li>${item}</li>`).join('\n');
     c = c.replace(/<summary><span>KEY INGREDIENTS<\/span><span>\+<\/span><\/summary>[\s\S]*?<div class="accordion-content">[\s\S]*?<\/div>/, `<summary><span>KEY INGREDIENTS</span><span>+</span></summary><div class="accordion-content"><ul>${ingItems}</ul></div>`);
 
     // 6. Catchy Line
@@ -337,7 +337,7 @@ function updateTemplate(p) {
 
     // 11. FAQs
     if (p.FAQs) {
-        const faqHtml = p.FAQs.map(f => `          <div class="faq-item">
+        const faqHtml = (p.FAQs || []).map(f => `          <div class="faq-item">
             <div class="faq-qa">
               <span class="faq-question">${f.Q}</span>
               <p class="faq-answer">${f.A}</p>
@@ -353,7 +353,7 @@ function updateTemplate(p) {
     c = c.replace(/<\/div>\s*<\/div>\s*<\/div>\s*<div class="stats-image">/, "</div>\n      </div>\n      <div class=\"stats-image\">");
 
     // 12. Reviews
-    const reviewHtml = p.Reviews.map(r => `      <div class="review-card">
+    const reviewHtml = (p.Reviews || []).map(r => `      <div class="review-card">
         <div class="rv-sidebar">
           <div class="rv-author">${r.Name}</div>
           <div class="rv-verified">Verified Buyer</div>

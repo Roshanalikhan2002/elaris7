@@ -5,10 +5,32 @@
     "Subtitle": "Night Renewal",
     "Price": "2,660",
     "Description": "An intensive overnight formula designed to rejuvenate your skin while you sleep. Infused with Centella Asiatica, brightening complexes, and repair-focused botanicals, this night cream hydrates deeply, improves skin texture, and helps reveal a smoother, luminous, and refreshed complexion by morning.",
-    "Benefits": ["Boosts skin radiance for a naturally luminous glow", "Provides 72-hour hydration with a moisture-locking formula", "Supports collagen to improve skin firmness and elasticity", "Helps fade dark spots, acne scars, and discoloration", "Repairs and strengthens the skin barrier overnight", "Delivers a soft, smooth, poreless finish by morning", "Reduces the appearance of fine lines and wrinkles", "Promotes a more even-toned, youthful-looking complexion over time"],
+    "Benefits": [
+      "Boosts skin radiance for a naturally luminous glow",
+      "Provides 72-hour hydration with a moisture-locking formula",
+      "Supports collagen to improve skin firmness and elasticity",
+      "Helps fade dark spots, acne scars, and discoloration",
+      "Repairs and strengthens the skin barrier overnight",
+      "Delivers a soft, smooth, poreless finish by morning",
+      "Reduces the appearance of fine lines and wrinkles",
+      "Promotes a more even-toned, youthful-looking complexion over time"
+    ],
     "Application": "After cleansing and toning, take a small amount of Centella Night Cream and gently massage it upward onto your face and neck, avoiding the eye area. Leave it on overnight to fully absorb and lock in hydration, allowing your skin to repair, restore, and wake up looking radiant and smooth. Consistency is key for optimal results.",
-    "Tricks": ["Apply a slightly thicker layer on dry areas to maximize overnight hydration", "Combine with your serum for enhanced repair benefits", "Use consistently to see a reduction in fine lines and dark spots"],
-    "Ingredients": ["Centella Asiatica", "Brightening Complex", "Moisture-Lock Technology", "Collagen Support Blend", "Spot-Corrective Blend", "Barrier Repair Actives", "Line-Reducing Complex", "Even-Tone Enhancer"],
+    "Tricks": [
+      "Apply a slightly thicker layer on dry areas to maximize overnight hydration",
+      "Combine with your serum for enhanced repair benefits",
+      "Use consistently to see a reduction in fine lines and dark spots"
+    ],
+    "Ingredients": [
+      "Centella Asiatica",
+      "Brightening Complex",
+      "Moisture-Lock Technology",
+      "Collagen Support Blend",
+      "Spot-Corrective Blend",
+      "Barrier Repair Actives",
+      "Line-Reducing Complex",
+      "Even-Tone Enhancer"
+    ],
     "CatchyLine": "Your Overnight Glow Secret",
     "ImportantInfo": {
       "Headline": "Wake Up to Refreshed, Radiant Skin.",
@@ -26,29 +48,64 @@
       "I2Desc": "a deep hydration system that helps retain moisture, prevent overnight dryness, and keep skin plump and smooth by morning",
       "Also": "BRIGHTENING COMPLEX, COLLAGEN SUPPORT BLEND, SPOT-CORRECTIVE ACTIVES, LINE-REDUCING COMPLEX, BARRIER REPAIR ACTIVES, EVEN-TONE ENHANCERS"
     },
-    "SpreadItOn": ["deep repair", "overnight hydration", "revitalized, luminous skin"],
+    "SpreadItOn": [
+      "deep repair",
+      "overnight hydration",
+      "revitalized, luminous skin"
+    ],
     "Stats": [
-      { "Pct": "97%", "Desc": "SAID THEIR SKIN FELT DEEPLY HYDRATED AND NOURISHED" },
-      { "Pct": "95%", "Desc": "SAID IT ABSORBED WELL WITHOUT HEAVINESS" },
-      { "Pct": "94%", "Desc": "NOTICED SMOOTHER, SOFTER, AND REFINED SKIN BY MORNING" },
-      { "Pct": "3 out of 4", "Desc": "REPORTED A VISIBLE REDUCTION IN FINE LINES AND DARK SPOTS" }
+      {
+        "Pct": "97%",
+        "Desc": "SAID THEIR SKIN FELT DEEPLY HYDRATED AND NOURISHED"
+      },
+      {
+        "Pct": "95%",
+        "Desc": "SAID IT ABSORBED WELL WITHOUT HEAVINESS"
+      },
+      {
+        "Pct": "94%",
+        "Desc": "NOTICED SMOOTHER, SOFTER, AND REFINED SKIN BY MORNING"
+      },
+      {
+        "Pct": "3 out of 4",
+        "Desc": "REPORTED A VISIBLE REDUCTION IN FINE LINES AND DARK SPOTS"
+      }
     ],
     "StatsDisclaimer": "*Based on a 2-week consumer perception study with consistent nightly use.",
     "FAQs": [
-      { "Q": "Can I use this night cream with my serum?", "A": "Yes, applying serum before the night cream enhances hydration and repair benefits." },
-      { "Q": "Is it suitable for oily skin at night?", "A": "Absolutely, it hydrates without clogging pores or leaving a greasy residue." }
+      {
+        "Q": "Can I use this night cream with my serum?",
+        "A": "Yes, applying serum before the night cream enhances hydration and repair benefits."
+      },
+      {
+        "Q": "Is it suitable for oily skin at night?",
+        "A": "Absolutely, it hydrates without clogging pores or leaving a greasy residue."
+      }
     ],
     "Reviews": [
-      { "Name": "Fatima", "Text": "I’ve been using it for 2 weeks, and my skin barrier feels so much stronger and healthier. My skin looks brighter, more even-toned, and I’m genuinely loving the glow." }
+      {
+        "Name": "Fatima",
+        "Text": "I’ve been using it for 2 weeks, and my skin barrier feels so much stronger and healthier. My skin looks brighter, more even-toned, and I’m genuinely loving the glow."
+      }
     ],
     "Images": {
-       "Hero": "night-cream-suite.jpeg",
-       "Gallery": ["nightcream-v3-1.jpeg", "nightcream-v3-2.jpeg", "nightcream-v3-3.jpeg", "nightcream-v3-4.jpeg"],
-       "Breakdown": "plate.jpeg",
-       "WhatsInside": "spoon.jpeg",
-       "Spread": "spread.jpeg",
-       "Stats": "percentage.jpeg",
-       "Carousel": ["night-cream-suite.jpeg", "night-cream-swatch.jpeg", "night-cream-lifestyle.jpeg", "night-cream-last.jpeg"]
+      "Hero": "night-cream-suite.jpeg",
+      "Gallery": [
+        "nightcream-v3-1.jpeg",
+        "nightcream-v3-2.jpeg",
+        "nightcream-v3-3.jpeg",
+        "nightcream-v3-4.jpeg"
+      ],
+      "Breakdown": "plate.jpeg",
+      "WhatsInside": "spoon.jpeg",
+      "Spread": "spread.jpeg",
+      "Stats": "percentage.jpeg",
+      "Carousel": [
+        "night-cream-suite.jpeg",
+        "night-cream-swatch.jpeg",
+        "night-cream-lifestyle.jpeg",
+        "night-cream-last.jpeg"
+      ]
     }
   },
   {
@@ -57,10 +114,27 @@
     "Subtitle": "Daily Dew",
     "Price": "1,800",
     "Description": "A lightweight, glow-enhancing moisturizer infused with Centella Asiatica, brightening complexes, and nourishing botanicals to hydrate, soothe, and refine your skin for a smooth, glass-like finish every day.",
-    "Benefits": ["Boosts natural radiance while improving overall skin clarity", "Delivers lasting hydration for a plump, soft, and dewy feel", "Smooths texture and helps reduce the appearance of uneven tone"],
+    "Benefits": [
+      "Boosts natural radiance while improving overall skin clarity",
+      "Delivers lasting hydration for a plump, soft, and dewy feel",
+      "Smooths texture and helps reduce the appearance of uneven tone"
+    ],
     "Application": "After cleansing and applying serum, take a small amount of Centella Moisturizer and gently massage it onto slightly damp skin using upward motions. Allow it to absorb fully to lock in hydration.",
-    "Tricks": ["Apply on damp skin to enhance absorption and maximize hydration", "Use a slightly thicker layer for an instant dewy glow finish", "Pair with sunscreen in the morning for protected, radiant skin"],
-    "Ingredients": ["Hyaluronic Acid", "Vitamin C Complex", "Centella Asiatica", "Morus Alba Extract", "Broussonetia Root Extract", "Honey", "Galactoarabinan", "Vitamin E"],
+    "Tricks": [
+      "Apply on damp skin to enhance absorption and maximize hydration",
+      "Use a slightly thicker layer for an instant dewy glow finish",
+      "Pair with sunscreen in the morning for protected, radiant skin"
+    ],
+    "Ingredients": [
+      "Hyaluronic Acid",
+      "Vitamin C Complex",
+      "Centella Asiatica",
+      "Morus Alba Extract",
+      "Broussonetia Root Extract",
+      "Honey",
+      "Galactoarabinan",
+      "Vitamin E"
+    ],
     "CatchyLine": "Your Everyday Glow Essential",
     "ImportantInfo": {
       "Headline": "Glow That Lasts All Day",
@@ -78,28 +152,60 @@
       "I2Desc": "a powerful hydrator that helps attract and retain moisture, leaving skin plump, smooth, and refreshed throughout the day",
       "Also": "VITAMIN C COMPLEX, MORUS ALBA EXTRACT, BROUSSONETIA ROOT EXTRACT, HONEY, GALACTOARABINAN, VITAMIN E"
     },
-    "SpreadItOn": ["all-day hydration", "natural radiance", "soft, glass-like skin"],
+    "SpreadItOn": [
+      "all-day hydration",
+      "natural radiance",
+      "soft, glass-like skin"
+    ],
     "Stats": [
-      { "Pct": "99%", "Desc": "SAID THEIR SKIN FELT MORE HYDRATED + REFRESHED" },
-      { "Pct": "98%", "Desc": "SAID IT ABSORBS QUICKLY WITHOUT ANY HEAVINESS" },
-      { "Pct": "97%", "Desc": "SAID THEIR SKIN LOOKED SMOOTHER + MORE EVEN" },
-      { "Pct": "3 out of 4", "Desc": "SAID THEY NOTICED A HEALTHY, NATURAL GLOW" }
+      {
+        "Pct": "99%",
+        "Desc": "SAID THEIR SKIN FELT MORE HYDRATED + REFRESHED"
+      },
+      {
+        "Pct": "98%",
+        "Desc": "SAID IT ABSORBS QUICKLY WITHOUT ANY HEAVINESS"
+      },
+      {
+        "Pct": "97%",
+        "Desc": "SAID THEIR SKIN LOOKED SMOOTHER + MORE EVEN"
+      },
+      {
+        "Pct": "3 out of 4",
+        "Desc": "SAID THEY NOTICED A HEALTHY, NATURAL GLOW"
+      }
     ],
     "StatsDisclaimer": "*Based on a 2-week consumer perception study with consistent daily use.",
     "FAQs": [
-      { "Q": "Can I use this moisturizer with makeup?", "A": "Yes, it works perfectly as a base under makeup, helping create a smooth and hydrated canvas." }
+      {
+        "Q": "Can I use this moisturizer with makeup?",
+        "A": "Yes, it works perfectly as a base under makeup, helping create a smooth and hydrated canvas."
+      }
     ],
     "Reviews": [
-      { "Name": "Sana", "Text": "It feels so light on my skin and gives me a soft, natural glow throughout the day. My skin looks healthier and more refreshed." }
+      {
+        "Name": "Sana",
+        "Text": "It feels so light on my skin and gives me a soft, natural glow throughout the day. My skin looks healthier and more refreshed."
+      }
     ],
     "Images": {
-       "Hero": "moisturizer-100.jpg",
-       "Gallery": ["moisturizer-gallery-1.jpg", "moisturizer-gallery-2.jpg", "moisturizer-gallery-3.jpg", "moisturizer-gallery-4.jpg"],
-       "Breakdown": "moisturizer-before-after.jpg",
-       "WhatsInside": "moisturizer-whats-inside.jpg",
-       "Spread": "moisturizer-deep-hydration.jpg",
-       "Stats": "moisturizer-benefits.jpg",
-       "Carousel": ["moisturizer-meet-1.jpg", "moisturizer-meet-2.jpg", "moisturizer-meet-3.jpg", "moisturizer-meet-4.jpg"]
+      "Hero": "moisturizer-100.jpg",
+      "Gallery": [
+        "moisturizer-gallery-1.jpg",
+        "moisturizer-gallery-2.jpg",
+        "moisturizer-gallery-3.jpg",
+        "moisturizer-gallery-4.jpg"
+      ],
+      "Breakdown": "moisturizer-before-after.jpg",
+      "WhatsInside": "moisturizer-whats-inside.jpg",
+      "Spread": "moisturizer-deep-hydration.jpg",
+      "Stats": "moisturizer-benefits.jpg",
+      "Carousel": [
+        "moisturizer-meet-1.jpg",
+        "moisturizer-meet-2.jpg",
+        "moisturizer-meet-3.jpg",
+        "moisturizer-meet-4.jpg"
+      ]
     }
   },
   {
@@ -108,10 +214,32 @@
     "Subtitle": "Pure Start",
     "Price": "1,800",
     "Description": "A gentle, glow-reviving cleanser infused with Centella Asiatica, brightening actives, and hydrating botanicals to cleanse, soothe, and refresh your skin for a soft, balanced, and radiant look every day.",
-    "Benefits": ["Gently removes dirt, oil, and impurities without stripping the skin", "Helps brighten complexion and revive dull, tired-looking skin", "Supports hydration for a soft, fresh, and balanced feel", "Calms irritation and reduces the look of redness", "Helps maintain a healthy skin barrier for daily protection"],
+    "Benefits": [
+      "Gently removes dirt, oil, and impurities without stripping the skin",
+      "Helps brighten complexion and revive dull, tired-looking skin",
+      "Supports hydration for a soft, fresh, and balanced feel",
+      "Calms irritation and reduces the look of redness",
+      "Helps maintain a healthy skin barrier for daily protection"
+    ],
     "Application": "After wetting your face, take a small amount of Centella Face Wash and gently massage onto skin in circular motions for about 60 seconds. Rinse thoroughly with water and pat dry, then follow with your skincare routine.",
-    "Tricks": ["Use lukewarm water to avoid drying out your skin while cleansing", "Massage gently for a full 60 seconds to allow ingredients to work effectively", "Follow immediately with serum or moisturizer on damp skin to lock in hydration"],
-    "Ingredients": ["3-0-Ethyl Ascorbic Acid", "Hyaluronic Acid", "Rice Extract", "Licorice Extract", "Morus Alba", "Centella Asiatica", "Honey", "D-Panthenol", "Sodium PCA", "Glycerin", "Apple Extract"],
+    "Tricks": [
+      "Use lukewarm water to avoid drying out your skin while cleansing",
+      "Massage gently for a full 60 seconds to allow ingredients to work effectively",
+      "Follow immediately with serum or moisturizer on damp skin to lock in hydration"
+    ],
+    "Ingredients": [
+      "3-0-Ethyl Ascorbic Acid",
+      "Hyaluronic Acid",
+      "Rice Extract",
+      "Licorice Extract",
+      "Morus Alba",
+      "Centella Asiatica",
+      "Honey",
+      "D-Panthenol",
+      "Sodium PCA",
+      "Glycerin",
+      "Apple Extract"
+    ],
     "CatchyLine": "Fresh Skin Begins Here",
     "ImportantInfo": {
       "Headline": "Cleanse. Refresh. Glow.",
@@ -129,30 +257,65 @@
       "I2Desc": "a stable form of vitamin C that helps brighten the complexion, reduce dullness, and support a more radiant, even look",
       "Also": "RICE EXTRACT, LICORICE EXTRACT, MORUS ALBA, HONEY, D-PANTHENOL, SODIUM PCA, GLYCERIN, APPLE EXTRACT, CENTELLA ASIATICA"
     },
-    "SpreadItOn": ["fresh, balanced skin", "gentle daily cleansing", "natural, radiant glow"],
+    "SpreadItOn": [
+      "fresh, balanced skin",
+      "gentle daily cleansing",
+      "natural, radiant glow"
+    ],
     "Stats": [
-      { "Pct": "99%", "Desc": "SAID THEIR SKIN FELT CLEAN + REFRESHED AFTER EVERY WASH" },
-      { "Pct": "98%", "Desc": "SAID IT DID NOT DRY OUT THEIR SKIN" },
-      { "Pct": "97%", "Desc": "SAID THEIR SKIN LOOKED CLEARER + MORE BALANCED" },
-      { "Pct": "3 out of 4", "Desc": "SAID THEY NOTICED LESS DULLNESS WITH DAILY USE" }
+      {
+        "Pct": "99%",
+        "Desc": "SAID THEIR SKIN FELT CLEAN + REFRESHED AFTER EVERY WASH"
+      },
+      {
+        "Pct": "98%",
+        "Desc": "SAID IT DID NOT DRY OUT THEIR SKIN"
+      },
+      {
+        "Pct": "97%",
+        "Desc": "SAID THEIR SKIN LOOKED CLEARER + MORE BALANCED"
+      },
+      {
+        "Pct": "3 out of 4",
+        "Desc": "SAID THEY NOTICED LESS DULLNESS WITH DAILY USE"
+      }
     ],
     "StatsDisclaimer": "*Based on a 2-week consumer perception study with consistent daily use.",
     "FAQs": [
-      { "Q": "Can I use this face wash twice a day?", "A": "Yes, it is gentle enough for both morning and evening use without over-drying your skin." }
+      {
+        "Q": "Can I use this face wash twice a day?",
+        "A": "Yes, it is gentle enough for both morning and evening use without over-drying your skin."
+      }
     ],
     "Reviews": [
-      { "Name": "Alishba", "Text": "I'm genuinely in love with this face wash. It's so gentle but cleanses deeply without leaving my skin feeling tight or dry. My face feels soft and balanced!" },
-      { "Name": "Sara", "Text": "Finally found a cleanser that doesn't irritate my sensitive skin. The texture is amazing and it leaves a subtle glow after washing. A 10/10 product for me!" }
+      {
+        "Name": "Alishba",
+        "Text": "I'm genuinely in love with this face wash. It's so gentle but cleanses deeply without leaving my skin feeling tight or dry. My face feels soft and balanced!"
+      },
+      {
+        "Name": "Sara",
+        "Text": "Finally found a cleanser that doesn't irritate my sensitive skin. The texture is amazing and it leaves a subtle glow after washing. A 10/10 product for me!"
+      }
     ],
     "Images": {
-       "Hero": "facewash1.jpeg",
-       "Gallery": ["facewash1.jpeg", "facewash2.jpg", "facewash3.jpg", "facewash4.jpg"],
-       "Breakdown": "facewash-plate.jpg",
-       "WhatsInside": "facewash-spoon.jpg",
-       "Spread": "facewash-spread.jpg",
-       "Stats": "facewash2.jpg",
-       "FAQ": "facewash-faq.jpg",
-       "Carousel": ["facewash1.jpeg", "facewash2.jpg", "facewash3.jpg", "facewash4.jpg"]
+      "Hero": "facewash1.jpeg",
+      "Gallery": [
+        "facewash1.jpeg",
+        "facewash2.jpg",
+        "facewash3.jpg",
+        "facewash4.jpg"
+      ],
+      "Breakdown": "facewash-plate.jpg",
+      "WhatsInside": "facewash-spoon.jpg",
+      "Spread": "facewash-spread.jpg",
+      "Stats": "facewash2.jpg",
+      "FAQ": "facewash-faq.jpg",
+      "Carousel": [
+        "facewash1.jpeg",
+        "facewash2.jpg",
+        "facewash3.jpg",
+        "facewash4.jpg"
+      ]
     }
   },
   {
@@ -161,17 +324,41 @@
     "Subtitle": "Radiance Reset",
     "Price": "2,200",
     "Description": "A concentrated, glow-correcting serum infused with Centella Asiatica and advanced brightening actives to visibly even tone, fade dark spots, and restore a smooth, glass-like complexion over time.",
-    "Benefits": ["Helps brighten skin and improve overall tone clarity", "Fades the appearance of dark spots and post-acne marks", "Supports firmness while enhancing skin elasticity", "Delivers deep hydration for a plump, radiant finish", "Helps calm sensitivity and strengthen the skin barrier", "Refines pores and smooths uneven texture"],
-    "Application": "After cleansing, take 3\u20134 drops of Centella Serum and gently press onto slightly damp skin across the face and neck. Allow it to absorb fully, then follow with your moisturizer to seal in hydration.",
-    "Tricks": ["Apply on damp skin to boost absorption and enhance glow", "Layer with a moisturizer to lock in active ingredients effectively", "Use day and night consistently for more visible tone correction"],
-    "Ingredients": ["Niacinamide", "Vitamin C", "Alpha Arbutin", "Hyaluronic Acid", "Centella Asiatica", "Aloe Vera", "Rose Extract", "Vitamin E", "Honey", "Peptides", "Vitamin B5", "Witch Hazel"],
+    "Benefits": [
+      "Helps brighten skin and improve overall tone clarity",
+      "Fades the appearance of dark spots and post-acne marks",
+      "Supports firmness while enhancing skin elasticity",
+      "Delivers deep hydration for a plump, radiant finish",
+      "Helps calm sensitivity and strengthen the skin barrier",
+      "Refines pores and smooths uneven texture"
+    ],
+    "Application": "After cleansing, take 3–4 drops of Centella Serum and gently press onto slightly damp skin across the face and neck. Allow it to absorb fully, then follow with your moisturizer to seal in hydration.",
+    "Tricks": [
+      "Apply on damp skin to boost absorption and enhance glow",
+      "Layer with a moisturizer to lock in active ingredients effectively",
+      "Use day and night consistently for more visible tone correction"
+    ],
+    "Ingredients": [
+      "Niacinamide",
+      "Vitamin C",
+      "Alpha Arbutin",
+      "Hyaluronic Acid",
+      "Centella Asiatica",
+      "Aloe Vera",
+      "Rose Extract",
+      "Vitamin E",
+      "Honey",
+      "Peptides",
+      "Vitamin B5",
+      "Witch Hazel"
+    ],
     "CatchyLine": "Targeted Glow. Visible Clarity.",
     "ImportantInfo": {
       "Headline": "Glow That Transforms Over Time",
       "GoodFor": "All skin types, including sensitive and uneven skin",
       "FeelsLike": "A lightweight, silky serum that absorbs effortlessly",
       "LooksLike": "A refined, radiant complexion with improved clarity",
-      "FYI": "Halal-Friendly \u2022 Dermatologist-Tested \u2022 Fast-Absorbing \u2022 Non-Greasy"
+      "FYI": "Halal-Friendly • Dermatologist-Tested • Fast-Absorbing • Non-Greasy"
     },
     "WhatsInside": {
       "Intro": "A powerful blend of tone-correcting actives and skin-repairing hydrators designed to target dullness.",
@@ -181,27 +368,53 @@
       "I2Desc": "known to help fade dark spots and discoloration for a more uniform look",
       "Also": "VITAMIN C, HYALURONIC ACID, ALOE VERA, ROSE EXTRACT, VITAMIN E, HONEY, PEPTIDES, CENTELLA ASIATICA"
     },
-    "SpreadItOn": ["evened-out tone", "bright, radiant skin", "smooth, glass-like finish"],
+    "SpreadItOn": [
+      "evened-out tone",
+      "bright, radiant skin",
+      "smooth, glass-like finish"
+    ],
     "Stats": [
-      { "Pct": "99%", "Desc": "SAID THEIR SKIN LOOKED BRIGHTER + MORE EVEN" },
-      { "Pct": "3 out of 4", "Desc": "SAID THEY NOTICED A HEALTHY, GLASS-LIKE GLOW" }
+      {
+        "Pct": "99%",
+        "Desc": "SAID THEIR SKIN LOOKED BRIGHTER + MORE EVEN"
+      },
+      {
+        "Pct": "3 out of 4",
+        "Desc": "SAID THEY NOTICED A HEALTHY, GLASS-LIKE GLOW"
+      }
     ],
     "StatsDisclaimer": "*Based on a 2-week consumer perception study.",
     "FAQs": [
-      { "Q": "Can I use this serum both morning and night?", "A": "Absolutely, it is designed for daily use and works effectively in both AM and PM routines." }
+      {
+        "Q": "Can I use this serum both morning and night?",
+        "A": "Absolutely, it is designed for daily use and works effectively in both AM and PM routines."
+      }
     ],
     "Reviews": [
-      { "Name": "Iqra", "Text": "My skin looks brighter and more even after using this regularly." }
+      {
+        "Name": "Iqra",
+        "Text": "My skin looks brighter and more even after using this regularly."
+      }
     ],
     "Images": {
-       "Hero": "glowserum-1.png",
-       "Gallery": ["glowserum-1.png", "glowserum-2.jpg", "glowserum-3.jpg", "glowserum-4.jpg"],
-       "Breakdown": "glowserum-plate.jpg",
-       "WhatsInside": "glowserum-spoon.jpg",
-       "Spread": "glowserum-spread.jpg",
-       "Stats": "glowserum-stats.jpg",
-       "FAQ": "glowserum-faq.jpg",
-       "Carousel": ["glowserum-1.png", "glowserum-2.jpg", "glowserum-3.jpg", "glowserum-4.jpg"]
+      "Hero": "glowserum-1.png",
+      "Gallery": [
+        "glowserum-1.png",
+        "glowserum-2.jpg",
+        "glowserum-3.jpg",
+        "glowserum-4.jpg"
+      ],
+      "Breakdown": "glowserum-plate.jpg",
+      "WhatsInside": "glowserum-spoon.jpg",
+      "Spread": "glowserum-spread.jpg",
+      "Stats": "glowserum-stats.jpg",
+      "FAQ": "glowserum-faq.jpg",
+      "Carousel": [
+        "glowserum-1.png",
+        "glowserum-2.jpg",
+        "glowserum-3.jpg",
+        "glowserum-4.jpg"
+      ]
     }
   },
   {
@@ -210,10 +423,24 @@
     "Subtitle": "Daily Shield",
     "Price": "2,500",
     "Description": "A protective sunscreen infused with Centella Asiatica and advanced UV filters to defend against sun damage and maintain a smooth finish.",
-    "Benefits": ["Provides broad-spectrum protection against UV", "Helps keep skin hydrated and fresh", "Blends effortlessly without leaving a white cast"],
+    "Benefits": [
+      "Provides broad-spectrum protection against UV",
+      "Helps keep skin hydrated and fresh",
+      "Blends effortlessly without leaving a white cast"
+    ],
     "Application": "Apply generously onto your face and neck as the final step of your routine.",
-    "Tricks": ["Apply 15 minutes before sun exposure", "Reapply every few hours"],
-    "Ingredients": ["Titanium Dioxide", "Tinosorb S", "Avobenzone", "Hyaluronic Acid", "Ceramides", "Centella Asiatica"],
+    "Tricks": [
+      "Apply 15 minutes before sun exposure",
+      "Reapply every few hours"
+    ],
+    "Ingredients": [
+      "Titanium Dioxide",
+      "Tinosorb S",
+      "Avobenzone",
+      "Hyaluronic Acid",
+      "Ceramides",
+      "Centella Asiatica"
+    ],
     "CatchyLine": "Your Invisible Daily Protection",
     "ImportantInfo": {
       "Headline": "High-Performance Sun Protection",
@@ -231,34 +458,75 @@
       "I2Desc": "help strengthen the skin barrier and lock in moisture while you wear it",
       "Also": "Tinosorb S, Avobenzone, Hyaluronic Acid, Centella Asiatica"
     },
-    "SpreadItOn": ["daily sun protection", "long-lasting hydration", "smooth, protected glow"],
+    "SpreadItOn": [
+      "daily sun protection",
+      "long-lasting hydration",
+      "smooth, protected glow"
+    ],
     "Stats": [
-      { "Pct": "100%", "Desc": "SAID IT LEFT NO WHITE CAST ON THEIR SKIN" },
-      { "Pct": "98%", "Desc": "SAID IT FELT LIGHTWEIGHT AND BREATHABLE" },
-      { "Pct": "97%", "Desc": "NOTICED THEIR SKIN LOOKED MORE RADIANT" }
+      {
+        "Pct": "100%",
+        "Desc": "SAID IT LEFT NO WHITE CAST ON THEIR SKIN"
+      },
+      {
+        "Pct": "98%",
+        "Desc": "SAID IT FELT LIGHTWEIGHT AND BREATHABLE"
+      },
+      {
+        "Pct": "97%",
+        "Desc": "NOTICED THEIR SKIN LOOKED MORE RADIANT"
+      }
     ],
     "StatsDisclaimer": "*Based on a 2-week consumer perception study.",
     "FAQs": [
-      { "Q": "Will it leave a white cast?", "A": "No, our formula is designed to blend seamlessly into all skin tones for a clear finish." },
-      { "Q": "Can I use it as a primer?", "A": "Yes, it has a smooth, velvet-like finish that makes it an excellent base for makeup." }
+      {
+        "Q": "Will it leave a white cast?",
+        "A": "No, our formula is designed to blend seamlessly into all skin tones for a clear finish."
+      },
+      {
+        "Q": "Can I use it as a primer?",
+        "A": "Yes, it has a smooth, velvet-like finish that makes it an excellent base for makeup."
+      }
     ],
     "Reviews": [
-      { "Name": "Mariam", "Text": "Finally a sunscreen that doesn't feel sticky! It absorbs so quickly and my makeup goes on perfectly over it. Highly recommend!" },
-      { "Name": "Zain", "Text": "I use this every day now. It's very hydrating and doesn't break me out like other sunscreens did. Great product." }
+      {
+        "Name": "Mariam",
+        "Text": "Finally a sunscreen that doesn't feel sticky! It absorbs so quickly and my makeup goes on perfectly over it. Highly recommend!"
+      },
+      {
+        "Name": "Zain",
+        "Text": "I use this every day now. It's very hydrating and doesn't break me out like other sunscreens did. Great product."
+      }
     ],
     "WhatsInsideDetail": [
-      { "Title": "Zinc Oxide", "Desc": "a gentle mineral shield that provides broad-spectrum protection against UVA and UVB rays without irritation" },
-      { "Title": "Hyaluronic Acid", "Desc": "a moisture-binding molecule that keeps skin hydrated and plump under the sun, preventing dehydration" }
+      {
+        "Title": "Zinc Oxide",
+        "Desc": "a gentle mineral shield that provides broad-spectrum protection against UVA and UVB rays without irritation"
+      },
+      {
+        "Title": "Hyaluronic Acid",
+        "Desc": "a moisture-binding molecule that keeps skin hydrated and plump under the sun, preventing dehydration"
+      }
     ],
     "Images": {
-       "Hero": "v2-sunscreen-1.jpeg",
-       "Gallery": ["v2-sunscreen-1.jpeg", "v2-sunscreen-2.jpg", "v2-sunscreen-3.jpg", "v2-sunscreen-4.jpg"],
-       "Breakdown": "v2-sunscreen-plate.jpg",
-       "WhatsInside": "v2-sunscreen-spoon.jpg",
-       "Spread": "v2-sunscreen-spread.jpg",
-       "Stats": "v2-sunscreen-stats.jpg",
-       "FAQ": "v2-sunscreen-faq.jpg",
-       "Carousel": ["v2-sunscreen-1.jpeg", "v2-sunscreen-2.jpg", "v2-sunscreen-3.jpg", "v2-sunscreen-4.jpg"]
+      "Hero": "v2-sunscreen-1.jpeg",
+      "Gallery": [
+        "v2-sunscreen-1.jpeg",
+        "v2-sunscreen-2.jpg",
+        "v2-sunscreen-3.jpg",
+        "v2-sunscreen-4.jpg"
+      ],
+      "Breakdown": "v2-sunscreen-plate.jpg",
+      "WhatsInside": "v2-sunscreen-spoon.jpg",
+      "Spread": "v2-sunscreen-spread.jpg",
+      "Stats": "v2-sunscreen-stats.jpg",
+      "FAQ": "v2-sunscreen-faq.jpg",
+      "Carousel": [
+        "v2-sunscreen-1.jpeg",
+        "v2-sunscreen-2.jpg",
+        "v2-sunscreen-3.jpg",
+        "v2-sunscreen-4.jpg"
+      ]
     }
   },
   {
@@ -267,16 +535,27 @@
     "Subtitle": "Clarity Reset",
     "Price": "1,800",
     "Description": "A refining toner designed to clarify, smooth, and rebalance the skin while enhancing radiance.",
-    "Benefits": ["Helps fade spots", "Clears pores", "Smooths texture"],
+    "Benefits": [
+      "Helps fade spots",
+      "Clears pores",
+      "Smooths texture"
+    ],
     "Application": "Apply Skin Refining Toner using a cotton pad or gently press it into the skin.",
-    "Tricks": ["Use 2\u20133 times a week", "Apply with hands"],
-    "Ingredients": ["Centella Asiatica", "Niacinamide", "Botanical Extracts"],
+    "Tricks": [
+      "Use 2–3 times a week",
+      "Apply with hands"
+    ],
+    "Ingredients": [
+      "Centella Asiatica",
+      "Niacinamide",
+      "Botanical Extracts"
+    ],
     "CatchyLine": "Refine. Reset. Reveal Your Glow.",
     "ImportantInfo": {
       "Headline": "Clarity You Can See",
       "GoodFor": "Uneven and textured skin",
       "FeelsLike": "A refreshing, watery layer",
-      "FYI": "Halal-Friendly \u2022 Pore-Refining"
+      "FYI": "Halal-Friendly • Pore-Refining"
     },
     "WhatsInside": {
       "Intro": "A gentle, clarifying toner.",
@@ -286,354 +565,913 @@
       "I2Desc": "gently removes buildup to reveal brighter skin",
       "Also": "Centella Asiatica, Botanical Extracts"
     },
-    "SpreadItOn": ["refined skin", "smoother texture", "radiant glow"],
+    "SpreadItOn": [
+      "refined skin",
+      "smoother texture",
+      "radiant glow"
+    ],
     "Stats": [
-      { "Pct": "99%", "Desc": "SAID THEIR SKIN FELT BALANCED" }
+      {
+        "Pct": "99%",
+        "Desc": "SAID THEIR SKIN FELT BALANCED"
+      }
     ],
     "StatsDisclaimer": "*Consistent use study.",
     "FAQs": [
-      { "Q": "Can I use this toner every day?", "A": "Recommended 2\u20133 times a week." }
+      {
+        "Q": "Can I use this toner every day?",
+        "A": "Recommended 2–3 times a week."
+      }
     ],
     "Reviews": [
-      { "Name": "Farhan", "Text": "My skin feels much smoother and clearer." }
+      {
+        "Name": "Farhan",
+        "Text": "My skin feels much smoother and clearer."
+      }
     ],
     "Images": {
-       "Hero": "skin refining-100.jpg",
-       "Gallery": ["toner-meet-1.jpg", "toner-meet-2.jpg", "toner-meet-3.jpg", "toner-meet-4.jpg"],
-       "Breakdown": "toner-before-after.jpg",
-       "WhatsInside": "toner-whats-inside.jpg",
-       "Spread": "toner-deep-hydration.jpg",
-       "Stats": "toner-faq.jpg",
-       "Carousel": ["toner-meet-1.jpg", "toner-meet-2.jpg", "toner-meet-3.jpg", "toner-meet-4.jpg"]
+      "Hero": "skin refining-100.jpg",
+      "Gallery": [
+        "toner-meet-1.jpg",
+        "toner-meet-2.jpg",
+        "toner-meet-3.jpg",
+        "toner-meet-4.jpg"
+      ],
+      "Breakdown": "toner-before-after.jpg",
+      "WhatsInside": "toner-whats-inside.jpg",
+      "Spread": "toner-deep-hydration.jpg",
+      "Stats": "toner-faq.jpg",
+      "Carousel": [
+        "toner-meet-1.jpg",
+        "toner-meet-2.jpg",
+        "toner-meet-3.jpg",
+        "toner-meet-4.jpg"
+      ]
     }
   },
   {
-     "File": "product.keratin-serum-v2.liquid",
-     "Title": "Keratin Serum",
-     "Subtitle": "Smooth Control",
-     "Price": "1,800",
-     "Description": "A smoothing hair serum designed to control frizz and restore softness.",
-     "Benefits": ["Controls frizz", "Protects against heat"],
-     "Application": "Apply evenly through damp or dry hair, focusing on ends.",
-     "Tricks": ["Apply on damp hair", "Use before heat styling"],
-     "Ingredients": ["Argan Oil", "Niacinamide"],
-     "CatchyLine": "Smooth Hair. Zero Frizz.",
-     "ImportantInfo": {
-       "Headline": "Frizz-Free Confidence",
-       "GoodFor": "Dry and frizzy hair",
-       "FeelsLike": "A silky, weightless layer",
-       "FYI": "Non-Greasy \u2022 Heat-Protective"
-     },
-     "WhatsInside": {
-       "Intro": "A lightweight, smoothing hair serum.",
-       "I1Title": "argan oil",
-       "I1Desc": "nourishes and softens hair",
-       "I2Title": "keratin complex",
-       "I2Desc": "strengthens hair fibers for smoother strands",
-       "Also": "Vitamin E, Niacinamide"
-     },
-     "SpreadItOn": ["frizz control", "smoother strands", "glossy finish"],
-     "Stats": [
-       { "Pct": "99%", "Desc": "SAID HAIR FELT SMOOTHER" }
-     ],
-     "StatsDisclaimer": "*Consumer study.",
-     "FAQs": [
-       { "Q": "Will it make my hair greasy?", "A": "No, the formula is non-greasy." }
-     ],
-     "Reviews": [
-       { "Name": "Alina", "Text": "My hair feels so much smoother after using this." }
-     ],
-     "Images": {
-       "Hero": "antifrizz-1.jpg",
-       "Gallery": ["antifrizz-1.jpg", "antifrizz-2.jpg", "antifrizz-3.jpg", "antifrizz-4.jpg"],
-       "Breakdown": "antifrizz-plate.jpg",
-       "WhatsInside": "antifrizz-spoon.jpg",
-       "Spread": "antifrizz-spread.jpg",
-       "Stats": "antifrizz-stats.jpg",
-       "FAQ": "antifrizz-faq.jpg",
-       "Carousel": ["antifrizz-1.jpg", "antifrizz-2.jpg", "antifrizz-3.jpg", "antifrizz-4.jpg"]
-     }
-  },
-  {
-     "File": "product.hair-mist.liquid",
-     "Title": "Floral Blossom Hair Mist",
-     "Subtitle": "Fresh Floral Touch",
-     "Price": "1,200",
-     "Description": "A refreshing hair mist designed to instantly revive your hair with a soft, long-lasting floral scent. Infused with panthenol and refreshing botanicals, it adds a natural-looking shine while keeping your hair smelling fresh and feeling soft throughout the day.",
-     "Benefits": ["Long-lasting floral fragrance", "Instant hair refresher", "Adds natural shine", "Lightweight and non-sticky"],
-     "Application": "Hold the bottle 6–8 inches away from dry or damp hair and spray evenly. Use anytime throughout the day for a quick refresh or as the final step in your hair care routine.",
-     "Tricks": ["Spray onto your hairbrush before brushing for even distribution", "Use consistently to keep hair smelling blossom-fresh all day"],
-     "Ingredients": ["Panthenol (Vitamin B5)", "Propanediol", "Floral Extracts", "Glycerin"],
-     "CatchyLine": "Bloom With Every Move.",
-     "ImportantInfo": {
-       "Headline": "Freshness in Every Spray",
-       "GoodFor": "All hair types seeking instant refresh and shine",
-       "FeelsLike": "A weightless mist that adds soft, silky shine",
-       "LooksLike": "Healthy, glossy, and vibrant hair",
-       "SmellsLike": "A delicate, long-lasting floral blossom scent",
-       "FYI": "Cruelty-Free • Lightweight • Refreshing • Non-Greasy"
-     },
-     "WhatsInside": {
-       "Intro": "A lightweight hair mist powered by shine-enhancing hydrators.",
-       "I1Title": "panthenol",
-       "I1Desc": "helps hydrate hair strands and add a healthy, natural-looking shine",
-       "I2Title": "floral extracts",
-       "I2Desc": "provide a delicate, long-lasting fragrance without weighing hair down",
-       "Also": "Propanediol, Glycerin, and subtle botanical refreshers"
-     },
-     "SpreadItOn": ["hair refresh", "floral scent", "natural shine"],
-     "Stats": [
-       { "Pct": "99%", "Desc": "SAID HAIR FELT INSTANTLY REFRESHED" },
-       { "Pct": "97%", "Desc": "LOVED THE LONG-LASTING FLORAL SCENT" },
-       { "Pct": "94%", "Desc": "NOTICED HEALTHIER LOOKING SHINE" }
-     ],
-     "StatsDisclaimer": "*Based on a 1-week consumer perception study.",
-     "FAQs": [
-       { "Q": "Can I use this hair mist daily?", "A": "Yes, it is designed for multiple daily uses without weighing your hair down." },
-       { "Q": "Does it have a strong scent?", "A": "It has a delicate, fresh floral fragrance that is long-lasting but never overpowering." },
-       { "Q": "Will it make my hair oily?", "A": "No, the formula is lightweight and oil-free, adding shine without any greasiness." }
-     ],
-     "Reviews": [
-       { "Name": "Fatima", "Text": "Received my order and I'm super impressed. My hair feels so refreshed and the blossom scent is amazing! 10/10 experience." },
-       { "Name": "Ayesha", "Text": "I'm in love with the texture - it's lightweight and absorbs instantly without any greasiness. Waking up to soft, shiny hair is the best!" }
-     ],
-     "Images": {
-       "Hero": "v2-hair-1.jpeg",
-       "Gallery": ["v2-hair-1.jpeg", "v2-hair-2.jpg", "v2-hair-3.jpg", "v2-hair-4.jpg"],
-       "Breakdown": "v2-hair-plate.jpg",
-       "WhatsInside": "v2-hair-spoon.jpg",
-       "Spread": "v2-hair-spread.jpg",
-       "Stats": "v2-hair-2.jpg",
-       "FAQ": "v2-hair-faq.jpg",
-       "Carousel": ["v2-hair-1.jpeg", "v2-hair-2.jpg", "v2-hair-3.jpg", "v2-hair-4.jpg"]
-     }
-  },
-  {
-     "File": "product.aha-exfoliant.liquid",
-     "Title": "Glycolic Toner",
-     "Subtitle": "Renew & Refine",
-     "Price": "2,000",
-     "Description": "A resurfacing toner designed to promote smoother, clearer skin by gently exfoliating.",
-     "Benefits": ["Gentle exfoliation", "Unclog pores"],
-     "Application": "Apply using a cotton pad. Avoid eye area.",
-     "Tricks": ["Use 2-3 times a week", "Always follow with sunscreen"],
-     "Ingredients": ["Glycolic Acid (7%)", "Niacinamide", "Hyaluronic Acid"],
-     "CatchyLine": "Smooth. Renew. Glow Deeper.",
-     "ImportantInfo": {
-       "Headline": "Powered Renewal",
-       "GoodFor": "Dull and textured skin",
-       "FeelsLike": "A refreshing liquid",
-       "FYI": "Exfoliating \u2022 Glow-Boosting"
-     },
-     "WhatsInside": {
-       "Intro": "A resurfacing toner to reveal smoother skin.",
-       "I1Title": "glycolic acid",
-       "I1Desc": "promotes gentle exfoliation",
-       "I2Title": "niacinamide",
-       "I2Desc": "helps even skin tone and supports clearer pores",
-       "Also": "Salicylic Acid, Hyaluronic Acid, Aloe Vera"
-     },
-     "SpreadItOn": ["surface renewal", "clearer pores", "radiant glow"],
-     "Stats": [
-       { "Pct": "99%", "Desc": "SAID SKIN FELT SMOOTHER" }
-     ],
-     "StatsDisclaimer": "*Consumer study results.",
-     "FAQs": [
-       { "Q": "Do I need sunscreen with this?", "A": "Yes, sunscreen is essential as exfoliation increases sun sensitivity." }
-     ],
-     "Reviews": [
-       { "Name": "Mehwish", "Text": "My skin feels noticeably smoother." }
-     ],
-     "Images": {
-       "Hero": "renewal toner-100.jpg",
-       "Gallery": ["toner-meet-1.jpg", "toner-meet-2.jpg", "toner-meet-3.jpg", "toner-meet-4.jpg"],
-       "Breakdown": "toner-before-after.jpg",
-       "WhatsInside": "toner-whats-inside.jpg",
-       "Spread": "toner-deep-hydration.jpg",
-       "Stats": "toner-faq.jpg",
-       "Carousel": ["toner-meet-1.jpg", "toner-meet-2.jpg", "toner-meet-3.jpg", "toner-meet-4.jpg"]
-     }
-  },
-  {
-     "File": "product.tranexamic-serum-v2.liquid",
-     "Title": "Elaris7 Tranexamic Brightening Serum",
-     "Subtitle": "Even & Illuminate",
-     "Price": "2,400",
-     "Description": "A targeted brightening serum designed to reduce the appearance of dark spots and uneven tone. It helps improve clarity, boost radiance, and support a smoother, more even-looking complexion with consistent use.",
-     "Benefits": [
-       "Helps reduce the appearance of dark spots and discoloration",
-       "Supports a brighter, more even skin tone",
-       "Improves dullness and uneven texture",
-       "Enhances overall skin clarity and radiance",
-       "Hydrates while supporting the skin barrier",
-       "Helps smooth and refine the skin surface",
-       "Promotes a healthier, more luminous glow"
-     ],
-     "Application": "Use morning and night after cleansing and toning. Apply 2\u20133 drops to face and neck and gently press into the skin. Follow with moisturizer and use sunscreen during the day.",
-     "Tricks": [
-       "Apply on slightly damp skin for better absorption",
-       "Use consistently for visible brightening results",
-       "Pair with sunscreen daily to prevent further discoloration",
-       "Layer with moisturizer to lock in hydration"
-     ],
-     "Ingredients": ["Tranexamic Acid (4%)", "Niacinamide (10%)", "Vitamin C", "Alpha Arbutin", "Hyaluronic Acid", "Glycerin", "Panthenol (Vitamin B5)", "Vitamin E", "Peptides", "Botanical Extracts"],
-     "CatchyLine": "Fade Spots. Reveal Clarity.",
-     "ImportantInfo": {
-       "Headline": "Targeted Brightening That Works",
-       "Description": "A serum for EVEN TONE + CLEAR, RADIANT SKIN.",
-       "GoodFor": "All skin types, especially uneven tone and dark spots",
-       "FeelsLike": "A smooth, fast-absorbing serum that layers easily",
-       "LooksLike": "Brighter, clearer skin with improved tone",
-       "SmellsLike": "A soft, clean scent with a subtle finish",
-       "FYI": "Non-Greasy \u2022 Fast Absorbing \u2022 Daily Use \u2022 Tone-Correcting"
-     },
-     "WhatsInside": {
-       "Intro": "A potent brightening serum formulated to target dark spots, even skin tone, and enhance natural radiance.",
-       "I1Title": "TRANEXAMIC ACID (4%)",
-       "I1Desc": "helps visibly reduce dark spots and discoloration",
-       "I2Title": "NIACINAMIDE (10%)",
-       "I2Desc": "supports even tone and improves dullness",
-       "Also": "Vitamin C, Alpha Arbutin, Hyaluronic Acid, Glycerin, Panthenol, Vitamin E, peptides, and botanical extracts for hydration, barrier support, and glowing skin"
-     },
-     "SpreadItOn": ["dark spot care", "even skin tone", "radiant glow"],
-     "Stats": [
-       { "Pct": "99%", "Desc": "SAID THEIR SKIN LOOKED MORE EVEN" },
-       { "Pct": "98%", "Desc": "SAID THEIR SKIN APPEARED BRIGHTER" },
-       { "Pct": "97%", "Desc": "SAID DARK SPOTS LOOKED LESS VISIBLE" },
-       { "Pct": "3 out of 4", "Desc": "SAID THEY NOTICED IMPROVED SKIN CLARITY" }
-     ],
-     "StatsDisclaimer": "Based on a 2-week consumer perception study with consistent daily use.",
-     "FAQs": [
-       { "Q": "Can I use this serum every day?", "A": "Yes, it is suitable for daily use, both morning and night." },
-       { "Q": "Is it suitable for sensitive skin?", "A": "Yes, it includes soothing ingredients, but patch testing is recommended." },
-       { "Q": "Does it help with dark spots and pigmentation?", "A": "Yes, it is designed to target discoloration and improve uneven tone." },
-       { "Q": "Can I layer it with other skincare products?", "A": "Yes, it works well with moisturizers, sunscreens, and other gentle actives." },
-       { "Q": "Do I need to use sunscreen with this?", "A": "Yes, sunscreen is essential during the day to protect and maintain results." }
-     ],
-     "Reviews": [
-       { "Name": "Nimra", "Text": "I've seen a noticeable difference in my dark spots. My skin looks clearer and more even now." },
-       { "Name": "Laiba", "Text": "This serum has really helped brighten my complexion. My skin feels smoother and looks more radiant." },
-       { "Name": "Sumbul", "Text": "My uneven tone has improved a lot since I started using this. It feels gentle and effective." },
-       { "Name": "Faizan", "Text": "After a few weeks, my skin looks more balanced and fresh. It has reduced the appearance of marks." },
-       { "Name": "Rehan", "Text": "It absorbs quickly and gives a nice glow to my skin. My complexion looks healthier overall." }
-     ],
-     "Images": {
-       "Hero": "TranexamicSerum1.jpg",
-       "Gallery": ["TranexamicSerum1.jpg", "TranexamicSerum2.jpg", "TranexamicSerum3.jpg", "TranexamicSerum4.jpg"],
-       "Breakdown": "tranexamic-plate.jpg",
-       "WhatsInside": "tranexamic-spoon.jpg",
-       "Spread": "tranexamic-spread.jpg",
-       "Stats": "tranexamic-stats.jpg",
-       "FAQ": "tranexamic-faq.jpeg",
-       "Carousel": ["TranexamicSerum1.jpg", "TranexamicSerum2.jpg", "TranexamicSerum3.jpg", "TranexamicSerum4.jpg"]
-     }
-  },
-  {
-     "File": "product.anti-acne.liquid",
-     "Title": "Anti-Acne Serum",
-     "Subtitle": "Clear & Control",
-     "Price": "2,200",
-     "Description": "A targeted clarifying serum formulated to reduce acne and calm inflammation.",
-     "Benefits": ["Reduces breakouts", "Controls excess oil"],
-     "Application": "Apply 2-3 drops morning or evening.",
-     "Tricks": ["Start once daily", "Use sunscreen daily"],
-     "Ingredients": ["Neem Extract", "Tea Tree Oil", "Mandelic Acid"],
-     "CatchyLine": "Clear Breakouts. Restore Balance.",
-     "ImportantInfo": {
-       "Headline": "Targeted Acne Care",
-       "GoodFor": "Acne-prone and oily skin",
-       "FeelsLike": "A smooth, fast-absorbing serum",
-       "FYI": "Acne-Control \u2022 Non-Greasy"
-     },
-     "WhatsInside": {
-       "Intro": "A targeted serum to reduce acne.",
-       "I1Title": "neem extract",
-       "I1Desc": "helps combat breakouts and soothe irritated skin",
-       "I2Title": "mandelic acid",
-       "I2Desc": "refines pores and balance oil",
-       "Also": "Tea Tree Oil, Niacinamide, Aloe Vera"
-     },
-     "SpreadItOn": ["acne control", "oil balance", "clear pores"],
-     "Stats": [
-        { "Pct": "98%", "Desc": "SAID BREAKOUTS APPEARED VISIBLY REDUCED" },
-        { "Pct": "97%", "Desc": "NOTICED LESS OILINESS THROUGHOUT THE DAY" },
-        { "Pct": "95%", "Desc": "SAID THEIR SKIN FELT SOOTHED AND BALANCED" },
-        { "Pct": "3 out of 4", "Desc": "SAID IT HELPED PREVENT NEW BREAKOUTS FROM FORMING" }
+    "File": "product.keratin-serum-v2.liquid",
+    "Title": "Keratin Serum",
+    "Subtitle": "Smooth Control",
+    "Price": "1,800",
+    "Description": "A smoothing hair serum designed to control frizz and restore softness.",
+    "Benefits": [
+      "Controls frizz",
+      "Protects against heat"
+    ],
+    "Application": "Apply evenly through damp or dry hair, focusing on ends.",
+    "Tricks": [
+      "Apply on damp hair",
+      "Use before heat styling"
+    ],
+    "Ingredients": [
+      "Argan Oil",
+      "Niacinamide"
+    ],
+    "CatchyLine": "Smooth Hair. Zero Frizz.",
+    "ImportantInfo": {
+      "Headline": "Frizz-Free Confidence",
+      "GoodFor": "Dry and frizzy hair",
+      "FeelsLike": "A silky, weightless layer",
+      "FYI": "Non-Greasy • Heat-Protective"
+    },
+    "WhatsInside": {
+      "Intro": "A lightweight, smoothing hair serum.",
+      "I1Title": "argan oil",
+      "I1Desc": "nourishes and softens hair",
+      "I2Title": "keratin complex",
+      "I2Desc": "strengthens hair fibers for smoother strands",
+      "Also": "Vitamin E, Niacinamide"
+    },
+    "SpreadItOn": [
+      "frizz control",
+      "smoother strands",
+      "glossy finish"
+    ],
+    "Stats": [
+      {
+        "Pct": "99%",
+        "Desc": "SAID HAIR FELT SMOOTHER"
+      }
+    ],
+    "StatsDisclaimer": "*Consumer study.",
+    "FAQs": [
+      {
+        "Q": "Will it make my hair greasy?",
+        "A": "No, the formula is non-greasy."
+      }
+    ],
+    "Reviews": [
+      {
+        "Name": "Alina",
+        "Text": "My hair feels so much smoother after using this."
+      }
+    ],
+    "Images": {
+      "Hero": "antifrizz-1.jpg",
+      "Gallery": [
+        "antifrizz-1.jpg",
+        "antifrizz-2.jpg",
+        "antifrizz-3.jpg",
+        "antifrizz-4.jpg"
       ],
-      "StatsDisclaimer": "*Based on a 2-week consumer perception study.",
-      "FAQs": [
-        { "Q": "Will it dry out my skin?", "A": "No, it contains soothing Aloe and Niacinamide to maintain moisture while fighting acne." },
-        { "Q": "How often should I use it?", "A": "Start once a day (evening) and work up to twice daily if your skin tolerates it well." },
-        { "Q": "Can I use it with other serums?", "A": "Yes, but avoid using it with highly acidic treatments at the same time." }
-      ],
-      "Reviews": [
-        { "Name": "Mahnoor", "Text": "I've struggled with acne for years, but this serum has finally cleared my skin without irritating it. My pores look much smaller too!" },
-        { "Name": "Hassan", "Text": "Best acne serum I've used. It's not sticky at all and really helps with redness and active breakouts within a few days." }
-      ],
-      "WhatsInsideDetail": [
-        { "Title": "Salicylic Acid", "Desc": "a powerful BHA that penetrates deep into pores to dissolve debris and prevent breakouts while refining skin texture" },
-        { "Title": "Niacinamide", "Desc": "a multitasking vitamin that regulates oil production, minimizes pore appearance, and calms redness for a balanced complexion" }
-      ],
-      "Images": {
-       "Hero": "v2-antiacne-1.jpeg",
-       "Gallery": ["v2-antiacne-1.jpeg", "v2-antiacne-2.jpg", "v2-antiacne-3.jpg", "v2-antiacne-4.jpg"],
-       "Breakdown": "v2-antiacne-plate.jpg",
-       "WhatsInside": "v2-antiacne-spoon.jpg",
-       "Spread": "v2-antiacne-spread.jpg",
-       "Stats": "v2-antiacne-stats.jpg",
-       "FAQ": "v2-antiacne-faq.jpg",
-       "Carousel": ["v2-antiacne-1.jpeg", "v2-antiacne-2.jpg", "v2-antiacne-3.jpg", "v2-antiacne-4.jpg"]
-     }
+      "Breakdown": "antifrizz-plate.jpg",
+      "WhatsInside": "antifrizz-spoon.jpg",
+      "Spread": "antifrizz-spread.jpg",
+      "Stats": "antifrizz-stats.jpg",
+      "FAQ": "antifrizz-faq.jpg",
+      "Carousel": [
+        "antifrizz-1.jpg",
+        "antifrizz-2.jpg",
+        "antifrizz-3.jpg",
+        "antifrizz-4.jpg"
+      ]
+    }
   },
   {
-     "File": "product.glutathione-cream.liquid",
-     "Title": "Glutathione Cream",
-     "Subtitle": "Even & Radiant",
-     "Price": "2,400",
-     "Description": "A nourishing brightening cream designed to improve uneven tone, reduce dullness, and support skin repair. It helps fade the look of dark spots, restore radiance, and leave skin smoother and healthier with consistent use.",
-     "Benefits": ["Brightens dull skin", "Barrier support", "Improves uneven tone", "Deeply hydrates"],
-     "Application": "Apply a small amount morning and evening on cleansed skin.",
-     "Tricks": ["Apply on damp skin to lock in moisture", "Pair with a brightening serum for better results"],
-     "Ingredients": ["Glutathione", "Alpha Arbutin", "Honey", "Niacinamide", "Vitamin C"],
-     "CatchyLine": "Repair Dullness. Reveal Glow.",
-     "ImportantInfo": {
-       "Headline": "Deep Brightening & Repair",
-       "GoodFor": "Dull and uneven skin",
-       "FeelsLike": "A rich, smooth cream that absorbs deeply",
-       "LooksLike": "Even-toned, glowing, and healthy skin",
-       "SmellsLike": "A clean, subtle freshness",
-       "FYI": "Repair Care • Deep Hydration • Brightening"
-     },
-     "WhatsInside": {
-       "Intro": "A nourishing cream that brightens and repairs.",
-       "I1Title": "honey & glutathione",
-       "I1Desc": "help restore radiance and fade dullness",
-       "I2Title": "alpha arbutin",
-       "I2Desc": "work to reduce dark spots and pigmentation",
-       "Also": "Niacinamide, Vitamin C, Hyaluronic Acid, Rose Extract"
-     },
-     "SpreadItOn": ["brightening care", "even skin tone", "skin repair"],
-     "Stats": [
-       { "Pct": "99%", "Desc": "SAID SKIN LOOKED MORE RADIANT" },
-       { "Pct": "97%", "Desc": "NOTICED REDUCED DISCOLORATION" }
-     ],
-     "StatsDisclaimer": "*Based on a 2-week perception study.",
-     "FAQs": [
-       { "Q": "Will it feel heavy?", "A": "No, it absorbs well while providing hydration." },
-       { "Q": "Can I use it under makeup?", "A": "Yes, it creates a smooth, hydrated base." }
-     ],
-     "Reviews": [
-       { "Name": "Areeba", "Text": "My skin looks much brighter and the texture has improved a lot." }
-     ],
-     "Images": {
-       "Hero": "glutathione-1.jpeg",
-       "Gallery": ["glutathione-1.jpeg", "glutathione-2.jpg", "glutathione-3.jpg", "glutathione-4.jpg"],
-       "Breakdown": "glutathione-plate.jpg",
-       "WhatsInside": "glutathione-spoon.jpg",
-       "Spread": "glutathione-spread.jpg",
-       "Stats": "glutathione-3.jpg",
-       "FAQ": "glutathione-faq.jpg",
-       "Carousel": ["glutathione-1.jpeg", "glutathione-2.jpg", "glutathione-3.jpg", "glutathione-4.jpg"]
-     }
+    "File": "product.hair-mist.liquid",
+    "Title": "Floral Blossom Hair Mist",
+    "Subtitle": "Fresh Floral Touch",
+    "Price": "1,200",
+    "Description": "A refreshing hair mist designed to instantly revive your hair with a soft, long-lasting floral scent. Infused with panthenol and refreshing botanicals, it adds a natural-looking shine while keeping your hair smelling fresh and feeling soft throughout the day.",
+    "Benefits": [
+      "Long-lasting floral fragrance",
+      "Instant hair refresher",
+      "Adds natural shine",
+      "Lightweight and non-sticky"
+    ],
+    "Application": "Hold the bottle 6–8 inches away from dry or damp hair and spray evenly. Use anytime throughout the day for a quick refresh or as the final step in your hair care routine.",
+    "Tricks": [
+      "Spray onto your hairbrush before brushing for even distribution",
+      "Use consistently to keep hair smelling blossom-fresh all day"
+    ],
+    "Ingredients": [
+      "Panthenol (Vitamin B5)",
+      "Propanediol",
+      "Floral Extracts",
+      "Glycerin"
+    ],
+    "CatchyLine": "Bloom With Every Move.",
+    "ImportantInfo": {
+      "Headline": "Freshness in Every Spray",
+      "GoodFor": "All hair types seeking instant refresh and shine",
+      "FeelsLike": "A weightless mist that adds soft, silky shine",
+      "LooksLike": "Healthy, glossy, and vibrant hair",
+      "SmellsLike": "A delicate, long-lasting floral blossom scent",
+      "FYI": "Cruelty-Free • Lightweight • Refreshing • Non-Greasy"
+    },
+    "WhatsInside": {
+      "Intro": "A lightweight hair mist powered by shine-enhancing hydrators.",
+      "I1Title": "panthenol",
+      "I1Desc": "helps hydrate hair strands and add a healthy, natural-looking shine",
+      "I2Title": "floral extracts",
+      "I2Desc": "provide a delicate, long-lasting fragrance without weighing hair down",
+      "Also": "Propanediol, Glycerin, and subtle botanical refreshers"
+    },
+    "SpreadItOn": [
+      "hair refresh",
+      "floral scent",
+      "natural shine"
+    ],
+    "Stats": [
+      {
+        "Pct": "99%",
+        "Desc": "SAID HAIR FELT INSTANTLY REFRESHED"
+      },
+      {
+        "Pct": "97%",
+        "Desc": "LOVED THE LONG-LASTING FLORAL SCENT"
+      },
+      {
+        "Pct": "94%",
+        "Desc": "NOTICED HEALTHIER LOOKING SHINE"
+      }
+    ],
+    "StatsDisclaimer": "*Based on a 1-week consumer perception study.",
+    "FAQs": [
+      {
+        "Q": "Can I use this hair mist daily?",
+        "A": "Yes, it is designed for multiple daily uses without weighing your hair down."
+      },
+      {
+        "Q": "Does it have a strong scent?",
+        "A": "It has a delicate, fresh floral fragrance that is long-lasting but never overpowering."
+      },
+      {
+        "Q": "Will it make my hair oily?",
+        "A": "No, the formula is lightweight and oil-free, adding shine without any greasiness."
+      }
+    ],
+    "Reviews": [
+      {
+        "Name": "Fatima",
+        "Text": "Received my order and I'm super impressed. My hair feels so refreshed and the blossom scent is amazing! 10/10 experience."
+      },
+      {
+        "Name": "Ayesha",
+        "Text": "I'm in love with the texture - it's lightweight and absorbs instantly without any greasiness. Waking up to soft, shiny hair is the best!"
+      }
+    ],
+    "Images": {
+      "Hero": "v2-hair-1.jpeg",
+      "Gallery": [
+        "v2-hair-1.jpeg",
+        "v2-hair-2.jpg",
+        "v2-hair-3.jpg",
+        "v2-hair-4.jpg"
+      ],
+      "Breakdown": "v2-hair-plate.jpg",
+      "WhatsInside": "v2-hair-spoon.jpg",
+      "Spread": "v2-hair-spread.jpg",
+      "Stats": "v2-hair-2.jpg",
+      "FAQ": "v2-hair-faq.jpg",
+      "Carousel": [
+        "v2-hair-1.jpeg",
+        "v2-hair-2.jpg",
+        "v2-hair-3.jpg",
+        "v2-hair-4.jpg"
+      ]
+    }
+  },
+  {
+    "File": "product.aha-exfoliant.liquid",
+    "Title": "Glycolic Toner",
+    "Subtitle": "Renew & Refine",
+    "Price": "2,000",
+    "Description": "A resurfacing toner designed to promote smoother, clearer skin by gently exfoliating.",
+    "Benefits": [
+      "Gentle exfoliation",
+      "Unclog pores"
+    ],
+    "Application": "Apply using a cotton pad. Avoid eye area.",
+    "Tricks": [
+      "Use 2-3 times a week",
+      "Always follow with sunscreen"
+    ],
+    "Ingredients": [
+      "Glycolic Acid (7%)",
+      "Niacinamide",
+      "Hyaluronic Acid"
+    ],
+    "CatchyLine": "Smooth. Renew. Glow Deeper.",
+    "ImportantInfo": {
+      "Headline": "Powered Renewal",
+      "GoodFor": "Dull and textured skin",
+      "FeelsLike": "A refreshing liquid",
+      "FYI": "Exfoliating • Glow-Boosting"
+    },
+    "WhatsInside": {
+      "Intro": "A resurfacing toner to reveal smoother skin.",
+      "I1Title": "glycolic acid",
+      "I1Desc": "promotes gentle exfoliation",
+      "I2Title": "niacinamide",
+      "I2Desc": "helps even skin tone and supports clearer pores",
+      "Also": "Salicylic Acid, Hyaluronic Acid, Aloe Vera"
+    },
+    "SpreadItOn": [
+      "surface renewal",
+      "clearer pores",
+      "radiant glow"
+    ],
+    "Stats": [
+      {
+        "Pct": "99%",
+        "Desc": "SAID SKIN FELT SMOOTHER"
+      }
+    ],
+    "StatsDisclaimer": "*Consumer study results.",
+    "FAQs": [
+      {
+        "Q": "Do I need sunscreen with this?",
+        "A": "Yes, sunscreen is essential as exfoliation increases sun sensitivity."
+      }
+    ],
+    "Reviews": [
+      {
+        "Name": "Mehwish",
+        "Text": "My skin feels noticeably smoother."
+      }
+    ],
+    "Images": {
+      "Hero": "renewal toner-100.jpg",
+      "Gallery": [
+        "toner-meet-1.jpg",
+        "toner-meet-2.jpg",
+        "toner-meet-3.jpg",
+        "toner-meet-4.jpg"
+      ],
+      "Breakdown": "toner-before-after.jpg",
+      "WhatsInside": "toner-whats-inside.jpg",
+      "Spread": "toner-deep-hydration.jpg",
+      "Stats": "toner-faq.jpg",
+      "Carousel": [
+        "toner-meet-1.jpg",
+        "toner-meet-2.jpg",
+        "toner-meet-3.jpg",
+        "toner-meet-4.jpg"
+      ]
+    }
+  },
+  {
+    "File": "product.tranexamic-serum-v2.liquid",
+    "Title": "Elaris7 Tranexamic Brightening Serum",
+    "Subtitle": "Even & Illuminate",
+    "Price": "2,400",
+    "Description": "A targeted brightening serum designed to reduce the appearance of dark spots and uneven tone. It helps improve clarity, boost radiance, and support a smoother, more even-looking complexion with consistent use.",
+    "Benefits": [
+      "Helps reduce the appearance of dark spots and discoloration",
+      "Supports a brighter, more even skin tone",
+      "Improves dullness and uneven texture",
+      "Enhances overall skin clarity and radiance",
+      "Hydrates while supporting the skin barrier",
+      "Helps smooth and refine the skin surface",
+      "Promotes a healthier, more luminous glow"
+    ],
+    "Application": "Use morning and night after cleansing and toning. Apply 2–3 drops to face and neck and gently press into the skin. Follow with moisturizer and use sunscreen during the day.",
+    "Tricks": [
+      "Apply on slightly damp skin for better absorption",
+      "Use consistently for visible brightening results",
+      "Pair with sunscreen daily to prevent further discoloration",
+      "Layer with moisturizer to lock in hydration"
+    ],
+    "Ingredients": [
+      "Tranexamic Acid (4%)",
+      "Niacinamide (10%)",
+      "Vitamin C",
+      "Alpha Arbutin",
+      "Hyaluronic Acid",
+      "Glycerin",
+      "Panthenol (Vitamin B5)",
+      "Vitamin E",
+      "Peptides",
+      "Botanical Extracts"
+    ],
+    "CatchyLine": "Fade Spots. Reveal Clarity.",
+    "ImportantInfo": {
+      "Headline": "Targeted Brightening That Works",
+      "Description": "A serum for EVEN TONE + CLEAR, RADIANT SKIN.",
+      "GoodFor": "All skin types, especially uneven tone and dark spots",
+      "FeelsLike": "A smooth, fast-absorbing serum that layers easily",
+      "LooksLike": "Brighter, clearer skin with improved tone",
+      "SmellsLike": "A soft, clean scent with a subtle finish",
+      "FYI": "Non-Greasy • Fast Absorbing • Daily Use • Tone-Correcting"
+    },
+    "WhatsInside": {
+      "Intro": "A potent brightening serum formulated to target dark spots, even skin tone, and enhance natural radiance.",
+      "I1Title": "TRANEXAMIC ACID (4%)",
+      "I1Desc": "helps visibly reduce dark spots and discoloration",
+      "I2Title": "NIACINAMIDE (10%)",
+      "I2Desc": "supports even tone and improves dullness",
+      "Also": "Vitamin C, Alpha Arbutin, Hyaluronic Acid, Glycerin, Panthenol, Vitamin E, peptides, and botanical extracts for hydration, barrier support, and glowing skin"
+    },
+    "SpreadItOn": [
+      "dark spot care",
+      "even skin tone",
+      "radiant glow"
+    ],
+    "Stats": [
+      {
+        "Pct": "99%",
+        "Desc": "SAID THEIR SKIN LOOKED MORE EVEN"
+      },
+      {
+        "Pct": "98%",
+        "Desc": "SAID THEIR SKIN APPEARED BRIGHTER"
+      },
+      {
+        "Pct": "97%",
+        "Desc": "SAID DARK SPOTS LOOKED LESS VISIBLE"
+      },
+      {
+        "Pct": "3 out of 4",
+        "Desc": "SAID THEY NOTICED IMPROVED SKIN CLARITY"
+      }
+    ],
+    "StatsDisclaimer": "Based on a 2-week consumer perception study with consistent daily use.",
+    "FAQs": [
+      {
+        "Q": "Can I use this serum every day?",
+        "A": "Yes, it is suitable for daily use, both morning and night."
+      },
+      {
+        "Q": "Is it suitable for sensitive skin?",
+        "A": "Yes, it includes soothing ingredients, but patch testing is recommended."
+      },
+      {
+        "Q": "Does it help with dark spots and pigmentation?",
+        "A": "Yes, it is designed to target discoloration and improve uneven tone."
+      },
+      {
+        "Q": "Can I layer it with other skincare products?",
+        "A": "Yes, it works well with moisturizers, sunscreens, and other gentle actives."
+      },
+      {
+        "Q": "Do I need to use sunscreen with this?",
+        "A": "Yes, sunscreen is essential during the day to protect and maintain results."
+      }
+    ],
+    "Reviews": [
+      {
+        "Name": "Nimra",
+        "Text": "I've seen a noticeable difference in my dark spots. My skin looks clearer and more even now."
+      },
+      {
+        "Name": "Laiba",
+        "Text": "This serum has really helped brighten my complexion. My skin feels smoother and looks more radiant."
+      },
+      {
+        "Name": "Sumbul",
+        "Text": "My uneven tone has improved a lot since I started using this. It feels gentle and effective."
+      },
+      {
+        "Name": "Faizan",
+        "Text": "After a few weeks, my skin looks more balanced and fresh. It has reduced the appearance of marks."
+      },
+      {
+        "Name": "Rehan",
+        "Text": "It absorbs quickly and gives a nice glow to my skin. My complexion looks healthier overall."
+      }
+    ],
+    "Images": {
+      "Hero": "TranexamicSerum1.jpg",
+      "Gallery": [
+        "TranexamicSerum1.jpg",
+        "TranexamicSerum2.jpg",
+        "TranexamicSerum3.jpg",
+        "TranexamicSerum4.jpg"
+      ],
+      "Breakdown": "tranexamic-plate.jpg",
+      "WhatsInside": "tranexamic-spoon.jpg",
+      "Spread": "tranexamic-spread.jpg",
+      "Stats": "tranexamic-stats.jpg",
+      "FAQ": "tranexamic-faq.jpeg",
+      "Carousel": [
+        "TranexamicSerum1.jpg",
+        "TranexamicSerum2.jpg",
+        "TranexamicSerum3.jpg",
+        "TranexamicSerum4.jpg"
+      ]
+    }
+  },
+  {
+    "File": "product.anti-acne.liquid",
+    "Title": "Anti-Acne Serum",
+    "Subtitle": "Clear & Control",
+    "Price": "2,200",
+    "Description": "A targeted clarifying serum formulated to reduce acne and calm inflammation.",
+    "Benefits": [
+      "Reduces breakouts",
+      "Controls excess oil"
+    ],
+    "Application": "Apply 2-3 drops morning or evening.",
+    "Tricks": [
+      "Start once daily",
+      "Use sunscreen daily"
+    ],
+    "Ingredients": [
+      "Neem Extract",
+      "Tea Tree Oil",
+      "Mandelic Acid"
+    ],
+    "CatchyLine": "Clear Breakouts. Restore Balance.",
+    "ImportantInfo": {
+      "Headline": "Targeted Acne Care",
+      "GoodFor": "Acne-prone and oily skin",
+      "FeelsLike": "A smooth, fast-absorbing serum",
+      "FYI": "Acne-Control • Non-Greasy"
+    },
+    "WhatsInside": {
+      "Intro": "A targeted serum to reduce acne.",
+      "I1Title": "neem extract",
+      "I1Desc": "helps combat breakouts and soothe irritated skin",
+      "I2Title": "mandelic acid",
+      "I2Desc": "refines pores and balance oil",
+      "Also": "Tea Tree Oil, Niacinamide, Aloe Vera"
+    },
+    "SpreadItOn": [
+      "acne control",
+      "oil balance",
+      "clear pores"
+    ],
+    "Stats": [
+      {
+        "Pct": "98%",
+        "Desc": "SAID BREAKOUTS APPEARED VISIBLY REDUCED"
+      },
+      {
+        "Pct": "97%",
+        "Desc": "NOTICED LESS OILINESS THROUGHOUT THE DAY"
+      },
+      {
+        "Pct": "95%",
+        "Desc": "SAID THEIR SKIN FELT SOOTHED AND BALANCED"
+      },
+      {
+        "Pct": "3 out of 4",
+        "Desc": "SAID IT HELPED PREVENT NEW BREAKOUTS FROM FORMING"
+      }
+    ],
+    "StatsDisclaimer": "*Based on a 2-week consumer perception study.",
+    "FAQs": [
+      {
+        "Q": "Will it dry out my skin?",
+        "A": "No, it contains soothing Aloe and Niacinamide to maintain moisture while fighting acne."
+      },
+      {
+        "Q": "How often should I use it?",
+        "A": "Start once a day (evening) and work up to twice daily if your skin tolerates it well."
+      },
+      {
+        "Q": "Can I use it with other serums?",
+        "A": "Yes, but avoid using it with highly acidic treatments at the same time."
+      }
+    ],
+    "Reviews": [
+      {
+        "Name": "Mahnoor",
+        "Text": "I've struggled with acne for years, but this serum has finally cleared my skin without irritating it. My pores look much smaller too!"
+      },
+      {
+        "Name": "Hassan",
+        "Text": "Best acne serum I've used. It's not sticky at all and really helps with redness and active breakouts within a few days."
+      }
+    ],
+    "WhatsInsideDetail": [
+      {
+        "Title": "Salicylic Acid",
+        "Desc": "a powerful BHA that penetrates deep into pores to dissolve debris and prevent breakouts while refining skin texture"
+      },
+      {
+        "Title": "Niacinamide",
+        "Desc": "a multitasking vitamin that regulates oil production, minimizes pore appearance, and calms redness for a balanced complexion"
+      }
+    ],
+    "Images": {
+      "Hero": "v2-antiacne-1.jpeg",
+      "Gallery": [
+        "v2-antiacne-1.jpeg",
+        "v2-antiacne-2.jpg",
+        "v2-antiacne-3.jpg",
+        "v2-antiacne-4.jpg"
+      ],
+      "Breakdown": "v2-antiacne-plate.jpg",
+      "WhatsInside": "v2-antiacne-spoon.jpg",
+      "Spread": "v2-antiacne-spread.jpg",
+      "Stats": "v2-antiacne-stats.jpg",
+      "FAQ": "v2-antiacne-faq.jpg",
+      "Carousel": [
+        "v2-antiacne-1.jpeg",
+        "v2-antiacne-2.jpg",
+        "v2-antiacne-3.jpg",
+        "v2-antiacne-4.jpg"
+      ]
+    }
+  },
+  {
+    "File": "product.glutathione-cream.liquid",
+    "Title": "Glutathione Cream",
+    "Subtitle": "Even & Radiant",
+    "Price": "2,400",
+    "Description": "A nourishing brightening cream designed to improve uneven tone, reduce dullness, and support skin repair. It helps fade the look of dark spots, restore radiance, and leave skin smoother and healthier with consistent use.",
+    "Benefits": [
+      "Brightens dull skin",
+      "Barrier support",
+      "Improves uneven tone",
+      "Deeply hydrates"
+    ],
+    "Application": "Apply a small amount morning and evening on cleansed skin.",
+    "Tricks": [
+      "Apply on damp skin to lock in moisture",
+      "Pair with a brightening serum for better results"
+    ],
+    "Ingredients": [
+      "Glutathione",
+      "Alpha Arbutin",
+      "Honey",
+      "Niacinamide",
+      "Vitamin C"
+    ],
+    "CatchyLine": "Repair Dullness. Reveal Glow.",
+    "ImportantInfo": {
+      "Headline": "Deep Brightening & Repair",
+      "GoodFor": "Dull and uneven skin",
+      "FeelsLike": "A rich, smooth cream that absorbs deeply",
+      "LooksLike": "Even-toned, glowing, and healthy skin",
+      "SmellsLike": "A clean, subtle freshness",
+      "FYI": "Repair Care • Deep Hydration • Brightening"
+    },
+    "WhatsInside": {
+      "Intro": "A nourishing cream that brightens and repairs.",
+      "I1Title": "honey & glutathione",
+      "I1Desc": "help restore radiance and fade dullness",
+      "I2Title": "alpha arbutin",
+      "I2Desc": "work to reduce dark spots and pigmentation",
+      "Also": "Niacinamide, Vitamin C, Hyaluronic Acid, Rose Extract"
+    },
+    "SpreadItOn": [
+      "brightening care",
+      "even skin tone",
+      "skin repair"
+    ],
+    "Stats": [
+      {
+        "Pct": "99%",
+        "Desc": "SAID SKIN LOOKED MORE RADIANT"
+      },
+      {
+        "Pct": "97%",
+        "Desc": "NOTICED REDUCED DISCOLORATION"
+      }
+    ],
+    "StatsDisclaimer": "*Based on a 2-week perception study.",
+    "FAQs": [
+      {
+        "Q": "Will it feel heavy?",
+        "A": "No, it absorbs well while providing hydration."
+      },
+      {
+        "Q": "Can I use it under makeup?",
+        "A": "Yes, it creates a smooth, hydrated base."
+      }
+    ],
+    "Reviews": [
+      {
+        "Name": "Areeba",
+        "Text": "My skin looks much brighter and the texture has improved a lot."
+      }
+    ],
+    "Images": {
+      "Hero": "glutathione-1.jpeg",
+      "Gallery": [
+        "glutathione-1.jpeg",
+        "glutathione-2.jpg",
+        "glutathione-3.jpg",
+        "glutathione-4.jpg"
+      ],
+      "Breakdown": "glutathione-plate.jpg",
+      "WhatsInside": "glutathione-spoon.jpg",
+      "Spread": "glutathione-spread.jpg",
+      "Stats": "glutathione-3.jpg",
+      "FAQ": "glutathione-faq.jpg",
+      "Carousel": [
+        "glutathione-1.jpeg",
+        "glutathione-2.jpg",
+        "glutathione-3.jpg",
+        "glutathione-4.jpg"
+      ]
+    }
+  },
+  {
+    "File": "product.renewal-cleanser-v2.liquid",
+    "Title": "Renewal Cleanser",
+    "Subtitle": "Deep Brightening",
+    "Price": "2,850",
+    "Description": "A transformative gel-to-foam cleanser designed to wash away impurities while infusing skin with brightening actives for a clear, radiant look.",
+    "Benefits": [
+      "Deeply cleanses without stripping",
+      "Brightens uneven skin tone",
+      "Leaves skin soft and refreshed"
+    ],
+    "Application": "Massage 1-2 pumps onto damp skin and rinse thoroughly.",
+    "Tricks": [
+      "Massage for 60 seconds to active ingredients",
+      "Double cleanse at night for best results"
+    ],
+    "Ingredients": [
+      "Glutathione",
+      "Niacinamide",
+      "Vitamin C",
+      "Aloe Vera",
+      "Licorice Extract"
+    ],
+    "CatchyLine": "Wash Your Way to Radiant Skin",
+    "ImportantInfo": {
+      "Headline": "Clarify & Brighten",
+      "GoodFor": "All skin types wanting a brighter complexion",
+      "FeelsLike": "A refreshing, lightweight gel-foam",
+      "FYI": "Deep Cleansing • Halal • Non-Drying"
+    },
+    "WhatsInside": {
+      "Intro": "Powered by brightening powerhouses for a clean, glowing finish.",
+      "I1Title": "glutathione",
+      "I1Desc": "helps reduce oxidative stress and brightens dull skin",
+      "I2Title": "niacinamide",
+      "I2Desc": "calms skin and helps refine the appearance of pores",
+      "Also": "Vitamin C, Botanical Brightening Complex"
+    },
+    "SpreadItOn": [
+      "deep cleanse",
+      "brightening glow",
+      "refreshed skin"
+    ],
+    "Stats": [
+      {
+        "Pct": "97%",
+        "Desc": "SAID THEIR SKIN FELT DEEPLY CLEANSED"
+      },
+      {
+        "Pct": "95%",
+        "Desc": "NOTICED A BRIGHTER GLOW AFTER WASHING"
+      }
+    ],
+    "StatsDisclaimer": "*Based on consumer perception study.",
+    "FAQs": [
+      {
+        "Q": "Will it dry out my skin?",
+        "A": "No, it contains Aloe Vera to keep skin hydrated while cleansing."
+      }
+    ],
+    "Reviews": [
+      {
+        "Name": "Ayesha",
+        "Text": "My favorite cleanser! It feels so fresh and my skin looks brighter every day."
+      }
+    ],
+    "Images": {
+      "Hero": "v2-cleanser-1.jpeg",
+      "Gallery": [
+        "v2-cleanser-1.jpeg",
+        "v2-cleanser-2.jpg",
+        "v2-cleanser-3.jpg",
+        "v2-cleanser-4.jpg"
+      ],
+      "Breakdown": "v2-cleanser-plate.jpg",
+      "WhatsInside": "v2-cleanser-spoon.jpg",
+      "Spread": "v2-cleanser-spread.jpg",
+      "Stats": "v2-cleanser-stats.jpg",
+      "FAQ": "v2-cleanser-faq.jpg",
+      "Carousel": [
+        "v2-cleanser-1.jpeg",
+        "v2-cleanser-2.jpg",
+        "v2-cleanser-3.jpg",
+        "v2-cleanser-4.jpg"
+      ]
+    }
+  },
+  {
+    "File": "product.e7-korean-glass-skin-moisturizer.liquid",
+    "Title": "Hydra Burst Moisturizer",
+    "Subtitle": "Glass Skin Finish",
+    "Price": "2,499",
+    "Description": "A high-performance moisturizer designed to create the ultimate glass skin effect by locking in deep hydration and refining skin texture.",
+    "Benefits": [
+      "Gives an instant dewy glow",
+      "72-hour deep hydration",
+      "Minimizes pore appearance"
+    ],
+    "Application": "Apply onto damp skin morning and night after serum.",
+    "Tricks": [
+      "Mix with highlight for extra glow",
+      "Store in fridge for cooling effect"
+    ],
+    "Ingredients": [
+      "Hyaluronic Acid",
+      "Ceramides",
+      "Centella Asiatica",
+      "Peptides"
+    ],
+    "CatchyLine": "The Ultimate Glass Skin Secret",
+    "ImportantInfo": {
+      "Headline": "Peak Hydration & Glow",
+      "GoodFor": "Dry, oily, and combination skin",
+      "FeelsLike": "A cool, watery cream that absorbs instantly",
+      "FYI": "Glass Skin • Ultra-Hydrating • Lightweight"
+    },
+    "WhatsInside": {
+      "Intro": "A blend of moisture-locking technology and skin-barrier repair.",
+      "I1Title": "ceramides",
+      "I1Desc": "essential lipids that strengthen the skin barrier and lock in moisture",
+      "I2Title": "peptides",
+      "I2Desc": "help support skin elasticity and smooth out fine lines",
+      "Also": "Hyaluronic Acid, Panthenol, Squalane"
+    },
+    "SpreadItOn": [
+      "glass skin glow",
+      "barrier support",
+      "plump hydration"
+    ],
+    "Stats": [
+      {
+        "Pct": "98%",
+        "Desc": "SAID IT GAVE AN INSTANT DEWY GLOW"
+      },
+      {
+        "Pct": "96%",
+        "Desc": "SAID THEIR SKIN FELT PLUMP AND HYDRATED"
+      }
+    ],
+    "Images": {
+      "Hero": "v2-moisturizer-1.jpeg",
+      "Gallery": [
+        "v2-moisturizer-1.jpeg",
+        "v2-moisturizer-2.jpg",
+        "v2-moisturizer-3.jpg",
+        "v2-moisturizer-4.jpg"
+      ],
+      "Breakdown": "v2-moisturizer-plate.jpg",
+      "WhatsInside": "v2-moisturizer-spoon.jpg",
+      "Spread": "v2-moisturizer-spread.jpg",
+      "Carousel": [
+        "TranexamicSerum1.jpg",
+        "TranexamicSerum2.jpg",
+        "TranexamicSerum3.jpg",
+        "TranexamicSerum4.jpg"
+      ]
+    },
+    "Reviews": [
+      {
+        "Name": "Customer",
+        "Text": "Excellent product, highly recommended!"
+      }
+    ],
+    "FAQs": [
+      {
+        "Q": "Is it suitable for daily use?",
+        "A": "Yes, absolutely."
+      }
+    ],
+    "StatsDisclaimer": "*Results may vary."
+  },
+  {
+    "File": "product.renewal-toner-v2.liquid",
+    "Title": "Renewal Toner",
+    "Subtitle": "Pore Refining",
+    "Price": "2,670",
+    "Description": "A gentle exfoliating toner that sweeps away dead skin cells and tightens pores to reveal a smoother, brighter complexion.",
+    "Benefits": [
+      "Refines pore size",
+      "Smooths skin texture",
+      "Prepares skin for hydration"
+    ],
+    "Application": "Apply with a cotton pad or hands onto clean, dry skin.",
+    "Ingredients": [
+      "Glycolic Acid",
+      "Lactic Acid",
+      "Witch Hazel",
+      "Honey"
+    ],
+    "CatchyLine": "Smooth. Refine. Renew.",
+    "ImportantInfo": {
+      "Headline": "Clear & Refine",
+      "GoodFor": "Enlarged pores and dull skin texture",
+      "FeelsLike": "A cool, refreshing splash of goodness",
+      "FYI": "Exfoliating • Alcohol-Free • Pore-Tightening"
+    },
+    "WhatsInside": {
+      "Intro": "A balanced blend of AHAs and soothing botanicals for skin renewal.",
+      "I1Title": "glycolic acid",
+      "I1Desc": "exfoliates the surface to reveal fresh, glowing skin",
+      "I2Title": "witch hazel",
+      "I2Desc": "helps tighten pores and control excess oil",
+      "Also": "Lactic Acid, Aloe Vera, Honey"
+    },
+    "SpreadItOn": [
+      "pore refining",
+      "smooth texture",
+      "bright skin"
+    ],
+    "Stats": [
+      {
+        "Pct": "98%",
+        "Desc": "SAID THEIR PORES LOOKED SMALLER"
+      },
+      {
+        "Pct": "96%",
+        "Desc": "NOTICED SMOOTHER SKIN TEXTURE"
+      }
+    ],
+    "StatsDisclaimer": "*Based on consumer perception study.",
+    "FAQs": [
+      {
+        "Q": "When should I use it?",
+        "A": "Use it after cleansing and before serum, once or twice daily."
+      }
+    ],
+    "Reviews": [
+      {
+        "Name": "Zainab",
+        "Text": "This toner has really helped with my blackheads and large pores. It doesn't sting at all!"
+      }
+    ],
+    "Images": {
+      "Hero": "v2-toner-1.jpeg",
+      "Gallery": [
+        "v2-toner-1.jpeg",
+        "v2-toner-2.jpg",
+        "v2-toner-3.jpg",
+        "v2-toner-4.jpg"
+      ],
+      "Breakdown": "v2-toner-plate.jpg",
+      "WhatsInside": "v2-toner-spoon.jpg",
+      "Spread": "v2-toner-spread.jpg",
+      "Stats": "v2-toner-stats.jpg",
+      "FAQ": "v2-toner-faq.jpg",
+      "Carousel": [
+        "v2-toner-1.jpeg",
+        "v2-toner-2.jpg",
+        "v2-toner-3.jpg",
+        "v2-toner-4.jpg"
+      ]
+    }
   }
 ]
