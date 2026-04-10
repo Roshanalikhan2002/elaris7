@@ -1,0 +1,355 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "mobile_hero": {
+      "type": "mobile-hero-slider",
+      "blocks": {
+        "slide1": {
+          "type": "banner",
+          "settings": {}
+        },
+        "slide2": {
+          "type": "banner",
+          "settings": {
+            "image": "shopify://shop_images/Artboard_71-100_jpg.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "slide1",
+        "slide2"
+      ],
+      "settings": {
+        "autoplay_speed": 4
+      }
+    },
+    "hero": {
+      "type": "hero",
+      "settings": {
+        "title": "E7's all-over glass skin look.",
+        "btn_text": "THE SETS",
+        "btn_link": "",
+        "hero_image": "shopify://shop_images/Artboard_4-100_jpg.jpg",
+        "hero_image_mobile": "shopify://shop_images/Artboard_71-100_jpg.jpg",
+        "video_url": "",
+        "menu_left": "",
+        "logo_svg": ""
+      }
+    },
+    "category_nav": {
+      "type": "category-nav",
+      "settings": {}
+    },
+    "featured_products": {
+      "type": "featured-products",
+      "blocks": {
+        "block_night_cream": {
+          "type": "product",
+          "settings": {
+            "title": "Centella Night Cream",
+            "price": "Rs. 2,500",
+            "subtitle": "Premium Korean skincare formula",
+            "brand_label": "nightcream",
+            "badge": "bestseller",
+            "reviews": "16k",
+            "asset_image": "night-cream.jpg",
+            "asset_hover_image": "night-cream-hover.jpg",
+            "product_link": "/products/night-cream"
+          }
+        },
+        "block_tranexamic": {
+          "type": "product",
+          "settings": {
+            "title": "Tranexamic Brightening Serum",
+            "price": "Rs. 2,800",
+            "subtitle": "Premium Korean skincare formula",
+            "brand_label": "serum",
+            "badge": "new",
+            "reviews": "8k",
+            "asset_image": "tranexamic-serum.jpg",
+            "asset_hover_image": "tranexamic-meet-1.jpg",
+            "product_link": "/products/tranexamic-serum"
+          }
+        },
+        "block_keratin": {
+          "type": "product",
+          "settings": {
+            "title": "Anti Frizz Keratin Serum",
+            "price": "Rs. 2,700",
+            "subtitle": "Premium Korean skincare formula",
+            "brand_label": "haircare",
+            "badge": "",
+            "reviews": "6k",
+            "asset_image": "keratin-serum.jpg",
+            "asset_hover_image": "keratin-serum-hover.jpg",
+            "product_link": "/products/anti-frizz-keratin-serum"
+          }
+        },
+        "block_glow": {
+          "type": "product",
+          "settings": {
+            "title": "Centella Serum",
+            "price": "Rs. 2,540",
+            "subtitle": "Premium Korean skincare formula",
+            "brand_label": "serum",
+            "badge": "",
+            "reviews": "12k",
+            "asset_image": "glow-serum-100.jpg",
+            "asset_hover_image": "glow-serum-hover.jpg",
+            "product_link": "/products/e7-korean-glass-skin-centella-sunscreen-spf50-copy"
+          }
+        },
+        "block_glutathione": {
+          "type": "product",
+          "settings": {
+            "title": "Glutathione Cream",
+            "price": "Rs. 2,950",
+            "subtitle": "Premium Korean skincare formula",
+            "brand_label": "repair",
+            "badge": "",
+            "reviews": "9k",
+            "asset_image": "glutathione-cream-100.jpg",
+            "asset_hover_image": "deep-hydration-100.jpg",
+            "product_link": "/products/glutathione-cream"
+          }
+        },
+        "block_hair_mist": {
+          "type": "product",
+          "settings": {
+            "title": "Floral Blossom Hair Mist",
+            "price": "Rs. 2,400",
+            "subtitle": "Premium Korean skincare formula",
+            "brand_label": "haircare",
+            "badge": "",
+            "reviews": "5k",
+            "asset_image": "hair-mist.jpg",
+            "asset_hover_image": "hair-mist-hover.jpg",
+            "product_link": "/products/floral-blossom-hair-mist"
+          }
+        },
+        "block_face_wash": {
+          "type": "product",
+          "settings": {
+            "title": "Face Wash",
+            "price": "Rs. 2,200",
+            "subtitle": "Premium Korean skincare formula",
+            "brand_label": "cleanser",
+            "badge": "",
+            "reviews": "11k",
+            "asset_image": "facewash-100.jpg",
+            "asset_hover_image": "deep-hydration-facewash.jpg",
+            "product_link": "/products/e7-korean-glass-skin-centella-night-cream-copy"
+          }
+        },
+        "block_anti_acne": {
+          "type": "product",
+          "settings": {
+            "title": "Anti Acne",
+            "price": "Rs. 2,450",
+            "subtitle": "Premium Korean skincare formula",
+            "brand_label": "antiacne",
+            "badge": "",
+            "reviews": "14k",
+            "asset_image": "anti-acne-100.jpg",
+            "asset_hover_image": "hover-anti-acne.png",
+            "product_link": "/products/anti-acne"
+          }
+        },
+        "block_sunscreen": {
+          "type": "product",
+          "settings": {
+            "title": "Sunscreen SPF60+",
+            "price": "Rs. 2,630",
+            "subtitle": "Premium Korean skincare formula",
+            "brand_label": "sunscreen",
+            "badge": "",
+            "reviews": "7k",
+            "asset_image": "sunscreen-100.jpg",
+            "asset_hover_image": "sunscreen-hover.jpg",
+            "product_link": "/products/e7-korean-glass-skin-centella-face-wash-copy"
+          }
+        },
+        "block_cleanser": {
+          "type": "product",
+          "settings": {
+            "title": "Renewal Cleanser",
+            "price": "Rs. 2,850",
+            "subtitle": "Premium Korean skincare formula",
+            "brand_label": "cleanser",
+            "badge": "",
+            "reviews": "10k",
+            "asset_image": "gel cleanser-100.jpg",
+            "asset_hover_image": "gel-cleanser-hover.jpg",
+            "product_link": "/products/renewal-cleanser"
+          }
+        },
+        "block_moisturizer": {
+          "type": "product",
+          "settings": {
+            "title": "Hydra Burst Moisturizer",
+            "price": "Rs. 2,499",
+            "subtitle": "Premium Korean skincare formula",
+            "brand_label": "moisturizer",
+            "badge": "",
+            "reviews": "13k",
+            "asset_image": "moisturizer-100.jpg",
+            "asset_hover_image": "moisturizer-hover.jpg",
+            "product_link": "/products/e7-korean-glass-skin-moisturizer"
+          }
+        },
+        "block_toner": {
+          "type": "product",
+          "settings": {
+            "title": "Renewal Toner",
+            "price": "Rs. 2,670",
+            "subtitle": "Premium Korean skincare formula",
+            "brand_label": "toner",
+            "badge": "",
+            "reviews": "8k",
+            "asset_image": "renewal toner-100.jpg",
+            "asset_hover_image": "toner-hover.jpg",
+            "product_link": "/products/centella-skin-toner"
+          }
+        },
+        "block_set_1": {
+          "type": "product",
+          "settings": {
+            "title": "E7 Glass Skin Set",
+            "price": "Rs. 4,500",
+            "subtitle": "Essential glass skin routine",
+            "brand_label": "set",
+            "badge": "popular",
+            "reviews": "12k",
+            "asset_image": "new-bundle-banner.jpg",
+            "product_link": "/products/e7-complete-glass-skin-set"
+          }
+        },
+        "block_set_2": {
+          "type": "product",
+          "settings": {
+            "title": "E7 Complete Glass Skin Set",
+            "price": "Rs. 7,500",
+            "subtitle": "The full transformation kit",
+            "brand_label": "set",
+            "badge": "best value",
+            "reviews": "8k",
+            "asset_image": "new-bundle-banner.jpg",
+            "product_link": "/products/e7-complete-glass-skin-set"
+          }
+        },
+        "block_set_3": {
+          "type": "product",
+          "settings": {
+            "title": "E7 Hair Care Set",
+            "price": "Rs. 3,200",
+            "subtitle": "Complete hair health bundle",
+            "brand_label": "set",
+            "badge": "new",
+            "reviews": "5k",
+            "asset_image": "new-bundle-banner.jpg",
+            "product_link": "/products/e7-complete-glass-skin-set"
+          }
+        },
+        "block_set_4": {
+          "type": "product",
+          "settings": {
+            "title": "ELARIS 7 KOREAN BRIGHTENING BUNDLE",
+            "price": "Rs. 5,900",
+            "subtitle": "Radiance and glow essential",
+            "brand_label": "set",
+            "badge": "limited",
+            "reviews": "15k",
+            "asset_image": "new-bundle-banner.jpg",
+            "product_link": "/products/e7-complete-glass-skin-set"
+          }
+        }
+      },
+      "block_order": [
+        "block_night_cream",
+        "block_tranexamic",
+        "block_keratin",
+        "block_glow",
+        "block_glutathione",
+        "block_hair_mist",
+        "block_face_wash",
+        "block_anti_acne",
+        "block_sunscreen",
+        "block_cleanser",
+        "block_moisturizer",
+        "block_toner",
+        "block_set_1",
+        "block_set_2",
+        "block_set_3",
+        "block_set_4"
+      ],
+      "settings": {
+        "collection": "",
+        "product_limit": 12
+      }
+    },
+    "category_promos": {
+      "type": "category-promos",
+      "settings": {
+        "flip_layout": false,
+        "white_text": false,
+        "image_left": "shopify://shop_images/new_bundle_banner-100_jpg.jpg",
+        "product_image": "shopify://shop_images/brightening_bundle-100_jpg.jpg",
+        "product_title": "KOREAN BRIGHTENING BUNDLE",
+        "product_subtitle": "A raspberry pink glow",
+        "product_price": "Rs. 10,920 Rs. 5,460"
+      }
+    },
+    "category_promos_9mCf8w": {
+      "type": "category-promos",
+      "settings": {
+        "flip_layout": false,
+        "white_text": true,
+        "image_left": "shopify://shop_images/hair_care_bundle_product_image-100_jpg.jpg",
+        "product_image": "shopify://shop_images/hair_care_image-100_jpg.jpg",
+        "product_title": "HAIR CARE BUNDLE",
+        "product_subtitle": "A raspberry pink glow",
+        "product_price": "Rs. 7,935 Rs. 3,962"
+      }
+    },
+    "social_grid": {
+      "type": "social-grid",
+      "settings": {
+        "title": "elaris7 + you",
+        "button_link": "",
+        "image_1": "shopify://shop_images/moisturizer_1-100_jpg.jpg",
+        "image_2": "shopify://shop_images/moisturizer-100.jpg_2.jpg",
+        "image_3": "shopify://shop_images/tranexamic-100_jpg.jpg",
+        "image_4": "shopify://shop_images/tranexamic_serum-100.jpg_1.jpg",
+        "image_5": "shopify://shop_images/anti_frizz_serum-100.jpg_1.jpg"
+      }
+    },
+    "values_accordion": {
+      "type": "values-accordion",
+      "settings": {
+        "image": "shopify://shop_images/to_restore_protect_and_nurture-100_jpg.jpg",
+        "button_link": "",
+        "mission_text": "Our mission is to empower your natural beauty through gentle, halal, and faith-conscious skincare. Every product is designed to nurture confidence, radiance, and well-being, so your skin reflects the care and attention it truly deserves.",
+        "philanthropy_text": "Blending the wisdom of Korean skincare with Sunnah-inspired ingredients, our formulas harness the power of Centella Asiatica and honey to reveal luminous, glass-like skin. Each product is meticulously crafted for hydration, calmness, and a radiant glow, creating a modern skincare ritual rooted in science and tradition.",
+        "sustainability_text": "We care for your skin and the planet. From eco-friendly packaging to responsibly sourced ingredients, every Elaris7 product is designed to minimize impact while maximizing effectiveness. Gentle, clean, and sustainable, beauty you can feel good about."
+      }
+    }
+  },
+  "order": [
+    "mobile_hero",
+    "hero",
+    "category_nav",
+    "featured_products",
+    "category_promos",
+    "category_promos_9mCf8w",
+    "social_grid",
+    "values_accordion"
+  ]
+}

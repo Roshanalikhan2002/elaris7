@@ -1,0 +1,57 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "hero": {
+      "type": "hero",
+      "settings": {
+        "title": "Hair Care Essentials",
+        "btn_text": "all collections",
+        "hero_image": "shopify://shop_images/hair_care_bundle_product_image-100_jpg.jpg"
+      }
+    },
+    "nav": {
+      "type": "category-nav",
+      "settings": {}
+    },
+    "main": {
+      "type": "featured-grid",
+      "settings": {},
+      "blocks": {
+        "p1": {
+          "type": "product",
+          "settings": {
+            "title": "Anti Frizz Keratin Serum",
+            "brand_label": "haircare",
+            "price": "Rs. 2,700",
+            "reviews": "6k",
+            "asset_image": "keratin-serum.jpg",
+            "asset_hover_image": "keratin-serum-hover.jpg",
+            "product_link": "/products/anti-frizz-keratin-serum"
+          }
+        },
+        "p2": {
+          "type": "product",
+          "settings": {
+            "title": "Floral Blossom Hair Mist",
+            "brand_label": "haircare",
+            "price": "Rs. 2,400",
+            "reviews": "5k",
+            "asset_image": "hair-mist.jpg",
+            "asset_hover_image": "hair-mist-hover.jpg",
+            "product_link": "/products/floral-blossom-hair-mist"
+          }
+        }
+      },
+      "block_order": ["p1", "p2"]
+    }
+  },
+  "order": ["hero", "nav", "main"]
+}
