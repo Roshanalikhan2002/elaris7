@@ -1473,5 +1473,169 @@
         "v2-toner-4.jpg"
       ]
     }
+  },
+  {
+    "File": "product.centella-skin-toner-copy.liquid",
+    "Title": "Renewal Toner",
+    "Subtitle": "Pore Refining",
+    "Price": "2,670",
+    "Description": "A gentle exfoliating toner that sweeps away dead skin cells and tightens pores to reveal a smoother, brighter complexion.",
+    "Benefits": [
+      "Refines pore size",
+      "Smooths skin texture",
+      "Prepares skin for hydration"
+    ],
+    "Application": "Apply with a cotton pad or hands onto clean, dry skin.",
+    "Ingredients": [
+      "Glycolic Acid",
+      "Lactic Acid",
+      "Witch Hazel",
+      "Honey"
+    ],
+    "CatchyLine": "Smooth. Refine. Renew.",
+    "ImportantInfo": {
+      "Headline": "Clear & Refine",
+      "GoodFor": "Enlarged pores and dull skin texture",
+      "FeelsLike": "A cool, refreshing splash of goodness",
+      "FYI": "Exfoliating • Alcohol-Free • Pore-Tightening"
+    },
+    "WhatsInside": {
+      "Intro": "A balanced blend of AHAs and soothing botanicals for skin renewal.",
+      "I1Title": "glycolic acid",
+      "I1Desc": "exfoliates the surface to reveal fresh, glowing skin",
+      "I2Title": "witch hazel",
+      "I2Desc": "helps tighten pores and control excess oil",
+      "Also": "Lactic Acid, Aloe Vera, Honey"
+    },
+    "SpreadItOn": [
+      "pore refining",
+      "smooth texture",
+      "bright skin"
+    ],
+    "Stats": [
+      {
+        "Pct": "98%",
+        "Desc": "SAID THEIR PORES LOOKED SMALLER"
+      },
+      {
+        "Pct": "96%",
+        "Desc": "NOTICED SMOOTHER SKIN TEXTURE"
+      }
+    ],
+    "StatsDisclaimer": "*Based on consumer perception study.",
+    "FAQs": [
+      {
+        "Q": "When should I use it?",
+        "A": "Use it after cleansing and before serum, once or twice daily."
+      }
+    ],
+    "Reviews": [
+      {
+        "Name": "Zainab",
+        "Text": "This toner has really helped with my blackheads and large pores. It doesn't sting at all!"
+      }
+    ],
+    "Images": {
+      "Hero": "v2-toner-1.jpeg",
+      "Gallery": [
+        "v2-toner-1.jpeg",
+        "v2-toner-2.jpg",
+        "v2-toner-3.jpg",
+        "v2-toner-4.jpg"
+      ],
+      "Breakdown": "v2-toner-plate.jpg",
+      "WhatsInside": "v2-toner-spoon.jpg",
+      "Spread": "v2-toner-spread.jpg",
+      "Stats": "v2-toner-stats.jpg",
+      "FAQ": "v2-toner-faq.jpg",
+      "Carousel": [
+        "v2-toner-1.jpeg",
+        "v2-toner-2.jpg",
+        "v2-toner-3.jpg",
+        "v2-toner-4.jpg"
+      ]
+    }
+  },
+  {
+    "File": "product.e7-korean-glass-skin-centella-sunscreen-spf50-copy.liquid",
+    "Title": "Centella Sunscreen",
+    "Subtitle": "Invisible Shield",
+    "Price": "2,450",
+    "Description": "An ultra-lightweight, non-greasy sunscreen that provides high SPF50 protection while leaving a weightless, invisible finish on all skin tones.",
+    "Benefits": [
+      "No white cast",
+      "Non-sticky and breathable",
+      "Deeply hydrating formula"
+    ],
+    "Application": "Apply generously to face and neck as the last step of your routine.",
+    "Ingredients": [
+      "Zinc Oxide",
+      "Niacinamide",
+      "Centella Asiatica",
+      "Peptides"
+    ],
+    "CatchyLine": "Sun Protection You'll Love to Wear",
+    "ImportantInfo": {
+      "Headline": "High Protection, Zero Weight",
+      "GoodFor": "Daily sun protection for all skin types",
+      "FeelsLike": "A velvet-smooth, weightless lotion",
+      "FYI": "SPF 50+ • Halal • No White Cast"
+    },
+    "WhatsInside": {
+      "Intro": "A blend of powerful sun-filters and skin-calming botanicals.",
+      "I1Title": "zinc oxide",
+      "I1Desc": "provides broad-spectrum UVA/UVB protection without irritation",
+      "I2Title": "niacinamide",
+      "I2Desc": "helps brighten the skin and control oil production during the day",
+      "Also": "Centella Asiatica, Peptides, Hyaluronic Acid"
+    },
+    "SpreadItOn": [
+      "sun protection",
+      "invisible finish",
+      "hydrated skin"
+    ],
+    "Stats": [
+      {
+        "Pct": "99%",
+        "Desc": "SAID IT LEAVES NO WHITE CAST"
+      },
+      {
+        "Pct": "97%",
+        "Desc": "NOTICED SKIN FELT SMOOTH & HYDRATED"
+      }
+    ],
+    "StatsDisclaimer": "*Based on consumer perception study.",
+    "FAQs": [
+      {
+        "Q": "Is it oily?",
+        "A": "No, it absorbs instantly for a smooth, non-greasy finish."
+      }
+    ],
+    "Reviews": [
+      {
+        "Name": "Maira",
+        "Text": "The best sunscreen I've ever used. It doesn't make me sweat or look white!"
+      }
+    ],
+    "Images": {
+      "Hero": "v2-sunscreen-1.jpeg",
+      "Gallery": [
+        "v2-sunscreen-1.jpeg",
+        "v2-sunscreen-2.jpg",
+        "v2-sunscreen-3.jpg",
+        "v2-sunscreen-4.jpg"
+      ],
+      "Breakdown": "v2-sunscreen-plate.jpg",
+      "WhatsInside": "v2-sunscreen-spoon.jpg",
+      "Spread": "v2-sunscreen-spread.jpg",
+      "Stats": "v2-sunscreen-stats.jpg",
+      "FAQ": "v2-sunscreen-faq.jpg",
+      "Carousel": [
+        "v2-sunscreen-1.jpeg",
+        "v2-sunscreen-2.jpg",
+        "v2-sunscreen-3.jpg",
+        "v2-sunscreen-4.jpg"
+      ]
+    }
   }
 ]
