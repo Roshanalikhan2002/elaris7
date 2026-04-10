@@ -160,7 +160,7 @@
     "Price": "2,200",
     "Description": "A concentrated, glow-correcting serum infused with Centella Asiatica and advanced brightening actives to visibly even tone, fade dark spots, and restore a smooth, glass-like complexion over time.",
     "Benefits": ["Helps brighten skin and improve overall tone clarity", "Fades the appearance of dark spots and post-acne marks", "Supports firmness while enhancing skin elasticity", "Delivers deep hydration for a plump, radiant finish", "Helps calm sensitivity and strengthen the skin barrier", "Refines pores and smooths uneven texture"],
-    "Application": "After cleansing, take 3–4 drops of Centella Serum and gently press onto slightly damp skin across the face and neck. Allow it to absorb fully, then follow with your moisturizer to seal in hydration.",
+    "Application": "After cleansing, take 3\u20134 drops of Centella Serum and gently press onto slightly damp skin across the face and neck. Allow it to absorb fully, then follow with your moisturizer to seal in hydration.",
     "Tricks": ["Apply on damp skin to boost absorption and enhance glow", "Layer with a moisturizer to lock in active ingredients effectively", "Use day and night consistently for more visible tone correction"],
     "Ingredients": ["Niacinamide", "Vitamin C", "Alpha Arbutin", "Hyaluronic Acid", "Centella Asiatica", "Aloe Vera", "Rose Extract", "Vitamin E", "Honey", "Peptides", "Vitamin B5", "Witch Hazel"],
     "CatchyLine": "Targeted Glow. Visible Clarity.",
@@ -169,7 +169,7 @@
       "GoodFor": "All skin types, including sensitive and uneven skin",
       "FeelsLike": "A lightweight, silky serum that absorbs effortlessly",
       "LooksLike": "A refined, radiant complexion with improved clarity",
-      "FYI": "Halal-Friendly • Dermatologist-Tested • Fast-Absorbing • Non-Greasy"
+      "FYI": "Halal-Friendly \u2022 Dermatologist-Tested \u2022 Fast-Absorbing \u2022 Non-Greasy"
     },
     "WhatsInside": {
       "Intro": "A powerful blend of tone-correcting actives and skin-repairing hydrators designed to target dullness.",
@@ -218,7 +218,7 @@
       "GoodFor": "All skin types",
       "FeelsLike": "A lightweight, breathable layer",
       "LooksLike": "A clear, natural finish",
-      "FYI": "Halal-Friendly • Non-Greasy • Makeup-Friendly"
+      "FYI": "Halal-Friendly \u2022 Non-Greasy \u2022 Makeup-Friendly"
     },
     "WhatsInside": {
       "Intro": "A high-performance sun defense formula.",
@@ -237,7 +237,7 @@
       { "Q": "Can I use this sunscreen under makeup?", "A": "Yes, it creates a smooth and lightweight base." }
     ],
     "Reviews": [
-      { "Name": "Ahmed", "Text": "It feels super light on my skin and doesn’t leave any white cast." }
+      { "Name": "Ahmed", "Text": "It feels super light on my skin and doesn\u2019t leave any white cast." }
     ],
     "Images": {
        "Hero": "sunscreen-100.jpg",
@@ -257,14 +257,14 @@
     "Description": "A refining toner designed to clarify, smooth, and rebalance the skin while enhancing radiance.",
     "Benefits": ["Helps fade spots", "Clears pores", "Smooths texture"],
     "Application": "Apply Skin Refining Toner using a cotton pad or gently press it into the skin.",
-    "Tricks": ["Use 2–3 times a week", "Apply with hands"],
+    "Tricks": ["Use 2\u20133 times a week", "Apply with hands"],
     "Ingredients": ["Centella Asiatica", "Niacinamide", "Botanical Extracts"],
     "CatchyLine": "Refine. Reset. Reveal Your Glow.",
     "ImportantInfo": {
       "Headline": "Clarity You Can See",
       "GoodFor": "Uneven and textured skin",
       "FeelsLike": "A refreshing, watery layer",
-      "FYI": "Halal-Friendly • Pore-Refining"
+      "FYI": "Halal-Friendly \u2022 Pore-Refining"
     },
     "WhatsInside": {
       "Intro": "A gentle, clarifying toner.",
@@ -280,7 +280,7 @@
     ],
     "StatsDisclaimer": "*Consistent use study.",
     "FAQs": [
-      { "Q": "Can I use this toner every day?", "A": "Recommended 2–3 times a week." }
+      { "Q": "Can I use this toner every day?", "A": "Recommended 2\u20133 times a week." }
     ],
     "Reviews": [
       { "Name": "Farhan", "Text": "My skin feels much smoother and clearer." }
@@ -310,7 +310,7 @@
        "Headline": "Frizz-Free Confidence",
        "GoodFor": "Dry and frizzy hair",
        "FeelsLike": "A silky, weightless layer",
-       "FYI": "Non-Greasy • Heat-Protective"
+       "FYI": "Non-Greasy \u2022 Heat-Protective"
      },
      "WhatsInside": {
        "Intro": "A lightweight, smoothing hair serum.",
@@ -357,7 +357,7 @@
        "Headline": "A Touch of Floral Freshness",
        "GoodFor": "All hair types",
        "FeelsLike": "A fine, refreshing mist",
-       "FYI": "Non-Sticky • Everyday Use"
+       "FYI": "Non-Sticky \u2022 Everyday Use"
      },
      "WhatsInside": {
        "Intro": "A lightweight hair mist.",
@@ -403,7 +403,7 @@
        "Headline": "Powered Renewal",
        "GoodFor": "Dull and textured skin",
        "FeelsLike": "A refreshing liquid",
-       "FYI": "Exfoliating • Glow-Boosting"
+       "FYI": "Exfoliating \u2022 Glow-Boosting"
      },
      "WhatsInside": {
        "Intro": "A resurfacing toner to reveal smoother skin.",
@@ -449,7 +449,7 @@
        "Helps smooth and refine the skin surface",
        "Promotes a healthier, more luminous glow"
      ],
-     "Application": "Use morning and night after cleansing and toning. Apply 2–3 drops to face and neck and gently press into the skin. Follow with moisturizer and use sunscreen during the day.",
+     "Application": "Use morning and night after cleansing and toning. Apply 2\u20133 drops to face and neck and gently press into the skin. Follow with moisturizer and use sunscreen during the day.",
      "Tricks": [
        "Apply on slightly damp skin for better absorption",
        "Use consistently for visible brightening results",
@@ -465,7 +465,7 @@
        "FeelsLike": "A smooth, fast-absorbing serum that layers easily",
        "LooksLike": "Brighter, clearer skin with improved tone",
        "SmellsLike": "A soft, clean scent with a subtle finish",
-       "FYI": "Non-Greasy • Fast Absorbing • Daily Use • Tone-Correcting"
+       "FYI": "Non-Greasy \u2022 Fast Absorbing \u2022 Daily Use \u2022 Tone-Correcting"
      },
      "WhatsInside": {
        "Intro": "A potent brightening serum formulated to target dark spots, even skin tone, and enhance natural radiance.",
@@ -523,7 +523,7 @@
        "Headline": "Targeted Acne Care",
        "GoodFor": "Acne-prone and oily skin",
        "FeelsLike": "A smooth, fast-absorbing serum",
-       "FYI": "Acne-Control • Non-Greasy"
+       "FYI": "Acne-Control \u2022 Non-Greasy"
      },
      "WhatsInside": {
        "Intro": "A targeted serum to reduce acne.",
@@ -555,21 +555,21 @@
      }
   },
   {
-     "File": "product.barrier-cream.liquid",
-     "Title": "Glutathione Repair Cream",
-     "Subtitle": "Glow & Repair",
+     "File": "product.glutathione-cream.liquid",
+     "Title": "Glutathione Cream",
+     "Subtitle": "Even & Radiant",
      "Price": "2,400",
-     "Description": "A nourishing brightening cream designed to improve uneven tone and support skin repair.",
-     "Benefits": ["Brightens dull skin", "Barrier support"],
-     "Application": "Apply a small amount morning and evening.",
-     "Tricks": ["Apply on damp skin", "Pair with serum"],
-     "Ingredients": ["Glutathione", "Alpha Arbutin", "Honey"],
+     "Description": "A nourishing brightening cream designed to improve uneven tone, reduce dullness, and support skin repair. It helps fade the look of dark spots, restore radiance, and leave skin smoother and healthier with consistent use.",
+     "Benefits": ["Brightens dull skin", "Barrier support", "Improves uneven tone", "Deeply hydrates"],
+     "Application": "Apply a small amount morning and evening on cleansed skin.",
+     "Tricks": ["Apply on damp skin to lock in moisture", "Pair with a brightening serum for better results"],
+     "Ingredients": ["Glutathione", "Alpha Arbutin", "Honey", "Niacinamide", "Vitamin C"],
      "CatchyLine": "Repair Dullness. Reveal Glow.",
      "ImportantInfo": {
-       "Headline": "Deep Brightening",
+       "Headline": "Deep Brightening & Repair",
        "GoodFor": "Dull and uneven skin",
-       "FeelsLike": "A rich, smooth cream",
-       "FYI": "Repair Care • Deep Hydration"
+       "FeelsLike": "A rich, smooth cream that absorbs deeply",
+       "FYI": "Repair Care \u2022 Deep Hydration \u2022 Brightening"
      },
      "WhatsInside": {
        "Intro": "A nourishing cream that brightens and repairs.",
@@ -577,18 +577,20 @@
        "I1Desc": "help restore radiance and fade dullness",
        "I2Title": "alpha arbutin",
        "I2Desc": "work to reduce dark spots and pigmentation",
-       "Also": "Niacinamide, Vitamin C, Hyaluronic Acid"
+       "Also": "Niacinamide, Vitamin C, Hyaluronic Acid, Rose Extract"
      },
      "SpreadItOn": ["brightening care", "even skin tone", "skin repair"],
      "Stats": [
-       { "Pct": "99%", "Desc": "SAID SKIN LOOKED MORE RADIANT" }
+       { "Pct": "99%", "Desc": "SAID SKIN LOOKED MORE RADIANT" },
+       { "Pct": "97%", "Desc": "NOTICED REDUCED DISCOLORATION" }
      ],
-     "StatsDisclaimer": "*2-week perception study.",
+     "StatsDisclaimer": "*Based on a 2-week perception study.",
      "FAQs": [
-       { "Q": "Will it feel heavy?", "A": "No, it absorbs well while providing hydration." }
+       { "Q": "Will it feel heavy?", "A": "No, it absorbs well while providing hydration." },
+       { "Q": "Can I use it under makeup?", "A": "Yes, it creates a smooth, hydrated base." }
      ],
      "Reviews": [
-       { "Name": "Areeba", "Text": "My skin looks much brighter." }
+       { "Name": "Areeba", "Text": "My skin looks much brighter and the texture has improved a lot." }
      ],
      "Images": {
        "Hero": "glutathione-1.jpeg",
@@ -596,7 +598,7 @@
        "Breakdown": "glutathione-plate.jpg",
        "WhatsInside": "glutathione-spoon.jpg",
        "Spread": "glutathione-spread.jpg",
-       "Stats": "glutathione-2.jpg",
+       "Stats": "glutathione-3.jpg",
        "FAQ": "glutathione-faq.jpg",
        "Carousel": ["glutathione-1.jpeg", "glutathione-2.jpg", "glutathione-3.jpg", "glutathione-4.jpg"]
      }
