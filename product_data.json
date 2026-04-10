@@ -1288,23 +1288,23 @@
       }
     ],
     "Images": {
-      "Hero": "renewal-cleanser-1.jpg",
+      "Hero": "rc-gal-1.jpg",
       "Gallery": [
-        "renewal-cleanser-1.jpg",
-        "renewal-cleanser-2.jpg",
-        "renewal-cleanser-3.jpg",
-        "renewal-cleanser-4.jpg"
+        "rc-gal-1.jpg",
+        "rc-gal-2.jpg",
+        "rc-gal-3.jpg",
+        "rc-gal-4.jpg"
       ],
-      "Breakdown": "renewal-cleanser-plate.jpg",
-      "WhatsInside": "renewal-cleanser-spoon.jpg",
-      "Spread": "renewal-cleanser-spread.jpg",
-      "Stats": "renewal-cleanser-percent.jpg",
-      "FAQ": "renewal-cleanser-faq.jpg",
+      "Breakdown": "rc-plate.jpg",
+      "WhatsInside": "rc-spoon.jpg",
+      "Spread": "rc-spread.jpg",
+      "Stats": "rc-percent.jpg",
+      "FAQ": "rc-faq.jpg",
       "Carousel": [
-        "renewal-cleanser-1.jpg",
-        "renewal-cleanser-2.jpg",
-        "renewal-cleanser-3.jpg",
-        "renewal-cleanser-4.jpg"
+        "rc-gal-1.jpg",
+        "rc-gal-2.jpg",
+        "rc-gal-3.jpg",
+        "rc-gal-4.jpg"
       ]
     }
   },
