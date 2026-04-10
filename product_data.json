@@ -246,6 +246,10 @@
       { "Name": "Mariam", "Text": "Finally a sunscreen that doesn't feel sticky! It absorbs so quickly and my makeup goes on perfectly over it. Highly recommend!" },
       { "Name": "Zain", "Text": "I use this every day now. It's very hydrating and doesn't break me out like other sunscreens did. Great product." }
     ],
+    "WhatsInsideDetail": [
+      { "Title": "Zinc Oxide", "Desc": "a gentle mineral shield that provides broad-spectrum protection against UVA and UVB rays without irritation" },
+      { "Title": "Hyaluronic Acid", "Desc": "a moisture-binding molecule that keeps skin hydrated and plump under the sun, preventing dehydration" }
+    ],
     "Images": {
        "Hero": "v2-sunscreen-1.jpeg",
        "Gallery": ["v2-sunscreen-1.jpeg", "v2-sunscreen-2.jpg", "v2-sunscreen-3.jpg", "v2-sunscreen-4.jpg"],
@@ -565,6 +569,10 @@
       "Reviews": [
         { "Name": "Mahnoor", "Text": "I've struggled with acne for years, but this serum has finally cleared my skin without irritating it. My pores look much smaller too!" },
         { "Name": "Hassan", "Text": "Best acne serum I've used. It's not sticky at all and really helps with redness and active breakouts within a few days." }
+      ],
+      "WhatsInsideDetail": [
+        { "Title": "Salicylic Acid", "Desc": "a powerful BHA that penetrates deep into pores to dissolve debris and prevent breakouts while refining skin texture" },
+        { "Title": "Niacinamide", "Desc": "a multitasking vitamin that regulates oil production, minimizes pore appearance, and calms redness for a balanced complexion" }
       ],
       "Images": {
        "Hero": "v2-antiacne-1.jpeg",
