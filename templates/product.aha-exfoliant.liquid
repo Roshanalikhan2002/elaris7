@@ -6,6 +6,8 @@
 
 
 
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -2375,9 +2377,9 @@ a { color: inherit; text-decoration: none; }
               
               <div class="bogo-inline-card" onclick="selectBogo(this)">
                 <input type="radio" name="free_gift" data-gift-handle="night-cream" style="display:none;">
-                <img src="{{ "renewal toner-100.jpg" | asset_url }}" alt="Glycolic Toner">
+                <img src="{{ "renewal toner-100.jpg" | asset_url }}" alt="Centella Night Cream">
                 <div class="bogo-inline-info">
-                  <span class="bogo-inline-name">Glycolic Toner</span>
+                  <span class="bogo-inline-name">Centella Night Cream</span>
                   <span class="bogo-inline-tag">Night Renewal</span>
                 </div>
                 <div class="bogo-select-indicator"></div>
@@ -2759,14 +2761,8 @@ a { color: inherit; text-decoration: none; }
               <!-- Cards will be populated dynamically or via migration -->
 
               <div class="bogo-card">
-                <img src="{{ "renewal toner-100.jpg" | asset_url }}" alt="Glycolic Toner">
-                <span class="bogo-product-name">Glycolic Toner</span>
-                <button class="bogo-add-btn">Select</button>
-              </div>
-
-              <div class="bogo-card">
-                <img src="{{ "moisturizer-100.jpg" | asset_url }}" alt="Centella Moisturizer">
-                <span class="bogo-product-name">Centella Moisturizer</span>
+                <img src="{{ "renewal toner-100.jpg" | asset_url }}" alt="Centella Night Cream">
+                <span class="bogo-product-name">Centella Night Cream</span>
                 <button class="bogo-add-btn">Select</button>
               </div>
 
@@ -3124,50 +3120,28 @@ a { color: inherit; text-decoration: none; }
       <div class="product-collection" id="product-slider">
         <div class="card card-rhode" data-category="skincare">
           <a href="/products/night-cream" class="card-link-wrapper">
-            <img src="{{ "night-cream-hover.jpg" | asset_url }}" class="card-hover-bg" alt="Glycolic Toner Hover">
+            <img src="{{ "night-cream-hover.jpg" | asset_url }}" class="card-hover-bg" alt="Centella Night Cream Hover">
             <div class="card-rhode-top">
-              <span class="card-brand-label">GLYCOLIC TONER</span>
+              <span class="card-brand-label">NIGHT CREAM</span>
             </div>
             <div class="card-rhode-image">
-              <img src="{{ "renewal toner-100.jpg" | asset_url }}" alt="Glycolic Toner" class="product-main-img">
+              <img src="{{ "renewal toner-100.jpg" | asset_url }}" alt="Centella Night Cream" class="product-main-img">
             </div>
             <div class="card-rhode-footer">
               <div class="card-meta">
                 <div class="card-stars">★★★★★ <span class="review-count">(10k+)</span></div>
-                <h3 class="card-name">Glycolic Toner</h3>
+                <h3 class="card-name">Centella Night Cream</h3>
               </div>
               <span class="btn-rhode-buy-pill">BUY - RS. 2,660</span>
             </div>
             <div class="buy-button-hover">
-                BUY Glycolic Toner - RS. 2,660
+                BUY Centella Night Cream - RS. 2,660
             </div>
           </a>
         </div>
 
         <div class="card card-rhode" data-category="skincare">
-          <a href="/products/e7-korean-glass-skin-moisturizer" class="card-link-wrapper">
-            <img src="{{ "moisturizer-meet-2.jpg" | asset_url }}" class="card-hover-bg" alt="Centella Moisturizer Hover">
-            <div class="card-rhode-top">
-              <span class="card-brand-label">Daily Dew</span>
-            </div>
-            <div class="card-rhode-image">
-              <img src="{{ "moisturizer-100.jpg" | asset_url }}" alt="Centella Moisturizer" class="product-main-img">
-            </div>
-            <div class="card-rhode-footer">
-              <div class="card-meta">
-                <div class="card-stars">★★★★★ <span class="review-count">(10k+)</span></div>
-                <h3 class="card-name">Centella Moisturizer</h3>
-              </div>
-              <span class="btn-rhode-buy-pill">BUY - RS. 1,800</span>
-            </div>
-            <div class="buy-button-hover">
-                BUY Centella Moisturizer - RS. 1,800
-            </div>
-          </a>
-        </div>
-
-        <div class="card card-rhode" data-category="skincare">
-          <a href="/products/e7-korean-glass-skin-centella-face-wash-copy" class="card-link-wrapper">
+          <a href="/products/face-wash" class="card-link-wrapper">
             <img src="{{ "facewash-shot.png" | asset_url }}" class="card-hover-bg" alt="Centella Face Wash Hover">
             <div class="card-rhode-top">
               <span class="card-brand-label">cleanser</span>
@@ -3189,7 +3163,7 @@ a { color: inherit; text-decoration: none; }
         </div>
 
         <div class="card card-rhode" data-category="serum">
-          <a href="/products/centella-serum" class="card-link-wrapper">
+          <a href="/products/glow-serum" class="card-link-wrapper">
             <img src="{{ "glow-serum-hover.jpg" | asset_url }}" class="card-hover-bg" alt="Centella Serum Hover">
             <div class="card-rhode-top">
               <span class="card-brand-label">serum</span>
@@ -3211,7 +3185,7 @@ a { color: inherit; text-decoration: none; }
         </div>
 
         <div class="card card-rhode" data-category="skincare">
-          <a href="/products/e7-korean-glass-skin-centella-sunscreen-spf50-copy" class="card-link-wrapper">
+          <a href="/products/sunscreen-v2" class="card-link-wrapper">
             <img src="{{ "v2-sunscreen-2.jpg" | asset_url }}" class="card-hover-bg" alt="Sunscreen SPF60+ Hover">
             <div class="card-rhode-top">
               <span class="card-brand-label">sunscreen</span>
@@ -3233,7 +3207,7 @@ a { color: inherit; text-decoration: none; }
         </div>
 
         <div class="card card-rhode" data-category="skincare">
-          <a href="/products/centella-skin-toner" class="card-link-wrapper">
+          <a href="/products/skin-refining-toner" class="card-link-wrapper">
             <img src="{{ "toner-meet-2.jpg" | asset_url }}" class="card-hover-bg" alt="Refining Toner Hover">
             <div class="card-rhode-top">
               <span class="card-brand-label">Clarity Reset</span>
@@ -3255,7 +3229,7 @@ a { color: inherit; text-decoration: none; }
         </div>
 
         <div class="card card-rhode" data-category="serum">
-          <a href="/products/anti-frizz-keratin-serum" class="card-link-wrapper">
+          <a href="/products/keratin-serum-v2" class="card-link-wrapper">
             <img src="{{ "keratin-serum-hover.jpg" | asset_url }}" class="card-hover-bg" alt="Keratin Serum Hover">
             <div class="card-rhode-top">
               <span class="card-brand-label">haircare</span>
@@ -3277,10 +3251,10 @@ a { color: inherit; text-decoration: none; }
         </div>
 
         <div class="card card-rhode" data-category="skincare">
-          <a href="/products/floral-blossom-hair-mist" class="card-link-wrapper">
+          <a href="/products/hair-mist" class="card-link-wrapper">
             <img src="{{ "v2-hair-2.jpg" | asset_url }}" class="card-hover-bg" alt="Floral Blossom Hair Mist Hover">
             <div class="card-rhode-top">
-              <span class="card-brand-label">haircare</span>
+              <span class="card-brand-label">Fresh Floral Touch</span>
             </div>
             <div class="card-rhode-image">
               <img src="{{ "v2-hair-1.jpeg" | asset_url }}" alt="Floral Blossom Hair Mist" class="product-main-img">
@@ -3321,7 +3295,7 @@ a { color: inherit; text-decoration: none; }
         </div>
 
         <div class="card card-rhode" data-category="serum">
-          <a href="/products/tranexamic-serum" class="card-link-wrapper">
+          <a href="/products/tranexamic-serum-v2" class="card-link-wrapper">
             <img src="{{ "tranexamic-meet-1.jpg" | asset_url }}" class="card-hover-bg" alt="Elaris7 Tranexamic Brightening Serum Hover">
             <div class="card-rhode-top">
               <span class="card-brand-label">serum</span>
@@ -3343,10 +3317,10 @@ a { color: inherit; text-decoration: none; }
         </div>
 
         <div class="card card-rhode" data-category="serum">
-          <a href="/products/anti-acne-cream" class="card-link-wrapper">
-            <img src="{{ "hover-anti-acne.png" | asset_url }}" class="card-hover-bg" alt="Anti-Acne Serum Hover">
+          <a href="/products/anti-acne" class="card-link-wrapper">
+            <img src="{{ "v2-antiacne-2.jpg" | asset_url }}" class="card-hover-bg" alt="Anti-Acne Serum Hover">
             <div class="card-rhode-top">
-              <span class="card-brand-label">antiacne</span>
+              <span class="card-brand-label">Clear & Control</span>
             </div>
             <div class="card-rhode-image">
               <img src="{{ "v2-antiacne-1.jpeg" | asset_url }}" alt="Anti-Acne Serum" class="product-main-img">
@@ -3453,7 +3427,7 @@ a { color: inherit; text-decoration: none; }
         </div>
 
         <div class="card card-rhode" data-category="skincare">
-          <a href="/products/e7-korean-glass-skin-moisturizer" class="card-link-wrapper">
+          <a href="/products/centella-moisturizer" class="card-link-wrapper">
             <img src="{{ "moisturizer-meet-2.jpg" | asset_url }}" class="card-hover-bg" alt="Centella Moisturizer Hover">
             <div class="card-rhode-top">
               <span class="card-brand-label">Daily Dew</span>

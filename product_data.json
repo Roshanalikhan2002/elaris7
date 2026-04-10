@@ -109,107 +109,7 @@
     }
   },
   {
-    "File": "product.e7-korean-glass-skin-moisturizer.liquid",
-    "Title": "Centella Moisturizer",
-    "Subtitle": "Daily Dew",
-    "Price": "1,800",
-    "Description": "A lightweight, glow-enhancing moisturizer infused with Centella Asiatica, brightening complexes, and nourishing botanicals to hydrate, soothe, and refine your skin for a smooth, glass-like finish every day.",
-    "Benefits": [
-      "Boosts natural radiance while improving overall skin clarity",
-      "Delivers lasting hydration for a plump, soft, and dewy feel",
-      "Smooths texture and helps reduce the appearance of uneven tone"
-    ],
-    "Application": "After cleansing and applying serum, take a small amount of Centella Moisturizer and gently massage it onto slightly damp skin using upward motions. Allow it to absorb fully to lock in hydration.",
-    "Tricks": [
-      "Apply on damp skin to enhance absorption and maximize hydration",
-      "Use a slightly thicker layer for an instant dewy glow finish",
-      "Pair with sunscreen in the morning for protected, radiant skin"
-    ],
-    "Ingredients": [
-      "Hyaluronic Acid",
-      "Vitamin C Complex",
-      "Centella Asiatica",
-      "Morus Alba Extract",
-      "Broussonetia Root Extract",
-      "Honey",
-      "Galactoarabinan",
-      "Vitamin E"
-    ],
-    "CatchyLine": "Your Everyday Glow Essential",
-    "ImportantInfo": {
-      "Headline": "Glow That Lasts All Day",
-      "GoodFor": "All skin types, including sensitive and combination skin",
-      "FeelsLike": "A light, refreshing cream that melts effortlessly into the skin",
-      "LooksLike": "A soft, luminous finish with a naturally healthy glow",
-      "SmellsLike": "Clean, subtle freshness with no overpowering scent",
-      "FYI": "Halal-Friendly • Dermatologist-Tested • Lightweight • Non-Sticky"
-    },
-    "WhatsInside": {
-      "Intro": "Our formula is powered by glow-enhancing hydrators and skin-refining botanicals. Meet 2 of our favorites for daily radiance.",
-      "I1Title": "centella asiatica",
-      "I1Desc": "a soothing plant extract that helps calm irritation, strengthen the skin barrier, and support a clearer, more balanced complexion",
-      "I2Title": "hyaluronic acid",
-      "I2Desc": "a powerful hydrator that helps attract and retain moisture, leaving skin plump, smooth, and refreshed throughout the day",
-      "Also": "VITAMIN C COMPLEX, MORUS ALBA EXTRACT, BROUSSONETIA ROOT EXTRACT, HONEY, GALACTOARABINAN, VITAMIN E"
-    },
-    "SpreadItOn": [
-      "all-day hydration",
-      "natural radiance",
-      "soft, glass-like skin"
-    ],
-    "Stats": [
-      {
-        "Pct": "99%",
-        "Desc": "SAID THEIR SKIN FELT MORE HYDRATED + REFRESHED"
-      },
-      {
-        "Pct": "98%",
-        "Desc": "SAID IT ABSORBS QUICKLY WITHOUT ANY HEAVINESS"
-      },
-      {
-        "Pct": "97%",
-        "Desc": "SAID THEIR SKIN LOOKED SMOOTHER + MORE EVEN"
-      },
-      {
-        "Pct": "3 out of 4",
-        "Desc": "SAID THEY NOTICED A HEALTHY, NATURAL GLOW"
-      }
-    ],
-    "StatsDisclaimer": "*Based on a 2-week consumer perception study with consistent daily use.",
-    "FAQs": [
-      {
-        "Q": "Can I use this moisturizer with makeup?",
-        "A": "Yes, it works perfectly as a base under makeup, helping create a smooth and hydrated canvas."
-      }
-    ],
-    "Reviews": [
-      {
-        "Name": "Sana",
-        "Text": "It feels so light on my skin and gives me a soft, natural glow throughout the day. My skin looks healthier and more refreshed."
-      }
-    ],
-    "Images": {
-      "Hero": "moisturizer-100.jpg",
-      "Gallery": [
-        "moisturizer-gallery-1.jpg",
-        "moisturizer-gallery-2.jpg",
-        "moisturizer-gallery-3.jpg",
-        "moisturizer-gallery-4.jpg"
-      ],
-      "Breakdown": "moisturizer-before-after.jpg",
-      "WhatsInside": "moisturizer-whats-inside.jpg",
-      "Spread": "moisturizer-deep-hydration.jpg",
-      "Stats": "moisturizer-benefits.jpg",
-      "Carousel": [
-        "moisturizer-meet-1.jpg",
-        "moisturizer-meet-2.jpg",
-        "moisturizer-meet-3.jpg",
-        "moisturizer-meet-4.jpg"
-      ]
-    }
-  },
-  {
-    "File": "product.e7-korean-glass-skin-centella-face-wash-copy.liquid",
+    "File": "product.face-wash.liquid",
     "Title": "Centella Face Wash",
     "Subtitle": "Pure Start",
     "Price": "1,800",
@@ -319,7 +219,7 @@
     }
   },
   {
-    "File": "product.centella-serum.liquid",
+    "File": "product.glow-serum.liquid",
     "Title": "Centella Serum",
     "Subtitle": "Radiance Reset",
     "Price": "2,200",
@@ -418,7 +318,7 @@
     }
   },
   {
-    "File": "product.e7-korean-glass-skin-centella-sunscreen-spf50-copy.liquid",
+    "File": "product.sunscreen-v2.liquid",
     "Title": "Sunscreen SPF60+",
     "Subtitle": "Daily Shield",
     "Price": "2,500",
@@ -530,7 +430,7 @@
     }
   },
   {
-    "File": "product.centella-skin-toner.liquid",
+    "File": "product.skin-refining-toner.liquid",
     "Title": "Refining Toner",
     "Subtitle": "Clarity Reset",
     "Price": "1,800",
@@ -610,7 +510,7 @@
     }
   },
   {
-    "File": "product.anti-frizz-keratin-serum.liquid",
+    "File": "product.keratin-serum-v2.liquid",
     "Title": "Keratin Serum",
     "Subtitle": "Smooth Control",
     "Price": "1,800",
@@ -689,7 +589,7 @@
     }
   },
   {
-    "File": "product.floral-blossom-hair-mist.liquid",
+    "File": "product.hair-mist.liquid",
     "Title": "Floral Blossom Hair Mist",
     "Subtitle": "Fresh Floral Touch",
     "Price": "1,200",
@@ -873,7 +773,7 @@
     }
   },
   {
-    "File": "product.tranexamic-serum.liquid",
+    "File": "product.tranexamic-serum-v2.liquid",
     "Title": "Elaris7 Tranexamic Brightening Serum",
     "Subtitle": "Even & Illuminate",
     "Price": "2,400",
@@ -1014,7 +914,7 @@
     }
   },
   {
-    "File": "product.anti-acne-cream.liquid",
+    "File": "product.anti-acne.liquid",
     "Title": "Anti-Acne Serum",
     "Subtitle": "Clear & Control",
     "Price": "2,200",
@@ -1473,7 +1373,7 @@
     }
   },
   {
-    "File": "product.e7-korean-glass-skin-moisturizer.liquid",
+    "File": "product.centella-moisturizer.liquid",
     "Title": "Centella Moisturizer",
     "Subtitle": "Daily Dew",
     "Price": "1,800",

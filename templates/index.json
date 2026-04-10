@@ -104,7 +104,7 @@
             "reviews": "12k",
             "asset_image": "glow-serum-100.jpg",
             "asset_hover_image": "glow-serum-hover.jpg",
-            "product_link": "/products/centella-serum"
+            "product_link": "/products/glow-serum"
           }
         },
         "block_glutathione": {
@@ -146,7 +146,7 @@
             "reviews": "11k",
             "asset_image": "facewash-100.jpg",
             "asset_hover_image": "deep-hydration-facewash.jpg",
-            "product_link": "/products/e7-korean-glass-skin-centella-face-wash-copy"
+            "product_link": "/products/face-wash"
           }
         },
         "block_anti_acne": {
@@ -160,7 +160,7 @@
             "reviews": "14k",
             "asset_image": "anti-acne-100.jpg",
             "asset_hover_image": "hover-anti-acne.png",
-            "product_link": "/products/anti-acne-cream"
+            "product_link": "/products/anti-acne"
           }
         },
         "block_sunscreen": {
@@ -174,7 +174,7 @@
             "reviews": "7k",
             "asset_image": "sunscreen-100.jpg",
             "asset_hover_image": "sunscreen-hover.jpg",
-            "product_link": "/products/e7-korean-glass-skin-centella-sunscreen-spf50-copy"
+            "product_link": "/products/sunscreen-v2"
           }
         },
         "block_cleanser": {
@@ -202,7 +202,7 @@
             "reviews": "13k",
             "asset_image": "moisturizer-100.jpg",
             "asset_hover_image": "moisturizer-hover.jpg",
-            "product_link": "/products/e7-korean-glass-skin-moisturizer"
+            "product_link": "/products/centella-moisturizer"
           }
         },
         "block_toner": {
@@ -216,7 +216,7 @@
             "reviews": "8k",
             "asset_image": "renewal toner-100.jpg",
             "asset_hover_image": "toner-hover.jpg",
-            "product_link": "/products/centella-skin-toner"
+            "product_link": "/products/renewal-toner"
           }
         },
         "block_set_1": {
