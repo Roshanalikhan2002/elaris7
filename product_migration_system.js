@@ -256,18 +256,31 @@ function updateTemplate(p) {
 
     // --- ASSET MAPPING ---
     if (p.Images) {
-        if (p.Images.Hero) c = c.replaceAll('./assets/night-cream-suite.jpeg', `{{ "${p.Images.Hero}" | asset_url }}`);
+        // Hero / Main Image
+        if (p.Images.Hero) {
+            c = c.replaceAll('./assets/night-cream-suite.jpeg', `{{ "${p.Images.Hero}" | asset_url }}`);
+        }
+        
+        // Gallery Images (Master template has v3-2, v3-3, v3-4)
+        if (p.Images.Gallery && p.Images.Gallery.length >= 4) {
+            c = c.replaceAll('./assets/nightcream-v3-2.jpeg', `{{ "${p.Images.Gallery[1]}" | asset_url }}`);
+            c = c.replaceAll('./assets/nightcream-v3-3.jpeg', `{{ "${p.Images.Gallery[2]}" | asset_url }}`);
+            c = c.replaceAll('./assets/nightcream-v3-4.jpeg', `{{ "${p.Images.Gallery[3]}" | asset_url }}`);
+        }
+
+        // Feature Carousel
         if (p.Images.Carousel) {
-            c = c.replace('./assets/night-cream-suite.jpeg', `{{ "${p.Images.Carousel[0]}" | asset_url }}`);
             c = c.replace('./assets/night-cream-swatch.jpeg', `{{ "${p.Images.Carousel[1]}" | asset_url }}`);
             c = c.replace('./assets/night-cream-lifestyle.jpeg', `{{ "${p.Images.Carousel[2]}" | asset_url }}`);
             c = c.replace('./assets/night-cream-last.jpeg', `{{ "${p.Images.Carousel[3]}" | asset_url }}`);
         }
-        if (p.Images.Plate) c = c.replace('./assets/plate.jpeg', `{{ "${p.Images.Plate}" | asset_url }}`);
-        if (p.Images.Spoon) c = c.replace('./assets/spoon.jpeg', `{{ "${p.Images.Spoon}" | asset_url }}`);
-        if (p.Images.Spread) c = c.replace('./assets/spread.jpeg', `{{ "${p.Images.Spread}" | asset_url }}`);
-        if (p.Images.Stats) c = c.replace('./assets/percentage.jpeg', `{{ "${p.Images.Stats}" | asset_url }}`);
-        if (p.Images.FAQ) c = c.replace('./assets/faq.jpeg', `{{ "${p.Images.FAQ}" | asset_url }}`);
+
+        // Section Images
+        if (p.Images.Breakdown) c = c.replaceAll('./assets/plate.jpeg', `{{ "${p.Images.Breakdown}" | asset_url }}`);
+        if (p.Images.WhatsInside) c = c.replaceAll('./assets/spoon.jpeg', `{{ "${p.Images.WhatsInside}" | asset_url }}`);
+        if (p.Images.Spread) c = c.replaceAll('./assets/spread.jpeg', `{{ "${p.Images.Spread}" | asset_url }}`);
+        if (p.Images.Stats) c = c.replaceAll('./assets/percentage.jpeg', `{{ "${p.Images.Stats}" | asset_url }}`);
+        if (p.Images.FAQ) c = c.replaceAll('./assets/faq.jpeg', `{{ "${p.Images.FAQ}" | asset_url }}`);
     }
 
     // --- CONTENT INJECTION ---
