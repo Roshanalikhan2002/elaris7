@@ -5,7 +5,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Refining Toner | elaris7</title>
+  <title>Skin Refining Toner | elaris7</title>
   <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
 
@@ -2306,16 +2306,16 @@ a { color: inherit; text-decoration: none; }
       <!-- Thumbnails on Left -->
       <div class="gallery-thumbnails">
         <div class="thumb-item active" onmouseover="scrollGallery(0, this)">
-          <img src="./assets/skin refining-100.jpg" alt="Thumb 1">
+          <img src="{{ "toner1.jpeg" | asset_url }}" alt="Thumb 1">
         </div>
         <div class="thumb-item" onmouseover="scrollGallery(1, this)">
-          <img src="{{ "toner-meet-2.jpg" | asset_url }}" alt="Thumb 2">
+          <img src="{{ "toner2.jpg" | asset_url }}" alt="Thumb 2">
         </div>
         <div class="thumb-item" onmouseover="scrollGallery(2, this)">
-          <img src="{{ "toner-meet-3.jpg" | asset_url }}" alt="Thumb 3">
+          <img src="{{ "toner3.jpg" | asset_url }}" alt="Thumb 3">
         </div>
         <div class="thumb-item" onmouseover="scrollGallery(3, this)">
-          <img src="{{ "toner-meet-4.jpg" | asset_url }}" alt="Thumb 4">
+          <img src="{{ "toner4.jpg" | asset_url }}" alt="Thumb 4">
         </div>
       </div>
 
@@ -2323,16 +2323,16 @@ a { color: inherit; text-decoration: none; }
       <div class="gallery-main-viewport">
         <div class="gallery-slider" id="productSlider">
           <div class="gallery-slide">
-            <img src="./assets/skin refining-100.jpg" alt="Main View 1">
+            <img src="{{ "toner1.jpeg" | asset_url }}" alt="Main View 1">
           </div>
           <div class="gallery-slide">
-            <img src="{{ "toner-meet-2.jpg" | asset_url }}" alt="Main View 2">
+            <img src="{{ "toner2.jpg" | asset_url }}" alt="Main View 2">
           </div>
           <div class="gallery-slide">
-            <img src="{{ "toner-meet-3.jpg" | asset_url }}" alt="Main View 3">
+            <img src="{{ "toner3.jpg" | asset_url }}" alt="Main View 3">
           </div>
           <div class="gallery-slide">
-            <img src="{{ "toner-meet-4.jpg" | asset_url }}" alt="Main View 4">
+            <img src="{{ "toner4.jpg" | asset_url }}" alt="Main View 4">
           </div>
         </div>
       </div>
@@ -2353,7 +2353,7 @@ a { color: inherit; text-decoration: none; }
       <div class="product-details">
         <div class="product-details-inner">
           <div class="product-header">
-            <h1 class="product-title">Refining<br>Toner</h1>
+            <h1 class="product-title">Skin<br>Refining<br>Toner</h1>
           </div>
 
           <div class="product-meta">
@@ -2361,7 +2361,7 @@ a { color: inherit; text-decoration: none; }
           </div>
 
           <div class="product-description">
-            <p>A refining toner designed to clarify, smooth, and rebalance the skin while enhancing radiance.</p>
+            <p>A refining toner designed to clarify, smooth, and rebalance the skin while enhancing radiance. It gently exfoliates, hydrates, and helps improve overall tone for a clearer, glass-like finish with continued use.</p>
             <p class="disclaimer">*with continued daily use</p>
           </div>
 
@@ -2373,7 +2373,7 @@ a { color: inherit; text-decoration: none; }
               
               <div class="bogo-inline-card" onclick="selectBogo(this)">
                 <input type="radio" name="free_gift" data-gift-handle="night-cream" style="display:none;">
-                <img src="./assets/skin refining-100.jpg" alt="Centella Night Cream">
+                <img src="{{ "toner1.jpeg" | asset_url }}" alt="Centella Night Cream">
                 <div class="bogo-inline-info">
                   <span class="bogo-inline-name">Centella Night Cream</span>
                   <span class="bogo-inline-tag">Night Renewal</span>
@@ -2757,7 +2757,7 @@ a { color: inherit; text-decoration: none; }
               <!-- Cards will be populated dynamically or via migration -->
 
               <div class="bogo-card">
-                <img src="{{ "skin refining-100.jpg" | asset_url }}" alt="Centella Night Cream">
+                <img src="{{ "toner1.jpeg" | asset_url }}" alt="Centella Night Cream">
                 <span class="bogo-product-name">Centella Night Cream</span>
                 <button class="bogo-add-btn">Select</button>
               </div>
@@ -2787,8 +2787,8 @@ a { color: inherit; text-decoration: none; }
               </div>
 
               <div class="bogo-card">
-                <img src="{{ "skin refining-100.jpg" | asset_url }}" alt="Refining Toner">
-                <span class="bogo-product-name">Refining Toner</span>
+                <img src="{{ "toner1.jpeg" | asset_url }}" alt="Skin Refining Toner">
+                <span class="bogo-product-name">Skin Refining Toner</span>
                 <button class="bogo-add-btn">Select</button>
               </div>
 
@@ -2841,8 +2841,8 @@ a { color: inherit; text-decoration: none; }
               </div>
 
               <div class="bogo-card">
-                <img src="{{ "toner1.jpeg" | asset_url }}" alt="Renewal Toner">
-                <span class="bogo-product-name">Renewal Toner</span>
+                <img src="{{ "toner1.jpeg" | asset_url }}" alt="Skin Refining Toner">
+                <span class="bogo-product-name">Skin Refining Toner</span>
                 <button class="bogo-add-btn">Select</button>
               </div>
 
@@ -2917,20 +2917,28 @@ a { color: inherit; text-decoration: none; }
           </style>
           <div class="product-accordions accordions">
             <details class="accordion-item">
-              <summary><span>BENEFITS</span><span>+</span></summary><div class="accordion-content"><ul>                  <li>Helps fade spots</li>
-                  <li>Clears pores</li>
-                  <li>Smooths texture</li></ul></div>
+              <summary><span>BENEFITS</span><span>+</span></summary><div class="accordion-content"><ul>                  <li>Helps fade the appearance of spots and uneven tone</li>
+                  <li>Clears pores and helps reduce future breakouts</li>
+                  <li>Smooths texture through gentle exfoliation</li>
+                  <li>Brightens dull skin for a more refined look</li>
+                  <li>Maintains hydration while balancing the skin</li>
+                  <li>Supports and soothes the skin barrier</li>
+                  <li>Reveals a clearer, radiant, glass-like glow</li></ul></div>
             </details>
             <details class="accordion-item">
-              <summary><span>APPLICATION</span><span>+</span></summary><div class="accordion-content"><p style="margin:0;">Apply Skin Refining Toner using a cotton pad or gently press it into the skin.</p></div>
+              <summary><span>APPLICATION</span><span>+</span></summary><div class="accordion-content"><p style="margin:0;">After cleansing, apply Skin Refining Toner using a cotton pad or gently press it into the skin with your hands. Allow it to absorb fully before applying serum and moisturizer.</p></div>
             </details>
             <details class="accordion-item">
-              <summary><span>TRICK</span><span>+</span></summary><div class="accordion-content"><ul>                  <li>Use 2–3 times a week</li>
-                  <li>Apply with hands</li></ul></div>
+              <summary><span>TRICK</span><span>+</span></summary><div class="accordion-content"><ul>                  <li>Use 2–3 times a week to avoid over-exfoliation</li>
+                  <li>Apply with hands for a more hydrating effect</li>
+                  <li>Focus on areas with texture or visible pores</li>
+                  <li>Follow with serum immediately to enhance absorption</li></ul></div>
             </details>
             <details class="accordion-item">
               <summary><span>KEY INGREDIENTS</span><span>+</span></summary><div class="accordion-content"><ul>                  <li>Centella Asiatica</li>
                   <li>Niacinamide</li>
+                  <li>Mild Exfoliating Complex</li>
+                  <li>Hydrating Agents</li>
                   <li>Botanical Extracts</li></ul></div>
             </details>
           </div>
@@ -2945,10 +2953,10 @@ a { color: inherit; text-decoration: none; }
       <div class="meet-carousel-wrapper">
         <div class="carousel-swipe-indicator">SWIPE →</div>
         <div class="meet-carousel">
-          <img src="./assets/skin refining-100.jpg" alt="Product Image 1">
-          <img src="{{ "toner-meet-2.jpg" | asset_url }}" alt="Product Image 2">
-          <img src="{{ "toner-meet-3.jpg" | asset_url }}" alt="Product Image 3">
-          <img src="{{ "toner-meet-4.jpg" | asset_url }}" alt="Product Image 4">
+          <img src="{{ "toner1.jpeg" | asset_url }}" alt="Product Image 1">
+          <img src="{{ "toner2.jpg" | asset_url }}" alt="Product Image 2">
+          <img src="{{ "toner3.jpg" | asset_url }}" alt="Product Image 3">
+          <img src="{{ "toner4.jpg" | asset_url }}" alt="Product Image 4">
         </div>
         <!-- Right Arrow Overlay -->
         <div class="carousel-arrow">
@@ -2963,24 +2971,24 @@ a { color: inherit; text-decoration: none; }
         <h2 class="bd-title">Clarity You Can See</h2>
         <div class="bd-table">
           <div class="bd-row">
-            <span class="bd-label">GOOD FOR:</span><span class="bd-val">Uneven and textured skin</span>
+            <span class="bd-label">GOOD FOR:</span><span class="bd-val">All skin types, especially uneven and textured skin</span>
           </div>
           <div class="bd-row">
-            <span class="bd-label">FEELS LIKE:</span><span class="bd-val">A refreshing, watery layer</span>
+            <span class="bd-label">FEELS LIKE:</span><span class="bd-val">A refreshing, watery layer that absorbs quickly</span>
           </div>
           <div class="bd-row">
-            <span class="bd-label">LOOKS LIKE:</span><span class="bd-val">Smooth, plump, and poreless skin by morning</span>
+            <span class="bd-label">LOOKS LIKE:</span><span class="bd-val">Clearer, smoother skin with refined texture</span>
           </div>
           <div class="bd-row">
-            <span class="bd-label">SMELLS LIKE:</span><span class="bd-val">Subtle, calming freshness for a relaxing nighttime routine</span>
+            <span class="bd-label">SMELLS LIKE:</span><span class="bd-val">Clean, subtle freshness with a calming touch</span>
           </div>
           <div class="bd-row">
-            <span class="bd-label">FYI:</span><span class="bd-val">Halal-Friendly • Pore-Refining</span>
+            <span class="bd-label">FYI:</span><span class="bd-val">Halal-Friendly • Dermatologist-Tested • Non-Stripping • Pore-Refining</span>
           </div>
         </div>
       </div>
       <div class="breakdown-image">
-        <img src="{{ "toner-before-after.jpg" | asset_url }}" alt="Plate View">
+        <img src="{{ "plate.jpg" | asset_url }}" alt="Plate View">
       </div>
     </section>
 
@@ -2988,27 +2996,27 @@ a { color: inherit; text-decoration: none; }
     <!-- What's Inside Section -->
     <section class="whats-inside-section">
       <div class="wi-image-col">
-        <img src="{{ "toner-whats-inside.jpg" | asset_url }}" alt="Spoon View" class="wi-image">
+        <img src="{{ "spoon.jpg" | asset_url }}" alt="Spoon View" class="wi-image">
         <button class="wi-full-ingredients-btn">FULL INGREDIENTS LIST</button>
       </div>
       <div class="wi-content-col">
         <div class="wi-vertical-text">what's inside</div>
         <div class="wi-details">
-          <p class="wi-intro">A gentle, clarifying toner.</p>
+          <p class="wi-intro">A gentle, clarifying toner that smooths, balances, and rehydrates skin. Here are 2 standout ingredients for refreshed, radiant skin:</p>
           
           <div class="wi-ingredient-block">
-            <h3 class="wi-ingred-title">niacinamide</h3><p class="wi-ingred-desc">helps visibly improve skin tone and refine pores</p>
+            <h3 class="wi-ingred-title">NIACINAMIDE</h3><p class="wi-ingred-desc">helps visibly improve skin tone, refine pores, and reduce the appearance of unevenness</p>
           </div>
           
           <hr class="wi-divider">
           
           <div class="wi-ingredient-block">
-            <h3 class="wi-ingred-title">exfoliating complex</h3><p class="wi-ingred-desc">gently removes buildup to reveal brighter skin</p>
+            <h3 class="wi-ingred-title">MILD EXFOLIATING COMPLEX</h3><p class="wi-ingred-desc">gently removes buildup and dead skin cells to reveal smoother, brighter skin</p>
           </div>
           
           <hr class="wi-divider">
           
-          <p class="wi-also-made">also made with <strong>Centella Asiatica, Botanical Extracts</strong></p>
+          <p class="wi-also-made">also made with <strong>Centella Asiatica, Hydrating Agents, Botanical Extracts</strong></p>
         </div>
       </div>
     </section>
@@ -3017,12 +3025,12 @@ a { color: inherit; text-decoration: none; }
     <section class="spread-section">
       <div class="spread-content">
         <span class="spread-label">SPREAD IT ON FOR:</span>
-        <h2 class="spread-heading">refined skin</h2>
+        <h2 class="spread-heading">refined, balanced skin</h2>
         <h2 class="spread-heading">overnight hydration</h2>
-        <h2 class="spread-heading spread-green">radiant glow</h2>
+        <h2 class="spread-heading spread-green">clear, radiant glow</h2>
       </div>
       <div class="spread-image-col">
-        <img src="{{ "toner-deep-hydration.jpg" | asset_url }}" alt="Spread View">
+        <img src="{{ "spread.jpg" | asset_url }}" alt="Spread View">
       </div>
     </section>
 
@@ -3033,28 +3041,31 @@ a { color: inherit; text-decoration: none; }
         
         <div class="stat-item">
           <div class="stat-pct">99%</div>
-          <div class="stat-desc">SAID THEIR SKIN FELT BALANCED</div>
+          <div class="stat-desc">SAID THEIR SKIN FELT CLEANER + MORE BALANCED</div>
         </div>
         
-        
-          <div class="stat-desc">SAID IT ABSORBED WELL WITHOUT HEAVINESS</div>
+        <div class="stat-item">
+          <div class="stat-pct">98%</div>
+          <div class="stat-desc">SAID THEIR SKIN LOOKED CLEARER + MORE REFINED</div>
         </div>
         
-        
-          <div class="stat-desc">NOTICED SMOOTHER, SOFTER, AND REFINED SKIN BY MORNING</div>
+        <div class="stat-item">
+          <div class="stat-pct">97%</div>
+          <div class="stat-desc">SAID THEIR SKIN TEXTURE FELT SMOOTHER</div>
         </div>
         
-        
-          <div class="stat-desc">REPORTED A VISIBLE REDUCTION IN FINE LINES AND DARK SPOTS</div>
+        <div class="stat-item">
+          <div class="stat-pct">3 out of 4</div>
+          <div class="stat-desc">SAID THEY NOTICED A HEALTHY, EVEN GLOW</div>
         </div>
         
         <div class="stat-disclaimer">
-          *Consistent use study.
+          Based on a 2-week consumer perception study with consistent use.
         </div>
       </div>
       
       <div class="stats-image">
-        <img src="{{ "toner-faq.jpg" | asset_url }}" alt="Percentage View">
+        <img src="{{ "percentage.jpg" | asset_url }}" alt="Percentage View">
       </div>
     </section>
 
@@ -3067,14 +3078,42 @@ a { color: inherit; text-decoration: none; }
           <div class="faq-item">
             <div class="faq-qa">
               <span class="faq-question">Can I use this toner every day?</span>
-              <p class="faq-answer">Recommended 2–3 times a week.</p>
+              <p class="faq-answer">It is recommended to use it 2–3 times a week to avoid over-exfoliation while still seeing visible results.</p>
+            </div>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-item">
+            <div class="faq-qa">
+              <span class="faq-question">Is this suitable for sensitive skin?</span>
+              <p class="faq-answer">Yes, it includes calming ingredients like Centella Asiatica to help soothe while refining the skin.</p>
+            </div>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-item">
+            <div class="faq-qa">
+              <span class="faq-question">Will it help with acne and clogged pores?</span>
+              <p class="faq-answer">Yes, it helps clear pores and reduce buildup, which can minimize breakouts over time.</p>
+            </div>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-item">
+            <div class="faq-qa">
+              <span class="faq-question">Can I use it with other active ingredients?</span>
+              <p class="faq-answer">Yes, but avoid layering with strong exfoliants on the same day to prevent irritation.</p>
+            </div>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-item">
+            <div class="faq-qa">
+              <span class="faq-question">Does it dry out the skin?</span>
+              <p class="faq-answer">No, the formula is designed to maintain hydration while gently refining the skin.</p>
             </div>
             <span class="faq-icon">+</span>
           </div>
         </div>
       </div>
       <div class="faq-image-col">
-        <img src="{{ "faq.jpeg" | asset_url }}" alt="FAQ View">
+        <img src="{{ "faq.jpg" | asset_url }}" alt="FAQ View">
       </div>
     </section>
 
@@ -3100,7 +3139,71 @@ a { color: inherit; text-decoration: none; }
             <div class="rv-stars">★★★★★</div>
           </div>
           <div class="rv-title">Verified Selection</div>
-          <div class="rv-body">"My skin feels much smoother and clearer."</div>
+          <div class="rv-body">"My skin feels much smoother and clearer after using this toner. It really helps with texture and dullness."</div>
+        </div>
+      </div>
+
+      <hr class="rv-divider">
+
+      <div class="review-card">
+        <div class="rv-sidebar">
+          <div class="rv-author">Sidra</div>
+          <div class="rv-verified">Verified Buyer</div>
+        </div>
+        <div class="rv-main">
+          <div class="rv-main-header">
+            <div class="rv-stars">★★★★★</div>
+          </div>
+          <div class="rv-title">Verified Selection</div>
+          <div class="rv-body">"I noticed my pores looking smaller and my skin more even. It feels refreshing and not harsh at all."</div>
+        </div>
+      </div>
+
+      <hr class="rv-divider">
+
+      <div class="review-card">
+        <div class="rv-sidebar">
+          <div class="rv-author">Salman</div>
+          <div class="rv-verified">Verified Buyer</div>
+        </div>
+        <div class="rv-main">
+          <div class="rv-main-header">
+            <div class="rv-stars">★★★★★</div>
+          </div>
+          <div class="rv-title">Verified Selection</div>
+          <div class="rv-body">"It gently exfoliates without irritating my skin. My face looks brighter and more refined now."</div>
+        </div>
+      </div>
+
+      <hr class="rv-divider">
+
+      <div class="review-card">
+        <div class="rv-sidebar">
+          <div class="rv-author">Hina</div>
+          <div class="rv-verified">Verified Buyer</div>
+        </div>
+        <div class="rv-main">
+          <div class="rv-main-header">
+            <div class="rv-stars">★★★★★</div>
+          </div>
+          <div class="rv-title">Verified Selection</div>
+          <div class="rv-body">"My skin feels balanced and fresh after every use. It has helped improve my overall skin tone."</div>
+        </div>
+      </div>
+
+      <hr class="rv-divider">
+
+      <div class="review-card">
+        <div class="rv-sidebar">
+          <div class="rv-author">Imran</div>
+          <div class="rv-verified">Verified Buyer</div>
+        </div>
+        <div class="rv-main">
+          <div class="rv-main-header">
+            <div class="rv-stars">★★★★★</div>
+          </div>
+          <div class="rv-title">Verified Selection</div>
+          <div class="rv-body">"I’ve seen fewer breakouts and smoother skin texture. It’s a great addition to my routine."</div>
         </div>
       </div>
 
@@ -3128,7 +3231,7 @@ a { color: inherit; text-decoration: none; }
               <span class="card-brand-label">NIGHT CREAM</span>
             </div>
             <div class="card-rhode-image">
-              <img src="{{ "skin refining-100.jpg" | asset_url }}" alt="Centella Night Cream" class="product-main-img">
+              <img src="{{ "toner1.jpeg" | asset_url }}" alt="Centella Night Cream" class="product-main-img">
             </div>
             <div class="card-rhode-footer">
               <div class="card-meta">
@@ -3233,22 +3336,22 @@ a { color: inherit; text-decoration: none; }
 
         <div class="card card-rhode" data-category="skincare">
           <a href="/products/skin-refining-toner" class="card-link-wrapper">
-            <img src="{{ "toner-meet-2.jpg" | asset_url }}" class="card-hover-bg" alt="Refining Toner Hover">
+            <img src="{{ "toner2.jpg" | asset_url }}" class="card-hover-bg" alt="Skin Refining Toner Hover">
             <div class="card-rhode-top">
               <span class="card-brand-label">Clarity Reset</span>
             </div>
             <div class="card-rhode-image">
-              <img src="{{ "skin refining-100.jpg" | asset_url }}" alt="Refining Toner" class="product-main-img">
+              <img src="{{ "toner1.jpeg" | asset_url }}" alt="Skin Refining Toner" class="product-main-img">
             </div>
             <div class="card-rhode-footer">
               <div class="card-meta">
                 <div class="card-stars">★★★★★ <span class="review-count">(10k+)</span></div>
-                <h3 class="card-name">Refining Toner</h3>
+                <h3 class="card-name">Skin Refining Toner</h3>
               </div>
-              <span class="btn-rhode-buy-pill">BUY - RS. 1,800</span>
+              <span class="btn-rhode-buy-pill">BUY - RS. 2,670</span>
             </div>
             <div class="buy-button-hover">
-                BUY Refining Toner - RS. 1,800
+                BUY Skin Refining Toner - RS. 2,670
             </div>
           </a>
         </div>
@@ -3431,22 +3534,22 @@ a { color: inherit; text-decoration: none; }
 
         <div class="card card-rhode" data-category="skincare">
           <a href="/products/renewal-toner" class="card-link-wrapper">
-            <img src="{{ "toner2.jpg" | asset_url }}" class="card-hover-bg" alt="Renewal Toner Hover">
+            <img src="{{ "toner2.jpg" | asset_url }}" class="card-hover-bg" alt="Skin Refining Toner Hover">
             <div class="card-rhode-top">
-              <span class="card-brand-label">Pore Refining</span>
+              <span class="card-brand-label">Clarity Reset</span>
             </div>
             <div class="card-rhode-image">
-              <img src="{{ "toner1.jpeg" | asset_url }}" alt="Renewal Toner" class="product-main-img">
+              <img src="{{ "toner1.jpeg" | asset_url }}" alt="Skin Refining Toner" class="product-main-img">
             </div>
             <div class="card-rhode-footer">
               <div class="card-meta">
                 <div class="card-stars">★★★★★ <span class="review-count">(10k+)</span></div>
-                <h3 class="card-name">Renewal Toner</h3>
+                <h3 class="card-name">Skin Refining Toner</h3>
               </div>
               <span class="btn-rhode-buy-pill">BUY - RS. 2,670</span>
             </div>
             <div class="buy-button-hover">
-                BUY Renewal Toner - RS. 2,670
+                BUY Skin Refining Toner - RS. 2,670
             </div>
           </a>
         </div>
@@ -3477,7 +3580,7 @@ a { color: inherit; text-decoration: none; }
 
     <!-- Mobile Sticky Cart -->
     <div class="mobile-sticky-cart">
-      <button class="buy-button">ADD TO BAG - RS. 1,800</button>
+      <button class="buy-button">ADD TO BAG - RS. 2,670</button>
     </div>
   </main>
 

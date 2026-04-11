@@ -689,81 +689,136 @@
   },
   {
     "File": "product.skin-refining-toner.liquid",
-    "Title": "Refining Toner",
+    "Title": "Skin Refining Toner",
     "Subtitle": "Clarity Reset",
-    "Price": "1,800",
-    "Description": "A refining toner designed to clarify, smooth, and rebalance the skin while enhancing radiance.",
+    "Price": "2,670",
+    "Description": "A refining toner designed to clarify, smooth, and rebalance the skin while enhancing radiance. It gently exfoliates, hydrates, and helps improve overall tone for a clearer, glass-like finish with continued use.",
     "Benefits": [
-      "Helps fade spots",
-      "Clears pores",
-      "Smooths texture"
+      "Helps fade the appearance of spots and uneven tone",
+      "Clears pores and helps reduce future breakouts",
+      "Smooths texture through gentle exfoliation",
+      "Brightens dull skin for a more refined look",
+      "Maintains hydration while balancing the skin",
+      "Supports and soothes the skin barrier",
+      "Reveals a clearer, radiant, glass-like glow"
     ],
-    "Application": "Apply Skin Refining Toner using a cotton pad or gently press it into the skin.",
+    "Application": "After cleansing, apply Skin Refining Toner using a cotton pad or gently press it into the skin with your hands. Allow it to absorb fully before applying serum and moisturizer.",
     "Tricks": [
-      "Use 2–3 times a week",
-      "Apply with hands"
+      "Use 2–3 times a week to avoid over-exfoliation",
+      "Apply with hands for a more hydrating effect",
+      "Focus on areas with texture or visible pores",
+      "Follow with serum immediately to enhance absorption"
     ],
     "Ingredients": [
       "Centella Asiatica",
       "Niacinamide",
+      "Mild Exfoliating Complex",
+      "Hydrating Agents",
       "Botanical Extracts"
     ],
     "CatchyLine": "Refine. Reset. Reveal Your Glow.",
     "ImportantInfo": {
       "Headline": "Clarity You Can See",
-      "GoodFor": "Uneven and textured skin",
-      "FeelsLike": "A refreshing, watery layer",
-      "FYI": "Halal-Friendly • Pore-Refining"
+      "GoodFor": "All skin types, especially uneven and textured skin",
+      "FeelsLike": "A refreshing, watery layer that absorbs quickly",
+      "LooksLike": "Clearer, smoother skin with refined texture",
+      "SmellsLike": "Clean, subtle freshness with a calming touch",
+      "FYI": "Halal-Friendly • Dermatologist-Tested • Non-Stripping • Pore-Refining"
     },
     "WhatsInside": {
-      "Intro": "A gentle, clarifying toner.",
-      "I1Title": "niacinamide",
-      "I1Desc": "helps visibly improve skin tone and refine pores",
-      "I2Title": "exfoliating complex",
-      "I2Desc": "gently removes buildup to reveal brighter skin",
-      "Also": "Centella Asiatica, Botanical Extracts"
+      "Intro": "A gentle, clarifying toner that smooths, balances, and rehydrates skin. Here are 2 standout ingredients for refreshed, radiant skin:",
+      "I1Title": "NIACINAMIDE",
+      "I1Desc": "helps visibly improve skin tone, refine pores, and reduce the appearance of unevenness",
+      "I2Title": "MILD EXFOLIATING COMPLEX",
+      "I2Desc": "gently removes buildup and dead skin cells to reveal smoother, brighter skin",
+      "Also": "Centella Asiatica, Hydrating Agents, Botanical Extracts"
     },
     "SpreadItOn": [
-      "refined skin",
+      "refined, balanced skin",
       "smoother texture",
-      "radiant glow"
+      "clear, radiant glow"
     ],
     "Stats": [
       {
         "Pct": "99%",
-        "Desc": "SAID THEIR SKIN FELT BALANCED"
+        "Desc": "SAID THEIR SKIN FELT CLEANER + MORE BALANCED"
+      },
+      {
+        "Pct": "98%",
+        "Desc": "SAID THEIR SKIN LOOKED CLEARER + MORE REFINED"
+      },
+      {
+        "Pct": "97%",
+        "Desc": "SAID THEIR SKIN TEXTURE FELT SMOOTHER"
+      },
+      {
+        "Pct": "3 out of 4",
+        "Desc": "SAID THEY NOTICED A HEALTHY, EVEN GLOW"
       }
     ],
-    "StatsDisclaimer": "*Consistent use study.",
+    "StatsDisclaimer": "Based on a 2-week consumer perception study with consistent use.",
     "FAQs": [
       {
         "Q": "Can I use this toner every day?",
-        "A": "Recommended 2–3 times a week."
+        "A": "It is recommended to use it 2–3 times a week to avoid over-exfoliation while still seeing visible results."
+      },
+      {
+        "Q": "Is this suitable for sensitive skin?",
+        "A": "Yes, it includes calming ingredients like Centella Asiatica to help soothe while refining the skin."
+      },
+      {
+        "Q": "Will it help with acne and clogged pores?",
+        "A": "Yes, it helps clear pores and reduce buildup, which can minimize breakouts over time."
+      },
+      {
+        "Q": "Can I use it with other active ingredients?",
+        "A": "Yes, but avoid layering with strong exfoliants on the same day to prevent irritation."
+      },
+      {
+        "Q": "Does it dry out the skin?",
+        "A": "No, the formula is designed to maintain hydration while gently refining the skin."
       }
     ],
     "Reviews": [
       {
         "Name": "Farhan",
-        "Text": "My skin feels much smoother and clearer."
+        "Text": "My skin feels much smoother and clearer after using this toner. It really helps with texture and dullness."
+      },
+      {
+        "Name": "Sidra",
+        "Text": "I noticed my pores looking smaller and my skin more even. It feels refreshing and not harsh at all."
+      },
+      {
+        "Name": "Salman",
+        "Text": "It gently exfoliates without irritating my skin. My face looks brighter and more refined now."
+      },
+      {
+        "Name": "Hina",
+        "Text": "My skin feels balanced and fresh after every use. It has helped improve my overall skin tone."
+      },
+      {
+        "Name": "Imran",
+        "Text": "I’ve seen fewer breakouts and smoother skin texture. It’s a great addition to my routine."
       }
     ],
     "Images": {
-      "Hero": "skin refining-100.jpg",
+      "Hero": "toner1.jpeg",
       "Gallery": [
-        "toner-meet-1.jpg",
-        "toner-meet-2.jpg",
-        "toner-meet-3.jpg",
-        "toner-meet-4.jpg"
+        "toner1.jpeg",
+        "toner2.jpg",
+        "toner3.jpg",
+        "toner4.jpg"
       ],
-      "Breakdown": "toner-before-after.jpg",
-      "WhatsInside": "toner-whats-inside.jpg",
-      "Spread": "toner-deep-hydration.jpg",
-      "Stats": "toner-faq.jpg",
+      "Breakdown": "plate.jpg",
+      "WhatsInside": "spoon.jpg",
+      "Spread": "spread.jpg",
+      "Stats": "percentage.jpg",
+      "FAQ": "faq.jpg",
       "Carousel": [
-        "toner-meet-1.jpg",
-        "toner-meet-2.jpg",
-        "toner-meet-3.jpg",
-        "toner-meet-4.jpg"
+        "toner1.jpeg",
+        "toner2.jpg",
+        "toner3.jpg",
+        "toner4.jpg"
       ]
     }
   },
@@ -1601,63 +1656,116 @@
   },
   {
     "File": "product.renewal-toner.liquid",
-    "Title": "Renewal Toner",
-    "Subtitle": "Pore Refining",
+    "Title": "Skin Refining Toner",
+    "Subtitle": "Clarity Reset",
     "Price": "2,670",
-    "Description": "A gentle exfoliating toner that sweeps away dead skin cells and tightens pores to reveal a smoother, brighter complexion.",
+    "Description": "A refining toner designed to clarify, smooth, and rebalance the skin while enhancing radiance. It gently exfoliates, hydrates, and helps improve overall tone for a clearer, glass-like finish with continued use.",
     "Benefits": [
-      "Refines pore size",
-      "Smooths skin texture",
-      "Prepares skin for hydration"
+      "Helps fade the appearance of spots and uneven tone",
+      "Clears pores and helps reduce future breakouts",
+      "Smooths texture through gentle exfoliation",
+      "Brightens dull skin for a more refined look",
+      "Maintains hydration while balancing the skin",
+      "Supports and soothes the skin barrier",
+      "Reveals a clearer, radiant, glass-like glow"
     ],
-    "Application": "Apply with a cotton pad or hands onto clean, dry skin.",
+    "Application": "After cleansing, apply Skin Refining Toner using a cotton pad or gently press it into the skin with your hands. Allow it to absorb fully before applying serum and moisturizer.",
+    "Tricks": [
+      "Use 2–3 times a week to avoid over-exfoliation",
+      "Apply with hands for a more hydrating effect",
+      "Focus on areas with texture or visible pores",
+      "Follow with serum immediately to enhance absorption"
+    ],
     "Ingredients": [
-      "Glycolic Acid",
-      "Lactic Acid",
-      "Witch Hazel",
-      "Honey"
+      "Centella Asiatica",
+      "Niacinamide",
+      "Mild Exfoliating Complex",
+      "Hydrating Agents",
+      "Botanical Extracts"
     ],
-    "CatchyLine": "Smooth. Refine. Renew.",
+    "CatchyLine": "Refine. Reset. Reveal Your Glow.",
     "ImportantInfo": {
-      "Headline": "Clear & Refine",
-      "GoodFor": "Enlarged pores and dull skin texture",
-      "FeelsLike": "A cool, refreshing splash of goodness",
-      "FYI": "Exfoliating • Alcohol-Free • Pore-Tightening"
+      "Headline": "Clarity You Can See",
+      "GoodFor": "All skin types, especially uneven and textured skin",
+      "FeelsLike": "A refreshing, watery layer that absorbs quickly",
+      "LooksLike": "Clearer, smoother skin with refined texture",
+      "SmellsLike": "Clean, subtle freshness with a calming touch",
+      "FYI": "Halal-Friendly • Dermatologist-Tested • Non-Stripping • Pore-Refining"
     },
     "WhatsInside": {
-      "Intro": "A balanced blend of AHAs and soothing botanicals for skin renewal.",
-      "I1Title": "glycolic acid",
-      "I1Desc": "exfoliates the surface to reveal fresh, glowing skin",
-      "I2Title": "witch hazel",
-      "I2Desc": "helps tighten pores and control excess oil",
-      "Also": "Lactic Acid, Aloe Vera, Honey"
+      "Intro": "A gentle, clarifying toner that smooths, balances, and rehydrates skin. Here are 2 standout ingredients for refreshed, radiant skin:",
+      "I1Title": "NIACINAMIDE",
+      "I1Desc": "helps visibly improve skin tone, refine pores, and reduce the appearance of unevenness",
+      "I2Title": "MILD EXFOLIATING COMPLEX",
+      "I2Desc": "gently removes buildup and dead skin cells to reveal smoother, brighter skin",
+      "Also": "Centella Asiatica, Hydrating Agents, Botanical Extracts"
     },
     "SpreadItOn": [
-      "pore refining",
-      "smooth texture",
-      "bright skin"
+      "refined, balanced skin",
+      "smoother texture",
+      "clear, radiant glow"
     ],
     "Stats": [
       {
-        "Pct": "98%",
-        "Desc": "SAID THEIR PORES LOOKED SMALLER"
+        "Pct": "99%",
+        "Desc": "SAID THEIR SKIN FELT CLEANER + MORE BALANCED"
       },
       {
-        "Pct": "96%",
-        "Desc": "NOTICED SMOOTHER SKIN TEXTURE"
+        "Pct": "98%",
+        "Desc": "SAID THEIR SKIN LOOKED CLEARER + MORE REFINED"
+      },
+      {
+        "Pct": "97%",
+        "Desc": "SAID THEIR SKIN TEXTURE FELT SMOOTHER"
+      },
+      {
+        "Pct": "3 out of 4",
+        "Desc": "SAID THEY NOTICED A HEALTHY, EVEN GLOW"
       }
     ],
-    "StatsDisclaimer": "*Based on consumer perception study.",
+    "StatsDisclaimer": "Based on a 2-week consumer perception study with consistent use.",
     "FAQs": [
       {
-        "Q": "When should I use it?",
-        "A": "Use it after cleansing and before serum, once or twice daily."
+        "Q": "Can I use this toner every day?",
+        "A": "It is recommended to use it 2–3 times a week to avoid over-exfoliation while still seeing visible results."
+      },
+      {
+        "Q": "Is this suitable for sensitive skin?",
+        "A": "Yes, it includes calming ingredients like Centella Asiatica to help soothe while refining the skin."
+      },
+      {
+        "Q": "Will it help with acne and clogged pores?",
+        "A": "Yes, it helps clear pores and reduce buildup, which can minimize breakouts over time."
+      },
+      {
+        "Q": "Can I use it with other active ingredients?",
+        "A": "Yes, but avoid layering with strong exfoliants on the same day to prevent irritation."
+      },
+      {
+        "Q": "Does it dry out the skin?",
+        "A": "No, the formula is designed to maintain hydration while gently refining the skin."
       }
     ],
     "Reviews": [
       {
-        "Name": "Zainab",
-        "Text": "This toner has really helped with my blackheads and large pores. It doesn't sting at all!"
+        "Name": "Farhan",
+        "Text": "My skin feels much smoother and clearer after using this toner. It really helps with texture and dullness."
+      },
+      {
+        "Name": "Sidra",
+        "Text": "I noticed my pores looking smaller and my skin more even. It feels refreshing and not harsh at all."
+      },
+      {
+        "Name": "Salman",
+        "Text": "It gently exfoliates without irritating my skin. My face looks brighter and more refined now."
+      },
+      {
+        "Name": "Hina",
+        "Text": "My skin feels balanced and fresh after every use. It has helped improve my overall skin tone."
+      },
+      {
+        "Name": "Imran",
+        "Text": "I’ve seen fewer breakouts and smoother skin texture. It’s a great addition to my routine."
       }
     ],
     "Images": {
