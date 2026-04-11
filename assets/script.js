@@ -251,10 +251,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const category = link.getAttribute('data-category');
     if (!category || category === '#') return;
 
-    // Prevent Shopify from following the link to a 404 collection page
-    e.preventDefault();
-    e.stopPropagation();
-
     // Reset all links and set active
     document.querySelectorAll('.cat-link').forEach(l => l.classList.remove('active'));
     link.classList.add('active');

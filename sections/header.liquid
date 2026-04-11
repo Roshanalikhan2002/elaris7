@@ -768,15 +768,7 @@ body.menu-open { overflow: hidden; }
     });
   });
 
-  // ===== Desktop Mega Menu Category Switching =====
-  const catItems = document.querySelectorAll('.mega-cat-item');
-  catItems.forEach(item => {
-    item.addEventListener('click', (e) => {
-      e.stopPropagation();
-      catItems.forEach(i => i.classList.remove('active'));
-      item.classList.add('active');
-    });
-  });
+  // Mega Menu links are handled by standard navigation
 
   // ===== Search Overlay Toggle =====
   const searchTriggers = document.querySelectorAll('.search-trigger');
