@@ -152,6 +152,24 @@ function updateTemplate(p) {
     const currentHandle = getHandle(p.File);
     const isBogoEligible = bogoHandles.includes(currentHandle);
 
+    // --- GLOBAL STANDART ADD TO CART ---
+    const standardCartScript = `
+          <script>
+            document.querySelector('.add-to-cart-btn')?.addEventListener('click', function(e) {
+                e.preventDefault();
+                const mainVariantId = "{{ product.variants.first.id }}";
+                
+                fetch('/cart/add.js', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ items: [{ id: mainVariantId, quantity: 1 }] })
+                })
+                .then(response => response.json())
+                .then(data => { window.location.href = '/cart'; })
+                .catch(error => { alert('Error adding to cart.'); });
+            });
+          </script>`;
+
     if (isBogoEligible) {
         const bogoSelectionHtml = products
             .filter(prod => bogoHandles.includes(getHandle(prod.File)))
@@ -219,23 +237,6 @@ function updateTemplate(p) {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ items: items })
-                })
-                .then(response => response.json())
-                .then(data => { window.location.href = '/cart'; })
-                .catch(error => { alert('Error adding to cart.'); });
-            });
-          </script>`;
-    // --- GLOBAL STANDART ADD TO CART ---
-    const standardCartScript = `
-          <script>
-            document.querySelector('.add-to-cart-btn')?.addEventListener('click', function(e) {
-                e.preventDefault();
-                const mainVariantId = "{{ product.variants.first.id }}";
-                
-                fetch('/cart/add.js', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ items: [{ id: mainVariantId, quantity: 1 }] })
                 })
                 .then(response => response.json())
                 .then(data => { window.location.href = '/cart'; })
