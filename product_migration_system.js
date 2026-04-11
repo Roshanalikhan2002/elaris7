@@ -373,35 +373,351 @@ function updateTemplate(p) {
     }
 
     // 4. Inject Featured Collection Cards
-    const featuredHtml = products.map(prod => {
-        const handle = getHandle(prod.File);
-        const hoverImg = prod.Images && prod.Images.Carousel ? prod.Images.Carousel[0] : prod.Images.Hero;
-        const brandLabel = prod.Subtitle ? prod.Subtitle.split(' ')[0] : 'skincare';
-        return `
-        <div class="card card-rhode" data-category="skincare">
-          <a href="/products/${handle}" class="card-link-wrapper">
-            <img src="{{ "${hoverImg}" | asset_url }}" class="card-hover-bg" alt="${prod.Title} Hover">
+    const featuredHtml = `<!-- Card 1: Night Cream -->
+        <div class="card card-rhode" data-category="nightcream">
+          <a href="/products/night-cream" class="card-link-wrapper">
+            <img src="./assets/night-cream-hover.jpg" class="card-hover-bg" alt="Night Cream Hover">
             <div class="card-rhode-top">
-              <span class="card-brand-label">${brandLabel}</span>
+              <span class="card-brand-label">NIGHT CREAM</span>
             </div>
             <div class="card-rhode-image">
-              <img src="{{ "${prod.Images.Hero}" | asset_url }}" alt="${prod.Title}" class="product-main-img">
+              <img src="./assets/night-cream.jpg" alt="Night Cream" class="product-main-img">
             </div>
             <div class="card-rhode-footer">
               <div class="card-meta">
                 <div class="card-stars">★★★★★ <span class="review-count">(16k)</span></div>
-                <h3 class="card-name">${prod.Title}</h3>
+                <h3 class="card-name">NIGHT CREAM</h3>
               </div>
-              <span class="btn-rhode-buy-pill">BUY - RS. ${prod.Price}</span>
+              <a href="/products/night-cream" class="btn-rhode-buy-pill">BUY - RS. 1,500</a>
             </div>
             <div class="buy-button-hover" style="position: absolute; bottom: 25px; left: 50%; transform: translateX(-50%) translateY(20px); width: 88%; background: white; color: #2c2b28; padding: 14px 20px; border-radius: 40px; text-align: center; font-size: 0.72rem; font-weight: 800; letter-spacing: 0.05em; opacity: 0; z-index: 20; transition: all 0.4s cubic-bezier(0.16,1,0.3,1); box-shadow: 0 4px 15px rgba(0,0,0,0.08);">
-                BUY ${prod.Title} - RS. ${prod.Price}
+                BUY NIGHT CREAM - RS. 1,500
             </div>
           </a>
-        </div>`;
-    }).join('\n');
+        </div>
 
-    c = c.replace('<!-- FEATURED_CARDS_PLACEHOLDER -->', featuredHtml);
+        <!-- Card 2: Tranexamic Serum -->
+        <div class="card card-rhode" data-category="serum">
+          <a href="/products/tranexamic-serum" class="card-link-wrapper">
+            <img src="./assets/tranexamic-meet-1.jpg" class="card-hover-bg" alt="Tranexamic Serum Hover">
+            <div class="card-rhode-top">
+              <span class="card-brand-label">serum</span>
+            </div>
+            <div class="card-rhode-image">
+              <img src="./assets/tranexamic-serum.jpg" alt="Tranexamic Serum" class="product-main-img">
+            </div>
+            <div class="card-rhode-footer">
+              <div class="card-meta">
+                <div class="card-stars">★★★★★ <span class="review-count">(16k)</span></div>
+                <h3 class="card-name">TRANEXAMIC SERUM</h3>
+              </div>
+              <a href="/products/tranexamic-serum" class="btn-rhode-buy-pill">BUY - RS. 1,500</a>
+            </div>
+            <div class="buy-button-hover">
+                BUY TRANEXAMIC - RS. 1,500
+            </div>
+          </a>
+        </div>
+
+        <!-- Card 3: Keratin Serum -->
+        <div class="card card-rhode" data-category="haircare">
+          <a href="/products/keratin-serum" class="card-link-wrapper">
+            <img src="./assets/keratin-serum-hover.jpg" class="card-hover-bg" alt="Keratin Serum Hover">
+            <div class="card-rhode-top">
+              <span class="card-brand-label">haircare</span>
+            </div>
+            <div class="card-rhode-image">
+              <img src="./assets/keratin-serum.jpg" alt="Keratin Serum" class="product-main-img">
+            </div>
+            <div class="card-rhode-footer">
+              <div class="card-meta">
+                <div class="card-stars">★★★★★ <span class="review-count">(16k)</span></div>
+                <h3 class="card-name">KERATIN SERUM</h3>
+              </div>
+              <a href="/products/keratin-serum" class="btn-rhode-buy-pill">BUY - RS. 1,500</a>
+            </div>
+            <div class="buy-button-hover" style="position: absolute; bottom: 25px; left: 50%; transform: translateX(-50%) translateY(20px); width: 88%; background: white; color: #2c2b28; padding: 14px 20px; border-radius: 40px; text-align: center; font-size: 0.72rem; font-weight: 800; letter-spacing: 0.05em; opacity: 0; z-index: 20; transition: all 0.4s cubic-bezier(0.16,1,0.3,1); box-shadow: 0 4px 15px rgba(0,0,0,0.08);">
+                BUY KERATIN SERUM - RS. 1,500
+            </div>
+          </a>
+        </div>
+
+        <!-- Card 4: Glow Serum -->
+        <div class="card card-rhode" data-category="serum">
+          <a href="/products/glow-serum" class="card-link-wrapper">
+            <img src="./assets/glow-serum-hover.jpg" class="card-hover-bg" alt="Glow Serum Hover">
+            <div class="card-rhode-top">
+              <span class="card-brand-label">serum</span>
+            </div>
+            <div class="card-rhode-image">
+              <img src="./assets/glow-serum-100.jpg" alt="Glow Serum" class="product-main-img">
+            </div>
+            <div class="card-rhode-footer">
+              <div class="card-meta">
+                <div class="card-stars">★★★★★ <span class="review-count">(16k)</span></div>
+                <h3 class="card-name">GLOW SERUM</h3>
+              </div>
+              <a href="/products/glow-serum" class="btn-rhode-buy-pill">BUY - RS. 1,500</a>
+            </div>
+            <div class="buy-button-hover">
+                BUY GLOW SERUM - RS. 1,500
+            </div>
+          </a>
+        </div>
+
+        <!-- Card 5: Glutathione Cream -->
+        <div class="card card-rhode" data-category="repair">
+          <a href="/products/glutathione-cream" class="card-link-wrapper">
+            <img src="./assets/deep-hydration-100.jpg" class="card-hover-bg" alt="Glutathione Cream Hover">
+            <div class="card-rhode-top">
+              <span class="card-brand-label">repair</span>
+            </div>
+            <div class="card-rhode-image">
+              <img src="./assets/glutathione-cream-100.jpg" alt="Glutathione Cream" class="product-main-img">
+            </div>
+            <div class="card-rhode-footer">
+              <div class="card-meta">
+                <div class="card-stars">★★★★★ <span class="review-count">(16k)</span></div>
+                <h3 class="card-name">GLUTATHIONE CREAM</h3>
+              </div>
+              <a href="/products/glutathione-cream" class="btn-rhode-buy-pill">BUY - RS. 1,500</a>
+            </div>
+            <div class="buy-button-hover">
+                BUY GLUTATHIONE - RS. 1,500
+            </div>
+          </a>
+        </div>
+
+        <!-- Card 6: Hair Mist -->
+        <div class="card card-rhode" data-category="haircare">
+          <a href="/products/hair-mist" class="card-link-wrapper">
+            <div class="card-rhode-top">
+              <span class="card-brand-label">haircare</span>
+            </div>
+            <div class="card-rhode-image">
+              <img src="./assets/hair-mist.jpg" alt="Hair Mist" class="product-main-img">
+            </div>
+            <div class="card-rhode-footer">
+              <div class="card-meta">
+                <div class="card-stars">★★★★★ <span class="review-count">(16k)</span></div>
+                <h3 class="card-name">HAIR MIST</h3>
+              </div>
+              <a href="/products/hair-mist" class="btn-rhode-buy-pill">BUY - RS. 1,500</a>
+            </div>
+          </a>
+        </div>
+
+        <!-- Card 7: Face Wash -->
+        <div class="card card-rhode" data-category="cleanser">
+          <a href="/products/face-wash" class="card-link-wrapper">
+            <img src="./assets/facewash-shot.png" class="card-hover-bg" alt="Face Wash Hover">
+            <div class="card-rhode-top">
+              <span class="card-brand-label">cleanser</span>
+            </div>
+            <div class="card-rhode-image">
+              <img src="./assets/facewash-100.jpg" alt="Face Wash" class="product-main-img">
+            </div>
+            <div class="card-rhode-footer">
+              <div class="card-meta">
+                <div class="card-stars">★★★★★ <span class="review-count">(16k)</span></div>
+                <h3 class="card-name">CENTELLA WASH</h3>
+              </div>
+              <a href="/products/face-wash" class="btn-rhode-buy-pill">BUY - RS. 1,500</a>
+            </div>
+            <div class="buy-button-hover">
+                BUY FACE WASH - RS. 1,500
+            </div>
+          </a>
+        </div>
+
+        <!-- Card 8: Anti Acne Serum -->
+        <div class="card card-rhode" data-category="antiacne">
+          <a href="/products/anti-acne-serum" class="card-link-wrapper">
+            <img src="./assets/hover-anti-acne.png" class="card-hover-bg" alt="Anti Acne Hover">
+            <div class="card-rhode-top">
+              <span class="card-brand-label">antiacne</span>
+            </div>
+            <div class="card-rhode-image">
+              <img src="./assets/anti-acne-100.jpg" alt="Anti Acne Serum" class="product-main-img">
+            </div>
+            <div class="card-rhode-footer">
+              <div class="card-meta">
+                <div class="card-stars">★★★★★ <span class="review-count">(16k)</span></div>
+                <h3 class="card-name">ANTI ACNE SERUM</h3>
+              </div>
+              <a href="/products/anti-acne-serum" class="btn-rhode-buy-pill">BUY - RS. 1,500</a>
+            </div>
+            <div class="buy-button-hover" style="position: absolute; bottom: 25px; left: 50%; transform: translateX(-50%) translateY(20px); width: 88%; background: white; color: #2c2b28; padding: 14px 20px; border-radius: 40px; text-align: center; font-size: 0.72rem; font-weight: 800; letter-spacing: 0.05em; opacity: 0; z-index: 20; transition: all 0.4s cubic-bezier(0.16,1,0.3,1); box-shadow: 0 4px 15px rgba(0,0,0,0.08);">
+                BUY ANTI ACNE - RS. 1,500
+            </div>
+          </a>
+        </div>
+
+        <!-- Card 9: Sunscreen -->
+        <div class="card card-rhode" data-category="sunscreen">
+          <a href="/products/sunscreen" class="card-link-wrapper">
+            <div class="card-rhode-top">
+              <span class="card-brand-label">sunscreen</span>
+            </div>
+            <div class="card-rhode-image">
+              <img src="./assets/sunscreen-100.jpg" alt="Sunscreen" class="product-main-img">
+            </div>
+            <div class="card-rhode-footer">
+              <div class="card-meta">
+                <div class="card-stars">★★★★★ <span class="review-count">(16k)</span></div>
+                <h3 class="card-name">SUNSCREEN</h3>
+              </div>
+              <a href="/products/sunscreen" class="btn-rhode-buy-pill">BUY - RS. 1,500</a>
+            </div>
+          </a>
+        </div>
+
+        <!-- Card 10: Renewal Cleanser -->
+        <div class="card card-rhode" data-category="cleanser">
+          <a href="/products/renewal-cleanser" class="card-link-wrapper">
+            <div class="card-rhode-top">
+              <span class="card-brand-label">cleanser</span>
+            </div>
+            <div class="card-rhode-image">
+              <img src="./assets/gel cleanser-100.jpg" alt="Renewal Cleanser" class="product-main-img">
+            </div>
+            <div class="card-rhode-footer">
+              <div class="card-meta">
+                <div class="card-stars">★★★★★ <span class="review-count">(16k)</span></div>
+                <h3 class="card-name">RENEWAL CLEANSER</h3>
+              </div>
+              <a href="/products/renewal-cleanser" class="btn-rhode-buy-pill">BUY - RS. 1,500</a>
+            </div>
+          </a>
+        </div>
+
+        <!-- Card 11: Hydra Burst Moisturizer -->
+        <div class="card card-rhode" data-category="moisturizer">
+          <a href="/products/moisturizer" class="card-link-wrapper">
+            <div class="card-rhode-top">
+              <span class="card-brand-label">moisturizer</span>
+            </div>
+            <div class="card-rhode-image">
+              <img src="./assets/moisturizer-100.jpg" alt="Hydra Burst Moisturizer" class="product-main-img">
+            </div>
+            <div class="card-rhode-footer">
+              <div class="card-meta">
+                <div class="card-stars">★★★★★ <span class="review-count">(16k)</span></div>
+                <h3 class="card-name">HYDRA BURST</h3>
+              </div>
+              <a href="/products/moisturizer" class="btn-rhode-buy-pill">BUY - RS. 1,500</a>
+            </div>
+          </a>
+        </div>
+
+        <!-- Card 12: Renewal Toner -->
+        <div class="card card-rhode" data-category="toner">
+          <a href="/products/renewal-toner" class="card-link-wrapper">
+            <div class="card-rhode-top">
+              <span class="card-brand-label">toner</span>
+            </div>
+            <div class="card-rhode-image">
+              <img src="./assets/toner1.jpeg" alt="Renewal Toner" class="product-main-img">
+            </div>
+            <div class="card-rhode-footer">
+              <div class="card-meta">
+                <div class="card-stars">★★★★★ <span class="review-count">(16k)</span></div>
+                <h3 class="card-name">RENEWAL TONER</h3>
+              </div>
+              <a href="/products/renewal-toner" class="btn-rhode-buy-pill">BUY - RS. 1,500</a>
+            </div>
+          </a>
+        </div>
+
+        <!-- Card 13: Skin Refining Toner -->
+        <div class="card card-rhode" data-category="toner">
+          <a href="/products/skin-refining-toner" class="card-link-wrapper">
+            <div class="card-rhode-top">
+              <span class="card-brand-label">toner</span>
+            </div>
+            <div class="card-rhode-image">
+              <img src="./assets/essence-white.png" alt="Skin Refining Toner" class="product-main-img">
+            </div>
+            <div class="card-rhode-footer">
+              <div class="card-meta">
+                <div class="card-stars">★★★★★ <span class="review-count">(16k)</span></div>
+                <h3 class="card-name">SKIN REFINING TONER</h3>
+              </div>
+              <a href="/products/skin-refining-toner" class="btn-rhode-buy-pill">BUY - RS. 1,500</a>
+            </div>
+          </a>
+        </div>
+
+        <!-- 4 BUNDLE SETS -->
+        <div class="card card-rhode" data-category="set">
+          <a href="/products/e7-complete-glass-skin-set" class="card-link-wrapper">
+            <div class="card-rhode-top">
+              <span class="card-brand-label">SET</span>
+            </div>
+            <div class="card-rhode-image">
+              <div class="product-placeholder-img" style="background: #f2f2f0; height: 100%;"></div>
+            </div>
+            <div class="card-rhode-footer">
+              <div class="card-meta">
+                <div class="card-stars">★★★★★ <span class="review-count">(12k)</span></div>
+                <h3 class="card-name">E7 GLASS SKIN SET</h3>
+              </div>
+              <span class="btn-rhode-buy-pill">BUY - RS. 4,500</span>
+            </div>
+          </a>
+        </div>
+        <div class="card card-rhode" data-category="set">
+          <a href="/products/e7-complete-glass-skin-set" class="card-link-wrapper">
+            <div class="card-rhode-top">
+              <span class="card-brand-label">SET</span>
+            </div>
+            <div class="card-rhode-image">
+              <div class="product-placeholder-img" style="background: #f2f2f0; height: 100%;"></div>
+            </div>
+            <div class="card-rhode-footer">
+              <div class="card-meta">
+                <div class="card-stars">★★★★★ <span class="review-count">(8k)</span></div>
+                <h3 class="card-name">E7 COMPLETE GLASS SKIN SET</h3>
+              </div>
+              <span class="btn-rhode-buy-pill">BUY - RS. 7,500</span>
+            </div>
+          </a>
+        </div>
+        <div class="card card-rhode" data-category="set">
+          <a href="/products/e7-complete-glass-skin-set" class="card-link-wrapper">
+            <div class="card-rhode-top">
+              <span class="card-brand-label">SET</span>
+            </div>
+            <div class="card-rhode-image">
+              <div class="product-placeholder-img" style="background: #f2f2f0; height: 100%;"></div>
+            </div>
+            <div class="card-rhode-footer">
+              <div class="card-meta">
+                <div class="card-stars">★★★★★ <span class="review-count">(5k)</span></div>
+                <h3 class="card-name">E7 HAIR CARE SET</h3>
+              </div>
+              <span class="btn-rhode-buy-pill">BUY - RS. 3,200</span>
+            </div>
+          </a>
+        </div>
+        <div class="card card-rhode" data-category="set">
+          <a href="/products/e7-complete-glass-skin-set" class="card-link-wrapper">
+            <div class="card-rhode-top">
+              <span class="card-brand-label">SET</span>
+            </div>
+            <div class="card-rhode-image">
+              <div class="product-placeholder-img" style="background: #f2f2f0; height: 100%;"></div>
+            </div>
+            <div class="card-rhode-footer">
+              <div class="card-meta">
+                <div class="card-stars">★★★★★ <span class="review-count">(15k)</span></div>
+                <h3 class="card-name">ELARIS 7 KOREAN BRIGHTENING BUNDLE</h3>
+              </div>
+              <span class="btn-rhode-buy-pill">BUY - RS. 5,900</span>
+            </div>
+          </a>
+        </div>`.replace(/src="\.\/assets\/([\w\.-]+\.(?:jpg|png|jpeg|webp|gif|svg|webp))"/g, 'src="{{ \'$1\' | asset_url }}"');
+        c = c.replace('<!-- FEATURED_CARDS_PLACEHOLDER -->', featuredHtml);
 
     fs.writeFileSync(path.join(templatesDir, p.File), c);
 }
