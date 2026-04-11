@@ -1,4 +1,8 @@
 <header class="site-header">
+  {%- assign mega_names = "Night Cream,Tranexamic Serum,Anti Frizz Keratin Serum,Glow Serum,Glutathione Cream,Floral Blossom Hair Mist,Face Wash,Anti Acne,Sunscreen SPF60+,Renewal Cleanser,Hydra Burst Moisturizer,Renewal Toner" | split: "," -%}
+  {%- assign mega_images = "night-cream.jpg,tranexamic-serum.jpg,keratin-serum.jpg,glow-serum-100.jpg,glutathione-cream-100.jpg,hair-mist.jpg,facewash-100.jpg,anti-acne-100.jpg,sunscreen-100.jpg,renewal-cleanser-1.jpg,moisturizer-100.jpg,toner1.jpeg" | split: "," -%}
+  {%- assign mega_descs = "To restore, protect and nurture,Advanced brightening formula,Smooth Control,Essential glass skin routine,Deep hydration treatment,Scented radiance for hair,Gentle daily cleanser,Targeted blemish control,Premium solar protection,Intense clarity refresh,Plumping hydration boost,Refining skin texture" | split: "," -%}
+
   <div class="announcement-bar">
     {{ section.settings.announcement_text }}
   </div>
@@ -28,42 +32,23 @@
             
             <div class="mega-menu-products">
               <div class="mega-products-grid">
-                <a href="/products/night-cream" class="mega-product-card">
-                  <div class="mega-product-image">
-                    <img src="{{ 'night-cream.jpg' | asset_url }}" alt="Night Cream">
-                  </div>
-                  <div class="mega-product-info">
-                    <h3 class="mega-product-name">NIGHT CREAM</h3>
-                    <p class="mega-product-desc">To restore, protect and nurture</p>
-                  </div>
-                </a>
-                <a href="/products/tranexamic-serum" class="mega-product-card">
-                  <div class="mega-product-image">
-                    <img src="{{ 'tranexamic-serum.jpg' | asset_url }}" alt="Tranexamic Serum">
-                  </div>
-                  <div class="mega-product-info">
-                    <h3 class="mega-product-name">TRANEXAMIC SERUM</h3>
-                    <p class="mega-product-desc">Advanced brightening formula</p>
-                  </div>
-                </a>
-                <a href="/products/facewash-100" class="mega-product-card">
-                  <div class="mega-product-image">
-                    <img src="{{ 'facewash-100.jpg' | asset_url }}" alt="Face Wash">
-                  </div>
-                  <div class="mega-product-info">
-                    <h3 class="mega-product-name">FACE WASH</h3>
-                    <p class="mega-product-desc">Gentle daily cleanser</p>
-                  </div>
-                </a>
-                <a href="/products/hair-mist" class="mega-product-card">
-                  <div class="mega-product-image">
-                    <img src="{{ 'hair-mist.jpg' | asset_url }}" alt="Hair Mist">
-                  </div>
-                  <div class="mega-product-info">
-                    <h3 class="mega-product-name">FLORAL BLOSSOM HAIR MIST</h3>
-                    <p class="mega-product-desc">Scented radiance for hair</p>
-                  </div>
-                </a>
+                {% for i in (0..11) %}
+                  {%- assign mname = mega_names[i] -%}
+                  {%- assign mimage = mega_images[i] -%}
+                  {%- assign mdesc = mega_descs[i] -%}
+                  {%- assign mhandle = mname | handleize -%}
+                  {%- if mname contains "Keratin Serum" -%}{%- assign mhandle = "anti-frizz-keratin-serum" -%}{%- endif -%}
+                  
+                  <a href="/products/{{ mhandle }}" class="mega-product-card">
+                    <div class="mega-product-image">
+                      <img src="{{ mimage | asset_url }}" alt="{{ mname }}">
+                    </div>
+                    <div class="mega-product-info">
+                      <h3 class="mega-product-name">{{ mname | upcase }}</h3>
+                      <p class="mega-product-desc">{{ mdesc }}</p>
+                    </div>
+                  </a>
+                {% endfor %}
               </div>
             </div>
             
@@ -147,42 +132,23 @@
     </div>
     
     <div class="menu-products">
-      <a href="/products/night-cream" class="menu-product-row">
-        <div class="mini-thumb">
-          <img src="{{ 'night-cream.jpg' | asset_url }}" alt="Night Cream" loading="lazy">
-        </div>
-        <div class="mini-meta">
-          <div class="mini-title">NIGHT CREAM</div>
-          <div class="mini-tag">To restore, protect and nurture</div>
-        </div>
-      </a>
-      <a href="/products/tranexamic-serum" class="menu-product-row">
-        <div class="mini-thumb">
-          <img src="{{ 'tranexamic-serum.jpg' | asset_url }}" alt="Serum" loading="lazy">
-        </div>
-        <div class="mini-meta">
-          <div class="mini-title">TRANEXAMIC SERUM</div>
-          <div class="mini-tag">Limited edition style</div>
-        </div>
-      </a>
-      <a href="/products/facewash-100" class="menu-product-row">
-        <div class="mini-thumb">
-          <img src="{{ 'facewash-100.jpg' | asset_url }}" alt="Face Wash" loading="lazy">
-        </div>
-        <div class="mini-meta">
-          <div class="mini-title">FACE WASH</div>
-          <div class="mini-tag">Limited edition scent</div>
-        </div>
-      </a>
-      <a href="/products/hair-mist" class="menu-product-row">
-        <div class="mini-thumb">
-          <img src="{{ 'hair-mist.jpg' | asset_url }}" alt="Hair Mist" loading="lazy">
-        </div>
-        <div class="mini-meta">
-          <div class="mini-title">HAIR MIST</div>
-          <div class="mini-tag">Designed with clarity</div>
-        </div>
-      </a>
+      {% for i in (0..11) %}
+        {%- assign mname = mega_names[i] -%}
+        {%- assign mimage = mega_images[i] -%}
+        {%- assign mdesc = mega_descs[i] -%}
+        {%- assign mhandle = mname | handleize -%}
+        {%- if mname contains "Keratin Serum" -%}{%- assign mhandle = "anti-frizz-keratin-serum" -%}{%- endif -%}
+        
+        <a href="/products/{{ mhandle }}" class="menu-product-row">
+          <div class="mini-thumb">
+            <img src="{{ mimage | asset_url }}" alt="{{ mname }}" loading="lazy">
+          </div>
+          <div class="mini-meta">
+            <div class="mini-title">{{ mname | upcase }}</div>
+            <div class="mini-tag">{{ mdesc }}</div>
+          </div>
+        </a>
+      {% endfor %}
     </div>
     
     <div class="menu-shop-btn-wrap">
@@ -624,22 +590,24 @@ body.menu-open { overflow: hidden; }
   background: #fff;
   border: 1px solid #d1d1cf;
   border-radius: 50px;
-  font-size: 0.65rem;
-  font-weight: 800;
-  color: #5b5a53;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  cursor: pointer;
-  padding: 8px 24px;
-  transition: all 0.3s ease;
-  white-space: nowrap;
-}
-
-.mega-cat-item.active {
-  background: #5b5a53;
-  color: #fff;
-  border-color: #5b5a53;
-}
+      color: #7A7973;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      cursor: pointer;
+      padding: 10px 24px;
+      transition: all 0.3s ease;
+      white-space: nowrap;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .mega-cat-item.active {
+      background: #5b5a53 !important;
+      color: #fff !important;
+      border-color: #5b5a53 !important;
+    }
 
 .mega-cat-item:hover:not(.active) {
   border-color: #5b5a53;
@@ -654,22 +622,29 @@ body.menu-open { overflow: hidden; }
   padding: 0 40px;
 }
 
-.mega-products-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-}
+    .mega-products-grid {
+      display: flex;
+      gap: 20px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      padding: 10px 0 20px;
+    }
+    .mega-products-grid::-webkit-scrollbar { display: none; }
 
-.mega-product-card {
-  text-decoration: none;
-  background: #fff;
-  border-radius: 12px;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  transition: all 0.3s ease;
-  aspect-ratio: 1 / 1.4;
-}
+    .mega-product-card {
+      flex: 0 0 280px;
+      text-decoration: none;
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.3s ease;
+      aspect-ratio: 1 / 1.35;
+      scroll-snap-align: start;
+    }
 
 .mega-product-card:hover {
   transform: translateY(-8px);
