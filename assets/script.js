@@ -262,36 +262,48 @@ document.addEventListener('DOMContentLoaded', () => {
     // Filter cards
     const cards = document.querySelectorAll('.card-rhode');
     const targetCat = category.toLowerCase();
-    let count = 0;
+
+    // Map categories to their placeholder handles
+    const placeholderMap = {
+      'glass-skin': 'glass-skin-placeholder',
+      'anti-acne': 'anti-acne-placeholder',
+      'korean-brightening': 'korean-brightening-placeholder',
+      'hair-care': 'hair-care-placeholder'
+    };
 
     cards.forEach(card => {
+      const isPlaceholder = card.classList.contains('card-placeholder');
       const cardCatStr = (card.getAttribute('data-category') || '').toLowerCase();
       const cardCategories = cardCatStr.split(/[,\s]+/).map(c => c.trim()).filter(c => c !== '');
 
       if (targetCat === 'featured') {
-        // Show all non-set products (usually 12+)
-        if (cardCategories.includes('set')) {
+        // Show all standard products, hide sets and placeholders
+        if (isPlaceholder || cardCategories.includes('set')) {
           card.style.display = 'none';
         } else {
           card.style.display = 'flex';
         }
       } else if (targetCat === 'set') {
-        // Show all sets
-        if (cardCategories.includes('set')) {
+        // Show all sets, hide standard and placeholders
+        if (!isPlaceholder && cardCategories.includes('set')) {
           card.style.display = 'flex';
         } else {
           card.style.display = 'none';
         }
-      } else if (cardCategories.includes(targetCat)) {
-        // Show ONLY 1 card for specific categories (Korean glass skin, Anti acne, etc.)
-        if (count < 1) {
+      } else if (placeholderMap[targetCat]) {
+        // showing the specific placeholder ONLY
+        if (isPlaceholder && cardCatStr === placeholderMap[targetCat]) {
           card.style.display = 'flex';
-          count++;
         } else {
           card.style.display = 'none';
         }
       } else {
-        card.style.display = 'none';
+        // Fallback for any other categories if added later
+        if (!isPlaceholder && cardCategories.includes(targetCat)) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
       }
     });
 
@@ -299,6 +311,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const slider = document.getElementById('product-slider') || document.getElementById('product-collection-scroll') || document.querySelector('.product-collection');
     if (slider) slider.scrollLeft = 0;
   });
+
 
   // Initial Filter on load (Default is Featured)
   const initialFilter = () => {
@@ -309,36 +322,46 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!category || !cards.length) return;
 
       const targetCat = category.toLowerCase();
-      let count = 0;
+      const placeholderMap = {
+        'glass-skin': 'glass-skin-placeholder',
+        'anti-acne': 'anti-acne-placeholder',
+        'korean-brightening': 'korean-brightening-placeholder',
+        'hair-care': 'hair-care-placeholder'
+      };
       
       cards.forEach(card => {
+        const isPlaceholder = card.classList.contains('card-placeholder');
         const cardCatStr = (card.getAttribute('data-category') || '').toLowerCase();
         const cardCategories = cardCatStr.split(/[,\s]+/).map(c => c.trim()).filter(c => c !== '');
 
         if (targetCat === 'featured') {
-          if (cardCategories.includes('set')) {
+          if (isPlaceholder || cardCategories.includes('set')) {
             card.style.display = 'none';
           } else {
             card.style.display = 'flex';
           }
         } else if (targetCat === 'set') {
-          if (cardCategories.includes('set')) {
+          if (!isPlaceholder && cardCategories.includes('set')) {
             card.style.display = 'flex';
           } else {
             card.style.display = 'none';
           }
-        } else if (cardCategories.includes(targetCat)) {
-          if (count < 1) {
+        } else if (placeholderMap[targetCat]) {
+          if (isPlaceholder && cardCatStr === placeholderMap[targetCat]) {
             card.style.display = 'flex';
-            count++;
           } else {
             card.style.display = 'none';
           }
         } else {
-          card.style.display = 'none';
+          if (!isPlaceholder && cardCategories.includes(targetCat)) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
         }
       });
     }
   };
+
   initialFilter();
 });
