@@ -57,12 +57,12 @@
       {% endfor %}
     {% else %}
       {% comment %} Fallback Items if no blocks exist move move moved moves move move move move move move move move move {% endcomment %}
-      {%- assign fallback_names = "Night Cream,Tranexamic Serum,Anti Frizz Keratin Serum,Glow Serum,Glutathione Cream,Floral Blossom Hair Mist,Face Wash,Anti Acne,Sunscreen SPF60+,Renewal Cleanser,Hydra Burst Moisturizer,Renewal Toner,E7 Glass Skin Set,E7 Complete Glass Skin Set,E7 Hair Care Set,Elaris 7 Korean Brightening Bundle" | split: "," -%}
-      {%- assign fallback_images = "night-cream.jpg,tranexamic-serum.jpg,keratin-serum.jpg,glow-serum-100.jpg,glutathione-cream-100.jpg,hair-mist.jpg,facewash-100.jpg,anti-acne-100.jpg,sunscreen-100.jpg,renewal-cleanser-1.jpg,moisturizer-100.jpg,toner1.jpeg,set-glass-skin.jpg,set-complete.jpg,set-haircare.jpg,set-brightening.jpg" | split: "," -%}
-      {%- assign fallback_hovers = "night-cream-hover.jpg,tranexamic-meet-1.jpg,keratin-serum-hover.jpg,glow-serum-hover.jpg,deep-hydration-100.jpg,hair-mist-hover.jpg,deep-hydration-facewash.jpg,hover-anti-acne.png,sunscreen-hover.jpg,renewal-cleanser-2.jpg,moisturizer-hover.jpg,toner-hover.jpg,set-glass-skin.jpg,set-complete.jpg,set-haircare.jpg,set-brightening.jpg" | split: "," -%}
-      {%- assign fallback_labels = "featured korean-glass-skin,featured korean-brightening,featured hair-care,featured korean-glass-skin,featured korean-brightening,featured hair-care,featured korean-glass-skin,featured anti-acne,featured korean-glass-skin,featured korean-glass-skin,featured korean-glass-skin,featured korean-glass-skin,set,set,set,set" | split: "," -%}
+      {%- assign fallback_names = "Night Cream,Tranexamic Serum,Anti Frizz Keratin Serum,Glow Serum,Glutathione Cream,Floral Blossom Hair Mist,Face Wash,Anti Acne,Sunscreen SPF60+,Renewal Cleanser,Hydra Burst Moisturizer,Renewal Toner" | split: "," -%}
+      {%- assign fallback_images = "night-cream.jpg,tranexamic-serum.jpg,keratin-serum.jpg,glow-serum-100.jpg,glutathione-cream-100.jpg,hair-mist.jpg,facewash-100.jpg,anti-acne-100.jpg,sunscreen-100.jpg,renewal-cleanser-1.jpg,moisturizer-100.jpg,toner1.jpeg" | split: "," -%}
+      {%- assign fallback_hovers = "night-cream-hover.jpg,tranexamic-meet-1.jpg,keratin-serum-hover.jpg,glow-serum-hover.jpg,deep-hydration-100.jpg,hair-mist-hover.jpg,deep-hydration-facewash.jpg,hover-anti-acne.png,sunscreen-hover.jpg,renewal-cleanser-2.jpg,moisturizer-hover.jpg,toner-hover.jpg" | split: "," -%}
+      {%- assign fallback_labels = "featured korean-glass-skin,featured korean-brightening,featured hair-care,featured korean-glass-skin,featured korean-brightening,featured hair-care,featured korean-glass-skin,featured anti-acne,featured korean-glass-skin,featured korean-glass-skin,featured korean-glass-skin,featured korean-glass-skin" | split: "," -%}
       
-      {% for i in (0..15) %}
+      {% for i in (0..11) %}
         {%- assign pname = fallback_names[i] -%}
         {%- assign phandle = pname | handleize -%}
         {%- if pname contains "Keratin Serum" -%}
