@@ -46,8 +46,8 @@
           "type": "product",
           "settings": {
             "title": "Centella Night Cream",
-            "price": "Rs. 2,500",
-            "subtitle": "Premium Korean skincare formula",
+            "price": "Rs. 2,660",
+            "subtitle": "Night Renewal",
             "brand_label": "nightcream",
             "badge": "bestseller",
             "reviews": "16k",
@@ -59,29 +59,29 @@
         "block_tranexamic": {
           "type": "product",
           "settings": {
-            "title": "Tranexamic Brightening Serum",
-            "price": "Rs. 2,800",
-            "subtitle": "Premium Korean skincare formula",
+            "title": "Elaris7 Tranexamic Brightening Serum",
+            "price": "Rs. 2,400",
+            "subtitle": "Even & Illuminate",
             "brand_label": "serum",
             "badge": "new",
             "reviews": "8k",
             "asset_image": "tranexamic-serum.jpg",
             "asset_hover_image": "tranexamic-meet-1.jpg",
-            "product_link": "/products/tranexamic-serum"
+            "product_link": "/products/tranexamic-serum-v2"
           }
         },
         "block_keratin": {
           "type": "product",
           "settings": {
             "title": "Anti Frizz Keratin Serum",
-            "price": "Rs. 2,700",
-            "subtitle": "Premium Korean skincare formula",
+            "price": "Rs. 2,660",
+            "subtitle": "Smooth Control",
             "brand_label": "haircare",
             "badge": "",
             "reviews": "6k",
             "asset_image": "keratin-serum.jpg",
             "asset_hover_image": "keratin-serum-hover.jpg",
-            "product_link": "/products/anti-frizz-keratin-serum"
+            "product_link": "/products/keratin-serum-v2"
           }
         },
         "block_glow": {
@@ -101,9 +101,9 @@
         "block_glutathione": {
           "type": "product",
           "settings": {
-            "title": "Glutathione Cream",
-            "price": "Rs. 2,950",
-            "subtitle": "Premium Korean skincare formula",
+            "title": "Elaris7 Brightening Repair Cream",
+            "price": "Rs. 2,660",
+            "subtitle": "Glow & Repair",
             "brand_label": "repair",
             "badge": "",
             "reviews": "9k",
@@ -116,14 +116,14 @@
           "type": "product",
           "settings": {
             "title": "Floral Blossom Hair Mist",
-            "price": "Rs. 2,400",
-            "subtitle": "Premium Korean skincare formula",
+            "price": "Rs. 2,660",
+            "subtitle": "Fresh Floral Touch",
             "brand_label": "haircare",
             "badge": "",
             "reviews": "5k",
             "asset_image": "hair-mist.jpg",
             "asset_hover_image": "hair-mist-hover.jpg",
-            "product_link": "/products/floral-blossom-hair-mist"
+            "product_link": "/products/hair-mist"
           }
         },
         "block_face_wash": {
@@ -143,9 +143,9 @@
         "block_anti_acne": {
           "type": "product",
           "settings": {
-            "title": "Anti Acne",
-            "price": "Rs. 2,450",
-            "subtitle": "Premium Korean skincare formula",
+            "title": "Elaris7 Anti-Acne Clarifying Serum",
+            "price": "Rs. 2,660",
+            "subtitle": "Clear & Control",
             "brand_label": "antiacne",
             "badge": "",
             "reviews": "14k",
@@ -199,9 +199,9 @@
         "block_toner": {
           "type": "product",
           "settings": {
-            "title": "Renewal Toner",
+            "title": "Skin Refining Toner",
             "price": "Rs. 2,670",
-            "subtitle": "Premium Korean skincare formula",
+            "subtitle": "Clarity Reset",
             "brand_label": "toner",
             "badge": "",
             "reviews": "8k",
