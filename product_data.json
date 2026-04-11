@@ -1374,38 +1374,53 @@
   },
   {
     "File": "product.anti-acne.liquid",
-    "Title": "Anti-Acne Serum",
+    "Title": "Elaris7 Anti-Acne Clarifying Serum",
     "Subtitle": "Clear & Control",
-    "Price": "2,200",
-    "Description": "A targeted clarifying serum formulated to reduce acne and calm inflammation.",
+    "Price": "2,660",
+    "Description": "A targeted clarifying serum formulated to reduce acne, calm inflammation, and support clearer-looking skin. It helps refine pores, balance oil, and promote a smoother, healthier complexion with consistent use.",
     "Benefits": [
-      "Reduces breakouts",
-      "Controls excess oil"
+      "Helps reduce active acne and breakouts",
+      "Supports clearer pores and controls excess oil",
+      "Helps calm inflammation and redness",
+      "Promotes smoother, more refined skin texture",
+      "Hydrates while treating acne to prevent dryness",
+      "Helps maintain a balanced, healthier-looking complexion",
+      "Supports clearer, more even skin over time"
     ],
-    "Application": "Apply 2-3 drops morning or evening.",
+    "Application": "Use morning or evening after cleansing and toning. Apply 2–3 drops to face or affected areas and gently press into skin. Follow with moisturiser. In the morning, finish with sunscreen.",
     "Tricks": [
-      "Start once daily",
-      "Use sunscreen daily"
+      "Start with once daily use if you have sensitive skin",
+      "Apply only on affected areas for targeted treatment",
+      "Use consistently for clearer, more balanced skin",
+      "Always follow with sunscreen during daytime use",
+      "Pair with a gentle routine to avoid over-drying"
     ],
     "Ingredients": [
       "Neem Extract",
       "Tea Tree Oil",
-      "Mandelic Acid"
+      "Mandelic Acid",
+      "Niacinamide",
+      "Aloe Vera Extract",
+      "Glycerin",
+      "Sorbitol",
+      "Propylene Glycol"
     ],
     "CatchyLine": "Clear Breakouts. Restore Balance.",
     "ImportantInfo": {
-      "Headline": "Targeted Acne Care",
-      "GoodFor": "Acne-prone and oily skin",
-      "FeelsLike": "A smooth, fast-absorbing serum",
-      "FYI": "Acne-Control • Non-Greasy"
+      "Headline": "Targeted Acne Care That Balances Skin",
+      "GoodFor": "Acne-prone and oily skin types",
+      "FeelsLike": "A smooth, fast-absorbing serum that layers easily",
+      "LooksLike": "Clearer skin with reduced redness and refined pores",
+      "SmellsLike": "A fresh, herbal scent with a clean finish",
+      "FYI": "Non-Greasy • Fast Absorbing • Daily Use • Acne-Control"
     },
     "WhatsInside": {
-      "Intro": "A targeted serum to reduce acne.",
-      "I1Title": "neem extract",
-      "I1Desc": "helps combat breakouts and soothe irritated skin",
-      "I2Title": "mandelic acid",
-      "I2Desc": "refines pores and balance oil",
-      "Also": "Tea Tree Oil, Niacinamide, Aloe Vera"
+      "Intro": "A targeted serum designed to reduce acne, calm inflammation, and support a healthier, clearer complexion.",
+      "I1Title": "NEEM EXTRACT & TEA TREE OIL",
+      "I1Desc": "help combat breakouts and soothe irritated skin",
+      "I2Title": "MANDELIC ACID & NIACINAMIDE",
+      "I2Desc": "refine pores, balance oil, and smooth texture",
+      "Also": "Aloe Vera Extract, Glycerin, Sorbitol, and Propylene Glycol for hydration and barrier support"
     },
     "SpreadItOn": [
       "acne control",
@@ -1414,11 +1429,6 @@
     ],
     "Stats": [
       {
-        "Pct": "98%",
-        "Desc": "SAID BREAKOUTS APPEARED VISIBLY REDUCED"
-      },
-      {
-        "Pct": "97%",
         "Desc": "NOTICED LESS OILINESS THROUGHOUT THE DAY"
       },
       {
