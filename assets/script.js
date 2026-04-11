@@ -266,10 +266,12 @@ document.addEventListener('DOMContentLoaded', () => {
     // Map categories to their placeholder handles
     const placeholderMap = {
       'glass-skin': 'glass-skin-placeholder',
+      'korean-glass-skin': 'glass-skin-placeholder',
       'anti-acne': 'anti-acne-placeholder',
       'korean-brightening': 'korean-brightening-placeholder',
       'hair-care': 'hair-care-placeholder'
     };
+
 
     cards.forEach(card => {
       const isPlaceholder = card.classList.contains('card-placeholder');
@@ -324,10 +326,12 @@ document.addEventListener('DOMContentLoaded', () => {
       const targetCat = category.toLowerCase();
       const placeholderMap = {
         'glass-skin': 'glass-skin-placeholder',
+        'korean-glass-skin': 'glass-skin-placeholder',
         'anti-acne': 'anti-acne-placeholder',
         'korean-brightening': 'korean-brightening-placeholder',
         'hair-care': 'hair-care-placeholder'
       };
+
       
       cards.forEach(card => {
         const isPlaceholder = card.classList.contains('card-placeholder');
