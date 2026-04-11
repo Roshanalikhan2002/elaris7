@@ -225,11 +225,11 @@ function updateTemplate(p) {
                 .catch(error => { alert('Error adding to cart.'); });
             });
           </script>`;
-        
     // --- GLOBAL STANDART ADD TO CART ---
     const standardCartScript = `
           <script>
-            document.querySelector('.add-to-cart-btn')?.addEventListener('click', function() {
+            document.querySelector('.add-to-cart-btn')?.addEventListener('click', function(e) {
+                e.preventDefault();
                 const mainVariantId = "{{ product.variants.first.id }}";
                 
                 fetch('/cart/add.js', {
@@ -243,8 +243,8 @@ function updateTemplate(p) {
             });
           </script>`;
 
-    if (isBogoEligible) {
         c = c.replace(/<\/body>/, `${bogoScript}\n${standardCartScript}\n</body>`);
+
     } else {
         // Remove BOGO for non-eligible
         c = c.replace(/<div class="bogo-inline-section">[\s\S]*?<\/style>[\s\S]*?<\/div>/, '');
