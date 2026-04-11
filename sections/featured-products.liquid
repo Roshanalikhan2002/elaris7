@@ -79,9 +79,12 @@
           {%- assign phandle = "e7-korean-glass-skin-moisturizer" -%}
         {%- elsif pname == "Renewal Toner" -%}
           {%- assign phandle = "centella-skin-toner" -%}
+        {%- elsif pname contains "Brightening Bundle" -%}
+          {%- assign phandle = "elaris-7-korean-brightening-bundle" -%}
         {%- elsif pname contains "Set" or pname contains "Bundle" -%}
           {%- assign phandle = "e7-complete-glass-skin-set" -%}
         {%- endif -%}
+
 
         {%- assign current_prod = all_products[phandle] -%}
         {%- assign pimage = fallback_images[i] | asset_url -%}
