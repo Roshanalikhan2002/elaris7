@@ -550,44 +550,53 @@
   },
   {
     "File": "product.sunscreen-v2.liquid",
-    "Title": "Sunscreen SPF60+",
+    "Title": "Centella Sunscreen SPF60+",
     "Subtitle": "Daily Shield",
     "Price": "2,500",
-    "Description": "A protective sunscreen infused with Centella Asiatica and advanced UV filters to defend against sun damage and maintain a smooth finish.",
+    "Description": "A protective sunscreen infused with Centella Asiatica and advanced UV filters to defend against sun damage, hydrate deeply, and maintain a smooth, glass-like finish every day.",
     "Benefits": [
-      "Provides broad-spectrum protection against UV",
-      "Helps keep skin hydrated and fresh",
-      "Blends effortlessly without leaving a white cast"
+      "Provides broad-spectrum protection against UV and blue light exposure",
+      "Helps keep skin hydrated and fresh throughout the day",
+      "Strengthens the skin barrier and supports overall skin health",
+      "Soothes redness and calms irritation for a balanced look",
+      "Blends effortlessly without leaving a white cast",
+      "Supports collagen while maintaining a smooth, protected finish"
     ],
-    "Application": "Apply generously onto your face and neck as the final step of your routine.",
+    "Application": "After completing your skincare routine, apply a generous amount of Centella Sunscreen evenly onto your face and neck. Gently massage until fully absorbed and reapply throughout the day as needed.",
     "Tricks": [
-      "Apply 15 minutes before sun exposure",
-      "Reapply every few hours"
+      "Apply 15 minutes before sun exposure for better protection",
+      "Reapply every few hours to maintain consistent coverage",
+      "Use as the final step before makeup for a smooth base",
+      "Apply slightly more on high-exposure areas like nose and cheeks"
     ],
     "Ingredients": [
       "Titanium Dioxide",
       "Tinosorb S",
       "Avobenzone",
+      "Ethylhexyl Methoxycinnamate",
       "Hyaluronic Acid",
       "Ceramides",
-      "Centella Asiatica"
+      "Vitamin E",
+      "Centella Asiatica",
+      "Cyclopentasiloxane",
+      "C12-15 Alkyl Benzoate"
     ],
     "CatchyLine": "Your Invisible Daily Protection",
     "ImportantInfo": {
-      "Headline": "High-Performance Sun Protection",
-      "GoodFor": "All skin types needing daily UV defense",
-      "FeelsLike": "A weightless, non-greasy lotion that blends instantly",
-      "LooksLike": "A velvet-smooth finish with zero white cast",
-      "SmellsLike": "A light, clean, and refreshing scent",
-      "FYI": "Broad Spectrum • SPF 60+ • Makeup-Friendly • Hydrating"
+      "Headline": "Protection That Feels Effortless",
+      "GoodFor": "All skin types, including sensitive and acne-prone skin",
+      "FeelsLike": "A lightweight, breathable layer that blends smoothly",
+      "LooksLike": "A clear, natural finish with no white cast",
+      "SmellsLike": "Light, clean freshness with a soft finish",
+      "FYI": "Halal-Friendly • Dermatologist-Tested • Non-Greasy • Makeup-Friendly"
     },
     "WhatsInside": {
-      "Intro": "Advanced UV filters combined with hydrating actives.",
+      "Intro": "A high-performance sun defense formula that protects, hydrates, and keeps your skin comfortable under daily sun exposure. Here are 2 standout ingredients powering your daily shield:",
       "I1Title": "titanium dioxide",
-      "I1Desc": "provides reliable broad-spectrum protection against UVA and UVB rays",
-      "I2Title": "ceramides",
-      "I2Desc": "help strengthen the skin barrier and lock in moisture while you wear it",
-      "Also": "Tinosorb S, Avobenzone, Hyaluronic Acid, Centella Asiatica"
+      "I1Desc": "a mineral-based UV filter that provides broad-spectrum protection against UVA and UVB rays while remaining gentle on the skin",
+      "I2Title": "hyaluronic acid",
+      "I2Desc": "a hydration booster that locks in moisture, helping your skin stay soft, plump, and comfortable even under prolonged sun exposure",
+      "Also": "Tinosorb S, Avobenzone, Ethylhexyl Methoxycinnamate, Ceramides, Vitamin E, Centella Asiatica, Cyclopentasiloxane, C12-15 Alkyl Benzoate"
     },
     "SpreadItOn": [
       "daily sun protection",
@@ -596,47 +605,65 @@
     ],
     "Stats": [
       {
-        "Pct": "100%",
-        "Desc": "SAID IT LEFT NO WHITE CAST ON THEIR SKIN"
+        "Pct": "99%",
+        "Desc": "SAID THEIR SKIN FELT PROTECTED + COMFORTABLE"
       },
       {
         "Pct": "98%",
-        "Desc": "SAID IT FELT LIGHTWEIGHT AND BREATHABLE"
+        "Desc": "SAID IT BLENDS EASILY WITHOUT ANY WHITE CAST"
       },
       {
         "Pct": "97%",
-        "Desc": "NOTICED THEIR SKIN LOOKED MORE RADIANT"
-      }
-    ],
-    "StatsDisclaimer": "*Based on a 2-week consumer perception study.",
-    "FAQs": [
-      {
-        "Q": "Will it leave a white cast?",
-        "A": "No, our formula is designed to blend seamlessly into all skin tones for a clear finish."
+        "Desc": "SAID THEIR SKIN FELT HYDRATED THROUGHOUT THE DAY"
       },
       {
-        "Q": "Can I use it as a primer?",
-        "A": "Yes, it has a smooth, velvet-like finish that makes it an excellent base for makeup."
+        "Pct": "3 out of 4",
+        "Desc": "SAID THEY NOTICED A HEALTHY, PROTECTED GLOW"
+      }
+    ],
+    "StatsDisclaimer": "*Based on a 2-week consumer perception study with consistent daily use.",
+    "FAQs": [
+      {
+        "Q": "Can I use this sunscreen under makeup?",
+        "A": "Yes, it creates a smooth and lightweight base that layers well under makeup without pilling."
+      },
+      {
+        "Q": "Is this suitable for oily or acne-prone skin?",
+        "A": "Yes, the non-greasy and non-comedogenic formula is suitable for oily and acne-prone skin types."
+      },
+      {
+        "Q": "How often should I reapply sunscreen?",
+        "A": "It is recommended to reapply every 2–3 hours, especially after sweating or sun exposure."
+      },
+      {
+        "Q": "Does it leave a white cast on the skin?",
+        "A": "No, the formula blends seamlessly into the skin, leaving a natural, invisible finish."
+      },
+      {
+        "Q": "Can I skip moisturizer and use this alone?",
+        "A": "While it provides hydration, it works best when applied after a moisturizer for optimal skin support."
       }
     ],
     "Reviews": [
       {
-        "Name": "Mariam",
-        "Text": "Finally a sunscreen that doesn't feel sticky! It absorbs so quickly and my makeup goes on perfectly over it. Highly recommend!"
+        "Name": "Ahmed",
+        "Text": "It feels super light on my skin and doesn't leave any white cast. My face stays fresh and protected all day."
       },
       {
-        "Name": "Zain",
-        "Text": "I use this every day now. It's very hydrating and doesn't break me out like other sunscreens did. Great product."
-      }
-    ],
-    "WhatsInsideDetail": [
-      {
-        "Title": "Zinc Oxide",
-        "Desc": "a gentle mineral shield that provides broad-spectrum protection against UVA and UVB rays without irritation"
+        "Name": "Fatima",
+        "Text": "I've tried many sunscreens, but this one blends the best. It doesn't feel greasy and works great under makeup."
       },
       {
-        "Title": "Hyaluronic Acid",
-        "Desc": "a moisture-binding molecule that keeps skin hydrated and plump under the sun, preventing dehydration"
+        "Name": "Hassan",
+        "Text": "My skin feels hydrated and calm even in the sun. It absorbs quickly and doesn't clog my pores."
+      },
+      {
+        "Name": "Ayesha",
+        "Text": "I like how smooth and invisible it looks on my skin. It's comfortable to wear daily without any heaviness."
+      },
+      {
+        "Name": "Umar",
+        "Text": "This sunscreen gives proper protection without making my skin oily. It's easy to apply and feels very breathable."
       }
     ],
     "Images": {
