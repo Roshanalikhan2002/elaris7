@@ -1,97 +1,56 @@
 {%- assign product = all_products['elaris-7-korean-glass-skin-bundle'] -%}
+
 <style>
-    :root {
-        --bg-page: #f2f2f1;
-        --white: #ffffff;
-        --text-color: #000000;
-        --placeholder-bg: #e5e5e5;
-        --border-color: #d1d1d1;
-        --header-height: 80px;
-    }
-    .landing-glass-wrap { font-family: 'Inter', sans-serif; background-color: var(--bg-page); color: var(--text-color); width: 100%; }
-    .site-container { max-width: 1440px; margin: 0 auto; padding: 0 20px; width: 100%; }
-    .pdp-wrapper { padding-top: 40px; max-width: 1440px; margin: 0 auto; padding-left: 12px; padding-right: 12px; width: 100%; }
-    .pdp-main-box { background: var(--white); border: 1px solid var(--border-color); border-radius: 12px; display: grid; grid-template-columns: 1.15fr 0.85fr; margin-bottom: 20px; height: auto; overflow: hidden; }
-    .gallery-wrap { display: flex; align-items: flex-start; justify-content: center; background: #fff; height: auto; }
-    .details-panel { padding: 60px; border-left: 1px solid var(--border-color); background: #fdfdfd; height: auto; }
-    .product-title { font-family: 'Lexend'; font-size: 48px; font-weight: 800; letter-spacing: -0.05em; margin-bottom: 30px; line-height: 0.9; text-transform: uppercase; }
-    .btn-atc { width: 100%; padding: 22px; border-radius: 50px; border: 1.5px solid #000; background: #fff; font-weight: 700; text-transform: uppercase; cursor: pointer; font-size: 13px; transition: all 0.2s; color: #000; text-align: center; text-decoration: none; display: block; }
+    /* REMOVED ALL HEADER STYLES TO PREVENT CLASHING WITH THEME HEADER */
+    .pdp-wrapper-glass { padding-top: 10px; max-width: 1440px; margin: 0 auto; width: 100%; font-family: 'Inter', sans-serif; }
+    .pdp-main-box { background: #fff; border: 1px solid #d1d1d1; border-radius: 12px; display: grid; grid-template-columns: 1.15fr 0.85fr; margin-bottom: 20px; overflow: hidden; }
+    .gallery-wrap { display: flex; align-items: flex-start; justify-content: center; background: #fff; }
+    .details-panel { padding: 60px; border-left: 1px solid #d1d1d1; background: #fdfdfd; }
+    .product-title { font-family: 'Lexend', sans-serif !important; font-size: 48px; font-weight: 800; letter-spacing: -0.05em; margin-bottom: 30px; line-height: 0.9; text-transform: uppercase; color: #000 !important; }
+    
+    .btn-atc { width: 100%; padding: 22px; border-radius: 50px; border: 1.5px solid #000; background: #fff; font-weight: 700; text-transform: uppercase; cursor: pointer; font-size: 13px; color: #000; text-align: center; text-decoration: none; display: block; }
     .btn-atc:hover { background: #000; color: #fff; }
+
     .accordion-item { border-top: 1px solid #eee; padding: 25px 0; cursor: pointer; }
     .acc-head { display: flex; justify-content: space-between; align-items: center; font-size: 12px; font-weight: 800; text-transform: uppercase; }
-    .accordion-plus { width: 22px; height: 22px; background: #f0f0f0; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 16px; transition: transform 0.3s; }
-    .acc-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; font-size: 14px; line-height: 1.6; color: #444; }
-    .accordion-item.active .acc-content { max-height: 1200px; padding-top: 15px; }
+    .acc-content { display: none; padding-top: 15px; font-size: 14px; line-height: 1.6; color: #444; }
+    .accordion-item.active .acc-content { display: block; }
+
     .discovery-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px; }
     .island-card { border-radius: 12px; overflow: hidden; background: #fff; height: 600px; position: relative; }
-    .results-block { background: #f4f4f2; border-radius: 12px; padding: 70px 60px; margin-top: 20px; }
-    .results-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; }
-    .results-pic { border-radius: 12px; overflow: hidden; aspect-ratio: 4/5; background: #ddd; }
-    .faq-text-side { padding: 80px 60px; background: #f2f2f1; display: flex; flex-direction: column; justify-content: center; }
-    .faq-q-row { border-top: 1px solid #ddd; padding: 25px 0; display: flex; justify-content: space-between; font-size: 12px; font-weight: 800; text-transform: uppercase; cursor: pointer; }
-    .review-block { background: #fff; border-radius: 12px; padding: 70px 60px; margin-top: 20px; display: grid; grid-template-columns: 280px 1fr; gap: 60px; position: relative; }
+
     @media (max-width: 1024px) {
         .pdp-main-box { grid-template-columns: 1fr; }
         .details-panel { border-left: none; padding: 30px 15px; }
+        .product-title { font-size: 32px; }
         .discovery-grid { grid-template-columns: 1fr; }
         .island-card { height: 400px; }
     }
 </style>
 
-<div class="landing-glass-wrap">
-  <main class="pdp-wrapper">
+<div class="pdp-wrapper-glass">
     <div class="pdp-main-box">
-      <div class="gallery-wrap"><img src="{{ 'glassmain.jpg' | file_img_url: 'master' }}" style="width:100%; height:auto;" alt="Glass Skin Bundle"></div>
+      <div class="gallery-wrap">
+        <img src="{{ 'glassmain.jpg' | file_img_url: 'master' }}" style="width:100%; height:auto;" alt="Glass Skin Bundle">
+      </div>
       <div class="details-panel">
         <p style="font-size: 11px; font-weight: 700; color: #999; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 20px;">COMPLETE HYDRATION SYSTEM</p>
         <h1 class="product-title">{{ product.title | default: 'Elaris 7 Korean Glass Skin Bundle' }}</h1>
         <div style="font-size: 13px; font-weight: 700; margin-bottom: 30px; letter-spacing: 2px;">★ ★ ★ ★ ★ (1,850)</div>
-        <p style="font-size: 15px; line-height: 1.7; margin-bottom: 40px; color: #333;">Discover the ultimate glow ritual with the E7 Glass Skin Set. Packed with five powerful, multitasking essentials, this set is crafted to hydrate, brighten, and refine your skin from morning to night.</p>
-        <a href="/cart/add?id={{ product.selected_or_first_available_variant.id }}&quantity=1" class="btn-atc">BUY THE KIT - {{ product.price | money }}</a>
+        <p style="font-size: 15px; line-height: 1.7; margin-bottom: 40px; color: #333;">Discover the ultimate glow ritual with the E7 Glass Skin Set. Formulated to hydrate, brighten, and refine your skin.</p>
+        
+        <a href="/cart/add?id={{ product.variants.first.id }}&quantity=1" class="btn-atc">BUY THE KIT - {{ product.price | money }}</a>
 
         <div class="accordion-item" onclick="this.classList.toggle('active')">
-            <div class="acc-head">WHAT'S INSIDE <div class="accordion-plus">+</div></div>
-            <div class="acc-content"><p>The E7 Glass Skin Set includes five full-size products: Centella Face Wash, Centella Serum, Centella Moisturizer, Centella Sunscreen SPF60+, and Centella Night Cream.</p></div>
-        </div>
-        <div class="accordion-item" onclick="this.classList.toggle('active')">
-            <div class="acc-head">THE ROUTINE <div class="accordion-plus">+</div></div>
-            <div class="acc-content"><p>Your complete morning and evening skin ritual. Designed to rejuvenate and provide a healthy lifestyle.</p></div>
+            <div class="acc-head">WHAT'S INSIDE <div style="font-size:18px;">+</div></div>
+            <div class="acc-content"><p>Full size Centella Face Wash, Serum, Moisturizer, Sunscreen, and Night Cream.</p></div>
         </div>
       </div>
     </div>
+
+    <!-- Rest of the sections (Science, FAQ, Reviews) will follow -->
     <section class="discovery-grid">
       <div class="island-card"><img src="{{ 'glasstwoimagesection1.jpg' | file_img_url: 'master' }}" style="width:100%; height:100%; object-fit:cover;"></div>
       <div class="island-card"><img src="{{ 'glasstwoimagesection2.jpg' | file_img_url: 'master' }}" style="width:100%; height:100%; object-fit:cover;"></div>
     </section>
-    <section class="discovery-grid">
-      <div class="island-card faq-text-side" style="text-align: center;">
-        <p style="font-size:11px; font-weight:700; color:#999; margin-bottom:40px;">THE SCIENCE</p>
-        <div style="font-family:Lexend; font-size:42px; font-weight:800; color:#333; line-height:1.1;">The clinically tested effectiveness of the E7 Glass Skin Set:</div>
-      </div>
-      <div class="island-card"><img src="{{ 'glasstextimage.jpg'| file_img_url: 'master' }}" style="width:100%; height:100%; object-fit:cover;"></div>
-    </section>
-    <section class="results-block">
-      <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 50px;">
-        <h2 style="font-family:Lexend; font-size:40px; font-weight:800;">the glow is real</h2>
-        <p style="font-size:13px; max-width:320px; color:#555;">Real results from our glass skin community.</p>
-      </div>
-      <div class="results-grid">
-        <div class="results-pic"></div><div class="results-pic"></div><div class="results-pic"></div><div class="results-pic"></div>
-      </div>
-    </section>
-    <section class="discovery-grid">
-      <div class="island-card faq-text-side">
-        <h2 style="font-family:Lexend; font-size:42px; font-weight:800; margin-bottom:30px;">Ask away.</h2>
-        <div class="faq-q-row" onclick="this.nextElementSibling.classList.toggle('active')">Can I use all five products together every day? <div class="accordion-plus">+</div></div>
-        <div class="acc-content" style="padding: 0 10px 20px; color: #555;">Yes! The set is designed to work harmoniously in a complete morning and evening routine.</div>
-        <div class="faq-q-row" onclick="this.nextElementSibling.classList.toggle('active')">Is the serum suitable for sensitive skin? <div class="accordion-plus">+</div></div>
-        <div class="acc-content" style="padding: 0 10px 20px; color: #555;">Absolutely. Centella Asiatica and soothing botanicals help calm irritation.</div>
-      </div>
-      <div class="island-card"><img src="{{ 'glassfaq.jpg' | file_img_url: 'master' }}" style="width:100%; height:100%; object-fit:cover;"></div>
-    </section>
-    <section class="review-block">
-      <div><h4 style="font-size:16px;">Ayesha</h4><span style="font-size:11px;">Verified Buyer</span></div>
-      <div><div style="font-size:18px; margin-bottom:15px;">★ ★ ★ ★ ★</div><p style="line-height:1.7; color:#333; font-size:15px;">“My skin has never looked so smooth and bright. The serum is a game-changer!”</p></div>
-    </section>
-  </main>
 </div>

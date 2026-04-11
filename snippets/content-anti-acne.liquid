@@ -1,8 +1,7 @@
 {%- assign product = all_products['anti-acne'] -%}
 
-<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@700;800&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-
 <style>
+    /* STRIPPED HEADER STYLES */
     .pdp-wrapper-acne { padding: 40px 12px; max-width: 1440px; margin: 0 auto; width: 100%; font-family: 'Inter', sans-serif; }
     .pdp-main-box { background: #fff; border: 1px solid #d1d1d1; border-radius: 12px; display: grid; grid-template-columns: 1.15fr 0.85fr; margin-bottom: 20px; overflow: hidden; }
     .gallery-wrap { display: flex; align-items: flex-start; justify-content: center; background: #fff; }
@@ -11,16 +10,15 @@
     .btn-atc { width: 100%; padding: 22px; border-radius: 50px; border: 1.5px solid #000; background: #fff; font-weight: 700; text-transform: uppercase; cursor: pointer; font-size: 13px; color: #000; text-align: center; text-decoration: none; display: block; }
     .btn-atc:hover { background: #000; color: #fff; }
     .accordion-item { border-top: 1px solid #eee; padding: 20px 0; cursor: pointer; }
-    .acc-head { display: flex; justify-content: space-between; align-items: center; font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; }
+    .acc-head { display: flex; justify-content: space-between; align-items: center; font-size: 11px; font-weight: 800; text-transform: uppercase; }
     .acc-content { display: none; padding-top: 15px; font-size: 14px; line-height: 1.6; color: #333; }
     .accordion-item.active .acc-content { display: block; }
-    .discovery-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 20px; margin-top: 20px; }
-    .island-card { border-radius: 12px; overflow: hidden; background: #f6f5f3; height: 500px; }
+    .discovery-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px; }
+    .island-card { border-radius: 12px; overflow: hidden; }
 
     @media (max-width: 1024px) {
         .pdp-main-box { grid-template-columns: 1fr; }
         .details-panel { border-left: none; padding: 30px 15px; }
-        .product-title { font-size: 28px; }
         .discovery-grid { grid-template-columns: 1fr; }
     }
 </style>
@@ -34,20 +32,19 @@
         <p style="font-size: 11px; font-weight: 700; color: #999; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 20px;">TARGETED CLARITY</p>
         <h1 class="product-title">Elaris7 Anti-Acne Clarifying Serum</h1>
         <div style="font-size: 13px; font-weight: 700; margin-bottom: 30px;">★ ★ ★ ★ ★ (1,150)</div>
-        <p style="font-size: 15px; line-height: 1.7; margin-bottom: 40px; color: #333;">Discover clearer skin with the Anti-Acne Clarifying Serum. Formulated to reduce breakouts and soothe skin.</p>
+        <p style="font-size: 15px; line-height: 1.7; margin-bottom: 40px; color: #333;">Potent yet gentle clarifying serum designed to target blemishes and restore skin clarity.</p>
         
-        <a href="/cart/add?id={{ product.variants.first.id }}&quantity=1" class="btn-atc">BUY NOW — {{ product.price | money | default: 'RS. 2,450' }}</a>
+        <a href="/cart/add?id={{ product.variants.first.id }}&quantity=1" class="btn-atc">BUY NOW — {{ product.price | money }}</a>
 
         <div class="accordion-item" onclick="this.classList.toggle('active')">
             <div class="acc-head">WHAT'S INSIDE <div style="font-size:18px;">+</div></div>
-            <div class="acc-content"><p>Salicylic Acid, Tea Tree Oil, and Centella Asiatica.</p></div>
+            <div class="acc-content"><p>Salicylic Acid, Tea Tree Oil, and Niacinamide.</p></div>
         </div>
       </div>
     </div>
 
-    <!-- REPLACING WITH YOUR ACTUAL ASSETS -->
     <div class="discovery-grid">
-      <div class="island-card"><img src="{{ 'anti-acne-meet-1.jpg' | asset_url }}" style="width:100%; height:100%; object-fit:cover;"></div>
-      <div class="island-card"><img src="{{ 'anti-acne-meet-2.jpg' | asset_url }}" style="width:100%; height:100%; object-fit:cover;"></div>
+      <div class="island-card" style="height:500px;"><img src="{{ 'anti-acne-meet-1.jpg' | asset_url }}" style="width:100%; height:100%; object-fit:cover;"></div>
+      <div class="island-card" style="height:500px;"><img src="{{ 'anti-acne-meet-2.jpg' | asset_url }}" style="width:100%; height:100%; object-fit:cover;"></div>
     </div>
 </div>
