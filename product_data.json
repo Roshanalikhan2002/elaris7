@@ -1381,68 +1381,115 @@
   },
   {
     "File": "product.renewal-cleanser.liquid",
-    "Title": "Renewal Cleanser",
-    "Subtitle": "Deep Brightening",
+    "Title": "Oil-to-Foam Cleanser",
+    "Subtitle": "Melt & Cleanse",
     "Price": "2,850",
-    "Description": "A transformative gel-to-foam cleanser designed to wash away impurities while infusing skin with brightening actives for a clear, radiant look.",
+    "Description": "A transforming oil-to-foam cleanser designed to dissolve makeup, sunscreen, and daily buildup while maintaining skin balance and revealing a fresh, glass-like glow.",
     "Benefits": [
-      "Deeply cleanses without stripping",
-      "Brightens uneven skin tone",
-      "Leaves skin soft and refreshed"
+      "Effortlessly melts away makeup and sunscreen buildup",
+      "Deeply cleanses without leaving skin dry or tight",
+      "Helps balance excess oil while maintaining hydration",
+      "Supports and strengthens the skin's natural barrier",
+      "Smooths texture and clears away daily impurities",
+      "Prepares skin for a clearer, more radiant appearance"
     ],
-    "Application": "Massage 1-2 pumps onto damp skin and rinse thoroughly.",
+    "Application": "Apply 1–2 pumps of Oil-to-Foam Cleanser onto dry skin and gently massage to dissolve makeup and impurities. Add a little water to transform it into a soft foam, then rinse thoroughly before continuing your routine.",
     "Tricks": [
-      "Massage for 60 seconds to active ingredients",
-      "Double cleanse at night for best results"
+      "Use on dry skin first to break down makeup more effectively",
+      "Add water gradually to activate the foam transformation",
+      "Massage gently for at least 60 seconds for a deeper cleanse",
+      "Follow with a face wash for a complete double-cleansing ritual"
     ],
     "Ingredients": [
-      "Glutathione",
-      "Niacinamide",
-      "Vitamin C",
-      "Aloe Vera",
-      "Licorice Extract"
+      "Botanical Oils",
+      "Centella Asiatica",
+      "Glycerin",
+      "Vitamin E",
+      "Mild Cleansing Agents"
     ],
-    "CatchyLine": "Wash Your Way to Radiant Skin",
+    "CatchyLine": "Melt It Away. Cleanse It All.",
     "ImportantInfo": {
-      "Headline": "Clarify & Brighten",
-      "GoodFor": "All skin types wanting a brighter complexion",
-      "FeelsLike": "A refreshing, lightweight gel-foam",
-      "FYI": "Deep Cleansing • Halal • Non-Drying"
+      "Headline": "Clean Skin Starts Here",
+      "GoodFor": "All skin types, including oily and combination skin",
+      "FeelsLike": "A silky oil that transforms into a soft, airy foam",
+      "LooksLike": "Clean, refreshed skin with a smooth finish",
+      "SmellsLike": "Gentle, fresh notes with a soothing touch",
+      "FYI": "Halal-Friendly • Dermatologist-Tested • Non-Stripping • Double-Cleanse Essential"
     },
     "WhatsInside": {
-      "Intro": "Powered by brightening powerhouses for a clean, glowing finish.",
-      "I1Title": "glutathione",
-      "I1Desc": "helps reduce oxidative stress and brightens dull skin",
-      "I2Title": "niacinamide",
-      "I2Desc": "calms skin and helps refine the appearance of pores",
-      "Also": "Vitamin C, Botanical Brightening Complex"
+      "Intro": "A versatile oil-to-foam formula that dissolves impurities while keeping skin soft and balanced. Here are 2 key ingredients that make it so effective:",
+      "I1Title": "botanical oils",
+      "I1Desc": "rich, nourishing oils that break down makeup, sunscreen, and excess sebum without stripping the skin",
+      "I2Title": "vitamin e",
+      "I2Desc": "an antioxidant powerhouse that soothes and protects skin while maintaining hydration",
+      "Also": "Centella Asiatica, Glycerin, Mild Cleansing Agents"
     },
     "SpreadItOn": [
-      "deep cleanse",
-      "brightening glow",
-      "refreshed skin"
+      "broad-spectrum protection",
+      "hydrated, comfortable skin",
+      "smooth, invisible finish"
     ],
     "Stats": [
       {
-        "Pct": "97%",
-        "Desc": "SAID THEIR SKIN FELT DEEPLY CLEANSED"
+        "Pct": "99%",
+        "Desc": "SAID THEIR SKIN FELT CLEAN WITHOUT DRYNESS"
       },
       {
-        "Pct": "95%",
-        "Desc": "NOTICED A BRIGHTER GLOW AFTER WASHING"
+        "Pct": "98%",
+        "Desc": "SAID IT REMOVED MAKEUP + SUNSCREEN EFFECTIVELY"
+      },
+      {
+        "Pct": "97%",
+        "Desc": "SAID THEIR SKIN FELT SOFTER + SMOOTHER"
+      },
+      {
+        "Pct": "3 out of 4",
+        "Desc": "SAID THEY NOTICED A CLEAR, FRESH GLOW"
       }
     ],
-    "StatsDisclaimer": "*Based on consumer perception study.",
+    "StatsDisclaimer": "*Based on a 2-week consumer perception study with consistent daily use.",
     "FAQs": [
       {
-        "Q": "Will it dry out my skin?",
-        "A": "No, it contains Aloe Vera to keep skin hydrated while cleansing."
+        "Q": "Can I use this cleanser daily?",
+        "A": "Yes, it is gentle enough for daily use and works well as the first step in your cleansing routine."
+      },
+      {
+        "Q": "Do I still need a second cleanser after this?",
+        "A": "Yes, for a complete cleanse, it is recommended to follow with a face wash as part of double cleansing."
+      },
+      {
+        "Q": "Is it suitable for oily or acne-prone skin?",
+        "A": "Yes, it helps remove excess oil and impurities without clogging pores or causing heaviness."
+      },
+      {
+        "Q": "Will it remove waterproof makeup and sunscreen?",
+        "A": "Yes, the oil-based formula is designed to effectively dissolve long-wear makeup and SPF."
+      },
+      {
+        "Q": "Does it leave any greasy residue after rinsing?",
+        "A": "No, it transforms into a foam and rinses clean, leaving skin fresh and balanced."
       }
     ],
     "Reviews": [
       {
-        "Name": "Ayesha",
-        "Text": "My favorite cleanser! It feels so fresh and my skin looks brighter every day."
+        "Name": "Saad",
+        "Text": "It removes my makeup so easily without making my skin feel dry. My face feels clean and soft after every use."
+      },
+      {
+        "Name": "Nimra",
+        "Text": "I like how it turns into foam and washes everything off properly. It leaves my skin fresh and not greasy at all."
+      },
+      {
+        "Name": "Haris",
+        "Text": "My skin feels smoother and clearer since I started using this. It works really well for daily cleansing."
+      },
+      {
+        "Name": "Laiba",
+        "Text": "It melts away sunscreen and dirt quickly, and my skin feels very comfortable after washing. It's gentle and effective."
+      },
+      {
+        "Name": "Shahzaib",
+        "Text": "This cleanser makes my routine easier and more effective. My skin feels balanced and looks much cleaner now."
       }
     ],
     "Images": {
