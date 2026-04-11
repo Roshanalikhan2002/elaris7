@@ -966,84 +966,110 @@
     "File": "product.hair-mist.liquid",
     "Title": "Floral Blossom Hair Mist",
     "Subtitle": "Fresh Floral Touch",
-    "Price": "1,200",
-    "Description": "A refreshing hair mist designed to instantly revive your hair with a soft, long-lasting floral scent. Infused with panthenol and refreshing botanicals, it adds a natural-looking shine while keeping your hair smelling fresh and feeling soft throughout the day.",
+    "Price": "2,660",
+    "Description": "A refreshing hair mist designed to instantly revive your hair with a soft floral scent. It helps add a natural shine, refresh between washes, and keep your hair feeling clean and beautifully scented all day.",
     "Benefits": [
-      "Long-lasting floral fragrance",
-      "Instant hair refresher",
-      "Adds natural shine",
-      "Lightweight and non-sticky"
+      "Leaves hair with a long-lasting soft floral fragrance",
+      "Instantly refreshes hair between washes",
+      "Adds a natural, healthy-looking shine",
+      "Keeps hair feeling fresh and clean throughout the day",
+      "Helps eliminate unwanted odors from hair",
+      "Suitable for daily use on all hair types"
     ],
-    "Application": "Hold the bottle 6–8 inches away from dry or damp hair and spray evenly. Use anytime throughout the day for a quick refresh or as the final step in your hair care routine.",
+    "Application": "Spray evenly onto dry hair from a short distance. Use anytime during the day to refresh your hair and enhance its fragrance.",
     "Tricks": [
-      "Spray onto your hairbrush before brushing for even distribution",
-      "Use consistently to keep hair smelling blossom-fresh all day"
+      "Spray lightly for a subtle, lasting scent",
+      "Use before stepping out for an instant refresh",
+      "Reapply during the day to maintain freshness",
+      "Pair with your routine for an all-day floral feel"
     ],
     "Ingredients": [
-      "Panthenol (Vitamin B5)",
-      "Propanediol",
-      "Floral Extracts",
-      "Glycerin"
+      "Panthenol",
+      "Propanediol"
     ],
     "CatchyLine": "Bloom With Every Move.",
     "ImportantInfo": {
-      "Headline": "Freshness in Every Spray",
-      "GoodFor": "All hair types seeking instant refresh and shine",
-      "FeelsLike": "A weightless mist that adds soft, silky shine",
-      "LooksLike": "Healthy, glossy, and vibrant hair",
-      "SmellsLike": "A delicate, long-lasting floral blossom scent",
-      "FYI": "Cruelty-Free • Lightweight • Refreshing • Non-Greasy"
+      "Headline": "A Touch of Floral Freshness",
+      "GoodFor": "All hair types, especially dull or odor-prone hair",
+      "FeelsLike": "A fine, refreshing mist that settles gently on hair",
+      "LooksLike": "Soft, naturally shiny hair with a fresh finish",
+      "SmellsLike": "A delicate floral scent that lingers beautifully",
+      "FYI": "Non-Sticky • Fresh Feel • No Residue • Everyday Use"
     },
     "WhatsInside": {
-      "Intro": "A lightweight hair mist powered by shine-enhancing hydrators.",
-      "I1Title": "panthenol",
-      "I1Desc": "helps hydrate hair strands and add a healthy, natural-looking shine",
-      "I2Title": "floral extracts",
-      "I2Desc": "provide a delicate, long-lasting fragrance without weighing hair down",
-      "Also": "Propanediol, Glycerin, and subtle botanical refreshers"
+      "Intro": "A lightweight hair mist designed to revive hair instantly, leaving it soft, fragrant, and naturally shiny throughout the day.",
+      "I1Title": "PANTHENOL",
+      "I1Desc": "hydrates and adds a healthy-looking shine",
+      "I2Title": "PROPANEDIOL",
+      "I2Desc": "refreshes hair while helping the scent last longer",
+      "Also": "subtle floral extracts for a delicate, long-lasting fragrance"
     },
     "SpreadItOn": [
       "hair refresh",
-      "floral scent",
+      "soft floral scent",
       "natural shine"
     ],
     "Stats": [
       {
         "Pct": "99%",
-        "Desc": "SAID HAIR FELT INSTANTLY REFRESHED"
+        "Desc": "SAID THEIR HAIR FELT FRESHER INSTANTLY"
+      },
+      {
+        "Pct": "98%",
+        "Desc": "SAID THE FRAGRANCE LASTED THROUGHOUT THE DAY"
       },
       {
         "Pct": "97%",
-        "Desc": "LOVED THE LONG-LASTING FLORAL SCENT"
+        "Desc": "SAID THEIR HAIR LOOKED MORE SHINY + REVIVED"
       },
       {
-        "Pct": "94%",
-        "Desc": "NOTICED HEALTHIER LOOKING SHINE"
+        "Pct": "3 out of 4",
+        "Desc": "SAID THEY USED IT DAILY FOR QUICK REFRESH"
       }
     ],
-    "StatsDisclaimer": "*Based on a 1-week consumer perception study.",
+    "StatsDisclaimer": "Based on a 2-week consumer perception study with consistent daily use.",
     "FAQs": [
       {
         "Q": "Can I use this hair mist daily?",
-        "A": "Yes, it is designed for multiple daily uses without weighing your hair down."
+        "A": "Yes, it is safe for daily use and can be applied multiple times a day."
       },
       {
-        "Q": "Does it have a strong scent?",
-        "A": "It has a delicate, fresh floral fragrance that is long-lasting but never overpowering."
+        "Q": "Will it make my hair sticky?",
+        "A": "No, the formula is designed to feel fresh and does not leave stickiness."
       },
       {
-        "Q": "Will it make my hair oily?",
-        "A": "No, the formula is lightweight and oil-free, adding shine without any greasiness."
+        "Q": "Can I use it on wet hair?",
+        "A": "It works best on dry hair for instant freshness and fragrance."
+      },
+      {
+        "Q": "Does the fragrance last long?",
+        "A": "Yes, it leaves a soft floral scent that lasts for hours."
+      },
+      {
+        "Q": "Is it suitable for all hair types?",
+        "A": "Yes, it is suitable for all hair types and textures."
       }
     ],
     "Reviews": [
       {
-        "Name": "Fatima",
-        "Text": "Received my order and I'm super impressed. My hair feels so refreshed and the blossom scent is amazing! 10/10 experience."
+        "Name": "Areeba",
+        "Text": "I love how fresh my hair feels after using this. The floral scent is soft and stays for hours."
       },
       {
-        "Name": "Ayesha",
-        "Text": "I'm in love with the texture - it's lightweight and absorbs instantly without any greasiness. Waking up to soft, shiny hair is the best!"
+        "Name": "Kiran",
+        "Text": "It’s perfect for quick touch-ups during the day. My hair smells amazing and looks shinier."
+      },
+      {
+        "Name": "Sana",
+        "Text": "Such a refreshing mist for daily use. It instantly makes my hair feel clean and lively."
+      },
+      {
+        "Name": "Fahad",
+        "Text": "I use it before going out and it keeps my hair smelling great. Very easy to use anytime."
+      },
+      {
+        "Name": "Bilal",
+        "Text": "The fragrance is really pleasant and not overpowering. My hair feels fresh and looks better."
       }
     ],
     "Images": {
@@ -1057,7 +1083,7 @@
       "Breakdown": "v2-hair-plate.jpg",
       "WhatsInside": "v2-hair-spoon.jpg",
       "Spread": "v2-hair-spread.jpg",
-      "Stats": "v2-hair-2.jpg",
+      "Stats": "v2-hair-stats.jpg",
       "FAQ": "v2-hair-faq.jpg",
       "Carousel": [
         "v2-hair-1.jpeg",
