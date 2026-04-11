@@ -2427,16 +2427,6 @@ a { color: inherit; text-decoration: none; }
               </div>
 
               <div class="bogo-inline-card " onclick="selectBogo(this)">
-                <input type="radio" name="free_gift" data-gift-handle="anti-acne" style="display:none;" >
-                <img src="{{ "v2-antiacne-1.jpeg" | asset_url }}" alt="Elaris7 Anti-Acne Clarifying Serum">
-                <div class="bogo-inline-info">
-                  <span class="bogo-inline-name">Elaris7 Anti-Acne Clarifying Serum</span>
-                  <span class="bogo-inline-tag">Clear & Control</span>
-                </div>
-                <div class="bogo-select-indicator"></div>
-              </div>
-
-              <div class="bogo-inline-card " onclick="selectBogo(this)">
                 <input type="radio" name="free_gift" data-gift-handle="anti-acne-serum-v2" style="display:none;" >
                 <img src="{{ "v2-antiacne-1.jpeg" | asset_url }}" alt="Elaris7 Anti-Acne Clarifying Serum">
                 <div class="bogo-inline-info">
@@ -2567,8 +2557,32 @@ a { color: inherit; text-decoration: none; }
                 grid-template-columns: 1fr;
               }
             }
+                <img src="./assets/toner1.jpeg" alt="Renewal Toner">
+                <span class="bogo-product-name">Renewal Toner</span>
+                <button class="bogo-add-btn">Select</button>
+              </div>
+          </div>
+        </div>
 
-            
+          <script>
+            const openBogo = document.getElementById('openBogo');
+            const closeBogo = document.getElementById('closeBogo');
+            const bogoDrawer = document.getElementById('bogoDrawer');
+            const bogoOverlay = document.getElementById('bogoOverlay');
+
+            openBogo.addEventListener('click', () => {
+              bogoDrawer.classList.add('open');
+              bogoOverlay.classList.add('open');
+            });
+
+            const hideBogo = () => {
+              bogoDrawer.classList.remove('open');
+              bogoOverlay.classList.remove('open');
+            };
+
+            closeBogo.addEventListener('click', hideBogo);
+            bogoOverlay.addEventListener('click', hideBogo);
+          </script>
           
 
 
@@ -4904,23 +4918,27 @@ a { color: inherit; text-decoration: none; }
 
             document.getElementById('bogoAddToCart')?.addEventListener('click', function() {
                 const selectedGift = document.querySelector('input[name="free_gift"]:checked');
-                if (!selectedGift) {
-                    alert('Please select your free gift first.');
-                    return;
-                }
-                const giftHandle = selectedGift.getAttribute('data-gift-handle');
-                const giftVariantId = handleToIdMap[giftHandle];
                 const mainVariantId = "{{ product.variants.first.id }}";
-                
-                if (!giftVariantId) {
-                    console.error('Variant ID not found for handle:', giftHandle);
-                    return;
-                }
+                let items = [];
 
-                const items = [
-                    { id: mainVariantId, quantity: 1 },
-                    { id: giftVariantId, quantity: 1 }
-                ];
+                if (selectedGift) {
+                    const giftHandle = selectedGift.getAttribute('data-gift-handle');
+                    const giftVariantId = handleToIdMap[giftHandle];
+                    
+                    if (!giftVariantId) {
+                        console.error('Variant ID not found for handle:', giftHandle);
+                        // Fallback to 2x main product if gift mapping fails
+                        items = [{ id: mainVariantId, quantity: 2 }];
+                    } else {
+                        items = [
+                            { id: mainVariantId, quantity: 1 },
+                            { id: giftVariantId, quantity: 1 }
+                        ];
+                    }
+                } else {
+                    // No product selected from vertical list -> 2x current product
+                    items = [{ id: mainVariantId, quantity: 2 }];
+                }
 
                 fetch('/cart/add.js', {
                     method: 'POST',

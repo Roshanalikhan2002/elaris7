@@ -141,11 +141,10 @@ function updateTemplate(p) {
 
     // --- BOGO EXCLUSIVITY ---
     const bogoHandles = [
+        'face-wash',
         'glow-serum',
         'sunscreen-v2',
-        'face-wash',
         'tranexamic-serum-v2',
-        'anti-acne',
         'anti-acne-serum-v2',
         'night-cream'
     ];
@@ -217,23 +216,27 @@ function updateTemplate(p) {
 
             document.getElementById('bogoAddToCart')?.addEventListener('click', function() {
                 const selectedGift = document.querySelector('input[name="free_gift"]:checked');
-                if (!selectedGift) {
-                    alert('Please select your free gift first.');
-                    return;
-                }
-                const giftHandle = selectedGift.getAttribute('data-gift-handle');
-                const giftVariantId = handleToIdMap[giftHandle];
                 const mainVariantId = "{{ product.variants.first.id }}";
-                
-                if (!giftVariantId) {
-                    console.error('Variant ID not found for handle:', giftHandle);
-                    return;
-                }
+                let items = [];
 
-                const items = [
-                    { id: mainVariantId, quantity: 1 },
-                    { id: giftVariantId, quantity: 1 }
-                ];
+                if (selectedGift) {
+                    const giftHandle = selectedGift.getAttribute('data-gift-handle');
+                    const giftVariantId = handleToIdMap[giftHandle];
+                    
+                    if (!giftVariantId) {
+                        console.error('Variant ID not found for handle:', giftHandle);
+                        // Fallback to 2x main product if gift mapping fails
+                        items = [{ id: mainVariantId, quantity: 2 }];
+                    } else {
+                        items = [
+                            { id: mainVariantId, quantity: 1 },
+                            { id: giftVariantId, quantity: 1 }
+                        ];
+                    }
+                } else {
+                    // No product selected from vertical list -> 2x current product
+                    items = [{ id: mainVariantId, quantity: 2 }];
+                }
 
                 fetch('/cart/add.js', {
                     method: 'POST',

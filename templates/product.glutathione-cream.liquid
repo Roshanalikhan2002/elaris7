@@ -2376,7 +2376,7 @@ a { color: inherit; text-decoration: none; }
 
           <div class="product-actions-grid">
             <button class="buy-button add-to-cart-btn" style="white-space: nowrap;">ADD TO CART - <span>Rs. 2,660</span></button>
-            
+            <button class="buy-button bogo-btn" id="bogoAddToCart">BUY 1 GET 1 FREE</button>
           </div>
           
           <style>
@@ -2400,8 +2400,32 @@ a { color: inherit; text-decoration: none; }
                 grid-template-columns: 1fr;
               }
             }
+                <img src="./assets/toner1.jpeg" alt="Renewal Toner">
+                <span class="bogo-product-name">Renewal Toner</span>
+                <button class="bogo-add-btn">Select</button>
+              </div>
+          </div>
+        </div>
 
-            
+          <script>
+            const openBogo = document.getElementById('openBogo');
+            const closeBogo = document.getElementById('closeBogo');
+            const bogoDrawer = document.getElementById('bogoDrawer');
+            const bogoOverlay = document.getElementById('bogoOverlay');
+
+            openBogo.addEventListener('click', () => {
+              bogoDrawer.classList.add('open');
+              bogoOverlay.classList.add('open');
+            });
+
+            const hideBogo = () => {
+              bogoDrawer.classList.remove('open');
+              bogoOverlay.classList.remove('open');
+            };
+
+            closeBogo.addEventListener('click', hideBogo);
+            bogoOverlay.addEventListener('click', hideBogo);
+          </script>
           
 
 
