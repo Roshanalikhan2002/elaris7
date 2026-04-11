@@ -262,19 +262,34 @@ document.addEventListener('DOMContentLoaded', () => {
     // Filter cards
     const cards = document.querySelectorAll('.card-rhode');
     const targetCat = category.toLowerCase();
+    let count = 0;
 
     cards.forEach(card => {
       const cardCatStr = (card.getAttribute('data-category') || '').toLowerCase();
       const cardCategories = cardCatStr.split(/[,\s]+/).map(c => c.trim()).filter(c => c !== '');
 
       if (targetCat === 'featured') {
+        // Show all non-set products (usually 12+)
         if (cardCategories.includes('set')) {
           card.style.display = 'none';
         } else {
           card.style.display = 'flex';
         }
+      } else if (targetCat === 'set') {
+        // Show all sets
+        if (cardCategories.includes('set')) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
       } else if (cardCategories.includes(targetCat)) {
-        card.style.display = 'flex';
+        // Show ONLY 1 card for specific categories (Korean glass skin, Anti acne, etc.)
+        if (count < 1) {
+          card.style.display = 'flex';
+          count++;
+        } else {
+          card.style.display = 'none';
+        }
       } else {
         card.style.display = 'none';
       }
@@ -294,6 +309,8 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!category || !cards.length) return;
 
       const targetCat = category.toLowerCase();
+      let count = 0;
+      
       cards.forEach(card => {
         const cardCatStr = (card.getAttribute('data-category') || '').toLowerCase();
         const cardCategories = cardCatStr.split(/[,\s]+/).map(c => c.trim()).filter(c => c !== '');
@@ -304,8 +321,19 @@ document.addEventListener('DOMContentLoaded', () => {
           } else {
             card.style.display = 'flex';
           }
+        } else if (targetCat === 'set') {
+          if (cardCategories.includes('set')) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
         } else if (cardCategories.includes(targetCat)) {
-          card.style.display = 'flex';
+          if (count < 1) {
+            card.style.display = 'flex';
+            count++;
+          } else {
+            card.style.display = 'none';
+          }
         } else {
           card.style.display = 'none';
         }
