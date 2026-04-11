@@ -239,7 +239,7 @@ function updateTemplate(p) {
     const titleBr = p.Title.replace(/ /g, '<br>');
     c = c.replace(/class="product-title">[\s\S]*?<\/h1>/, `class="product-title">${titleBr}</h1>`);
     c = c.replace(/<title>[\s\S]*?<\/title>/, `<title>${p.Title} | elaris7</title>`);
-    c = c.replace(/class="product-subtitle">[\s\S]*?<\/p>/, `class="product-subtitle">${p.Subtitle}</p>`);
+    c = c.replace(/class="product-subtitle">[^<]*<\/span>/, `class="product-subtitle">${p.Subtitle}</span>`);
     
     // Global Price Replacement (Careful not to overwrite BOGO prices if they are dynamic)
     // We'll target the main price display

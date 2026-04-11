@@ -80,12 +80,40 @@
       {
         "Q": "Is it suitable for oily skin at night?",
         "A": "Absolutely, it hydrates without clogging pores or leaving a greasy residue."
+      },
+      {
+        "Q": "How often should I use it?",
+        "A": "For optimal results, use every night as the final step in your evening routine."
+      },
+      {
+        "Q": "Will it help with dull or uneven skin tone?",
+        "A": "Yes, its brightening and repair ingredients work overnight to improve radiance and evenness."
+      },
+      {
+        "Q": "Can it reduce the appearance of fine lines?",
+        "A": "Yes, regular use helps visibly minimize fine lines and promotes firmer, youthful-looking skin."
       }
     ],
     "Reviews": [
       {
         "Name": "Fatima",
-        "Text": "I’ve been using it for 2 weeks, and my skin barrier feels so much stronger and healthier. My skin looks brighter, more even-toned, and I’m genuinely loving the glow."
+        "Text": "I've been using it for 2 weeks, and my skin barrier feels so much stronger and healthier. My skin looks brighter, more even-toned, and I'm genuinely loving the glow."
+      },
+      {
+        "Name": "Ayesha",
+        "Text": "I'm honestly in love with the texture — it's lightweight, smooth, and absorbs instantly without any greasiness. My skin feels soft, hydrated, and has a natural glow every morning."
+      },
+      {
+        "Name": "Fiza",
+        "Text": "Received my order and I'm super impressed with both the product and packaging. Everything feels premium — definitely a 10/10 experience for me!"
+      },
+      {
+        "Name": "Razish",
+        "Text": "After consistent use, my skin feels deeply hydrated and looks much more refreshed. I've noticed a visible improvement in texture and overall glow."
+      },
+      {
+        "Name": "Arsalan",
+        "Text": "The night cream feels very gentle yet effective — my skin looks brighter and healthier with regular use. Waking up to soft, smooth skin has become part of my routine now."
       }
     ],
     "Images": {
