@@ -263,45 +263,20 @@ document.addEventListener('DOMContentLoaded', () => {
     const cards = document.querySelectorAll('.card-rhode');
     const targetCat = category.toLowerCase();
 
-    // Map categories to their placeholder handles
-    const placeholderMap = {
-      'glass-skin': 'glass-skin-placeholder',
-      'korean-glass-skin': 'glass-skin-placeholder',
-      'anti-acne': 'anti-acne-placeholder',
-      'korean-brightening': 'korean-brightening-placeholder',
-      'hair-care': 'hair-care-placeholder'
-    };
-
-
     cards.forEach(card => {
-      const isPlaceholder = card.classList.contains('card-placeholder');
       const cardCatStr = (card.getAttribute('data-category') || '').toLowerCase();
       const cardCategories = cardCatStr.split(/[,\s]+/).map(c => c.trim()).filter(c => c !== '');
 
       if (targetCat === 'featured') {
-        // Show all standard products, hide sets and placeholders
-        if (isPlaceholder || cardCategories.includes('set')) {
-          card.style.display = 'none';
-        } else {
-          card.style.display = 'flex';
-        }
-      } else if (targetCat === 'set') {
-        // Show all sets, hide standard and placeholders
-        if (!isPlaceholder && cardCategories.includes('set')) {
-          card.style.display = 'flex';
-        } else {
-          card.style.display = 'none';
-        }
-      } else if (placeholderMap[targetCat]) {
-        // showing the specific placeholder ONLY
-        if (isPlaceholder && cardCatStr === placeholderMap[targetCat]) {
+        // Show everything tagged as featured
+        if (cardCategories.includes('featured')) {
           card.style.display = 'flex';
         } else {
           card.style.display = 'none';
         }
       } else {
-        // Fallback for any other categories if added later
-        if (!isPlaceholder && cardCategories.includes(targetCat)) {
+        // Show if it matches the specific category (like 'set', 'anti-acne', etc)
+        if (cardCategories.includes(targetCat)) {
           card.style.display = 'flex';
         } else {
           card.style.display = 'none';
@@ -324,40 +299,18 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!category || !cards.length) return;
 
       const targetCat = category.toLowerCase();
-      const placeholderMap = {
-        'glass-skin': 'glass-skin-placeholder',
-        'korean-glass-skin': 'glass-skin-placeholder',
-        'anti-acne': 'anti-acne-placeholder',
-        'korean-brightening': 'korean-brightening-placeholder',
-        'hair-care': 'hair-care-placeholder'
-      };
-
-      
       cards.forEach(card => {
-        const isPlaceholder = card.classList.contains('card-placeholder');
         const cardCatStr = (card.getAttribute('data-category') || '').toLowerCase();
         const cardCategories = cardCatStr.split(/[,\s]+/).map(c => c.trim()).filter(c => c !== '');
 
         if (targetCat === 'featured') {
-          if (isPlaceholder || cardCategories.includes('set')) {
-            card.style.display = 'none';
-          } else {
-            card.style.display = 'flex';
-          }
-        } else if (targetCat === 'set') {
-          if (!isPlaceholder && cardCategories.includes('set')) {
-            card.style.display = 'flex';
-          } else {
-            card.style.display = 'none';
-          }
-        } else if (placeholderMap[targetCat]) {
-          if (isPlaceholder && cardCatStr === placeholderMap[targetCat]) {
+          if (cardCategories.includes('featured')) {
             card.style.display = 'flex';
           } else {
             card.style.display = 'none';
           }
         } else {
-          if (!isPlaceholder && cardCategories.includes(targetCat)) {
+          if (cardCategories.includes(targetCat)) {
             card.style.display = 'flex';
           } else {
             card.style.display = 'none';
