@@ -12,7 +12,7 @@
   <div class="product-collection" id="product-collection-scroll">
     {% if section.blocks.size > 0 %}
       {% for block in section.blocks %}
-        <div class="card card-rhode" data-category="{{ block.settings.brand_label | handleize }}" {{ block.shopify_attributes }}>
+        <div class="card card-rhode" data-category="{{ block.settings.brand_label }}" {{ block.shopify_attributes }}>
           {%- assign final_link = block.settings.product_link | default: '#' -%}
           <a href="{{ final_link }}" class="card-link-wrapper">
             {% if block.settings.hover_image != blank %}
@@ -95,7 +95,7 @@
         {%- endif -%}
 
         {%- assign plabel = fallback_labels[i] -%}
-        <div class="card card-rhode" data-category="{{ plabel | handleize }}">
+        <div class="card card-rhode" data-category="{{ plabel }}">
           <a href="/products/{{ phandle }}" class="card-link-wrapper">
             {% if phover != blank and phover != 'none' %}
               <img src="{{ phover }}" class="card-hover-bg" alt="Hover Background">

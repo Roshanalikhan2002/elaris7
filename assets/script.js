@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const scrollArea = document.querySelector('.product-collection');
+  const scrollArea = document.getElementById('product-slider') || document.getElementById('product-collection-scroll') || document.querySelector('.product-collection');
   const header = document.querySelector('.site-header');
 
   if (!scrollArea || !header) return;
@@ -31,8 +31,8 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Mobile Menu Toggle
-  const menuTrigger = document.getElementById('menu-open');
-  const menuClose = document.getElementById('menu-close');
+  const menuTrigger = document.getElementById('menu-open') || document.getElementById('menu-toggle');
+  const menuClose = document.getElementById('menu-close') || document.getElementById('menu-close-btn');
   const mobileMenu = document.getElementById('mobile-menu');
 
   if (menuTrigger && menuClose && mobileMenu) {
@@ -95,19 +95,98 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Product Scroll Arrow Buttons
-  const nextBtn = document.getElementById('scroll-next');
-  const prevBtn = document.getElementById('scroll-prev');
+  const nextBtn = document.getElementById('scroll-next') || document.getElementById('scroll-next-btn');
+  const prevBtn = document.getElementById('scroll-prev') || document.getElementById('scroll-prev-btn');
 
   if (nextBtn && prevBtn && scrollArea) {
     nextBtn.addEventListener('click', () => {
-      const cardWidth = scrollArea.querySelector('.card-rhode').offsetWidth;
-      scrollArea.scrollBy({ left: cardWidth + 12, behavior: 'smooth' });
+      const card = scrollArea.querySelector('.card-rhode');
+      if (card) {
+        const cardWidth = card.offsetWidth;
+        scrollArea.scrollBy({ left: cardWidth + 12, behavior: 'smooth' });
+      }
     });
 
     prevBtn.addEventListener('click', () => {
-      const cardWidth = scrollArea.querySelector('.card-rhode').offsetWidth;
-      scrollArea.scrollBy({ left: -(cardWidth + 12), behavior: 'smooth' });
+      const card = scrollArea.querySelector('.card-rhode');
+      if (card) {
+        const cardWidth = card.offsetWidth;
+        scrollArea.scrollBy({ left: -(cardWidth + 12), behavior: 'smooth' });
+      }
     });
+  }
+
+  // --- CATEGORY FILTERING ---
+  const catLinks = document.querySelectorAll('.cat-link');
+  const productCards = scrollArea.querySelectorAll('.card-rhode');
+
+  if (catLinks.length > 0 && productCards.length > 0) {
+    catLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        const category = link.getAttribute('data-category');
+        if (!category) return;
+
+        e.preventDefault();
+        e.stopPropagation();
+        
+        // Toggle active class
+        catLinks.forEach(l => l.classList.remove('active'));
+        link.classList.add('active');
+
+        console.log('Filtering carousel by:', category);
+
+        productCards.forEach(card => {
+          const cardCatStr = (card.getAttribute('data-category') || '').toLowerCase();
+          const cardCategories = cardCatStr.split(/[,\s]+/).map(c => c.trim()).filter(c => c !== '');
+          const targetCat = category.toLowerCase();
+
+          if (targetCat === 'featured') {
+            if (cardCategories.includes('set')) {
+              card.style.display = 'none';
+            } else {
+              card.style.display = 'flex';
+            }
+          } else if (cardCategories.includes(targetCat)) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+
+        // Reset scroll to start
+        scrollArea.scrollLeft = 0;
+      });
+    });
+
+    // Initial Filter on load (Default is Featured)
+    const initialFilter = () => {
+      const activeLink = document.querySelector('.cat-link.active');
+      if (activeLink) {
+        const category = activeLink.getAttribute('data-category');
+        if (!category) return;
+
+        console.log('Initial filter:', category);
+
+        productCards.forEach(card => {
+          const cardCatStr = (card.getAttribute('data-category') || '').toLowerCase();
+          const cardCategories = cardCatStr.split(/[,\s]+/).map(c => c.trim()).filter(c => c !== '');
+          const targetCat = category.toLowerCase();
+
+          if (targetCat === 'featured') {
+            if (cardCategories.includes('set')) {
+              card.style.display = 'none';
+            } else {
+              card.style.display = 'flex';
+            }
+          } else if (cardCategories.includes(targetCat)) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      }
+    };
+    initialFilter();
   }
 
   // --- AJAX CART FUNCTIONALITY ---
