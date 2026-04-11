@@ -1468,7 +1468,7 @@ a { color: inherit; text-decoration: none; }
 }
 .section-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 12px;
   padding: 0 12px;
   min-height: 80vh;
@@ -2309,13 +2309,13 @@ a { color: inherit; text-decoration: none; }
           <img src="{{ "toner1.jpeg" | asset_url }}" alt="Thumb 1">
         </div>
         <div class="thumb-item" onmouseover="scrollGallery(1, this)">
-          <img src="{{ "toner-meet-2.jpg" | asset_url }}" alt="Thumb 2">
+          <img src="./assets/nightcream-v3-2.jpeg" alt="Thumb 2">
         </div>
         <div class="thumb-item" onmouseover="scrollGallery(2, this)">
-          <img src="{{ "toner-meet-3.jpg" | asset_url }}" alt="Thumb 3">
+          <img src="./assets/nightcream-v3-3.jpeg" alt="Thumb 3">
         </div>
         <div class="thumb-item" onmouseover="scrollGallery(3, this)">
-          <img src="{{ "toner-meet-4.jpg" | asset_url }}" alt="Thumb 4">
+          <img src="./assets/nightcream-v3-4.jpeg" alt="Thumb 4">
         </div>
       </div>
 
@@ -2326,13 +2326,13 @@ a { color: inherit; text-decoration: none; }
             <img src="{{ "toner1.jpeg" | asset_url }}" alt="Main View 1">
           </div>
           <div class="gallery-slide">
-            <img src="{{ "toner-meet-2.jpg" | asset_url }}" alt="Main View 2">
+            <img src="./assets/nightcream-v3-2.jpeg" alt="Main View 2">
           </div>
           <div class="gallery-slide">
-            <img src="{{ "toner-meet-3.jpg" | asset_url }}" alt="Main View 3">
+            <img src="./assets/nightcream-v3-3.jpeg" alt="Main View 3">
           </div>
           <div class="gallery-slide">
-            <img src="{{ "toner-meet-4.jpg" | asset_url }}" alt="Main View 4">
+            <img src="./assets/nightcream-v3-4.jpeg" alt="Main View 4">
           </div>
         </div>
       </div>
@@ -2367,268 +2367,11 @@ a { color: inherit; text-decoration: none; }
 
           <hr class="divider">
 
-          <div class="bogo-inline-section">
-            <p class="bogo-inline-title">SELECT YOUR FREE PRODUCT</p>
-            <div class="bogo-vertical-scroll">
-              
-              <div class="bogo-inline-card" onclick="selectBogo(this)">
-                <input type="radio" name="free_gift" data-gift-handle="night-cream" style="display:none;">
-                <img src="{{ "toner1.jpeg" | asset_url }}" alt="Centella Night Cream">
-                <div class="bogo-inline-info">
-                  <span class="bogo-inline-name">Centella Night Cream</span>
-                  <span class="bogo-inline-tag">Night Renewal</span>
-                </div>
-                <div class="bogo-select-indicator"></div>
-              </div>
-
-              <div class="bogo-inline-card" onclick="selectBogo(this)">
-                <input type="radio" name="free_gift" data-gift-handle="moisturizer" style="display:none;">
-                <img src="{{ "moisturizer-100.jpg" | asset_url }}" alt="Centella Moisturizer">
-                <div class="bogo-inline-info">
-                  <span class="bogo-inline-name">Centella Moisturizer</span>
-                  <span class="bogo-inline-tag">Daily Dew</span>
-                </div>
-                <div class="bogo-select-indicator"></div>
-              </div>
-
-              <div class="bogo-inline-card" onclick="selectBogo(this)">
-                <input type="radio" name="free_gift" data-gift-handle="face-wash" style="display:none;">
-                <img src="{{ "facewash1.jpeg" | asset_url }}" alt="Centella Face Wash">
-                <div class="bogo-inline-info">
-                  <span class="bogo-inline-name">Centella Face Wash</span>
-                  <span class="bogo-inline-tag">Pure Start</span>
-                </div>
-                <div class="bogo-select-indicator"></div>
-              </div>
-
-              <div class="bogo-inline-card" onclick="selectBogo(this)">
-                <input type="radio" name="free_gift" data-gift-handle="glow-serum" style="display:none;">
-                <img src="{{ "glowserum-1.png" | asset_url }}" alt="Centella Serum">
-                <div class="bogo-inline-info">
-                  <span class="bogo-inline-name">Centella Serum</span>
-                  <span class="bogo-inline-tag">Radiance Reset</span>
-                </div>
-                <div class="bogo-select-indicator"></div>
-              </div>
-
-              <div class="bogo-inline-card" onclick="selectBogo(this)">
-                <input type="radio" name="free_gift" data-gift-handle="sunscreen-v2" style="display:none;">
-                <img src="{{ "v2-sunscreen-1.jpeg" | asset_url }}" alt="Sunscreen SPF60+">
-                <div class="bogo-inline-info">
-                  <span class="bogo-inline-name">Sunscreen SPF60+</span>
-                  <span class="bogo-inline-tag">Daily Shield</span>
-                </div>
-                <div class="bogo-select-indicator"></div>
-              </div>
-
-              <div class="bogo-inline-card" onclick="selectBogo(this)">
-                <input type="radio" name="free_gift" data-gift-handle="skin-refining-toner" style="display:none;">
-                <img src="./assets/skin refining-100.jpg" alt="Refining Toner">
-                <div class="bogo-inline-info">
-                  <span class="bogo-inline-name">Refining Toner</span>
-                  <span class="bogo-inline-tag">Clarity Reset</span>
-                </div>
-                <div class="bogo-select-indicator"></div>
-              </div>
-
-              <div class="bogo-inline-card" onclick="selectBogo(this)">
-                <input type="radio" name="free_gift" data-gift-handle="keratin-serum-v2" style="display:none;">
-                <img src="{{ "antifrizz-1.jpg" | asset_url }}" alt="Keratin Serum">
-                <div class="bogo-inline-info">
-                  <span class="bogo-inline-name">Keratin Serum</span>
-                  <span class="bogo-inline-tag">Smooth Control</span>
-                </div>
-                <div class="bogo-select-indicator"></div>
-              </div>
-
-              <div class="bogo-inline-card" onclick="selectBogo(this)">
-                <input type="radio" name="free_gift" data-gift-handle="hair-mist" style="display:none;">
-                <img src="{{ "v2-hair-1.jpeg" | asset_url }}" alt="Floral Blossom Hair Mist">
-                <div class="bogo-inline-info">
-                  <span class="bogo-inline-name">Floral Blossom Hair Mist</span>
-                  <span class="bogo-inline-tag">Fresh Floral Touch</span>
-                </div>
-                <div class="bogo-select-indicator"></div>
-              </div>
-
-              <div class="bogo-inline-card" onclick="selectBogo(this)">
-                <input type="radio" name="free_gift" data-gift-handle="aha-exfoliant" style="display:none;">
-                <img src="{{ "toner1.jpeg" | asset_url }}" alt="Glycolic Toner">
-                <div class="bogo-inline-info">
-                  <span class="bogo-inline-name">Glycolic Toner</span>
-                  <span class="bogo-inline-tag">Renew & Refine</span>
-                </div>
-                <div class="bogo-select-indicator"></div>
-              </div>
-
-              <div class="bogo-inline-card" onclick="selectBogo(this)">
-                <input type="radio" name="free_gift" data-gift-handle="tranexamic-serum-v2" style="display:none;">
-                <img src="{{ "TranexamicSerum1.jpg" | asset_url }}" alt="Elaris7 Tranexamic Brightening Serum">
-                <div class="bogo-inline-info">
-                  <span class="bogo-inline-name">Elaris7 Tranexamic Brightening Serum</span>
-                  <span class="bogo-inline-tag">Even & Illuminate</span>
-                </div>
-                <div class="bogo-select-indicator"></div>
-              </div>
-
-              <div class="bogo-inline-card" onclick="selectBogo(this)">
-                <input type="radio" name="free_gift" data-gift-handle="anti-acne" style="display:none;">
-                <img src="{{ "v2-antiacne-1.jpeg" | asset_url }}" alt="Anti-Acne Serum">
-                <div class="bogo-inline-info">
-                  <span class="bogo-inline-name">Anti-Acne Serum</span>
-                  <span class="bogo-inline-tag">Clear & Control</span>
-                </div>
-                <div class="bogo-select-indicator"></div>
-              </div>
-
-              <div class="bogo-inline-card" onclick="selectBogo(this)">
-                <input type="radio" name="free_gift" data-gift-handle="glutathione-cream" style="display:none;">
-                <img src="{{ "glutathione-1.jpeg" | asset_url }}" alt="Glutathione Cream">
-                <div class="bogo-inline-info">
-                  <span class="bogo-inline-name">Glutathione Cream</span>
-                  <span class="bogo-inline-tag">Even & Radiant</span>
-                </div>
-                <div class="bogo-select-indicator"></div>
-              </div>
-
-              <div class="bogo-inline-card" onclick="selectBogo(this)">
-                <input type="radio" name="free_gift" data-gift-handle="renewal-cleanser-v2" style="display:none;">
-                <img src="{{ "v2-cleanser-1.jpeg" | asset_url }}" alt="Renewal Cleanser">
-                <div class="bogo-inline-info">
-                  <span class="bogo-inline-name">Renewal Cleanser</span>
-                  <span class="bogo-inline-tag">Deep Brightening</span>
-                </div>
-                <div class="bogo-select-indicator"></div>
-              </div>
-
-              <div class="bogo-inline-card" onclick="selectBogo(this)">
-                <input type="radio" name="free_gift" data-gift-handle="e7-korean-glass-skin-moisturizer" style="display:none;">
-                <img src="{{ "v2-moisturizer-1.jpeg" | asset_url }}" alt="Hydra Burst Moisturizer">
-                <div class="bogo-inline-info">
-                  <span class="bogo-inline-name">Hydra Burst Moisturizer</span>
-                  <span class="bogo-inline-tag">Glass Skin Finish</span>
-                </div>
-                <div class="bogo-select-indicator"></div>
-              </div>
-
-              <div class="bogo-inline-card" onclick="selectBogo(this)">
-                <input type="radio" name="free_gift" data-gift-handle="renewal-toner-v2" style="display:none;">
-                <img src="{{ "toner1.jpeg" | asset_url }}" alt="Renewal Toner">
-                <div class="bogo-inline-info">
-                  <span class="bogo-inline-name">Renewal Toner</span>
-                  <span class="bogo-inline-tag">Pore Refining</span>
-                </div>
-                <div class="bogo-select-indicator"></div>
-              </div>
-
-              <div class="bogo-inline-card" onclick="selectBogo(this)">
-                <input type="radio" name="free_gift" data-gift-handle="centella-skin-toner-copy" style="display:none;">
-                <img src="{{ "toner1.jpeg" | asset_url }}" alt="Renewal Toner">
-                <div class="bogo-inline-info">
-                  <span class="bogo-inline-name">Renewal Toner</span>
-                  <span class="bogo-inline-tag">Pore Refining</span>
-                </div>
-                <div class="bogo-select-indicator"></div>
-              </div>
-            </div>
-          </div>
           
-          <style>
-            .bogo-inline-section {
-              margin-top: 20px;
-              margin-bottom: 20px;
-            }
-            .bogo-inline-title {
-              font-size: 0.75rem;
-              font-weight: 800;
-              color: #5b5a53;
-              letter-spacing: 0.08em;
-              margin-bottom: 12px;
-              text-transform: uppercase;
-            }
-            .bogo-vertical-scroll {
-              display: flex;
-              flex-direction: column;
-              gap: 10px;
-              max-height: 400px;
-              overflow-y: auto;
-              padding-right: 10px;
-              scrollbar-width: thin;
-              scrollbar-color: #5b5a53 #f1efea;
-            }
-            .bogo-inline-card {
-              display: flex;
-              align-items: center;
-              gap: 15px;
-              background: #fff;
-              border: 1px solid #d1d1cf;
-              border-radius: 12px;
-              padding: 10px;
-              cursor: pointer;
-              transition: all 0.2s ease;
-            }
-            .bogo-inline-card:hover, .bogo-inline-card.selected {
-              border-color: #5b5a53;
-              background: #fdfdfb;
-            }
-            .bogo-inline-card img {
-              width: 50px;
-              height: 50px;
-              object-fit: contain;
-              border-radius: 6px;
-              background: #f9f9f9;
-            }
-            .bogo-inline-info {
-              flex: 1;
-              display: flex;
-              flex-direction: column;
-            }
-            .bogo-inline-name {
-              font-size: 0.85rem;
-              font-weight: 700;
-              color: #333;
-            }
-            .bogo-inline-tag {
-              font-size: 0.65rem;
-              color: #777;
-              text-transform: uppercase;
-            }
-            .bogo-select-indicator {
-              width: 18px;
-              height: 18px;
-              border: 2px solid #d1d1cf;
-              border-radius: 50%;
-              position: relative;
-            }
-            .bogo-inline-card.selected .bogo-select-indicator {
-              border-color: #5b5a53;
-              background: #5b5a53;
-            }
-            .bogo-inline-card.selected .bogo-select-indicator::after {
-              content: '';
-              position: absolute;
-              top: 3px;
-              left: 3px;
-              width: 8px;
-              height: 8px;
-              background: #fff;
-              border-radius: 50%;
-            }
-          </style>
-          
-          <script>
-            function selectBogo(card) {
-              document.querySelectorAll('.bogo-inline-card').forEach(c => c.classList.remove('selected'));
-              card.classList.add('selected');
-              const input = card.querySelector('input[type="radio"]');
-              if(input) input.checked = true;
-            }
-          </script>
-          </div>
 
           <div class="product-actions-grid">
             <button class="buy-button add-to-cart-btn" style="white-space: nowrap;">ADD TO CART - <span>Rs. 2,660</span></button>
-            <button class="buy-button bogo-btn" id="openBogo">BUY 1 GET 1 FREE</button>
+            
           </div>
           
           <style>
@@ -2653,226 +2396,7 @@ a { color: inherit; text-decoration: none; }
               }
             }
 
-            /* BOGO Drawer Styling */
-            .bogo-drawer {
-              position: fixed;
-              bottom: 0;
-              left: 0;
-              right: 0;
-              background: #fff;
-              z-index: 3000;
-              border-radius: 24px 24px 0 0;
-              box-shadow: 0 -10px 40px rgba(0,0,0,0.15);
-              padding: 30px 20px;
-              transform: translateY(100%);
-              transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-              max-height: 80vh;
-              overflow-y: auto;
-            }
-            .bogo-drawer.open {
-              transform: translateY(0);
-            }
-            .bogo-overlay {
-              position: fixed;
-              top: 0;
-              left: 0;
-              right: 0;
-              bottom: 0;
-              background: rgba(0,0,0,0.4);
-              z-index: 2900;
-              display: none;
-            }
-            .bogo-overlay.open {
-              display: block;
-            }
-            .bogo-header {
-              display: flex;
-              justify-content: space-between;
-              align-items: center;
-              margin-bottom: 20px;
-            }
-            .bogo-title {
-              font-size: 1.2rem;
-              font-weight: 800;
-              color: #002d5f;
-              letter-spacing: -0.02em;
-            }
-            .bogo-close {
-              cursor: pointer;
-              font-weight: 800;
-              font-size: 1.5rem;
-              color: #5b5a53;
-            }
-            .bogo-scroll-area {
-              display: flex;
-              gap: 16px;
-              overflow-x: auto;
-              padding-bottom: 10px;
-              scrollbar-width: thin;
-            }
-            .bogo-card {
-              flex: 0 0 200px;
-              background: #f1efea;
-              border-radius: 12px;
-              padding: 12px;
-              display: flex;
-              flex-direction: column;
-              gap: 8px;
-              cursor: pointer;
-              border: 2px solid transparent;
-            }
-            .bogo-card:hover {
-              border-color: #002d5f;
-            }
-            .bogo-card img {
-              width: 100%;
-              height: 140px;
-              object-fit: contain;
-              background: #fff;
-              border-radius: 8px;
-            }
-            .bogo-product-name {
-              font-size: 0.85rem;
-              font-weight: 700;
-              color: #333;
-            }
-            .bogo-add-btn {
-              background: #002d5f;
-              color: #fff;
-              border: none;
-              padding: 6px;
-              border-radius: 6px;
-              font-size: 0.75rem;
-              font-weight: 600;
-            }
-          </style>
-
-          <div class="bogo-overlay" id="bogoOverlay"></div>
-          <div class="bogo-drawer" id="bogoDrawer">
-            <div class="bogo-header">
-              <span class="bogo-title">Select Your Free Product</span>
-              <span class="bogo-close" id="closeBogo">&times;</span>
-            </div>
-            <div class="bogo-scroll-area">
-              <!-- Cards will be populated dynamically or via migration -->
-
-              <div class="bogo-card">
-                <img src="{{ "toner1.jpeg" | asset_url }}" alt="Centella Night Cream">
-                <span class="bogo-product-name">Centella Night Cream</span>
-                <button class="bogo-add-btn">Select</button>
-              </div>
-
-              <div class="bogo-card">
-                <img src="{{ "moisturizer1.jpeg" | asset_url }}" alt="Centella Moisturizer">
-                <span class="bogo-product-name">Centella Moisturizer</span>
-                <button class="bogo-add-btn">Select</button>
-              </div>
-
-              <div class="bogo-card">
-                <img src="{{ "facewash1.jpeg" | asset_url }}" alt="Centella Face Wash">
-                <span class="bogo-product-name">Centella Face Wash</span>
-                <button class="bogo-add-btn">Select</button>
-              </div>
-
-              <div class="bogo-card">
-                <img src="{{ "glowserum-1.png" | asset_url }}" alt="Centella Serum">
-                <span class="bogo-product-name">Centella Serum</span>
-                <button class="bogo-add-btn">Select</button>
-              </div>
-
-              <div class="bogo-card">
-                <img src="{{ "v2-sunscreen-1.jpeg" | asset_url }}" alt="Centella Sunscreen SPF60+">
-                <span class="bogo-product-name">Centella Sunscreen SPF60+</span>
-                <button class="bogo-add-btn">Select</button>
-              </div>
-
-              <div class="bogo-card">
-                <img src="{{ "toner1.jpeg" | asset_url }}" alt="Skin Refining Toner">
-                <span class="bogo-product-name">Skin Refining Toner</span>
-                <button class="bogo-add-btn">Select</button>
-              </div>
-
-              <div class="bogo-card">
-                <img src="{{ "antifrizz-1.jpg" | asset_url }}" alt="Anti Frizz Keratin Serum">
-                <span class="bogo-product-name">Anti Frizz Keratin Serum</span>
-                <button class="bogo-add-btn">Select</button>
-              </div>
-
-              <div class="bogo-card">
-                <img src="{{ "v2-hair-1.jpeg" | asset_url }}" alt="Floral Blossom Hair Mist">
-                <span class="bogo-product-name">Floral Blossom Hair Mist</span>
-                <button class="bogo-add-btn">Select</button>
-              </div>
-
-              <div class="bogo-card">
-                <img src="{{ "toner1.jpeg" | asset_url }}" alt="Elaris7 Glycolic Renewal Toner">
-                <span class="bogo-product-name">Elaris7 Glycolic Renewal Toner</span>
-                <button class="bogo-add-btn">Select</button>
-              </div>
-
-              <div class="bogo-card">
-                <img src="{{ "TranexamicSerum1.jpg" | asset_url }}" alt="Elaris7 Tranexamic Brightening Serum">
-                <span class="bogo-product-name">Elaris7 Tranexamic Brightening Serum</span>
-                <button class="bogo-add-btn">Select</button>
-              </div>
-
-              <div class="bogo-card">
-                <img src="{{ "v2-antiacne-1.jpeg" | asset_url }}" alt="Elaris7 Anti-Acne Clarifying Serum">
-                <span class="bogo-product-name">Elaris7 Anti-Acne Clarifying Serum</span>
-                <button class="bogo-add-btn">Select</button>
-              </div>
-
-              <div class="bogo-card">
-                <img src="{{ "glutathione-1.jpeg" | asset_url }}" alt="Elaris7 Brightening Repair Cream">
-                <span class="bogo-product-name">Elaris7 Brightening Repair Cream</span>
-                <button class="bogo-add-btn">Select</button>
-              </div>
-
-              <div class="bogo-card">
-                <img src="{{ "rc-gal-1.jpg" | asset_url }}" alt="Oil-to-Foam Cleanser">
-                <span class="bogo-product-name">Oil-to-Foam Cleanser</span>
-                <button class="bogo-add-btn">Select</button>
-              </div>
-
-              <div class="bogo-card">
-                <img src="{{ "moisturizer1.jpeg" | asset_url }}" alt="Hydra Burst Moisturizer">
-                <span class="bogo-product-name">Hydra Burst Moisturizer</span>
-                <button class="bogo-add-btn">Select</button>
-              </div>
-
-              <div class="bogo-card">
-                <img src="{{ "toner1.jpeg" | asset_url }}" alt="Skin Refining Toner">
-                <span class="bogo-product-name">Skin Refining Toner</span>
-                <button class="bogo-add-btn">Select</button>
-              </div>
-
-              <div class="bogo-card">
-                <img src="{{ "toner1.jpeg" | asset_url }}" alt="Renewal Toner">
-                <span class="bogo-product-name">Renewal Toner</span>
-                <button class="bogo-add-btn">Select</button>
-              </div>
-          </div>
-        </div>
-
-          <script>
-            const openBogo = document.getElementById('openBogo');
-            const closeBogo = document.getElementById('closeBogo');
-            const bogoDrawer = document.getElementById('bogoDrawer');
-            const bogoOverlay = document.getElementById('bogoOverlay');
-
-            openBogo.addEventListener('click', () => {
-              bogoDrawer.classList.add('open');
-              bogoOverlay.classList.add('open');
-            });
-
-            const hideBogo = () => {
-              bogoDrawer.classList.remove('open');
-              bogoOverlay.classList.remove('open');
-            };
-
-            closeBogo.addEventListener('click', hideBogo);
-            bogoOverlay.addEventListener('click', hideBogo);
-          </script>
+            
           
 
 
@@ -2923,7 +2447,14 @@ a { color: inherit; text-decoration: none; }
                   <li>Enhances natural radiance and glow</li>
                   <li>Balances hydration while refining the skin</li>
                   <li>Helps improve uneven tone and dullness</li>
-                  <li>Leaves skin feeling fresh, renewed, and refined</li></ul></div>
+                  <li>Leaves skin feeling fresh, renewed, and refined</li>
+                  <li>Provides 72-hour hydration with a moisture-locking formula</li>
+                  <li>Supports collagen to improve skin firmness and elasticity</li>
+                  <li>Helps fade dark spots, acne scars, and discoloration</li>
+                  <li>Repairs and strengthens the skin barrier overnight</li>
+                  <li>Delivers a soft, smooth, poreless finish by morning</li>
+                  <li>Reduces the appearance of fine lines and wrinkles</li>
+                  <li>Promotes a more even-toned, youthful-looking complexion over time</li></ul></div>
             </details>
             <details class="accordion-item">
               <summary><span>APPLICATION</span><span>+</span></summary><div class="accordion-content"><p style="margin:0;">After cleansing, apply the toner using a cotton pad or fingertips. Gently sweep or press onto face and neck, avoiding the eye area. Allow it to absorb fully before applying serum and moisturizer. Use sunscreen during the day.</p></div>
@@ -2932,7 +2463,9 @@ a { color: inherit; text-decoration: none; }
               <summary><span>TRICK</span><span>+</span></summary><div class="accordion-content"><ul>                  <li>Start with 2–3 times a week and increase gradually</li>
                   <li>Apply at night for enhanced skin renewal</li>
                   <li>Always follow with hydration to maintain balance</li>
-                  <li>Use sunscreen daily to protect renewed skin</li></ul></div>
+                  <li>Use sunscreen daily to protect renewed skin</li>
+                  <li>Combine with your serum for enhanced repair benefits</li>
+                  <li>Use consistently to see a reduction in fine lines and dark spots</li></ul></div>
             </details>
             <details class="accordion-item">
               <summary><span>KEY INGREDIENTS</span><span>+</span></summary><div class="accordion-content"><ul>                  <li>Glycolic Acid (7%)</li>
@@ -2993,7 +2526,7 @@ a { color: inherit; text-decoration: none; }
         </div>
       </div>
       <div class="breakdown-image">
-        <img src="{{ "toner-before-after.jpg" | asset_url }}" alt="Plate View">
+        <img src="./assets/plate.jpeg" alt="Plate View">
       </div>
     </section>
 
@@ -3001,7 +2534,7 @@ a { color: inherit; text-decoration: none; }
     <!-- What's Inside Section -->
     <section class="whats-inside-section">
       <div class="wi-image-col">
-        <img src="{{ "toner-whats-inside.jpg" | asset_url }}" alt="Spoon View" class="wi-image">
+        <img src="./assets/spoon.jpeg" alt="Spoon View" class="wi-image">
         <button class="wi-full-ingredients-btn">FULL INGREDIENTS LIST</button>
       </div>
       <div class="wi-content-col">
@@ -3031,7 +2564,7 @@ a { color: inherit; text-decoration: none; }
       <div class="spread-content">
         <span class="spread-label">SPREAD IT ON FOR:</span>
         <h2 class="spread-heading">surface renewal</h2>
-        <h2 class="spread-heading">overnight hydration</h2>
+        <h2 class="spread-heading">clearer pores</h2>
         <h2 class="spread-heading spread-green">radiant glow</h2>
       </div>
       <div class="spread-image-col">
@@ -3045,17 +2578,17 @@ a { color: inherit; text-decoration: none; }
       <div class="stats-content">
         
         <div class="stat-item">
-          <div class="stat-pct">99%</div>
+          <div class="stat-pct">97%</div>
           <div class="stat-desc">SAID THEIR SKIN FELT SMOOTHER + MORE REFINED</div>
         </div>
         
         <div class="stat-item">
-          <div class="stat-pct">98%</div>
+          <div class="stat-pct">95%</div>
           <div class="stat-desc">SAID THEIR SKIN LOOKED BRIGHTER + CLEARER</div>
         </div>
         
         <div class="stat-item">
-          <div class="stat-pct">97%</div>
+          <div class="stat-pct">94%</div>
           <div class="stat-desc">SAID THEIR PORES FELT CLEANER + LESS CONGESTED</div>
         </div>
         
@@ -3080,6 +2613,7 @@ a { color: inherit; text-decoration: none; }
         <h2 class="faq-title">FAQ</h2>
         
         <div class="faq-accordion">
+
           <div class="faq-item">
             <div class="faq-qa">
               <span class="faq-question">Can I use this toner every day?</span>
@@ -3087,6 +2621,7 @@ a { color: inherit; text-decoration: none; }
             </div>
             <span class="faq-icon">+</span>
           </div>
+
           <div class="faq-item">
             <div class="faq-qa">
               <span class="faq-question">Is it suitable for sensitive skin?</span>
@@ -3094,6 +2629,7 @@ a { color: inherit; text-decoration: none; }
             </div>
             <span class="faq-icon">+</span>
           </div>
+
           <div class="faq-item">
             <div class="faq-qa">
               <span class="faq-question">Will it help with acne and clogged pores?</span>
@@ -3101,6 +2637,7 @@ a { color: inherit; text-decoration: none; }
             </div>
             <span class="faq-icon">+</span>
           </div>
+
           <div class="faq-item">
             <div class="faq-qa">
               <span class="faq-question">Can I use it with other active ingredients?</span>
@@ -3108,6 +2645,7 @@ a { color: inherit; text-decoration: none; }
             </div>
             <span class="faq-icon">+</span>
           </div>
+
           <div class="faq-item">
             <div class="faq-qa">
               <span class="faq-question">Do I need to use sunscreen with this?</span>
@@ -3118,7 +2656,7 @@ a { color: inherit; text-decoration: none; }
         </div>
       </div>
       <div class="faq-image-col">
-        <img src="{{ "faq.jpeg" | asset_url }}" alt="FAQ View">
+        <img src="./assets/faq.jpeg" alt="FAQ View">
       </div>
     </section>
 
@@ -3134,21 +2672,19 @@ a { color: inherit; text-decoration: none; }
 
       <hr class="rv-divider">
 
+      
       <div class="review-card">
         <div class="rv-sidebar">
           <div class="rv-author">Mehwish</div>
           <div class="rv-verified">Verified Buyer</div>
         </div>
         <div class="rv-main">
-          <div class="rv-main-header">
-            <div class="rv-stars">★★★★★</div>
-          </div>
+          <div class="rv-main-header"><div class="rv-stars">★★★★★</div></div>
           <div class="rv-title">Verified Selection</div>
           <div class="rv-body">"My skin feels noticeably smoother and more polished after using this toner. It really helps with dullness."</div>
         </div>
       </div>
-
-      <hr class="rv-divider">
+<hr class="rv-divider">
 
       <div class="review-card">
         <div class="rv-sidebar">
@@ -3156,15 +2692,12 @@ a { color: inherit; text-decoration: none; }
           <div class="rv-verified">Verified Buyer</div>
         </div>
         <div class="rv-main">
-          <div class="rv-main-header">
-            <div class="rv-stars">★★★★★</div>
-          </div>
+          <div class="rv-main-header"><div class="rv-stars">★★★★★</div></div>
           <div class="rv-title">Verified Selection</div>
           <div class="rv-body">"I’ve seen a big improvement in my skin texture and clarity. My face looks fresher and more even."</div>
         </div>
       </div>
-
-      <hr class="rv-divider">
+<hr class="rv-divider">
 
       <div class="review-card">
         <div class="rv-sidebar">
@@ -3172,15 +2705,12 @@ a { color: inherit; text-decoration: none; }
           <div class="rv-verified">Verified Buyer</div>
         </div>
         <div class="rv-main">
-          <div class="rv-main-header">
-            <div class="rv-stars">★★★★★</div>
-          </div>
+          <div class="rv-main-header"><div class="rv-stars">★★★★★</div></div>
           <div class="rv-title">Verified Selection</div>
           <div class="rv-body">"It gently exfoliates without making my skin feel dry. My skin looks brighter and more refined now."</div>
         </div>
       </div>
-
-      <hr class="rv-divider">
+<hr class="rv-divider">
 
       <div class="review-card">
         <div class="rv-sidebar">
@@ -3188,15 +2718,12 @@ a { color: inherit; text-decoration: none; }
           <div class="rv-verified">Verified Buyer</div>
         </div>
         <div class="rv-main">
-          <div class="rv-main-header">
-            <div class="rv-stars">★★★★★</div>
-          </div>
+          <div class="rv-main-header"><div class="rv-stars">★★★★★</div></div>
           <div class="rv-title">Verified Selection</div>
           <div class="rv-body">"My pores feel cleaner and my skin looks healthier overall. It’s become an important part of my routine."</div>
         </div>
       </div>
-
-      <hr class="rv-divider">
+<hr class="rv-divider">
 
       <div class="review-card">
         <div class="rv-sidebar">
@@ -3204,17 +2731,11 @@ a { color: inherit; text-decoration: none; }
           <div class="rv-verified">Verified Buyer</div>
         </div>
         <div class="rv-main">
-          <div class="rv-main-header">
-            <div class="rv-stars">★★★★★</div>
-          </div>
+          <div class="rv-main-header"><div class="rv-stars">★★★★★</div></div>
           <div class="rv-title">Verified Selection</div>
           <div class="rv-body">"After consistent use, my skin feels softer and looks more radiant. It has helped reduce rough texture."</div>
         </div>
       </div>
-
-      <hr class="rv-divider" style="margin-bottom: 40px;">
-
-
     </section>
 
     <!-- 2. Product Selection Carousel -->
@@ -3231,12 +2752,12 @@ a { color: inherit; text-decoration: none; }
       <div class="product-collection" id="product-slider">
         <div class="card card-rhode" data-category="skincare">
           <a href="/products/night-cream" class="card-link-wrapper">
-            <img src="{{ "night-cream-hover.jpg" | asset_url }}" class="card-hover-bg" alt="Centella Night Cream Hover">
+            <img src="{{ "night-cream-suite.jpeg" | asset_url }}" class="card-hover-bg" alt="Centella Night Cream">
             <div class="card-rhode-top">
-              <span class="card-brand-label">NIGHT CREAM</span>
+              <span class="card-brand-label">ELARIS</span>
             </div>
             <div class="card-rhode-image">
-              <img src="{{ "toner1.jpeg" | asset_url }}" alt="Centella Night Cream" class="product-main-img">
+              <img src="{{ "night-cream-suite.jpeg" | asset_url }}" alt="Centella Night Cream" class="product-main-img">
             </div>
             <div class="card-rhode-footer">
               <div class="card-meta">
@@ -3245,17 +2766,14 @@ a { color: inherit; text-decoration: none; }
               </div>
               <span class="btn-rhode-buy-pill">BUY - RS. 2,660</span>
             </div>
-            <div class="buy-button-hover">
-                BUY Centella Night Cream - RS. 2,660
-            </div>
           </a>
         </div>
 
         <div class="card card-rhode" data-category="skincare">
           <a href="/products/centella-moisturizer" class="card-link-wrapper">
-            <img src="{{ "moisturizer2.jpg" | asset_url }}" class="card-hover-bg" alt="Centella Moisturizer Hover">
+            <img src="{{ "moisturizer1.jpeg" | asset_url }}" class="card-hover-bg" alt="Centella Moisturizer">
             <div class="card-rhode-top">
-              <span class="card-brand-label">Daily Dew</span>
+              <span class="card-brand-label">ELARIS</span>
             </div>
             <div class="card-rhode-image">
               <img src="{{ "moisturizer1.jpeg" | asset_url }}" alt="Centella Moisturizer" class="product-main-img">
@@ -3267,17 +2785,14 @@ a { color: inherit; text-decoration: none; }
               </div>
               <span class="btn-rhode-buy-pill">BUY - RS. 1,800</span>
             </div>
-            <div class="buy-button-hover">
-                BUY Centella Moisturizer - RS. 1,800
-            </div>
           </a>
         </div>
 
         <div class="card card-rhode" data-category="skincare">
           <a href="/products/face-wash" class="card-link-wrapper">
-            <img src="{{ "facewash-shot.png" | asset_url }}" class="card-hover-bg" alt="Centella Face Wash Hover">
+            <img src="{{ "facewash1.jpeg" | asset_url }}" class="card-hover-bg" alt="Centella Face Wash">
             <div class="card-rhode-top">
-              <span class="card-brand-label">cleanser</span>
+              <span class="card-brand-label">ELARIS</span>
             </div>
             <div class="card-rhode-image">
               <img src="{{ "facewash1.jpeg" | asset_url }}" alt="Centella Face Wash" class="product-main-img">
@@ -3289,17 +2804,14 @@ a { color: inherit; text-decoration: none; }
               </div>
               <span class="btn-rhode-buy-pill">BUY - RS. 1,800</span>
             </div>
-            <div class="buy-button-hover">
-                BUY Centella Face Wash - RS. 1,800
-            </div>
           </a>
         </div>
 
-        <div class="card card-rhode" data-category="serum">
+        <div class="card card-rhode" data-category="skincare">
           <a href="/products/glow-serum" class="card-link-wrapper">
-            <img src="{{ "glow-serum-hover.jpg" | asset_url }}" class="card-hover-bg" alt="Centella Serum Hover">
+            <img src="{{ "glowserum-1.png" | asset_url }}" class="card-hover-bg" alt="Centella Serum">
             <div class="card-rhode-top">
-              <span class="card-brand-label">serum</span>
+              <span class="card-brand-label">ELARIS</span>
             </div>
             <div class="card-rhode-image">
               <img src="{{ "glowserum-1.png" | asset_url }}" alt="Centella Serum" class="product-main-img">
@@ -3311,17 +2823,14 @@ a { color: inherit; text-decoration: none; }
               </div>
               <span class="btn-rhode-buy-pill">BUY - RS. 2,200</span>
             </div>
-            <div class="buy-button-hover">
-                BUY Centella Serum - RS. 2,200
-            </div>
           </a>
         </div>
 
         <div class="card card-rhode" data-category="skincare">
           <a href="/products/sunscreen-v2" class="card-link-wrapper">
-            <img src="{{ "v2-sunscreen-2.jpg" | asset_url }}" class="card-hover-bg" alt="Centella Sunscreen SPF60+ Hover">
+            <img src="{{ "v2-sunscreen-1.jpeg" | asset_url }}" class="card-hover-bg" alt="Centella Sunscreen SPF60+">
             <div class="card-rhode-top">
-              <span class="card-brand-label">sunscreen</span>
+              <span class="card-brand-label">ELARIS</span>
             </div>
             <div class="card-rhode-image">
               <img src="{{ "v2-sunscreen-1.jpeg" | asset_url }}" alt="Centella Sunscreen SPF60+" class="product-main-img">
@@ -3333,17 +2842,14 @@ a { color: inherit; text-decoration: none; }
               </div>
               <span class="btn-rhode-buy-pill">BUY - RS. 2,500</span>
             </div>
-            <div class="buy-button-hover">
-                BUY Centella Sunscreen SPF60+ - RS. 2,500
-            </div>
           </a>
         </div>
 
         <div class="card card-rhode" data-category="skincare">
           <a href="/products/skin-refining-toner" class="card-link-wrapper">
-            <img src="{{ "toner2.jpg" | asset_url }}" class="card-hover-bg" alt="Skin Refining Toner Hover">
+            <img src="{{ "toner1.jpeg" | asset_url }}" class="card-hover-bg" alt="Skin Refining Toner">
             <div class="card-rhode-top">
-              <span class="card-brand-label">Clarity Reset</span>
+              <span class="card-brand-label">ELARIS</span>
             </div>
             <div class="card-rhode-image">
               <img src="{{ "toner1.jpeg" | asset_url }}" alt="Skin Refining Toner" class="product-main-img">
@@ -3355,17 +2861,14 @@ a { color: inherit; text-decoration: none; }
               </div>
               <span class="btn-rhode-buy-pill">BUY - RS. 2,670</span>
             </div>
-            <div class="buy-button-hover">
-                BUY Skin Refining Toner - RS. 2,670
-            </div>
           </a>
         </div>
 
-        <div class="card card-rhode" data-category="serum">
+        <div class="card card-rhode" data-category="skincare">
           <a href="/products/keratin-serum-v2" class="card-link-wrapper">
-            <img src="{{ "keratin-serum-hover.jpg" | asset_url }}" class="card-hover-bg" alt="Anti Frizz Keratin Serum Hover">
+            <img src="{{ "antifrizz-1.jpg" | asset_url }}" class="card-hover-bg" alt="Anti Frizz Keratin Serum">
             <div class="card-rhode-top">
-              <span class="card-brand-label">haircare</span>
+              <span class="card-brand-label">ELARIS</span>
             </div>
             <div class="card-rhode-image">
               <img src="{{ "antifrizz-1.jpg" | asset_url }}" alt="Anti Frizz Keratin Serum" class="product-main-img">
@@ -3377,17 +2880,14 @@ a { color: inherit; text-decoration: none; }
               </div>
               <span class="btn-rhode-buy-pill">BUY - RS. 2,660</span>
             </div>
-            <div class="buy-button-hover">
-                BUY Anti Frizz Keratin Serum - RS. 2,660
-            </div>
           </a>
         </div>
 
         <div class="card card-rhode" data-category="skincare">
           <a href="/products/hair-mist" class="card-link-wrapper">
-            <img src="{{ "v2-hair-2.jpg" | asset_url }}" class="card-hover-bg" alt="Floral Blossom Hair Mist Hover">
+            <img src="{{ "v2-hair-1.jpeg" | asset_url }}" class="card-hover-bg" alt="Floral Blossom Hair Mist">
             <div class="card-rhode-top">
-              <span class="card-brand-label">Fresh Floral Touch</span>
+              <span class="card-brand-label">ELARIS</span>
             </div>
             <div class="card-rhode-image">
               <img src="{{ "v2-hair-1.jpeg" | asset_url }}" alt="Floral Blossom Hair Mist" class="product-main-img">
@@ -3399,17 +2899,14 @@ a { color: inherit; text-decoration: none; }
               </div>
               <span class="btn-rhode-buy-pill">BUY - RS. 2,660</span>
             </div>
-            <div class="buy-button-hover">
-                BUY Floral Blossom Hair Mist - RS. 2,660
-            </div>
           </a>
         </div>
 
         <div class="card card-rhode" data-category="skincare">
           <a href="/products/aha-exfoliant" class="card-link-wrapper">
-            <img src="{{ "toner-meet-2.jpg" | asset_url }}" class="card-hover-bg" alt="Elaris7 Glycolic Renewal Toner Hover">
+            <img src="{{ "toner1.jpeg" | asset_url }}" class="card-hover-bg" alt="Elaris7 Glycolic Renewal Toner">
             <div class="card-rhode-top">
-              <span class="card-brand-label">Renew & Refine</span>
+              <span class="card-brand-label">ELARIS</span>
             </div>
             <div class="card-rhode-image">
               <img src="{{ "toner1.jpeg" | asset_url }}" alt="Elaris7 Glycolic Renewal Toner" class="product-main-img">
@@ -3421,17 +2918,14 @@ a { color: inherit; text-decoration: none; }
               </div>
               <span class="btn-rhode-buy-pill">BUY - RS. 2,660</span>
             </div>
-            <div class="buy-button-hover">
-                BUY Elaris7 Glycolic Renewal Toner - RS. 2,660
-            </div>
           </a>
         </div>
 
-        <div class="card card-rhode" data-category="serum">
+        <div class="card card-rhode" data-category="skincare">
           <a href="/products/tranexamic-serum-v2" class="card-link-wrapper">
-            <img src="{{ "tranexamic-meet-1.jpg" | asset_url }}" class="card-hover-bg" alt="Elaris7 Tranexamic Brightening Serum Hover">
+            <img src="{{ "TranexamicSerum1.jpg" | asset_url }}" class="card-hover-bg" alt="Elaris7 Tranexamic Brightening Serum">
             <div class="card-rhode-top">
-              <span class="card-brand-label">serum</span>
+              <span class="card-brand-label">ELARIS</span>
             </div>
             <div class="card-rhode-image">
               <img src="{{ "TranexamicSerum1.jpg" | asset_url }}" alt="Elaris7 Tranexamic Brightening Serum" class="product-main-img">
@@ -3443,17 +2937,14 @@ a { color: inherit; text-decoration: none; }
               </div>
               <span class="btn-rhode-buy-pill">BUY - RS. 2,400</span>
             </div>
-            <div class="buy-button-hover">
-                BUY Elaris7 Tranexamic Brightening Serum - RS. 2,400
-            </div>
           </a>
         </div>
 
-        <div class="card card-rhode" data-category="serum">
+        <div class="card card-rhode" data-category="skincare">
           <a href="/products/anti-acne" class="card-link-wrapper">
-            <img src="{{ "v2-antiacne-2.jpg" | asset_url }}" class="card-hover-bg" alt="Elaris7 Anti-Acne Clarifying Serum Hover">
+            <img src="{{ "v2-antiacne-1.jpeg" | asset_url }}" class="card-hover-bg" alt="Elaris7 Anti-Acne Clarifying Serum">
             <div class="card-rhode-top">
-              <span class="card-brand-label">Clear & Control</span>
+              <span class="card-brand-label">ELARIS</span>
             </div>
             <div class="card-rhode-image">
               <img src="{{ "v2-antiacne-1.jpeg" | asset_url }}" alt="Elaris7 Anti-Acne Clarifying Serum" class="product-main-img">
@@ -3465,17 +2956,14 @@ a { color: inherit; text-decoration: none; }
               </div>
               <span class="btn-rhode-buy-pill">BUY - RS. 2,660</span>
             </div>
-            <div class="buy-button-hover">
-                BUY Elaris7 Anti-Acne Clarifying Serum - RS. 2,660
-            </div>
           </a>
         </div>
 
         <div class="card card-rhode" data-category="skincare">
           <a href="/products/glutathione-cream" class="card-link-wrapper">
-            <img src="{{ "deep-hydration-100.jpg" | asset_url }}" class="card-hover-bg" alt="Elaris7 Brightening Repair Cream Hover">
+            <img src="{{ "glutathione-1.jpeg" | asset_url }}" class="card-hover-bg" alt="Elaris7 Brightening Repair Cream">
             <div class="card-rhode-top">
-              <span class="card-brand-label">repair</span>
+              <span class="card-brand-label">ELARIS</span>
             </div>
             <div class="card-rhode-image">
               <img src="{{ "glutathione-1.jpeg" | asset_url }}" alt="Elaris7 Brightening Repair Cream" class="product-main-img">
@@ -3487,17 +2975,14 @@ a { color: inherit; text-decoration: none; }
               </div>
               <span class="btn-rhode-buy-pill">BUY - RS. 2,660</span>
             </div>
-            <div class="buy-button-hover">
-                BUY Elaris7 Brightening Repair Cream - RS. 2,660
-            </div>
           </a>
         </div>
 
         <div class="card card-rhode" data-category="skincare">
           <a href="/products/renewal-cleanser" class="card-link-wrapper">
-            <img src="{{ "rc-gal-2.jpg" | asset_url }}" class="card-hover-bg" alt="Oil-to-Foam Cleanser Hover">
+            <img src="{{ "rc-gal-1.jpg" | asset_url }}" class="card-hover-bg" alt="Oil-to-Foam Cleanser">
             <div class="card-rhode-top">
-              <span class="card-brand-label">Melt & Cleanse</span>
+              <span class="card-brand-label">ELARIS</span>
             </div>
             <div class="card-rhode-image">
               <img src="{{ "rc-gal-1.jpg" | asset_url }}" alt="Oil-to-Foam Cleanser" class="product-main-img">
@@ -3509,17 +2994,14 @@ a { color: inherit; text-decoration: none; }
               </div>
               <span class="btn-rhode-buy-pill">BUY - RS. 2,850</span>
             </div>
-            <div class="buy-button-hover">
-                BUY Oil-to-Foam Cleanser - RS. 2,850
-            </div>
           </a>
         </div>
 
         <div class="card card-rhode" data-category="skincare">
           <a href="/products/e7-korean-glass-skin-moisturizer" class="card-link-wrapper">
-            <img src="{{ "moisturizer2.jpg" | asset_url }}" class="card-hover-bg" alt="Hydra Burst Moisturizer Hover">
+            <img src="{{ "moisturizer1.jpeg" | asset_url }}" class="card-hover-bg" alt="Hydra Burst Moisturizer">
             <div class="card-rhode-top">
-              <span class="card-brand-label">Glass Skin Finish</span>
+              <span class="card-brand-label">ELARIS</span>
             </div>
             <div class="card-rhode-image">
               <img src="{{ "moisturizer1.jpeg" | asset_url }}" alt="Hydra Burst Moisturizer" class="product-main-img">
@@ -3531,17 +3013,14 @@ a { color: inherit; text-decoration: none; }
               </div>
               <span class="btn-rhode-buy-pill">BUY - RS. 2,499</span>
             </div>
-            <div class="buy-button-hover">
-                BUY Hydra Burst Moisturizer - RS. 2,499
-            </div>
           </a>
         </div>
 
         <div class="card card-rhode" data-category="skincare">
           <a href="/products/renewal-toner" class="card-link-wrapper">
-            <img src="{{ "toner2.jpg" | asset_url }}" class="card-hover-bg" alt="Skin Refining Toner Hover">
+            <img src="{{ "toner1.jpeg" | asset_url }}" class="card-hover-bg" alt="Skin Refining Toner">
             <div class="card-rhode-top">
-              <span class="card-brand-label">Clarity Reset</span>
+              <span class="card-brand-label">ELARIS</span>
             </div>
             <div class="card-rhode-image">
               <img src="{{ "toner1.jpeg" | asset_url }}" alt="Skin Refining Toner" class="product-main-img">
@@ -3553,17 +3032,14 @@ a { color: inherit; text-decoration: none; }
               </div>
               <span class="btn-rhode-buy-pill">BUY - RS. 2,670</span>
             </div>
-            <div class="buy-button-hover">
-                BUY Skin Refining Toner - RS. 2,670
-            </div>
           </a>
         </div>
 
         <div class="card card-rhode" data-category="skincare">
           <a href="/products/centella-skin-toner-copy" class="card-link-wrapper">
-            <img src="{{ "toner2.jpg" | asset_url }}" class="card-hover-bg" alt="Renewal Toner Hover">
+            <img src="{{ "toner1.jpeg" | asset_url }}" class="card-hover-bg" alt="Renewal Toner">
             <div class="card-rhode-top">
-              <span class="card-brand-label">Pore Refining</span>
+              <span class="card-brand-label">ELARIS</span>
             </div>
             <div class="card-rhode-image">
               <img src="{{ "toner1.jpeg" | asset_url }}" alt="Renewal Toner" class="product-main-img">
@@ -3574,9 +3050,6 @@ a { color: inherit; text-decoration: none; }
                 <h3 class="card-name">Renewal Toner</h3>
               </div>
               <span class="btn-rhode-buy-pill">BUY - RS. 2,670</span>
-            </div>
-            <div class="buy-button-hover">
-                BUY Renewal Toner - RS. 2,670
             </div>
           </a>
         </div></div>

@@ -12,11 +12,22 @@ if (!fs.existsSync(templatesDir)) {
 const masterHtml = fs.readFileSync(sourceFile, 'utf8');
 const products = JSON.parse(fs.readFileSync(jsonDataPath, 'utf8'));
 
-// First, clean up the master template for the new layout
+// ----------------------------------------------------------------------------
+// CLEAN MASTER TEMPLATE
+// ----------------------------------------------------------------------------
 let masterCleaned = masterHtml;
 
-// 1. Remove the original size selector block and prepare BOGO Placeholder
-const sizeSelectorPattern = /<div class="product-options">[\s\S]*?<\/div>\s*<\/div>/;
+// 1. Remove the original BOGO Drawer and its scripts to prevent duplication
+const drawerFullBlockPattern = /\/\* BOGO Drawer Styling \*\/[\s\S]*?<div class="bogo-overlay" id="bogoOverlay"><\/div>[\s\S]*?<div class="bogo-drawer" id="bogoDrawer">[\s\S]*?<\/div>\s*<\/div>[\s\S]*?<script>[\s\S]*?const openBogo = document\.getElementById\('openBogo'\);[\s\S]*?<\/script>/;
+masterCleaned = masterCleaned.replace(drawerFullBlockPattern, '');
+
+// Also remove any existing selectBogo script at the top level to let our injected one take over
+masterCleaned = masterCleaned.replace(/<script>\s*function selectBogo\(card\) {[\s\S]*?}<\s*<\/script>/g, '');
+
+// 2. Prepare BOGO Section Placeholder
+const bogoSectionPattern = /<div class="bogo-inline-section">[\s\S]*?<!-- BOGO_CARDS_PLACEHOLDER -->[\s\S]*?<\/div>[\s\S]*?<\/style>/;
+const fallbackBogoPattern = /<div class="bogo-inline-section">[\s\S]*?<\/style>/;
+
 const bogoReplacement = `<div class="bogo-inline-section">
             <p class="bogo-inline-title">SELECT YOUR FREE PRODUCT</p>
             <div class="bogo-vertical-scroll">
@@ -105,29 +116,21 @@ const bogoReplacement = `<div class="bogo-inline-section">
               background: #fff;
               border-radius: 50%;
             }
-          </style>
-          
-          <script>
-            function selectBogo(card) {
-              document.querySelectorAll('.bogo-inline-card').forEach(c => c.classList.remove('selected'));
-              card.classList.add('selected');
-              const input = card.querySelector('input[type="radio"]');
-              if(input) input.checked = true;
-            }
-          </script>
-          </div>`;
+          </style>`;
 
-const hasBogo = masterCleaned.match(sizeSelectorPattern);
-if (hasBogo) {
-    masterCleaned = masterCleaned.replace(sizeSelectorPattern, bogoReplacement);
+if (masterCleaned.match(bogoSectionPattern)) {
+    masterCleaned = masterCleaned.replace(bogoSectionPattern, bogoReplacement);
+} else {
+    masterCleaned = masterCleaned.replace(fallbackBogoPattern, bogoReplacement);
 }
 
-// 2. Prepare Featured Collection Placeholder
-// We match the container and all its internal cards until the closing section tag.
+// 3. Prepare Featured Collection Placeholder
 const featuredSliderPattern = /<div class="product-collection" id="product-slider">[\s\S]*?<\/div>\s*<\/section>/;
 masterCleaned = masterCleaned.replace(featuredSliderPattern, `<div class="product-collection" id="product-slider"><!-- FEATURED_CARDS_PLACEHOLDER --></div>\n    </section>`);
 
-// Helper to generate handles
+// ----------------------------------------------------------------------------
+// CORE SYNC LOGIC
+// ----------------------------------------------------------------------------
 function getHandle(fileName) {
     return fileName.replace('product.', '').replace('.liquid', '');
 }
@@ -136,12 +139,28 @@ function updateTemplate(p) {
     console.log(`Syncing ${p.File}...`);
     let c = '{% layout none %}\n' + masterCleaned;
 
-    // 2. Generate BOGO Cards (Selector + Drawer)
-    const bogoSelectionHtml = products.map(prod => {
-        const handle = getHandle(prod.File);
-        return `
-              <div class="bogo-inline-card" onclick="selectBogo(this)">
-                <input type="radio" name="free_gift" data-gift-handle="${handle}" style="display:none;">
+    // --- BOGO EXCLUSIVITY ---
+    const bogoHandles = [
+        'glow-serum',
+        'sunscreen-v2',
+        'face-wash',
+        'tranexamic-serum-v2',
+        'anti-acne'
+    ];
+
+    const currentHandle = getHandle(p.File);
+    const isBogoEligible = bogoHandles.includes(currentHandle);
+
+    if (isBogoEligible) {
+        const bogoSelectionHtml = products
+            .filter(prod => bogoHandles.includes(getHandle(prod.File)))
+            .map(prod => {
+                const handle = getHandle(prod.File);
+                const isSelected = handle === currentHandle ? 'selected' : '';
+                const isChecked = handle === currentHandle ? 'checked' : '';
+                return `
+              <div class="bogo-inline-card ${isSelected}" onclick="selectBogo(this)">
+                <input type="radio" name="free_gift" data-gift-handle="${handle}" style="display:none;" ${isChecked}>
                 <img src="{{ "${prod.Images.Hero}" | asset_url }}" alt="${prod.Title}">
                 <div class="bogo-inline-info">
                   <span class="bogo-inline-name">${prod.Title}</span>
@@ -149,71 +168,199 @@ function updateTemplate(p) {
                 </div>
                 <div class="bogo-select-indicator"></div>
               </div>`;
-    }).join('\n');
+            }).join('\n');
 
-    const bogoDrawerHtml = products.map(prod => {
-        return `
-              <div class="bogo-card">
-                <img src="{{ "${prod.Images.Hero}" | asset_url }}" alt="${prod.Title}">
-                <span class="bogo-product-name">${prod.Title}</span>
-                <button class="bogo-add-btn">Select</button>
-              </div>`;
-    }).join('\n');
+        c = c.replace('<!-- BOGO_CARDS_PLACEHOLDER -->', bogoSelectionHtml);
+        
+        // Update the BOGO button behavior
+        c = c.replace(/<button class="buy-button bogo-btn" id="openBogo">[\s\S]*?<\/button>/, `<button class="buy-button bogo-btn" id="bogoAddToCart">BUY 1 GET 1 FREE</button>`);
+        
+        // Inject Add to Cart Logic
+        const bogoScript = `
+          <script>
+            function selectBogo(card) {
+                document.querySelectorAll('.bogo-inline-card').forEach(c => c.classList.remove('selected'));
+                card.classList.add('selected');
+                const input = card.querySelector('input[type="radio"]');
+                if(input) input.checked = true;
+            }
 
-    c = c.replace('<!-- BOGO_CARDS_PLACEHOLDER -->', bogoSelectionHtml);
-    
-    // Replace the drawer content
-    c = c.replace(/<!-- Cards will be populated dynamically or via migration -->[\s\S]*?<\/div>\s*<\/div>\s*<script>/, `<!-- Cards will be populated dynamically or via migration -->\n${bogoDrawerHtml}\n          </div>\n        </div>\n\n          <script>`);
+            const handleToIdMap = {
+                'glow-serum': '{{ all_products["glow-serum"].variants.first.id }}',
+                'sunscreen-v2': '{{ all_products["sunscreen-v2"].variants.first.id }}',
+                'face-wash': '{{ all_products["face-wash"].variants.first.id }}',
+                'tranexamic-serum-v2': '{{ all_products["tranexamic-serum-v2"].variants.first.id }}',
+                'anti-acne': '{{ all_products["anti-acne"].variants.first.id }}'
+            };
 
-    // 1. Asset Image Overrides (Safer Direct Mapping) - DO THIS AFTER BOGO TO PREVENT OVERWRITES
-    if (p.Images) {
-        // We only replace if they ARE NOT already curly-braced (to avoid touching BOGO/Slider)
-        if (p.Images.Hero) c = c.split('src="./assets/nightcream-v3-1.jpeg"').join(`src="{{ "${p.Images.Hero}" | asset_url }}"`);
-        if (p.Images.Breakdown) c = c.split('plate.jpeg').join(p.Images.Breakdown);
-        if (p.Images.WhatsInside) c = c.split('spoon.jpeg').join(p.Images.WhatsInside);
-        if (p.Images.Spread) c = c.split('spread.jpeg').join(p.Images.Spread);
-        if (p.Images.Stats) c = c.split('percentage.jpeg').join(p.Images.Stats);
-        if (p.Images.FAQ) c = c.split('faq.jpeg').join(p.Images.FAQ);
+            document.getElementById('bogoAddToCart')?.addEventListener('click', function() {
+                const selectedGift = document.querySelector('input[name="free_gift"]:checked');
+                if (!selectedGift) {
+                    alert('Please select your free gift first.');
+                    return;
+                }
+                const giftHandle = selectedGift.getAttribute('data-gift-handle');
+                const giftVariantId = handleToIdMap[giftHandle];
+                const mainVariantId = "{{ product.variants.first.id }}";
+                
+                if (!giftVariantId) {
+                    console.error('Variant ID not found for handle:', giftHandle);
+                    return;
+                }
+
+                const items = [
+                    { id: mainVariantId, quantity: 1 },
+                    { id: giftVariantId, quantity: 1 }
+                ];
+
+                fetch('/cart/add.js', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ items: items })
+                })
+                .then(response => response.json())
+                .then(data => { window.location.href = '/cart'; })
+                .catch(error => { alert('Error adding to cart.'); });
+            });
+          </script>`;
+        
+        c = c.replace(/<\/body>/, `${bogoScript}\n</body>`);
+
+    } else {
+        // Remove BOGO for non-eligible
+        c = c.replace(/<div class="bogo-inline-section">[\s\S]*?<\/style>[\s\S]*?<\/div>/, '');
+        c = c.replace(/<button class="buy-button bogo-btn" id="openBogo">[\s\S]*?<\/button>/, '');
+        c = c.replace(/grid-template-columns: 1fr 1fr;/, 'grid-template-columns: 1fr;');
     }
 
-    // 2. Generate Featured Collection Cards (Horizontal Slider)
-    const featuredCardsHtml = products.map(prod => {
+
+    // --- ASSET MAPPING ---
+    if (p.Images) {
+        if (p.Images.Hero) c = c.replaceAll('./assets/night-cream-suite.jpeg', `{{ "${p.Images.Hero}" | asset_url }}`);
+        if (p.Images.Carousel) {
+            c = c.replace('./assets/night-cream-suite.jpeg', `{{ "${p.Images.Carousel[0]}" | asset_url }}`);
+            c = c.replace('./assets/night-cream-swatch.jpeg', `{{ "${p.Images.Carousel[1]}" | asset_url }}`);
+            c = c.replace('./assets/night-cream-lifestyle.jpeg', `{{ "${p.Images.Carousel[2]}" | asset_url }}`);
+            c = c.replace('./assets/night-cream-last.jpeg', `{{ "${p.Images.Carousel[3]}" | asset_url }}`);
+        }
+        if (p.Images.Plate) c = c.replace('./assets/plate.jpeg', `{{ "${p.Images.Plate}" | asset_url }}`);
+        if (p.Images.Spoon) c = c.replace('./assets/spoon.jpeg', `{{ "${p.Images.Spoon}" | asset_url }}`);
+        if (p.Images.Spread) c = c.replace('./assets/spread.jpeg', `{{ "${p.Images.Spread}" | asset_url }}`);
+        if (p.Images.Stats) c = c.replace('./assets/percentage.jpeg', `{{ "${p.Images.Stats}" | asset_url }}`);
+        if (p.Images.FAQ) c = c.replace('./assets/faq.jpeg', `{{ "${p.Images.FAQ}" | asset_url }}`);
+    }
+
+    // --- CONTENT INJECTION ---
+    c = c.replaceAll('Centella<br>Night<br>Cream', p.Title.split(' ').join('<br>'));
+    c = c.replaceAll('Centella Night Cream', p.Title);
+    c = c.replaceAll('Night Renewal', p.Subtitle || '');
+    if (p.Price) c = c.replace('Rs. 2,660', `Rs. ${p.Price}`);
+    if (p.Description) c = c.replace(/An intensive overnight formula[\s\S]*?morning\./, p.Description);
+    if (p.CatchyLine) c = c.replace('Your Overnight Glow Secret', p.CatchyLine);
+
+    if (p.Benefits) {
+        const benHtml = p.Benefits.map(b => `<li>${b}</li>`).join('\n                  ');
+        c = c.replace(/<li>Boosts skin radiance[\s\S]*?<\/li>/, benHtml);
+    }
+    if (p.Application) {
+        c = c.replace(/<p style="margin:0;">After cleansing[\s\S]*?<\/p>/, `<p style="margin:0;">${p.Application}</p>`);
+    }
+    if (p.Tricks) {
+        const trickHtml = p.Tricks.map(t => `<li>${t}</li>`).join('\n                  ');
+        c = c.replace(/<li>Apply a slightly thicker layer[\s\S]*?<\/li>/, trickHtml);
+    }
+    if (p.Ingredients) {
+        const ingHtml = p.Ingredients.map(i => `<li>${i}</li>`).join('\n                  ');
+        c = c.replace(/<li>Centella Asiatica<\/li>[\s\S]*?Even-Tone Enhancer<\/li>/, ingHtml);
+    }
+
+    if (p.ImportantInfo) {
+        c = c.replace('Wake Up to Refreshed, Radiant Skin.', p.ImportantInfo.Headline);
+        c = c.replace('All skin types, including dry and sensitive skin', p.ImportantInfo.GoodFor);
+        c = c.replace('A rich, creamy formula that melts effortlessly into the skin', p.ImportantInfo.FeelsLike);
+        c = c.replace('Smooth, plump, and poreless skin by morning', p.ImportantInfo.LooksLike);
+        c = c.replace('Subtle, calming freshness for a relaxing nighttime routine', p.ImportantInfo.SmellsLike);
+        c = c.replace('Halal-Friendly • Dermatologist-Tested • Non-Sticky • Repair-Focused', p.ImportantInfo.FYI);
+    }
+
+    if (p.WhatsInside) {
+        c = c.replace('Our formula is powered by advanced repair and brightening actives. Meet 2 of our favorites for overnight renewal.', p.WhatsInside.Intro);
+        c = c.replace('centella asiatica', p.WhatsInside.I1Title);
+        c = c.replace('a calming botanical that helps repair the skin barrier, reduce redness, and support healthier, more resilient skin overnight', p.WhatsInside.I1Desc);
+        c = c.replace('moisture-lock technology', p.WhatsInside.I2Title);
+        c = c.replace('a deep hydration system that helps retain moisture, prevent overnight dryness, and keep skin plump and smooth by morning', p.WhatsInside.I2Desc);
+        c = c.replace('BRIGHTENING COMPLEX, COLLAGEN SUPPORT BLEND, SPOT-CORRECTIVE ACTIVES, LINE-REDUCING COMPLEX, BARRIER REPAIR ACTIVES, EVEN-TONE ENHANCERS', p.WhatsInside.Also);
+    }
+
+    if (p.SpreadItOn) {
+        c = c.replace('deep repair', p.SpreadItOn[0]);
+        c = c.replace('overnight hydration', p.SpreadItOn[1]);
+        c = c.replace('revitalized, luminous skin', p.SpreadItOn[2]);
+    }
+
+    if (p.Stats && p.Stats.length > 0) {
+        const defaultStatDescs = [
+            'SAID THEIR SKIN FELT DEEPLY HYDRATED AND NOURISHED',
+            'SAID IT ABSORBED WELL WITHOUT HEAVINESS',
+            'NOTICED SMOOTHER, SOFTER, AND REFINED SKIN BY MORNING',
+            'REPORTED A VISIBLE REDUCTION IN FINE LINES AND DARK SPOTS'
+        ];
+
+        p.Stats.forEach((s, i) => {
+            if (i > 3) return; // Only 4 slots in template
+            
+            // 1. Replace percentage
+            // Pattern matches either "X%" or "3 out of 4"
+            const pctPattern = new RegExp(`<div class="stat-pct">(${i === 3 ? '3 out of 4' : '\\d+%'}|[\\d/\\s\\w]+)<\\/div>`);
+            if (s.Pct) {
+                c = c.replace(pctPattern, `<div class="stat-pct">${s.Pct}</div>`);
+            }
+
+            // 2. Replace description
+            if (s.Desc) {
+                c = c.replace(defaultStatDescs[i], s.Desc);
+            }
+        });
+    }
+    if (p.StatsDisclaimer) c = c.replace('*Based on a 2-week consumer perception study with consistent nightly use.', p.StatsDisclaimer);
+
+    if (p.FAQs) {
+        const faqHtml = p.FAQs.map(f => `
+          <div class="faq-item">
+            <div class="faq-qa">
+              <span class="faq-question">${f.Q}</span>
+              <p class="faq-answer">${f.A}</p>
+            </div>
+            <span class="faq-icon">+</span>
+          </div>`).join('\n');
+        c = c.replace(/<div class="faq-accordion">[\s\S]*?<\/div>\s*<\/div>\s*<\/div>\s*<div class="faq-image-col">/, `<div class="faq-accordion">\n${faqHtml}\n        </div>\n      </div>\n      <div class="faq-image-col">`);
+    }
+
+    if (p.Reviews && p.Reviews.length > 0) {
+        const revHtml = p.Reviews.map(r => `
+      <div class="review-card">
+        <div class="rv-sidebar">
+          <div class="rv-author">${r.Name}</div>
+          <div class="rv-verified">Verified Buyer</div>
+        </div>
+        <div class="rv-main">
+          <div class="rv-main-header"><div class="rv-stars">★★★★★</div></div>
+          <div class="rv-title">Verified Selection</div>
+          <div class="rv-body">"${r.Text}"</div>
+        </div>
+      </div>`).join('\n<hr class="rv-divider">\n');
+        c = c.replace(/<div class="review-card">[\s\S]*?<\/div>[\s\S]*?<\/section>/, `${revHtml}\n    </section>`);
+    }
+
+    // 4. Inject Featured Collection Cards
+    const featuredHtml = products.map(prod => {
         const handle = getHandle(prod.File);
-        const category = prod.Category || (prod.Title.toLowerCase().includes('serum') ? 'serum' : 'skincare');
-        
-        // Exact mapping from index.html to ensure "same to same" experience
-        const homeHoverMap = {
-            'night-cream': 'night-cream-hover.jpg',
-            'tranexamic-serum-v2': 'tranexamic-meet-1.jpg',
-            'keratin-serum-v2': 'keratin-serum-hover.jpg',
-            'glow-serum': 'glow-serum-hover.jpg',
-            'glutathione-cream': 'deep-hydration-100.jpg',
-            'face-wash': 'facewash-shot.png',
-            'anti-acne-serum-v2': 'hover-anti-acne.png',
-            'sunscreen-v2': 'v2-sunscreen-2.jpg'
-        };
-
-        const homeLabelMap = {
-            'night-cream': 'NIGHT CREAM',
-            'tranexamic-serum-v2': 'serum',
-            'keratin-serum-v2': 'haircare',
-            'glow-serum': 'serum',
-            'glutathione-cream': 'repair',
-            'face-wash': 'cleanser',
-            'anti-acne-serum-v2': 'antiacne',
-            'sunscreen-v2': 'sunscreen',
-            'hair-mist-v2': 'haircare'
-        };
-
-        const hoverImg = homeHoverMap[handle] || ((prod.Images.Carousel && prod.Images.Carousel[1]) ? prod.Images.Carousel[1] : prod.Images.Hero);
-        const brandLabel = homeLabelMap[handle] || prod.Subtitle || 'SKINCARE';
-
         return `
-        <div class="card card-rhode" data-category="${category}">
+        <div class="card card-rhode" data-category="skincare">
           <a href="/products/${handle}" class="card-link-wrapper">
-            <img src="{{ "${hoverImg}" | asset_url }}" class="card-hover-bg" alt="${prod.Title} Hover">
+            <img src="{{ "${prod.Images.Hero}" | asset_url }}" class="card-hover-bg" alt="${prod.Title}">
             <div class="card-rhode-top">
-              <span class="card-brand-label">${brandLabel}</span>
+              <span class="card-brand-label">ELARIS</span>
             </div>
             <div class="card-rhode-image">
               <img src="{{ "${prod.Images.Hero}" | asset_url }}" alt="${prod.Title}" class="product-main-img">
@@ -225,184 +372,13 @@ function updateTemplate(p) {
               </div>
               <span class="btn-rhode-buy-pill">BUY - RS. ${prod.Price}</span>
             </div>
-            <div class="buy-button-hover">
-                BUY ${prod.Title} - RS. ${prod.Price}
-            </div>
           </a>
         </div>`;
     }).join('\n');
 
-    c = c.replace('<!-- FEATURED_CARDS_PLACEHOLDER -->', featuredCardsHtml);
+    c = c.replace('<!-- FEATURED_CARDS_PLACEHOLDER -->', featuredHtml);
 
-    // 3. Product Metadata
-    c = c.replace(/<span>Centella Night Cream<\/span>/, `<span>${p.Title}</span>`);
-    const titleBr = p.Title.replace(/ /g, '<br>');
-    c = c.replace(/class="product-title">[\s\S]*?<\/h1>/, `class="product-title">${titleBr}</h1>`);
-    c = c.replace(/<title>[\s\S]*?<\/title>/, `<title>${p.Title} | elaris7</title>`);
-    c = c.replace(/class="product-subtitle">[^<]*<\/span>/, `class="product-subtitle">${p.Subtitle}</span>`);
-    
-    // Global Price Replacement (Careful not to overwrite BOGO prices if they are dynamic)
-    // We'll target the main price display
-    c = c.replace(/<p class="product-price">[\s\S]*?<\/p>/, `<p class="product-price">RS. ${p.Price}</p>`);
-    c = c.replace(/ADD TO BAG - [\s\S]*?<\/button>/, `ADD TO BAG - RS. ${p.Price}</button>`);
-    c = c.replace(/data-variant-id="[\s\S]*?"/, `data-variant-id="{{ product.variants.first.id }}"`); // Placeholder for Liquid
-
-    // 4. Description
-    const newDesc = `<div class="product-description">
-            <p>${p.Description}</p>
-            <p class="disclaimer">*with continued daily use</p>
-          </div>`;
-    c = c.replace(/<div class="product-description">[\s\S]*?<\/div>/, newDesc);
-
-    // 5. Accordions
-    const benefitItems = (p.Benefits || []).map(item => `                  <li>${item}</li>`).join('\n');
-    c = c.replace(/<summary><span>BENEFITS<\/span><span>\+<\/span><\/summary>[\s\S]*?<div class="accordion-content">[\s\S]*?<\/div>/, `<summary><span>BENEFITS</span><span>+</span></summary><div class="accordion-content"><ul>${benefitItems}</ul></div>`);
-
-    const appItems = `<summary><span>APPLICATION</span><span>+</span></summary><div class="accordion-content"><p style="margin:0;">${p.Application || 'Apply as directed.'}</p></div>`;
-    c = c.replace(/<summary><span>APPLICATION<\/span><span>\+<\/span><\/summary>[\s\S]*?<div class="accordion-content">[\s\S]*?<\/div>/, appItems);
-
-    const trickItems = (p.Tricks || []).map(item => `                  <li>${item}</li>`).join('\n');
-    c = c.replace(/<summary><span>TRICK<\/span><span>\+<\/span><\/summary>[\s\S]*?<div class="accordion-content">[\s\S]*?<\/div>/, `<summary><span>TRICK</span><span>+</span></summary><div class="accordion-content"><ul>${trickItems}</ul></div>`);
-
-    const ingItems = (p.Ingredients || []).map(item => `                  <li>${item}</li>`).join('\n');
-    c = c.replace(/<summary><span>KEY INGREDIENTS<\/span><span>\+<\/span><\/summary>[\s\S]*?<div class="accordion-content">[\s\S]*?<\/div>/, `<summary><span>KEY INGREDIENTS</span><span>+</span></summary><div class="accordion-content"><ul>${ingItems}</ul></div>`);
-
-    // 6. Catchy Line
-    c = c.replace(/<h2 class="meet-title">[\s\S]*?<\/h2>/, `<h2 class="meet-title">${p.CatchyLine}</h2>`);
-
-    // 7. Important Info
-    const info = p.ImportantInfo;
-    c = c.replace(/<h2 class="bd-title">[\s\S]*?<\/h2>/, `<h2 class="bd-title">${info.Headline}</h2>`);
-    c = c.replace(/<span class="bd-label">GOOD FOR:<\/span>\s*<span class="bd-val">[\s\S]*?<\/span>/, `<span class="bd-label">GOOD FOR:</span><span class="bd-val">${info.GoodFor}</span>`);
-    c = c.replace(/<span class="bd-label">FEELS LIKE:<\/span>\s*<span class="bd-val">[\s\S]*?<\/span>/, `<span class="bd-label">FEELS LIKE:</span><span class="bd-val">${info.FeelsLike}</span>`);
-    if(info.LooksLike) c = c.replace(/<span class="bd-label">LOOKS LIKE:<\/span>\s*<span class="bd-val">[\s\S]*?<\/span>/, `<span class="bd-label">LOOKS LIKE:</span><span class="bd-val">${info.LooksLike}</span>`);
-    if(info.SmellsLike) c = c.replace(/<span class="bd-label">SMELLS LIKE:<\/span>\s*<span class="bd-val">[\s\S]*?<\/span>/, `<span class="bd-label">SMELLS LIKE:</span><span class="bd-val">${info.SmellsLike}</span>`);
-    c = c.replace(/<span class="bd-label">FYI:<\/span>\s*<span class="bd-val">[\s\S]*?<\/span>/, `<span class="bd-label">FYI:</span><span class="bd-val">${info.FYI}</span>`);
-    
-    // 8. What's Inside
-    const wiDetails = p.WhatsInsideDetail || (p.WhatsInside ? [{Title: p.WhatsInside.I1Title, Desc: p.WhatsInside.I1Desc}, {Title: p.WhatsInside.I2Title, Desc: p.WhatsInside.I2Desc}] : []);
-    if (wiDetails.length >= 2) {
-        c = c.replace(/Our formula is powered by advanced repair and brightening actives[\s\S]*?renewal\./, p.WhatsInside ? p.WhatsInside.Intro : `Our formula is powered by advanced actives. Meet 2 of our favorites for targeted care.`);
-        c = c.replace(/<h3 class="wi-ingred-title">centella asiatica<\/h3>[\s\S]*?<p class="wi-ingred-desc">[\s\S]*?<\/p>/, `<h3 class="wi-ingred-title">${wiDetails[0].Title}</h3><p class="wi-ingred-desc">${wiDetails[0].Desc}</p>`);
-        c = c.replace(/<h3 class="wi-ingred-title">moisture-lock technology<\/h3>[\s\S]*?<p class="wi-ingred-desc">[\s\S]*?<\/p>/, `<h3 class="wi-ingred-title">${wiDetails[1].Title}</h3><p class="wi-ingred-desc">${wiDetails[1].Desc}</p>`);
-        
-        if (p.WhatsInside && p.WhatsInside.Also) {
-            c = c.replace(/also made with <strong>[\s\S]*?<\/strong>/, `also made with <strong>${p.WhatsInside.Also}</strong>`);
-        }
-    }
-
-    // 9. Spread It On For
-    if(p.SpreadItOn) {
-        c = c.replace(/<h2 class="spread-heading">[\s\S]*?<\/h2>/, `<h2 class="spread-heading">${p.SpreadItOn[0]}</h2>`);
-        // Replace second heading
-        let spreadParts = c.split('<div class="spread-text">');
-        if(spreadParts.length > 2) {
-            spreadParts[2] = spreadParts[2].replace(/<h2 class="spread-heading">[\s\S]*?<\/h2>/, `<h2 class="spread-heading">${p.SpreadItOn[1]}</h2>`);
-            c = spreadParts.join('<div class="spread-text">');
-        }
-        c = c.replace(/<h2 class="spread-heading spread-green">[\s\S]*?<\/h2>/, `<h2 class="spread-heading spread-green">${p.SpreadItOn[2]}</h2>`);
-    }
-
-
-
-    // 10. Statistics
-    if (p.Stats) {
-        p.Stats.forEach((st, i) => {
-            if (i === 0) {
-                c = c.replace(/97%/, st.Pct);
-                c = c.replace(/SAID THEIR SKIN FELT DEEPLY HYDRATED AND NOURISHED/, st.Desc);
-            } else if (i === 1) {
-                c = c.replace(/95%/, st.Pct);
-                c = c.replace(/SAID IT ABSORBED WELL WITHOUT HEAVINESS/, st.Desc);
-            } else if (i === 2) {
-                c = c.replace(/94%/, st.Pct);
-                c = c.replace(/NOTICED SMOOTHER, SOFTER, AND REFINED SKIN BY MORNING/, st.Desc);
-            } else if (i === 3) {
-                c = c.replace(/3 out of 4/, st.Pct);
-                c = c.replace(/REPORTED A VISIBLE REDUCTION IN FINE LINES AND DARK SPOTS/, st.Desc);
-            }
-        });
-        for (let j = p.Stats.length; j < 4; j++) {
-            if (j === 3) c = c.replace(/<div class="stat-item">\s*<div class="stat-pct">3 out of 4[\s\S]*?<\/div>(\s*<\/div>)?/, '');
-            else if (j === 2) c = c.replace(/<div class="stat-item">\s*<div class="stat-pct">94%[\s\S]*?<\/div>(\s*<\/div>)?/, '');
-            else if (j === 1) c = c.replace(/<div class="stat-item">\s*<div class="stat-pct">95%[\s\S]*?<\/div>(\s*<\/div>)?/, '');
-        }
-        if (p.StatsDisclaimer) {
-            c = c.replace(/\*Based on a 2-week consumer perception study with consistent nightly use\./, p.StatsDisclaimer);
-        }
-        if (p.Images && p.Images.Stats) {
-            c = c.replace(/<div class="stats-image">[\s\S]*?src="([^"]*)"/, `<div class="stats-image">\n        <img src="{{ "${p.Images.Stats}" | asset_url }}"`);
-        }
-    }
-
-    // 11. FAQs
-    if (p.FAQs) {
-        const faqHtml = (p.FAQs || []).map(f => `          <div class="faq-item">
-            <div class="faq-qa">
-              <span class="faq-question">${f.Q}</span>
-              <p class="faq-answer">${f.A}</p>
-            </div>
-            <span class="faq-icon">+</span>
-          </div>`).join('\n');
-        
-        c = c.replace(/<div class="faq-accordion">[\s\S]*?<\/div>\s*<\/div>/, `<div class="faq-accordion">\n${faqHtml}\n        </div>\n      </div>`);
-    }
-
-    // FINAL LAYOUT CLEANUP - Ensure everything is tidy
-    c = c.replace(/<\/div>\s*<\/div>\s*<\/div>\s*<div class="faq-image-col">/, "</div>\n      </div>\n      <div class=\"faq-image-col\">");
-    c = c.replace(/<\/div>\s*<\/div>\s*<\/div>\s*<div class="stats-image">/, "</div>\n      </div>\n      <div class=\"stats-image\">");
-
-    // 12. Reviews
-    const reviewHtml = (p.Reviews || []).map(r => `      <div class="review-card">
-        <div class="rv-sidebar">
-          <div class="rv-author">${r.Name}</div>
-          <div class="rv-verified">Verified Buyer</div>
-        </div>
-        <div class="rv-main">
-          <div class="rv-main-header">
-            <div class="rv-stars">★★★★★</div>
-          </div>
-          <div class="rv-title">Verified Selection</div>
-          <div class="rv-body">"${r.Text}"</div>
-        </div>
-      </div>`).join('\n\n      <hr class="rv-divider">\n\n');
-    
-    // Replace the entire area between the header and the closing tag
-    c = c.replace(/<hr class="rv-divider">[\s\S]*?<hr class="rv-divider" style="margin-bottom: 40px;">/, `<hr class="rv-divider">\n\n${reviewHtml}\n\n      <hr class="rv-divider" style="margin-bottom: 40px;">`);
-
-    // 13. IMAGES (PER-PRODUCT OVERRIDES)
-    const img = p.Images;
-    // Primary Gallery Images
-    if(img.Gallery) {
-        c = c.replace(/nightcream-v3-1.jpeg/g, img.Gallery[0]);
-        c = c.replace(/nightcream-v3-2.jpeg/g, img.Gallery[1]);
-        c = c.replace(/nightcream-v3-3.jpeg/g, img.Gallery[2]);
-        c = c.replace(/nightcream-v3-4.jpeg/g, img.Gallery[3]);
-    }
-    if(img.Hero) c = c.split('night-cream-suite.jpeg').join(img.Hero);
-    
-    // Carousel Images
-    if(img.Carousel && img.Carousel.length >= 4) {
-        c = c.split('night-cream-swatch.jpeg').join(img.Carousel[1]);
-        c = c.split('night-cream-lifestyle.jpeg').join(img.Carousel[2]);
-        c = c.split('night-cream-last.jpeg').join(img.Carousel[3]);
-    }
-
-    if(img.Breakdown) c = c.split('plate.jpeg').join(img.Breakdown);
-    if(img.WhatsInside) c = c.split('spoon.jpeg').join(img.WhatsInside);
-    if(img.Spread) c = c.split('spread.jpeg').join(img.Spread);
-    if(img.Stats) c = c.split('percentage.jpeg').join(img.Stats);
-    
-    // FAQ Image (use provided FAQ mapping or fallback to faq.jpeg)
-    if(img.FAQ) {
-        c = c.split('faq.jpeg').join(img.FAQ);
-    }
-
-    // 14. Asset URL Conversion (Final Sweep)
-    c = c.replace(/src="(?:\.\/assets\/|)([\w\.-]+\.(?:jpg|png|jpeg|webp|gif|svg))"/g, 'src="{{ "$1" | asset_url }}"');
-
-    const targetPath = path.join(templatesDir, p.File);
-    fs.writeFileSync(targetPath, c, 'utf8');
+    fs.writeFileSync(path.join(templatesDir, p.File), c);
 }
 
 products.forEach(updateTemplate);
