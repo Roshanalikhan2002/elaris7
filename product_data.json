@@ -346,16 +346,44 @@
       {
         "Q": "Can I use this face wash twice a day?",
         "A": "Yes, it is gentle enough for both morning and evening use without over-drying your skin."
+      },
+      {
+        "Q": "Is it suitable for sensitive skin?",
+        "A": "Yes, the formula includes calming ingredients like Centella Asiatica and honey, making it ideal for sensitive skin."
+      },
+      {
+        "Q": "Will it help with acne or breakouts?",
+        "A": "It helps cleanse pores, remove excess oil, and soothe irritation, which can support clearer skin over time."
+      },
+      {
+        "Q": "Does it remove makeup?",
+        "A": "It can remove light makeup, but for heavy or waterproof makeup, use a remover before cleansing."
+      },
+      {
+        "Q": "Will my skin feel dry after washing?",
+        "A": "No, it is designed to maintain hydration and leave your skin feeling soft and balanced."
       }
     ],
     "Reviews": [
       {
-        "Name": "Alishba",
-        "Text": "I'm genuinely in love with this face wash. It's so gentle but cleanses deeply without leaving my skin feeling tight or dry. My face feels soft and balanced!"
+        "Name": "Areeba",
+        "Text": "I love how gentle this face wash feels on my skin. It cleans properly without making my skin dry, and my face looks fresh after every wash."
       },
       {
-        "Name": "Sara",
-        "Text": "Finally found a cleanser that doesn't irritate my sensitive skin. The texture is amazing and it leaves a subtle glow after washing. A 10/10 product for me!"
+        "Name": "Mehwish",
+        "Text": "My skin feels so soft and clean after using it. I've noticed less dullness and my complexion looks more even now."
+      },
+      {
+        "Name": "Kiran",
+        "Text": "It's very mild yet effective. My skin doesn't feel tight anymore after washing, and it actually feels hydrated."
+      },
+      {
+        "Name": "Bilal",
+        "Text": "This face wash gives a really clean feeling without irritation. My skin looks clearer and feels balanced throughout the day."
+      },
+      {
+        "Name": "Hamza",
+        "Text": "I've been using it daily and my skin feels healthier overall. It's simple, gentle, and does exactly what I needed."
       }
     ],
     "Images": {
