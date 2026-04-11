@@ -146,6 +146,7 @@ function updateTemplate(p) {
         'face-wash',
         'tranexamic-serum-v2',
         'anti-acne',
+        'anti-acne-serum-v2',
         'night-cream'
     ];
 
@@ -210,6 +211,7 @@ function updateTemplate(p) {
                 'face-wash': '{{ all_products["face-wash"].variants.first.id }}',
                 'tranexamic-serum-v2': '{{ all_products["tranexamic-serum-v2"].variants.first.id }}',
                 'anti-acne': '{{ all_products["anti-acne"].variants.first.id }}',
+                'anti-acne-serum-v2': '{{ all_products["anti-acne-serum-v2"].variants.first.id }}',
                 'night-cream': '{{ all_products["night-cream"].variants.first.id }}'
             };
 

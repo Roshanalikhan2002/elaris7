@@ -2159,6 +2159,7 @@ a { color: inherit; text-decoration: none; }
           <li><a href="#">SHOP</a></li>
           <li><a href="#">ABOUT</a></li>
           <li><a href="#">FUTURES</a></li>
+          <li><a href="#">CONTACT</a></li>
         </ul>
       </nav>
       <div class="header-logo"><a href="index.html" class="logo-text">elaris7</a></div>
@@ -2166,7 +2167,6 @@ a { color: inherit; text-decoration: none; }
         <ul class="desktop-only">
           <li><a href="#">SEARCH</a></li>
           <li><a href="#">ACCOUNT</a></li>
-          <li><a href="#">CONTACT</a></li>
           <li><a href="/cart">CART ({{ cart.item_count }})</a></li>
         </ul>
         <div class="mobile-only mobile-header-icons">
@@ -2428,6 +2428,16 @@ a { color: inherit; text-decoration: none; }
 
               <div class="bogo-inline-card " onclick="selectBogo(this)">
                 <input type="radio" name="free_gift" data-gift-handle="anti-acne" style="display:none;" >
+                <img src="{{ "v2-antiacne-1.jpeg" | asset_url }}" alt="Elaris7 Anti-Acne Clarifying Serum">
+                <div class="bogo-inline-info">
+                  <span class="bogo-inline-name">Elaris7 Anti-Acne Clarifying Serum</span>
+                  <span class="bogo-inline-tag">Clear & Control</span>
+                </div>
+                <div class="bogo-select-indicator"></div>
+              </div>
+
+              <div class="bogo-inline-card " onclick="selectBogo(this)">
+                <input type="radio" name="free_gift" data-gift-handle="anti-acne-serum-v2" style="display:none;" >
                 <img src="{{ "v2-antiacne-1.jpeg" | asset_url }}" alt="Elaris7 Anti-Acne Clarifying Serum">
                 <div class="bogo-inline-info">
                   <span class="bogo-inline-name">Elaris7 Anti-Acne Clarifying Serum</span>
@@ -4891,6 +4901,7 @@ a { color: inherit; text-decoration: none; }
                 'face-wash': '{{ all_products["face-wash"].variants.first.id }}',
                 'tranexamic-serum-v2': '{{ all_products["tranexamic-serum-v2"].variants.first.id }}',
                 'anti-acne': '{{ all_products["anti-acne"].variants.first.id }}',
+                'anti-acne-serum-v2': '{{ all_products["anti-acne-serum-v2"].variants.first.id }}',
                 'night-cream': '{{ all_products["night-cream"].variants.first.id }}'
             };
 
