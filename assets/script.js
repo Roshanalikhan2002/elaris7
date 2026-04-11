@@ -268,8 +268,8 @@ document.addEventListener('DOMContentLoaded', () => {
       const cardCategories = cardCatStr.split(/[,\s]+/).map(c => c.trim()).filter(c => c !== '');
 
       if (targetCat === 'featured') {
-        // Show everything tagged as featured
-        if (cardCategories.includes('featured')) {
+        // Show everything EXCEPT bundles/sets
+        if (!cardCategories.includes('set')) {
           card.style.display = 'flex';
         } else {
           card.style.display = 'none';
@@ -304,7 +304,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const cardCategories = cardCatStr.split(/[,\s]+/).map(c => c.trim()).filter(c => c !== '');
 
         if (targetCat === 'featured') {
-          if (cardCategories.includes('featured')) {
+          if (!cardCategories.includes('set')) {
             card.style.display = 'flex';
           } else {
             card.style.display = 'none';
