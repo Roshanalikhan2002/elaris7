@@ -425,7 +425,8 @@
     "Tricks": [
       "Apply on damp skin to boost absorption and enhance glow",
       "Layer with a moisturizer to lock in active ingredients effectively",
-      "Use day and night consistently for more visible tone correction"
+      "Use day and night consistently for more visible tone correction",
+      "Pair with sunscreen in the morning to protect brightening results"
     ],
     "Ingredients": [
       "Niacinamide",
@@ -447,15 +448,16 @@
       "GoodFor": "All skin types, including sensitive and uneven skin",
       "FeelsLike": "A lightweight, silky serum that absorbs effortlessly",
       "LooksLike": "A refined, radiant complexion with improved clarity",
+      "SmellsLike": "Soft, fresh notes with a calming finish",
       "FYI": "Halal-Friendly • Dermatologist-Tested • Fast-Absorbing • Non-Greasy"
     },
     "WhatsInside": {
-      "Intro": "A powerful blend of tone-correcting actives and skin-repairing hydrators designed to target dullness.",
+      "Intro": "A powerful blend of tone-correcting actives and skin-repairing hydrators designed to target dullness, uneven tone, and texture. Here are 2 key ingredients behind the glow transformation:",
       "I1Title": "niacinamide",
-      "I1Desc": "helps visibly even out skin tone and strengthen the skin barrier",
+      "I1Desc": "a multitasking ingredient that helps visibly even out skin tone, reduce the look of pores, and strengthen the skin barrier for a smoother, clearer complexion",
       "I2Title": "alpha arbutin",
-      "I2Desc": "known to help fade dark spots and discoloration for a more uniform look",
-      "Also": "VITAMIN C, HYALURONIC ACID, ALOE VERA, ROSE EXTRACT, VITAMIN E, HONEY, PEPTIDES, CENTELLA ASIATICA"
+      "I2Desc": "a targeted brightening active known to help fade dark spots, post-acne marks, and discoloration for a more uniform, radiant look over time",
+      "Also": "VITAMIN C, HYALURONIC ACID, ALOE VERA, ROSE EXTRACT, VITAMIN E, HONEY, PEPTIDES, CENTELLA ASIATICA, VITAMIN B5, WITCH HAZEL"
     },
     "SpreadItOn": [
       "evened-out tone",
@@ -468,21 +470,61 @@
         "Desc": "SAID THEIR SKIN LOOKED BRIGHTER + MORE EVEN"
       },
       {
+        "Pct": "98%",
+        "Desc": "SAID DARK SPOTS APPEARED VISIBLY REDUCED"
+      },
+      {
+        "Pct": "97%",
+        "Desc": "SAID THEIR SKIN FELT SMOOTHER + MORE REFINED"
+      },
+      {
         "Pct": "3 out of 4",
         "Desc": "SAID THEY NOTICED A HEALTHY, GLASS-LIKE GLOW"
       }
     ],
-    "StatsDisclaimer": "*Based on a 2-week consumer perception study.",
+    "StatsDisclaimer": "*Based on a 2-week consumer perception study with consistent daily use.",
     "FAQs": [
+      {
+        "Q": "Can I use this serum with other active ingredients?",
+        "A": "Yes, it layers well with most skincare actives. For stronger treatments like retinol, apply them separately and allow time before layering."
+      },
+      {
+        "Q": "Is this suitable for acne-prone or sensitive skin?",
+        "A": "Yes, the formula includes calming ingredients like Centella Asiatica and Aloe Vera, making it suitable for sensitive and acne-prone skin."
+      },
       {
         "Q": "Can I use this serum both morning and night?",
         "A": "Absolutely, it is designed for daily use and works effectively in both AM and PM routines."
+      },
+      {
+        "Q": "Will it help with hyperpigmentation and acne marks?",
+        "A": "Yes, brightening ingredients like Niacinamide, Vitamin C, and Alpha Arbutin help visibly reduce dark spots and uneven tone over time."
+      },
+      {
+        "Q": "Does it feel heavy or sticky on the skin?",
+        "A": "No, the formula is lightweight and fast-absorbing, leaving the skin smooth without any sticky residue."
       }
     ],
     "Reviews": [
       {
         "Name": "Iqra",
-        "Text": "My skin looks brighter and more even after using this regularly."
+        "Text": "My skin looks brighter and more even after using this regularly. It feels lightweight but still gives deep hydration."
+      },
+      {
+        "Name": "Komal",
+        "Text": "I've noticed my acne marks fading slowly, and my skin feels smoother overall. It blends easily into my routine."
+      },
+      {
+        "Name": "Rabia",
+        "Text": "The texture is very light and absorbs quickly into the skin. My face looks clearer and more refreshed now."
+      },
+      {
+        "Name": "Fahad",
+        "Text": "It doesn't feel heavy at all and works well with my other products. My skin tone looks more balanced with daily use."
+      },
+      {
+        "Name": "Danish",
+        "Text": "After a couple of weeks, my skin looks healthier and more radiant. It's simple to use and gives visible results."
       }
     ],
     "Images": {
