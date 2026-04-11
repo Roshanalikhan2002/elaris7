@@ -23,14 +23,9 @@
   {% if special_handles contains collection.handle %}
     {%- assign is_special = true -%}
     {%- comment -%} Look for the bundle product in this collection {%- endcomment -%}
-    {% for product in collection.products %}
-       {% if product.handle contains 'bundle' or product.handle contains 'set' or product.title contains 'BUNDLE' or forloop.first %}
-         {%- assign target_prod = product -%}
-         {% break %}
-       {% endif %}
-    {% endfor %}
+    {%- assign target_prod = collection.products.first -%}
     
-    {%- comment -%} Fallback to specific handles if loop didn't find it {%- endcomment -%}
+    {%- comment -%} Fallback to specific handles if collection is empty or doesn't have it {%- endcomment -%}
     {% if target_prod == blank %}
       {%- case collection.handle -%}
         {%- when 'korean-glass-skin' -%}{%- assign target_prod = all_products['elaris-7-korean-glass-skin-bundle'] -%}
