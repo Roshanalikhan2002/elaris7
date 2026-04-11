@@ -208,12 +208,44 @@
       {
         "Q": "Can I use this moisturizer with makeup?",
         "A": "Yes, it works perfectly as a base under makeup, helping create a smooth and hydrated canvas."
+      },
+      {
+        "Q": "Is this suitable for oily skin?",
+        "A": "Yes, the lightweight formula hydrates without clogging pores or leaving a greasy feel, making it suitable for oily skin."
+      },
+      {
+        "Q": "Can I use it both morning and night?",
+        "A": "Absolutely, it is designed for daily use and works well in both AM and PM routines."
+      },
+      {
+        "Q": "Will it help with dull or tired-looking skin?",
+        "A": "Yes, its brightening ingredients and hydration help revive dull skin and improve overall radiance over time."
+      },
+      {
+        "Q": "Does it feel heavy on the skin in humid weather?",
+        "A": "No, the formula is lightweight and breathable, making it comfortable even in warm or humid conditions."
       }
     ],
     "Reviews": [
       {
         "Name": "Sana",
         "Text": "It feels so light on my skin and gives me a soft, natural glow throughout the day. My skin looks healthier and more refreshed."
+      },
+      {
+        "Name": "Hira",
+        "Text": "I've been using it daily, and my skin feels hydrated without any oiliness. It's perfect for my combination skin."
+      },
+      {
+        "Name": "Mahnoor",
+        "Text": "The texture is very smooth and absorbs quickly. My skin looks more even and feels really soft after using it."
+      },
+      {
+        "Name": "Ali",
+        "Text": "I like how it keeps my skin moisturized all day without feeling heavy. It's simple, effective, and works really well."
+      },
+      {
+        "Name": "Usman",
+        "Text": "This moisturizer gives a clean, fresh feel, and my skin looks brighter with regular use. Definitely part of my daily routine now."
       }
     ],
     "Images": {
