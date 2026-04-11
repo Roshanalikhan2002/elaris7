@@ -375,22 +375,27 @@ function updateTemplate(p) {
     // 4. Inject Featured Collection Cards
     const featuredHtml = products.map(prod => {
         const handle = getHandle(prod.File);
+        const hoverImg = prod.Images && prod.Images.Carousel ? prod.Images.Carousel[0] : prod.Images.Hero;
+        const brandLabel = prod.Subtitle ? prod.Subtitle.split(' ')[0] : 'skincare';
         return `
         <div class="card card-rhode" data-category="skincare">
           <a href="/products/${handle}" class="card-link-wrapper">
-            <img src="{{ "${prod.Images.Hero}" | asset_url }}" class="card-hover-bg" alt="${prod.Title}">
+            <img src="{{ "${hoverImg}" | asset_url }}" class="card-hover-bg" alt="${prod.Title} Hover">
             <div class="card-rhode-top">
-              <span class="card-brand-label">ELARIS</span>
+              <span class="card-brand-label">${brandLabel}</span>
             </div>
             <div class="card-rhode-image">
               <img src="{{ "${prod.Images.Hero}" | asset_url }}" alt="${prod.Title}" class="product-main-img">
             </div>
             <div class="card-rhode-footer">
               <div class="card-meta">
-                <div class="card-stars">★★★★★ <span class="review-count">(10k+)</span></div>
+                <div class="card-stars">★★★★★ <span class="review-count">(16k)</span></div>
                 <h3 class="card-name">${prod.Title}</h3>
               </div>
               <span class="btn-rhode-buy-pill">BUY - RS. ${prod.Price}</span>
+            </div>
+            <div class="buy-button-hover" style="position: absolute; bottom: 25px; left: 50%; transform: translateX(-50%) translateY(20px); width: 88%; background: white; color: #2c2b28; padding: 14px 20px; border-radius: 40px; text-align: center; font-size: 0.72rem; font-weight: 800; letter-spacing: 0.05em; opacity: 0; z-index: 20; transition: all 0.4s cubic-bezier(0.16,1,0.3,1); box-shadow: 0 4px 15px rgba(0,0,0,0.08);">
+                BUY ${prod.Title} - RS. ${prod.Price}
             </div>
           </a>
         </div>`;
