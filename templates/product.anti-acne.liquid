@@ -1,41 +1,32 @@
-{%- comment -%} Inherit theme.liquid header/footer {%- comment -%}
+{%- comment -%} No layout none to keep home header {%- comment -%}
 
 <style>
-    .pdp-wrapper { padding: 40px 12px; max-width: 1440px; margin: 0 auto; width: 100%; font-family: 'Inter', sans-serif; }
-    .pdp-main-box { background: #fff; border: 1px solid #e5e5e5; border-radius: 14px; display: grid; grid-template-columns: 1.15fr 0.85fr; margin-bottom: 24px; overflow: hidden; }
-    .gallery-wrap { display: flex; align-items: flex-start; justify-content: center; background: #fff; }
-    .details-panel { padding: 60px; border-left: 1px solid #e5e5e5; background: #fdfdfd; }
-    .product-title { font-family: 'Lexend', sans-serif !important; font-size: 44px; font-weight: 800; letter-spacing: -0.05em; margin-bottom: 25px; line-height: 1; color: #000 !important; text-transform: uppercase; }
-    .btn-atc { width: 100%; padding: 22px; border-radius: 50px; border: 1.5px solid #000; background: #fff; font-weight: 700; text-transform: uppercase; cursor: pointer; font-size: 13px; color: #000; text-align: center; text-decoration: none; display: block; transition: all 0.3s ease; }
-    .btn-atc:hover { background: #000; color: #fff; }
-    .accordion-item { border-top: 1px solid #eee; padding: 25px 0; cursor: pointer; }
-    .acc-head { display: flex; justify-content: space-between; align-items: center; font-size: 12px; font-weight: 800; text-transform: uppercase; }
-    .acc-content { display: none; padding-top: 15px; font-size: 14px; line-height: 1.6; color: #444; }
-    .accordion-item.active .acc-content { display: block; }
+    /* SCOPED STYLES ONLY */
+    .pdp-acne-container { padding-top: 20px; max-width: 1440px; margin: 0 auto; width: 100%; font-family: 'Inter', sans-serif; position: relative; z-index: 10; }
+    .pdp-main-box-acne { background: #fff; border: 1px solid #e5e5e5; border-radius: 14px; display: grid; grid-template-columns: 1.15fr 0.85fr; margin-bottom: 24px; overflow: hidden; }
+    .gallery-wrap-acne { display: flex; align-items: flex-start; justify-content: center; background: #fff; }
+    .details-panel-acne { padding: 60px; border-left: 1px solid #e5e5e5; background: #fdfdfd; }
+    .product-title-acne { font-family: 'Lexend', sans-serif !important; font-size: 44px; font-weight: 800; letter-spacing: -0.05em; margin-bottom: 25px; line-height: 1; color: #000 !important; text-transform: uppercase; }
+    .btn-buy-acne { width: 100%; padding: 22px; border-radius: 50px; border: 1.5px solid #000; background: #fff; font-weight: 700; text-transform: uppercase; cursor: pointer; font-size: 13px; color: #000; text-align: center; text-decoration: none; display: block; border: 1.5px solid #000; }
+    .btn-buy-acne:hover { background: #000; color: #fff; }
 
     @media (max-width: 1024px) {
-        .pdp-main-box { grid-template-columns: 1fr; }
-        .details-panel { border-left: none; padding: 30px 15px; }
-        .product-title { font-size: 30px; }
+        .pdp-main-box-acne { grid-template-columns: 1fr; }
+        .details-panel-acne { border-left: none; padding: 30px 15px; }
+        .product-title-acne { font-size: 30px; }
     }
 </style>
 
-<div class="pdp-wrapper">
-    <div class="pdp-main-box">
-      <div class="gallery-wrap">
+<div class="pdp-acne-container">
+    <div class="pdp-main-box-acne">
+      <div class="gallery-wrap-acne">
         <img src="{{ 'anti-acne-100.jpg'| asset_url }}" style="width:100%; height:auto;" alt="Anti-Acne">
       </div>
-      <div class="details-panel">
-        <p style="font-size: 11px; font-weight: 700; color: #999; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 20px;">CLARIFY & CONTROL</p>
-        <h1 class="product-title">{{ product.title }}</h1>
+      <div class="details-panel-acne">
+        <p style="font-size: 11px; font-weight: 700; color: #999; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 20px;">TARGETED CLARITY</p>
+        <h1 class="product-title-acne">{{ product.title }}</h1>
         <div style="font-size: 13px; font-weight: 700; margin-bottom: 30px;">★ ★ ★ ★ ★ (1,150)</div>
-        <p style="font-size: 15px; line-height: 1.7; margin-bottom: 40px; color: #333;">Potent serum designed to target blemishes and restore clarity.</p>
-        <a href="/cart/add?id={{ product.variants.first.id }}&quantity=1" class="btn-atc">BUY NOW — {{ product.price | money }}</a>
-
-        <div class="accordion-item" onclick="this.classList.toggle('active')">
-            <div class="acc-head">KEY BENEFITS <div style="font-size:18px;">+</div></div>
-            <div class="acc-content"><p>Reduces active breakouts and controls excess oil.</p></div>
-        </div>
+        <a href="/cart/add?id={{ product.variants.first.id }}&quantity=1" class="btn-buy-acne">BUY NOW — {{ product.price | money }}</a>
       </div>
     </div>
 </div>
