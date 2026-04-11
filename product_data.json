@@ -1095,38 +1095,54 @@
   },
   {
     "File": "product.aha-exfoliant.liquid",
-    "Title": "Glycolic Toner",
+    "Title": "Elaris7 Glycolic Renewal Toner",
     "Subtitle": "Renew & Refine",
-    "Price": "2,000",
-    "Description": "A resurfacing toner designed to promote smoother, clearer skin by gently exfoliating.",
+    "Price": "2,660",
+    "Description": "A resurfacing toner designed to promote smoother, clearer skin by gently exfoliating and renewing the surface. It helps refine texture, unclog pores, and boost radiance while keeping the skin balanced and comfortable with continued use.",
     "Benefits": [
-      "Gentle exfoliation",
-      "Unclog pores"
+      "Promotes gentle exfoliation to remove dead skin buildup",
+      "Helps improve skin texture and overall smoothness",
+      "Supports clearer pores and reduces congestion",
+      "Enhances natural radiance and glow",
+      "Balances hydration while refining the skin",
+      "Helps improve uneven tone and dullness",
+      "Leaves skin feeling fresh, renewed, and refined"
     ],
-    "Application": "Apply using a cotton pad. Avoid eye area.",
+    "Application": "After cleansing, apply the toner using a cotton pad or fingertips. Gently sweep or press onto face and neck, avoiding the eye area. Allow it to absorb fully before applying serum and moisturizer. Use sunscreen during the day.",
     "Tricks": [
-      "Use 2-3 times a week",
-      "Always follow with sunscreen"
+      "Start with 2–3 times a week and increase gradually",
+      "Apply at night for enhanced skin renewal",
+      "Always follow with hydration to maintain balance",
+      "Use sunscreen daily to protect renewed skin"
     ],
     "Ingredients": [
       "Glycolic Acid (7%)",
-      "Niacinamide",
-      "Hyaluronic Acid"
+      "Salicylic Acid",
+      "Niacinamide (5%)",
+      "Witch Hazel (5%)",
+      "Hyaluronic Acid",
+      "Panthenol",
+      "Aloe Vera Extract",
+      "Vitamin E",
+      "Glycerin",
+      "Rose Water"
     ],
     "CatchyLine": "Smooth. Renew. Glow Deeper.",
     "ImportantInfo": {
-      "Headline": "Powered Renewal",
-      "GoodFor": "Dull and textured skin",
-      "FeelsLike": "A refreshing liquid",
-      "FYI": "Exfoliating • Glow-Boosting"
+      "Headline": "Powered Renewal for Clearer Skin",
+      "GoodFor": "All skin types, especially dull, textured, and congested skin",
+      "FeelsLike": "A refreshing liquid that absorbs smoothly into skin",
+      "LooksLike": "Brighter, smoother skin with refined texture",
+      "SmellsLike": "A light, fresh scent with a clean finish",
+      "FYI": "Exfoliating • Non-Stripping • Pore-Refining • Glow-Boosting"
     },
     "WhatsInside": {
-      "Intro": "A resurfacing toner to reveal smoother skin.",
-      "I1Title": "glycolic acid",
-      "I1Desc": "promotes gentle exfoliation",
-      "I2Title": "niacinamide",
+      "Intro": "A resurfacing toner designed to reveal smoother, clearer, and more radiant skin by gently exfoliating and refining texture while maintaining hydration and comfort.",
+      "I1Title": "GLYCOLIC ACID",
+      "I1Desc": "promotes gentle exfoliation to remove dead skin buildup",
+      "I2Title": "NIACINAMIDE",
       "I2Desc": "helps even skin tone and supports clearer pores",
-      "Also": "Salicylic Acid, Hyaluronic Acid, Aloe Vera"
+      "Also": "salicylic acid, witch hazel, hyaluronic acid, aloe vera extract, panthenol, vitamin E, glycerin, and rose water for hydration, calmness, and glow"
     },
     "SpreadItOn": [
       "surface renewal",
@@ -1136,24 +1152,68 @@
     "Stats": [
       {
         "Pct": "99%",
-        "Desc": "SAID SKIN FELT SMOOTHER"
+        "Desc": "SAID THEIR SKIN FELT SMOOTHER + MORE REFINED"
+      },
+      {
+        "Pct": "98%",
+        "Desc": "SAID THEIR SKIN LOOKED BRIGHTER + CLEARER"
+      },
+      {
+        "Pct": "97%",
+        "Desc": "SAID THEIR PORES FELT CLEANER + LESS CONGESTED"
+      },
+      {
+        "Pct": "3 out of 4",
+        "Desc": "SAID THEY NOTICED IMPROVED SKIN TEXTURE"
       }
     ],
-    "StatsDisclaimer": "*Consumer study results.",
+    "StatsDisclaimer": "Based on a 2-week consumer perception study with consistent use.",
     "FAQs": [
       {
-        "Q": "Do I need sunscreen with this?",
-        "A": "Yes, sunscreen is essential as exfoliation increases sun sensitivity."
+        "Q": "Can I use this toner every day?",
+        "A": "Start with 2–3 times a week and increase as your skin builds tolerance."
+      },
+      {
+        "Q": "Is it suitable for sensitive skin?",
+        "A": "It can be used on sensitive skin with caution, but patch testing is recommended before use."
+      },
+      {
+        "Q": "Will it help with acne and clogged pores?",
+        "A": "Yes, it helps clear pores and reduce buildup, supporting clearer skin over time."
+      },
+      {
+        "Q": "Can I use it with other active ingredients?",
+        "A": "Avoid using it with strong exfoliants on the same day to prevent irritation."
+      },
+      {
+        "Q": "Do I need to use sunscreen with this?",
+        "A": "Yes, sunscreen is essential during the day as exfoliation can increase sun sensitivity."
       }
     ],
     "Reviews": [
       {
         "Name": "Mehwish",
-        "Text": "My skin feels noticeably smoother."
+        "Text": "My skin feels noticeably smoother and more polished after using this toner. It really helps with dullness."
+      },
+      {
+        "Name": "Ayesha",
+        "Text": "I’ve seen a big improvement in my skin texture and clarity. My face looks fresher and more even."
+      },
+      {
+        "Name": "Rabia",
+        "Text": "It gently exfoliates without making my skin feel dry. My skin looks brighter and more refined now."
+      },
+      {
+        "Name": "Haris",
+        "Text": "My pores feel cleaner and my skin looks healthier overall. It’s become an important part of my routine."
+      },
+      {
+        "Name": "Saad",
+        "Text": "After consistent use, my skin feels softer and looks more radiant. It has helped reduce rough texture."
       }
     ],
     "Images": {
-      "Hero": "renewal toner-100.jpg",
+      "Hero": "toner1.jpeg",
       "Gallery": [
         "toner-meet-1.jpg",
         "toner-meet-2.jpg",

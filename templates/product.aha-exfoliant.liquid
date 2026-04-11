@@ -5,7 +5,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Glycolic Toner | elaris7</title>
+  <title>Elaris7 Glycolic Renewal Toner | elaris7</title>
   <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
 
@@ -2306,7 +2306,7 @@ a { color: inherit; text-decoration: none; }
       <!-- Thumbnails on Left -->
       <div class="gallery-thumbnails">
         <div class="thumb-item active" onmouseover="scrollGallery(0, this)">
-          <img src="./assets/renewal toner-100.jpg" alt="Thumb 1">
+          <img src="{{ "toner1.jpeg" | asset_url }}" alt="Thumb 1">
         </div>
         <div class="thumb-item" onmouseover="scrollGallery(1, this)">
           <img src="{{ "toner-meet-2.jpg" | asset_url }}" alt="Thumb 2">
@@ -2323,7 +2323,7 @@ a { color: inherit; text-decoration: none; }
       <div class="gallery-main-viewport">
         <div class="gallery-slider" id="productSlider">
           <div class="gallery-slide">
-            <img src="./assets/renewal toner-100.jpg" alt="Main View 1">
+            <img src="{{ "toner1.jpeg" | asset_url }}" alt="Main View 1">
           </div>
           <div class="gallery-slide">
             <img src="{{ "toner-meet-2.jpg" | asset_url }}" alt="Main View 2">
@@ -2353,7 +2353,7 @@ a { color: inherit; text-decoration: none; }
       <div class="product-details">
         <div class="product-details-inner">
           <div class="product-header">
-            <h1 class="product-title">Glycolic<br>Toner</h1>
+            <h1 class="product-title">Elaris7<br>Glycolic<br>Renewal<br>Toner</h1>
           </div>
 
           <div class="product-meta">
@@ -2361,7 +2361,7 @@ a { color: inherit; text-decoration: none; }
           </div>
 
           <div class="product-description">
-            <p>A resurfacing toner designed to promote smoother, clearer skin by gently exfoliating.</p>
+            <p>A resurfacing toner designed to promote smoother, clearer skin by gently exfoliating and renewing the surface. It helps refine texture, unclog pores, and boost radiance while keeping the skin balanced and comfortable with continued use.</p>
             <p class="disclaimer">*with continued daily use</p>
           </div>
 
@@ -2373,7 +2373,7 @@ a { color: inherit; text-decoration: none; }
               
               <div class="bogo-inline-card" onclick="selectBogo(this)">
                 <input type="radio" name="free_gift" data-gift-handle="night-cream" style="display:none;">
-                <img src="./assets/renewal toner-100.jpg" alt="Centella Night Cream">
+                <img src="{{ "toner1.jpeg" | asset_url }}" alt="Centella Night Cream">
                 <div class="bogo-inline-info">
                   <span class="bogo-inline-name">Centella Night Cream</span>
                   <span class="bogo-inline-tag">Night Renewal</span>
@@ -2757,7 +2757,7 @@ a { color: inherit; text-decoration: none; }
               <!-- Cards will be populated dynamically or via migration -->
 
               <div class="bogo-card">
-                <img src="{{ "renewal toner-100.jpg" | asset_url }}" alt="Centella Night Cream">
+                <img src="{{ "toner1.jpeg" | asset_url }}" alt="Centella Night Cream">
                 <span class="bogo-product-name">Centella Night Cream</span>
                 <button class="bogo-add-btn">Select</button>
               </div>
@@ -2805,8 +2805,8 @@ a { color: inherit; text-decoration: none; }
               </div>
 
               <div class="bogo-card">
-                <img src="{{ "renewal toner-100.jpg" | asset_url }}" alt="Glycolic Toner">
-                <span class="bogo-product-name">Glycolic Toner</span>
+                <img src="{{ "toner1.jpeg" | asset_url }}" alt="Elaris7 Glycolic Renewal Toner">
+                <span class="bogo-product-name">Elaris7 Glycolic Renewal Toner</span>
                 <button class="bogo-add-btn">Select</button>
               </div>
 
@@ -2917,20 +2917,34 @@ a { color: inherit; text-decoration: none; }
           </style>
           <div class="product-accordions accordions">
             <details class="accordion-item">
-              <summary><span>BENEFITS</span><span>+</span></summary><div class="accordion-content"><ul>                  <li>Gentle exfoliation</li>
-                  <li>Unclog pores</li></ul></div>
+              <summary><span>BENEFITS</span><span>+</span></summary><div class="accordion-content"><ul>                  <li>Promotes gentle exfoliation to remove dead skin buildup</li>
+                  <li>Helps improve skin texture and overall smoothness</li>
+                  <li>Supports clearer pores and reduces congestion</li>
+                  <li>Enhances natural radiance and glow</li>
+                  <li>Balances hydration while refining the skin</li>
+                  <li>Helps improve uneven tone and dullness</li>
+                  <li>Leaves skin feeling fresh, renewed, and refined</li></ul></div>
             </details>
             <details class="accordion-item">
-              <summary><span>APPLICATION</span><span>+</span></summary><div class="accordion-content"><p style="margin:0;">Apply using a cotton pad. Avoid eye area.</p></div>
+              <summary><span>APPLICATION</span><span>+</span></summary><div class="accordion-content"><p style="margin:0;">After cleansing, apply the toner using a cotton pad or fingertips. Gently sweep or press onto face and neck, avoiding the eye area. Allow it to absorb fully before applying serum and moisturizer. Use sunscreen during the day.</p></div>
             </details>
             <details class="accordion-item">
-              <summary><span>TRICK</span><span>+</span></summary><div class="accordion-content"><ul>                  <li>Use 2-3 times a week</li>
-                  <li>Always follow with sunscreen</li></ul></div>
+              <summary><span>TRICK</span><span>+</span></summary><div class="accordion-content"><ul>                  <li>Start with 2–3 times a week and increase gradually</li>
+                  <li>Apply at night for enhanced skin renewal</li>
+                  <li>Always follow with hydration to maintain balance</li>
+                  <li>Use sunscreen daily to protect renewed skin</li></ul></div>
             </details>
             <details class="accordion-item">
               <summary><span>KEY INGREDIENTS</span><span>+</span></summary><div class="accordion-content"><ul>                  <li>Glycolic Acid (7%)</li>
-                  <li>Niacinamide</li>
-                  <li>Hyaluronic Acid</li></ul></div>
+                  <li>Salicylic Acid</li>
+                  <li>Niacinamide (5%)</li>
+                  <li>Witch Hazel (5%)</li>
+                  <li>Hyaluronic Acid</li>
+                  <li>Panthenol</li>
+                  <li>Aloe Vera Extract</li>
+                  <li>Vitamin E</li>
+                  <li>Glycerin</li>
+                  <li>Rose Water</li></ul></div>
             </details>
           </div>
 
@@ -2944,7 +2958,7 @@ a { color: inherit; text-decoration: none; }
       <div class="meet-carousel-wrapper">
         <div class="carousel-swipe-indicator">SWIPE →</div>
         <div class="meet-carousel">
-          <img src="./assets/renewal toner-100.jpg" alt="Product Image 1">
+          <img src="{{ "toner1.jpeg" | asset_url }}" alt="Product Image 1">
           <img src="{{ "toner-meet-2.jpg" | asset_url }}" alt="Product Image 2">
           <img src="{{ "toner-meet-3.jpg" | asset_url }}" alt="Product Image 3">
           <img src="{{ "toner-meet-4.jpg" | asset_url }}" alt="Product Image 4">
@@ -2959,22 +2973,22 @@ a { color: inherit; text-decoration: none; }
     <!-- Product Breakdown Section -->
     <section class="breakdown-section">
       <div class="breakdown-content">
-        <h2 class="bd-title">Powered Renewal</h2>
+        <h2 class="bd-title">Powered Renewal for Clearer Skin</h2>
         <div class="bd-table">
           <div class="bd-row">
-            <span class="bd-label">GOOD FOR:</span><span class="bd-val">Dull and textured skin</span>
+            <span class="bd-label">GOOD FOR:</span><span class="bd-val">All skin types, especially dull, textured, and congested skin</span>
           </div>
           <div class="bd-row">
-            <span class="bd-label">FEELS LIKE:</span><span class="bd-val">A refreshing liquid</span>
+            <span class="bd-label">FEELS LIKE:</span><span class="bd-val">A refreshing liquid that absorbs smoothly into skin</span>
           </div>
           <div class="bd-row">
-            <span class="bd-label">LOOKS LIKE:</span><span class="bd-val">Smooth, plump, and poreless skin by morning</span>
+            <span class="bd-label">LOOKS LIKE:</span><span class="bd-val">Brighter, smoother skin with refined texture</span>
           </div>
           <div class="bd-row">
-            <span class="bd-label">SMELLS LIKE:</span><span class="bd-val">Subtle, calming freshness for a relaxing nighttime routine</span>
+            <span class="bd-label">SMELLS LIKE:</span><span class="bd-val">A light, fresh scent with a clean finish</span>
           </div>
           <div class="bd-row">
-            <span class="bd-label">FYI:</span><span class="bd-val">Exfoliating • Glow-Boosting</span>
+            <span class="bd-label">FYI:</span><span class="bd-val">Exfoliating • Non-Stripping • Pore-Refining • Glow-Boosting</span>
           </div>
         </div>
       </div>
@@ -2993,21 +3007,21 @@ a { color: inherit; text-decoration: none; }
       <div class="wi-content-col">
         <div class="wi-vertical-text">what's inside</div>
         <div class="wi-details">
-          <p class="wi-intro">A resurfacing toner to reveal smoother skin.</p>
+          <p class="wi-intro">A resurfacing toner designed to reveal smoother, clearer, and more radiant skin by gently exfoliating and refining texture while maintaining hydration and comfort.</p>
           
           <div class="wi-ingredient-block">
-            <h3 class="wi-ingred-title">glycolic acid</h3><p class="wi-ingred-desc">promotes gentle exfoliation</p>
+            <h3 class="wi-ingred-title">GLYCOLIC ACID</h3><p class="wi-ingred-desc">promotes gentle exfoliation to remove dead skin buildup</p>
           </div>
           
           <hr class="wi-divider">
           
           <div class="wi-ingredient-block">
-            <h3 class="wi-ingred-title">niacinamide</h3><p class="wi-ingred-desc">helps even skin tone and supports clearer pores</p>
+            <h3 class="wi-ingred-title">NIACINAMIDE</h3><p class="wi-ingred-desc">helps even skin tone and supports clearer pores</p>
           </div>
           
           <hr class="wi-divider">
           
-          <p class="wi-also-made">also made with <strong>Salicylic Acid, Hyaluronic Acid, Aloe Vera</strong></p>
+          <p class="wi-also-made">also made with <strong>salicylic acid, witch hazel, hyaluronic acid, aloe vera extract, panthenol, vitamin E, glycerin, and rose water for hydration, calmness, and glow</strong></p>
         </div>
       </div>
     </section>
@@ -3032,23 +3046,26 @@ a { color: inherit; text-decoration: none; }
         
         <div class="stat-item">
           <div class="stat-pct">99%</div>
-          <div class="stat-desc">SAID SKIN FELT SMOOTHER</div>
+          <div class="stat-desc">SAID THEIR SKIN FELT SMOOTHER + MORE REFINED</div>
         </div>
         
-        
-          <div class="stat-desc">SAID IT ABSORBED WELL WITHOUT HEAVINESS</div>
+        <div class="stat-item">
+          <div class="stat-pct">98%</div>
+          <div class="stat-desc">SAID THEIR SKIN LOOKED BRIGHTER + CLEARER</div>
         </div>
         
-        
-          <div class="stat-desc">NOTICED SMOOTHER, SOFTER, AND REFINED SKIN BY MORNING</div>
+        <div class="stat-item">
+          <div class="stat-pct">97%</div>
+          <div class="stat-desc">SAID THEIR PORES FELT CLEANER + LESS CONGESTED</div>
         </div>
         
-        
-          <div class="stat-desc">REPORTED A VISIBLE REDUCTION IN FINE LINES AND DARK SPOTS</div>
+        <div class="stat-item">
+          <div class="stat-pct">3 out of 4</div>
+          <div class="stat-desc">SAID THEY NOTICED IMPROVED SKIN TEXTURE</div>
         </div>
         
         <div class="stat-disclaimer">
-          *Consumer study results.
+          Based on a 2-week consumer perception study with consistent use.
         </div>
       </div>
       
@@ -3065,8 +3082,36 @@ a { color: inherit; text-decoration: none; }
         <div class="faq-accordion">
           <div class="faq-item">
             <div class="faq-qa">
-              <span class="faq-question">Do I need sunscreen with this?</span>
-              <p class="faq-answer">Yes, sunscreen is essential as exfoliation increases sun sensitivity.</p>
+              <span class="faq-question">Can I use this toner every day?</span>
+              <p class="faq-answer">Start with 2–3 times a week and increase as your skin builds tolerance.</p>
+            </div>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-item">
+            <div class="faq-qa">
+              <span class="faq-question">Is it suitable for sensitive skin?</span>
+              <p class="faq-answer">It can be used on sensitive skin with caution, but patch testing is recommended before use.</p>
+            </div>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-item">
+            <div class="faq-qa">
+              <span class="faq-question">Will it help with acne and clogged pores?</span>
+              <p class="faq-answer">Yes, it helps clear pores and reduce buildup, supporting clearer skin over time.</p>
+            </div>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-item">
+            <div class="faq-qa">
+              <span class="faq-question">Can I use it with other active ingredients?</span>
+              <p class="faq-answer">Avoid using it with strong exfoliants on the same day to prevent irritation.</p>
+            </div>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-item">
+            <div class="faq-qa">
+              <span class="faq-question">Do I need to use sunscreen with this?</span>
+              <p class="faq-answer">Yes, sunscreen is essential during the day as exfoliation can increase sun sensitivity.</p>
             </div>
             <span class="faq-icon">+</span>
           </div>
@@ -3099,7 +3144,71 @@ a { color: inherit; text-decoration: none; }
             <div class="rv-stars">★★★★★</div>
           </div>
           <div class="rv-title">Verified Selection</div>
-          <div class="rv-body">"My skin feels noticeably smoother."</div>
+          <div class="rv-body">"My skin feels noticeably smoother and more polished after using this toner. It really helps with dullness."</div>
+        </div>
+      </div>
+
+      <hr class="rv-divider">
+
+      <div class="review-card">
+        <div class="rv-sidebar">
+          <div class="rv-author">Ayesha</div>
+          <div class="rv-verified">Verified Buyer</div>
+        </div>
+        <div class="rv-main">
+          <div class="rv-main-header">
+            <div class="rv-stars">★★★★★</div>
+          </div>
+          <div class="rv-title">Verified Selection</div>
+          <div class="rv-body">"I’ve seen a big improvement in my skin texture and clarity. My face looks fresher and more even."</div>
+        </div>
+      </div>
+
+      <hr class="rv-divider">
+
+      <div class="review-card">
+        <div class="rv-sidebar">
+          <div class="rv-author">Rabia</div>
+          <div class="rv-verified">Verified Buyer</div>
+        </div>
+        <div class="rv-main">
+          <div class="rv-main-header">
+            <div class="rv-stars">★★★★★</div>
+          </div>
+          <div class="rv-title">Verified Selection</div>
+          <div class="rv-body">"It gently exfoliates without making my skin feel dry. My skin looks brighter and more refined now."</div>
+        </div>
+      </div>
+
+      <hr class="rv-divider">
+
+      <div class="review-card">
+        <div class="rv-sidebar">
+          <div class="rv-author">Haris</div>
+          <div class="rv-verified">Verified Buyer</div>
+        </div>
+        <div class="rv-main">
+          <div class="rv-main-header">
+            <div class="rv-stars">★★★★★</div>
+          </div>
+          <div class="rv-title">Verified Selection</div>
+          <div class="rv-body">"My pores feel cleaner and my skin looks healthier overall. It’s become an important part of my routine."</div>
+        </div>
+      </div>
+
+      <hr class="rv-divider">
+
+      <div class="review-card">
+        <div class="rv-sidebar">
+          <div class="rv-author">Saad</div>
+          <div class="rv-verified">Verified Buyer</div>
+        </div>
+        <div class="rv-main">
+          <div class="rv-main-header">
+            <div class="rv-stars">★★★★★</div>
+          </div>
+          <div class="rv-title">Verified Selection</div>
+          <div class="rv-body">"After consistent use, my skin feels softer and looks more radiant. It has helped reduce rough texture."</div>
         </div>
       </div>
 
@@ -3127,7 +3236,7 @@ a { color: inherit; text-decoration: none; }
               <span class="card-brand-label">NIGHT CREAM</span>
             </div>
             <div class="card-rhode-image">
-              <img src="{{ "renewal toner-100.jpg" | asset_url }}" alt="Centella Night Cream" class="product-main-img">
+              <img src="{{ "toner1.jpeg" | asset_url }}" alt="Centella Night Cream" class="product-main-img">
             </div>
             <div class="card-rhode-footer">
               <div class="card-meta">
@@ -3298,22 +3407,22 @@ a { color: inherit; text-decoration: none; }
 
         <div class="card card-rhode" data-category="skincare">
           <a href="/products/aha-exfoliant" class="card-link-wrapper">
-            <img src="{{ "toner-meet-2.jpg" | asset_url }}" class="card-hover-bg" alt="Glycolic Toner Hover">
+            <img src="{{ "toner-meet-2.jpg" | asset_url }}" class="card-hover-bg" alt="Elaris7 Glycolic Renewal Toner Hover">
             <div class="card-rhode-top">
               <span class="card-brand-label">Renew & Refine</span>
             </div>
             <div class="card-rhode-image">
-              <img src="{{ "renewal toner-100.jpg" | asset_url }}" alt="Glycolic Toner" class="product-main-img">
+              <img src="{{ "toner1.jpeg" | asset_url }}" alt="Elaris7 Glycolic Renewal Toner" class="product-main-img">
             </div>
             <div class="card-rhode-footer">
               <div class="card-meta">
                 <div class="card-stars">★★★★★ <span class="review-count">(10k+)</span></div>
-                <h3 class="card-name">Glycolic Toner</h3>
+                <h3 class="card-name">Elaris7 Glycolic Renewal Toner</h3>
               </div>
-              <span class="btn-rhode-buy-pill">BUY - RS. 2,000</span>
+              <span class="btn-rhode-buy-pill">BUY - RS. 2,660</span>
             </div>
             <div class="buy-button-hover">
-                BUY Glycolic Toner - RS. 2,000
+                BUY Elaris7 Glycolic Renewal Toner - RS. 2,660
             </div>
           </a>
         </div>
@@ -3476,7 +3585,7 @@ a { color: inherit; text-decoration: none; }
 
     <!-- Mobile Sticky Cart -->
     <div class="mobile-sticky-cart">
-      <button class="buy-button">ADD TO BAG - RS. 2,000</button>
+      <button class="buy-button">ADD TO BAG - RS. 2,660</button>
     </div>
   </main>
 
