@@ -824,60 +824,121 @@
   },
   {
     "File": "product.keratin-serum-v2.liquid",
-    "Title": "Keratin Serum",
+    "Title": "Anti Frizz Keratin Serum",
     "Subtitle": "Smooth Control",
-    "Price": "1,800",
-    "Description": "A smoothing hair serum designed to control frizz and restore softness.",
+    "Price": "2,660",
+    "Description": "A smoothing hair serum designed to control frizz, protect against heat, and restore softness without weighing hair down. It seals moisture, enhances shine, and leaves hair silky, manageable, and smooth with every use.",
     "Benefits": [
-      "Controls frizz",
-      "Protects against heat"
+      "Instantly controls frizz for a smoother look",
+      "Helps reduce hair breakage and split ends",
+      "Protects hair from heat styling damage",
+      "Locks in moisture for long-lasting smoothness",
+      "Enhances shine and softness without heaviness",
+      "Keeps hair manageable and easy to style"
     ],
-    "Application": "Apply evenly through damp or dry hair, focusing on ends.",
+    "Application": "After washing or styling, take a small amount of Anti Frizz Keratin Serum and apply evenly through damp or dry hair, focusing on mid-lengths and ends. Avoid the roots and style as desired.",
     "Tricks": [
-      "Apply on damp hair",
-      "Use before heat styling"
+      "Apply on slightly damp hair for better absorption and control",
+      "Use a small amount to avoid product buildup",
+      "Apply before heat styling for added protection",
+      "Use on dry hair to tame flyaways instantly"
     ],
     "Ingredients": [
       "Argan Oil",
+      "Wheat Germ Oil",
+      "Almond Oil",
+      "Olive Oil",
+      "Grapeseed Oil",
+      "Coconut Oil",
+      "Flaxseed Oil",
+      "Safflower Oil",
+      "Shea Butter",
+      "Squalene",
       "Niacinamide"
     ],
     "CatchyLine": "Smooth Hair. Zero Frizz.",
     "ImportantInfo": {
-      "Headline": "Frizz-Free Confidence",
-      "GoodFor": "Dry and frizzy hair",
-      "FeelsLike": "A silky, weightless layer",
-      "FYI": "Non-Greasy • Heat-Protective"
+      "Headline": "Frizz-Free Confidence Every Day",
+      "GoodFor": "All hair types, especially dry and frizzy hair",
+      "FeelsLike": "A silky, weightless layer that glides through hair",
+      "LooksLike": "Sleek, shiny hair with controlled frizz",
+      "SmellsLike": "Soft, fresh scent with a clean finish",
+      "FYI": "Non-Greasy • Lightweight Feel • Heat-Protective • No Buildup"
     },
     "WhatsInside": {
-      "Intro": "A lightweight, smoothing hair serum.",
-      "I1Title": "argan oil",
-      "I1Desc": "nourishes and softens hair",
-      "I2Title": "keratin complex",
-      "I2Desc": "strengthens hair fibers for smoother strands",
-      "Also": "Vitamin E, Niacinamide"
+      "Intro": "A lightweight, smoothing hair serum that tames frizz, protects strands, and enhances shine without weighing hair down.",
+      "I1Title": "ARGAN OIL",
+      "I1Desc": "nourishes and softens hair while reducing breakage",
+      "I2Title": "KERATIN COMPLEX",
+      "I2Desc": "strengthens hair fibers for smoother, frizz-free strands",
+      "Also": "Wheat Germ Oil, Almond Oil, Olive Oil, Grapeseed Oil, Coconut Oil, Flaxseed Oil, Safflower Oil, Shea Butter, Squalene, Niacinamide"
     },
     "SpreadItOn": [
       "frizz control",
       "smoother strands",
-      "glossy finish"
+      "soft, glossy finish"
     ],
     "Stats": [
       {
         "Pct": "99%",
-        "Desc": "SAID HAIR FELT SMOOTHER"
+        "Desc": "SAID THEIR HAIR FELT SMOOTHER + MORE MANAGEABLE"
+      },
+      {
+        "Pct": "98%",
+        "Desc": "SAID IT REDUCED FRIZZ EFFECTIVELY"
+      },
+      {
+        "Pct": "97%",
+        "Desc": "SAID THEIR HAIR LOOKED SHINIER + HEALTHIER"
+      },
+      {
+        "Pct": "3 out of 4",
+        "Desc": "SAID THEY NOTICED LESS BREAKAGE"
       }
     ],
-    "StatsDisclaimer": "*Consumer study.",
+    "StatsDisclaimer": "Based on a 2-week consumer perception study with consistent use.",
     "FAQs": [
       {
+        "Q": "Can I use this serum on dry hair?",
+        "A": "Yes, it works well on both damp and dry hair to control frizz and add shine."
+      },
+      {
         "Q": "Will it make my hair greasy?",
-        "A": "No, the formula is non-greasy."
+        "A": "No, the formula is designed to be non-greasy and does not weigh hair down."
+      },
+      {
+        "Q": "Can I use it before heat styling?",
+        "A": "Yes, it acts as a heat protectant and helps reduce damage from styling tools."
+      },
+      {
+        "Q": "Is it suitable for all hair types?",
+        "A": "Yes, it works for all hair types, especially dry, frizzy, or damaged hair."
+      },
+      {
+        "Q": "How often should I use it?",
+        "A": "You can use it daily or whenever your hair needs smoothness and control."
       }
     ],
     "Reviews": [
       {
         "Name": "Alina",
-        "Text": "My hair feels so much smoother after using this."
+        "Text": "My hair feels so much smoother and frizz-free after using this. It adds shine without making my hair oily."
+      },
+      {
+        "Name": "Hamna",
+        "Text": "I use it before styling and it really protects my hair. My hair looks healthier and more manageable now."
+      },
+      {
+        "Name": "Saba",
+        "Text": "It controls my frizz instantly and makes my hair soft. The texture is very light and easy to apply."
+      },
+      {
+        "Name": "Zubair",
+        "Text": "My hair feels less rough and more polished after using this serum. It works really well for daily styling."
+      },
+      {
+        "Name": "Raza",
+        "Text": "It keeps my hair smooth throughout the day without buildup. My hair looks shinier and feels much softer."
       }
     ],
     "Images": {
