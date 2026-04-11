@@ -226,15 +226,32 @@ function updateTemplate(p) {
             });
           </script>`;
         
-        c = c.replace(/<\/body>/, `${bogoScript}\n</body>`);
+    // --- GLOBAL STANDART ADD TO CART ---
+    const standardCartScript = `
+          <script>
+            document.querySelector('.add-to-cart-btn')?.addEventListener('click', function() {
+                const mainVariantId = "{{ product.variants.first.id }}";
+                
+                fetch('/cart/add.js', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ items: [{ id: mainVariantId, quantity: 1 }] })
+                })
+                .then(response => response.json())
+                .then(data => { window.location.href = '/cart'; })
+                .catch(error => { alert('Error adding to cart.'); });
+            });
+          </script>`;
 
+    if (isBogoEligible) {
+        c = c.replace(/<\/body>/, `${bogoScript}\n${standardCartScript}\n</body>`);
     } else {
         // Remove BOGO for non-eligible
         c = c.replace(/<div class="bogo-inline-section">[\s\S]*?<\/style>[\s\S]*?<\/div>/, '');
         c = c.replace(/<button class="buy-button bogo-btn" id="openBogo">[\s\S]*?<\/button>/, '');
         c = c.replace(/grid-template-columns: 1fr 1fr;/, 'grid-template-columns: 1fr;');
+        c = c.replace(/<\/body>/, `${standardCartScript}\n</body>`);
     }
-
 
     // --- ASSET MAPPING ---
     if (p.Images) {
