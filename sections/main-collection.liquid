@@ -18,14 +18,27 @@
 <div class="collection-page">
   {%- assign special_handles = "korean-glass-skin,anti-acne,korean-brightening,hair-care" | split: "," -%}
   {%- assign is_special = false -%}
+  {%- assign target_prod = blank -%}
+  
   {% if special_handles contains collection.handle %}
     {%- assign is_special = true -%}
-    {%- case collection.handle -%}
-      {%- when 'korean-glass-skin' -%}{%- assign target_prod = all_products['elaris-7-korean-glass-skin-bundle'] -%}
-      {%- when 'anti-acne' -%}{%- assign target_prod = all_products['elaris-7-anti-acne-bundle'] -%}
-      {%- when 'korean-brightening' -%}{%- assign target_prod = all_products['elaris-7-korean-brightening-bundle'] -%}
-      {%- when 'hair-care' -%}{%- assign target_prod = all_products['elaris-7-korean-hair-care-bundle'] -%}
-    {%- endcase -%}
+    {%- comment -%} Look for the bundle product in this collection {%- endcomment -%}
+    {% for product in collection.products %}
+       {% if product.handle contains 'bundle' or product.handle contains 'set' or product.title contains 'BUNDLE' or forloop.first %}
+         {%- assign target_prod = product -%}
+         {% break %}
+       {% endif %}
+    {% endfor %}
+    
+    {%- comment -%} Fallback to specific handles if loop didn't find it {%- endcomment -%}
+    {% if target_prod == blank %}
+      {%- case collection.handle -%}
+        {%- when 'korean-glass-skin' -%}{%- assign target_prod = all_products['elaris-7-korean-glass-skin-bundle'] -%}
+        {%- when 'anti-acne' -%}{%- assign target_prod = all_products['elaris-7-anti-acne-bundle'] -%}
+        {%- when 'korean-brightening' -%}{%- assign target_prod = all_products['elaris-7-korean-brightening-bundle'] -%}
+        {%- when 'hair-care' -%}{%- assign target_prod = all_products['elaris-7-korean-hair-care-bundle'] -%}
+      {%- endcase -%}
+    {% endif %}
   {% endif %}
 
   <div class="collection-nav-bar">
