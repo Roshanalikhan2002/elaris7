@@ -2372,6 +2372,16 @@ a { color: inherit; text-decoration: none; }
             <div class="bogo-vertical-scroll">
               
               <div class="bogo-inline-card " onclick="selectBogo(this)">
+                <input type="radio" name="free_gift" data-gift-handle="night-cream" style="display:none;" >
+                <img src="{{ "night-cream-suite.jpeg" | asset_url }}" alt="Centella Serum">
+                <div class="bogo-inline-info">
+                  <span class="bogo-inline-name">Centella Serum</span>
+                  <span class="bogo-inline-tag">Radiance Reset</span>
+                </div>
+                <div class="bogo-select-indicator"></div>
+              </div>
+
+              <div class="bogo-inline-card " onclick="selectBogo(this)">
                 <input type="radio" name="free_gift" data-gift-handle="face-wash" style="display:none;" >
                 <img src="{{ "facewash1.jpeg" | asset_url }}" alt="Centella Face Wash">
                 <div class="bogo-inline-info">
@@ -4835,7 +4845,8 @@ a { color: inherit; text-decoration: none; }
                 'sunscreen-v2': '{{ all_products["sunscreen-v2"].variants.first.id }}',
                 'face-wash': '{{ all_products["face-wash"].variants.first.id }}',
                 'tranexamic-serum-v2': '{{ all_products["tranexamic-serum-v2"].variants.first.id }}',
-                'anti-acne': '{{ all_products["anti-acne"].variants.first.id }}'
+                'anti-acne': '{{ all_products["anti-acne"].variants.first.id }}',
+                'night-cream': '{{ all_products["night-cream"].variants.first.id }}'
             };
 
             document.getElementById('bogoAddToCart')?.addEventListener('click', function() {

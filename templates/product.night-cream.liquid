@@ -1468,7 +1468,7 @@ a { color: inherit; text-decoration: none; }
 }
 .section-grid {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: 12px;
   padding: 0 12px;
   min-height: 80vh;
@@ -2367,11 +2367,168 @@ a { color: inherit; text-decoration: none; }
 
           <hr class="divider">
 
+          <div class="bogo-inline-section">
+            <p class="bogo-inline-title">SELECT YOUR FREE PRODUCT</p>
+            <div class="bogo-vertical-scroll">
+              
+              <div class="bogo-inline-card selected" onclick="selectBogo(this)">
+                <input type="radio" name="free_gift" data-gift-handle="night-cream" style="display:none;" checked>
+                <img src="{{ "night-cream-suite.jpeg" | asset_url }}" alt="Centella Night Cream">
+                <div class="bogo-inline-info">
+                  <span class="bogo-inline-name">Centella Night Cream</span>
+                  <span class="bogo-inline-tag">Night Renewal</span>
+                </div>
+                <div class="bogo-select-indicator"></div>
+              </div>
+
+              <div class="bogo-inline-card " onclick="selectBogo(this)">
+                <input type="radio" name="free_gift" data-gift-handle="face-wash" style="display:none;" >
+                <img src="{{ "facewash1.jpeg" | asset_url }}" alt="Centella Face Wash">
+                <div class="bogo-inline-info">
+                  <span class="bogo-inline-name">Centella Face Wash</span>
+                  <span class="bogo-inline-tag">Pure Start</span>
+                </div>
+                <div class="bogo-select-indicator"></div>
+              </div>
+
+              <div class="bogo-inline-card " onclick="selectBogo(this)">
+                <input type="radio" name="free_gift" data-gift-handle="glow-serum" style="display:none;" >
+                <img src="{{ "glowserum-1.png" | asset_url }}" alt="Centella Serum">
+                <div class="bogo-inline-info">
+                  <span class="bogo-inline-name">Centella Serum</span>
+                  <span class="bogo-inline-tag">Radiance Reset</span>
+                </div>
+                <div class="bogo-select-indicator"></div>
+              </div>
+
+              <div class="bogo-inline-card " onclick="selectBogo(this)">
+                <input type="radio" name="free_gift" data-gift-handle="sunscreen-v2" style="display:none;" >
+                <img src="{{ "v2-sunscreen-1.jpeg" | asset_url }}" alt="Centella Sunscreen SPF60+">
+                <div class="bogo-inline-info">
+                  <span class="bogo-inline-name">Centella Sunscreen SPF60+</span>
+                  <span class="bogo-inline-tag">Daily Shield</span>
+                </div>
+                <div class="bogo-select-indicator"></div>
+              </div>
+
+              <div class="bogo-inline-card " onclick="selectBogo(this)">
+                <input type="radio" name="free_gift" data-gift-handle="tranexamic-serum-v2" style="display:none;" >
+                <img src="{{ "TranexamicSerum1.jpg" | asset_url }}" alt="Elaris7 Tranexamic Brightening Serum">
+                <div class="bogo-inline-info">
+                  <span class="bogo-inline-name">Elaris7 Tranexamic Brightening Serum</span>
+                  <span class="bogo-inline-tag">Even & Illuminate</span>
+                </div>
+                <div class="bogo-select-indicator"></div>
+              </div>
+
+              <div class="bogo-inline-card " onclick="selectBogo(this)">
+                <input type="radio" name="free_gift" data-gift-handle="anti-acne" style="display:none;" >
+                <img src="{{ "v2-antiacne-1.jpeg" | asset_url }}" alt="Elaris7 Anti-Acne Clarifying Serum">
+                <div class="bogo-inline-info">
+                  <span class="bogo-inline-name">Elaris7 Anti-Acne Clarifying Serum</span>
+                  <span class="bogo-inline-tag">Clear & Control</span>
+                </div>
+                <div class="bogo-select-indicator"></div>
+              </div>
+            </div>
+          </div>
           
+          <style>
+            .bogo-inline-section {
+              margin-top: 20px;
+              margin-bottom: 20px;
+            }
+            .bogo-inline-title {
+              font-size: 0.75rem;
+              font-weight: 800;
+              color: #5b5a53;
+              letter-spacing: 0.08em;
+              margin-bottom: 12px;
+              text-transform: uppercase;
+            }
+            .bogo-vertical-scroll {
+              display: flex;
+              flex-direction: column;
+              gap: 10px;
+              max-height: 400px;
+              overflow-y: auto;
+              padding-right: 10px;
+              scrollbar-width: thin;
+              scrollbar-color: #5b5a53 #f1efea;
+            }
+            .bogo-inline-card {
+              display: flex;
+              align-items: center;
+              gap: 15px;
+              background: #fff;
+              border: 1px solid #d1d1cf;
+              border-radius: 12px;
+              padding: 10px;
+              cursor: pointer;
+              transition: all 0.2s ease;
+            }
+            .bogo-inline-card:hover, .bogo-inline-card.selected {
+              border-color: #5b5a53;
+              background: #fdfdfb;
+            }
+            .bogo-inline-card img {
+              width: 50px;
+              height: 50px;
+              object-fit: contain;
+              border-radius: 6px;
+              background: #f9f9f9;
+            }
+            .bogo-inline-info {
+              flex: 1;
+              display: flex;
+              flex-direction: column;
+            }
+            .bogo-inline-name {
+              font-size: 0.85rem;
+              font-weight: 700;
+              color: #333;
+            }
+            .bogo-inline-tag {
+              font-size: 0.65rem;
+              color: #777;
+              text-transform: uppercase;
+            }
+            .bogo-select-indicator {
+              width: 18px;
+              height: 18px;
+              border: 2px solid #d1d1cf;
+              border-radius: 50%;
+              position: relative;
+            }
+            .bogo-inline-card.selected .bogo-select-indicator {
+              border-color: #5b5a53;
+              background: #5b5a53;
+            }
+            .bogo-inline-card.selected .bogo-select-indicator::after {
+              content: '';
+              position: absolute;
+              top: 3px;
+              left: 3px;
+              width: 8px;
+              height: 8px;
+              background: #fff;
+              border-radius: 50%;
+            }
+          </style>
+          
+          <script>
+            function selectBogo(card) {
+              document.querySelectorAll('.bogo-inline-card').forEach(c => c.classList.remove('selected'));
+              card.classList.add('selected');
+              const input = card.querySelector('input[type="radio"]');
+              if(input) input.checked = true;
+            }
+          </script>
+          </div>
 
           <div class="product-actions-grid">
             <button class="buy-button add-to-cart-btn" style="white-space: nowrap;">ADD TO CART - <span>Rs. 2,660</span></button>
-            
+            <button class="buy-button bogo-btn" id="bogoAddToCart">BUY 1 GET 1 FREE</button>
           </div>
           
           <style>
@@ -4671,6 +4828,54 @@ a { color: inherit; text-decoration: none; }
     }
   </style>
   <script src="./assets/script.js" defer></script>
+
+          <script>
+            function selectBogo(card) {
+                document.querySelectorAll('.bogo-inline-card').forEach(c => c.classList.remove('selected'));
+                card.classList.add('selected');
+                const input = card.querySelector('input[type="radio"]');
+                if(input) input.checked = true;
+            }
+
+            const handleToIdMap = {
+                'glow-serum': '{{ all_products["glow-serum"].variants.first.id }}',
+                'sunscreen-v2': '{{ all_products["sunscreen-v2"].variants.first.id }}',
+                'face-wash': '{{ all_products["face-wash"].variants.first.id }}',
+                'tranexamic-serum-v2': '{{ all_products["tranexamic-serum-v2"].variants.first.id }}',
+                'anti-acne': '{{ all_products["anti-acne"].variants.first.id }}',
+                'night-cream': '{{ all_products["night-cream"].variants.first.id }}'
+            };
+
+            document.getElementById('bogoAddToCart')?.addEventListener('click', function() {
+                const selectedGift = document.querySelector('input[name="free_gift"]:checked');
+                if (!selectedGift) {
+                    alert('Please select your free gift first.');
+                    return;
+                }
+                const giftHandle = selectedGift.getAttribute('data-gift-handle');
+                const giftVariantId = handleToIdMap[giftHandle];
+                const mainVariantId = "{{ product.variants.first.id }}";
+                
+                if (!giftVariantId) {
+                    console.error('Variant ID not found for handle:', giftHandle);
+                    return;
+                }
+
+                const items = [
+                    { id: mainVariantId, quantity: 1 },
+                    { id: giftVariantId, quantity: 1 }
+                ];
+
+                fetch('/cart/add.js', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ items: items })
+                })
+                .then(response => response.json())
+                .then(data => { window.location.href = '/cart'; })
+                .catch(error => { alert('Error adding to cart.'); });
+            });
+          </script>
 </body>
 </html>
 

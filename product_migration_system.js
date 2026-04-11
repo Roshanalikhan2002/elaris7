@@ -145,7 +145,8 @@ function updateTemplate(p) {
         'sunscreen-v2',
         'face-wash',
         'tranexamic-serum-v2',
-        'anti-acne'
+        'anti-acne',
+        'night-cream'
     ];
 
     const currentHandle = getHandle(p.File);
@@ -190,7 +191,8 @@ function updateTemplate(p) {
                 'sunscreen-v2': '{{ all_products["sunscreen-v2"].variants.first.id }}',
                 'face-wash': '{{ all_products["face-wash"].variants.first.id }}',
                 'tranexamic-serum-v2': '{{ all_products["tranexamic-serum-v2"].variants.first.id }}',
-                'anti-acne': '{{ all_products["anti-acne"].variants.first.id }}'
+                'anti-acne': '{{ all_products["anti-acne"].variants.first.id }}',
+                'night-cream': '{{ all_products["night-cream"].variants.first.id }}'
             };
 
             document.getElementById('bogoAddToCart')?.addEventListener('click', function() {
