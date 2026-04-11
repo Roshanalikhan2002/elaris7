@@ -248,6 +248,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const isHomePage = window.location.pathname === '/' || window.location.pathname.includes('index.html') || window.location.pathname.endsWith('.json') || window.location.pathname.includes('/home');
         
         if (isHomePage) {
+          const category = link.getAttribute('data-category');
+          if (!category) return; // Let default navigation happen if no category data
+
           e.preventDefault();
           e.stopPropagation();
           
@@ -255,18 +258,19 @@ document.addEventListener('DOMContentLoaded', () => {
           catLinks.forEach(l => l.classList.remove('active'));
           link.classList.add('active');
 
-          const category = link.getAttribute('data-category');
           console.log('Filtering by:', category);
 
           productCards.forEach(card => {
-            const cardCat = card.getAttribute('data-category');
+            const cardCatStr = card.getAttribute('data-category') || '';
+            const cardCategories = cardCatStr.split(' ');
+
             if (category === 'featured') {
-              if (cardCat === 'set') {
+              if (cardCategories.includes('set')) {
                 card.style.display = 'none';
               } else {
                 card.style.display = 'block';
               }
-            } else if (cardCat === category) {
+            } else if (cardCategories.includes(category)) {
               card.style.display = 'block';
             } else {
               card.style.display = 'none';
@@ -278,20 +282,25 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
     });
+
     // Initial Filter on load (Default is Featured)
     const initialFilter = () => {
       const activeLink = document.querySelector('.cat-link.active');
       if (activeLink) {
         const category = activeLink.getAttribute('data-category');
+        if (!category) return;
+
         productCards.forEach(card => {
-          const cardCat = card.getAttribute('data-category');
+          const cardCatStr = card.getAttribute('data-category') || '';
+          const cardCategories = cardCatStr.split(' ');
+
           if (category === 'featured') {
-            if (cardCat === 'set') {
+            if (cardCategories.includes('set')) {
               card.style.display = 'none';
             } else {
               card.style.display = 'block';
             }
-          } else if (cardCat === category) {
+          } else if (cardCategories.includes(category)) {
             card.style.display = 'block';
           } else {
             card.style.display = 'none';
