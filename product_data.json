@@ -1498,44 +1498,56 @@
   },
   {
     "File": "product.glutathione-cream.liquid",
-    "Title": "Glutathione Cream",
-    "Subtitle": "Even & Radiant",
-    "Price": "2,400",
+    "Title": "Elaris7 Brightening Repair Cream",
+    "Subtitle": "Glow & Repair",
+    "Price": "2,660",
     "Description": "A nourishing brightening cream designed to improve uneven tone, reduce dullness, and support skin repair. It helps fade the look of dark spots, restore radiance, and leave skin smoother and healthier with consistent use.",
     "Benefits": [
-      "Brightens dull skin",
-      "Barrier support",
-      "Improves uneven tone",
-      "Deeply hydrates"
+      "Helps visibly brighten dull and uneven skin tone",
+      "Supports reduction of dark spots and pigmentation",
+      "Helps improve post-acne marks and discoloration",
+      "Provides deep hydration and skin barrier support",
+      "Leaves skin soft, smooth and radiant",
+      "Helps restore skin clarity and evenness over time",
+      "Promotes a naturally healthy, luminous glow"
     ],
-    "Application": "Apply a small amount morning and evening on cleansed skin.",
+    "Application": "Use morning and evening after cleansing and serum. Apply a small amount to face and neck. Gently massage until fully absorbed. In the morning, follow with sunscreen.",
     "Tricks": [
-      "Apply on damp skin to lock in moisture",
-      "Pair with a brightening serum for better results"
+      "Apply on slightly damp skin for better absorption",
+      "Use consistently for visible brightening results",
+      "Pair with a serum to enhance results",
+      "Use sunscreen daily to maintain an even tone",
+      "Massage gently to boost skin absorption"
     ],
     "Ingredients": [
+      "Honey",
+      "Centella Asiatica",
       "Glutathione",
       "Alpha Arbutin",
-      "Honey",
+      "Kojic Acid Dipalmitate",
       "Niacinamide",
-      "Vitamin C"
+      "Vitamin C",
+      "Hyaluronic Acid",
+      "Glycerin",
+      "Vitamin E",
+      "Amla Extract"
     ],
     "CatchyLine": "Repair Dullness. Reveal Glow.",
     "ImportantInfo": {
-      "Headline": "Deep Brightening & Repair",
-      "GoodFor": "Dull and uneven skin",
-      "FeelsLike": "A rich, smooth cream that absorbs deeply",
-      "LooksLike": "Even-toned, glowing, and healthy skin",
-      "SmellsLike": "A clean, subtle freshness",
-      "FYI": "Repair Care • Deep Hydration • Brightening"
+      "Headline": "Deep Brightening With Skin Repair Care",
+      "GoodFor": "All skin types, especially dull and uneven skin",
+      "FeelsLike": "A rich, smooth cream that absorbs comfortably into skin",
+      "LooksLike": "Brighter, clearer skin with improved tone and texture",
+      "SmellsLike": "A soft, fresh scent with a soothing finish",
+      "FYI": "Non-Greasy • Deep Hydration • Daily Use • Brightening Care"
     },
     "WhatsInside": {
-      "Intro": "A nourishing cream that brightens and repairs.",
-      "I1Title": "honey & glutathione",
+      "Intro": "A nourishing cream that brightens, repairs, and hydrates skin for a clearer, more even complexion.",
+      "I1Title": "HONEY & GLUTATHIONE",
       "I1Desc": "help restore radiance and fade dullness",
-      "I2Title": "alpha arbutin",
-      "I2Desc": "work to reduce dark spots and pigmentation",
-      "Also": "Niacinamide, Vitamin C, Hyaluronic Acid, Rose Extract"
+      "I2Title": "ALPHA ARBUTIN & KOJIC ACID DIPALMITATE",
+      "I2Desc": "work to reduce dark spots, post-acne marks, and pigmentation",
+      "Also": "Centella Asiatica, Niacinamide, Vitamin C, Hyaluronic Acid, Glycerin, Vitamin E, and Amla Extract for hydration, skin barrier support, and smooth texture"
     },
     "SpreadItOn": [
       "brightening care",
@@ -1545,28 +1557,64 @@
     "Stats": [
       {
         "Pct": "99%",
-        "Desc": "SAID SKIN LOOKED MORE RADIANT"
+        "Desc": "SAID THEIR SKIN LOOKED MORE RADIANT"
+      },
+      {
+        "Pct": "98%",
+        "Desc": "SAID THEIR SKIN FELT MORE HYDRATED"
       },
       {
         "Pct": "97%",
-        "Desc": "NOTICED REDUCED DISCOLORATION"
-      }
-    ],
-    "StatsDisclaimer": "*Based on a 2-week perception study.",
-    "FAQs": [
-      {
-        "Q": "Will it feel heavy?",
-        "A": "No, it absorbs well while providing hydration."
+        "Desc": "SAID THEIR SKIN APPEARED MORE EVEN"
       },
       {
-        "Q": "Can I use it under makeup?",
-        "A": "Yes, it creates a smooth, hydrated base."
+        "Pct": "3 out of 4",
+        "Desc": "SAID THEY NOTICED IMPROVED SKIN CLARITY"
+      }
+    ],
+    "StatsDisclaimer": "Based on a 2-week consumer perception study with consistent daily use.",
+    "FAQs": [
+      {
+        "Q": "Can I use this cream every day?",
+        "A": "Yes, it is suitable for daily use, both morning and evening."
+      },
+      {
+        "Q": "Is it suitable for dull and uneven skin?",
+        "A": "Yes, it is designed to target dullness, pigmentation, and uneven tone."
+      },
+      {
+        "Q": "Will it feel heavy on my skin?",
+        "A": "No, it absorbs well while still providing deep hydration and comfort."
+      },
+      {
+        "Q": "Can I use it with other skincare products?",
+        "A": "Yes, it works well with serums, toners, and sunscreen."
+      },
+      {
+        "Q": "Do I need sunscreen while using this?",
+        "A": "Yes, sunscreen is essential during the day to protect and maintain results."
       }
     ],
     "Reviews": [
       {
         "Name": "Areeba",
-        "Text": "My skin looks much brighter and the texture has improved a lot."
+        "Text": "My skin looks much brighter and healthier after using this cream. It has really helped with my dullness and uneven tone."
+      },
+      {
+        "Name": "Mehak",
+        "Text": "I’ve noticed my dark spots fading slowly and my skin feels softer. It gives a natural glow without feeling heavy."
+      },
+      {
+        "Name": "Sarah",
+        "Text": "This cream made my skin feel smooth and hydrated. My complexion looks clearer and more even now."
+      },
+      {
+        "Name": "Hamza",
+        "Text": "After regular use, my skin tone looks more balanced and fresh. It has improved the appearance of my marks."
+      },
+      {
+        "Name": "Bilal",
+        "Text": "My skin feels nourished and looks more radiant than before. It has become an essential part of my routine."
       }
     ],
     "Images": {
