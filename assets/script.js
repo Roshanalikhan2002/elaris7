@@ -191,8 +191,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Handle Product Page "ADD TO BAG" (with BOGO)
-  const mainBuyBtn = document.querySelector('.buy-button');
+  // Handle Product Page "ADD TO BAG" (Standard Add to Cart)
+  const mainBuyBtn = document.querySelector('.add-to-cart-btn');
   if (mainBuyBtn) {
     mainBuyBtn.addEventListener('click', async (e) => {
       e.preventDefault();

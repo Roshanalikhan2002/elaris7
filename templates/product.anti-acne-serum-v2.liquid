@@ -4874,16 +4874,16 @@ a { color: inherit; text-decoration: none; }
                     if (!giftVariantId) {
                         console.error('Variant ID not found for handle:', giftHandle);
                         // Fallback to 2x main product if gift mapping fails
-                        items = [{ id: mainVariantId, quantity: 2 }];
+                        items = [{ id: mainVariantId, quantity: 2, properties: { '_bogo': 'true' } }];
                     } else {
                         items = [
-                            { id: mainVariantId, quantity: 1 },
-                            { id: giftVariantId, quantity: 1 }
+                            { id: mainVariantId, quantity: 1, properties: { '_bogo': 'true' } },
+                            { id: giftVariantId, quantity: 1, properties: { '_bogo': 'true' } }
                         ];
                     }
                 } else {
                     // No product selected from vertical list -> 2x current product
-                    items = [{ id: mainVariantId, quantity: 2 }];
+                    items = [{ id: mainVariantId, quantity: 2, properties: { '_bogo': 'true' } }];
                 }
 
                 fetch('/cart/add.js', {
