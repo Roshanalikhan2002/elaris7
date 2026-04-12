@@ -2172,11 +2172,11 @@ a { color: inherit; text-decoration: none; }
     <div class="header-main">
       <nav class="header-nav">
         <ul class="desktop-only">
-          <li><a href="index.html">HOME</a></li>
+          <li><a href="/">HOME</a></li>
           <li><a href="#">SHOP</a></li>
         </ul>
       </nav>
-      <div class="header-logo"><a href="index.html" class="logo-text">elaris7</a></div>
+      <div class="header-logo"><a href="{{ routes.root_url }}" class="logo-text">elaris7</a></div>
       <nav class="header-nav header-right">
         <ul class="desktop-only">
           <li><a href="#">SEARCH</a></li>
@@ -2274,9 +2274,9 @@ a { color: inherit; text-decoration: none; }
   </main>
 
   <footer class="site-footer-rhode">
-    <div class="footer-logo-massive">
+    <a href="/" class="footer-logo-massive" style="text-decoration:none; display:block; text-align:center;">
       <h1 class="logo-text-giant">elaris7</h1>
-    </div>
+    </a>
     <div class="footer-bottom-info">
       &copy; 2026 ELARIS7. ALL RIGHTS RESERVED.
     </div>
@@ -2284,6 +2284,8 @@ a { color: inherit; text-decoration: none; }
 
 </body>
 </html>
+
+
 
 
 

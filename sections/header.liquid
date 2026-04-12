@@ -63,7 +63,7 @@
       </ul>
     </nav>
     <div class="header-logo">
-      <a href="/" class="logo-text">{{ shop.name }}</a>
+      <a href="{{ routes.root_url }}" class="logo-text">elaris7</a>
     </div>
     <nav class="header-nav header-right">
       <ul class="desktop-only site-nav">
@@ -117,7 +117,7 @@
   <div class="menu-inner">
     <div class="menu-top">
       <div class="menu-close" id="menu-close-btn">&times;</div>
-      <a href="/" class="menu-logo-small">elaris7</a>
+      <a href="{{ routes.root_url }}" class="menu-logo-small">elaris7</a>
       <div class="menu-icons"></div>
     </div>
     
@@ -870,3 +870,5 @@ body.menu-open { overflow: hidden; }
   ]
 }
 {% endschema %}
+
+

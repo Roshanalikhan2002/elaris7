@@ -52,3 +52,5 @@
     <script src="{{ 'script.js' | asset_url }}" defer="defer"></script>
   {%- capture ecom_footer_content -%}{%- render 'ecom_footer' -%}{%- endcapture -%}{%- unless ecom_footer_content contains 'Liquid error' -%}{{ ecom_footer_content }}{%- endunless -%}</body>
 </html>
+
+
