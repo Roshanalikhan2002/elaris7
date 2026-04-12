@@ -3,7 +3,7 @@
   {%- assign mega_images = "night-cream.jpg,tranexamic-serum.jpg,keratin-serum.jpg,glow-serum-100.jpg,glutathione-cream-100.jpg,hair-mist.jpg,facewash-100.jpg,anti-acne-100.jpg,sunscreen-100.jpg,renewal-cleanser-1.jpg,moisturizer-100.jpg,toner1.jpeg,glassmain.jpg,main.jpg,anti-acne-100.jpg,hairmain.jpg" | split: "," -%}
   {%- assign mega_descs = "To restore, protect and nurture,Advanced brightening formula,Smooth Control,Essential glass skin routine,Deep hydration treatment,Scented radiance for hair,Gentle daily cleanser,Targeted blemish control,Premium solar protection,Intense clarity refresh,Plumping hydration boost,Refining skin texture,Full 5-Piece System,The Brightening Routine,Clear Skin Advanced Set,Repair & Refine Hair Cycle" | split: "," -%}
   {%- assign mega_labels = "korean-glass-skin nightcream,korean-brightening tranexamic serum,hair-care keratin,korean-glass-skin serum glow,korean-brightening glutathione repair,hair-care mist,korean-glass-skin facewash,anti-acne brightening antiacne,korean-glass-skin sunscreen,korean-glass-skin cleanser,korean-glass-skin moisturizer,korean-brightening toner,set glass-skin,set brightening,set anti-acne,set hair-care" | split: "," -%}
-  {%- assign mega_handles = "night-cream,tranexamic-serum,anti-frizz-keratin-serum,glow-serum,glutathione-cream,floral-blossom-hair-mist,face-wash,anti-acne-serum,sunscreen-spf60,renewal-cleanser,hydra-burst-moisturizer,renewal-toner,elaris-7-korean-glass-skin-bundle,elaris-7-korean-brightening-bundle,anti-acne-serum,elaris-7-korean-hair-care-bundle" | split: "," -%}
+  {%- assign mega_handles = "night-cream,tranexamic-serum-v2,anti-frizz-keratin-serum,glow-serum,glutathione-cream,floral-blossom-hair-mist,face-wash,anti-acne,sunscreen-v2,renewal-cleanser,hydra-burst-moisturizer,renewal-toner,glass-bundle,bright-bundle,anti-acne,hair-bundle" | split: "," -%}
 
   <div class="announcement-bar">
     {{ section.settings.announcement_text }}
@@ -131,6 +131,8 @@
         <a href="javascript:void(0)" class="tab cat-link" data-category="set">SET</a>
       </div>
     </div>
+
+    <div class="menu-scroll-area">
     
     <div class="menu-products">
       {% for i in (0..15) %}
@@ -163,13 +165,14 @@
       <a href="/pages/faq">FAQ</a>
       <a href="/account">ACCOUNT</a>
     </div>
-    
-    <div class="menu-footer">
-      <div class="region-selector">Region: <span>PAKISTAN (RS)</span></div>
+        <div class="menu-footer">
+        <div class="region-selector">
+          Country/region: <span>Pakistan (PKR Rs)</span> ⌵
+        </div>
+      </div>
     </div>
   </div>
 </div>
-
 <style>
 /* ===== Search Overlay ===== */
 .search-overlay {
@@ -347,10 +350,8 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  overflow-y: auto;
-  scrollbar-width: none;
+  overflow: hidden; /* Prevent inner scroll to make header sticky */
 }
-.menu-inner::-webkit-scrollbar { display: none; }
 
 .menu-top {
   display: flex;
@@ -359,7 +360,17 @@
   padding: 18px 20px;
   border-bottom: 1px solid rgba(91,90,83,0.12);
   position: relative;
+  background: #f1efea;
+  z-index: 20;
 }
+
+.menu-scroll-area {
+  flex: 1;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.menu-scroll-area::-webkit-scrollbar { display: none; }
 
 .menu-close {
   font-size: 1.8rem;
@@ -387,14 +398,16 @@
 }
 
 .menu-tabs-container {
-  padding: 18px 0;
-  margin-bottom: 0;
+  padding: 15px 0;
+  background: #f1efea;
   border-bottom: 1px solid rgba(91,90,83,0.12);
   overflow-x: auto;
   overflow-y: hidden;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
   display: block;
+  z-index: 15;
+  flex-shrink: 0;
 }
 .menu-tabs-container::-webkit-scrollbar { display: none; }
 
@@ -429,20 +442,24 @@
 }
 
 .menu-products {
-  padding: 10px 16px;
+  padding: 10px 16px 30px; /* Added bottom padding for better scroll end */
   display: flex;
   flex-direction: column;
   gap: 0;
 }
 
 .menu-product-row {
-  display: flex;
+  display: flex !important;
   align-items: center;
   gap: 16px;
   padding: 14px 0;
   border-bottom: 1px solid rgba(91,90,83,0.08);
   text-decoration: none;
   transition: background 0.2s ease;
+  pointer-events: auto !important;
+  cursor: pointer;
+  position: relative;
+  z-index: 5;
 }
 
 .menu-product-row:active { background: rgba(91,90,83,0.04); }
