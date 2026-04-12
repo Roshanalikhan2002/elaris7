@@ -243,165 +243,101 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
   });
-  // --- CATEGORY FILTERING (Event Delegation to handle Shopify navigation override) ---
+  // --- CATEGORY FILTERING (Synced Desktop & Mobile) ---
   document.addEventListener('click', (e) => {
-    const link = e.target.closest('.cat-link');
+    const link = e.target.closest('.cat-link, .mega-cat-item');
     if (!link) return;
 
-    const category = link.getAttribute('data-category');
+    const category = link.getAttribute('data-category') || link.textContent.trim().toLowerCase().replace(/\s+/g, '-');
     if (!category || category === '#') return;
 
-    e.preventDefault(); // Stop navigation to collection page
+    // If it's a real shop link (not just a filter), let it navigate
+    if (link.getAttribute('href') && link.getAttribute('href').startsWith('/collections/')) {
+       // Optional: if you want them to stay on page, uncomment next line
+       // e.preventDefault(); 
+    } else {
+       e.preventDefault();
+    }
 
-    // Reset all links
-    document.querySelectorAll('.cat-link').forEach(l => l.classList.remove('active'));
-    // Set active on all matching links (sync mobile and desktop)
-    document.querySelectorAll(`.cat-link[data-category="${category}"]`).forEach(l => l.classList.add('active'));
-
-    // Filter both homepage cards and mobile menu rows
-    const cards = document.querySelectorAll('.card-rhode, .menu-product-row');
-    const sanitize = (str) => str.trim().toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+    const sanitize = (str) => str.toString().trim().toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
     const targetCat = sanitize(category);
 
-    cards.forEach(card => {
-      const cardCatStr = (card.getAttribute('data-category') || '').toLowerCase();
+    console.log('Filtering category:', targetCat);
+
+    // Sync active state across all matching filters (Desktop & Mobile)
+    document.querySelectorAll('.cat-link, .mega-cat-item').forEach(l => {
+        const lCat = sanitize(l.getAttribute('data-category') || l.textContent.trim());
+        if (lCat === targetCat) {
+            l.classList.add('active');
+        } else {
+            l.classList.remove('active');
+        }
+    });
+
+    // Filter Homepage Cards (.card-rhode) and Mobile Menu Rows (.menu-product-row)
+    const filterableItems = document.querySelectorAll('.card-rhode, .menu-product-row');
+    
+    filterableItems.forEach(item => {
+      const itemCatStr = (item.getAttribute('data-category') || '').toLowerCase();
       let matches = false;
       
       if (targetCat === 'featured') {
-        if (!cardCatStr.includes('set')) {
-          matches = true;
-        }
-      } else if (targetCat === 'set') {
-        if (cardCatStr.includes('set')) {
-          matches = true;
-        }
+        // Featured shows everything EXCEPT sets/bundles
+        matches = !itemCatStr.includes('set') && !itemCatStr.includes('bundle');
+      } else if (targetCat === 'set' || targetCat === 'sets' || targetCat === 'bundles') {
+        matches = itemCatStr.includes('set') || itemCatStr.includes('bundle');
       } else {
-        // Word-based matching for robustness
-        const targetWords = targetCat.split('-').filter(w => w.length > 3);
-        matches = targetWords.length > 0 ? targetWords.some(word => cardCatStr.includes(word)) : cardCatStr.includes(targetCat);
-        
-        // Hardcoded reliable mapping for Korean Glass Skin
+        // Regular category matching
+        // We match if targetCat is anywhere in the space-separated tag list
+        const tags = itemCatStr.split(/\s+/);
+        matches = tags.some(tag => tag === targetCat || tag.includes(targetCat));
+
+        // Advanced Logic for specific groups
         if (targetCat.includes('glass')) {
-          const glassTags = ['nightcream', 'serum', 'moisturizer', 'cleanser', 'facewash', 'sunscreen'];
-          if (glassTags.some(tag => cardCatStr.includes(tag))) {
-            const cardName = (card.querySelector('.card-name, .mini-title')?.textContent || '').toLowerCase();
-            if (cardName.includes('tranexamic')) {
-              matches = false;
-            } else {
-              matches = true;
-            }
-          }
+           // Korean Glass Skin specific logic
+           if (itemCatStr.includes('glass')) matches = true;
         }
-        
-        // Hardcoded reliable mapping for Korean Brightening
         if (targetCat.includes('brightening')) {
-          const brightTags = ['tranexamic', 'glutathione', 'toner', 'antiacne', 'anti-acne', 'brightening', 'repair', 'serum'];
-          if (brightTags.some(tag => cardCatStr.includes(tag))) {
-            const cardName = (card.querySelector('.card-name, .mini-title')?.textContent || '').toLowerCase();
-            if (cardCatStr.includes('serum') || cardCatStr.includes('repair')) {
-               if (cardName.includes('tranexamic') || cardName.includes('brightening') || cardName.includes('acne') || cardName.includes('glutathione')) {
-                 matches = true;
-               } else {
-                 matches = false;
-               }
-            } else {
-               matches = true;
-            }
-          }
+           // Korean Brightening specific logic
+           if (itemCatStr.includes('brightening')) matches = true;
         }
       }
 
-      if (matches || cardCatStr.includes(targetCat)) {
-        card.style.display = 'flex';
+      // Toggle Visibility
+      if (matches) {
+        item.style.display = item.classList.contains('menu-product-row') ? 'flex' : 'flex';
+        // For grid based cards
+        if (item.classList.contains('card-rhode')) item.style.display = 'flex';
       } else {
-        card.style.display = 'none';
+        item.style.display = 'none';
       }
     });
 
-    // Reset carousel position
+    // Reset Scroll Positions
+    // 1. Homepage Slider
     const slider = document.getElementById('product-slider') || document.getElementById('product-collection-scroll') || document.querySelector('.product-collection');
     if (slider) slider.scrollLeft = 0;
 
-    // Mobile Menu specific handling (Removed automatic close for categories)
+    // 2. Mobile Menu Scroll Area
     if (link.closest('#mobile-menu')) {
-      // We don't close the menu anymore when a filter is clicked
-      // But we do ensure we scroll the menu container to the top so the products are seen
-      const menuInner = document.querySelector('.menu-inner');
-      if (menuInner) menuInner.scrollTop = 0;
+      const scrollArea = document.querySelector('.menu-scroll-area');
+      if (scrollArea) scrollArea.scrollTop = 0;
     }
   });
 
 
+
   // Initial Filter on load (Default is Featured)
-  const initialFilter = () => {
-    const activeLink = document.querySelector('.cat-link.active');
-    if (activeLink) {
-      const category = activeLink.getAttribute('data-category');
-      const cards = document.querySelectorAll('.card-rhode, .menu-product-row');
-      if (!category || !cards.length) return;
-
-      const sanitize = (str) => str.trim().toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
-      const targetCat = sanitize(category);
-      cards.forEach(card => {
-        const cardCatStr = (card.getAttribute('data-category') || '').toLowerCase();
-
-        if (targetCat === 'featured') {
-          if (!cardCatStr.includes('set')) {
-            card.style.display = 'flex';
-          } else {
-            card.style.display = 'none';
-          }
-        } else if (targetCat === 'set') {
-          if (cardCatStr.includes('set')) {
-            card.style.display = 'flex';
-          } else {
-            card.style.display = 'none';
-          }
-        } else {
-          // Word-based matching for robustness
-          const targetWords = targetCat.split('-').filter(w => w.length > 3);
-          let matches = targetWords.length > 0 ? targetWords.some(word => cardCatStr.includes(word)) : cardCatStr.includes(targetCat);
-          
-          // Hardcoded reliable mapping for Korean Glass Skin
-          if (targetCat.includes('glass')) {
-            const glassTags = ['nightcream', 'serum', 'moisturizer', 'cleanser', 'facewash', 'sunscreen'];
-            if (glassTags.some(tag => cardCatStr.includes(tag))) {
-              const cardName = (card.querySelector('.card-name')?.textContent || '').toLowerCase();
-              // EXCLUDE Tranexamic from Glass Skin
-              if (cardName.includes('tranexamic')) {
-                matches = false;
-              } else {
-                matches = true;
-              }
-            }
-          }
-          
-          // Hardcoded reliable mapping for Korean Brightening
-          if (targetCat.includes('brightening')) {
-            const brightTags = ['tranexamic', 'glutathione', 'toner', 'antiacne', 'anti-acne', 'brightening', 'repair', 'serum'];
-            if (brightTags.some(tag => cardCatStr.includes(tag))) {
-              const cardName = (card.querySelector('.card-name')?.textContent || '').toLowerCase();
-              if (cardCatStr.includes('serum') || cardCatStr.includes('repair')) {
-                 if (cardName.includes('tranexamic') || cardName.includes('brightening') || cardName.includes('acne') || cardName.includes('glutathione')) {
-                   matches = true;
-                 } else {
-                   matches = false;
-                 }
-              } else {
-                 matches = true;
-              }
-            }
-          }
-          
-          if (matches || cardCatStr.includes(targetCat)) {
-            card.style.display = 'flex';
-          } else {
-            card.style.display = 'none';
-          }
-        }
-      });
+  // Initial Filter Logic (Sync and apply based on current .active tab)
+  const applyInitialFilter = () => {
+    const activeTab = document.querySelector('.cat-link.active, .mega-cat-item.active');
+    if (activeTab) {
+       // Simulate a click to run the standardized filtering logic
+       activeTab.dispatchEvent(new Event('click', { bubbles: true }));
     }
   };
 
-  initialFilter();
+  // Wait a bit for everything to settle
+  setTimeout(applyInitialFilter, 100);
+
 });

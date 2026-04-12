@@ -795,43 +795,9 @@ body.menu-open { overflow: hidden; }
   if (menuToggle) menuToggle.addEventListener('click', openMenu);
   if (menuClose) menuClose.addEventListener('click', closeMenu);
 
-  // Mobile Menu Tab Switching
-  const tabs = document.querySelectorAll('.menu-tabs .tab');
-  const productRows = document.querySelectorAll('.menu-product-row');
-  
-  tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      tabs.forEach(t => t.classList.remove('active'));
-      tab.classList.add('active');
-      
-      const category = tab.getAttribute('data-category');
-      productRows.forEach(row => {
-        const rowCategory = row.getAttribute('data-category') || '';
-        if (category === 'all' || rowCategory.includes(category)) {
-          row.style.display = 'flex';
-        } else {
-          row.style.display = 'none';
-        }
-      });
-    });
-  });
+  // Mobile Menu filtering is now handled globally in script.js to ensure consistency.
+  // This avoids conflicts between two different scripts trying to filter the same elements.
 
-  // Initial filter to show featured on load
-  function initMobileFilter() {
-    const activeTab = document.querySelector('.menu-tabs .tab.active');
-    if (activeTab) {
-      const category = activeTab.getAttribute('data-category');
-      productRows.forEach(row => {
-        const rowCategory = row.getAttribute('data-category') || '';
-        if (rowCategory.includes(category)) {
-          row.style.display = 'flex';
-        } else {
-          row.style.display = 'none';
-        }
-      });
-    }
-  }
-  initMobileFilter();
 
   // Mega Menu links are handled by standard navigation
 
