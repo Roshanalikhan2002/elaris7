@@ -200,30 +200,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Handle Product Page "ADD TO BAG" (Standard Add to Cart)
-  const mainBuyBtn = document.querySelector('.add-to-cart-btn');
-  if (mainBuyBtn) {
-    mainBuyBtn.addEventListener('click', async (e) => {
-      e.preventDefault();
-      const variantId = mainBuyBtn.getAttribute('data-variant-id');
-      const giftRadio = document.querySelector('input[name="free_gift"]:checked');
-      
-      mainBuyBtn.textContent = 'ADDING TO BAG...';
+  // (Product Page "ADD TO BAG" logic is handled by inline scripts in each template for BOGO accuracy)
 
-      let items = [{ id: variantId, quantity: 1 }];
-
-      if (giftRadio) {
-        const giftHandle = giftRadio.getAttribute('data-gift-handle');
-        try {
-          const giftRes = await fetch(`/products/${giftHandle}.js`);
-          const giftData = await giftRes.json();
-          items.push({ id: giftData.variants[0].id, quantity: 1 });
-        } catch (err) { console.error('Gift add error:', err); }
-      }
-
-      await addItemsToCart(items);
-    });
-  }
 
   // Handle "Quick Add" buttons (Split Promos / Grid Overlays)
   document.addEventListener('click', async (e) => {
