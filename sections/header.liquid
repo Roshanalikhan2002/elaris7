@@ -1,9 +1,9 @@
 <header class="site-header">
-  {%- assign mega_names = "NIGHT CREAM,TRANEXAMIC SERUM,KERATIN SERUM,GLOW SERUM,GLUTATHIONE CREAM,HAIR MIST,CENTELLA WASH,ANTI ACNE SERUM,SUNSCREEN,RENEWAL CLEANSER,HYDRA BURST,RENEWAL TONER" | split: "," -%}
-  {%- assign mega_images = "night-cream.jpg,tranexamic-serum.jpg,keratin-serum.jpg,glow-serum-100.jpg,glutathione-cream-100.jpg,hair-mist.jpg,facewash-100.jpg,anti-acne-100.jpg,sunscreen-100.jpg,gel cleanser-100.jpg,moisturizer-100.jpg,toner1.jpeg" | split: "," -%}
-  {%- assign mega_descs = "To restore,Protect and Nurture,Repair & Refine Hair Cycle,Smooth Control,Essential glass skin routine,Scented radiance for hair,Gentle daily cleanser,Targeted blemish control,Premium solar protection,Intense clarity refresh,Plumping hydration boost,Refining skin texture" | split: "," -%}
-  {%- assign mega_labels = "featured korean-glass-skin nightcream,featured serum korean-brightening korean-glass-skin,featured hair-care,featured serum korean-brightening korean-glass-skin,featured repair korean-glass-skin,featured hair-care,featured cleanser korean-glass-skin,featured anti-acne,featured sunscreen korean-glass-skin,featured cleanser korean-glass-skin,featured moisturizer korean-glass-skin,featured toner korean-glass-skin" | split: "," -%}
-  {%- assign mega_handles = "e7-korean-glass-skin-centella-night-cream-copy,tranexamic-serum-v2,keratin-serum-v2,centella-serum,glutathione-cream-v2,hair-mist-v2,e7-korean-glass-skin-centella-face-wash-copy,anti-acne-serum-v2,e7-korean-glass-skin-centella-sunscreen-spf50-copy,renewal-cleanser-v2,e7-korean-glass-skin-moisturizer,centella-skin-toner-copy" | split: "," -%}
+  {%- assign mega_names = "NIGHT CREAM,TRANEXAMIC SERUM,KERATIN SERUM,GLOW SERUM,GLUTATHIONE CREAM,HAIR MIST,CENTELLA WASH,ANTI ACNE SERUM,SUNSCREEN,RENEWAL CLEANSER,HYDRA BURST,RENEWAL TONER,KOREAN GLASS SKIN BUNDLE,KOREAN BRIGHTENING BUNDLE,ANTI ACNE SET,HAIR CARE BUNDLE" | split: "," -%}
+  {%- assign mega_images = "night-cream.jpg,tranexamic-serum.jpg,keratin-serum.jpg,glow-serum-100.jpg,glutathione-cream-100.jpg,hair-mist.jpg,facewash-100.jpg,anti-acne-100.jpg,sunscreen-100.jpg,gel cleanser-100.jpg,moisturizer-100.jpg,toner1.jpeg,glassmain.jpg,main.jpg,anti-acne-100.jpg,hairmain.jpg" | split: "," -%}
+  {%- assign mega_descs = "To restore,Protect and Nurture,Repair & Refine Hair Cycle,Smooth Control,Essential glass skin routine,Scented radiance for hair,Gentle daily cleanser,Targeted blemish control,Premium solar protection,Intense clarity refresh,Plumping hydration boost,Refining skin texture,Shop the set,Shop the set,Shop the set,Shop the set" | split: "," -%}
+  {%- assign mega_labels = "featured korean-glass-skin nightcream,featured serum korean-brightening korean-glass-skin,featured hair-care,featured serum korean-brightening korean-glass-skin,featured repair korean-glass-skin,featured hair-care,featured cleanser korean-glass-skin,featured anti-acne,featured sunscreen korean-glass-skin,featured cleanser korean-glass-skin,featured moisturizer korean-glass-skin,featured toner korean-glass-skin,set,set,set,set" | split: "," -%}
+  {%- assign mega_handles = "e7-korean-glass-skin-centella-night-cream-copy,tranexamic-serum-v2,keratin-serum-v2,centella-serum,glutathione-cream-v2,hair-mist-v2,e7-korean-glass-skin-centella-face-wash-copy,anti-acne-serum-v2,e7-korean-glass-skin-centella-sunscreen-spf50-copy,renewal-cleanser-v2,e7-korean-glass-skin-moisturizer,centella-skin-toner-copy,elaris-7-korean-glass-skin-bundle,elaris-7-korean-brightening-bundle,anti-acne-serum,elaris-7-korean-hair-care-bundle" | split: "," -%}
 
   <div class="announcement-bar">
     {{ section.settings.announcement_text }}
@@ -34,7 +34,7 @@
             
             <div class="mega-menu-products">
               <div class="mega-products-grid">
-                {% for i in (0..11) %}
+                {% for i in (0..15) %}
                   {%- assign mname = mega_names[i] -%}
                   {%- assign mimage = mega_images[i] -%}
                   {%- assign mdesc = mega_descs[i] -%}
@@ -42,7 +42,11 @@
                   
                   <a href="/products/{{ mhandle }}" class="mega-product-card">
                     <div class="mega-product-image">
-                      <img src="{{ mimage | asset_url }}" alt="{{ mname }}">
+                      {% if mimage contains 'main.jpg' %}
+                        <img src="{{ mimage | file_img_url: '600x' }}" alt="{{ mname }}">
+                      {% else %}
+                        <img src="{{ mimage | asset_url }}" alt="{{ mname }}">
+                      {% endif %}
                     </div>
                     <div class="mega-product-info">
                       <h3 class="mega-product-name">{{ mname | upcase }}</h3>
@@ -135,7 +139,7 @@
     <div class="menu-scroll-area">
     
     <div class="menu-products">
-      {% for i in (0..11) %}
+      {% for i in (0..15) %}
         {%- assign mname = mega_names[i] -%}
         {%- assign mimage = mega_images[i] -%}
         {%- assign mdesc = mega_descs[i] -%}
@@ -144,7 +148,11 @@
         
         <a href="/products/{{ mhandle }}" class="menu-product-row" data-category="{{ mlabel }}">
           <div class="mini-thumb">
-            <img src="{{ mimage | asset_url }}" alt="{{ mname }}" loading="lazy">
+            {% if mimage contains 'main.jpg' %}
+              <img src="{{ mimage | file_img_url: '600x' }}" alt="{{ mname }}" loading="lazy">
+            {% else %}
+              <img src="{{ mimage | asset_url }}" alt="{{ mname }}" loading="lazy">
+            {% endif %}
           </div>
           <div class="mini-meta">
             <div class="mini-title card-name">{{ mname | upcase }}</div>
