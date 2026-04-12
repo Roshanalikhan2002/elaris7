@@ -290,6 +290,14 @@ document.addEventListener('DOMContentLoaded', () => {
           }
         }
         
+        // Hardcoded reliable mapping for Korean Brightening
+        if (targetCat.includes('brightening')) {
+          const brightTags = ['tranexamic', 'glutathione', 'toner', 'antiacne', 'brightening'];
+          if (brightTags.some(tag => cardCatStr.includes(tag))) {
+            matches = true;
+          }
+        }
+        
         if (matches || cardCatStr.includes(targetCat)) {
           card.style.display = 'flex';
         } else {
@@ -338,6 +346,14 @@ document.addEventListener('DOMContentLoaded', () => {
           if (targetCat.includes('glass')) {
             const glassTags = ['nightcream', 'serum', 'moisturizer', 'cleanser', 'facewash', 'sunscreen'];
             if (glassTags.some(tag => cardCatStr.includes(tag))) {
+              matches = true;
+            }
+          }
+          
+          // Hardcoded reliable mapping for Korean Brightening
+          if (targetCat.includes('brightening')) {
+            const brightTags = ['tranexamic', 'glutathione', 'toner', 'antiacne', 'brightening'];
+            if (brightTags.some(tag => cardCatStr.includes(tag))) {
               matches = true;
             }
           }
