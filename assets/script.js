@@ -292,9 +292,19 @@ document.addEventListener('DOMContentLoaded', () => {
         
         // Hardcoded reliable mapping for Korean Brightening
         if (targetCat.includes('brightening')) {
-          const brightTags = ['tranexamic', 'glutathione', 'toner', 'antiacne', 'brightening'];
+          const brightTags = ['tranexamic', 'glutathione', 'toner', 'antiacne', 'anti-acne', 'brightening', 'repair', 'serum'];
           if (brightTags.some(tag => cardCatStr.includes(tag))) {
-            matches = true;
+            const cardName = (card.querySelector('.card-name')?.textContent || '').toLowerCase();
+            // If it's a generic tag like 'serum' or 'repair', verify the name
+            if (cardCatStr.includes('serum') || cardCatStr.includes('repair')) {
+               if (cardName.includes('tranexamic') || cardName.includes('brightening') || cardName.includes('acne') || cardName.includes('glutathione')) {
+                 matches = true;
+               } else {
+                 matches = false;
+               }
+            } else {
+               matches = true;
+            }
           }
         }
         
@@ -352,9 +362,18 @@ document.addEventListener('DOMContentLoaded', () => {
           
           // Hardcoded reliable mapping for Korean Brightening
           if (targetCat.includes('brightening')) {
-            const brightTags = ['tranexamic', 'glutathione', 'toner', 'antiacne', 'brightening'];
+            const brightTags = ['tranexamic', 'glutathione', 'toner', 'antiacne', 'anti-acne', 'brightening', 'repair', 'serum'];
             if (brightTags.some(tag => cardCatStr.includes(tag))) {
-              matches = true;
+              const cardName = (card.querySelector('.card-name')?.textContent || '').toLowerCase();
+              if (cardCatStr.includes('serum') || cardCatStr.includes('repair')) {
+                 if (cardName.includes('tranexamic') || cardName.includes('brightening') || cardName.includes('acne') || cardName.includes('glutathione')) {
+                   matches = true;
+                 } else {
+                   matches = false;
+                 }
+              } else {
+                 matches = true;
+              }
             }
           }
           
