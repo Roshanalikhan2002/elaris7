@@ -266,22 +266,23 @@ document.addEventListener('DOMContentLoaded', () => {
       const cardCatStr = (card.getAttribute('data-category') || '').toLowerCase();
       
       if (targetCat === 'featured') {
-        // Show everything except sets
         if (!cardCatStr.includes('set')) {
           card.style.display = 'flex';
         } else {
           card.style.display = 'none';
         }
       } else if (targetCat === 'set') {
-        // Show only sets
         if (cardCatStr.includes('set')) {
           card.style.display = 'flex';
         } else {
           card.style.display = 'none';
         }
       } else {
-        // Show if target category is found in the card's category string
-        if (cardCatStr.includes(targetCat)) {
+        // Word-based matching for robustness
+        const targetWords = targetCat.split('-').filter(w => w.length > 3);
+        const matches = targetWords.length > 0 ? targetWords.some(word => cardCatStr.includes(word)) : cardCatStr.includes(targetCat);
+        
+        if (matches || cardCatStr.includes(targetCat)) {
           card.style.display = 'flex';
         } else {
           card.style.display = 'none';
@@ -321,7 +322,11 @@ document.addEventListener('DOMContentLoaded', () => {
             card.style.display = 'none';
           }
         } else {
-          if (cardCatStr.includes(targetCat)) {
+          // Word-based matching for robustness
+          const targetWords = targetCat.split('-').filter(w => w.length > 3);
+          const matches = targetWords.length > 0 ? targetWords.some(word => cardCatStr.includes(word)) : cardCatStr.includes(targetCat);
+          
+          if (matches || cardCatStr.includes(targetCat)) {
             card.style.display = 'flex';
           } else {
             card.style.display = 'none';
