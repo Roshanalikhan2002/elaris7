@@ -246,7 +246,62 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
   });
-  // --- CATEGORY FILTERING (Synced Desktop & Mobile) ---
+  // --- MASTER FILTERING FUNCTION ---
+  function applyFilter(targetCat, scrollReset = true) {
+    if (!targetCat) return;
+    const sanitize = (str) => str.toString().trim().toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+    const cleanTarget = sanitize(targetCat);
+
+    console.log('Applying filter for:', cleanTarget);
+
+    // 1. Sync active state across all matching filters
+    document.querySelectorAll('.cat-link, .mega-cat-item').forEach(l => {
+        const lCat = sanitize(l.getAttribute('data-category') || l.textContent.trim());
+        if (lCat === cleanTarget) {
+            l.classList.add('active');
+        } else {
+            l.classList.remove('active');
+        }
+    });
+
+    // 2. Filter Homepage Cards and Mobile Menu Rows
+    const filterableItems = document.querySelectorAll('.card-rhode, .menu-product-row');
+    filterableItems.forEach(item => {
+      const itemCatStr = (item.getAttribute('data-category') || '').toLowerCase();
+      let matches = false;
+      
+      if (cleanTarget === 'featured') {
+        matches = !itemCatStr.includes('set') && !itemCatStr.includes('bundle');
+      } else if (cleanTarget === 'set' || cleanTarget === 'sets' || cleanTarget === 'bundles') {
+        matches = itemCatStr.includes('set') || itemCatStr.includes('bundle');
+      } else {
+        const tags = itemCatStr.split(/\s+/);
+        matches = tags.some(tag => tag === cleanTarget || tag.includes(cleanTarget));
+
+        if (cleanTarget.includes('glass')) {
+           if (itemCatStr.includes('glass')) matches = true;
+        }
+        if (cleanTarget.includes('brightening')) {
+           if (itemCatStr.includes('brightening')) matches = true;
+        }
+      }
+
+      if (matches) {
+        item.style.setProperty('display', 'flex', 'important');
+      } else {
+        item.style.setProperty('display', 'none', 'important');
+      }
+    });
+
+    // 3. Optional Scroll Reset
+    if (scrollReset) {
+      if (scrollArea) scrollArea.scrollLeft = 0;
+      const menuScroll = document.querySelector('.menu-scroll-area');
+      if (menuScroll) menuScroll.scrollTop = 0;
+    }
+  }
+
+  // Click Handler for Filters
   document.addEventListener('click', (e) => {
     const link = e.target.closest('.cat-link, .mega-cat-item');
     if (!link) return;
@@ -254,92 +309,21 @@ document.addEventListener('DOMContentLoaded', () => {
     const category = link.getAttribute('data-category') || link.textContent.trim().toLowerCase().replace(/\s+/g, '-');
     if (!category || category === '#') return;
 
-    // If it's a real shop link (not just a filter), let it navigate
-    if (link.getAttribute('href') && link.getAttribute('href').startsWith('/collections/')) {
-       // Optional: if you want them to stay on page, uncomment next line
-       // e.preventDefault(); 
-    } else {
+    // Only prevent default if it's acting as a filter button
+    if (link.getAttribute('href') === 'javascript:void(0)' || !link.getAttribute('href')) {
        e.preventDefault();
-    }
-
-    const sanitize = (str) => str.toString().trim().toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
-    const targetCat = sanitize(category);
-
-    console.log('Filtering category:', targetCat);
-
-    // Sync active state across all matching filters (Desktop & Mobile)
-    document.querySelectorAll('.cat-link, .mega-cat-item').forEach(l => {
-        const lCat = sanitize(l.getAttribute('data-category') || l.textContent.trim());
-        if (lCat === targetCat) {
-            l.classList.add('active');
-        } else {
-            l.classList.remove('active');
-        }
-    });
-
-    // Filter Homepage Cards (.card-rhode) and Mobile Menu Rows (.menu-product-row)
-    const filterableItems = document.querySelectorAll('.card-rhode, .menu-product-row');
-    
-    filterableItems.forEach(item => {
-      const itemCatStr = (item.getAttribute('data-category') || '').toLowerCase();
-      let matches = false;
-      
-      if (targetCat === 'featured') {
-        // Featured shows everything EXCEPT sets/bundles
-        matches = !itemCatStr.includes('set') && !itemCatStr.includes('bundle');
-      } else if (targetCat === 'set' || targetCat === 'sets' || targetCat === 'bundles') {
-        matches = itemCatStr.includes('set') || itemCatStr.includes('bundle');
-      } else {
-        // Regular category matching
-        // We match if targetCat is anywhere in the space-separated tag list
-        const tags = itemCatStr.split(/\s+/);
-        matches = tags.some(tag => tag === targetCat || tag.includes(targetCat));
-
-        // Advanced Logic for specific groups
-        if (targetCat.includes('glass')) {
-           // Korean Glass Skin specific logic
-           if (itemCatStr.includes('glass')) matches = true;
-        }
-        if (targetCat.includes('brightening')) {
-           // Korean Brightening specific logic
-           if (itemCatStr.includes('brightening')) matches = true;
-        }
-      }
-
-      // Toggle Visibility with !important to override any CSS conflicts
-      if (matches) {
-        item.style.setProperty('display', 'flex', 'important');
-      } else {
-        item.style.setProperty('display', 'none', 'important');
-      }
-
-    });
-
-    // Reset Scroll Positions
-    // 1. Homepage Slider
-    const slider = document.getElementById('product-slider') || document.getElementById('product-collection-scroll') || document.querySelector('.product-collection');
-    if (slider) slider.scrollLeft = 0;
-
-    // 2. Mobile Menu Scroll Area
-    if (link.closest('#mobile-menu')) {
-      const scrollArea = document.querySelector('.menu-scroll-area');
-      if (scrollArea) scrollArea.scrollTop = 0;
+       applyFilter(category, true);
     }
   });
 
-
-
-  // Initial Filter on load (Default is Featured)
-  // Initial Filter Logic (Sync and apply based on current .active tab)
-  const applyInitialFilter = () => {
+  // Initial Sync
+  setTimeout(() => {
     const activeTab = document.querySelector('.cat-link.active, .mega-cat-item.active');
     if (activeTab) {
-       // Simulate a click to run the standardized filtering logic
-       activeTab.dispatchEvent(new Event('click', { bubbles: true }));
+       const initialCat = activeTab.getAttribute('data-category') || activeTab.textContent.trim();
+       applyFilter(initialCat, false);
     }
-  };
+  }, 100);
 
-  // Wait a bit for everything to settle
-  setTimeout(applyInitialFilter, 100);
 
 });
