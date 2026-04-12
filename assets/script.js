@@ -275,16 +275,31 @@ document.addEventListener('DOMContentLoaded', () => {
       } else if (cleanTarget === 'set' || cleanTarget === 'sets' || cleanTarget === 'bundles') {
         matches = itemCatStr.includes('set') || itemCatStr.includes('bundle');
       } else {
+        const itemTitle = (item.querySelector('.card-name, .mini-title')?.textContent || '').toLowerCase();
         const tags = itemCatStr.split(/\s+/);
+        
+        // 1. Direct tag match
         matches = tags.some(tag => tag === cleanTarget || tag.includes(cleanTarget));
 
+        // 2. Title-based Keyword matching (Highly Reliable)
         if (cleanTarget.includes('glass')) {
-           if (itemCatStr.includes('glass')) matches = true;
+           if (itemTitle.includes('centella') || itemTitle.includes('night cream') || itemTitle.includes('sunscreen') || itemTitle.includes('cleanser') || itemTitle.includes('toner') || itemTitle.includes('moisturizer')) {
+              if (!itemTitle.includes('tranexamic')) matches = true;
+           }
         }
         if (cleanTarget.includes('brightening')) {
-           if (itemCatStr.includes('brightening')) matches = true;
+           if (itemTitle.includes('tranexamic') || itemTitle.includes('glutathione') || itemTitle.includes('toner') || itemTitle.includes('serum') || itemTitle.includes('brightening')) {
+              matches = true;
+           }
+        }
+        if (cleanTarget.includes('acne')) {
+           if (itemTitle.includes('acne')) matches = true;
+        }
+        if (cleanTarget.includes('hair')) {
+           if (itemTitle.includes('hair') || itemTitle.includes('keratin') || itemTitle.includes('mist')) matches = true;
         }
       }
+
 
       if (matches) {
         item.style.setProperty('display', 'flex', 'important');
