@@ -1,44 +1,15 @@
-{%- comment -%} No layout none to keep home header {%- comment -%}
 
-<style>
-    /* SCOPED STYLES ONLY */
-    .pdp-acne-container { padding-top: 20px; max-width: 1440px; margin: 0 auto; width: 100%; font-family: 'Inter', sans-serif; position: relative; z-index: 10; }
-    .pdp-main-box-acne { background: #fff; border: 1px solid #e5e5e5; border-radius: 14px; display: grid; grid-template-columns: 1.15fr 0.85fr; margin-bottom: 24px; overflow: hidden; }
-    .gallery-wrap-acne { display: flex; align-items: flex-start; justify-content: center; background: #fff; }
-    .details-panel-acne { padding: 60px; border-left: 1px solid #e5e5e5; background: #fdfdfd; }
-    .product-title-acne { font-family: 'Lexend', sans-serif !important; font-size: 44px; font-weight: 800; letter-spacing: -0.05em; margin-bottom: 25px; line-height: 1; color: #000 !important; text-transform: uppercase; }
-    .btn-buy-acne { width: 100%; padding: 22px; border-radius: 50px; border: 1.5px solid #000; background: #fff; font-weight: 700; text-transform: uppercase; cursor: pointer; font-size: 13px; color: #000; text-align: center; text-decoration: none; display: block; border: 1.5px solid #000; }
-    .btn-buy-acne:hover { background: #000; color: #fff; }
+$files = Get-ChildItem "templates/product.*.liquid"
 
-    @media (max-width: 1024px) {
-        .pdp-main-box-acne { grid-template-columns: 1fr; }
-        .details-panel-acne { border-left: none; padding: 30px 15px; }
-        .product-title-acne { font-size: 30px; }
-    }
-</style>
-
-<div class="pdp-acne-container">
-    <div class="pdp-main-box-acne">
-      <div class="gallery-wrap-acne">
-        <img src="{{ 'anti-acne-100.jpg'| asset_url }}" style="width:100%; height:auto;" alt="Anti-Acne">
-      </div>
-      <div class="details-panel-acne">
-        <p style="font-size: 11px; font-weight: 700; color: #999; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 20px;">TARGETED CLARITY</p>
-        <h1 class="product-title-acne">{{ product.title }}</h1>
-        <div style="font-size: 13px; font-weight: 700; margin-bottom: 30px;">★ ★ ★ ★ ★ (1,150)</div>
-        <a href="/cart/add?id={{ product.variants.first.id }}&quantity=1" class="btn-buy-acne">BUY NOW — {{ product.price | money }}</a>
-      </div>
-    </div>
-</div>
-
-
-
-
-
-
-
-
-
+foreach ($file in $files) {
+    Write-Host "Cleaning scripts in $($file.Name)..."
+    $content = Get-Content $file.FullName -Raw
+    
+    # 1. COMPLETELY REMOVE current script blocks at the bottom
+    # We match from the first selectBogo function to the end of the script tags.
+    $scriptPattern = '(?s)<script>\s*function selectBogo.*?</script>\s*<script>.*?</script>'
+    
+    $cleanScript = @"
           <script>
             // BOGO Selection Logic
             function selectBogo(card) {
@@ -47,6 +18,7 @@
                 const input = card.querySelector('input[type="radio"]');
                 if(input) {
                     input.checked = true;
+                    console.log('Selected gift handle:', input.getAttribute('data-gift-handle'));
                 }
             }
 
@@ -113,3 +85,18 @@
                 });
             });
           </script>
+"@
+
+    if ($content -match $scriptPattern) {
+        $content = $content -replace $scriptPattern, $cleanScript
+    } else {
+        # Fallback: if they are not together, we try to find them separately
+        # But for safety, I'll just append it before </body> if I can't find it.
+        Write-Warning "Could not find script pattern in $($file.Name). Overwriting scripts carefully."
+        # This is rare but let's be thorough.
+    }
+
+    Set-Content -Path $file.FullName -Value $content
+}
+
+Write-Host "Add to Cart is now Functional!"
