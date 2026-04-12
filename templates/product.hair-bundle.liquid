@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Elaris 7 | Korean Hair Care Bundle</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Lexend:wght@700;800&display=swap" rel="stylesheet">
+    {{ 'styles.css' | asset_url | stylesheet_tag }}
     <style>
         :root {
             --bg-page: #f2f2f1;
@@ -110,20 +111,7 @@
 </head>
 <body>
 
-  <header>
-    <div style="font-weight:700; font-size:12px; cursor:pointer;" onclick="window.location.href='/'">HOME</div>
-    <div class="nav-links">
-        <a href="/">HOME</a>
-        <a href="/pages/about">ABOUT</a>
-    </div>
-    <a href="{{ routes.root_url }}" class="header-logo">elaris7</a>
-    <div class="nav-links right">
-        <a href="/search">SEARCH</a>
-        <a href="/account">ACCOUNT</a>
-        <a href="/cart">CART (0)</a>
-    </div>
-    <div style="font-weight:700; font-size:12px;">CART (0)</div>
-  </header>
+  {% section 'header' %}
 
   <main class="pdp-wrapper">
     <!-- 1. Top Section -->
@@ -256,7 +244,10 @@
     });
   </script>
 
+  {{ 'script.js' | asset_url | script_tag }}
 </body>
 </html>
+
+
 
 

@@ -141,17 +141,11 @@ Line 106:
     .site-footer-rhode { background: #fff; padding: 80px 40px; border-top: 1px solid #eee; text-align: center; }
     .logo-text-giant { font-weight: 800; font-size: 7rem; letter-spacing: -0.05em; color: #333; opacity: 1; margin-bottom: 40px; }
   </style>
+{{ 'styles.css' | asset_url | stylesheet_tag }}
 </head>
 <body>
 
-  <header class="site-header">
-    <div class="announcement-bar">free shipping on all orders over rs. 2000</div>
-    <div class="header-main">
-      <nav class="header-nav"><ul class="desktop-only"><li><a href="/">HOME</a></li><li><a href="#">SHOP</a></li><li><a href="#">ABOUT</a></li></ul></nav>
-      <div class="header-logo"><a href="{{ routes.root_url }}" class="logo-text">elaris7</a></div>
-      <nav class="header-nav header-right"><ul class="desktop-only"><li><a href="/cart">CART (0)</a></li><li><a href="#">ACCOUNT</a></li></ul></nav>
-    </div>
-  </header>
+  {% section 'header' %}
 
   <main class="pdp-wrapper">
     <!-- 1. Top Section -->
@@ -314,5 +308,7 @@ Line 106:
 
 </body>
 </html>
+
+
 
 

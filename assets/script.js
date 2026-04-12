@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const scrollArea = document.getElementById('product-slider') || document.getElementById('product-collection-scroll') || document.querySelector('.product-collection');
   const header = document.querySelector('.site-header');
 
-  if (!scrollArea || !header) return;
+  // Removed early return to allow header function on all pages move move moved moves move move move move move move move move move move
 
   // Header Scroll Functionality (Rhode-style Reveal)
   let lastScrollY = window.scrollY;
