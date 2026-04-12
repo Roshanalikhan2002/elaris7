@@ -3,7 +3,7 @@
     {% if section.blocks.size > 0 %}
       {% for block in section.blocks %}
         <li>
-          <a href="{{ block.settings.link | default: '#' }}" 
+          <a href="javascript:void(0)" 
              class="cat-link {% if block.settings.title == 'Featured' %}active{% endif %}" 
              data-category="{{ block.settings.title | handleize }}"
              {{ block.shopify_attributes }}>
@@ -16,7 +16,7 @@
       {% for cat in default_cats %}
         {%- assign c_handle = cat | handleize -%}
         <li>
-          <a href="/collections/{% if c_handle == 'featured' %}all{% else %}{{ c_handle }}{% endif %}" class="cat-link {% if forloop.first %}active{% endif %}" data-category="{{ c_handle }}">
+          <a href="javascript:void(0)" class="cat-link {% if forloop.first %}active{% endif %}" data-category="{{ c_handle }}">
             {{ cat | uppercase }}
           </a>
         </li>
