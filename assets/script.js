@@ -286,7 +286,13 @@ document.addEventListener('DOMContentLoaded', () => {
         if (targetCat.includes('glass')) {
           const glassTags = ['nightcream', 'serum', 'moisturizer', 'cleanser', 'facewash', 'sunscreen'];
           if (glassTags.some(tag => cardCatStr.includes(tag))) {
-            matches = true;
+            const cardName = (card.querySelector('.card-name')?.textContent || '').toLowerCase();
+            // EXCLUDE Tranexamic from Glass Skin
+            if (cardName.includes('tranexamic')) {
+              matches = false;
+            } else {
+              matches = true;
+            }
           }
         }
         
@@ -356,7 +362,13 @@ document.addEventListener('DOMContentLoaded', () => {
           if (targetCat.includes('glass')) {
             const glassTags = ['nightcream', 'serum', 'moisturizer', 'cleanser', 'facewash', 'sunscreen'];
             if (glassTags.some(tag => cardCatStr.includes(tag))) {
-              matches = true;
+              const cardName = (card.querySelector('.card-name')?.textContent || '').toLowerCase();
+              // EXCLUDE Tranexamic from Glass Skin
+              if (cardName.includes('tranexamic')) {
+                matches = false;
+              } else {
+                matches = true;
+              }
             }
           }
           
