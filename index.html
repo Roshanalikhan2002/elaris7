@@ -631,9 +631,11 @@ a { color: inherit; text-decoration: none; }
   gap: 10px;
   list-style: none;
   margin: 0;
-  padding: 0;
+  padding: 10px 12px;
   overflow-x: auto;
+  overflow-y: hidden;
   scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
 }
 
 .category-list::-webkit-scrollbar { display: none; }
@@ -2227,7 +2229,7 @@ a { color: inherit; text-decoration: none; }
       <div class="announcement-bar">
         free shipping on all orders over rs. 2000
       </div>
-      <div class="header-main">
+      <div class="header-main" style="width: 100%; max-width: 100%; padding: 0;">
         <nav class="header-nav">
           <div class="menu-trigger" id="menu-open">
             <span></span>
@@ -2303,7 +2305,7 @@ a { color: inherit; text-decoration: none; }
       <div class="product-collection" id="product-slider">
         <!-- Card 1: Night Cream -->
         <div class="card card-rhode" data-category="featured nightcream korean-glass-skin">
-          <a href="/products/night-cream" class="card-link-wrapper">
+          <a href="/products/e7-korean-glass-skin-centella-night-cream-copy" class="card-link-wrapper">
             <img src="./assets/night-cream-hover.jpg" class="card-hover-bg" alt="Night Cream Hover">
             <div class="card-rhode-top">
               <span class="card-brand-label">NIGHT CREAM</span>
@@ -2316,7 +2318,7 @@ a { color: inherit; text-decoration: none; }
                 <div class="card-stars">★★★★★ <span class="review-count">(16k)</span></div>
                 <h3 class="card-name">NIGHT CREAM</h3>
               </div>
-              <a href="/products/night-cream" class="btn-rhode-buy-pill">BUY - RS. 1,500</a>
+              <a href="/products/e7-korean-glass-skin-centella-night-cream-copy" class="btn-rhode-buy-pill">BUY - RS. 1,500</a>
             </div>
             <div class="buy-button-hover" style="position: absolute; bottom: 25px; left: 50%; transform: translateX(-50%) translateY(20px); width: 88%; background: white; color: #2c2b28; padding: 14px 20px; border-radius: 40px; text-align: center; font-size: 0.72rem; font-weight: 800; letter-spacing: 0.05em; opacity: 0; z-index: 20; transition: all 0.4s cubic-bezier(0.16,1,0.3,1); box-shadow: 0 4px 15px rgba(0,0,0,0.08);">
                 BUY NIGHT CREAM - RS. 1,500
@@ -2326,7 +2328,7 @@ a { color: inherit; text-decoration: none; }
 
         <!-- Card 2: Tranexamic Serum -->
         <div class="card card-rhode" data-category="featured serum korean-brightening korean-glass-skin">
-          <a href="/products/tranexamic-serum" class="card-link-wrapper">
+          <a href="/products/tranexamic-serum-v2" class="card-link-wrapper">
             <img src="./assets/tranexamic-meet-1.jpg" class="card-hover-bg" alt="Tranexamic Serum Hover">
             <div class="card-rhode-top">
               <span class="card-brand-label">serum</span>
@@ -2339,7 +2341,7 @@ a { color: inherit; text-decoration: none; }
                 <div class="card-stars">★★★★★ <span class="review-count">(16k)</span></div>
                 <h3 class="card-name">TRANEXAMIC SERUM</h3>
               </div>
-              <a href="/products/tranexamic-serum" class="btn-rhode-buy-pill">BUY - RS. 1,500</a>
+              <a href="/products/tranexamic-serum-v2" class="btn-rhode-buy-pill">BUY - RS. 1,500</a>
             </div>
             <div class="buy-button-hover">
                 BUY TRANEXAMIC - RS. 1,500
@@ -2349,7 +2351,7 @@ a { color: inherit; text-decoration: none; }
 
         <!-- Card 3: Keratin Serum -->
         <div class="card card-rhode" data-category="featured hair-care">
-          <a href="/products/keratin-serum" class="card-link-wrapper">
+          <a href="/products/keratin-serum-v2" class="card-link-wrapper">
             <img src="./assets/keratin-serum-hover.jpg" class="card-hover-bg" alt="Keratin Serum Hover">
             <div class="card-rhode-top">
               <span class="card-brand-label">haircare</span>
@@ -2362,7 +2364,7 @@ a { color: inherit; text-decoration: none; }
                 <div class="card-stars">★★★★★ <span class="review-count">(16k)</span></div>
                 <h3 class="card-name">KERATIN SERUM</h3>
               </div>
-              <a href="/products/keratin-serum" class="btn-rhode-buy-pill">BUY - RS. 1,500</a>
+              <a href="/products/keratin-serum-v2" class="btn-rhode-buy-pill">BUY - RS. 1,500</a>
             </div>
             <div class="buy-button-hover" style="position: absolute; bottom: 25px; left: 50%; transform: translateX(-50%) translateY(20px); width: 88%; background: white; color: #2c2b28; padding: 14px 20px; border-radius: 40px; text-align: center; font-size: 0.72rem; font-weight: 800; letter-spacing: 0.05em; opacity: 0; z-index: 20; transition: all 0.4s cubic-bezier(0.16,1,0.3,1); box-shadow: 0 4px 15px rgba(0,0,0,0.08);">
                 BUY KERATIN SERUM - RS. 1,500
@@ -2372,7 +2374,7 @@ a { color: inherit; text-decoration: none; }
 
         <!-- Card 4: Glow Serum -->
         <div class="card card-rhode" data-category="featured serum korean-brightening korean-glass-skin">
-          <a href="/products/glow-serum" class="card-link-wrapper">
+          <a href="/products/centella-serum" class="card-link-wrapper">
             <img src="./assets/glow-serum-hover.jpg" class="card-hover-bg" alt="Glow Serum Hover">
             <div class="card-rhode-top">
               <span class="card-brand-label">serum</span>
@@ -2385,7 +2387,7 @@ a { color: inherit; text-decoration: none; }
                 <div class="card-stars">★★★★★ <span class="review-count">(16k)</span></div>
                 <h3 class="card-name">GLOW SERUM</h3>
               </div>
-              <a href="/products/glow-serum" class="btn-rhode-buy-pill">BUY - RS. 1,500</a>
+              <a href="/products/centella-serum" class="btn-rhode-buy-pill">BUY - RS. 1,500</a>
             </div>
             <div class="buy-button-hover">
                 BUY GLOW SERUM - RS. 1,500
@@ -2408,7 +2410,7 @@ a { color: inherit; text-decoration: none; }
                 <div class="card-stars">★★★★★ <span class="review-count">(16k)</span></div>
                 <h3 class="card-name">GLUTATHIONE CREAM</h3>
               </div>
-              <a href="/products/glutathione-cream" class="btn-rhode-buy-pill">BUY - RS. 1,500</a>
+              <a href="/products/glutathione-cream-v2" class="btn-rhode-buy-pill">BUY - RS. 1,500</a>
             </div>
             <div class="buy-button-hover">
                 BUY GLUTATHIONE - RS. 1,500
@@ -2418,7 +2420,7 @@ a { color: inherit; text-decoration: none; }
 
         <!-- Card 6: Hair Mist -->
         <div class="card card-rhode" data-category="featured hair-care">
-          <a href="/products/hair-mist" class="card-link-wrapper">
+          <a href="/products/hair-mist-v2" class="card-link-wrapper">
             <div class="card-rhode-top">
               <span class="card-brand-label">haircare</span>
             </div>
@@ -2430,14 +2432,14 @@ a { color: inherit; text-decoration: none; }
                 <div class="card-stars">★★★★★ <span class="review-count">(16k)</span></div>
                 <h3 class="card-name">HAIR MIST</h3>
               </div>
-              <a href="/products/hair-mist" class="btn-rhode-buy-pill">BUY - RS. 1,500</a>
+              <a href="/products/hair-mist-v2" class="btn-rhode-buy-pill">BUY - RS. 1,500</a>
             </div>
           </a>
         </div>
 
         <!-- Card 7: Face Wash -->
         <div class="card card-rhode" data-category="featured cleanser korean-glass-skin">
-          <a href="/products/face-wash" class="card-link-wrapper">
+          <a href="/products/e7-korean-glass-skin-centella-face-wash-copy" class="card-link-wrapper">
             <img src="./assets/facewash-shot.png" class="card-hover-bg" alt="Face Wash Hover">
             <div class="card-rhode-top">
               <span class="card-brand-label">cleanser</span>
@@ -2450,7 +2452,7 @@ a { color: inherit; text-decoration: none; }
                 <div class="card-stars">★★★★★ <span class="review-count">(16k)</span></div>
                 <h3 class="card-name">CENTELLA WASH</h3>
               </div>
-              <a href="/products/face-wash" class="btn-rhode-buy-pill">BUY - RS. 1,500</a>
+              <a href="/products/e7-korean-glass-skin-centella-face-wash-copy" class="btn-rhode-buy-pill">BUY - RS. 1,500</a>
             </div>
             <div class="buy-button-hover">
                 BUY FACE WASH - RS. 1,500
@@ -2460,7 +2462,7 @@ a { color: inherit; text-decoration: none; }
 
         <!-- Card 8: Anti Acne Serum -->
         <div class="card card-rhode" data-category="featured anti-acne">
-          <a href="/products/anti-acne-serum" class="card-link-wrapper">
+          <a href="/products/anti-acne-serum-v2" class="card-link-wrapper">
             <img src="./assets/hover-anti-acne.png" class="card-hover-bg" alt="Anti Acne Hover">
             <div class="card-rhode-top">
               <span class="card-brand-label">antiacne</span>
@@ -2473,7 +2475,7 @@ a { color: inherit; text-decoration: none; }
                 <div class="card-stars">★★★★★ <span class="review-count">(16k)</span></div>
                 <h3 class="card-name">ANTI ACNE SERUM</h3>
               </div>
-              <a href="/products/anti-acne-serum" class="btn-rhode-buy-pill">BUY - RS. 1,500</a>
+              <a href="/products/anti-acne-serum-v2" class="btn-rhode-buy-pill">BUY - RS. 1,500</a>
             </div>
             <div class="buy-button-hover" style="position: absolute; bottom: 25px; left: 50%; transform: translateX(-50%) translateY(20px); width: 88%; background: white; color: #2c2b28; padding: 14px 20px; border-radius: 40px; text-align: center; font-size: 0.72rem; font-weight: 800; letter-spacing: 0.05em; opacity: 0; z-index: 20; transition: all 0.4s cubic-bezier(0.16,1,0.3,1); box-shadow: 0 4px 15px rgba(0,0,0,0.08);">
                 BUY ANTI ACNE - RS. 1,500
@@ -2483,7 +2485,7 @@ a { color: inherit; text-decoration: none; }
 
         <!-- Card 9: Sunscreen -->
         <div class="card card-rhode" data-category="featured sunscreen korean-glass-skin">
-          <a href="/products/sunscreen" class="card-link-wrapper">
+          <a href="/products/e7-korean-glass-skin-centella-sunscreen-spf50-copy" class="card-link-wrapper">
             <div class="card-rhode-top">
               <span class="card-brand-label">sunscreen</span>
             </div>
@@ -2495,14 +2497,14 @@ a { color: inherit; text-decoration: none; }
                 <div class="card-stars">★★★★★ <span class="review-count">(16k)</span></div>
                 <h3 class="card-name">SUNSCREEN</h3>
               </div>
-              <a href="/products/sunscreen" class="btn-rhode-buy-pill">BUY - RS. 1,500</a>
+              <a href="/products/e7-korean-glass-skin-centella-sunscreen-spf50-copy" class="btn-rhode-buy-pill">BUY - RS. 1,500</a>
             </div>
           </a>
         </div>
 
         <!-- Card 10: Renewal Cleanser -->
         <div class="card card-rhode" data-category="featured cleanser">
-          <a href="/products/renewal-cleanser" class="card-link-wrapper">
+          <a href="/products/renewal-cleanser-v2" class="card-link-wrapper">
             <div class="card-rhode-top">
               <span class="card-brand-label">cleanser</span>
             </div>
@@ -2514,14 +2516,14 @@ a { color: inherit; text-decoration: none; }
                 <div class="card-stars">★★★★★ <span class="review-count">(16k)</span></div>
                 <h3 class="card-name">RENEWAL CLEANSER</h3>
               </div>
-              <a href="/products/renewal-cleanser" class="btn-rhode-buy-pill">BUY - RS. 1,500</a>
+              <a href="/products/renewal-cleanser-v2" class="btn-rhode-buy-pill">BUY - RS. 1,500</a>
             </div>
           </a>
         </div>
 
         <!-- Card 11: Hydra Burst Moisturizer -->
         <div class="card card-rhode" data-category="featured moisturizer korean-glass-skin">
-          <a href="/products/moisturizer" class="card-link-wrapper">
+          <a href="/products/e7-korean-glass-skin-moisturizer" class="card-link-wrapper">
             <div class="card-rhode-top">
               <span class="card-brand-label">moisturizer</span>
             </div>
@@ -2533,14 +2535,14 @@ a { color: inherit; text-decoration: none; }
                 <div class="card-stars">★★★★★ <span class="review-count">(16k)</span></div>
                 <h3 class="card-name">HYDRA BURST</h3>
               </div>
-              <a href="/products/moisturizer" class="btn-rhode-buy-pill">BUY - RS. 1,500</a>
+              <a href="/products/e7-korean-glass-skin-moisturizer" class="btn-rhode-buy-pill">BUY - RS. 1,500</a>
             </div>
           </a>
         </div>
 
         <!-- Card 12: Renewal Toner -->
         <div class="card card-rhode" data-category="featured toner korean-glass-skin">
-          <a href="/products/renewal-toner" class="card-link-wrapper">
+          <a href="/products/centella-skin-toner-copy" class="card-link-wrapper">
             <div class="card-rhode-top">
               <span class="card-brand-label">toner</span>
             </div>
@@ -2552,7 +2554,7 @@ a { color: inherit; text-decoration: none; }
                 <div class="card-stars">★★★★★ <span class="review-count">(16k)</span></div>
                 <h3 class="card-name">RENEWAL TONER</h3>
               </div>
-              <a href="/products/renewal-toner" class="btn-rhode-buy-pill">BUY - RS. 1,500</a>
+              <a href="/products/centella-skin-toner-copy" class="btn-rhode-buy-pill">BUY - RS. 1,500</a>
             </div>
           </a>
         </div>
@@ -2668,8 +2670,8 @@ a { color: inherit; text-decoration: none; }
         <div class="product-overlay-details" style="position: absolute; bottom: 25px; left: 25px; text-align: left; z-index: 10;">
           <div class="stars-row" style="font-size: 0.65rem; color: #ffffff !important; margin-bottom: 6px; opacity: 0.9;">★ ★ ★ ★ ★ (8,945)</div>
           <h2 class="showcase-title" style="font-size: 1.15rem; font-weight: 800; color: #ffffff !important; margin-bottom: 15px; letter-spacing: -0.01em;">REFINING TONER</h2>
-          <a href="#" class="btn-pill-buy" style="display: inline-block; padding: 10px 24px; border: 1.2px solid #ffffff !important; border-radius: 50px; font-size: 0.75rem; font-weight: 700; color: #ffffff !important; text-decoration: none;">
-            BUY GLOW — RS. 2,500
+          <a href="/products/skin-refining-toner" class="btn-pill-buy" style="display: inline-block; padding: 10px 24px; border: 1.2px solid #ffffff !important; border-radius: 50px; font-size: 0.75rem; font-weight: 700; color: #ffffff !important; text-decoration: none;">
+            BUY TONER — RS. 2,500
           </a>
         </div>
         <div class="page-count" style="color: #ffffff !important;">2/4</div>
