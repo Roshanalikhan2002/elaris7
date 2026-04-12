@@ -258,37 +258,33 @@ document.addEventListener('DOMContentLoaded', () => {
     // Set active on all matching links (sync mobile and desktop)
     document.querySelectorAll(`.cat-link[data-category="${category}"]`).forEach(l => l.classList.add('active'));
 
-    // Filter cards
-    const cards = document.querySelectorAll('.card-rhode');
+    // Filter both homepage cards and mobile menu rows
+    const cards = document.querySelectorAll('.card-rhode, .menu-product-row');
     const sanitize = (str) => str.trim().toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
     const targetCat = sanitize(category);
 
     cards.forEach(card => {
       const cardCatStr = (card.getAttribute('data-category') || '').toLowerCase();
+      let matches = false;
       
       if (targetCat === 'featured') {
         if (!cardCatStr.includes('set')) {
-          card.style.display = 'flex';
-        } else {
-          card.style.display = 'none';
+          matches = true;
         }
       } else if (targetCat === 'set') {
         if (cardCatStr.includes('set')) {
-          card.style.display = 'flex';
-        } else {
-          card.style.display = 'none';
+          matches = true;
         }
       } else {
         // Word-based matching for robustness
         const targetWords = targetCat.split('-').filter(w => w.length > 3);
-        let matches = targetWords.length > 0 ? targetWords.some(word => cardCatStr.includes(word)) : cardCatStr.includes(targetCat);
+        matches = targetWords.length > 0 ? targetWords.some(word => cardCatStr.includes(word)) : cardCatStr.includes(targetCat);
         
         // Hardcoded reliable mapping for Korean Glass Skin
         if (targetCat.includes('glass')) {
           const glassTags = ['nightcream', 'serum', 'moisturizer', 'cleanser', 'facewash', 'sunscreen'];
           if (glassTags.some(tag => cardCatStr.includes(tag))) {
-            const cardName = (card.querySelector('.card-name')?.textContent || '').toLowerCase();
-            // EXCLUDE Tranexamic from Glass Skin
+            const cardName = (card.querySelector('.card-name, .mini-title')?.textContent || '').toLowerCase();
             if (cardName.includes('tranexamic')) {
               matches = false;
             } else {
@@ -301,8 +297,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (targetCat.includes('brightening')) {
           const brightTags = ['tranexamic', 'glutathione', 'toner', 'antiacne', 'anti-acne', 'brightening', 'repair', 'serum'];
           if (brightTags.some(tag => cardCatStr.includes(tag))) {
-            const cardName = (card.querySelector('.card-name')?.textContent || '').toLowerCase();
-            // If it's a generic tag like 'serum' or 'repair', verify the name
+            const cardName = (card.querySelector('.card-name, .mini-title')?.textContent || '').toLowerCase();
             if (cardCatStr.includes('serum') || cardCatStr.includes('repair')) {
                if (cardName.includes('tranexamic') || cardName.includes('brightening') || cardName.includes('acne') || cardName.includes('glutathione')) {
                  matches = true;
@@ -314,12 +309,12 @@ document.addEventListener('DOMContentLoaded', () => {
             }
           }
         }
-        
-        if (matches || cardCatStr.includes(targetCat)) {
-          card.style.display = 'flex';
-        } else {
-          card.style.display = 'none';
-        }
+      }
+
+      if (matches || cardCatStr.includes(targetCat)) {
+        card.style.display = 'flex';
+      } else {
+        card.style.display = 'none';
       }
     });
 
@@ -327,22 +322,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const slider = document.getElementById('product-slider') || document.getElementById('product-collection-scroll') || document.querySelector('.product-collection');
     if (slider) slider.scrollLeft = 0;
 
-    // Mobile Menu specific handling
+    // Mobile Menu specific handling (Removed automatic close for categories)
     if (link.closest('#mobile-menu')) {
-      const menuToggle = document.getElementById('menu-toggle');
-      const mobileMenu = document.getElementById('mobile-menu');
-      if (menuToggle && mobileMenu) {
-        menuToggle.classList.remove('is-open');
-        mobileMenu.classList.remove('open');
-        document.body.classList.remove('menu-open');
-      }
-      
-      // Scroll to products section
-      const productSection = document.getElementById('product-slider') || document.querySelector('.featured-products');
-      if (productSection) {
-        const topOffset = productSection.getBoundingClientRect().top + window.pageYOffset - 80;
-        window.scrollTo({ top: topOffset, behavior: 'smooth' });
-      }
+      // We don't close the menu anymore when a filter is clicked
+      // But we do ensure we scroll the menu container to the top so the products are seen
+      const menuInner = document.querySelector('.menu-inner');
+      if (menuInner) menuInner.scrollTop = 0;
     }
   });
 
@@ -352,7 +337,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const activeLink = document.querySelector('.cat-link.active');
     if (activeLink) {
       const category = activeLink.getAttribute('data-category');
-      const cards = document.querySelectorAll('.card-rhode');
+      const cards = document.querySelectorAll('.card-rhode, .menu-product-row');
       if (!category || !cards.length) return;
 
       const sanitize = (str) => str.trim().toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');

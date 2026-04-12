@@ -2,6 +2,7 @@
   {%- assign mega_names = "Night Cream,Tranexamic Serum,Anti Frizz Keratin Serum,Glow Serum,Glutathione Cream,Floral Blossom Hair Mist,Face Wash,Anti Acne,Sunscreen SPF60+,Renewal Cleanser,Hydra Burst Moisturizer,Renewal Toner" | split: "," -%}
   {%- assign mega_images = "night-cream.jpg,tranexamic-serum.jpg,keratin-serum.jpg,glow-serum-100.jpg,glutathione-cream-100.jpg,hair-mist.jpg,facewash-100.jpg,anti-acne-100.jpg,sunscreen-100.jpg,renewal-cleanser-1.jpg,moisturizer-100.jpg,toner1.jpeg" | split: "," -%}
   {%- assign mega_descs = "To restore, protect and nurture,Advanced brightening formula,Smooth Control,Essential glass skin routine,Deep hydration treatment,Scented radiance for hair,Gentle daily cleanser,Targeted blemish control,Premium solar protection,Intense clarity refresh,Plumping hydration boost,Refining skin texture" | split: "," -%}
+  {%- assign mega_labels = "korean-glass-skin nightcream,korean-brightening tranexamic serum,hair-care keratin,korean-glass-skin serum glow,korean-brightening glutathione repair,hair-care mist,korean-glass-skin facewash,anti-acne brightening antiacne,korean-glass-skin sunscreen,korean-glass-skin cleanser,korean-glass-skin moisturizer,korean-brightening toner" | split: "," -%}
 
   <div class="announcement-bar">
     {{ section.settings.announcement_text }}
@@ -136,15 +137,16 @@
         {%- assign mname = mega_names[i] -%}
         {%- assign mimage = mega_images[i] -%}
         {%- assign mdesc = mega_descs[i] -%}
+        {%- assign mlabel = mega_labels[i] -%}
         {%- assign mhandle = mname | handleize -%}
         {%- if mname contains "Keratin Serum" -%}{%- assign mhandle = "anti-frizz-keratin-serum" -%}{%- endif -%}
         
-        <a href="/products/{{ mhandle }}" class="menu-product-row">
+        <a href="/products/{{ mhandle }}" class="menu-product-row" data-category="{{ mlabel }}">
           <div class="mini-thumb">
             <img src="{{ mimage | asset_url }}" alt="{{ mname }}" loading="lazy">
           </div>
           <div class="mini-meta">
-            <div class="mini-title">{{ mname | upcase }}</div>
+            <div class="mini-title card-name">{{ mname | upcase }}</div>
             <div class="mini-tag">{{ mdesc }}</div>
           </div>
         </a>
