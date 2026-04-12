@@ -1462,7 +1462,7 @@ a { color: inherit; text-decoration: none; }
 }
 .section-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 12px;
   padding: 0 12px;
   min-height: 80vh;
@@ -1808,7 +1808,7 @@ a { color: inherit; text-decoration: none; }
 /* Mobile Adjustments */
 @media (max-width: 1024px) {
   .footer-main-grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: 40px;
   }
   .newsletter-column {
@@ -1855,7 +1855,7 @@ a { color: inherit; text-decoration: none; }
   overflow: hidden;
   margin-bottom: 12px;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
 }
 
 .values-content-col {
@@ -2160,7 +2160,8 @@ a { color: inherit; text-decoration: none; }
         display: none;
       }
     }
-  </style>
+  .bogo-inline-section, .bogo-btn, #bogoDrawer, #bogoOverlay { display: none !important; }
+</style>
   <script src="{{ 'script.js' | asset_url }}" defer></script>
 {{ 'styles.css' | asset_url | stylesheet_tag }}
 </head>
@@ -2266,6 +2267,8 @@ a { color: inherit; text-decoration: none; }
 
 </body>
 </html>
+
+
 
 
 

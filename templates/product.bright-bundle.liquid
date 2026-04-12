@@ -100,7 +100,7 @@
     .accordion-item.active .accordion-plus { transform: rotate(45deg); background: #000; color: #fff; }
 
     /* Discovery Blocks */
-    .discovery-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px; }
+    .discovery-grid { display: grid; grid-template-columns: 1fr; gap: 20px; margin-top: 20px; }
     .island-card { border-radius: 12px; overflow: hidden; background: #fff; height: 600px; position: relative; }
     .img-placeholder { width: 100%; height: auto; display: block; }
 
@@ -140,7 +140,8 @@ Line 106:
     /* Footer */
     .site-footer-rhode { background: #fff; padding: 80px 40px; border-top: 1px solid #eee; text-align: center; }
     .logo-text-giant { font-weight: 800; font-size: 7rem; letter-spacing: -0.05em; color: #333; opacity: 1; margin-bottom: 40px; }
-  </style>
+  .bogo-inline-section, .bogo-btn, #bogoDrawer, #bogoOverlay { display: none !important; }
+</style>
 {{ 'styles.css' | asset_url | stylesheet_tag }}
 </head>
 <body>
@@ -308,6 +309,8 @@ Line 106:
 
 </body>
 </html>
+
+
 
 
 
