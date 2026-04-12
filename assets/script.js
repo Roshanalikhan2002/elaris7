@@ -303,14 +303,13 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       }
 
-      // Toggle Visibility
+      // Toggle Visibility with !important to override any CSS conflicts
       if (matches) {
-        item.style.display = item.classList.contains('menu-product-row') ? 'flex' : 'flex';
-        // For grid based cards
-        if (item.classList.contains('card-rhode')) item.style.display = 'flex';
+        item.style.setProperty('display', 'flex', 'important');
       } else {
-        item.style.display = 'none';
+        item.style.setProperty('display', 'none', 'important');
       }
+
     });
 
     // Reset Scroll Positions

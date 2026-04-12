@@ -163,6 +163,33 @@
           </div>
         </a>
       {% endfor %}
+
+      <!-- SET BUNDLES -->
+      <a href="/products/elaris-7-korean-glass-skin-bundle" class="menu-product-row" data-category="set bundle">
+        <div class="mini-thumb"><img src="{{ 'glassmain.jpg' | file_img_url: '400x' }}" alt="Glass Skin Bundle"></div>
+        <div class="mini-meta">
+          <div class="mini-title card-name">KOREAN GLASS SKIN BUNDLE</div>
+          <div class="mini-tag">Complete 7-Step Routine</div>
+          <div class="mini-price" style="font-size: 0.75rem; font-weight: 800; color: #333; margin-top: 4px;">RS. 18,500</div>
+        </div>
+      </a>
+      <a href="/products/elaris-7-korean-brightening-bundle" class="menu-product-row" data-category="set bundle">
+        <div class="mini-thumb"><img src="{{ 'main.jpg' | file_img_url: '400x' }}" alt="Brightening Bundle"></div>
+        <div class="mini-meta">
+          <div class="mini-title card-name">KOREAN BRIGHTENING BUNDLE</div>
+          <div class="mini-tag">Targeted Spot Correction</div>
+          <div class="mini-price" style="font-size: 0.75rem; font-weight: 800; color: #333; margin-top: 4px;">RS. 16,400</div>
+        </div>
+      </a>
+      <a href="/products/elaris-7-korean-hair-care-bundle" class="menu-product-row" data-category="set bundle">
+        <div class="mini-thumb"><img src="{{ 'hairmain.jpg' | file_img_url: '400x' }}" alt="Hair Care Bundle"></div>
+        <div class="mini-meta">
+          <div class="mini-title card-name">HAIR CARE BUNDLE</div>
+          <div class="mini-tag">Smooth & Healthy Hair</div>
+          <div class="mini-price" style="font-size: 0.75rem; font-weight: 800; color: #333; margin-top: 4px;">RS. 5,600</div>
+        </div>
+      </a>
+
     </div>
     
     <div class="menu-shop-btn-wrap">
@@ -460,7 +487,7 @@
 }
 
 .menu-product-row {
-  display: flex !important;
+  display: flex;
   align-items: center;
   gap: 16px;
   padding: 14px 0;
@@ -472,6 +499,7 @@
   position: relative;
   z-index: 5;
 }
+
 
 .menu-product-row:active { background: rgba(91,90,83,0.04); }
 
