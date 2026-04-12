@@ -264,18 +264,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
     cards.forEach(card => {
       const cardCatStr = (card.getAttribute('data-category') || '').toLowerCase();
-      const cardCategories = cardCatStr.split(/[,\s]+/).map(c => sanitize(c)).filter(c => c !== '');
-
+      
       if (targetCat === 'featured') {
-        // Show everything EXCEPT bundles/sets
-        if (!cardCategories.includes('set')) {
+        // Show everything except sets
+        if (!cardCatStr.includes('set')) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      } else if (targetCat === 'set') {
+        // Show only sets
+        if (cardCatStr.includes('set')) {
           card.style.display = 'flex';
         } else {
           card.style.display = 'none';
         }
       } else {
-        // Show if it matches the specific category
-        if (cardCategories.includes(targetCat)) {
+        // Show if target category is found in the card's category string
+        if (cardCatStr.includes(targetCat)) {
           card.style.display = 'flex';
         } else {
           card.style.display = 'none';
@@ -301,16 +307,21 @@ document.addEventListener('DOMContentLoaded', () => {
       const targetCat = sanitize(category);
       cards.forEach(card => {
         const cardCatStr = (card.getAttribute('data-category') || '').toLowerCase();
-        const cardCategories = cardCatStr.split(/[,\s]+/).map(c => sanitize(c)).filter(c => c !== '');
 
         if (targetCat === 'featured') {
-          if (!cardCategories.includes('set')) {
+          if (!cardCatStr.includes('set')) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        } else if (targetCat === 'set') {
+          if (cardCatStr.includes('set')) {
             card.style.display = 'flex';
           } else {
             card.style.display = 'none';
           }
         } else {
-          if (cardCategories.includes(targetCat)) {
+          if (cardCatStr.includes(targetCat)) {
             card.style.display = 'flex';
           } else {
             card.style.display = 'none';
