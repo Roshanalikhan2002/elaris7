@@ -253,9 +253,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     e.preventDefault(); // Stop navigation to collection page
 
-    // Reset all links and set active
+    // Reset all links
     document.querySelectorAll('.cat-link').forEach(l => l.classList.remove('active'));
-    link.classList.add('active');
+    // Set active on all matching links (sync mobile and desktop)
+    document.querySelectorAll(`.cat-link[data-category="${category}"]`).forEach(l => l.classList.add('active'));
 
     // Filter cards
     const cards = document.querySelectorAll('.card-rhode');
@@ -325,6 +326,24 @@ document.addEventListener('DOMContentLoaded', () => {
     // Reset carousel position
     const slider = document.getElementById('product-slider') || document.getElementById('product-collection-scroll') || document.querySelector('.product-collection');
     if (slider) slider.scrollLeft = 0;
+
+    // Mobile Menu specific handling
+    if (link.closest('#mobile-menu')) {
+      const menuToggle = document.getElementById('menu-toggle');
+      const mobileMenu = document.getElementById('mobile-menu');
+      if (menuToggle && mobileMenu) {
+        menuToggle.classList.remove('is-open');
+        mobileMenu.classList.remove('open');
+        document.body.classList.remove('menu-open');
+      }
+      
+      // Scroll to products section
+      const productSection = document.getElementById('product-slider') || document.querySelector('.featured-products');
+      if (productSection) {
+        const topOffset = productSection.getBoundingClientRect().top + window.pageYOffset - 80;
+        window.scrollTo({ top: topOffset, behavior: 'smooth' });
+      }
+    }
   });
 
 
