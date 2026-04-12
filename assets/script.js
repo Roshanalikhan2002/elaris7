@@ -280,7 +280,15 @@ document.addEventListener('DOMContentLoaded', () => {
       } else {
         // Word-based matching for robustness
         const targetWords = targetCat.split('-').filter(w => w.length > 3);
-        const matches = targetWords.length > 0 ? targetWords.some(word => cardCatStr.includes(word)) : cardCatStr.includes(targetCat);
+        let matches = targetWords.length > 0 ? targetWords.some(word => cardCatStr.includes(word)) : cardCatStr.includes(targetCat);
+        
+        // Hardcoded reliable mapping for Korean Glass Skin
+        if (targetCat.includes('glass')) {
+          const glassTags = ['nightcream', 'serum', 'moisturizer', 'cleanser', 'facewash', 'sunscreen'];
+          if (glassTags.some(tag => cardCatStr.includes(tag))) {
+            matches = true;
+          }
+        }
         
         if (matches || cardCatStr.includes(targetCat)) {
           card.style.display = 'flex';
@@ -324,7 +332,15 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
           // Word-based matching for robustness
           const targetWords = targetCat.split('-').filter(w => w.length > 3);
-          const matches = targetWords.length > 0 ? targetWords.some(word => cardCatStr.includes(word)) : cardCatStr.includes(targetCat);
+          let matches = targetWords.length > 0 ? targetWords.some(word => cardCatStr.includes(word)) : cardCatStr.includes(targetCat);
+          
+          // Hardcoded reliable mapping for Korean Glass Skin
+          if (targetCat.includes('glass')) {
+            const glassTags = ['nightcream', 'serum', 'moisturizer', 'cleanser', 'facewash', 'sunscreen'];
+            if (glassTags.some(tag => cardCatStr.includes(tag))) {
+              matches = true;
+            }
+          }
           
           if (matches || cardCatStr.includes(targetCat)) {
             card.style.display = 'flex';
