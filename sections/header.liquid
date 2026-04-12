@@ -3,6 +3,7 @@
   {%- assign mega_images = "night-cream.jpg,tranexamic-serum.jpg,keratin-serum.jpg,glow-serum-100.jpg,glutathione-cream-100.jpg,hair-mist.jpg,facewash-100.jpg,anti-acne-100.jpg,sunscreen-100.jpg,renewal-cleanser-1.jpg,moisturizer-100.jpg,toner1.jpeg,glassmain.jpg,main.jpg,anti-acne-100.jpg,hairmain.jpg" | split: "," -%}
   {%- assign mega_descs = "To restore, protect and nurture,Advanced brightening formula,Smooth Control,Essential glass skin routine,Deep hydration treatment,Scented radiance for hair,Gentle daily cleanser,Targeted blemish control,Premium solar protection,Intense clarity refresh,Plumping hydration boost,Refining skin texture,Full 5-Piece System,The Brightening Routine,Clear Skin Advanced Set,Repair & Refine Hair Cycle" | split: "," -%}
   {%- assign mega_labels = "korean-glass-skin nightcream,korean-brightening tranexamic serum,hair-care keratin,korean-glass-skin serum glow,korean-brightening glutathione repair,hair-care mist,korean-glass-skin facewash,anti-acne brightening antiacne,korean-glass-skin sunscreen,korean-glass-skin cleanser,korean-glass-skin moisturizer,korean-brightening toner,set glass-skin,set brightening,set anti-acne,set hair-care" | split: "," -%}
+  {%- assign mega_handles = "night-cream,tranexamic-serum,anti-frizz-keratin-serum,glow-serum,glutathione-cream,floral-blossom-hair-mist,face-wash,anti-acne-serum,sunscreen-spf60,renewal-cleanser,hydra-burst-moisturizer,renewal-toner,elaris-7-korean-glass-skin-bundle,elaris-7-korean-brightening-bundle,anti-acne-serum,elaris-7-korean-hair-care-bundle" | split: "," -%}
 
   <div class="announcement-bar">
     {{ section.settings.announcement_text }}
@@ -37,8 +38,7 @@
                   {%- assign mname = mega_names[i] -%}
                   {%- assign mimage = mega_images[i] -%}
                   {%- assign mdesc = mega_descs[i] -%}
-                  {%- assign mhandle = mname | handleize -%}
-                  {%- if mname contains "Keratin Serum" -%}{%- assign mhandle = "anti-frizz-keratin-serum" -%}{%- endif -%}
+                  {%- assign mhandle = mega_handles[i] -%}
                   
                   <a href="/products/{{ mhandle }}" class="mega-product-card">
                     <div class="mega-product-image">
@@ -138,8 +138,7 @@
         {%- assign mimage = mega_images[i] -%}
         {%- assign mdesc = mega_descs[i] -%}
         {%- assign mlabel = mega_labels[i] -%}
-        {%- assign mhandle = mname | handleize -%}
-        {%- if mname contains "Keratin Serum" -%}{%- assign mhandle = "anti-frizz-keratin-serum" -%}{%- endif -%}
+        {%- assign mhandle = mega_handles[i] -%}
         
         <a href="/products/{{ mhandle }}" class="menu-product-row" data-category="{{ mlabel }}">
           <div class="mini-thumb">
