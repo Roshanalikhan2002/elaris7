@@ -1,8 +1,8 @@
 <header class="site-header">
-  {%- assign mega_names = "Night Cream,Tranexamic Serum,Anti Frizz Keratin Serum,Glow Serum,Glutathione Cream,Floral Blossom Hair Mist,Face Wash,Anti Acne,Sunscreen SPF60+,Renewal Cleanser,Hydra Burst Moisturizer,Renewal Toner" | split: "," -%}
-  {%- assign mega_images = "night-cream.jpg,tranexamic-serum.jpg,keratin-serum.jpg,glow-serum-100.jpg,glutathione-cream-100.jpg,hair-mist.jpg,facewash-100.jpg,anti-acne-100.jpg,sunscreen-100.jpg,renewal-cleanser-1.jpg,moisturizer-100.jpg,toner1.jpeg" | split: "," -%}
-  {%- assign mega_descs = "To restore, protect and nurture,Advanced brightening formula,Smooth Control,Essential glass skin routine,Deep hydration treatment,Scented radiance for hair,Gentle daily cleanser,Targeted blemish control,Premium solar protection,Intense clarity refresh,Plumping hydration boost,Refining skin texture" | split: "," -%}
-  {%- assign mega_labels = "korean-glass-skin nightcream,korean-brightening tranexamic serum,hair-care keratin,korean-glass-skin serum glow,korean-brightening glutathione repair,hair-care mist,korean-glass-skin facewash,anti-acne brightening antiacne,korean-glass-skin sunscreen,korean-glass-skin cleanser,korean-glass-skin moisturizer,korean-brightening toner" | split: "," -%}
+  {%- assign mega_names = "Night Cream,Tranexamic Serum,Anti Frizz Keratin Serum,Glow Serum,Glutathione Cream,Floral Blossom Hair Mist,Face Wash,Anti Acne,Sunscreen SPF60+,Renewal Cleanser,Hydra Burst Moisturizer,Renewal Toner,Korean Glass Skin Bundle,Korean Brightening Bundle,Anti Acne Set,Hair Care Bundle" | split: "," -%}
+  {%- assign mega_images = "night-cream.jpg,tranexamic-serum.jpg,keratin-serum.jpg,glow-serum-100.jpg,glutathione-cream-100.jpg,hair-mist.jpg,facewash-100.jpg,anti-acne-100.jpg,sunscreen-100.jpg,renewal-cleanser-1.jpg,moisturizer-100.jpg,toner1.jpeg,glassmain.jpg,main.jpg,anti-acne-100.jpg,hairmain.jpg" | split: "," -%}
+  {%- assign mega_descs = "To restore, protect and nurture,Advanced brightening formula,Smooth Control,Essential glass skin routine,Deep hydration treatment,Scented radiance for hair,Gentle daily cleanser,Targeted blemish control,Premium solar protection,Intense clarity refresh,Plumping hydration boost,Refining skin texture,Full 5-Piece System,The Brightening Routine,Clear Skin Advanced Set,Repair & Refine Hair Cycle" | split: "," -%}
+  {%- assign mega_labels = "korean-glass-skin nightcream,korean-brightening tranexamic serum,hair-care keratin,korean-glass-skin serum glow,korean-brightening glutathione repair,hair-care mist,korean-glass-skin facewash,anti-acne brightening antiacne,korean-glass-skin sunscreen,korean-glass-skin cleanser,korean-glass-skin moisturizer,korean-brightening toner,set glass-skin,set brightening,set anti-acne,set hair-care" | split: "," -%}
 
   <div class="announcement-bar">
     {{ section.settings.announcement_text }}
@@ -133,7 +133,7 @@
     </div>
     
     <div class="menu-products">
-      {% for i in (0..11) %}
+      {% for i in (0..15) %}
         {%- assign mname = mega_names[i] -%}
         {%- assign mimage = mega_images[i] -%}
         {%- assign mdesc = mega_descs[i] -%}
