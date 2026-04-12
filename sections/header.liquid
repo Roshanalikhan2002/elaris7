@@ -387,12 +387,14 @@
 }
 
 .menu-tabs-container {
-  padding: 16px 0;
-  margin-bottom: 5px;
+  padding: 18px 0;
+  margin-bottom: 0;
   border-bottom: 1px solid rgba(91,90,83,0.12);
   overflow-x: auto;
+  overflow-y: hidden;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
+  display: block;
 }
 .menu-tabs-container::-webkit-scrollbar { display: none; }
 
@@ -400,9 +402,8 @@
   display: flex;
   flex-wrap: nowrap;
   gap: 12px;
-  padding: 5px 20px;
+  padding: 0 20px;
   white-space: nowrap;
-  overflow: visible;
 }
 
 .menu-tabs .tab {
