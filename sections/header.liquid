@@ -1,9 +1,9 @@
 <header class="site-header">
-  {%- assign mega_names = "NIGHT CREAM,TRANEXAMIC SERUM,KERATIN SERUM,GLOW SERUM,GLUTATHIONE CREAM,HAIR MIST,CENTELLA WASH,ANTI ACNE SERUM,SUNSCREEN,RENEWAL CLEANSER,HYDRA BURST,RENEWAL TONER,SKIN REFINING TONER,E7 GLASS SKIN SET,E7 COMPLETE ANTI-ACNE SET,E7 HAIR CARE SET,ELARIS 7 KOREAN BRIGHTENING BUNDLE" | split: "," -%}
-  {%- assign mega_images = "night-cream.jpg,tranexamic-serum.jpg,keratin-serum.jpg,glow-serum-100.jpg,glutathione-cream-100.jpg,hair-mist.jpg,facewash-100.jpg,anti-acne-100.jpg,sunscreen-100.jpg,gel cleanser-100.jpg,moisturizer-100.jpg,toner1.jpeg,essence-white.png,glassmain.jpg,anti-acne-100.jpg,hairmain.jpg,main.jpg" | split: "," -%}
-  {%- assign mega_descs = "To restore,protect and nurture,Advanced brightening formula,Smooth Control,Essential glass skin routine,Deep hydration treatment,Scented radiance for hair,Gentle daily cleanser,Targeted blemish control,Premium solar protection,Intense clarity refresh,Plumping hydration boost,Refining skin texture,Specialized pore care,Full 5-Piece System,Clear Skin Advanced Set,Repair & Refine Hair Cycle,The Brightening Routine" | split: "," -%}
-  {%- assign mega_labels = "korean-glass-skin nightcream,serum korean-brightening korean-glass-skin,hair-care,serum korean-brightening korean-glass-skin,repair korean-glass-skin,hair-care,cleanser korean-glass-skin,anti-acne,sunscreen korean-glass-skin,cleanser,moisturizer korean-glass-skin,toner korean-glass-skin,toner korean-glass-skin,set korean-glass-skin,set anti-acne,set hair-care,set korean-brightening" | split: "," -%}
-  {%- assign mega_handles = "e7-korean-glass-skin-centella-night-cream-copy,tranexamic-serum-v2,keratin-serum-v2,centella-serum,glutathione-cream-v2,hair-mist-v2,e7-korean-glass-skin-centella-face-wash-copy,anti-acne-serum-v2,e7-korean-glass-skin-centella-sunscreen-spf50-copy,renewal-cleanser-v2,e7-korean-glass-skin-moisturizer,centella-skin-toner-copy,skin-refining-toner,elaris-7-korean-glass-skin-bundle,elaris-7-anti-acne-bundle,elaris-7-korean-hair-care-bundle,elaris-7-korean-brightening-bundle" | split: "," -%}
+  {%- assign mega_names = "NIGHT CREAM,TRANEXAMIC SERUM,KERATIN SERUM,GLOW SERUM,GLUTATHIONE CREAM,HAIR MIST,CENTELLA WASH,ANTI ACNE SERUM,SUNSCREEN,RENEWAL CLEANSER,HYDRA BURST,RENEWAL TONER" | split: "," -%}
+  {%- assign mega_images = "night-cream.jpg,tranexamic-serum.jpg,keratin-serum.jpg,glow-serum-100.jpg,glutathione-cream-100.jpg,hair-mist.jpg,facewash-100.jpg,anti-acne-100.jpg,sunscreen-100.jpg,gel cleanser-100.jpg,moisturizer-100.jpg,toner1.jpeg" | split: "," -%}
+  {%- assign mega_descs = "To restore,Protect and Nurture,Repair & Refine Hair Cycle,Smooth Control,Essential glass skin routine,Scented radiance for hair,Gentle daily cleanser,Targeted blemish control,Premium solar protection,Intense clarity refresh,Plumping hydration boost,Refining skin texture" | split: "," -%}
+  {%- assign mega_labels = "featured korean-glass-skin nightcream,featured serum korean-brightening korean-glass-skin,featured hair-care,featured serum korean-brightening korean-glass-skin,featured repair korean-glass-skin,featured hair-care,featured cleanser korean-glass-skin,featured anti-acne,featured sunscreen korean-glass-skin,featured cleanser korean-glass-skin,featured moisturizer korean-glass-skin,featured toner korean-glass-skin" | split: "," -%}
+  {%- assign mega_handles = "e7-korean-glass-skin-centella-night-cream-copy,tranexamic-serum-v2,keratin-serum-v2,centella-serum,glutathione-cream-v2,hair-mist-v2,e7-korean-glass-skin-centella-face-wash-copy,anti-acne-serum-v2,e7-korean-glass-skin-centella-sunscreen-spf50-copy,renewal-cleanser-v2,e7-korean-glass-skin-moisturizer,centella-skin-toner-copy" | split: "," -%}
 
   <div class="announcement-bar">
     {{ section.settings.announcement_text }}
@@ -34,7 +34,7 @@
             
             <div class="mega-menu-products">
               <div class="mega-products-grid">
-                {% for i in (0..16) %}
+                {% for i in (0..11) %}
                   {%- assign mname = mega_names[i] -%}
                   {%- assign mimage = mega_images[i] -%}
                   {%- assign mdesc = mega_descs[i] -%}
@@ -135,7 +135,7 @@
     <div class="menu-scroll-area">
     
     <div class="menu-products">
-      {% for i in (0..16) %}
+      {% for i in (0..11) %}
         {%- assign mname = mega_names[i] -%}
         {%- assign mimage = mega_images[i] -%}
         {%- assign mdesc = mega_descs[i] -%}
@@ -786,12 +786,41 @@ body.menu-open { overflow: hidden; }
 
   // Mobile Menu Tab Switching
   const tabs = document.querySelectorAll('.menu-tabs .tab');
+  const productRows = document.querySelectorAll('.menu-product-row');
+  
   tabs.forEach(tab => {
     tab.addEventListener('click', () => {
       tabs.forEach(t => t.classList.remove('active'));
       tab.classList.add('active');
+      
+      const category = tab.getAttribute('data-category');
+      productRows.forEach(row => {
+        const rowCategory = row.getAttribute('data-category') || '';
+        if (category === 'all' || rowCategory.includes(category)) {
+          row.style.display = 'flex';
+        } else {
+          row.style.display = 'none';
+        }
+      });
     });
   });
+
+  // Initial filter to show featured on load
+  function initMobileFilter() {
+    const activeTab = document.querySelector('.menu-tabs .tab.active');
+    if (activeTab) {
+      const category = activeTab.getAttribute('data-category');
+      productRows.forEach(row => {
+        const rowCategory = row.getAttribute('data-category') || '';
+        if (rowCategory.includes(category)) {
+          row.style.display = 'flex';
+        } else {
+          row.style.display = 'none';
+        }
+      });
+    }
+  }
+  initMobileFilter();
 
   // Mega Menu links are handled by standard navigation
 
