@@ -1,9 +1,9 @@
 <header class="site-header">
-  {%- assign mega_names = "Night Cream,Tranexamic Serum,Anti Frizz Keratin Serum,Glow Serum,Glutathione Cream,Floral Blossom Hair Mist,Face Wash,Anti Acne,Sunscreen SPF60+,Renewal Cleanser,Hydra Burst Moisturizer,Renewal Toner,Korean Glass Skin Bundle,Korean Brightening Bundle,Anti Acne Set,Hair Care Bundle" | split: "," -%}
-  {%- assign mega_images = "night-cream.jpg,tranexamic-serum.jpg,keratin-serum.jpg,glow-serum-100.jpg,glutathione-cream-100.jpg,hair-mist.jpg,facewash-100.jpg,anti-acne-100.jpg,sunscreen-100.jpg,renewal-cleanser-1.jpg,moisturizer-100.jpg,toner1.jpeg,glassmain.jpg,main.jpg,anti-acne-100.jpg,hairmain.jpg" | split: "," -%}
-  {%- assign mega_descs = "To restore, protect and nurture,Advanced brightening formula,Smooth Control,Essential glass skin routine,Deep hydration treatment,Scented radiance for hair,Gentle daily cleanser,Targeted blemish control,Premium solar protection,Intense clarity refresh,Plumping hydration boost,Refining skin texture,Full 5-Piece System,The Brightening Routine,Clear Skin Advanced Set,Repair & Refine Hair Cycle" | split: "," -%}
-  {%- assign mega_labels = "korean-glass-skin nightcream,korean-brightening tranexamic serum,hair-care keratin,korean-glass-skin serum glow,korean-brightening glutathione repair,hair-care mist,korean-glass-skin facewash,anti-acne brightening antiacne,korean-glass-skin sunscreen,korean-glass-skin cleanser,korean-glass-skin moisturizer,korean-brightening toner,set glass-skin,set brightening,set anti-acne,set hair-care" | split: "," -%}
-  {%- assign mega_handles = "night-cream,tranexamic-serum-v2,anti-frizz-keratin-serum,glow-serum,glutathione-cream,floral-blossom-hair-mist,face-wash,anti-acne,sunscreen-v2,renewal-cleanser,hydra-burst-moisturizer,renewal-toner,glass-bundle,bright-bundle,anti-acne,hair-bundle" | split: "," -%}
+  {%- assign mega_names = "NIGHT CREAM,TRANEXAMIC SERUM,KERATIN SERUM,GLOW SERUM,GLUTATHIONE CREAM,HAIR MIST,CENTELLA WASH,ANTI ACNE SERUM,SUNSCREEN,RENEWAL CLEANSER,HYDRA BURST,RENEWAL TONER,SKIN REFINING TONER,E7 GLASS SKIN SET,E7 COMPLETE ANTI-ACNE SET,E7 HAIR CARE SET,ELARIS 7 KOREAN BRIGHTENING BUNDLE" | split: "," -%}
+  {%- assign mega_images = "night-cream.jpg,tranexamic-serum.jpg,keratin-serum.jpg,glow-serum-100.jpg,glutathione-cream-100.jpg,hair-mist.jpg,facewash-100.jpg,anti-acne-100.jpg,sunscreen-100.jpg,gel cleanser-100.jpg,moisturizer-100.jpg,toner1.jpeg,essence-white.png,glassmain.jpg,anti-acne-100.jpg,hairmain.jpg,main.jpg" | split: "," -%}
+  {%- assign mega_descs = "To restore,protect and nurture,Advanced brightening formula,Smooth Control,Essential glass skin routine,Deep hydration treatment,Scented radiance for hair,Gentle daily cleanser,Targeted blemish control,Premium solar protection,Intense clarity refresh,Plumping hydration boost,Refining skin texture,Specialized pore care,Full 5-Piece System,Clear Skin Advanced Set,Repair & Refine Hair Cycle,The Brightening Routine" | split: "," -%}
+  {%- assign mega_labels = "korean-glass-skin nightcream,serum korean-brightening korean-glass-skin,hair-care,serum korean-brightening korean-glass-skin,repair korean-glass-skin,hair-care,cleanser korean-glass-skin,anti-acne,sunscreen korean-glass-skin,cleanser,moisturizer korean-glass-skin,toner korean-glass-skin,toner korean-glass-skin,set korean-glass-skin,set anti-acne,set hair-care,set korean-brightening" | split: "," -%}
+  {%- assign mega_handles = "night-cream,tranexamic-serum,keratin-serum,glow-serum,glutathione-cream,hair-mist,face-wash,anti-acne-serum,sunscreen,renewal-cleanser,moisturizer,renewal-toner,skin-refining-toner,elaris-7-korean-glass-skin-bundle,elaris-7-anti-acne-bundle,elaris-7-korean-hair-care-bundle,elaris-7-korean-brightening-bundle" | split: "," -%}
 
   <div class="announcement-bar">
     {{ section.settings.announcement_text }}
@@ -135,7 +135,7 @@
     <div class="menu-scroll-area">
     
     <div class="menu-products">
-      {% for i in (0..15) %}
+      {% for i in (0..16) %}
         {%- assign mname = mega_names[i] -%}
         {%- assign mimage = mega_images[i] -%}
         {%- assign mdesc = mega_descs[i] -%}
