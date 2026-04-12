@@ -259,11 +259,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Filter cards
     const cards = document.querySelectorAll('.card-rhode');
-    const targetCat = category.toLowerCase();
+    const sanitize = (str) => str.trim().toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+    const targetCat = sanitize(category);
 
     cards.forEach(card => {
       const cardCatStr = (card.getAttribute('data-category') || '').toLowerCase();
-      const cardCategories = cardCatStr.split(/[,\s]+/).map(c => c.trim()).filter(c => c !== '');
+      const cardCategories = cardCatStr.split(/[,\s]+/).map(c => sanitize(c)).filter(c => c !== '');
 
       if (targetCat === 'featured') {
         // Show everything EXCEPT bundles/sets
@@ -273,7 +274,7 @@ document.addEventListener('DOMContentLoaded', () => {
           card.style.display = 'none';
         }
       } else {
-        // Show if it matches the specific category (like 'set', 'anti-acne', etc)
+        // Show if it matches the specific category
         if (cardCategories.includes(targetCat)) {
           card.style.display = 'flex';
         } else {
@@ -296,10 +297,11 @@ document.addEventListener('DOMContentLoaded', () => {
       const cards = document.querySelectorAll('.card-rhode');
       if (!category || !cards.length) return;
 
-      const targetCat = category.toLowerCase();
+      const sanitize = (str) => str.trim().toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+      const targetCat = sanitize(category);
       cards.forEach(card => {
         const cardCatStr = (card.getAttribute('data-category') || '').toLowerCase();
-        const cardCategories = cardCatStr.split(/[,\s]+/).map(c => c.trim()).filter(c => c !== '');
+        const cardCategories = cardCatStr.split(/[,\s]+/).map(c => sanitize(c)).filter(c => c !== '');
 
         if (targetCat === 'featured') {
           if (!cardCategories.includes('set')) {

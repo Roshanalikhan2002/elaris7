@@ -14,7 +14,7 @@
     {% else %}
       {% assign default_cats = "Featured,Korean glass skin,Anti acne,Korean brightening,Hair care,SET" | split: "," %}
       {% for cat in default_cats %}
-        {%- assign c_handle = cat | handleize -%}
+        {%- assign c_handle = cat | strip | handleize -%}
         <li>
           <a href="javascript:void(0)" class="cat-link {% if forloop.first %}active{% endif %}" data-category="{{ c_handle }}">
             {{ cat | uppercase }}
