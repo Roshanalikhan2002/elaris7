@@ -61,7 +61,7 @@
       {%- assign fallback_names = "Night Cream,Tranexamic Serum,Anti Frizz Keratin Serum,Glow Serum,Glutathione Cream,Floral Blossom Hair Mist,Face Wash,Anti Acne,Sunscreen SPF60+,Renewal Cleanser,Hydra Burst Moisturizer,Renewal Toner" | split: "," -%}
       {%- assign fallback_images = "night-cream.jpg,tranexamic-serum.jpg,keratin-serum.jpg,glow-serum-100.jpg,glutathione-cream-100.jpg,hair-mist.jpg,facewash-100.jpg,anti-acne-100.jpg,sunscreen-100.jpg,renewal-cleanser-1.jpg,moisturizer-100.jpg,toner1.jpeg" | split: "," -%}
       {%- assign fallback_hovers = "night-cream-hover.jpg,tranexamic-meet-1.jpg,keratin-serum-hover.jpg,glow-serum-hover.jpg,deep-hydration-100.jpg,hair-mist-hover.jpg,deep-hydration-facewash.jpg,hover-anti-acne.png,sunscreen-hover.jpg,renewal-cleanser-2.jpg,moisturizer-hover.jpg,toner-hover.jpg" | split: "," -%}
-      {%- assign fallback_labels = "featured korean-glass-skin,featured korean-brightening,featured hair-care,featured korean-glass-skin,featured korean-brightening,featured hair-care,featured korean-glass-skin,featured anti-acne,featured korean-glass-skin,featured korean-glass-skin,featured korean-glass-skin,featured korean-glass-skin" | split: "," -%}
+      {%- assign fallback_labels = "featured korean-glass-skin,featured korean-brightening,featured hair-care,featured korean-glass-skin,featured korean-brightening,featured hair-care,featured korean-glass-skin,featured anti-acne,featured korean-glass-skin,featured korean-glass-skin,featured korean-glass-skin,featured" | split: "," -%}
       
       {% for i in (0..11) %}
         {%- assign pname = fallback_names[i] -%}
@@ -69,17 +69,17 @@
         {%- if pname contains "Keratin Serum" -%}
           {%- assign phandle = "anti-frizz-keratin-serum" -%}
         {%- elsif pname == "Glow Serum" -%}
-          {%- assign phandle = "e7-korean-glass-skin-centella-sunscreen-spf50-copy" -%}
+          {%- assign phandle = "glow-serum" -%}
         {%- elsif pname == "Face Wash" -%}
-          {%- assign phandle = "e7-korean-glass-skin-centella-night-cream-copy" -%}
+          {%- assign phandle = "face-wash" -%}
         {%- elsif pname == "Sunscreen SPF60+" -%}
-          {%- assign phandle = "e7-korean-glass-skin-centella-face-wash-copy" -%}
+          {%- assign phandle = "sunscreen-v2" -%}
         {%- elsif pname == "Renewal Cleanser" -%}
           {%- assign phandle = "renewal-cleanser" -%}
         {%- elsif pname == "Hydra Burst Moisturizer" -%}
           {%- assign phandle = "e7-korean-glass-skin-moisturizer" -%}
         {%- elsif pname == "Renewal Toner" -%}
-          {%- assign phandle = "centella-skin-toner" -%}
+          {%- assign phandle = "renewal-toner" -%}
         {%- elsif pname contains "Brightening Bundle" -%}
           {%- assign phandle = "elaris-7-korean-brightening-bundle" -%}
         {%- elsif pname contains "Set" or pname contains "Bundle" -%}
@@ -139,7 +139,7 @@
 
     <!-- SET BUNDLES -->
     <!-- SET BUNDLES -->
-    <div class="card card-rhode" data-category="set korean-glass-skin" onclick="window.location.href='/products/elaris-7-korean-glass-skin-bundle'" style="display: none; background: #fff; border: 1px solid #eee; justify-content: center; align-items: center; min-height: 480px; cursor: pointer; overflow: hidden; padding: 0;">
+    <div class="card card-rhode" data-category="set" onclick="window.location.href='/products/elaris-7-korean-glass-skin-bundle'" style="display: none; background: #fff; border: 1px solid #eee; justify-content: center; align-items: center; min-height: 480px; cursor: pointer; overflow: hidden; padding: 0;">
       <img src="{{ 'glassmain.jpg' | file_img_url: '600x' }}" style="width: 100%; height: 100%; object-fit: cover;">
       <div style="position: absolute; bottom: 0; left: 0; right: 0; background: rgba(255,255,255,0.9); padding: 15px; border-top: 1px solid #eee; text-align: center;">
         <h3 style="font-size: 13px; font-weight: 800; text-transform: uppercase; margin: 0;">Korean Glass Skin Bundle</h3>
@@ -147,7 +147,7 @@
       </div>
     </div>
 
-    <div class="card card-rhode" data-category="set korean-brightening" onclick="window.location.href='/products/elaris-7-korean-brightening-bundle'" style="display: none; background: #fff; border: 1px solid #eee; justify-content: center; align-items: center; min-height: 480px; cursor: pointer; overflow: hidden; padding: 0;">
+    <div class="card card-rhode" data-category="set" onclick="window.location.href='/products/elaris-7-korean-brightening-bundle'" style="display: none; background: #fff; border: 1px solid #eee; justify-content: center; align-items: center; min-height: 480px; cursor: pointer; overflow: hidden; padding: 0;">
       <img src="{{ 'main.jpg' | file_img_url: '600x' }}" style="width: 100%; height: 100%; object-fit: cover;">
       <div style="position: absolute; bottom: 0; left: 0; right: 0; background: rgba(255,255,255,0.9); padding: 15px; border-top: 1px solid #eee; text-align: center;">
         <h3 style="font-size: 13px; font-weight: 800; text-transform: uppercase; margin: 0;">Korean Brightening Bundle</h3>
