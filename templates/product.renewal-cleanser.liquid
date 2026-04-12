@@ -2320,7 +2320,7 @@ a { color: inherit; text-decoration: none; }
       <div class="product-details">
         <div class="product-details-inner">
           <div class="product-header">
-            <h1 class="product-title">Oil-to-Foam<br>Cleanser</h1>
+            <h1 class="product-title">Oil-to-Foam Cleanser</h1>
           </div>
 
           <div class="product-meta">
@@ -2332,105 +2332,106 @@ a { color: inherit; text-decoration: none; }
             <p class="disclaimer">*with continued daily use</p>
           </div>
 
-          <hr class="divider">
-
-          
+          <hr class='divider'>
+          <div class="bogo-inline-section">
+            <p class="bogo-inline-title">SELECT YOUR FREE GIFT (BUY 1 GET 1)</p>
+            <div class="bogo-vertical-scroll">
+              <div class="bogo-inline-card selected" onclick="selectBogo(this)">
+                <input type="radio" name="free_gift" data-gift-handle="night-cream" style="display:none;" checked>
+                <img src="{{ 'night-cream-suite.jpeg' | asset_url }}" alt="Centella Night Cream">
+                <div class="bogo-inline-info"><span class="bogo-inline-name">Centella Night Cream</span><span class="bogo-inline-tag">Night Renewal</span></div>
+                <div class="bogo-select-indicator"></div>
+              </div>
+              <div class="bogo-inline-card" onclick="selectBogo(this)">
+                <input type="radio" name="free_gift" data-gift-handle="face-wash" style="display:none;">
+                <img src="{{ 'facewash1.jpeg' | asset_url }}" alt="Centella Face Wash">
+                <div class="bogo-inline-info"><span class="bogo-inline-name">Centella Face Wash</span><span class="bogo-inline-tag">Pure Start</span></div>
+                <div class="bogo-select-indicator"></div>
+              </div>
+              <div class="bogo-inline-card" onclick="selectBogo(this)">
+                <input type="radio" name="free_gift" data-gift-handle="glow-serum" style="display:none;">
+                <img src="{{ 'glowserum-1.png' | asset_url }}" alt="Centella Serum">
+                <div class="bogo-inline-info"><span class="bogo-inline-name">Centella Serum</span><span class="bogo-inline-tag">Radiance Reset</span></div>
+                <div class="bogo-select-indicator"></div>
+              </div>
+              <div class="bogo-inline-card" onclick="selectBogo(this)">
+                <input type="radio" name="free_gift" data-gift-handle="sunscreen-v2" style="display:none;">
+                <img src="{{ 'v2-sunscreen-1.jpeg' | asset_url }}" alt="Centella Sunscreen SPF60+">
+                <div class="bogo-inline-info"><span class="bogo-inline-name">Centella Sunscreen SPF60+</span><span class="bogo-inline-tag">Daily Shield</span></div>
+                <div class="bogo-select-indicator"></div>
+              </div>
+              <div class="bogo-inline-card" onclick="selectBogo(this)">
+                <input type="radio" name="free_gift" data-gift-handle="tranexamic-serum-v2" style="display:none;">
+                <img src="{{ 'TranexamicSerum1.jpg' | asset_url }}" alt="Tranexamic Brightening Serum">
+                <div class="bogo-inline-info"><span class="bogo-inline-name">Tranexamic Brightening Serum</span><span class="bogo-inline-tag">Even & Illuminate</span></div>
+                <div class="bogo-select-indicator"></div>
+              </div>
+              <div class="bogo-inline-card" onclick="selectBogo(this)">
+                <input type="radio" name="free_gift" data-gift-handle="anti-acne-serum-v2" style="display:none;">
+                <img src="{{ 'v2-antiacne-1.jpeg' | asset_url }}" alt="Anti-Acne Clarifying Serum">
+                <div class="bogo-inline-info"><span class="bogo-inline-name">Anti-Acne Clarifying Serum</span><span class="bogo-inline-tag">Clear & Control</span></div>
+                <div class="bogo-select-indicator"></div>
+              </div>
+              <div class="bogo-inline-card" onclick="selectBogo(this)">
+                <input type="radio" name="free_gift" data-gift-handle="glutathione-cream-v2" style="display:none;">
+                <img src="{{ 'v2-glutathione-1.jpeg' | asset_url }}" alt="Glutathione Brightening Cream">
+                <div class="bogo-inline-info"><span class="bogo-inline-name">Glutathione Brightening Cream</span><span class="bogo-inline-tag">Radiance Reset</span></div>
+                <div class="bogo-select-indicator"></div>
+              </div>
+              <div class="bogo-inline-card" onclick="selectBogo(this)">
+                <input type="radio" name="free_gift" data-gift-handle="renewal-toner-v2" style="display:none;">
+                <img src="{{ 'toner1.jpeg' | asset_url }}" alt="Renewal Toner">
+                <div class="bogo-inline-info"><span class="bogo-inline-name">Renewal Toner</span><span class="bogo-inline-tag">Hydration Lock</span></div>
+                <div class="bogo-select-indicator"></div>
+              </div>
+              <div class="bogo-inline-card" onclick="selectBogo(this)">
+                <input type="radio" name="free_gift" data-gift-handle="renewal-cleanser-v2" style="display:none;">
+                <img src="{{ 'gel cleanser-100.jpg' | asset_url }}" alt="Renewal Cleanser">
+                <div class="bogo-inline-info"><span class="bogo-inline-name">Renewal Cleanser</span><span class="bogo-inline-tag">Gentle Purify</span></div>
+                <div class="bogo-select-indicator"></div>
+              </div>
+              <div class="bogo-inline-card" onclick="selectBogo(this)">
+                <input type="radio" name="free_gift" data-gift-handle="keratin-serum-v2" style="display:none;">
+                <img src="{{ 'keratin-serum.jpg' | asset_url }}" alt="Anti-Frizz Keratin Serum">
+                <div class="bogo-inline-info"><span class="bogo-inline-name">Anti-Frizz Keratin Serum</span><span class="bogo-inline-tag">Smooth & Shine</span></div>
+                <div class="bogo-select-indicator"></div>
+              </div>
+              <div class="bogo-inline-card" onclick="selectBogo(this)">
+                <input type="radio" name="free_gift" data-gift-handle="hair-mist-v2" style="display:none;">
+                <img src="{{ 'hair-mist.jpg' | asset_url }}" alt="Floral Blossom Hair Mist">
+                <div class="bogo-inline-info"><span class="bogo-inline-name">Floral Blossom Hair Mist</span><span class="bogo-inline-tag">Fresh Scent</span></div>
+                <div class="bogo-select-indicator"></div>
+              </div>
+              <div class="bogo-inline-card" onclick="selectBogo(this)">
+                <input type="radio" name="free_gift" data-gift-handle="moisturizer" style="display:none;">
+                <img src="{{ 'moisturizer-100.jpg' | asset_url }}" alt="Hydra Burst Moisturizer">
+                <div class="bogo-inline-info"><span class="bogo-inline-name">Hydra Burst Moisturizer</span><span class="bogo-inline-tag">Deep Moisture</span></div>
+                <div class="bogo-select-indicator"></div>
+              </div>
+            </div>
+          </div>
 
           <div class="product-actions-grid">
-            <button class="buy-button add-to-cart-btn" style="white-space: nowrap;">ADD TO CART - <span>Rs. 2,820</span></button>
-            
+            <button class="buy-button add-to-cart-btn" style="white-space: nowrap; width: 100%;">ADD TO CART - <span>Rs. 2,675</span></button>
           </div>
           
           <style>
-            .product-actions-grid {
-              display: grid;
-              grid-template-columns: 1fr;
-              gap: 12px;
-              margin-bottom: 20px;
-            }
-            .add-to-cart-btn {
-              background-color: #002d5f !important; /* Standout blue */
-              color: #fff !important;
-            }
-            .bogo-btn {
-              background-color: #fff !important;
-              color: #002d5f !important;
-              border: 1px solid #002d5f !important;
-            }
-            @media (max-width: 600px) {
-              .product-actions-grid {
-                grid-template-columns: 1fr;
-              }
-            }
-                <img src="./assets/toner1.jpeg" alt="Renewal Toner">
-                <span class="bogo-product-name">Renewal Toner</span>
-                <button class="bogo-add-btn">Select</button>
-              </div>
-          </div>
-        </div>
-
-          <script>
-            const openBogo = document.getElementById('openBogo');
-            const closeBogo = document.getElementById('closeBogo');
-            const bogoDrawer = document.getElementById('bogoDrawer');
-            const bogoOverlay = document.getElementById('bogoOverlay');
-
-            openBogo.addEventListener('click', () => {
-              bogoDrawer.classList.add('open');
-              bogoOverlay.classList.add('open');
-            });
-
-            const hideBogo = () => {
-              bogoDrawer.classList.remove('open');
-              bogoOverlay.classList.remove('open');
-            };
-
-            closeBogo.addEventListener('click', hideBogo);
-            bogoOverlay.addEventListener('click', hideBogo);
-          </script>
-          
-
-
-
-
-          <!-- Accordions -->
-          <style>
-            .accordion-item { border-top: 1px solid rgba(0,0,0,0.05);
-              border-bottom: 1px solid rgba(0,0,0,0.1);
-              padding: 8px 0;
-            }
-            .accordion-item summary {
-              padding: 24px 0;
-              display: flex;
-              justify-content: space-between;
-              cursor: pointer;
-              font-weight: 700;
-              font-size: 0.85rem;
-              color: #5b5a53;
-              list-style: none;
-            }
-            .accordion-item summary::-webkit-details-marker {
-              display: none;
-            }
-            .accordion-item[open] summary span:last-child {
-              transform: rotate(45deg);
-              display: inline-block;
-            }
-            .accordion-content {
-              padding-top: 15px;
-              font-size: 0.85rem;
-              color: #5b5a53;
-              line-height: 1.5;
-              font-weight: 400;
-            }
-            .accordion-content ul {
-              padding-left: 20px;
-              margin: 0;
-            }
-            .accordion-content li {
-              margin-bottom: 8px;
-            }
+            .product-actions-grid { display: grid; grid-template-columns: 1fr; gap: 12px; margin-bottom: 30px; }
+            .add-to-cart-btn { background-color: #002d5f !important; color: #fff !important; }
+            .accordion-item { border-top: 1px solid rgba(0,0,0,0.05); border-bottom: 1px solid rgba(0,0,0,0.1); padding: 5px 0; margin-bottom: 5px; }
+            .accordion-item summary { padding: 20px 0; display: flex; justify-content: space-between; cursor: pointer; font-weight: 700; font-size: 0.85rem; color: #5b5a53; list-style: none; }
+            .accordion-item summary::-webkit-details-marker { display: none; }
+            .accordion-item[open] summary span:last-child { transform: rotate(45deg); display: inline-block; }
+            .accordion-content { padding-top: 15px; font-size: 0.85rem; color: #5b5a53; line-height: 1.5; font-weight: 400; }
+            .bogo-vertical-scroll { display: flex; flex-direction: column; gap: 10px; max-height: 350px; overflow-y: auto; padding-right: 10px; }
+            .bogo-inline-card { display: flex; align-items: center; gap: 15px; background: #fff; border: 1px solid #d1d1cf; border-radius: 12px; padding: 10px; cursor: pointer; }
+            .bogo-inline-card.selected { border-color: #5b5a53; background: #fdfdfb; }
+            .bogo-inline-card img { width: 45px; height: 45px; object-fit: contain; }
+            .bogo-inline-info { flex: 1; display: flex; flex-direction: column; }
+            .bogo-inline-name { font-size: 0.82rem; font-weight: 700; }
+            .bogo-inline-tag { font-size: 0.6rem; color: #777; text-transform: uppercase; }
           </style>
+
           <div class="product-accordions accordions">
             <details class="accordion-item">
               <summary><span>BENEFITS</span><span>+</span></summary><div class="accordion-content"><ul>                  <li>Effortlessly melts away makeup and sunscreen buildup</li>
@@ -4736,6 +4737,7 @@ a { color: inherit; text-decoration: none; }
           </script>
 </body>
 </html>
+
 
 
 
