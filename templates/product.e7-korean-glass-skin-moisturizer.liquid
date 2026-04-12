@@ -2137,7 +2137,7 @@ a { color: inherit; text-decoration: none; }
   }
 }
 
-.bogo-inline-section, .bogo-btn, #bogoDrawer, #bogoOverlay { display: none !important; }
+.bogo-btn, #bogoDrawer, #bogoOverlay { display: none !important; }
 </style>
   <script src="./assets/script.js" defer></script>
 </head>
@@ -2268,7 +2268,7 @@ a { color: inherit; text-decoration: none; }
           overflow: visible;
         }
       }
-    .bogo-inline-section, .bogo-btn, #bogoDrawer, #bogoOverlay { display: none !important; }
+    .bogo-btn, #bogoDrawer, #bogoOverlay { display: none !important; }
 </style>
 
     <div class="product-gallery">
@@ -2398,10 +2398,12 @@ a { color: inherit; text-decoration: none; }
           <!-- Accordions -->
           <style>
             .accordion-item {
+              margin-bottom: 8px; border-top: 1px solid rgba(0,0,0,0.05);
               border-bottom: 1px solid rgba(0,0,0,0.1);
               padding: 24px 0;
             }
             .accordion-item summary {
+              padding: 22px 0;
               display: flex;
               justify-content: space-between;
               cursor: pointer;
@@ -2431,7 +2433,7 @@ a { color: inherit; text-decoration: none; }
             .accordion-content li {
               margin-bottom: 8px;
             }
-          .bogo-inline-section, .bogo-btn, #bogoDrawer, #bogoOverlay { display: none !important; }
+          .bogo-btn, #bogoDrawer, #bogoOverlay { display: none !important; }
 </style>
           <div class="product-accordions accordions">
             <details class="accordion-item">
@@ -3091,7 +3093,7 @@ a { color: inherit; text-decoration: none; }
           grid-template-columns: 1fr;
         }
       }
-    .bogo-inline-section, .bogo-btn, #bogoDrawer, #bogoOverlay { display: none !important; }
+    .bogo-btn, #bogoDrawer, #bogoOverlay { display: none !important; }
 </style>
 
     <footer class="site-footer-rhode">
@@ -4610,19 +4612,37 @@ a { color: inherit; text-decoration: none; }
         padding: 10px 16px 30px;
       }
     }
-  .bogo-inline-section, .bogo-btn, #bogoDrawer, #bogoOverlay { display: none !important; }
+  .bogo-btn, #bogoDrawer, #bogoOverlay { display: none !important; }
 </style>
   <script src="./assets/script.js" defer></script>
 
           <script>
-            document.querySelector('.add-to-cart-btn')?.addEventListener('click', function(e) {
+                        document.querySelector('.add-to-cart-btn')?.addEventListener('click', function(e) {
                 e.preventDefault();
                 const mainVariantId = "{{ product.variants.first.id }}";
+                const selectedGift = document.querySelector('input[name="free_gift"]:checked');
+                let items = [];
+
+                if (selectedGift) {
+                    const giftHandle = selectedGift.getAttribute('data-gift-handle');
+                    const giftVariantId = handleToIdMap[giftHandle];
+                    
+                    if (giftVariantId) {
+                        items = [
+                            { id: mainVariantId, quantity: 1, properties: { '_bogo': 'true' } },
+                            { id: giftVariantId, quantity: 1, properties: { '_bogo': 'true' } }
+                        ];
+                    } else {
+                        items = [{ id: mainVariantId, quantity: 1 }];
+                    }
+                } else {
+                    items = [{ id: mainVariantId, quantity: 1 }];
+                }
                 
                 fetch('/cart/add.js', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ items: [{ id: mainVariantId, quantity: 1 }] })
+                    body: JSON.stringify({ items: items })
                 })
                 .then(response => response.json())
                 .then(data => { window.location.href = '/cart'; })
@@ -4631,6 +4651,8 @@ a { color: inherit; text-decoration: none; }
           </script>
 </body>
 </html>
+
+
 
 
 
