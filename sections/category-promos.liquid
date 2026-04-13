@@ -46,9 +46,9 @@
         
         {%- assign current_variant = section.settings.featured_product.first_available_variant -%}
         {%- assign p_url = section.settings.featured_product.url -%}
+        {%- assign p_title = section.settings.product_title | downcase -%}
         
         {%- if p_url == blank -%}
-          {%- assign p_title = section.settings.product_title | downcase -%}
           {%- if p_title contains 'brightening' -%}
             {%- assign p_url = '/products/elaris-7-korean-brightening-bundle' -%}
           {%- elsif p_title contains 'hair' -%}
@@ -57,9 +57,18 @@
             {%- assign p_url = '/products/elaris-7-korean-glass-skin-bundle' -%}
           {%- endif -%}
         {%- endif -%}
+
+        {%- assign p_price_label = section.settings.product_price -%}
+        {%- if p_price_label == 'RS. 2,500' or p_price_label == blank or p_price_label contains '10,920' or p_price_label contains '7,935' -%}
+           {%- if p_title contains 'brightening' -%}
+             {%- assign p_price_label = 'Rs. 10,784 Rs. 5,392' -%}
+           {%- elsif p_title contains 'hair' -%}
+             {%- assign p_price_label = 'Rs. 8,430 Rs. 4,215' -%}
+           {%- endif -%}
+        {%- endif -%}
         
-        {%- if section.settings.product_price contains ' ' -%}
-          {%- assign prices = section.settings.product_price | split: ' ' -%}
+        {%- if p_price_label contains ' ' -%}
+          {%- assign prices = p_price_label | split: ' ' -%}
           <a href="{{ p_url | default: '#' }}" class="btn-pill-buy {% if current_variant %}quick-add-btn{% endif %}" 
              data-variant-id="{{ current_variant.id }}"
              style="display: inline-block; padding: 10px 24px; border: 1.2px solid {% if section.settings.white_text %}#ffffff !important{% else %}#5b5a53{% endif %}; border-radius: 50px; font-size: 0.75rem; font-weight: 700; color: {% if section.settings.white_text %}#ffffff !important{% else %}#5b5a53{% endif %}; text-decoration: none; transition: opacity 0.2s;">
@@ -69,7 +78,7 @@
           <a href="{{ p_url | default: '#' }}" class="btn-pill-buy {% if current_variant %}quick-add-btn{% endif %}"
              data-variant-id="{{ current_variant.id }}"
              style="display: inline-block; padding: 10px 24px; border: 1.2px solid {% if section.settings.white_text %}#ffffff !important{% else %}#5b5a53{% endif %}; border-radius: 50px; font-size: 0.75rem; font-weight: 700; color: {% if section.settings.white_text %}#ffffff !important{% else %}#5b5a53{% endif %}; text-decoration: none; transition: opacity 0.2s;">
-            BUY NOW — {{ section.settings.product_price | default: 'RS. 2,500' }}
+            BUY NOW — {{ p_price_label | default: 'RS. 2,500' }}
           </a>
         {%- endif -%}
       </div>
