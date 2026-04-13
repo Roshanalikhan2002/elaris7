@@ -1,4 +1,4 @@
-﻿<style>
+<style>
   /* Bundle Page Content Styles */
   .pdp-wrapper { padding-top: 20px; max-width: 1440px; margin: 0 auto; padding-left: 12px; padding-right: 12px; width: 100%; }
 
@@ -39,7 +39,8 @@
 
         .details-panel::-webkit-scrollbar { width: 6px; }
         .details-panel::-webkit-scrollbar-thumb { background: #dcdcdc; border-radius: 10px; }
-        .product-title { font-family: 'Lexend'; font-size: 48px; font-weight: 800; letter-spacing: -0.05em; margin-bottom: 30px; line-height: 0.9; }
+        .product-title {
+      line-height: 1.05; font-family: 'Lexend'; font-size: 48px; font-weight: 800; letter-spacing: -0.05em; margin-bottom: 30px; line-height: 0.9; }
 
         .btn-atc { 
           width: 100%; 
@@ -84,7 +85,7 @@
 
         /* Review */
         .review-block { background: #fff; border-radius: 12px; padding: 70px 60px; margin-top: 20px; display: grid; grid-template-columns: 280px 1fr; gap: 60px; position: relative; }
-        .v-badge::after { content: '✔'; background: #000; color: #fff; width: 14px; height: 14px; border-radius: 50%; font-size: 8px; display: inline-flex; align-items: center; justify-content: center; margin-left: 5px; vertical-align: middle; }
+        .v-badge::after { content: '?'; background: #000; color: #fff; width: 14px; height: 14px; border-radius: 50%; font-size: 8px; display: inline-flex; align-items: center; justify-content: center; margin-left: 5px; vertical-align: middle; }
 
         @media (max-width: 1024px) {
             .pdp-wrapper { padding-top: 20px; }
@@ -113,11 +114,11 @@
       <div class="details-panel">
         <p style="font-size: 11px; font-weight: 700; color: #999; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 20px;">COMPLETE NOURISHMENT SYSTEM</p>
         <h1 class="product-title">{{ product.title | default: 'Elaris 7 Korean Hair Care Bundle' }}</h1>
-        <div style="font-size: 13px; font-weight: 700; margin-bottom: 30px; letter-spacing: 2px;">★ ★ ★ ★ ★ (1,240)</div>
-        <p style="font-size: 15px; line-height: 1.7; margin-bottom: 40px; color: #333;">Transform your hair routine with the E7 Hair Care Set. This three-product collection is designed to control frizz, strengthen roots, and leave your hair feeling soft, shiny, and beautifully scented. Each product works on its own or together, making styling, protection, and daily care effortless—perfect for home or on-the-go use.</p>
+        <div style="font-size: 13px; font-weight: 700; margin-bottom: 30px; letter-spacing: 2px;">? ? ? ? ? (1,240)</div>
+        <p style="font-size: 15px; line-height: 1.7; margin-bottom: 40px; color: #333;">Transform your hair routine with the E7 Hair Care Set. This three-product collection is designed to control frizz, strengthen roots, and leave your hair feeling soft, shiny, and beautifully scented. Each product works on its own or together, making styling, protection, and daily care effortless�perfect for home or on-the-go use.</p>
         
         <button class="btn-atc add-to-cart-btn" data-variant-id="{{ product.selected_or_first_available_variant.id }}">BUY THE KIT - {{ product.price | money }}</button>
-        <div class="afterpay-line">or 4 payments with <span class="afterpay-badge">Afterpay</span> Ⓘ</div>
+        <div class="afterpay-line">or 4 payments with <span class="afterpay-badge">Afterpay</span> ?</div>
 
         <!-- WHAT'S INSIDE -->
         <div class="accordion-item" onclick="this.classList.toggle('active')">
@@ -133,9 +134,9 @@
             <div class="acc-content">
                 <p>
                     <strong>Your complete hair care ritual:</strong><br><br>
-                    <strong>E7 ANTI FRIZZ KERATIN SERUM — Smooth Control</strong><br> Apply a small amount to damp or dry hair, focusing on mid-lengths and ends. Avoid roots and style as desired. Use before heat styling for added protection.<br><br>
-                    <strong>E7 HAIR REGROWTH SPRAY — Stronger Roots</strong><br> Spray directly onto a clean, dry scalp. Massage gently to aid absorption and leave overnight. Use daily for best results.<br><br>
-                    <strong>E7 FLORAL BLOSSOM HAIR MIST — Fresh Floral Touch</strong><br> Spray evenly onto dry hair from a short distance. Refresh hair anytime during the day and enjoy a subtle, long-lasting floral fragrance.
+                    <strong>E7 ANTI FRIZZ KERATIN SERUM � Smooth Control</strong><br> Apply a small amount to damp or dry hair, focusing on mid-lengths and ends. Avoid roots and style as desired. Use before heat styling for added protection.<br><br>
+                    <strong>E7 HAIR REGROWTH SPRAY � Stronger Roots</strong><br> Spray directly onto a clean, dry scalp. Massage gently to aid absorption and leave overnight. Use daily for best results.<br><br>
+                    <strong>E7 FLORAL BLOSSOM HAIR MIST � Fresh Floral Touch</strong><br> Spray evenly onto dry hair from a short distance. Refresh hair anytime during the day and enjoy a subtle, long-lasting floral fragrance.
                 </p>
             </div>
         </div>
@@ -179,7 +180,7 @@
         <div class="acc-content" style="padding: 0 10px 20px; color: #555;">Yes! On damp hair it locks in moisture and smooths strands, and on dry hair it instantly tames flyaways.</div>
         
         <div class="faq-q-row" onclick="this.nextElementSibling.classList.toggle('active')">How long until I see results with the Hair Regrowth Spray? <div class="accordion-plus">+</div></div>
-        <div class="acc-content" style="padding: 0 10px 20px; color: #555;">Consistent daily use usually shows noticeable improvement in hair strength and density within 6–8 weeks.</div>
+        <div class="acc-content" style="padding: 0 10px 20px; color: #555;">Consistent daily use usually shows noticeable improvement in hair strength and density within 6�8 weeks.</div>
 
         <div class="faq-q-row" onclick="this.nextElementSibling.classList.toggle('active')">Is the Hair Mist suitable for colored or treated hair? <div class="accordion-plus">+</div></div>
         <div class="acc-content" style="padding: 0 10px 20px; color: #555;">Absolutely. It is lightweight, non-greasy, and safe for all hair types, including color-treated hair.</div>
@@ -196,23 +197,23 @@
     <!-- 6. Reviews -->
     <section class="review-block">
       <div><h4 style="font-size:16px;">Zunaira Tariq</h4><span class="v-badge" style="display:flex; font-size:11px; color:#777; align-items:center;">Verified Buyer</span></div>
-      <div><div style="font-size:18px; margin-bottom:15px;">★ ★ ★ ★ ★</div><p style="line-height:1.7; color:#333; font-size:15px;">“My hair has never been this smooth! The serum makes styling so easy.”</p></div>
+      <div><div style="font-size:18px; margin-bottom:15px;">? ? ? ? ?</div><p style="line-height:1.7; color:#333; font-size:15px;">�My hair has never been this smooth! The serum makes styling so easy.�</p></div>
     </section>
     <section class="review-block" style="margin-top:10px;">
       <div><h4 style="font-size:16px;">Sana Iqbal</h4><span class="v-badge" style="display:flex; font-size:11px; color:#777; align-items:center;">Verified Buyer</span></div>
-      <div><div style="font-size:18px; margin-bottom:15px;">★ ★ ★ ★ ★</div><p style="line-height:1.7; color:#333; font-size:15px;">“I noticed less hair fall within weeks of using the regrowth spray. Amazing results!”</p></div>
+      <div><div style="font-size:18px; margin-bottom:15px;">? ? ? ? ?</div><p style="line-height:1.7; color:#333; font-size:15px;">�I noticed less hair fall within weeks of using the regrowth spray. Amazing results!�</p></div>
     </section>
     <section class="review-block" style="margin-top:10px;">
       <div><h4 style="font-size:16px;">Mahjabeen Riaz</h4><span class="v-badge" style="display:flex; font-size:11px; color:#777; align-items:center;">Verified Buyer</span></div>
-      <div><div style="font-size:18px; margin-bottom:15px;">★ ★ ★ ★ ★</div><p style="line-height:1.7; color:#333; font-size:15px;">“Love the floral mist! My hair smells fresh all day without feeling sticky.”</p></div>
+      <div><div style="font-size:18px; margin-bottom:15px;">? ? ? ? ?</div><p style="line-height:1.7; color:#333; font-size:15px;">�Love the floral mist! My hair smells fresh all day without feeling sticky.�</p></div>
     </section>
     <section class="review-block" style="margin-top:10px;">
       <div><h4 style="font-size:16px;">Fahad Malik</h4><span class="v-badge" style="display:flex; font-size:11px; color:#777; align-items:center;">Verified Buyer</span></div>
-      <div><div style="font-size:18px; margin-bottom:15px;">★ ★ ★ ★ ★</div><p style="line-height:1.7; color:#333; font-size:15px;">“The serum and mist combo keeps my hair soft and shiny, even in humid weather.”</p></div>
+      <div><div style="font-size:18px; margin-bottom:15px;">? ? ? ? ?</div><p style="line-height:1.7; color:#333; font-size:15px;">�The serum and mist combo keeps my hair soft and shiny, even in humid weather.�</p></div>
     </section>
     <section class="review-block" style="margin-top:10px;">
       <div><h4 style="font-size:16px;">Ali Rauf</h4><span class="v-badge" style="display:flex; font-size:11px; color:#777; align-items:center;">Verified Buyer</span></div>
-      <div><div style="font-size:18px; margin-bottom:15px;">★ ★ ★ ★ ★</div><p style="line-height:1.7; color:#333; font-size:15px;">“My scalp feels healthier, and my hair is growing thicker. So happy with this set.”</p></div>
+      <div><div style="font-size:18px; margin-bottom:15px;">? ? ? ? ?</div><p style="line-height:1.7; color:#333; font-size:15px;">�My scalp feels healthier, and my hair is growing thicker. So happy with this set.�</p></div>
     </section>
   </div>
 
@@ -297,3 +298,4 @@
           </script>
 
 {{ 'script.js' | asset_url | script_tag }}
+

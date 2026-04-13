@@ -513,7 +513,6 @@ a { color: inherit; text-decoration: none; }
 /* Hero Section */
 .hero-block {
   position: relative;
-  background-color: #fff;
   border-radius: var(--border-radius);
   height: auto; 
   aspect-ratio: 3 / 1; /* Match the banner's wide proportions move moved moves move */
@@ -565,8 +564,7 @@ a { color: inherit; text-decoration: none; }
     aspect-ratio: 1 / 1;
     margin: 0;
     border-radius: 14px;
-    background-color: #fff;
-  }
+    }
 
   .hero-video-bg {
     object-fit: cover;
@@ -1875,7 +1873,6 @@ a { color: inherit; text-decoration: none; }
 .values-image-wrap {
   width: 100%;
   height: 100%;
-  background-color: #fff;
   display: flex;
   align-items: stretch;
   justify-content: center;
@@ -2184,6 +2181,9 @@ a { color: inherit; text-decoration: none; }
         object-fit: cover;
       }
       .gallery-main-viewport {
+      border: 1px solid rgba(0,0,0,0.08);
+      background-color: #fff;
+      overflow: hidden;
         flex: 1;
         height: 100%;
         overflow: hidden;
@@ -2236,8 +2236,7 @@ a { color: inherit; text-decoration: none; }
         .product-page {
           margin: 100px 0 0;
           padding: 0;
-          background-color: #fff;
-        }
+          }
         .product-grid {
           display: flex;
           flex-direction: column;
@@ -2259,7 +2258,10 @@ a { color: inherit; text-decoration: none; }
           gap: 10px;
         }
         .gallery-main-viewport {
-          border-radius: 0;
+      border: 1px solid rgba(0,0,0,0.08);
+      background-color: #fff;
+      overflow: hidden;
+          border-radius: 12px;
         }
         .product-details {
           padding: 24px 20px;
@@ -3544,6 +3546,7 @@ a { color: inherit; text-decoration: none; }
     }
     
     .product-title {
+      line-height: 1.05;
       font-family: inherit;
       font-weight: 900;
       font-size: 3rem;
@@ -3726,6 +3729,7 @@ a { color: inherit; text-decoration: none; }
         aspect-ratio: 4/5;
       }
       .product-title {
+      line-height: 1.05;
         font-size: 2.3rem;
         transform: scaleX(1); /* Reset stretch for better fit on small screens */
       }
@@ -4885,6 +4889,8 @@ a { color: inherit; text-decoration: none; }
           </script>
 </body>
 </html>
+
+
 
 
 
