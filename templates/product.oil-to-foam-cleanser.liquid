@@ -3396,10 +3396,12 @@ a { color: inherit; text-decoration: none; }
 
     @media (max-width: 900px) {
       .breakdown-section {
+        height: auto;
         grid-template-columns: 1fr;
       }
       .breakdown-image {
-        order: 1; /* image on top on mobile */
+        order: 1; 
+        aspect-ratio: 1 / 1.1;/* image on top on mobile */
       }
       .bd-title {
         font-size: 1.6rem;
@@ -3937,13 +3939,15 @@ a { color: inherit; text-decoration: none; }
 
     @media (max-width: 900px) {
       .whats-inside-section {
+        height: auto;
         grid-template-columns: 1fr;
         margin-top: 0;
         gap: 0;
       }
       .wi-image-col {
         order: 1;
-        border-radius: 0;
+        
+        aspect-ratio: 1 / 1.1;border-radius: 0;
       }
       .wi-vertical-text {
         writing-mode: horizontal-tb;
@@ -4014,6 +4018,7 @@ a { color: inherit; text-decoration: none; }
 
     @media (max-width: 900px) {
       .spread-section {
+        height: auto;
         grid-template-columns: 1fr;
         margin-top: 0;
         gap: 0;
@@ -4021,7 +4026,8 @@ a { color: inherit; text-decoration: none; }
       .spread-image-col {
         order: 1;
         border-radius: 0;
-      }
+      
+        aspect-ratio: 1 / 1.1;}
       .spread-content {
         padding: 40px 24px;
         border-radius: 0;
@@ -4090,13 +4096,15 @@ a { color: inherit; text-decoration: none; }
 
     @media (max-width: 900px) {
       .stats-section {
+        height: auto;
         grid-template-columns: 1fr;
         margin-top: 0;
         gap: 0;
       }
       .stats-image {
         order: 1; 
-        border-radius: 0;
+        
+        aspect-ratio: 1 / 1.1;border-radius: 0;
       }
       .stats-content {
         padding: 40px 24px;
@@ -4874,6 +4882,9 @@ a { color: inherit; text-decoration: none; }
           </script>
 </body>
 </html>
+
+
+
 
 
 
