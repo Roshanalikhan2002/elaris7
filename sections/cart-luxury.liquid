@@ -47,7 +47,7 @@
             <div class="lux-item-top">
               <div>
                 <a href="{{ item.url }}" class="lux-item-name">{{ item.product.title }}</a>
-                {%- if is_free_gift -%}
+                {%- if item.final_line_price == 0 -%}
                   <span class="lux-free-badge">🎁 FREE GIFT</span>
                 {%- endif -%}
                 {%- unless item.variant.title == 'Default Title' -%}
@@ -116,16 +116,7 @@
       <div class="lux-cart-summary">
         <h2 class="lux-summary-title">Order Summary</h2>
 
-        {%- assign paid_total = 0 -%}
-        {%- for item in cart.items -%}
-          {%- assign chk_gift = false -%}
-          {%- for prop in item.properties -%}
-            {%- if prop.first == '_free_gift' and prop.last == 'true' -%}{%- assign chk_gift = true -%}{%- endif -%}
-          {%- endfor -%}
-          {%- unless chk_gift -%}
-            {%- assign paid_total = paid_total | plus: item.final_line_price -%}
-          {%- endunless -%}
-        {%- endfor -%}
+        {%- assign paid_total = cart.total_price -%}
         <div class="lux-summary-rows">
           <div class="lux-summary-row">
             <span>Subtotal</span>
