@@ -249,7 +249,11 @@ document.addEventListener('DOMContentLoaded', () => {
       let matches = false;
       
       if (cleanTarget === 'featured') {
-        matches = !itemCatStr.includes('set') && !itemCatStr.includes('bundle');
+        const itemTitle = (item.querySelector('.card-name, .mini-title')?.textContent || '').toLowerCase();
+        matches = !itemCatStr.includes('set') && !itemCatStr.includes('bundle') && 
+                  !itemTitle.includes('oil to foam') && 
+                  !itemTitle.includes('skin refining') && 
+                  !itemTitle.includes('hair regrow');
       } else if (cleanTarget === 'set' || cleanTarget === 'sets' || cleanTarget === 'bundles') {
         matches = itemCatStr.includes('set') || itemCatStr.includes('bundle');
       } else {
