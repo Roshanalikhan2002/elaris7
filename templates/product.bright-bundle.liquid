@@ -1,4 +1,4 @@
-<style>
+﻿<style>
   /* Bundle Page Content Styles */
   .pdp-wrapper { padding-top: 20px; max-width: 1440px; margin: 0 auto; padding-left: 12px; padding-right: 12px; width: 100%; }
 
@@ -22,7 +22,7 @@
     body { background-color: var(--bg-page); color: var(--text-color); font-family: var(--font-family-body); font-size: 14px; line-height: 1.5; overflow-x: hidden; width: 100%; }
     a { color: inherit; text-decoration: none; }
 
-    /* Main Content Styling from rhode-kit.html */
+    /* Main Content Styling */
     .pdp-wrapper { padding-top: 20px; max-width: 1440px; margin: 0 auto; padding-left: 12px; padding-right: 12px; width: 100%; }
     .pdp-main-box { background: var(--white); border: 1px solid var(--border-color); border-radius: 12px; display: grid; grid-template-columns: 1.15fr 0.85fr; margin-bottom: 20px; height: auto; }
     .gallery-wrap { display: flex; align-items: flex-start; justify-content: center; background: #fff; height: auto; }
@@ -30,13 +30,10 @@
 
     .details-panel::-webkit-scrollbar { width: 6px; }
     .details-panel::-webkit-scrollbar-thumb { background: #dcdcdc; border-radius: 10px; }
-    .product-title {
-      line-height: 1.05; font-family: 'Lexend'; font-size: 48px; font-weight: 800; letter-spacing: -0.05em; margin-bottom: 30px; line-height: 0.9; }
+    .product-title { line-height: 1.05; font-family: 'Lexend'; font-size: 48px; font-weight: 800; letter-spacing: -0.05em; margin-bottom: 30px; line-height: 0.9; }
 
     .btn-atc { width: 100%; padding: 22px; border-radius: 50px; border: 1.5px solid #000; background: #fff; font-weight: 700; text-transform: uppercase; cursor: pointer; font-size: 13px; transition: all 0.3s ease; }
     .btn-atc:hover { background: #000; color: #fff; }
-    .afterpay-line { text-align: center; font-size: 11px; margin: 15px 0 50px; display: flex; align-items: center; justify-content: center; gap: 5px; color: #555; }
-    .afterpay-badge { background: #000; color: #fff; padding: 2px 6px; border-radius: 4px; font-weight: 800; font-size: 10px; }
 
     /* Accordions */
     .accordion-item { border-top: 1px solid rgba(0,0,0,0.05); border-top: 1px solid #eee; padding: 25px 0; cursor: pointer; }
@@ -51,85 +48,34 @@
     .island-card { border-radius: 12px; overflow: hidden; background: #fff; height: 600px; position: relative; }
     .img-placeholder { width: 100%; height: auto; display: block; }
 
-Line 106: 
-
-
-
-
-    /* Results Grid */
-    .results-block { background: #f4f4f2; border-radius: 12px; padding: 70px 60px; margin-top: 20px; }
-    .results-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 50px; }
-    .results-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; }
-    .results-pic { border-radius: 12px; overflow: hidden; aspect-ratio: 4/5; background: var(--placeholder-bg); }
-
-    /* FAQ */
-    .faq-text-side { padding: 80px 60px; background: #f2f2f1; display: flex; flex-direction: column; justify-content: center; }
-    .faq-q-row { border-top: 1px solid #ddd; padding: 25px 0; display: flex; justify-content: space-between; font-size: 12px; font-weight: 800; text-transform: uppercase; cursor: pointer; }
-
-    /* Review */
-    .review-block { background: #fff; border-radius: 12px; padding: 70px 60px; margin-top: 20px; display: grid; grid-template-columns: 280px 1fr; gap: 60px; position: relative; }
-    .v-badge::after { content: '?'; background: #000; color: #fff; width: 14px; height: 14px; border-radius: 50%; font-size: 8px; display: inline-flex; align-items: center; justify-content: center; margin-left: 5px; vertical-align: middle; }
-
     @media (max-width: 1024px) {
-      
       .pdp-wrapper { padding-top: 20px; padding-left: 0; padding-right: 0; }
       .pdp-main-box { grid-template-columns: 1fr; height: auto; border: none; border-radius: 0; }
-      .gallery-wrap { height: 450px; padding: 0; margin-bottom: 20px; }
+      .gallery-wrap { height: auto; padding: 0; margin-bottom: 20px; }
       .details-panel { border-left: none; padding: 30px 15px; height: auto; overflow-y: visible; background: transparent; }
       .discovery-grid { grid-template-columns: 1fr; gap: 10px; }
       .island-card { height: 400px; }
-      .results-header { flex-direction: column; gap: 20px; }
-      .results-grid { display: flex; overflow-x: auto; gap: 15px; padding-bottom: 20px; }
-      .results-pic { min-width: 85%; flex-shrink: 0; }
-      .review-block { grid-template-columns: 1fr; padding: 40px 20px; gap: 40px; }
     }
-
-    /* Footer */
-    .site-footer-rhode { background: #fff; padding: 80px 40px; border-top: 1px solid #eee; text-align: center; }
-    
-  
 </style>
 
 <div class="pdp-wrapper">
     <!-- 1. Top Section -->
     <div class="pdp-main-box">
       <div class="gallery-wrap">
-        <img src="{{ 'main.jpg' | file_img_url: 'master' }}" class="img-placeholder" alt="Brightening Bundle">
+        <img src="{{ product.featured_image | img_url: 'master' }}" class="img-placeholder" alt="{{ product.title }}">
       </div>
       <div class="details-panel">
-        <p style="font-size: 11px; font-weight: 700; color: #999; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 20px;">COMPLETE BRIGHTENING SYSTEM</p>
-        <h1 class="product-title">Elaris 7 Korean Brightening Bundle</h1>
-        <div style="font-size: 13px; font-weight: 700; margin-bottom: 30px; letter-spacing: 2px;">? ? ? ? ? (2,199)</div>
-        <p style="font-size: 15px; line-height: 1.7; margin-bottom: 40px; color: #333;">Unlock your skin�s natural radiance with the Elaris 7 Korean Brightening Bundle. This system targets dullness and dark spots while maintaining barrier hydration.</p>
+        <h1 class="product-title">{{ product.title }}</h1>
+        <div style="font-size: 13px; font-weight: 700; margin-bottom: 30px; letter-spacing: 2px;">★ ★ ★ ★ ★ (1,850)</div>
+        <div style="font-size: 15px; line-height: 1.7; margin-bottom: 40px; color: #333;">{{ product.description }}</div>
         
-        <button class="btn-atc add-to-cart-btn" data-variant-id="45678901234567">BUY THE KIT - RS. 5,392</button>
-        <div class="afterpay-line">or 4 payments of RS. 1,348 with <span class="afterpay-badge">Afterpay</span> ?</div>
+        <button class="btn-atc add-to-cart-btn" data-variant-id="{{ product.selected_or_first_available_variant.id }}">BUY THE KIT - {{ product.price | money }}</button>
 
         <!-- WHAT'S INSIDE -->
         <div class="accordion-item" onclick="this.classList.toggle('active')">
           <div class="acc-head">WHAT'S INSIDE <div class="accordion-plus">+</div></div>
           <div class="acc-content">
-            <p>The bundle includes four full-size products: E7 Brightening Gel Cleanser, E7 Glow Renewal Toner, E7 Tranexamic Brightening Serum, and E7 Korean Gel Sunscreen.</p>
-          </div>
-        </div>
-
-        <!-- THE ROUTINE -->
-        <div class="accordion-item" onclick="this.classList.toggle('active')">
-          <div class="acc-head">THE ROUTINE <div class="accordion-plus">+</div></div>
-          <div class="acc-content">
-            <p style="white-space: pre-line;">
-              <strong>E7 BRIGHTENING GEL CLEANSER � Pure Refresh</strong>
-              Use morning and night. Apply to wet skin, massage gently and rinse.
-
-              <strong>E7 GLOW RENEWAL TONER � Clarity Boost</strong>
-              Evening use 2-3 times per week. Sweep over face with cotton pad.
-
-              <strong>E7 TRANEXAMIC BRIGHTENING SERUM � Tone Correct</strong>
-              Apply 2-3 drops morning and night and press into skin.
-
-              <strong>E7 KOREAN GEL SUNSCREEN � Daily Shield</strong>
-              Final morning step. Generously apply to protect against UV damage.
-            </p>
+            <p>Includes all essential items for this specialized bundle.</p>
           </div>
         </div>
       </div>
@@ -137,194 +83,42 @@ Line 106:
 
     <!-- 2. Discovery Section -->
     <section class="discovery-grid">
-      <div class="island-card"><img src="{{ 'twoimagessection1.jpg' | file_img_url: '1000x' }}" class="wi-image" style="width:100%; height:100%; object-fit:cover;"></div>
-      <div class="island-card"><img src="{{ 'twoimagessection2.jpg' | file_img_url: '1000x' }}" class="wi-image" style="width:100%; height:100%; object-fit:cover;"></div>
-    </section>
-
-    <!-- 3. Ingredients Science -->
-    <section class="discovery-grid">
-      <div class="island-card faq-text-side" style="text-align: center;">
-        <p style="font-size:11px; font-weight:700; color:#999; margin-bottom:40px;">THE ROUTINE</p>
-        <div style="font-family:Lexend; font-size:42px; font-weight:800; color:#333; line-height:1.1;">Four steps to a luminous, even-toned glow</div>
-      </div>
-      <div class="island-card"><img src="{{ 'textimage.jpg'| file_img_url: '1000x' }}" style="width:100%; height:100%; object-fit:cover;"></div>
-    </section>
-
-    <!-- 4. Results -->
-    <section class="results-block">
-      <div class="results-header">
-        <h2 style="font-family:Lexend; font-size:40px; font-weight:800;">results are in</h2>
-        <p style="font-size:13px; max-width:320px; color:#555;">Clinically tested power for visible brightness.</p>
-      </div>
-      <div class="results-grid">
-        <div class="results-pic" style="background: transparent;"></div>
-        <div class="results-pic" style="background: transparent;"></div>
-        <div class="results-pic" style="background: transparent;"></div>
-        <div class="results-pic" style="background: transparent;"></div>
-      </div>
-    </section>
-
-    <!-- 5. FAQ -->
-    <section class="discovery-grid">
-      <div class="island-card faq-text-side">
-        <h2 style="font-family:Lexend; font-size:42px; font-weight:800; margin-bottom:30px;">Ask away.</h2>
-        
-        <div class="faq-q-row" onclick="this.nextElementSibling.classList.toggle('active')">Can I use the toner every night? <div class="accordion-plus">+</div></div>
-        <div class="acc-content" style="padding: 0 10px 20px; color: #555;">Start 2�3 times per week and increase as tolerated to avoid irritation from exfoliating acids.</div>
-
-        <div class="faq-q-row" onclick="this.nextElementSibling.classList.toggle('active')">Is the Tranexamic Brightening Serum safe for sensitive skin? <div class="accordion-plus">+</div></div>
-        <div class="acc-content" style="padding: 0 10px 20px; color: #555;">Yes. It combines gentle brightening actives with soothing ingredients like centella to calm the skin.</div>
-
-        <div class="faq-q-row" onclick="this.nextElementSibling.classList.toggle('active')">Can I layer serum under sunscreen? <div class="accordion-plus">+</div></div>
-        <div class="acc-content" style="padding: 0 10px 20px; color: #555;">Absolutely. Applying serum first enhances hydration and allows sunscreen to absorb evenly.</div>
-
-        <div class="faq-q-row" onclick="this.nextElementSibling.classList.toggle('active')">Will the Korean Gel Sunscreen leave a white cast? <div class="accordion-plus">+</div></div>
-        <div class="acc-content" style="padding: 0 10px 20px; color: #555;">No. It blends effortlessly, leaving a lightweight, non-greasy finish suitable for all skin tones.</div>
-
-        <div class="faq-q-row" onclick="this.nextElementSibling.classList.toggle('active')">Can this bundle be used in humid climates? <div class="accordion-plus">+</div></div>
-        <div class="acc-content" style="padding: 0 10px 20px; color: #555;">Yes. The lightweight, non-greasy formula is ideal for warm and humid environments.</div>
-      </div>
-      <div class="island-card"><img src="{{ 'faq.jpg' | file_img_url: '1000x' }}" style="width:100%; height:100%; object-fit:cover;"></div>
-    </section>
-
-    <!-- 6. Review -->
-    <section class="review-block">
-      <div>
-        <h4 style="font-size:16px;">Sadaf Javed</h4>
-        <span class="v-badge" style="display:flex; font-size:11px; color:#777; align-items:center;">Verified Buyer</span>
-      </div>
-      <div>
-        <div style="font-size:18px; margin-bottom:15px;">? ? ? ? ?</div>
-        <p style="line-height:1.7; color:#333; font-size:15px;">�After a few weeks, my dark spots look lighter and my skin feels so smooth.�</p>
-      </div>
-    </section>
-
-    <section class="review-block">
-      <div>
-        <h4 style="font-size:16px;">Iqra Khan</h4>
-        <span class="v-badge" style="display:flex; font-size:11px; color:#777; align-items:center;">Verified Buyer</span>
-      </div>
-      <div>
-        <div style="font-size:18px; margin-bottom:15px;">? ? ? ? ?</div>
-        <p style="line-height:1.7; color:#333; font-size:15px;">�The serum and sunscreen combo is perfect for my morning routine. My complexion feels brighter.�</p>
-      </div>
-    </section>
-
-    <section class="review-block">
-      <div>
-        <h4 style="font-size:16px;">Mehwish Tariq</h4>
-        <span class="v-badge" style="display:flex; font-size:11px; color:#777; align-items:center;">Verified Buyer</span>
-      </div>
-      <div>
-        <div style="font-size:18px; margin-bottom:15px;">? ? ? ? ?</div>
-        <p style="line-height:1.7; color:#333; font-size:15px;">�Love the glow! Even my friends noticed the change in my skin tone.�</p>
-      </div>
-    </section>
-
-    <section class="review-block">
-      <div>
-        <h4 style="font-size:16px;">Danish Ali</h4>
-        <span class="v-badge" style="display:flex; font-size:11px; color:#777; align-items:center;">Verified Buyer</span>
-      </div>
-      <div>
-        <div style="font-size:18px; margin-bottom:15px;">? ? ? ? ?</div>
-        <p style="line-height:1.7; color:#333; font-size:15px;">�The toner is gentle yet effective. My texture has visibly improved.�</p>
-      </div>
-    </section>
-
-    <section class="review-block">
-      <div>
-        <h4 style="font-size:16px;">Hamza Raza</h4>
-        <span class="v-badge" style="display:flex; font-size:11px; color:#777; align-items:center;">Verified Buyer</span>
-      </div>
-      <div>
-        <div style="font-size:18px; margin-bottom:15px;">? ? ? ? ?</div>
-        <p style="line-height:1.7; color:#333; font-size:15px;">�My skin feels hydrated and protected all day. This bundle is a game-changer.�</p>
-      </div>
+      <div class="island-card"><img src="{{ 'twoimagessection1.jpg' | file_img_url: 'master' }}" style="width:100%; height:100%; object-fit:cover;"></div>
+      <div class="island-card"><img src="{{ 'twoimagessection2.jpg' | file_img_url: 'master' }}" style="width:100%; height:100%; object-fit:cover;"></div>
     </section>
   </div>
 
-  
+  <script>
+    // Main Add to Cart Logic
+    document.querySelectorAll('.add-to-cart-btn').forEach(btn => {
+        btn.addEventListener('click', async function(e) {
+            e.preventDefault();
+            const b = this;
+            const originalText = b.innerHTML;
+            if (b.disabled) return;
+            b.innerHTML = 'ADDING TO BAG...';
+            b.disabled = true;
 
-          <script>
-            // BOGO Selection Logic
-            function selectBogo(card) {
-                document.querySelectorAll('.bogo-inline-card').forEach(c => c.classList.remove('selected'));
-                card.classList.add('selected');
-                const input = card.querySelector('input[type="radio"]');
-                if(input) {
-                    input.checked = true;
-                }
-            }
-
-                                                // Main Add to Cart Logic
-            document.querySelectorAll('.add-to-cart-btn').forEach(btn => {
-                btn.addEventListener('click', async function(e) {
-                    e.preventDefault();
-                    const b = this;
-                    const originalText = b.innerHTML;
-                    
-                    if (b.disabled) return;
-                    
-                    b.innerHTML = 'ADDING TO BAG...';
-                    b.disabled = true;
-
-                    try {
-                        const mainVariantId = "{{ product.variants.first.id }}";
-                        const selectedGift = document.querySelector('input[name="free_gift"]:checked');
-                        
-                        let items = [{ 
-                            id: mainVariantId, 
-                            quantity: 1, 
-                            properties: { '_bogo': 'true' } 
-                        }];
-
-                        if (selectedGift) {
-                            const giftVariantId = selectedGift.getAttribute('data-variant-id');
-                            if (giftVariantId && giftVariantId.trim() !== '' && giftVariantId !== '0') {
-                                items.push({ 
-                                    id: giftVariantId, 
-                                    quantity: 1, 
-                                    properties: { '_free_gift': 'true', '_bogo': 'true' } 
-                                });
-                            }
-                        }
-
-                        const response = await fetch('/cart/add.js', {
-                            method: 'POST',
-                            headers: { 
-                                'Content-Type': 'application/json',
-                                'X-Requested-With': 'XMLHttpRequest'
-                            },
-                            body: JSON.stringify({ items: items })
-                        });
-
-                        const data = await response.json();
-                        if (!response.ok) throw new Error(data.description || data.message || 'Could not add to bag');
-
-                        window.location.href = '/cart';
-                        
-                    } catch (error) {
-                        console.error('Cart Addition Error:', error);
-                        alert('Bag Error: ' + error.message);
-                        b.innerHTML = originalText;
-                        b.disabled = false;
-                    }
+            try {
+                const mainVariantId = b.getAttribute('data-variant-id');
+                const response = await fetch('/cart/add.js', {
+                    method: 'POST',
+                    headers: { 
+                        'Content-Type': 'application/json',
+                        'X-Requested-With': 'XMLHttpRequest'
+                    },
+                    body: JSON.stringify({ items: [{ id: mainVariantId, quantity: 1 }] })
                 });
-            });</script>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                const data = await response.json();
+                if (!response.ok) throw new Error(data.description || data.message || 'Could not add to bag');
+                window.location.href = '/cart';
+            } catch (error) {
+                console.error('Cart Addition Error:', error);
+                alert('Bag Error: ' + error.message);
+                b.innerHTML = originalText;
+                b.disabled = false;
+            }
+        });
+    });
+  </script>
