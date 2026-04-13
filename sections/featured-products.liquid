@@ -11,13 +11,13 @@
     <!-- Oil to Foam Cleanser -->
     <div class="card card-rhode" data-category="korean-glass-skin">
       <a href="/products/oil-to-foam-cleanser" class="card-link-wrapper">
-        <img src="{{ 'facewash2.jpg' | asset_url }}" class="card-hover-bg" alt="Oil to Foam Cleanser Hover">
+        <img src="{{ 'oil-to-foam-hover.jpg' | asset_url }}" class="card-hover-bg" alt="Oil to Foam Cleanser Hover">
         <div class="card-rhode-top">
           <span class="card-brand-label">oil-to-foam</span>
           <span class="card-badge">NEW</span>
         </div>
         <div class="card-rhode-image">
-          <img src="{{ 'facewash1.jpeg' | asset_url }}" alt="Oil to Foam Cleanser" class="product-main-img">
+          <img src="{{ 'oil-to-foam-main.jpg' | asset_url }}" alt="Oil to Foam Cleanser" class="product-main-img">
         </div>
         <div class="card-rhode-footer">
           <div class="card-meta">
@@ -146,8 +146,8 @@
     {% else %}
       {% comment %} Fallback Items if no blocks exist move move moved moves move move move move move move move move move {% endcomment %}
       {%- assign fallback_names = "Oil to Foam Cleanser,Gel Cleanser,Hair Regrow Spray,Night Cream,Tranexamic Serum,Anti Frizz Keratin Serum,Glow Serum,Glutathione Cream,Floral Blossom Hair Mist,Face Wash,Anti Acne,Sunscreen SPF60+,Renewal Cleanser,Hydra Burst Moisturizer,Renewal Toner" | split: "," -%}
-      {%- assign fallback_images = "facewash1.jpeg,gel cleanser-100.jpg,hair-mist.jpg,night-cream.jpg,tranexamic-serum.jpg,keratin-serum.jpg,glow-serum-100.jpg,glutathione-cream-100.jpg,hair-mist.jpg,facewash-100.jpg,anti-acne-100.jpg,sunscreen-100.jpg,renewal-cleanser-1.jpg,moisturizer-100.jpg,toner1.jpeg" | split: "," -%}
-      {%- assign fallback_hovers = "facewash2.jpg,deep-hydration-facewash.jpg,hair-mist-hover.jpg,night-cream-hover.jpg,tranexamic-meet-1.jpg,keratin-serum-hover.jpg,glow-serum-hover.jpg,deep-hydration-100.jpg,hair-mist-hover.jpg,deep-hydration-facewash.jpg,hover-anti-acne.png,sunscreen-hover.jpg,renewal-cleanser-2.jpg,moisturizer-hover.jpg,toner-hover.jpg" | split: "," -%}
+      {%- assign fallback_images = "oil-to-foam-main.jpg,gel cleanser-100.jpg,hair-mist.jpg,night-cream.jpg,tranexamic-serum.jpg,keratin-serum.jpg,glow-serum-100.jpg,glutathione-cream-100.jpg,hair-mist.jpg,facewash-100.jpg,anti-acne-100.jpg,sunscreen-100.jpg,renewal-cleanser-1.jpg,moisturizer-100.jpg,toner1.jpeg" | split: "," -%}
+      {%- assign fallback_hovers = "oil-to-foam-hover.jpg,deep-hydration-facewash.jpg,hair-mist-hover.jpg,night-cream-hover.jpg,tranexamic-meet-1.jpg,keratin-serum-hover.jpg,glow-serum-hover.jpg,deep-hydration-100.jpg,hair-mist-hover.jpg,deep-hydration-facewash.jpg,hover-anti-acne.png,sunscreen-hover.jpg,renewal-cleanser-2.jpg,moisturizer-hover.jpg,toner-hover.jpg" | split: "," -%}
       {%- assign fallback_labels = "korean-glass-skin,korean-brightening,hair-care,korean-glass-skin,korean-brightening,hair-care,korean-glass-skin,korean-brightening,hair-care,korean-glass-skin,anti-acne,korean-glass-skin,korean-glass-skin,korean-glass-skin,featured" | split: "," -%}
       
       {% for i in (0..14) %}
