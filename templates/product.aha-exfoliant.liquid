@@ -4829,7 +4829,7 @@ a { color: inherit; text-decoration: none; }
                 }
             }
 
-                                                // Main Add to Cart Logic
+                                                            // Main Add to Cart Logic
             document.querySelectorAll('.add-to-cart-btn').forEach(btn => {
                 btn.addEventListener('click', async function(e) {
                     e.preventDefault();
@@ -4857,7 +4857,7 @@ a { color: inherit; text-decoration: none; }
                                 items.push({ 
                                     id: giftVariantId, 
                                     quantity: 1, 
-                                    properties: { '_bogo': 'true' } 
+                                    properties: { '_free_gift': 'true', '_bogo': 'true' } 
                                 });
                             }
                         }
@@ -4886,6 +4886,7 @@ a { color: inherit; text-decoration: none; }
             });</script>
 </body>
 </html>
+
 
 
 

@@ -257,7 +257,7 @@ Line 106:
                 }
             }
 
-                                    // Main Add to Cart Logic
+                                                // Main Add to Cart Logic
             document.querySelectorAll('.add-to-cart-btn').forEach(btn => {
                 btn.addEventListener('click', async function(e) {
                     e.preventDefault();
@@ -285,7 +285,7 @@ Line 106:
                                 items.push({ 
                                     id: giftVariantId, 
                                     quantity: 1, 
-                                    properties: { '_bogo': 'true' } 
+                                    properties: { '_free_gift': 'true', '_bogo': 'true' } 
                                 });
                             }
                         }
@@ -312,6 +312,7 @@ Line 106:
                     }
                 });
             });</script>
+
 
 
 
