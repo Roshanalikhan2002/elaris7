@@ -122,7 +122,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // --- AJAX CART FUNCTIONALITY ---
 
   const cartButtons = document.querySelectorAll('.buy-button, .buy-button-hover');
-  const cartCountElements = document.querySelectorAll('.cart-count, #cart-count');
+  const cartCountElements = document.querySelectorAll('.cart-count, #cart-count, .cart-link-desktop');
 
   async function updateCartCount() {
     try {
@@ -131,7 +131,7 @@ document.addEventListener('DOMContentLoaded', () => {
       cartCountElements.forEach(el => {
         el.textContent = `(${cart.item_count})`;
         // Also update any plain text if needed
-        if (el.tagName === 'A' || el.parentElement.classList.contains('cart-link')) {
+        if (el.tagName === 'A' || el.classList.contains('cart-link-desktop')) {
            el.innerHTML = `CART (${cart.item_count})`;
         }
       });
