@@ -55,7 +55,7 @@ a { color: inherit; text-decoration: none; }
 .announcement-bar {
   background-color: #f2f2ef;
   color: #7A7973;
-  padding: 10px 0;
+  padding: 0;
   text-align: center;
   font-size: 0.65rem;
   font-weight: 800;
@@ -64,6 +64,30 @@ a { color: inherit; text-decoration: none; }
   width: auto;
   margin: 10px 12px 0;
   border-radius: 6px;
+  height: 34px;
+  overflow: hidden;
+  position: relative;
+}
+
+.announcement-slider {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  animation: announcement-slide 6s infinite ease-in-out;
+}
+
+.announcement-item {
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+@keyframes announcement-slide {
+  0%, 45% { transform: translateY(0); }
+  50%, 95% { transform: translateY(-34px); }
+  100% { transform: translateY(0); }
 }
 
 .header-main {
