@@ -233,71 +233,65 @@
                 }
             }
 
-            const handleToIdMap = {
-                'glow-serum': '{{ all_products["glow-serum"].variants.first.id }}',
-                'sunscreen-v2': '{{ all_products["sunscreen-v2"].variants.first.id }}',
-                'face-wash': '{{ all_products["face-wash"].variants.first.id }}',
-                'tranexamic-serum-v2': '{{ all_products["tranexamic-serum-v2"].variants.first.id }}',
-                'anti-acne-serum-v2': '{{ all_products["anti-acne-serum-v2"].variants.first.id }}',
-                'night-cream': '{{ all_products["night-cream"].variants.first.id }}',
-                'glutathione-cream-v2': '{{ all_products["glutathione-cream-v2"].variants.first.id }}',
-                'renewal-toner-v2': '{{ all_products["renewal-toner-v2"].variants.first.id }}',
-                'renewal-cleanser-v2': '{{ all_products["renewal-cleanser-v2"].variants.first.id }}',
-                'keratin-serum-v2': '{{ all_products["keratin-serum-v2"].variants.first.id }}',
-                'hair-mist-v2': '{{ all_products["hair-mist-v2"].variants.first.id }}',
-                'moisturizer': '{{ all_products["moisturizer"].variants.first.id }}'
-            };
-
-            // Main Add to Cart Logic
-            document.querySelector('.add-to-cart-btn')?.addEventListener('click', function(e) {
-                e.preventDefault();
-                const btn = this;
-                const originalText = btn.innerHTML;
-                btn.innerHTML = 'ADDING...';
-                btn.disabled = true;
-
-                const mainVariantId = "{{ product.variants.first.id }}";
-                const selectedGift = document.querySelector('input[name="free_gift"]:checked');
-                let items = [];
-
-                if (selectedGift) {
-                    const giftHandle = selectedGift.getAttribute('data-gift-handle');
-                    const giftVariantId = handleToIdMap[giftHandle];
+                                    // Main Add to Cart Logic
+            document.querySelectorAll('.add-to-cart-btn').forEach(btn => {
+                btn.addEventListener('click', async function(e) {
+                    e.preventDefault();
+                    const b = this;
+                    const originalText = b.innerHTML;
                     
-                    if (giftVariantId && giftVariantId !== '') {
-                        items = [
-                            { id: mainVariantId, quantity: 1, properties: { '_bogo': 'true' } },
-                            { id: giftVariantId, quantity: 1, properties: { '_bogo': 'true' } }
-                        ];
-                    } else {
-                        items = [{ id: mainVariantId, quantity: 1 }];
+                    if (b.disabled) return;
+                    
+                    b.innerHTML = 'ADDING TO BAG...';
+                    b.disabled = true;
+
+                    try {
+                        const mainVariantId = "{{ product.variants.first.id }}";
+                        const selectedGift = document.querySelector('input[name="free_gift"]:checked');
+                        
+                        let items = [{ 
+                            id: mainVariantId, 
+                            quantity: 1, 
+                            properties: { '_bogo': 'true' } 
+                        }];
+
+                        if (selectedGift) {
+                            const giftVariantId = selectedGift.getAttribute('data-variant-id');
+                            if (giftVariantId && giftVariantId.trim() !== '' && giftVariantId !== '0') {
+                                items.push({ 
+                                    id: giftVariantId, 
+                                    quantity: 1, 
+                                    properties: { '_bogo': 'true' } 
+                                });
+                            }
+                        }
+
+                        const response = await fetch('/cart/add.js', {
+                            method: 'POST',
+                            headers: { 
+                                'Content-Type': 'application/json',
+                                'X-Requested-With': 'XMLHttpRequest'
+                            },
+                            body: JSON.stringify({ items: items })
+                        });
+
+                        const data = await response.json();
+                        if (!response.ok) throw new Error(data.description || data.message || 'Could not add to bag');
+
+                        window.location.href = '/cart';
+                        
+                    } catch (error) {
+                        console.error('Cart Addition Error:', error);
+                        alert('Bag Error: ' + error.message);
+                        b.innerHTML = originalText;
+                        b.disabled = false;
                     }
-                } else {
-                    items = [{ id: mainVariantId, quantity: 1 }];
-                }
-                
-                fetch('/cart/add.js', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ items: items })
-                })
-                .then(response => {
-                    if (!response.ok) throw new Error('Add to cart failed');
-                    return response.json();
-                })
-                .then(data => {
-                    window.location.href = '/cart';
-                })
-                .catch(error => {
-                    console.error('Error:', error);
-                    alert('Error adding to cart. Please try again.');
-                    btn.innerHTML = originalText;
-                    btn.disabled = false;
                 });
-            });
-          </script>
+            });</script>
 
 {{ 'script.js' | asset_url | script_tag }}
+
+
 
 
 
