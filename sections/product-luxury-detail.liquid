@@ -1,4 +1,4 @@
-<style>
+﻿<style>
   .product-page { padding: 40px 20px; max-width: 1400px; margin: 0 auto; background: #fff; }
   .product-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
   
@@ -178,7 +178,7 @@
                {%- if gift_prod.available and gift_prod.handle != product.handle -%}
                  {%- assign count = count | plus: 1 -%}
                  <label class="gift-item {% if count == 1 %}selected{% endif %}" onclick="selectGift(this)">
-                   <div class="gift-radio-wrap"><input type="radio" name="free_gift" value="{{ gift_prod.id }}" {% if count == 1 %}checked{% endif %} class="gift-radio"></div>
+                   <div class="gift-radio-wrap"><input type="radio" name="free_gift" value="{{ gift_prod.first_available_variant.id }}" {% if count == 1 %}checked{% endif %} class="gift-radio"></div>
                    <div class="gift-thumb">
                      {%- if gift_prod.featured_image -%}
                        <img src="{{ gift_prod.featured_image | img_url: '100x100' }}" alt="{{ gift_prod.title }}">
@@ -198,11 +198,8 @@
       </div>
 
       <div class="action-buttons" style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 20px;">
-        {%- form 'product', product -%}
-          <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
-          <button type="submit" class="add-to-cart-btn" style="margin-top: 0; width: 100%;">ADD TO CART</button>
-        {%- endform -%}
-        <button type="button" class="buy-now-btn" style="width: 100%; background: #fff; color: #002d5f; border: 2px solid #002d5f; padding: 22px; border-radius: 50px; font-weight: 700; font-size: 1.3rem; cursor: pointer; transition: all 0.2s;">BUY NOW</button>
+        <button type="button" class="add-to-cart-btn" id="bogo-add-to-cart" style="margin-top: 0; width: 100%;" onclick="bogoAddToCart()">ADD TO CART</button>
+        <button type="button" class="buy-now-btn" id="bogo-buy-now" style="width: 100%; background: #fff; color: #002d5f; border: 2px solid #002d5f; padding: 22px; border-radius: 50px; font-weight: 700; font-size: 1.3rem; cursor: pointer; transition: all 0.2s;" onclick="bogoAddToCart(true)">BUY NOW</button>
       </div>
 
       <div class="modern-accordions">
@@ -377,11 +374,70 @@
 </main>
 
 <script>
+  // ── Gift selection UI ──
   function selectGift(el) {
     document.querySelectorAll('.gift-item').forEach(item => item.classList.remove('selected'));
     el.classList.add('selected');
     const radio = el.querySelector('.gift-radio');
     if (radio) radio.checked = true;
+  }
+
+  // ── BOGO Add to Cart ──
+  async function bogoAddToCart(buyNow = false) {
+    const mainVariantId  = {{ product.selected_or_first_available_variant.id }};
+    const mainProductTitle = {{ product.title | json }};
+
+    // Find selected free gift variant ID from the checked radio
+    const selectedRadio = document.querySelector('input[name="free_gift"]:checked');
+    const giftVariantId  = selectedRadio ? parseInt(selectedRadio.value) : null;
+    const giftLabel      = selectedRadio
+      ? selectedRadio.closest('.gift-item')?.querySelector('.gift-name')?.textContent?.trim()
+      : null;
+
+    // Build items array — always start with main product
+    const items = [
+      { id: mainVariantId, quantity: 1 }
+    ];
+
+    // Add free gift if one is selected
+    if (giftVariantId) {
+      items.push({
+        id: giftVariantId,
+        quantity: 1,
+        properties: {
+          '_free_gift': 'true',
+          '_free_gift_for': mainProductTitle
+        }
+      });
+    }
+
+    // Disable buttons while adding
+    const addBtn  = document.getElementById('bogo-add-to-cart');
+    const buyBtn  = document.getElementById('bogo-buy-now');
+    if (addBtn) { addBtn.disabled = true; addBtn.textContent = 'Adding...'; }
+    if (buyBtn) { buyBtn.disabled = true; }
+
+    try {
+      const res = await fetch('/cart/add.js', {
+        method : 'POST',
+        headers: { 'Content-Type': 'application/json', 'X-Requested-With': 'XMLHttpRequest' },
+        body   : JSON.stringify({ items })
+      });
+
+      if (!res.ok) throw new Error('Cart add failed');
+
+      if (buyNow) {
+        window.location.href = '/checkout';
+      } else {
+        window.location.href = '/cart';
+      }
+    } catch (err) {
+      console.error('BOGO cart error:', err);
+      alert('Could not add to cart. Please try again.');
+    } finally {
+      if (addBtn) { addBtn.disabled = false; addBtn.textContent = 'ADD TO CART'; }
+      if (buyBtn) { buyBtn.disabled = false; }
+    }
   }
 </script>
 
