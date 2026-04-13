@@ -1,6 +1,6 @@
 ﻿<style>
   /* Bundle Page Content Styles */
-  .pdp-wrapper { padding-top: 140px; max-width: 1440px; margin: 0 auto; padding-left: 12px; padding-right: 12px; width: 100%; }
+  .pdp-wrapper { padding-top: 20px; max-width: 1440px; margin: 0 auto; padding-left: 12px; padding-right: 12px; width: 100%; }
 
         :root {
             --bg-page: #f2f2f1;
@@ -26,13 +26,13 @@
           z-index: 1000; 
           padding: 0 20px;
         }
-        .header-logo { font-family: 'Lexend'; font-size: 34px; font-weight: 800; letter-spacing: -0.05em; text-decoration: none; color: #000; text-transform: lowercase; }
+        
         .nav-links { display: flex; gap: 30px; }
         .nav-links.right { justify-content: flex-end; }
         .nav-links a { text-decoration: none; color: #000; font-size: 13px; font-weight: 700; text-transform: uppercase; }
 
         /* Main Content Styling */
-        .pdp-wrapper { padding-top: 130px; max-width: 1440px; margin: 0 auto; padding-left: 12px; padding-right: 12px; width: 100%; }
+        .pdp-wrapper { padding-top: 20px; max-width: 1440px; margin: 0 auto; padding-left: 12px; padding-right: 12px; width: 100%; }
         .pdp-main-box { background: var(--white); border: 1px solid var(--border-color); border-radius: 12px; display: grid; grid-template-columns: 1.15fr 0.85fr; margin-bottom: 20px; height: auto; }
         .gallery-wrap { display: flex; align-items: flex-start; justify-content: center; background: #fff; height: auto; }
         .details-panel { padding: 60px; border-left: 1px solid var(--border-color); background: #fdfdfd; height: auto; }
@@ -63,7 +63,7 @@
         .acc-head { display: flex; justify-content: space-between; align-items: center; font-size: 12px; font-weight: 800; text-transform: uppercase; }
         .accordion-plus { width: 22px; height: 22px; background: #f0f0f0; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 16px; transition: transform 0.3s; }
         .acc-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; font-size: 14px; line-height: 1.6; color: #444; }
-        .accordion-item.active .acc-content { max-height: 1200px; padding-top: 15px; }
+        .accordion-item.active .acc-content { max-height: 1200px; padding-top: 20px; }
         .accordion-item.active .accordion-plus { transform: rotate(45deg); background: #000; color: #fff; }
 
         /* Discovery Blocks */
@@ -87,10 +87,10 @@
         .v-badge::after { content: '✔'; background: #000; color: #fff; width: 14px; height: 14px; border-radius: 50%; font-size: 8px; display: inline-flex; align-items: center; justify-content: center; margin-left: 5px; vertical-align: middle; }
 
         @media (max-width: 1024px) {
-            .pdp-wrapper { padding-top: 90px; }
+            .pdp-wrapper { padding-top: 20px; }
             header { grid-template-columns: auto 1fr auto; padding: 0 15px; }
             .nav-links { display: none; }
-            .header-logo { font-size: 26px; }
+            
             .pdp-main-box { grid-template-columns: 1fr; height: auto; border: none; border-radius: 0; }
             .gallery-wrap { height: auto; padding: 0; margin-bottom: 20px; }
             .details-panel { border-left: none; padding: 30px 15px; height: auto; overflow-y: visible; background: transparent; }
@@ -104,7 +104,7 @@
     
 </style>
 
-<main class="pdp-wrapper">
+<div class="pdp-wrapper">
     <!-- 1. Top Section -->
     <div class="pdp-main-box">
       <div class="gallery-wrap">
@@ -214,9 +214,9 @@
       <div><h4 style="font-size:16px;">Ali Rauf</h4><span class="v-badge" style="display:flex; font-size:11px; color:#777; align-items:center;">Verified Buyer</span></div>
       <div><div style="font-size:18px; margin-bottom:15px;">★ ★ ★ ★ ★</div><p style="line-height:1.7; color:#333; font-size:15px;">“My scalp feels healthier, and my hair is growing thicker. So happy with this set.”</p></div>
     </section>
-  </main>
+  </div>
 
-  <footer style="padding:100px; text-align:center; font-size:11px; color:#ccc; letter-spacing:0.3em;">ELARIS7.COM</footer>
+  
 
   
 

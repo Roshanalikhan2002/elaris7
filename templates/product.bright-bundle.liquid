@@ -1,6 +1,6 @@
 ﻿<style>
   /* Bundle Page Content Styles */
-  .pdp-wrapper { padding-top: 140px; max-width: 1440px; margin: 0 auto; padding-left: 12px; padding-right: 12px; width: 100%; }
+  .pdp-wrapper { padding-top: 20px; max-width: 1440px; margin: 0 auto; padding-left: 12px; padding-right: 12px; width: 100%; }
 
     :root {
       --bg-color: #ffffff; 
@@ -22,55 +22,8 @@
     body { background-color: var(--bg-page); color: var(--text-color); font-family: var(--font-family-body); font-size: 14px; line-height: 1.5; overflow-x: hidden; width: 100%; }
     a { color: inherit; text-decoration: none; }
 
-    /* 1. Header & Navigation (Standard Site Header) */
-    .site-header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      z-index: 500;
-      background: rgba(255, 255, 255, 0.97);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      transform: translateY(0);
-      transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    .announcement-bar {
-      background-color: #f2f2ef;
-      color: #7A7973;
-      padding: 10px 0;
-      text-align: center;
-      font-size: 0.65rem;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      margin: 10px 12px 0;
-      border-radius: 6px;
-    }
-    .header-main {
-      width: 100%;
-      display: grid;
-      grid-template-columns: 1fr auto 1fr;
-      align-items: center;
-      padding: 15px 40px;
-    }
-    .desktop-only { display: flex !important; gap: 20px; list-style: none; }
-    .mobile-only { display: none !important; }
-    @media (max-width: 850px) {
-      .desktop-only { display: none !important; }
-      .mobile-only { display: flex !important; }
-      .header-main { padding: 10px 15px; }
-    }
-    .header-nav ul { display: flex; list-style: none; gap: 20px; font-size: 0.8rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; }
-    .header-nav ul li a { color: #5B5A53 !important; }
-    .header-logo { display: flex; justify-content: center; padding: 0 40px; }
-    .logo-text { font-weight: 800; font-size: 2.2rem; letter-spacing: -0.04em; text-transform: lowercase; color: #333; line-height: 1; }
-
     /* Main Content Styling from rhode-kit.html */
-    .pdp-wrapper { padding-top: 130px; max-width: 1440px; margin: 0 auto; padding-left: 12px; padding-right: 12px; width: 100%; }
+    .pdp-wrapper { padding-top: 20px; max-width: 1440px; margin: 0 auto; padding-left: 12px; padding-right: 12px; width: 100%; }
     .pdp-main-box { background: var(--white); border: 1px solid var(--border-color); border-radius: 12px; display: grid; grid-template-columns: 1.15fr 0.85fr; margin-bottom: 20px; height: auto; }
     .gallery-wrap { display: flex; align-items: flex-start; justify-content: center; background: #fff; height: auto; }
     .details-panel { padding: 60px; border-left: 1px solid var(--border-color); background: #fdfdfd; height: auto; }
@@ -89,7 +42,7 @@
     .acc-head { display: flex; justify-content: space-between; align-items: center; font-size: 12px; font-weight: 800; text-transform: uppercase; }
     .accordion-plus { width: 22px; height: 22px; background: #f0f0f0; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 16px; transition: transform 0.3s; }
     .acc-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; font-size: 14px; line-height: 1.6; color: #444; }
-    .accordion-item.active .acc-content { max-height: 1200px; padding-top: 15px; }
+    .accordion-item.active .acc-content { max-height: 1200px; padding-top: 20px; }
     .accordion-item.active .accordion-plus { transform: rotate(45deg); background: #000; color: #fff; }
 
     /* Discovery Blocks */
@@ -117,8 +70,8 @@ Line 106:
     .v-badge::after { content: '✔'; background: #000; color: #fff; width: 14px; height: 14px; border-radius: 50%; font-size: 8px; display: inline-flex; align-items: center; justify-content: center; margin-left: 5px; vertical-align: middle; }
 
     @media (max-width: 1024px) {
-      .header-main { padding: 10px 15px; grid-template-columns: auto 1fr auto; }
-      .pdp-wrapper { padding-top: 110px; padding-left: 0; padding-right: 0; }
+      
+      .pdp-wrapper { padding-top: 20px; padding-left: 0; padding-right: 0; }
       .pdp-main-box { grid-template-columns: 1fr; height: auto; border: none; border-radius: 0; }
       .gallery-wrap { height: 450px; padding: 0; margin-bottom: 20px; }
       .details-panel { border-left: none; padding: 30px 15px; height: auto; overflow-y: visible; background: transparent; }
@@ -132,11 +85,11 @@ Line 106:
 
     /* Footer */
     .site-footer-rhode { background: #fff; padding: 80px 40px; border-top: 1px solid #eee; text-align: center; }
-    .logo-text-giant { font-weight: 800; font-size: 7rem; letter-spacing: -0.05em; color: #333; opacity: 1; margin-bottom: 40px; }
+    
   
 </style>
 
-<main class="pdp-wrapper">
+<div class="pdp-wrapper">
     <!-- 1. Top Section -->
     <div class="pdp-main-box">
       <div class="gallery-wrap">
@@ -288,12 +241,9 @@ Line 106:
         <p style="line-height:1.7; color:#333; font-size:15px;">“My skin feels hydrated and protected all day. This bundle is a game-changer.”</p>
       </div>
     </section>
-  </main>
+  </div>
 
-  <footer class="site-footer-rhode">
-    <a href="/" class="footer-logo-massive" style="text-decoration:none; display:block; text-align:center;"><h1 class="logo-text-giant">elaris7</h1></a>
-    <div style="font-size:11px; color:#999; letter-spacing:0.3em;">&copy; 2026 ELARIS7.COM</div>
-  </footer>
+  
 
           <script>
             // BOGO Selection Logic
