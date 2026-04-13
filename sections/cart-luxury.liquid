@@ -54,13 +54,18 @@
                   <p class="lux-item-variant">{{ item.variant.title }}</p>
                 {%- endunless -%}
               </div>
-              {%- if is_free_gift -%}
+              {%- if item.final_line_price == 0 -%}
                 <p class="lux-item-price" style="color: #27ae60;">
                   <span style="text-decoration: line-through; color: #aaa; font-weight: 400; font-size: 0.85rem;">{{ item.original_line_price | money }}</span>
                   <span style="display:block;">FREE</span>
                 </p>
               {%- else -%}
-                <p class="lux-item-price">{{ item.final_line_price | money }}</p>
+                <p class="lux-item-price">
+                  {%- if item.original_line_price > item.final_line_price -%}
+                    <span style="text-decoration: line-through; color: #aaa; font-weight: 400; font-size: 0.85rem; margin-right: 5px;">{{ item.original_line_price | money }}</span>
+                  {%- endif -%}
+                  {{ item.final_line_price | money }}
+                </p>
               {%- endif -%}
             </div>
 
