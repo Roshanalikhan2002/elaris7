@@ -1,4 +1,4 @@
-<section class="product-scroll-section">
+﻿<section class="product-scroll-section">
   <!-- Scroll Controls -->
   <div class="product-scroll-controls desktop-only">
     <button class="scroll-arrow prev" id="scroll-prev-btn">
@@ -76,12 +76,12 @@
       {% endfor %}
     {% else %}
       {% comment %} Fallback Items if no blocks exist move move moved moves move move move move move move move move move {% endcomment %}
-      {%- assign fallback_names = "Night Cream,Tranexamic Serum,Anti Frizz Keratin Serum,Glow Serum,Glutathione Cream,Floral Blossom Hair Mist,Face Wash,Anti Acne,Sunscreen SPF60+,Renewal Cleanser,Hydra Burst Moisturizer,Renewal Toner" | split: "," -%}
-      {%- assign fallback_images = "night-cream.jpg,tranexamic-serum.jpg,keratin-serum.jpg,glow-serum-100.jpg,glutathione-cream-100.jpg,hair-mist.jpg,facewash-100.jpg,anti-acne-100.jpg,sunscreen-100.jpg,renewal-cleanser-1.jpg,moisturizer-100.jpg,toner1.jpeg" | split: "," -%}
-      {%- assign fallback_hovers = "night-cream-hover.jpg,tranexamic-meet-1.jpg,keratin-serum-hover.jpg,glow-serum-hover.jpg,deep-hydration-100.jpg,hair-mist-hover.jpg,deep-hydration-facewash.jpg,hover-anti-acne.png,sunscreen-hover.jpg,renewal-cleanser-2.jpg,moisturizer-hover.jpg,toner-hover.jpg" | split: "," -%}
-      {%- assign fallback_labels = "korean-glass-skin,korean-brightening,hair-care,korean-glass-skin,korean-brightening,hair-care,korean-glass-skin,anti-acne,korean-glass-skin,korean-glass-skin,korean-glass-skin,featured" | split: "," -%}
+      {%- assign fallback_names = "Oil to Foam Cleanser,Gel Cleanser,Hair Regrow Spray,Night Cream,Tranexamic Serum,Anti Frizz Keratin Serum,Glow Serum,Glutathione Cream,Floral Blossom Hair Mist,Face Wash,Anti Acne,Sunscreen SPF60+,Renewal Cleanser,Hydra Burst Moisturizer,Renewal Toner" | split: "," -%}
+      {%- assign fallback_images = "facewash1.jpeg,gel cleanser-100.jpg,hair-mist.jpg,night-cream.jpg,tranexamic-serum.jpg,keratin-serum.jpg,glow-serum-100.jpg,glutathione-cream-100.jpg,hair-mist.jpg,facewash-100.jpg,anti-acne-100.jpg,sunscreen-100.jpg,renewal-cleanser-1.jpg,moisturizer-100.jpg,toner1.jpeg" | split: "," -%}
+      {%- assign fallback_hovers = "facewash2.jpg,deep-hydration-facewash.jpg,hair-mist-hover.jpg,night-cream-hover.jpg,tranexamic-meet-1.jpg,keratin-serum-hover.jpg,glow-serum-hover.jpg,deep-hydration-100.jpg,hair-mist-hover.jpg,deep-hydration-facewash.jpg,hover-anti-acne.png,sunscreen-hover.jpg,renewal-cleanser-2.jpg,moisturizer-hover.jpg,toner-hover.jpg" | split: "," -%}
+      {%- assign fallback_labels = "korean-glass-skin,korean-brightening,hair-care,korean-glass-skin,korean-brightening,hair-care,korean-glass-skin,korean-brightening,hair-care,korean-glass-skin,anti-acne,korean-glass-skin,korean-glass-skin,korean-glass-skin,featured" | split: "," -%}
       
-      {% for i in (0..11) %}
+      {% for i in (0..14) %}
         {%- assign pname = fallback_names[i] -%}
         {%- assign phandle = pname | handleize -%}
         {%- if pname == "Night Cream" -%}
@@ -111,7 +111,13 @@
         {%- elsif pname contains "Brightening Bundle" -%}
           {%- assign phandle = "elaris-7-korean-brightening-bundle" -%}
         {%- elsif pname contains "Set" or pname contains "Bundle" -%}
-          {%- assign phandle = "elaris-7-korean-glass-skin-bundle" -%}
+          {%- assign phandle = "elaris-7-korean-glass-skin-bundle" -%}        {%- elsif pname == "Oil to Foam Cleanser" -%}
+          {%- assign phandle = "oil-to-foam-cleanser" -%}
+        {%- elsif pname == "Gel Cleanser" -%}
+          {%- assign phandle = "gel-cleanser" -%}
+        {%- elsif pname == "Hair Regrow Spray" -%}
+          {%- assign phandle = "hair-regrow-spray" -%}
+        
         {%- endif -%}
 
 
@@ -159,7 +165,10 @@
                 {%- when 'sunscreen' or 'sunscreen-v2' or 'e7-korean-glass-skin-centella-sunscreen-spf50-copy' -%}{%- assign custom_price = "2,735" -%}
                 {%- when 'renewal-cleanser' or 'renewal-cleanser-v2' -%}{%- assign custom_price = "2,820" -%}
                 {%- when 'centella-moisturizer' or 'moisturizer' -%}{%- assign custom_price = "2,680" -%}
-                {%- when 'renewal-toner' or 'renewal-toner-v2' -%}{%- assign custom_price = "2,780" -%}
+                {%- when 'renewal-toner' or 'renewal-toner-v2' -%}{%- assign custom_price = "2,780" -%}                {%- when 'oil-to-foam-cleanser' -%}{%- assign custom_price = "2,620" -%}
+                {%- when 'gel-cleanser' -%}{%- assign custom_price = "2,620" -%}
+                {%- when 'hair-regrow-spray' -%}{%- assign custom_price = "2,960" -%}
+                {%- when 'oil-to-foam-cleanser' -%}{%- assign custom_price = "2,620" -%}
               {%- endcase -%}
               {%- assign pprice = "RS. " | append: custom_price -%}
 

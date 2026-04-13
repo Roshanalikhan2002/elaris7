@@ -1,0 +1,4794 @@
+{% layout none %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Oil to Foam Cleanser | elaris7</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+  --bg-color: #ffffff; 
+  --surface-color: #f1efea; 
+  --text-color: #333333; 
+  --text-light: #777777;
+  --border-radius: 24px; /* Rhode exact match */
+  --nav-radius: 30px;
+  --font-family-body: 'Inter', Helvetica, Arial, sans-serif;
+  --rhode-grey: #5B5A53;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--font-family-body);
+  font-size: 14px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+a { color: inherit; text-decoration: none; }
+
+.page-wrapper {
+  padding-top: 115px; /* Tighter balance for header & announcement bar */
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* 1. Header & Navigation */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  z-index: 500;
+  background: rgba(255, 255, 255, 0.97);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transform: translateY(0);
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.announcement-bar {
+  background-color: #f2f2ef;
+  color: #7A7973;
+  padding: 10px 0;
+  text-align: center;
+  font-size: 0.65rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  width: auto;
+  margin: 10px 12px 0;
+  border-radius: 6px;
+}
+
+.header-main {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  padding: 15px 40px;
+}
+
+.desktop-only {
+  display: flex !important;
+  gap: 20px;
+  list-style: none;
+}
+
+.mobile-only {
+  display: none !important;
+}
+
+@media (max-width: 850px) {
+  .desktop-only {
+    display: none !important;
+  }
+  .mobile-only {
+    display: flex !important;
+  }
+  .header-main {
+    padding: 10px 15px;
+  }
+}
+
+.mobile-header-icons {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.mobile-icon {
+  display: flex;
+  align-items: center;
+  color: #333;
+}
+
+.cart-icon-wrapper {
+  position: relative;
+}
+
+.cart-count {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: transparent;
+  color: #333;
+  font-size: 0.65rem;
+  font-weight: 800;
+  width: 14px;
+  height: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-hidden {
+  transform: translateY(-250%);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.6, 1);
+  pointer-events: none;
+}
+
+/* Rhode Split Category (High Fidelity) */
+.split-category-wrapper {
+  margin: 0 12px 12px;
+}
+
+
+.header-visible {
+  transform: translateY(0);
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.site-header.scrolled-bg {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+}
+
+.site-header.scrolled-bg .header-main {
+  padding: 10px 60px;
+}
+
+.menu-trigger {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  cursor: pointer;
+  width: 20px;
+}
+
+.menu-trigger span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: #333;
+  border-radius: 2px;
+}
+
+/* Mobile Header Adjustment */
+@media (max-width: 850px) {
+  /*
+   * Rhode-exact layout:
+   * - Announcement bar: on white bg, in normal flow
+   * - Header-main: absolute, top:100% Ã¢â€ â€™ floats RIGHT ON TOP of the hero image
+   * - Hero card: starts immediately after announcement bar
+   */
+  .site-header {
+    position: fixed;
+    background: transparent;
+    overflow: visible; 
+    z-index: 1000;
+    top: 0;
+  }
+
+  .announcement-bar {
+    margin: 15px 16px 8px; /* 15px top matches Rhode body's 15px top padding */
+    padding: 9px 0;
+    font-size: 0.62rem;
+    letter-spacing: 0.08em;
+    border-radius: 8px;
+    position: relative;
+    z-index: 5;
+  }
+
+  /* header-main sits at the TOP of the hero image */
+  .header-main { 
+    position: absolute;
+    top: 100%; /* starts exactly at bottom of site-header = top of hero */
+    left: 0;
+    right: 0;
+    height: 48px;
+    padding: 0 16px; /* Aligned with hero card's 16px margins = icon hugs card edge */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: transparent;
+    z-index: 600;
+  }
+  
+  .menu-trigger {
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4.5px;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    padding: 0;
+    flex-shrink: 0;
+  }
+
+  .menu-trigger span {
+    display: block;
+    width: 18px;
+    height: 1.2px;
+    background: #5b5a53;
+    border-radius: 0;
+  }
+
+  .header-logo {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .header-logo .logo-text { 
+    font-size: 1.6rem;
+    color: #5b5a53;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    opacity: 0.9;
+    display: block;
+    line-height: 1;
+  }
+
+  .mobile-header-icons {
+    display: flex !important;
+    gap: 12px; /* Tight spacing like Rhode */
+    align-items: center;
+    flex-shrink: 0;
+    z-index: 10;
+  }
+
+  .mobile-header-icons svg {
+    stroke-width: 1.2px !important;
+    color: #5b5a53 !important;
+    width: 18px; /* Smaller icons matching Rhode */
+    height: 18px;
+    opacity: 0.9 !important;
+    display: block !important;
+  }
+
+  .cart-icon-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  .cart-count {
+    position: absolute;
+    top: -4px;
+    right: -5px;
+    font-size: 9px;
+    font-weight: 600;
+    color: #5b5a53;
+    font-family: inherit;
+    line-height: 1;
+  }
+}
+
+/* Mobile Menu Drawer Styling */
+.mobile-menu-drawer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #f1efea;
+  z-index: 2000;
+  transform: translateX(-100%);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.mobile-menu-drawer.open {
+  transform: translateX(0);
+}
+
+.menu-inner {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  overflow-y: auto;
+}
+
+.menu-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  border-bottom: 1px solid #d1d1cf;
+}
+
+.menu-close {
+  font-size: 1.5rem;
+  cursor: pointer;
+  font-weight: 800;
+}
+
+.menu-logo-small {
+  font-family: 'Inter', sans-serif;
+  font-weight: 800;
+  font-size: 1.5rem;
+  letter-spacing: -0.05em;
+  color: #333;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.menu-icons {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.menu-icons svg {
+  color: #333;
+  cursor: pointer;
+}
+
+.menu-top svg {
+  color: #333;
+  stroke-width: 1.5;
+}
+
+.menu-tabs-container {
+  padding: 15px 0;
+  border-bottom: 1px solid #d1d1cf;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.menu-tabs {
+  display: flex;
+  gap: 30px;
+  padding: 0 20px;
+}
+
+.tab {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #999;
+  white-space: nowrap;
+  padding-bottom: 5px;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+}
+
+.tab.active {
+  color: #333;
+  border-bottom: 2px solid #333;
+}
+
+.menu-products {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.menu-product-row {
+  background: #fff;
+  border: 1px solid #d1d1cf;
+  border-radius: 4px;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.mini-thumb {
+  width: 50px;
+  height: 50px;
+  flex-shrink: 0;
+}
+
+.mini-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.mini-title {
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: #333;
+  letter-spacing: -0.02em;
+}
+
+.mini-tag {
+  font-size: 0.65rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #999;
+  margin-top: 2px;
+}
+
+.mega-shop-btn {
+  padding: 0 20px 30px;
+}
+
+.menu-secondary {
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border-top: 1px solid #d1d1cf;
+}
+
+.menu-secondary a {
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: #333;
+}
+
+.menu-footer {
+  padding: 30px 20px;
+  background: rgba(0,0,0,0.03);
+  margin-top: auto;
+}
+
+.region-selector {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #555;
+}
+
+.region-selector span {
+  font-weight: 800;
+  text-decoration: underline;
+}
+
+.header-nav ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.header-nav ul li a {
+  color: #5B5A53 !important; /* Explicit Rhode grey for visibility */
+  transition: opacity 0.2s ease;
+}
+
+.header-nav ul li a:hover {
+  opacity: 0.7;
+}
+
+.header-nav.header-right ul {
+  justify-content: flex-end;
+}
+
+.header-logo {
+  display: flex;
+  justify-content: center;
+  padding: 0 40px;
+}
+
+.logo-text { 
+  font-weight: 800; 
+  font-size: 2.2rem; 
+  letter-spacing: -0.04em; 
+  text-transform: lowercase;
+  color: #333;
+  line-height: 1;
+}
+
+/* Hero Section */
+.hero-block {
+  position: relative;
+  background-color: #fff;
+  border-radius: var(--border-radius);
+  height: auto; 
+  aspect-ratio: 3 / 1; /* Match the banner's wide proportions move moved moves move */
+  margin: 0 12px; 
+  overflow: hidden;
+}
+
+.hero-video-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* CRITICAL: ensures full banner image is visible move move */
+  background: #fff;
+}
+
+.hero-bottom {
+  position: absolute;
+  bottom: 60px;
+  right: 60px;
+  max-width: 800px; /* increased to prevent wrapping */
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* vertical space between title and button */
+  align-items: flex-end;
+}
+
+.hero-title {
+  display: none !important; /* Hide overlay text since banner has text move move */
+}
+
+.hero-bottom .btn-pill-outline {
+  display: inline-block;
+  padding: 12px 35px;
+  font-size: 0.85rem;
+  min-width: 180px;
+  text-align: center;
+  white-space: nowrap; /* keep on one line */
+}
+
+/* Mobile Adjustments for Hero */
+@media (max-width: 768px) {
+  .page-wrapper {
+    padding: 100px 16px 16px; /* Space for fixed mobile header move move move */
+    gap: 12px;
+  }
+
+  .hero-block {
+    height: auto;
+    aspect-ratio: 1 / 1;
+    margin: 0;
+    border-radius: 14px;
+    background-color: #fff;
+  }
+
+  .hero-video-bg {
+    object-fit: cover;
+  }
+
+  /* Rhode layout: text wraps 2 lines on RIGHT, button stacked BELOW Ã¢â‚¬â€ column, right-aligned */
+  .hero-bottom {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 132px;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end; /* RIGHT-aligned Ã¢â‚¬â€ matches Rhode BOTTOM_RIGHT class */
+    gap: 8px;
+    background: transparent;
+    text-align: right;
+  }
+
+  .hero-title {
+    font-size: 1.35rem;
+    line-height: 1.15;
+    font-weight: 700;
+    margin: 0;
+    color: #fff;
+    max-width: 100%;
+    letter-spacing: -0.01em;
+    text-align: right;
+  }
+
+  /* Button sits BELOW the title text, right-aligned */
+  .hero-bottom .btn-pill-outline {
+    position: static;
+    flex-shrink: 0;
+    align-self: flex-end; /* Right-aligned */
+    padding: 7px 18px;
+    font-size: 0.62rem;
+    white-space: nowrap;
+    border: 1px solid rgba(255,255,255,0.85);
+    color: #fff;
+    border-radius: 50px;
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(6px);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+}
+
+/* Base card used across all sections */
+.card {
+  background-color: var(--surface-color);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Category Navigation Bar */
+.category-bar {
+  padding: 20px 12px 15px;
+}
+
+.category-list {
+  display: flex;
+  gap: 10px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.category-list::-webkit-scrollbar { display: none; }
+
+.cat-link {
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: #5b5a53;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 8px 18px;
+  border: 1px solid #d1d1cf;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  display: inline-block;
+}
+
+.cat-link.active {
+  background-color: #5b5a53;
+  color: #fff;
+  border-color: #5b5a53;
+}
+
+@media (max-width: 768px) {
+  .category-bar {
+    padding: 15px 16px;
+  }
+}
+
+/* Product scroll wrapper + arrow button */
+.product-scroll-wrapper {
+  position: relative;
+}
+
+.product-scroll-header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 12px 10px;
+}
+
+.scroll-arrow-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #2c2b28;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.25s ease, opacity 0.25s ease, transform 0.2s ease;
+  flex-shrink: 0;
+}
+
+.scroll-arrow-btn:hover {
+  background: #555;
+  transform: scale(1.08);
+}
+
+@media (max-width: 768px) {
+  .scroll-arrow-btn {
+    display: none !important;
+  }
+}
+
+/* Product Collection Slider */
+.product-scroll-section {
+  position: relative;
+  margin-top: 20px;
+}
+
+.product-scroll-controls {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  right: 15px;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  pointer-events: none;
+  z-index: 500; /* Ensure it is above cards move move moved moves move move move move move move move */
+}
+
+.scroll-arrow {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 1px solid rgba(0,0,0,0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  pointer-events: auto;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.12); /* Rhode exact match shadow move move moved moves move move move move move move move */
+  opacity: 1; /* Always visible for user clarity move move moved moves move move move move move move move */
+}
+
+.scroll-arrow svg {
+  color: #333;
+  stroke-width: 2.5px;
+  width: 22px;
+  height: 22px;
+}
+
+.scroll-arrow:hover {
+  background: #fff;
+  transform: scale(1.1);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+}
+
+.product-collection {
+  display: flex;
+  gap: 16px; /* Slightly wider gap */
+  overflow-x: auto;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+  padding: 10px 40px 30px; /* More padding for a cleaner look move move move */
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.product-collection::-webkit-scrollbar { display: none; }
+
+/* Standard product card (used in the scroll) */
+.card-standard {
+  flex: 0 0 270px;
+  background-color: #f2f0ed;
+  border-radius: 14px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: box-shadow 0.3s ease;
+  scroll-snap-align: start;
+}
+
+.card-standard:hover {
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+}
+
+.product-placeholder-img {
+  width: 100%;
+  height: 220px;
+  background: #e0deda;
+  border-radius: 10px;
+}
+
+.product-image-wrap img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.card-product-title {
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  color: #2c2b28;
+}
+
+.card-subtitle {
+  font-size: 0.72rem;
+  color: #7A7973;
+  margin-top: 2px;
+}
+
+.product-name-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+@media (max-width: 768px) {
+  .product-collection {
+    scroll-snap-type: x mandatory;
+    padding-right: 16px;
+  }
+  .card-standard {
+    flex: 0 0 75vw;
+  }
+}
+
+/* Ã¢â€â‚¬Ã¢â€â‚¬ Rhode-style product cards (High Fidelity) Ã¢â€â‚¬Ã¢â€â‚¬ */
+.card-rhode {
+  flex: 0 0 30%; /* Clearly shows peek on most screens move move moved moves move move move move move move */
+  min-width: 330px;
+  height: 600px;
+  background-color: #f6f5f3;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  scroll-snap-align: start;
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .card-rhode {
+    overflow: visible !important;
+  }
+}
+
+.card-rhode:hover {
+  background-color: #f0eeeb;
+}
+
+.card-link-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 24px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.card-rhode-top {
+  margin-bottom: 20px;
+}
+
+.card-brand-label {
+  font-size: 2.8rem;
+  font-weight: 900;
+  color: #333;
+  opacity: 1;
+  text-transform: lowercase;
+  letter-spacing: -0.05em;
+  line-height: 0.9;
+  font-family: var(--font-family-body);
+}
+
+.card-rhode-image {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+.product-main-img {
+  max-width: 100%;
+  max-height: 280px;
+  object-fit: contain;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-rhode:hover .product-main-img {
+  transform: scale(1.05);
+}
+
+.card-rhode-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: auto;
+}
+
+.card-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.card-stars {
+  font-size: 0.65rem;
+  color: #333;
+  letter-spacing: 0.1em;
+}
+
+.review-count {
+  color: #7A7973;
+  margin-left: 4px;
+}
+
+.card-name {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #333;
+}
+
+.btn-rhode-buy-pill {
+  width: 100%;
+  padding: 10px;
+  background: transparent;
+  border: 1px solid #333;
+  color: #333;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.btn-rhode-buy-pill:hover {
+  background: #333;
+  color: #fff;
+}
+
+@media (max-width: 1024px) {
+  .card-rhode {
+    flex: 0 0 350px;
+  }
+}
+
+@media (max-width: 768px) {
+  .product-collection {
+    padding: 0 16px 20px;
+    gap: 12px;
+    scroll-padding: 0 16px;
+  }
+  .card-rhode {
+    flex: 0 0 80%; /* Show 80% of card so part of next is visible */
+    height: auto;
+    min-width: unset;
+  }
+  .card-brand-label {
+    font-size: 1.8rem;
+  }
+}
+
+/* Swipe Indicator Bubble */
+.swipe-bubble {
+  position: absolute;
+  top: 40%;
+  right: -32px; /* Center centered centered centered between cards */
+  transform: translateY(-50%);
+  width: 65px;
+  height: 65px;
+  background: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  z-index: 50;
+  pointer-events: none;
+}
+
+.swipe-bubble span {
+  font-size: 0.65rem;
+  font-weight: 800;
+  color: #333;
+  text-transform: lowercase;
+  letter-spacing: 0.05em;
+}
+
+/* Visibility Utilities */
+.mobile-only {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .mobile-only {
+    display: flex;
+  }
+}
+
+.desktop-only {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .desktop-only {
+    display: none;
+  }
+}
+
+/* Product Grid for Category Pages */
+.product-grid-section {
+  padding: 40px 12px;
+  margin-top: 100px; /* Space for fixed header */
+}
+
+.product-grid-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.product-grid-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  color: #333;
+  text-transform: lowercase;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  padding: 0 12px;
+}
+
+@media (max-width: 1024px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .product-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .product-grid-section {
+    padding: 20px 16px;
+    margin-top: 80px;
+  }
+  .product-grid-title {
+    font-size: 2rem;
+  }
+}
+
+/* Inner wrapper that contains hover bg and clips it properly */
+.card-rhode-inner {
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: 24px 22px 22px;
+}
+
+@media (max-width: 768px) {
+  .card-rhode-inner {
+    overflow: hidden; /* Keep bg image clipped on mobile too */
+    border-radius: 12px;
+  }
+}
+
+.mobile-swipe-badge {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .mobile-swipe-badge {
+    display: flex;
+    position: absolute;
+    right: -30px; /* Hangs off right edge of card to overlap 2nd card gap */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 62px;
+    height: 62px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 50%;
+    color: #2c2b28;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+    text-transform: lowercase;
+    z-index: 999;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.18);
+    border: 1.5px solid rgba(255,255,255,0.6);
+    pointer-events: none;
+  }
+}
+
+.card-hover-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  z-index: 20;
+  pointer-events: none;
+  transition: opacity 0.5s cubic-bezier(0.16,1,0.3,1);
+}
+
+.card-rhode:hover .card-hover-bg {
+  opacity: 1;
+}
+
+/* Top row: big label left, badge pill right */
+.card-rhode-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 10;
+}
+
+.card-brand-label {
+  font-size: 3.2rem;
+  font-weight: 900;
+  letter-spacing: -0.06em;
+  text-transform: lowercase;
+  color: #2c2b28;
+  line-height: 1;
+}
+
+@media (max-width: 768px) {
+  .card-brand-label {
+    font-size: 1.35rem; /* Small enough for long words like nightcream */
+    letter-spacing: -0.03em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 60%; /* leaves room for badge on the right */
+  }
+}
+
+.card-badge {
+  background: #2c2b28;
+  color: #fff;
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: lowercase;
+  letter-spacing: 0.04em;
+  padding: 5px 11px;
+  border-radius: 20px;
+  white-space: nowrap;
+  margin-top: 8px;
+}
+
+/* Product image Ã¢â‚¬â€ centered, transparent bg, fills remaining space */
+.card-rhode-image {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 0;
+  overflow: hidden;
+}
+
+.product-main-img, .card-rhode-image img:not(.card-hover-bg) {
+  max-height: 420px; /* boosted for maximum impact move move moved mov */
+  max-width: 100%; /* removal of constraints move move moved mov */
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  mix-blend-mode: multiply;
+  filter: contrast(1.1) brightness(1.1);
+  transform: scale(1.6); /* Scale up to bypass intrinsic white borders */
+  transition: opacity 0.5s cubic-bezier(0.16,1,0.3,1),
+              transform 0.5s cubic-bezier(0.16,1,0.3,1);
+}
+
+
+
+.card-rhode:hover .card-hover-bg,
+.card-rhode-grid:hover .card-hover-bg {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.card-rhode:hover .card-rhode-image .product-main-img,
+.card-rhode:hover .product-main-img,
+.card-rhode-grid:hover .product-main-img {
+  opacity: 0 !important;
+}
+
+.card-rhode:hover .card-rhode-footer,
+.card-rhode:hover .product-details {
+  opacity: 0;
+}
+
+/* Ã¢â€â‚¬Ã¢â€â‚¬ Buy Button Pop-up Ã¢â€â‚¬Ã¢â€â‚¬ */
+.buy-button-hover {
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  width: auto;
+  min-width: 80%;
+  white-space: nowrap;
+  background: white;
+  color: #2c2b28;
+  padding: 11px 24px;
+  border-radius: 40px;
+  text-align: center;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  opacity: 0;
+  z-index: 20;
+  transition: all 0.4s cubic-bezier(0.16,1,0.3,1);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+.card-rhode:hover .buy-button-hover {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Bottom text details */
+.card-rhode-details {
+  flex-shrink: 0;
+  padding-top: 12px;
+  border-top: 1px solid rgba(0,0,0,0.07);
+  transition: opacity 0.25s ease;
+}
+
+.card-rhode:hover .card-rhode-details {
+  opacity: 0;
+}
+
+.card-stars {
+  font-size: 0.78rem;
+  color: #5B5A53;
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.card-stars span { color: #888; }
+
+.card-name-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-top: 2px;
+}
+
+.card-name {
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #2c2b28;
+}
+
+.card-price {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #2c2b28;
+  white-space: nowrap;
+}
+
+.card-desc {
+  font-size: 0.78rem;
+  color: #7A7973;
+  margin-top: 4px;
+}
+
+/* Hover CTA Ã¢â‚¬â€ slides up from bottom */
+.card-rhode-hover {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 18px 22px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: all 0.38s cubic-bezier(0.16,1,0.3,1);
+  z-index: 10;
+  background: transparent;
+}
+
+.card-rhode:hover .card-rhode-hover {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.btn-rhode-buy {
+  background: #2c2b28;
+  color: #fff;
+  padding: 13px 28px;
+  border-radius: 40px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.25s ease;
+}
+
+.btn-rhode-buy:hover { background: #111; }
+
+/* Keep legacy utility classes used elsewhere */
+.row-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.card-product-title { font-size: 0.95rem; font-weight: 800; text-transform: uppercase; }
+.price-side { font-weight: 700; color: var(--rhode-grey); }
+.stars { font-size: 0.8rem; color: #555; }
+
+.card-hover-overlay {
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.4s cubic-bezier(0.16,1,0.3,1);
+  z-index: 10;
+}
+
+.btn-pill-white {
+  background: #fff;
+  color: #333;
+  padding: 12px 30px;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-decoration: none;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+  white-space: nowrap;
+}
+
+
+/* Philosophy Block - Exact Rhode Match */
+.philosophy-block {
+  padding: 80px 20px 0;
+  text-align: center;
+  background-color: #fff !important;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+}
+
+.philosophy-content {
+  max-width: 780px;
+}
+
+.section-title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+  letter-spacing: -0.05em;
+  color: #333;
+}
+
+.section-desc {
+  max-width: 660px;
+  margin: 0 auto 30px;
+  font-size: 0.95rem;
+  color: #777;
+  line-height: 1.8;
+  font-weight: 500;
+}
+
+.btn-pill-hollow {
+  margin-bottom: 40px;
+}
+
+.product-lineup {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.product-lineup img {
+  width: 100%;
+  max-width: 1200px;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+/* Mobile Adjustments for Philosophy */
+@media (max-width: 768px) {
+  .philosophy-block {
+    padding: 40px 15px 0;
+    margin: 10px;
+  }
+  .section-title {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+  }
+  .section-desc {
+    font-size: 0.85rem;
+    margin-bottom: 20px;
+    line-height: 1.5;
+  }
+  .btn-pill-hollow {
+    padding: 10px 30px;
+    margin-bottom: 20px;
+  }
+  .product-lineup img {
+    width: 90%;
+  }
+}
+
+.btn-pill-hollow {
+  background: #fff;
+  border: 1px solid #999;
+  padding: 14px 45px;
+  border-radius: 40px;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  color: #333;
+  display: inline-block;
+  letter-spacing: 0.05em;
+  transition: border-color 0.3s;
+}
+
+.btn-pill-hollow:hover {
+  border-color: #333;
+}
+.section-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  padding: 0 12px;
+  min-height: 80vh;
+}
+
+@media (max-width: 768px) {
+  .section-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 0 12px;
+    min-height: auto;
+  }
+  .section-grid > .card {
+    width: 100%;
+    min-height: 500px;
+  }
+}
+
+.showcase-image {
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+}
+
+.showcase-image .full-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.showcase-details {
+  background: #f2f0ed;
+  display: flex !important;
+  flex-direction: column;
+  padding: 0 !important; /* Removed padding to allow image bleed */
+  position: relative !important;
+  border-radius: 12px;
+  overflow: hidden; /* Ensure rounded corners clip the image */
+  min-height: 400px;
+}
+
+@media (max-width: 768px) {
+  .showcase-details {
+    padding: 0 !important;
+    min-height: 500px;
+  }
+}
+
+.product-smear { 
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+.product-smear img { 
+  width: 100%; 
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.showcase-details .details-text {
+  position: absolute !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  padding: 40px !important;
+  z-index: 10 !important;
+  background: transparent !important;
+  text-align: left;
+}
+
+.xl-title { font-size: 1.05rem; font-weight: 800; margin: 6px 0 2px; text-transform: uppercase; color: #2c2b28; }
+.details-text .subtitle { font-size: 0.85rem; color: #7A7973; margin-top: 0; }
+.details-text .stars { font-size: 0.8rem; color: #5B5A53; margin-bottom: 4px; }
+
+.btn-rhode-outline {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 25px;
+  border: 1px solid #71706c;
+  border-radius: 40px;
+  color: #2c2b28;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+.btn-rhode-outline:hover {
+  background-color: #2c2b28;
+  color: #fff;
+  border-color: #2c2b28;
+}
+
+.page-count { 
+  position: absolute; 
+  bottom: 25px; 
+  right: 35px; 
+  font-weight: 900; 
+  font-size: 3.5rem; 
+  color: #2c2b28; 
+  letter-spacing: -0.05em;
+  line-height: 0.8;
+}
+
+/* Social Section */
+.social-section {
+  padding: 60px;
+}
+
+.social-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 40px;
+}
+
+@media (max-width: 768px) {
+  .social-header {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  .social-header .logo-text {
+    font-size: 2rem !important;
+    margin-bottom: 0;
+  }
+  .social-header .btn-pill-outline {
+    white-space: nowrap; /* ensure single line */
+    padding: 12px 30px;
+    font-size: 0.8rem;
+    min-width: 220px;
+  }
+}
+
+.social-scroll {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.social-thumb {
+  flex: 0 0 300px;
+  height: 300px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.social-thumb img { width: 100%; height: 100%; object-fit: cover; }
+
+@media (max-width: 768px) {
+  .social-section {
+    padding: 40px 12px;
+  }
+  .social-scroll {
+    gap: 10px;
+    padding-bottom: 10px; /* space for scroll bar if visible */
+  }
+  .social-thumb {
+    flex: 0 0 90%; /* Show one image almost fully across */
+    height: 380px;
+  }
+}
+
+/* Buttons */
+.btn-pill-white {
+  background: #fff;
+  padding: 16px 30px;
+  border-radius: 40px;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.btn-pill-outline {
+  border: 1px solid #444;
+  padding: 16px 40px;
+  border-radius: 40px;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  background: transparent;
+  transition: all 0.3s ease;
+}
+.btn-pill-outline:hover { background: #444; color: #fff; }
+
+/* Rhode High-Fidelity Footer */
+.site-footer-rhode {
+  background-color: #f2f2ef;
+  color: #7A7973;
+  padding: 80px 40px 40px;
+  border-top: 1px solid rgba(0,0,0,0.05);
+}
+
+.footer-logo-massive {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 80px;
+  padding: 40px 20px;
+}
+
+.logo-text-giant {
+  font-size: 24vw; /* massive responsive font size */
+  font-weight: 800;
+  color: #7A7973;
+  letter-spacing: -0.06em;
+  margin: 0;
+  line-height: 0.7;
+  text-transform: lowercase;
+  opacity: 1;
+}
+
+.footer-main-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr 1.2fr;
+  gap: 40px;
+  border-top: 1px solid #d1d1cf;
+  padding-top: 60px;
+}
+
+.footer-column h4 {
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: #555;
+  margin-bottom: 24px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 12px;
+}
+
+.footer-column ul li a {
+  font-size: 0.9rem;
+  color: #7A7973;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.footer-column ul li a:hover {
+  opacity: 0.6;
+}
+
+/* Newsletter Column Styles */
+.newsletter-intro {
+  font-weight: 800;
+  color: #333;
+  font-size: 1.05rem;
+  margin-bottom: 12px;
+}
+
+.newsletter-sub {
+  font-size: 0.9rem;
+  margin-bottom: 24px;
+  line-height: 1.5;
+}
+
+.footer-newsletter-form {
+  display: flex;
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+
+.footer-newsletter-form input {
+  flex: 1;
+  border: none;
+  padding: 12px 16px;
+  font-size: 0.9rem;
+  outline: none;
+}
+
+.footer-newsletter-form button {
+  background: transparent;
+  border: none;
+  padding: 0 24px;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  color: #333;
+  cursor: pointer;
+}
+
+.newsletter-disclaimer {
+  font-size: 0.75rem;
+  opacity: 0.8;
+}
+
+/* Social Icon Styles */
+.social-links-list li a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.icon-social {
+  width: 18px;
+  height: 18px;
+  fill: #7A7973;
+}
+
+.footer-column.support-column p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+.footer-column.support-column a {
+  color: #7A7973;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+
+.footer-column.support-column a:hover {
+  border-bottom-color: #7A7973;
+}
+
+.footer-bottom-info {
+  margin-top: 60px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(0,0,0,0.05);
+  font-size: 0.8rem;
+  text-align: left;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 1024px) {
+  .footer-main-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .newsletter-column {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 768px) {
+  .site-footer-rhode {
+    padding: 60px 20px 40px;
+  }
+  
+  .footer-logo-massive {
+    margin-bottom: 40px;
+    padding: 20px 10px;
+  }
+  
+  .logo-text-giant {
+    font-size: 26vw;
+  }
+
+  .footer-main-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding-top: 40px;
+  }
+
+  .newsletter-column {
+    grid-column: span 1;
+    margin-bottom: 20px;
+  }
+
+  .footer-column h4 {
+    margin-bottom: 16px;
+  }
+}
+
+/* ========================================================= */
+/*   VALUES / MISSION SECTION (Above Footer)                 */
+/* ========================================================= */
+.values-section {
+  background-color: #f3f0ec; /* Rhode signature light beige */
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: 12px;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.values-content-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* keep centered vertically */
+  height: 100%;
+}
+
+.values-image-wrap {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+}
+
+.values-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.values-content {
+  padding: 40px 40px 0 40px; /* balanced padding */
+  text-align: left;
+}
+
+.values-statement {
+  font-size: 1.55rem;
+  line-height: 1.15;
+  color: #5b5a53;
+  margin-bottom: 24px;
+  letter-spacing: -0.02em;
+  font-weight: 500;
+}
+
+.values-statement strong {
+  font-weight: 800;
+  color: #333;
+}
+
+.btn-pill-values {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: #5b5a53;
+  border: 1px solid #5b5a53;
+  border-radius: 50px;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: transparent;
+  transition: all 0.2s ease;
+}
+
+.btn-pill-values:hover {
+  background: #5b5a53;
+  color: #fff;
+}
+
+.values-accordion {
+  padding: 0 40px 40px;
+  margin-top: 32px; /* Pull it right under the button */
+}
+
+.values-accordion-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(91, 90, 83, 0.15);
+  cursor: pointer;
+  color: #5b5a53;
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: -0.01em;
+}
+
+.values-accordion-item:last-child {
+  border-bottom: none;
+}
+
+.values-accordion-item .accordion-icon {
+  font-size: 1.2rem;
+  font-weight: 400;
+  transition: transform 0.3s ease;
+}
+
+.values-accordion-item.active .accordion-icon {
+  transform: rotate(45deg); /* Turns '+' into 'x' */
+}
+
+/* Mobile Adjustments for Values Section */
+@media (max-width: 768px) {
+  .values-section {
+    grid-template-columns: 1fr;
+  }
+  
+  /* On mobile, place the image on top */
+  .values-image-wrap {
+    order: 1;
+    aspect-ratio: 1 / 1;
+  }
+
+  .values-content {
+    padding: 30px 20px 20px;
+  }
+
+  .values-accordion {
+    padding: 0 20px 20px;
+  }
+
+  .values-statement {
+    font-size: 1.3rem; 
+  }
+}
+/* ========================================================= */
+/*   RHODE SPLIT CATEGORY                                    */
+/* ========================================================= */
+.split-category-wrapper {
+  margin: 0 12px 12px;
+}
+
+.split-cat-grid {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  min-height: 700px;
+}
+
+.split-cat-left, .split-cat-right {
+  flex: 1;
+  border-radius: 14px;
+  overflow: hidden;
+  position: relative;
+}
+
+.split-cat-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.product-showcase-card {
+  width: 100%;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.product-swirl-wrap {
+  width: 100%;
+}
+
+.product-swirl-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.stars-row {
+  font-size: 0.75rem;
+  color: #7A7973;
+  margin-bottom: 12px;
+}
+
+.showcase-title {
+  font-size: 1.1rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  color: #2c2b28;
+  margin-bottom: 6px;
+}
+
+.showcase-subtitle {
+  font-size: 0.85rem;
+  color: #7A7973;
+  margin-bottom: 30px;
+}
+
+.btn-pill-buy {
+  display: inline-block;
+  padding: 16px 40px;
+  border: 1.5px solid #2c2b28;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  color: #2c2b28;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn-pill-buy:hover {
+  background-color: #2c2b28;
+  color: #fff;
+}
+
+.pagination-counter {
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+  font-size: 1.8rem;
+  font-weight: 800;
+  letter-spacing: -0.05em;
+  color: #2c2b28;
+}
+
+/* Ã¢â€â‚¬Ã¢â€â‚¬ Mobile: seamlessly connected, zero gap Ã¢â€â‚¬Ã¢â€â‚¬ */
+@media (max-width: 768px) {
+  .split-category-wrapper {
+    margin: 0 0 12px; /* flush to screen edges */
+  }
+
+  .split-cat-grid {
+    flex-direction: column !important; /* Force stack on mobile regardless of flipped class */
+    gap: 0; /* NO gap between image and card */
+    min-height: auto;
+  }
+
+  .split-cat-left,
+  .split-cat-right {
+    min-height: 420px;
+    height: auto;
+    border-radius: 12px;
+    width: 100%;
+    padding: 0;
+  }
+
+  .split-cat-img {
+    width: 100%;
+    height: 100%;
+    min-height: 420px;
+    object-fit: cover;
+    display: block;
+  }
+
+  .pagination-counter {
+    bottom: 20px;
+    right: 20px;
+    font-size: 1.4rem;
+  }
+
+  .product-overlay-details {
+    position: absolute !important;
+    bottom: 16px !important;
+    left: 16px !important;
+    right: auto !important;
+    text-align: left !important;
+    z-index: 10;
+  }
+
+  .product-overlay-details .stars-row {
+    font-size: 0.55rem !important;
+    margin-bottom: 4px !important;
+  }
+
+  .product-overlay-details .showcase-title {
+    font-size: 0.85rem !important;
+    margin-bottom: 10px !important;
+    line-height: 1.2 !important;
+  }
+
+  .product-overlay-details .btn-pill-buy {
+    font-size: 0.6rem !important;
+    padding: 7px 16px !important;
+    border-radius: 50px !important;
+  }
+}
+
+</style>
+  <script src="./assets/script.js" defer></script>
+</head>
+<body>
+
+  <!-- Re-using existing header structure exactly -->
+  {% section 'header' %}
+
+  <main class="product-page">
+    <div class="product-grid">
+      
+    <style>
+      /* Main Product Gallery Styling */
+      .product-gallery {
+        display: flex;
+        gap: 15px;
+        background: #fff;
+        padding: 10px;
+        border-radius: 12px;
+        height: 100%;
+      }
+      .gallery-thumbnails {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        justify-content: center;
+        width: 60px;
+      }
+      .thumb-item {
+        width: 55px;
+        height: 55px;
+        border-radius: 8px;
+        overflow: hidden;
+        cursor: pointer;
+        border: 2px solid transparent;
+        transition: all 0.3s ease;
+        background: white;
+      }
+      .thumb-item:hover, .thumb-item.active {
+        border-color: #002d5f;
+      }
+      .thumb-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .gallery-main-viewport {
+        flex: 1;
+        height: 100%;
+        overflow: hidden;
+        border-radius: 12px;
+        position: relative;
+      }
+      .gallery-slider {
+        display: flex;
+        height: 100%;
+        transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .gallery-slide {
+        min-width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .gallery-slide img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+      }
+
+      /* Desktop Fixed-Height Internal Scroll Logic */
+      @media (min-width: 901px) {
+        .product-page {
+          background-color: #f3f0ec; 
+          margin: 115px 12px 12px;
+          padding: 0;
+          border-radius: 14px;
+          overflow: hidden;
+        }
+        .product-grid {
+          display: grid;
+          grid-template-columns: 1.1fr 0.9fr;
+          height: 700px; /* Fixed height for parity */
+          gap: 0;
+        }
+        .product-details {
+          height: 100%;
+          min-height: auto !important;
+          overflow-y: auto;
+          scrollbar-width: none;
+        }
+        .product-details::-webkit-scrollbar { display: none; }
+      }
+
+      @media (max-width: 900px) {
+        .product-page {
+          margin: 100px 0 0;
+          padding: 0;
+          background-color: #fff;
+        }
+        .product-grid {
+          display: flex;
+          flex-direction: column;
+          height: auto;
+        }
+        .product-gallery {
+          flex-direction: column-reverse;
+          height: auto;
+          aspect-ratio: 1 / 1.1;
+          border-radius: 0;
+          padding: 10px;
+        }
+        .gallery-thumbnails {
+          flex-direction: row;
+          width: 100%;
+          height: 70px;
+          justify-content: center;
+          padding: 5px 0;
+          gap: 10px;
+        }
+        .gallery-main-viewport {
+          border-radius: 0;
+        }
+        .product-details {
+          padding: 24px 20px;
+          height: auto;
+          overflow: visible;
+        }
+      }
+    </style>
+
+    <div class="product-gallery">
+      <!-- Thumbnails on Left -->
+      <div class="gallery-thumbnails">
+        <div class="thumb-item active" onmouseover="scrollGallery(0, this)">
+          <img src="{{ "facewash1.jpeg" | asset_url }}" alt="Thumb 1">
+        </div>
+        <div class="thumb-item" onmouseover="scrollGallery(1, this)">
+          <img src="{{ "facewash2.jpg" | asset_url }}" alt="Thumb 2">
+        </div>
+        <div class="thumb-item" onmouseover="scrollGallery(2, this)">
+          <img src="{{ "facewash3.jpg" | asset_url }}" alt="Thumb 3">
+        </div>
+        <div class="thumb-item" onmouseover="scrollGallery(3, this)">
+          <img src="{{ "facewash4.jpg" | asset_url }}" alt="Thumb 4">
+        </div>
+      </div>
+
+      <!-- Main Slider -->
+      <div class="gallery-main-viewport">
+        <div class="gallery-slider" id="productSlider">
+          <div class="gallery-slide">
+            <img src="{{ "facewash1.jpeg" | asset_url }}" alt="Main View 1">
+          </div>
+          <div class="gallery-slide">
+            <img src="{{ "facewash2.jpg" | asset_url }}" alt="Main View 2">
+          </div>
+          <div class="gallery-slide">
+            <img src="{{ "facewash3.jpg" | asset_url }}" alt="Main View 3">
+          </div>
+          <div class="gallery-slide">
+            <img src="{{ "facewash4.jpg" | asset_url }}" alt="Main View 4">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function scrollGallery(index, thumb) {
+        const slider = document.getElementById('productSlider');
+        slider.style.transform = `translateX(-${index * 100}%)`;
+        
+        // Update active class
+        document.querySelectorAll('.thumb-item').forEach(t => t.classList.remove('active'));
+        thumb.classList.add('active');
+      }
+    </script>
+
+      <!-- Right Column: Scrollable Content -->
+      <div class="product-details">
+        <div class="product-details-inner">
+          <div class="product-header">
+            <h1 class="product-title">Oil to Foam Cleanser</h1>
+          </div>
+
+          <div class="product-meta">
+            <span class="product-subtitle">Dual Action Refresh</span>
+          </div>
+
+          <div class="product-description">
+            <p>An innovated two-in-one cleanser that starts as a rich oil to dissolve makeup and impurities, then transforms into a soft foam to deeply cleanse and refresh, leaving your skin soft, hydrated, and perfectly pure.</p>
+            <p class="disclaimer">*with continued daily use</p>
+          </div>
+
+          <hr class='divider'>
+          <div class="bogo-inline-section">
+            <p class="bogo-inline-title">SELECT YOUR FREE GIFT (BUY 1 GET 1)</p>
+            <div class="bogo-vertical-scroll">
+              <div class="bogo-inline-card selected" onclick="selectBogo(this)">
+                <input type="radio" name="free_gift" data-gift-handle="night-cream" style="display:none;" checked>
+                <img src="{{ 'night-cream-suite.jpeg' | asset_url }}" alt="Centella Night Cream">
+                <div class="bogo-inline-info"><span class="bogo-inline-name">Centella Night Cream</span><span class="bogo-inline-tag">Night Renewal</span></div>
+                <div class="bogo-select-indicator"></div>
+              </div>
+              <div class="bogo-inline-card" onclick="selectBogo(this)">
+                <input type="radio" name="free_gift" data-gift-handle="face-wash" style="display:none;">
+                <img src="{{ 'facewash1.jpeg' | asset_url }}" alt="Centella Face Wash">
+                <div class="bogo-inline-info"><span class="bogo-inline-name">Centella Face Wash</span><span class="bogo-inline-tag">Pure Start</span></div>
+                <div class="bogo-select-indicator"></div>
+              </div>
+              <div class="bogo-inline-card" onclick="selectBogo(this)">
+                <input type="radio" name="free_gift" data-gift-handle="glow-serum" style="display:none;">
+                <img src="{{ 'glowserum-1.png' | asset_url }}" alt="Centella Serum">
+                <div class="bogo-inline-info"><span class="bogo-inline-name">Centella Serum</span><span class="bogo-inline-tag">Radiance Reset</span></div>
+                <div class="bogo-select-indicator"></div>
+              </div>
+              <div class="bogo-inline-card" onclick="selectBogo(this)">
+                <input type="radio" name="free_gift" data-gift-handle="sunscreen-v2" style="display:none;">
+                <img src="{{ 'v2-sunscreen-1.jpeg' | asset_url }}" alt="Centella Sunscreen SPF60+">
+                <div class="bogo-inline-info"><span class="bogo-inline-name">Centella Sunscreen SPF60+</span><span class="bogo-inline-tag">Daily Shield</span></div>
+                <div class="bogo-select-indicator"></div>
+              </div>
+              <div class="bogo-inline-card" onclick="selectBogo(this)">
+                <input type="radio" name="free_gift" data-gift-handle="tranexamic-serum-v2" style="display:none;">
+                <img src="{{ 'TranexamicSerum1.jpg' | asset_url }}" alt="Tranexamic Brightening Serum">
+                <div class="bogo-inline-info"><span class="bogo-inline-name">Tranexamic Brightening Serum</span><span class="bogo-inline-tag">Even & Illuminate</span></div>
+                <div class="bogo-select-indicator"></div>
+              </div>
+              <div class="bogo-inline-card" onclick="selectBogo(this)">
+                <input type="radio" name="free_gift" data-gift-handle="anti-acne-serum-v2" style="display:none;">
+                <img src="{{ 'v2-antiacne-1.jpeg' | asset_url }}" alt="Anti-Acne Clarifying Serum">
+                <div class="bogo-inline-info"><span class="bogo-inline-name">Anti-Acne Clarifying Serum</span><span class="bogo-inline-tag">Clear & Control</span></div>
+                <div class="bogo-select-indicator"></div>
+              </div>
+              <div class="bogo-inline-card" onclick="selectBogo(this)">
+                <input type="radio" name="free_gift" data-gift-handle="glutathione-cream-v2" style="display:none;">
+                <img src="{{ 'v2-glutathione-1.jpeg' | asset_url }}" alt="Glutathione Brightening Cream">
+                <div class="bogo-inline-info"><span class="bogo-inline-name">Glutathione Brightening Cream</span><span class="bogo-inline-tag">Radiance Reset</span></div>
+                <div class="bogo-select-indicator"></div>
+              </div>
+              <div class="bogo-inline-card" onclick="selectBogo(this)">
+                <input type="radio" name="free_gift" data-gift-handle="renewal-toner-v2" style="display:none;">
+                <img src="{{ 'toner1.jpeg' | asset_url }}" alt="Renewal Toner">
+                <div class="bogo-inline-info"><span class="bogo-inline-name">Renewal Toner</span><span class="bogo-inline-tag">Hydration Lock</span></div>
+                <div class="bogo-select-indicator"></div>
+              </div>
+              <div class="bogo-inline-card" onclick="selectBogo(this)">
+                <input type="radio" name="free_gift" data-gift-handle="renewal-cleanser-v2" style="display:none;">
+                <img src="{{ 'gel cleanser-100.jpg' | asset_url }}" alt="Renewal Cleanser">
+                <div class="bogo-inline-info"><span class="bogo-inline-name">Renewal Cleanser</span><span class="bogo-inline-tag">Gentle Purify</span></div>
+                <div class="bogo-select-indicator"></div>
+              </div>
+              <div class="bogo-inline-card" onclick="selectBogo(this)">
+                <input type="radio" name="free_gift" data-gift-handle="keratin-serum-v2" style="display:none;">
+                <img src="{{ 'keratin-serum.jpg' | asset_url }}" alt="Anti-Frizz Keratin Serum">
+                <div class="bogo-inline-info"><span class="bogo-inline-name">Anti-Frizz Keratin Serum</span><span class="bogo-inline-tag">Smooth & Shine</span></div>
+                <div class="bogo-select-indicator"></div>
+              </div>
+              <div class="bogo-inline-card" onclick="selectBogo(this)">
+                <input type="radio" name="free_gift" data-gift-handle="hair-mist-v2" style="display:none;">
+                <img src="{{ 'hair-mist.jpg' | asset_url }}" alt="Floral Blossom Hair Mist">
+                <div class="bogo-inline-info"><span class="bogo-inline-name">Floral Blossom Hair Mist</span><span class="bogo-inline-tag">Fresh Scent</span></div>
+                <div class="bogo-select-indicator"></div>
+              </div>
+              <div class="bogo-inline-card" onclick="selectBogo(this)">
+                <input type="radio" name="free_gift" data-gift-handle="moisturizer" style="display:none;">
+                <img src="{{ 'moisturizer-100.jpg' | asset_url }}" alt="Hydra Burst Moisturizer">
+                <div class="bogo-inline-info"><span class="bogo-inline-name">Hydra Burst Moisturizer</span><span class="bogo-inline-tag">Deep Moisture</span></div>
+                <div class="bogo-select-indicator"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-actions-grid">
+            <button class="buy-button add-to-cart-btn" style="white-space: nowrap; width: 100%;">ADD TO CART - <span>Rs. 2,620</span></button>
+          </div>
+          
+          <style>
+            .product-actions-grid { display: grid; grid-template-columns: 1fr; gap: 12px; margin-bottom: 30px; }
+            .add-to-cart-btn { background-color: #002d5f !important; color: #fff !important; }
+            .accordion-item { border-top: 1px solid rgba(0,0,0,0.05); border-bottom: 1px solid rgba(0,0,0,0.1); padding: 5px 0; margin-bottom: 5px; }
+            .accordion-item summary { padding: 20px 0; display: flex; justify-content: space-between; cursor: pointer; font-weight: 700; font-size: 0.85rem; color: #5b5a53; list-style: none; }
+            .accordion-item summary::-webkit-details-marker { display: none; }
+            .accordion-item[open] summary span:last-child { transform: rotate(45deg); display: inline-block; }
+            .accordion-content { padding-top: 15px; font-size: 0.85rem; color: #5b5a53; line-height: 1.5; font-weight: 400; }
+            .bogo-vertical-scroll { display: flex; flex-direction: column; gap: 10px; max-height: 350px; overflow-y: auto; padding-right: 10px; }
+            .bogo-inline-card { display: flex; align-items: center; gap: 15px; background: #fff; border: 1px solid #d1d1cf; border-radius: 12px; padding: 10px; cursor: pointer; }
+            .bogo-inline-card.selected { border-color: #5b5a53; background: #fdfdfb; }
+            .bogo-inline-card img { width: 45px; height: 45px; object-fit: contain; }
+            .bogo-inline-info { flex: 1; display: flex; flex-direction: column; }
+            .bogo-inline-name { font-size: 0.82rem; font-weight: 700; }
+            .bogo-inline-tag { font-size: 0.6rem; color: #777; text-transform: uppercase; }
+          </style>
+
+          <div class="product-accordions accordions">
+            <details class="accordion-item">
+              <summary><span>BENEFITS</span><span>+</span></summary><div class="accordion-content"><ul>                  <li>Gently removes dirt, oil, and impurities without stripping the skin</li>
+                  <li>Helps brighten complexion and revive dull, tired-looking skin</li>
+                  <li>Supports hydration for a soft, fresh, and balanced feel</li>
+                  <li>Calms irritation and reduces the look of redness</li>
+                  <li>Helps maintain a healthy skin barrier for daily protection</li>
+                  <li>Provides 72-hour hydration with a moisture-locking formula</li>
+                  <li>Supports collagen to improve skin firmness and elasticity</li>
+                  <li>Helps fade dark spots, acne scars, and discoloration</li>
+                  <li>Repairs and strengthens the skin barrier overnight</li>
+                  <li>Delivers a soft, smooth, poreless finish by morning</li>
+                  <li>Reduces the appearance of fine lines and wrinkles</li>
+                  <li>Promotes a more even-toned, youthful-looking complexion over time</li></ul></div>
+            </details>
+            <details class="accordion-item">
+              <summary><span>APPLICATION</span><span>+</span></summary><div class="accordion-content"><p style="margin:0;">After wetting your face, take a small amount of Centella Face Wash and gently massage onto skin in circular motions for about 60 seconds. Rinse thoroughly with water and pat dry, then follow with your skincare routine.</p></div>
+            </details>
+            <details class="accordion-item">
+              <summary><span>TRICK</span><span>+</span></summary><div class="accordion-content"><ul>                  <li>Use lukewarm water to avoid drying out your skin while cleansing</li>
+                  <li>Massage gently for a full 60 seconds to allow ingredients to work effectively</li>
+                  <li>Follow immediately with serum or moisturizer on damp skin to lock in hydration</li>
+                  <li>Combine with your serum for enhanced repair benefits</li>
+                  <li>Use consistently to see a reduction in fine lines and dark spots</li></ul></div>
+            </details>
+            <details class="accordion-item">
+              <summary><span>KEY INGREDIENTS</span><span>+</span></summary><div class="accordion-content"><ul>                  <li>3-0-Ethyl Ascorbic Acid</li>
+                  <li>Hyaluronic Acid</li>
+                  <li>Rice Extract</li>
+                  <li>Licorice Extract</li>
+                  <li>Morus Alba</li>
+                  <li>Centella Asiatica</li>
+                  <li>Honey</li>
+                  <li>D-Panthenol</li>
+                  <li>Sodium PCA</li>
+                  <li>Glycerin</li>
+                  <li>Apple Extract</li></ul></div>
+            </details>
+          </div>
+
+        </div><!-- End Details -->
+      </div><!-- End Grid -->
+    </div><!-- End Page -->
+
+    <!-- Meet the Product Section -->
+    <section class="meet-product-section">
+      <h2 class="meet-title">Fresh Skin Begins Here</h2>
+      <div class="meet-carousel-wrapper">
+        <div class="carousel-swipe-indicator">SWIPE →</div>
+        <div class="meet-carousel">
+          <img src="{{ "facewash1.jpeg" | asset_url }}" alt="Product Image 1">
+          <img src="{{ "facewash2.jpg" | asset_url }}" alt="Product Image 2">
+          <img src="{{ "facewash3.jpg" | asset_url }}" alt="Product Image 3">
+          <img src="{{ "facewash4.jpg" | asset_url }}" alt="Product Image 4">
+        </div>
+        <!-- Right Arrow Overlay -->
+        <div class="carousel-arrow">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#5b5a53" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- Product Breakdown Section -->
+    <section class="breakdown-section">
+      <div class="breakdown-content">
+        <h2 class="bd-title">Cleanse. Refresh. Glow.</h2>
+        <div class="bd-table">
+          <div class="bd-row">
+            <span class="bd-label">GOOD FOR:</span><span class="bd-val">All skin types, especially dull, sensitive, or acne-prone skin</span>
+          </div>
+          <div class="bd-row">
+            <span class="bd-label">FEELS LIKE:</span><span class="bd-val">A soft, airy lather that cleanses gently without tightness</span>
+          </div>
+          <div class="bd-row">
+            <span class="bd-label">LOOKS LIKE:</span><span class="bd-val">Fresh, clear skin with a natural, healthy glow</span>
+          </div>
+          <div class="bd-row">
+            <span class="bd-label">SMELLS LIKE:</span><span class="bd-val">Light, clean freshness that feels calming and pure</span>
+          </div>
+          <div class="bd-row">
+            <span class="bd-label">FYI:</span><span class="bd-val">Halal-Friendly • Dermatologist-Tested • Non-Drying • Gentle for Daily Use</span>
+          </div>
+        </div>
+      </div>
+      <div class="breakdown-image">
+        <img src="{{ "facewash-plate.jpg" | asset_url }}" alt="Plate View">
+      </div>
+    </section>
+
+
+    <!-- What's Inside Section -->
+    <section class="whats-inside-section">
+      <div class="wi-image-col">
+        <img src="{{ "facewash-spoon.jpg" | asset_url }}" alt="Spoon View" class="wi-image">
+        <button class="wi-full-ingredients-btn">FULL INGREDIENTS LIST</button>
+      </div>
+      <div class="wi-content-col">
+        <div class="wi-vertical-text">what's inside</div>
+        <div class="wi-details">
+          <p class="wi-intro">Our formula is powered by gentle cleansers and glow-boosting hydrators. Meet 2 of our favorites for a fresh, balanced cleanse.</p>
+          
+          <div class="wi-ingredient-block">
+            <h3 class="wi-ingred-title">hyaluronic acid</h3><p class="wi-ingred-desc">a moisture-binding ingredient that helps keep skin hydrated and plump while cleansing, preventing dryness and tightness</p>
+          </div>
+          
+          <hr class="wi-divider">
+          
+          <div class="wi-ingredient-block">
+            <h3 class="wi-ingred-title">3-o-ethyl ascorbic acid</h3><p class="wi-ingred-desc">a stable form of vitamin C that helps brighten the complexion, reduce dullness, and support a more radiant, even look</p>
+          </div>
+          
+          <hr class="wi-divider">
+          
+          <p class="wi-also-made">also made with <strong>RICE EXTRACT, LICORICE EXTRACT, MORUS ALBA, HONEY, D-PANTHENOL, SODIUM PCA, GLYCERIN, APPLE EXTRACT, CENTELLA ASIATICA</strong></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Spread It On For Section -->
+    <section class="spread-section">
+      <div class="spread-content">
+        <span class="spread-label">SPREAD IT ON FOR:</span>
+        <h2 class="spread-heading">fresh, balanced skin</h2>
+        <h2 class="spread-heading">gentle daily cleansing</h2>
+        <h2 class="spread-heading spread-green">natural, radiant glow</h2>
+      </div>
+      <div class="spread-image-col">
+        <img src="{{ "facewash-spread.jpg" | asset_url }}" alt="Spread View">
+      </div>
+    </section>
+
+
+    <!-- Statistics Section -->
+    <section class="stats-section">
+      <div class="stats-content">
+        
+        <div class="stat-item">
+          <div class="stat-pct">97%</div>
+          <div class="stat-desc">SAID THEIR SKIN FELT CLEAN + REFRESHED AFTER EVERY WASH</div>
+        </div>
+        
+        <div class="stat-item">
+          <div class="stat-pct">95%</div>
+          <div class="stat-desc">SAID IT DID NOT DRY OUT THEIR SKIN</div>
+        </div>
+        
+        <div class="stat-item">
+          <div class="stat-pct">94%</div>
+          <div class="stat-desc">SAID THEIR SKIN LOOKED CLEARER + MORE BALANCED</div>
+        </div>
+        
+        <div class="stat-item">
+          <div class="stat-pct">3 out of 4</div>
+          <div class="stat-desc">SAID THEY NOTICED LESS DULLNESS WITH DAILY USE</div>
+        </div>
+        
+        <div class="stat-disclaimer">
+          *Based on a 2-week consumer perception study with consistent daily use.
+        </div>
+      </div>
+      
+      <div class="stats-image">
+        <img src="{{ "facewash2.jpg" | asset_url }}" alt="Percentage View">
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+      <div class="faq-content">
+        <h2 class="faq-title">FAQ</h2>
+        
+        <div class="faq-accordion">
+
+          <div class="faq-item">
+            <div class="faq-qa">
+              <span class="faq-question">Can I use this face wash twice a day?</span>
+              <p class="faq-answer">Yes, it is gentle enough for both morning and evening use without over-drying your skin.</p>
+            </div>
+            <span class="faq-icon">+</span>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-qa">
+              <span class="faq-question">Is it suitable for sensitive skin?</span>
+              <p class="faq-answer">Yes, the formula includes calming ingredients like Centella Asiatica and honey, making it ideal for sensitive skin.</p>
+            </div>
+            <span class="faq-icon">+</span>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-qa">
+              <span class="faq-question">Will it help with acne or breakouts?</span>
+              <p class="faq-answer">It helps cleanse pores, remove excess oil, and soothe irritation, which can support clearer skin over time.</p>
+            </div>
+            <span class="faq-icon">+</span>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-qa">
+              <span class="faq-question">Does it remove makeup?</span>
+              <p class="faq-answer">It can remove light makeup, but for heavy or waterproof makeup, use a remover before cleansing.</p>
+            </div>
+            <span class="faq-icon">+</span>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-qa">
+              <span class="faq-question">Will my skin feel dry after washing?</span>
+              <p class="faq-answer">No, it is designed to maintain hydration and leave your skin feeling soft and balanced.</p>
+            </div>
+            <span class="faq-icon">+</span>
+          </div>
+        </div>
+      </div>
+      <div class="faq-image-col">
+        <img src="{{ "facewash-faq.jpg" | asset_url }}" alt="FAQ View">
+      </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="reviews-section">
+      <h2 style="text-align:center; font-size: 2rem; margin-bottom: 40px; color: #5B5A53; font-weight: 800;">Customer Reviews</h2>
+      <div class="reviews-header">
+        <div class="rv-overall">
+          <div class="rv-score">4.7 <span class="rv-stars">★★★★★</span></div>
+          <div class="rv-avg-text">AVERAGE RATING</div>
+        </div>
+      </div>
+
+      <hr class="rv-divider">
+
+      
+      <div class="review-card">
+        <div class="rv-sidebar">
+          <div class="rv-author">Areeba</div>
+          <div class="rv-verified">Verified Buyer</div>
+        </div>
+        <div class="rv-main">
+          <div class="rv-main-header"><div class="rv-stars">★★★★★</div></div>
+          <div class="rv-title">Verified Selection</div>
+          <div class="rv-body">"I love how gentle this face wash feels on my skin. It cleans properly without making my skin dry, and my face looks fresh after every wash."</div>
+        </div>
+      </div>
+<hr class="rv-divider">
+
+      <div class="review-card">
+        <div class="rv-sidebar">
+          <div class="rv-author">Mehwish</div>
+          <div class="rv-verified">Verified Buyer</div>
+        </div>
+        <div class="rv-main">
+          <div class="rv-main-header"><div class="rv-stars">★★★★★</div></div>
+          <div class="rv-title">Verified Selection</div>
+          <div class="rv-body">"My skin feels so soft and clean after using it. I've noticed less dullness and my complexion looks more even now."</div>
+        </div>
+      </div>
+<hr class="rv-divider">
+
+      <div class="review-card">
+        <div class="rv-sidebar">
+          <div class="rv-author">Kiran</div>
+          <div class="rv-verified">Verified Buyer</div>
+        </div>
+        <div class="rv-main">
+          <div class="rv-main-header"><div class="rv-stars">★★★★★</div></div>
+          <div class="rv-title">Verified Selection</div>
+          <div class="rv-body">"It's very mild yet effective. My skin doesn't feel tight anymore after washing, and it actually feels hydrated."</div>
+        </div>
+      </div>
+<hr class="rv-divider">
+
+      <div class="review-card">
+        <div class="rv-sidebar">
+          <div class="rv-author">Bilal</div>
+          <div class="rv-verified">Verified Buyer</div>
+        </div>
+        <div class="rv-main">
+          <div class="rv-main-header"><div class="rv-stars">★★★★★</div></div>
+          <div class="rv-title">Verified Selection</div>
+          <div class="rv-body">"This face wash gives a really clean feeling without irritation. My skin looks clearer and feels balanced throughout the day."</div>
+        </div>
+      </div>
+<hr class="rv-divider">
+
+      <div class="review-card">
+        <div class="rv-sidebar">
+          <div class="rv-author">Hamza</div>
+          <div class="rv-verified">Verified Buyer</div>
+        </div>
+        <div class="rv-main">
+          <div class="rv-main-header"><div class="rv-stars">★★★★★</div></div>
+          <div class="rv-title">Verified Selection</div>
+          <div class="rv-body">"I've been using it daily and my skin feels healthier overall. It's simple, gentle, and does exactly what I needed."</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Product Selection Carousel -->
+    <section class="section-container product-scroll-section" style="margin-bottom: 60px;">
+      <div class="product-scroll-controls desktop-only">
+        <button class="scroll-arrow prev" id="scroll-prev">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+        </button>
+        <button class="scroll-arrow next" id="scroll-next">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </button>
+      </div>
+
+      <div class="product-collection" id="product-slider"><!-- Card 1: Night Cream -->
+        <div class="card card-rhode" data-category="nightcream">
+          <a href="/products/night-cream" class="card-link-wrapper">
+            <img src="{{ 'night-cream-hover.jpg' | asset_url }}" class="card-hover-bg" alt="Night Cream Hover">
+            <div class="card-rhode-top">
+              <span class="card-brand-label">NIGHT CREAM</span>
+            </div>
+            <div class="card-rhode-image">
+              <img src="{{ 'night-cream.jpg' | asset_url }}" alt="Night Cream" class="product-main-img">
+            </div>
+            <div class="card-rhode-footer">
+              <div class="card-meta">
+                <div class="card-stars">★★★★★ <span class="review-count">(16k)</span></div>
+                <h3 class="card-name">NIGHT CREAM</h3>
+              </div>
+              <a href="/products/night-cream" class="btn-rhode-buy-pill">BUY - RS. 2,675</a>
+            </div>
+            <div class="buy-button-hover" style="position: absolute; bottom: 25px; left: 50%; transform: translateX(-50%) translateY(20px); width: 88%; background: white; color: #2c2b28; padding: 14px 20px; border-radius: 40px; text-align: center; font-size: 0.72rem; font-weight: 800; letter-spacing: 0.05em; opacity: 0; z-index: 20; transition: all 0.4s cubic-bezier(0.16,1,0.3,1); box-shadow: 0 4px 15px rgba(0,0,0,0.08);">
+                BUY NIGHT CREAM - RS. 1,500
+            </div>
+          </a>
+        </div>
+
+        <!-- Card 2: Tranexamic Serum -->
+        <div class="card card-rhode" data-category="serum">
+          <a href="/products/tranexamic-serum" class="card-link-wrapper">
+            <img src="{{ 'tranexamic-meet-1.jpg' | asset_url }}" class="card-hover-bg" alt="Tranexamic Serum Hover">
+            <div class="card-rhode-top">
+              <span class="card-brand-label">serum</span>
+            </div>
+            <div class="card-rhode-image">
+              <img src="{{ 'tranexamic-serum.jpg' | asset_url }}" alt="Tranexamic Serum" class="product-main-img">
+            </div>
+            <div class="card-rhode-footer">
+              <div class="card-meta">
+                <div class="card-stars">★★★★★ <span class="review-count">(16k)</span></div>
+                <h3 class="card-name">TRANEXAMIC SERUM</h3>
+              </div>
+              <a href="/products/tranexamic-serum" class="btn-rhode-buy-pill">BUY - RS. 2,740</a>
+            </div>
+            <div class="buy-button-hover">
+                BUY TRANEXAMIC - RS. 1,500
+            </div>
+          </a>
+        </div>
+
+        <!-- Card 3: Keratin Serum -->
+        <div class="card card-rhode" data-category="haircare">
+          <a href="/products/keratin-serum" class="card-link-wrapper">
+            <img src="{{ 'keratin-serum-hover.jpg' | asset_url }}" class="card-hover-bg" alt="Keratin Serum Hover">
+            <div class="card-rhode-top">
+              <span class="card-brand-label">haircare</span>
+            </div>
+            <div class="card-rhode-image">
+              <img src="{{ 'keratin-serum.jpg' | asset_url }}" alt="Keratin Serum" class="product-main-img">
+            </div>
+            <div class="card-rhode-footer">
+              <div class="card-meta">
+                <div class="card-stars">★★★★★ <span class="review-count">(16k)</span></div>
+                <h3 class="card-name">KERATIN SERUM</h3>
+              </div>
+              <a href="/products/keratin-serum" class="btn-rhode-buy-pill">BUY - RS. 1,500</a>
+            </div>
+            <div class="buy-button-hover" style="position: absolute; bottom: 25px; left: 50%; transform: translateX(-50%) translateY(20px); width: 88%; background: white; color: #2c2b28; padding: 14px 20px; border-radius: 40px; text-align: center; font-size: 0.72rem; font-weight: 800; letter-spacing: 0.05em; opacity: 0; z-index: 20; transition: all 0.4s cubic-bezier(0.16,1,0.3,1); box-shadow: 0 4px 15px rgba(0,0,0,0.08);">
+                BUY KERATIN SERUM - RS. 1,500
+            </div>
+          </a>
+        </div>
+
+        <!-- Card 4: Glow Serum -->
+        <div class="card card-rhode" data-category="serum">
+          <a href="/products/glow-serum" class="card-link-wrapper">
+            <img src="{{ 'glow-serum-hover.jpg' | asset_url }}" class="card-hover-bg" alt="Glow Serum Hover">
+            <div class="card-rhode-top">
+              <span class="card-brand-label">serum</span>
+            </div>
+            <div class="card-rhode-image">
+              <img src="{{ 'glow-serum-100.jpg' | asset_url }}" alt="Glow Serum" class="product-main-img">
+            </div>
+            <div class="card-rhode-footer">
+              <div class="card-meta">
+                <div class="card-stars">★★★★★ <span class="review-count">(16k)</span></div>
+                <h3 class="card-name">GLOW SERUM</h3>
+              </div>
+              <a href="/products/glow-serum" class="btn-rhode-buy-pill">BUY - RS. 2,645</a>
+            </div>
+            <div class="buy-button-hover">
+                BUY GLOW SERUM - RS. 1,500
+            </div>
+          </a>
+        </div>
+
+        <!-- Card 5: Glutathione Cream -->
+        <div class="card card-rhode" data-category="repair">
+          <a href="/products/glutathione-cream" class="card-link-wrapper">
+            <img src="{{ 'deep-hydration-100.jpg' | asset_url }}" class="card-hover-bg" alt="Glutathione Cream Hover">
+            <div class="card-rhode-top">
+              <span class="card-brand-label">repair</span>
+            </div>
+            <div class="card-rhode-image">
+              <img src="{{ 'glutathione-cream-100.jpg' | asset_url }}" alt="Glutathione Cream" class="product-main-img">
+            </div>
+            <div class="card-rhode-footer">
+              <div class="card-meta">
+                <div class="card-stars">★★★★★ <span class="review-count">(16k)</span></div>
+                <h3 class="card-name">GLUTATHIONE CREAM</h3>
+              </div>
+              <a href="/products/glutathione-cream" class="btn-rhode-buy-pill">BUY - RS. 2,640</a>
+            </div>
+            <div class="buy-button-hover">
+                BUY GLUTATHIONE - RS. 1,500
+            </div>
+          </a>
+        </div>
+
+        <!-- Card 6: Hair Mist -->
+        <div class="card card-rhode" data-category="haircare">
+          <a href="/products/hair-mist" class="card-link-wrapper">
+            <div class="card-rhode-top">
+              <span class="card-brand-label">haircare</span>
+            </div>
+            <div class="card-rhode-image">
+              <img src="{{ 'hair-mist.jpg' | asset_url }}" alt="Hair Mist" class="product-main-img">
+            </div>
+            <div class="card-rhode-footer">
+              <div class="card-meta">
+                <div class="card-stars">★★★★★ <span class="review-count">(16k)</span></div>
+                <h3 class="card-name">HAIR MIST</h3>
+              </div>
+              <a href="/products/hair-mist" class="btn-rhode-buy-pill">BUY - RS. 1,500</a>
+            </div>
+          </a>
+        </div>
+
+        <!-- Card 7: Face Wash -->
+        <div class="card card-rhode" data-category="cleanser">
+          <a href="/products/face-wash" class="card-link-wrapper">
+            <img src="{{ 'facewash-shot.png' | asset_url }}" class="card-hover-bg" alt="Face Wash Hover">
+            <div class="card-rhode-top">
+              <span class="card-brand-label">cleanser</span>
+            </div>
+            <div class="card-rhode-image">
+              <img src="{{ 'facewash-100.jpg' | asset_url }}" alt="Face Wash" class="product-main-img">
+            </div>
+            <div class="card-rhode-footer">
+              <div class="card-meta">
+                <div class="card-stars">★★★★★ <span class="review-count">(16k)</span></div>
+                <h3 class="card-name">CENTELLA WASH</h3>
+              </div>
+              <a href="/products/face-wash" class="btn-rhode-buy-pill">BUY - RS. 2,620</a>
+            </div>
+            <div class="buy-button-hover">
+                BUY FACE WASH - RS. 1,500
+            </div>
+          </a>
+        </div>
+
+        <!-- Card 8: Anti Acne Serum -->
+        <div class="card card-rhode" data-category="antiacne">
+          <a href="/products/anti-acne-serum" class="card-link-wrapper">
+            <img src="{{ 'hover-anti-acne.png' | asset_url }}" class="card-hover-bg" alt="Anti Acne Hover">
+            <div class="card-rhode-top">
+              <span class="card-brand-label">antiacne</span>
+            </div>
+            <div class="card-rhode-image">
+              <img src="{{ 'anti-acne-100.jpg' | asset_url }}" alt="Anti Acne Serum" class="product-main-img">
+            </div>
+            <div class="card-rhode-footer">
+              <div class="card-meta">
+                <div class="card-stars">★★★★★ <span class="review-count">(16k)</span></div>
+                <h3 class="card-name">ANTI ACNE SERUM</h3>
+              </div>
+              <a href="/products/anti-acne-serum" class="btn-rhode-buy-pill">BUY - RS. 1,500</a>
+            </div>
+            <div class="buy-button-hover" style="position: absolute; bottom: 25px; left: 50%; transform: translateX(-50%) translateY(20px); width: 88%; background: white; color: #2c2b28; padding: 14px 20px; border-radius: 40px; text-align: center; font-size: 0.72rem; font-weight: 800; letter-spacing: 0.05em; opacity: 0; z-index: 20; transition: all 0.4s cubic-bezier(0.16,1,0.3,1); box-shadow: 0 4px 15px rgba(0,0,0,0.08);">
+                BUY ANTI ACNE - RS. 1,500
+            </div>
+          </a>
+        </div>
+
+        <!-- Card 9: Sunscreen -->
+        <div class="card card-rhode" data-category="sunscreen">
+          <a href="/products/sunscreen" class="card-link-wrapper">
+            <div class="card-rhode-top">
+              <span class="card-brand-label">sunscreen</span>
+            </div>
+            <div class="card-rhode-image">
+              <img src="{{ 'sunscreen-100.jpg' | asset_url }}" alt="Sunscreen" class="product-main-img">
+            </div>
+            <div class="card-rhode-footer">
+              <div class="card-meta">
+                <div class="card-stars">★★★★★ <span class="review-count">(16k)</span></div>
+                <h3 class="card-name">SUNSCREEN</h3>
+              </div>
+              <a href="/products/sunscreen" class="btn-rhode-buy-pill">BUY - RS. 2,735</a>
+            </div>
+          </a>
+        </div>
+
+        <!-- Card 10: Renewal Cleanser -->
+        <div class="card card-rhode" data-category="cleanser">
+          <a href="/products/renewal-cleanser" class="card-link-wrapper">
+            <div class="card-rhode-top">
+              <span class="card-brand-label">cleanser</span>
+            </div>
+            <div class="card-rhode-image">
+              <img src="./assets/gel cleanser-100.jpg" alt="Renewal Cleanser" class="product-main-img">
+            </div>
+            <div class="card-rhode-footer">
+              <div class="card-meta">
+                <div class="card-stars">★★★★★ <span class="review-count">(16k)</span></div>
+                <h3 class="card-name">RENEWAL CLEANSER</h3>
+              </div>
+              <a href="/products/renewal-cleanser" class="btn-rhode-buy-pill">BUY - RS. 2,820</a>
+            </div>
+          </a>
+        </div>
+
+        <!-- Card 11: Hydra Burst Moisturizer -->
+        <div class="card card-rhode" data-category="moisturizer">
+          <a href="/products/moisturizer" class="card-link-wrapper">
+            <div class="card-rhode-top">
+              <span class="card-brand-label">moisturizer</span>
+            </div>
+            <div class="card-rhode-image">
+              <img src="{{ 'moisturizer-100.jpg' | asset_url }}" alt="Hydra Burst Moisturizer" class="product-main-img">
+            </div>
+            <div class="card-rhode-footer">
+              <div class="card-meta">
+                <div class="card-stars">★★★★★ <span class="review-count">(16k)</span></div>
+                <h3 class="card-name">HYDRA BURST</h3>
+              </div>
+              <a href="/products/moisturizer" class="btn-rhode-buy-pill">BUY - RS. 2,680</a>
+            </div>
+          </a>
+        </div>
+
+        <!-- Card 12: Renewal Toner -->
+        <div class="card card-rhode" data-category="toner">
+          <a href="/products/renewal-toner" class="card-link-wrapper">
+            <div class="card-rhode-top">
+              <span class="card-brand-label">toner</span>
+            </div>
+            <div class="card-rhode-image">
+              <img src="{{ 'toner1.jpeg' | asset_url }}" alt="Renewal Toner" class="product-main-img">
+            </div>
+            <div class="card-rhode-footer">
+              <div class="card-meta">
+                <div class="card-stars">★★★★★ <span class="review-count">(16k)</span></div>
+                <h3 class="card-name">RENEWAL TONER</h3>
+              </div>
+              <a href="/products/renewal-toner" class="btn-rhode-buy-pill">BUY - RS. 2,780</a>
+            </div>
+          </a>
+        </div>
+
+        <!-- Card 13: Skin Refining Toner -->
+        <div class="card card-rhode" data-category="toner">
+          <a href="/products/skin-refining-toner" class="card-link-wrapper">
+            <div class="card-rhode-top">
+              <span class="card-brand-label">toner</span>
+            </div>
+            <div class="card-rhode-image">
+              <img src="{{ 'essence-white.png' | asset_url }}" alt="Skin Refining Toner" class="product-main-img">
+            </div>
+            <div class="card-rhode-footer">
+              <div class="card-meta">
+                <div class="card-stars">★★★★★ <span class="review-count">(16k)</span></div>
+                <h3 class="card-name">SKIN REFINING TONER</h3>
+              </div>
+              <a href="/products/skin-refining-toner" class="btn-rhode-buy-pill">BUY - RS. 1,500</a>
+            </div>
+          </a>
+        </div>
+
+        <!-- 4 BUNDLE SETS -->
+        <div class="card card-rhode" data-category="set">
+          <a href="/products/e7-complete-glass-skin-set" class="card-link-wrapper">
+            <div class="card-rhode-top">
+              <span class="card-brand-label">SET</span>
+            </div>
+            <div class="card-rhode-image">
+              <div class="product-placeholder-img" style="background: #f2f2f0; height: 100%;"></div>
+            </div>
+            <div class="card-rhode-footer">
+              <div class="card-meta">
+                <div class="card-stars">★★★★★ <span class="review-count">(12k)</span></div>
+                <h3 class="card-name">E7 GLASS SKIN SET</h3>
+              </div>
+              <span class="btn-rhode-buy-pill">BUY - RS. 4,500</span>
+            </div>
+          </a>
+        </div>
+        <div class="card card-rhode" data-category="set">
+          <a href="/products/e7-complete-glass-skin-set" class="card-link-wrapper">
+            <div class="card-rhode-top">
+              <span class="card-brand-label">SET</span>
+            </div>
+            <div class="card-rhode-image">
+              <div class="product-placeholder-img" style="background: #f2f2f0; height: 100%;"></div>
+            </div>
+            <div class="card-rhode-footer">
+              <div class="card-meta">
+                <div class="card-stars">★★★★★ <span class="review-count">(8k)</span></div>
+                <h3 class="card-name">E7 COMPLETE GLASS SKIN SET</h3>
+              </div>
+              <span class="btn-rhode-buy-pill">BUY - RS. 7,500</span>
+            </div>
+          </a>
+        </div>
+        <div class="card card-rhode" data-category="set">
+          <a href="/products/e7-complete-glass-skin-set" class="card-link-wrapper">
+            <div class="card-rhode-top">
+              <span class="card-brand-label">SET</span>
+            </div>
+            <div class="card-rhode-image">
+              <div class="product-placeholder-img" style="background: #f2f2f0; height: 100%;"></div>
+            </div>
+            <div class="card-rhode-footer">
+              <div class="card-meta">
+                <div class="card-stars">★★★★★ <span class="review-count">(5k)</span></div>
+                <h3 class="card-name">E7 HAIR CARE SET</h3>
+              </div>
+              <span class="btn-rhode-buy-pill">BUY - RS. 3,200</span>
+            </div>
+          </a>
+        </div>
+        <div class="card card-rhode" data-category="set">
+          <a href="/products/e7-complete-glass-skin-set" class="card-link-wrapper">
+            <div class="card-rhode-top">
+              <span class="card-brand-label">SET</span>
+            </div>
+            <div class="card-rhode-image">
+              <div class="product-placeholder-img" style="background: #f2f2f0; height: 100%;"></div>
+            </div>
+            <div class="card-rhode-footer">
+              <div class="card-meta">
+                <div class="card-stars">★★★★★ <span class="review-count">(15k)</span></div>
+                <h3 class="card-name">ELARIS 7 KOREAN BRIGHTENING BUNDLE</h3>
+              </div>
+              <span class="btn-rhode-buy-pill">BUY - RS. 5,900</span>
+            </div>
+          </a>
+        </div></div>
+    </section>
+
+
+    <!-- Mobile Sticky Cart -->
+    <div class="mobile-sticky-cart">
+      <button class="buy-button">ADD TO BAG - RS. 2,620</button>
+    </div>
+  </main>
+
+    <style>
+      .site-footer-rhode {
+        background-color: #f2f2ef;
+        color: #7A7973;
+        padding: 80px 40px 40px;
+        border-top: 1px solid rgba(0,0,0,0.05);
+        margin-top: 60px;
+      }
+      .footer-logo-massive {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 80px;
+        padding: 40px 20px;
+      }
+      .logo-text-giant {
+        font-size: 18vw; /* Reduced from 24vw to prevent overflow */
+        font-weight: 800;
+        color: #7A7973;
+        letter-spacing: -0.06em;
+        margin: 0;
+        line-height: 0.7;
+        text-transform: lowercase;
+      }
+      .footer-main-grid {
+        display: grid;
+        grid-template-columns: 1.5fr 1fr 1fr 1fr 1.2fr;
+        gap: 40px;
+        border-top: 1px solid #d1d1cf;
+        padding-top: 60px;
+      }
+      .footer-column h4 {
+        font-size: 0.85rem;
+        font-weight: 800;
+        color: #555;
+        margin-bottom: 24px;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+      }
+      .footer-column ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .footer-column ul li {
+        margin-bottom: 12px;
+      }
+      .footer-column ul li a {
+        font-size: 0.9rem;
+        color: #7A7973;
+        text-decoration: none;
+      }
+      .footer-newsletter-form {
+        display: flex;
+        background: #fff;
+        border: 1px solid rgba(0,0,0,0.1);
+        border-radius: 4px;
+        overflow: hidden;
+        margin-bottom: 16px;
+      }
+      .footer-newsletter-form input {
+        flex: 1;
+        border: none;
+        padding: 12px 16px;
+        outline: none;
+      }
+      .footer-newsletter-form button {
+        background: transparent;
+        border: none;
+        padding: 0 24px;
+        font-size: 0.7rem;
+        font-weight: 800;
+        cursor: pointer;
+      }
+      .footer-bottom-info {
+        margin-top: 60px;
+        padding-top: 20px;
+        border-top: 1px solid rgba(0,0,0,0.05);
+        font-size: 0.8rem;
+      }
+      @media (max-width: 900px) {
+        .footer-main-grid {
+          grid-template-columns: 1fr;
+          gap: 40px;
+        }
+        .logo-text-giant { font-size: 15vw; } /* Even smaller on mobile to be safe */
+      }
+      @media (max-width: 600px) {
+        .footer-main-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+
+    <footer class="site-footer-rhode">
+      <a href="/" class="footer-logo-massive" style="text-decoration:none; display:block; text-align:center;">
+        <h1 class="logo-text-giant">elaris7</h1>
+      </a>
+      <div class="footer-main-grid">
+        <div class="footer-column">
+          <p class="newsletter-intro" style="font-weight:800; color:#333; margin-bottom:10px;">Join us on the road to an effortless glow.</p>
+          <form class="footer-newsletter-form">
+            <input type="email" placeholder="Email Address">
+            <button type="submit">SUBSCRIBE</button>
+          </form>
+          <p style="font-size:0.75rem; opacity:0.8;">By signing up, you agree to our Privacy Policy*.</p>
+        </div>
+        <div class="footer-column">
+          <h4>NAVIGATE</h4>
+          <ul>
+            <li><a href="#">Shop</a></li>
+            <li><a href="#">Our Story</a></li>
+            <li><a href="#">Impact</a></li>
+            <li><a href="#">Where to Find Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>SOCIAL</h4>
+          <ul>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">Youtube</a></li>
+            <li><a href="#">TikTok</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>OFFICIAL</h4>
+          <ul>
+            <li><a href="#">Privacy</a></li>
+            <li><a href="#">Terms</a></li>
+            <li><a href="#">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>SUPPORT</h4>
+          <p style="font-size:0.9rem;">We're here M-F 9am - 5pm PKT.</p>
+          <p style="font-size:0.9rem;">Drop us a note anytime.</p>
+          <div class="footer-bottom-info">
+            &copy; 2026 ELARIS7
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  <style>
+    /* Breakdown Section Styles */
+    .breakdown-section {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    .breakdown-content {
+      background-color: #f3f0ec;
+      border-radius: 14px;
+      padding: 60px 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .bd-title {
+      font-size: 2rem;
+      font-weight: 500;
+      color: #6a6863;
+      margin-top: 0;
+      margin-bottom: 40px;
+      line-height: 1.25;
+      letter-spacing: -0.01em;
+    }
+    .bd-title text {
+      text-transform: uppercase;
+    }
+
+    .bd-table {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .bd-row {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(91,90,83,0.15);
+      padding: 16px 0;
+      align-items: flex-start;
+    }
+    
+    .bd-row:last-child {
+      border-bottom: none;
+    }
+
+    .bd-label {
+      font-weight: 700;
+      font-size: 0.85rem;
+      color: #5b5a53;
+      width: 30%;
+    }
+
+    .bd-val {
+      font-size: 0.85rem;
+      color: #5b5a53;
+      text-align: right;
+      width: 65%;
+      line-height: 1.4;
+    }
+
+    .breakdown-image {
+      border-radius: 14px;
+      overflow: hidden;
+      display: flex;
+    }
+    
+    .breakdown-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    @media (max-width: 900px) {
+      .breakdown-section {
+        grid-template-columns: 1fr;
+      }
+      .breakdown-image {
+        order: 1; /* image on top on mobile */
+      }
+      .bd-title {
+        font-size: 1.6rem;
+      }
+    }
+    /* Meet Product Section Styles */
+    .meet-product-section {
+      background-color: #f3f0ec;
+      border-radius: 14px;
+      padding: 40px;
+      margin-top: 16px;
+    }
+    
+    .meet-title {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #5b5a53;
+      margin: 0 0 32px 0;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+    }
+
+    .meet-carousel-wrapper {
+      position: relative;
+    }
+
+    .meet-carousel {
+      display: flex;
+      gap: 16px;
+      overflow-x: auto;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      padding-bottom: 8px; /* space for potential scroll snapping */
+      scroll-snap-type: x mandatory;
+    }
+    .meet-carousel::-webkit-scrollbar {
+      display: none;
+    }
+
+    .meet-carousel img {
+      flex: 0 0 calc(33.333% - 10.66px);
+      width: 100%;
+      min-width: 260px;
+      height: auto;
+      aspect-ratio: 4/5;
+      object-fit: cover;
+      border-radius: 12px;
+      scroll-snap-align: start;
+    }
+
+    .carousel-arrow {
+      position: absolute;
+      right: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 48px;
+      height: 48px;
+      background: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(4px);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      pointer-events: none; /* Let user scroll normally; arrow is mostly visual hint */
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+
+    /* Product Page Header Overrides (so it doesn't float over content like the homepage) */
+    .site-header {
+      position: relative;
+      background-color: #f3f0ec;
+      padding-bottom: 16px; /* give the header itself some breathing room before the white gap */
+    }
+    .site-header .header-main {
+      position: relative;
+      top: 0;
+      padding-top: 12px;
+    }
+
+    /* Inline specific product styles to ensure rapid testing, will move to styles.css later if preferred */
+    body {
+        margin: 0;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        background-color: #ffffff; /* ensure body is white to create the white gap */
+    }
+    .product-page {
+      padding: 16px; /* 16px padding all around creates the required white gap between header and content */
+    }
+    .product-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 12px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    
+    .product-gallery {
+      position: relative;
+    }
+    .product-gallery-inner {
+      position: sticky;
+      top: 10px;
+      height: calc(100vh - 20px);
+      border-radius: 14px;
+      overflow: hidden;
+    }
+    .main-product-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Right Side Styles */
+    .product-details {
+      background-color: #f3f0ec;
+      border-radius: 14px;
+      min-height: 100vh;
+    }
+    .product-details-inner {
+      padding: 40px;
+    }
+    
+    .product-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+    }
+    
+    .product-title {
+      font-family: inherit;
+      font-weight: 900;
+      font-size: 3rem;
+      letter-spacing: -0.04em;
+      margin: 0;
+      color: #002d5f; /* Deep blue requested by user */
+      transform: scaleX(1.1);
+      transform-origin: left;
+    }
+
+    .award-seal {
+      width: 50px;
+      height: 50px;
+      background: #e32636;
+      border-radius: 50%;
+      color: white;
+      font-size: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-weight: bold;
+      border: 2px dashed #fff;
+    }
+
+    .product-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+    }
+    .product-subtitle {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #5b5a53;
+      letter-spacing: 0.05em;
+    }
+    .product-reviews {
+      font-size: 0.85rem;
+      color: #5b5a53;
+    }
+    
+    .product-description p {
+      font-size: 0.95rem;
+      line-height: 1.5;
+      color: #5b5a53;
+      margin-bottom: 16px;
+    }
+    .disclaimer {
+      font-size: 0.8rem;
+    }
+    
+    .divider {
+      border: none;
+      border-top: 1px solid rgba(91,90,83,0.2);
+      margin: 24px 0;
+    }
+
+    .option-label {
+      font-size: 0.85rem;
+      color: #5b5a53;
+      margin-bottom: 12px;
+    }
+    
+    .size-selector {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+    .size-btn {
+      flex: 1;
+      background: transparent;
+      border: 1px solid rgba(91,90,83,0.5);
+      border-radius: 50px;
+      padding: 12px;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: all 0.2s;
+    }
+    .size-btn.active {
+      border-color: #333;
+      background: #fff;
+    }
+    .size-title {
+      font-weight: 700;
+      color: #333;
+      font-size: 0.9rem;
+    }
+    .size-desc {
+      font-size: 0.75rem;
+      color: #777;
+    }
+
+    .buy-button {
+      width: 100%;
+      background: #fff;
+      border: 1px solid #333;
+      color: #5b5a53;
+      padding: 18px;
+      border-radius: 50px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s;
+      letter-spacing: 0.02em;
+    }
+    .buy-button:hover {
+      background: #333;
+      color: #fff;
+    }
+    
+    .afterpay {
+      font-size: 0.8rem;
+      color: #5b5a53;
+      text-align: left;
+      margin-top: 12px;
+    }
+
+    .core-lineup h3 {
+      font-size: 0.85rem;
+      letter-spacing: 0.05em;
+      color: #5b5a53;
+      margin-bottom: 16px;
+    }
+    .lineup-item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .lineup-item img {
+      width: 70px;
+      border-radius: 8px;
+    }
+    .lineup-title {
+      font-weight: 700;
+      color: #5b5a53;
+      font-size: 0.9rem;
+      margin-right: auto;
+    }
+    .add-lineup-btn {
+      background: transparent;
+      border: 1px solid #5b5a53;
+      padding: 8px 16px;
+      border-radius: 50px;
+      font-weight: 700;
+      color: #5b5a53;
+      cursor: pointer;
+    }
+
+    .p-accordion-header {
+      display: flex;
+      justify-content: space-between;
+      padding: 20px 0;
+      font-weight: 700;
+      color: #5b5a53;
+      border-bottom: 1px solid rgba(91,90,83,0.15);
+      cursor: pointer;
+    }
+    
+    .mobile-sticky-cart {
+      display: none;
+    }
+
+    @media (max-width: 900px) {
+      .product-grid {
+        grid-template-columns: 1fr;
+      }
+      .product-details {
+        min-height: auto;
+      }
+      .product-details-inner {
+        padding: 24px 20px;
+      }
+      .product-gallery-inner {
+        position: relative;
+        top: 0;
+        height: auto;
+        aspect-ratio: 4/5;
+      }
+      .product-title {
+        font-size: 2.3rem;
+        transform: scaleX(1); /* Reset stretch for better fit on small screens */
+      }
+      .mobile-sticky-cart {
+        display: block;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(8px);
+        padding: 16px;
+        border-top: 1px solid #e1ded9;
+        z-index: 100;
+        box-sizing: border-box;
+      }
+      .mobile-sticky-cart .buy-button {
+        width: 100%;
+        margin: 0;
+        padding: 16px;
+        background: #333;
+        color: #fff;
+        border: 1px solid #333;
+        font-size: 0.95rem;
+        letter-spacing: 0.05em;
+      }
+      .product-page {
+        padding: 0;
+        padding-bottom: 90px;
+      }
+    }
+    /* Video Action Section Styles */
+    .video-action-section {
+      position: relative;
+      margin-top: 16px;
+      border-radius: 14px;
+      overflow: hidden;
+      height: 500px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .video-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 1;
+    }
+
+    .video-overlay {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .video-text {
+      font-size: 1.8rem;
+      font-weight: 500;
+      margin: 0;
+      letter-spacing: 0.02em;
+    }
+
+    .video-play-btn {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.45);
+      backdrop-filter: blur(8px);
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background-color 0.3s ease;
+    }
+    
+    .video-play-btn:hover {
+      background-color: rgba(255, 255, 255, 0.6);
+    }
+
+    .video-play-btn svg {
+      fill: #fff;
+      width: 24px;
+      height: 24px;
+      margin-left: 4px; /* Optically center a play triangle */
+    }
+
+    @media (max-width: 768px) {
+      .video-action-section {
+        height: 350px;
+        margin-top: 0;
+        border-radius: 0;
+      }
+      .video-text {
+        font-size: 1.4rem;
+      }
+    }
+
+    /* What's Inside Section */
+    .whats-inside-section {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    .wi-image-col {
+      position: relative;
+      border-radius: 14px;
+      overflow: hidden;
+      display: flex;
+    }
+
+    .wi-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .wi-full-ingredients-btn {
+      position: absolute;
+      top: 24px;
+      right: 24px;
+      background: transparent;
+      border: 1px solid #fff;
+      color: #fff;
+      border-radius: 50px;
+      padding: 8px 24px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      cursor: pointer;
+      letter-spacing: 0.05em;
+      transition: all 0.2s;
+    }
+    
+    .wi-full-ingredients-btn:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    .wi-content-col {
+      background-color: #f3f0ec;
+      border-radius: 14px;
+      display: flex;
+      padding: 60px 40px;
+    }
+
+    .wi-vertical-text {
+      writing-mode: vertical-rl;
+      font-family: inherit;
+      font-weight: 900;
+      font-size: 2.2rem;
+      color: #7a7873;
+      letter-spacing: -0.04em;
+      margin-right: 40px;
+      text-transform: lowercase;
+    }
+
+    .wi-details {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      flex: 1;
+    }
+
+    .wi-intro {
+      font-size: 0.95rem;
+      color: #5b5a53;
+      line-height: 1.5;
+      margin: 0 0 32px 0;
+    }
+
+    .wi-ingredient-block {
+      margin-bottom: 24px;
+    }
+
+    .wi-ingred-title {
+      font-family: inherit;
+      font-weight: 900;
+      font-size: 1.6rem;
+      color: #7a7873;
+      letter-spacing: -0.02em;
+      margin: 0 0 8px 0;
+      transform: scaleX(1.1);
+      transform-origin: left;
+    }
+
+    .wi-ingred-desc {
+      font-size: 0.9rem;
+      color: #5b5a53;
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    .wi-divider {
+      border: none;
+      border-top: 1px solid rgba(91,90,83,0.2);
+      margin: 0 0 24px 0;
+      width: 100%;
+    }
+
+    .wi-also-made {
+      font-size: 0.85rem;
+      color: #5b5a53;
+      line-height: 1.5;
+      margin: 0;
+    }
+    .wi-also-made strong {
+      font-weight: 700;
+    }
+
+    @media (max-width: 900px) {
+      .whats-inside-section {
+        grid-template-columns: 1fr;
+        margin-top: 0;
+        gap: 0;
+      }
+      .wi-image-col {
+        order: 1;
+        border-radius: 0;
+      }
+      .wi-vertical-text {
+        writing-mode: horizontal-tb;
+        margin-right: 0;
+        margin-bottom: 24px;
+      }
+      .wi-content-col {
+        flex-direction: column;
+        padding: 40px 24px;
+        border-radius: 0;
+      }
+    }
+
+    /* Spread It On For Section */
+    .spread-section {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    .spread-content {
+      background-color: #f3f0ec;
+      border-radius: 14px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 60px 40px;
+      text-align: center;
+    }
+
+    .spread-label {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #6a6863;
+      margin-bottom: 24px;
+      letter-spacing: 0.02em;
+    }
+
+    .spread-heading {
+      font-family: inherit;
+      font-weight: 900;
+      font-size: 3.5rem;
+      color: #8c8a86;
+      line-height: 1;
+      margin: 0 0 12px 0;
+      letter-spacing: -0.04em;
+      transform: scaleX(1.1);
+    }
+    
+    .spread-heading.spread-green {
+      color: #002d5f;
+    }
+
+    .spread-image-col {
+      border-radius: 14px;
+      overflow: hidden;
+      display: flex;
+    }
+    
+    .spread-image-col img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    @media (max-width: 900px) {
+      .spread-section {
+        grid-template-columns: 1fr;
+        margin-top: 0;
+        gap: 0;
+      }
+      .spread-image-col {
+        order: 1;
+        border-radius: 0;
+      }
+      .spread-content {
+        padding: 40px 24px;
+        border-radius: 0;
+      }
+      .spread-heading {
+        font-size: 2.5rem;
+      }
+    }
+    
+    /* Statistics Section */
+    .stats-section {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    .stats-content {
+      background-color: #f3f0ec;
+      border-radius: 14px;
+      padding: 60px 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .stat-item {
+      margin-bottom: 36px;
+    }
+
+    .stat-pct {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #002d5f; /* Deep blue requested by user */
+      margin-bottom: 6px;
+      letter-spacing: -0.02em;
+    }
+
+    .stat-desc {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #7a7873;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      line-height: 1.4;
+    }
+
+    .stat-disclaimer {
+      margin-top: 12px;
+      font-size: 0.85rem;
+      color: #7a7873;
+    }
+
+    .stats-image {
+      border-radius: 14px;
+      overflow: hidden;
+      display: flex;
+    }
+    
+    .stats-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    @media (max-width: 900px) {
+      .stats-section {
+        grid-template-columns: 1fr;
+        margin-top: 0;
+        gap: 0;
+      }
+      .stats-image {
+        order: 1; 
+        border-radius: 0;
+      }
+      .stats-content {
+        padding: 40px 24px;
+        border-radius: 0;
+      }
+    }
+
+    /* FAQ Section */
+    .faq-section {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    .faq-content {
+      background-color: #f3f0ec;
+      border-radius: 14px;
+      padding: 60px 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .faq-title {
+      font-size: 2.2rem;
+      font-weight: 400; /* Regular sans-serif title */
+      color: #6a6863;
+      margin: 0 0 8px 0;
+      letter-spacing: -0.02em;
+    }
+
+    .faq-subtitle {
+      font-size: 0.95rem;
+      color: #5b5a53;
+      margin: 0 0 32px 0;
+    }
+
+    .faq-accordion {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .faq-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 0;
+      border-bottom: 1px solid rgba(91,90,83,0.15);
+      cursor: pointer;
+    }
+    
+    .faq-item:first-child {
+      border-top: 1px solid rgba(91,90,83,0.15);
+    }
+
+    .faq-question {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #7a7873;
+      letter-spacing: 0.05em;
+    }
+
+    .faq-icon {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background-color: #9c9a96;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      font-weight: 300;
+      line-height: 1;
+      padding-bottom: 2px;
+    }
+
+    .faq-image-col {
+      border-radius: 14px;
+      overflow: hidden;
+      display: flex;
+    }
+    
+    .faq-image-col img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    @media (max-width: 900px) {
+      .faq-section {
+        grid-template-columns: 1fr;
+      }
+      .faq-image-col {
+        order: 1;
+      }
+      .faq-content {
+        padding: 40px 24px;
+      }
+    }
+
+    /* Reviews Section Styles */
+    .reviews-section {
+      background-color: #f3f0ec;
+      border-radius: 14px;
+      padding: 40px;
+      margin-top: 16px;
+      margin-bottom: 60px;
+      color: #5b5a53;
+    }
+
+    .reviews-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 24px;
+    }
+
+    .rv-overall {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .rv-score {
+      font-size: 1.2rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 4px;
+    }
+
+    .rv-stars {
+      color: #72716a; /* dark grayish star */
+      font-size: 1.1rem;
+      letter-spacing: 2px;
+    }
+
+    .rv-avg-text {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #7a7873;
+    }
+
+    .rv-count {
+      font-size: 0.8rem;
+      color: #7a7873;
+      margin-top: 2px;
+    }
+
+    .rv-controls {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .rv-btn, .rv-select {
+      background: transparent;
+      border: 1px solid #c9c7c3;
+      border-radius: 40px;
+      padding: 6px 16px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #5b5a53;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .rv-select-wrapper {
+      position: relative;
+    }
+    
+    .rv-select {
+      appearance: none;
+      padding-right: 32px;
+    }
+
+    .rv-divider {
+      border: none;
+      border-top: 1px solid #e1ded9;
+      margin: 24px 0;
+    }
+
+    .review-card {
+      display: flex;
+      gap: 40px;
+    }
+
+    .rv-sidebar {
+      flex: 0 0 250px;
+    }
+
+    .rv-author {
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+
+    .rv-verified {
+      font-size: 0.8rem;
+      color: #5b5a53;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      margin-bottom: 20px;
+    }
+
+    .rv-meta-block {
+      margin-bottom: 16px;
+      font-size: 0.8rem;
+      line-height: 1.4;
+    }
+
+    .rv-meta-label {
+      font-weight: 700;
+      color: #5b5a53;
+    }
+
+    .rv-meta-val {
+      color: #7a7873;
+    }
+
+    .rv-meta-link {
+      color: #7a7873;
+      text-decoration: underline;
+    }
+
+    .rv-main {
+      flex: 1;
+    }
+
+    .rv-main-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+
+    .rv-date {
+      font-size: 0.75rem;
+      color: #7a7873;
+    }
+
+    .rv-title {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .rv-body {
+      font-size: 0.9rem;
+      line-height: 1.5;
+      color: #5b5a53;
+      margin-bottom: 24px;
+    }
+
+    .rv-slider-section {
+      margin-bottom: 32px;
+      max-width: 400px;
+    }
+
+    .rv-slider-title {
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .rv-slider-bar {
+      height: 24px;
+      display: flex;
+      align-items: center;
+      position: relative;
+    }
+
+    .rv-slider-track {
+      width: 100%;
+      height: 4px;
+      background-color: #e1ded9;
+      position: relative;
+    }
+
+    .rv-slider-tick {
+      position: absolute;
+      top: -4px;
+      width: 2px;
+      height: 12px;
+      background-color: #c9c7c3;
+    }
+
+    .rv-slider-handle {
+      position: absolute;
+      top: -6px;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background-color: #5b5a53;
+      transform: translateX(-50%);
+    }
+
+    .rv-slider-labels {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.75rem;
+      color: #7a7873;
+      margin-top: 4px;
+    }
+
+    .rv-helpful {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 12px;
+      font-size: 0.75rem;
+      color: #7a7873;
+    }
+
+    .rv-helpful button {
+      background: none;
+      border: none;
+      color: #7a7873;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 0.75rem;
+    }
+
+    .rv-footer {
+      display: flex;
+      justify-content: center;
+      margin-top: 16px;
+    }
+
+    .btn-show-more {
+      background: transparent;
+      border: 1px solid #c9c7c3;
+      border-radius: 40px;
+      padding: 10px 40px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #5b5a53;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+    .btn-show-more:hover {
+      background-color: #e1ded9;
+    }
+
+    @media (max-width: 900px) {
+      .review-card {
+        flex-direction: column;
+        gap: 20px;
+      }
+      .rv-sidebar {
+        flex: auto;
+      }
+      .reviews-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+      }
+    }
+
+    /* Cross-Sell Section */
+    .cross-sell-section {
+      margin-top: 60px;
+      margin-bottom: 0px;
+    }
+
+    .cross-sell-title {
+      font-size: 2rem;
+      font-weight: 500;
+      color: #6a6863;
+      margin-bottom: 24px;
+      letter-spacing: -0.02em;
+    }
+
+    @media (max-width: 768px) {
+      .meet-carousel img {
+        flex: 0 0 85% !important;
+        min-width: unset !important;
+        scroll-snap-align: start;
+      }
+      .meet-carousel {
+        padding-left: 16px;
+        scroll-padding-left: 16px;
+      }
+      .carousel-swipe-indicator {
+        display: block;
+        text-align: right;
+        font-size: 0.75rem;
+        font-weight: 800;
+        color: #7a7873;
+        padding-right: 16px;
+        margin-bottom: 12px;
+        letter-spacing: 0.05em;
+      }
+      .carousel-arrow {
+        display: none;
+      }
+    }
+    @media (min-width: 769px) {
+      .carousel-swipe-indicator {
+        display: none;
+      }
+    }
+    /* Category Navigation Bar */
+    .category-bar {
+      padding: 20px 12px 15px;
+    }
+
+    .category-list {
+      display: flex;
+      gap: 10px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+
+    .category-list::-webkit-scrollbar { display: none; }
+
+    .cat-link {
+      font-size: 0.65rem;
+      font-weight: 700;
+      color: #5b5a53;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 8px 18px;
+      border: 1px solid #d1d1cf;
+      border-radius: 50px;
+      transition: all 0.3s ease;
+      white-space: nowrap;
+      display: inline-block;
+    }
+
+    .cat-link.active {
+      background-color: #5b5a53;
+      color: #fff;
+      border-color: #5b5a53;
+    }
+
+    @media (max-width: 768px) {
+      .category-bar {
+        padding: 15px 16px;
+      }
+    }
+
+    /* Product Selection Carousel */
+    .product-scroll-section {
+      position: relative;
+      margin-top: 20px;
+    }
+
+    .product-scroll-controls {
+      position: absolute;
+      top: 50%;
+      left: 15px;
+      right: 15px;
+      transform: translateY(-50%);
+      display: flex;
+      justify-content: space-between;
+      pointer-events: none;
+      z-index: 500;
+    }
+
+    .scroll-arrow {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: #ffffff;
+      border: 1px solid rgba(0,0,0,0.06);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      pointer-events: auto;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+      opacity: 1;
+    }
+
+    .scroll-arrow svg {
+      color: #333;
+      stroke-width: 2.5px;
+      width: 22px;
+      height: 22px;
+    }
+
+    .scroll-arrow:hover {
+      background: #fff;
+      transform: scale(1.1);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+    }
+
+    .product-collection {
+      display: flex;
+      gap: 16px;
+      overflow-x: auto;
+      scrollbar-width: none;
+      scroll-behavior: smooth;
+      padding: 10px 40px 30px;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .product-collection::-webkit-scrollbar { display: none; }
+
+    /* High Fidelity Product Cards (Rhode Style) */
+    .card-rhode {
+      flex: 0 0 30%;
+      min-width: 330px;
+      height: 600px;
+      background-color: #f6f5f3;
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      scroll-snap-align: start;
+      text-decoration: none;
+    }
+
+    .card-rhode:hover {
+      background-color: #f0eeeb;
+    }
+
+    .card-link-wrapper {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      padding: 24px;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .card-hover-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      z-index: 20;
+      pointer-events: none;
+      transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .card-rhode:hover .card-hover-bg {
+      opacity: 1;
+    }
+
+    .card-rhode-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 20px;
+      position: relative;
+      z-index: 10;
+    }
+
+    .card-brand-label {
+      font-size: 3.2rem;
+      font-weight: 900;
+      letter-spacing: -0.06em;
+      text-transform: lowercase;
+      color: #2c2b28;
+      line-height: 0.9;
+    }
+
+    .card-rhode-image {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      padding: 0;
+      overflow: hidden;
+    }
+
+    .product-main-img {
+      max-height: 380px;
+      max-width: 100%;
+      object-fit: contain;
+      transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.5s ease;
+    }
+
+    .card-rhode:hover .product-main-img {
+      opacity: 0;
+      transform: scale(1.05);
+    }
+
+    .card-rhode-footer {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: auto;
+      transition: opacity 0.3s ease;
+    }
+
+    .card-rhode:hover .card-rhode-footer {
+      opacity: 0;
+    }
+
+    .card-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .card-stars {
+      font-size: 0.65rem;
+      color: #333;
+      letter-spacing: 0.1em;
+    }
+
+    .review-count {
+      color: #7A7973;
+      margin-left: 4px;
+    }
+
+    .card-name {
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #333;
+    }
+
+    .btn-rhode-buy-pill {
+      width: 100%;
+      padding: 10px;
+      background: transparent;
+      border: 1px solid #333;
+      color: #333;
+      border-radius: 50px;
+      text-align: center;
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      transition: all 0.3s ease;
+    }
+
+    /* Buy Button Pop-up */
+    .buy-button-hover {
+      position: absolute;
+      bottom: 25px;
+      left: 50%;
+      transform: translateX(-50%) translateY(20px);
+      width: auto;
+      min-width: 80%;
+      white-space: nowrap;
+      background: white;
+      color: #2c2b28;
+      padding: 11px 24px;
+      border-radius: 40px;
+      text-align: center;
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      opacity: 0;
+      z-index: 30;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      border: 1px solid rgba(0,0,0,0.05);
+    }
+
+    .card-rhode:hover .buy-button-hover {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    @media (max-width: 768px) {
+      .card-rhode {
+        flex: 0 0 80%;
+        height: auto;
+        min-width: unset;
+        min-height: 480px;
+        overflow: visible !important;
+      }
+      .card-brand-label {
+        font-size: 1.8rem;
+      }
+      .product-collection {
+        padding: 10px 16px 30px;
+      }
+    }
+  </style>
+  <script src="./assets/script.js" defer></script>
+
+                    
+          <script>
+            // BOGO Selection Logic
+            function selectBogo(card) {
+                document.querySelectorAll('.bogo-inline-card').forEach(c => c.classList.remove('selected'));
+                card.classList.add('selected');
+                const input = card.querySelector('input[type="radio"]');
+                if(input) {
+                    input.checked = true;
+                }
+            }
+
+            const handleToIdMap = {
+                'glow-serum': '{{ all_products["glow-serum"].variants.first.id }}',
+                'sunscreen-v2': '{{ all_products["sunscreen-v2"].variants.first.id }}',
+                'face-wash': '{{ all_products["face-wash"].variants.first.id }}',
+                'tranexamic-serum-v2': '{{ all_products["tranexamic-serum-v2"].variants.first.id }}',
+                'anti-acne-serum-v2': '{{ all_products["anti-acne-serum-v2"].variants.first.id }}',
+                'night-cream': '{{ all_products["night-cream"].variants.first.id }}',
+                'glutathione-cream-v2': '{{ all_products["glutathione-cream-v2"].variants.first.id }}',
+                'renewal-toner-v2': '{{ all_products["renewal-toner-v2"].variants.first.id }}',
+                'renewal-cleanser-v2': '{{ all_products["renewal-cleanser-v2"].variants.first.id }}',
+                'keratin-serum-v2': '{{ all_products["keratin-serum-v2"].variants.first.id }}',
+                'hair-mist-v2': '{{ all_products["hair-mist-v2"].variants.first.id }}',
+                'moisturizer': '{{ all_products["moisturizer"].variants.first.id }}'
+            };
+
+            // Main Add to Cart Logic
+            document.querySelector('.add-to-cart-btn')?.addEventListener('click', function(e) {
+                e.preventDefault();
+                const btn = this;
+                const originalText = btn.innerHTML;
+                btn.innerHTML = 'ADDING...';
+                btn.disabled = true;
+
+                const mainVariantId = "{{ product.variants.first.id }}";
+                const selectedGift = document.querySelector('input[name="free_gift"]:checked');
+                let items = [];
+
+                if (selectedGift) {
+                    const giftHandle = selectedGift.getAttribute('data-gift-handle');
+                    const giftVariantId = handleToIdMap[giftHandle];
+                    
+                    if (giftVariantId && giftVariantId !== '') {
+                        items = [
+                            { id: mainVariantId, quantity: 1, properties: { '_bogo': 'true' } },
+                            { id: giftVariantId, quantity: 1, properties: { '_bogo': 'true' } }
+                        ];
+                    } else {
+                        items = [{ id: mainVariantId, quantity: 1 }];
+                    }
+                } else {
+                    items = [{ id: mainVariantId, quantity: 1 }];
+                }
+                
+                fetch('/cart/add.js', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ items: items })
+                })
+                .then(response => {
+                    if (!response.ok) throw new Error('Add to cart failed');
+                    return response.json();
+                })
+                .then(data => {
+                    window.location.href = '/cart';
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('Error adding to cart. Please try again.');
+                    btn.innerHTML = originalText;
+                    btn.disabled = false;
+                });
+            });
+          </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
