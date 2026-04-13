@@ -270,8 +270,11 @@ document.addEventListener('DOMContentLoaded', () => {
            }
         }
         if (cleanTarget.includes('brightening')) {
-           if (itemTitle.includes('tranexamic') || itemTitle.includes('glutathione') || itemTitle.includes('toner') || itemTitle.includes('serum') || itemTitle.includes('brightening')) {
-              matches = true;
+           const isExcluded = itemTitle.includes('skin refining') || itemTitle.includes('anti frizz') || itemTitle.includes('centella');
+           if (!isExcluded) {
+              if (itemTitle.includes('tranexamic') || itemTitle.includes('glutathione') || itemTitle.includes('toner') || itemTitle.includes('serum') || itemTitle.includes('brightening') || itemTitle.includes('renewal')) {
+                 matches = true;
+              }
            }
         }
         if (cleanTarget.includes('acne')) {
