@@ -2309,7 +2309,7 @@ a { color: inherit; text-decoration: none; }
               <div class="bogo-inline-card" onclick="selectBogo(this)">
                 <div class="bogo-radio"></div>
                 <input type="radio" name="free_gift" data-variant-id="{{ all_products['renewal-cleanser-v2'].variants.first.id }}" data-gift-handle="renewal-cleanser-v2" style="display:none;">
-                <div class="bogo-img-box"><img src="{{ all_products['renewal-cleanser-v2'].featured_image | img_url: '400x400' }}" alt="Renewal Cleanser"></div>
+                <div class="bogo-img-box"><img src="{{ 'rc-gal-1.jpg' | asset_url }}" alt="Renewal Cleanser"></div>
                 <div class="bogo-inline-info">
                   <span class="bogo-inline-name">Renewal Cleanser</span>
                   <div class="bogo-price-line"><span class="bogo-old-price">Rs. 2,820</span><span class="bogo-free-tag">FREE</span></div>
@@ -2525,6 +2525,8 @@ a { color: inherit; text-decoration: none; }
             });</script>
 </body>
 </html>
+
+
 
 
 
