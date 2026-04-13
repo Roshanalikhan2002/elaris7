@@ -1,13 +1,7 @@
-{% layout none %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elaris 7 | Korean Hair Care Bundle</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Lexend:wght@700;800&display=swap" rel="stylesheet">
-    {{ 'styles.css' | asset_url | stylesheet_tag }}
-    <style>
+﻿<style>
+  /* Bundle Page Content Styles */
+  .pdp-wrapper { padding-top: 140px; max-width: 1440px; margin: 0 auto; padding-left: 12px; padding-right: 12px; width: 100%; }
+
         :root {
             --bg-page: #f2f2f1;
             --white: #ffffff;
@@ -107,13 +101,10 @@
             .review-block { grid-template-columns: 1fr; padding: 40px 20px; gap: 40px; }
         }
 
-    </style>
-</head>
-<body>
+    
+</style>
 
-  {% section 'header' %}
-
-  <main class="pdp-wrapper">
+<main class="pdp-wrapper">
     <!-- 1. Top Section -->
     <div class="pdp-main-box">
       <div class="gallery-wrap">
@@ -304,14 +295,5 @@
                 });
             });
           </script>
-</body>
-</html>
 
-
-
-
-
-
-
-
-
+{{ 'script.js' | asset_url | script_tag }}
