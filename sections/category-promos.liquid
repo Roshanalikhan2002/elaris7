@@ -45,16 +45,28 @@
         <h2 class="showcase-title" style="font-size: 1.15rem; font-weight: 800; color: {% if section.settings.white_text %}#ffffff !important{% else %}#5b5a53{% endif %}; margin-bottom: 15px; letter-spacing: -0.01em;">{{ section.settings.product_title | default: 'CENTELLA NIGHT CREAM' | upcase }}</h2>
         
         {%- assign current_variant = section.settings.featured_product.first_available_variant -%}
+        {%- assign p_url = section.settings.featured_product.url -%}
+        
+        {%- if p_url == blank -%}
+          {%- assign p_title = section.settings.product_title | downcase -%}
+          {%- if p_title contains 'brightening' -%}
+            {%- assign p_url = '/products/elaris-7-korean-brightening-bundle' -%}
+          {%- elsif p_title contains 'hair' -%}
+            {%- assign p_url = '/products/elaris-7-korean-hair-care-bundle' -%}
+          {%- elsif p_title contains 'glass' -%}
+            {%- assign p_url = '/products/elaris-7-korean-glass-skin-bundle' -%}
+          {%- endif -%}
+        {%- endif -%}
         
         {%- if section.settings.product_price contains ' ' -%}
           {%- assign prices = section.settings.product_price | split: ' ' -%}
-          <a href="#" class="btn-pill-buy quick-add-btn" 
+          <a href="{{ p_url | default: '#' }}" class="btn-pill-buy {% if current_variant %}quick-add-btn{% endif %}" 
              data-variant-id="{{ current_variant.id }}"
              style="display: inline-block; padding: 10px 24px; border: 1.2px solid {% if section.settings.white_text %}#ffffff !important{% else %}#5b5a53{% endif %}; border-radius: 50px; font-size: 0.75rem; font-weight: 700; color: {% if section.settings.white_text %}#ffffff !important{% else %}#5b5a53{% endif %}; text-decoration: none; transition: opacity 0.2s;">
             BUY BUNDLE — <span style="text-decoration: line-through; opacity: 0.6; margin-right: 8px;">{{ prices[0] }} {{ prices[1] }}</span> {{ prices[2] }} {{ prices[3] }}
           </a>
         {%- else -%}
-          <a href="#" class="btn-pill-buy quick-add-btn"
+          <a href="{{ p_url | default: '#' }}" class="btn-pill-buy {% if current_variant %}quick-add-btn{% endif %}"
              data-variant-id="{{ current_variant.id }}"
              style="display: inline-block; padding: 10px 24px; border: 1.2px solid {% if section.settings.white_text %}#ffffff !important{% else %}#5b5a53{% endif %}; border-radius: 50px; font-size: 0.75rem; font-weight: 700; color: {% if section.settings.white_text %}#ffffff !important{% else %}#5b5a53{% endif %}; text-decoration: none; transition: opacity 0.2s;">
             BUY NOW — {{ section.settings.product_price | default: 'RS. 2,500' }}
