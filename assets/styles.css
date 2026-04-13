@@ -862,13 +862,13 @@ a { color: inherit; text-decoration: none; }
 }
 
 .card-brand-label {
-  font-size: 2.8rem;
-  font-weight: 900;
+  font-size: 2.2rem;
+  font-weight: 800;
   color: #333;
   opacity: 1;
-  text-transform: lowercase;
-  letter-spacing: -0.05em;
-  line-height: 0.9;
+  text-transform: capitalize;
+  letter-spacing: -0.04em;
+  line-height: 1;
   font-family: var(--font-family-body);
 }
 
@@ -1131,36 +1131,27 @@ a { color: inherit; text-decoration: none; }
 }
 
 .card-brand-label {
-  font-size: 3.2rem;
-  font-weight: 900;
-  letter-spacing: -0.06em;
-  text-transform: lowercase;
+  font-size: 2.2rem;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  text-transform: capitalize;
   color: #2c2b28;
   line-height: 1;
 }
 
 @media (max-width: 768px) {
   .card-brand-label {
-    font-size: 1.35rem; /* Small enough for long words like nightcream */
-    letter-spacing: -0.03em;
+    font-size: 1.15rem; /* Reduced size move move */
+    letter-spacing: -0.02em;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    max-width: 60%; /* leaves room for badge on the right */
+    max-width: 100%; /* reset width since badge is gone move moved move move */
   }
 }
 
 .card-badge {
-  background: #2c2b28;
-  color: #fff;
-  font-size: 0.65rem;
-  font-weight: 700;
-  text-transform: lowercase;
-  letter-spacing: 0.04em;
-  padding: 5px 11px;
-  border-radius: 20px;
-  white-space: nowrap;
-  margin-top: 8px;
+  display: none !important;
 }
 
 /* Product image — centered, transparent bg, fills remaining space */
