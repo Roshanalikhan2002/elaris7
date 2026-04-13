@@ -262,7 +262,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // 2. Title-based Keyword matching (Highly Reliable)
         if (cleanTarget.includes('glass')) {
            if (itemTitle.includes('centella') || itemTitle.includes('night cream') || itemTitle.includes('sunscreen') || itemTitle.includes('cleanser') || itemTitle.includes('toner') || itemTitle.includes('moisturizer')) {
-              if (!itemTitle.includes('tranexamic')) matches = true;
+              if (!itemTitle.includes('tranexamic') && !itemTitle.includes('gel')) matches = true;
            }
         }
         if (cleanTarget.includes('brightening')) {
