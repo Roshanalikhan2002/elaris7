@@ -169,20 +169,6 @@
           </div>
         </div>
 
-        <div class="lux-free-delivery-bar">
-          {%- assign free_threshold = 200000 -%}
-          {%- assign remaining = free_threshold | minus: paid_total -%}
-          {%- if remaining > 0 -%}
-            <p class="lux-delivery-text">Add <strong>{{ remaining | money }}</strong> more for FREE shipping</p>
-            <div class="lux-bar-track">
-              {%- assign pct = paid_total | times: 100 | divided_by: free_threshold -%}
-              <div class="lux-bar-fill" style="width: {{ pct }}%"></div>
-            </div>
-          {%- else -%}
-            <p class="lux-delivery-text lux-delivery-achieved">🎉 You've unlocked FREE shipping!</p>
-            <div class="lux-bar-track"><div class="lux-bar-fill" style="width:100%"></div></div>
-          {%- endif -%}
-        </div>
 
         <form action="/checkout" method="post">
           <button type="submit" class="lux-checkout-btn" id="lux-checkout-btn">
