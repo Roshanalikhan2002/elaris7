@@ -64,7 +64,7 @@
     <!-- 1. Top Section -->
     <div class="pdp-main-box">
         <div class="gallery-wrap">
-            <img src="{{ product.featured_image | img_url: 'master' }}" alt="{{ product.title }}">
+            <img src="{{ 'hair-main.jpg' | asset_url }}" alt="{{ product.title }}">
         </div>
         <div class="details-panel">
             <p style="font-size: 11px; font-weight: 700; color: #999; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 20px;">COMPLETE SYSTEM</p>
@@ -95,8 +95,8 @@
 
     <!-- 2. Discovery Section (2 Image) -->
     <section class="discovery-grid">
-        <div class="island-card"><img src="{{ 'v2-hair-spread.jpg' | asset_url }}"></div>
-        <div class="island-card"><img src="{{ 'v2-hair-spoon.jpg' | asset_url }}"></div>
+        <div class="island-card"><img src="{{ 'hairtwoimagesection1.jpg' | asset_url }}"></div>
+        <div class="island-card"><img src="{{ 'hairtwoimagesection2.jpeg' | asset_url }}"></div>
     </section>
 
     <!-- 3. Product Breakdown Section (Text with Image) -->
@@ -115,7 +115,7 @@
                 </div>
             </div>
         </div>
-        <div class="island-card"><img src="{{ 'v2-hair-plate.jpg' | asset_url }}"></div>
+        <div class="island-card"><img src="{{ 'hairtextimage.jpg' | asset_url }}"></div>
     </section>
 
     <!-- 4. Meet the Product Section (4 Image Carousel) -->
@@ -144,7 +144,7 @@
                 </div>
             </div>
         </div>
-        <div class="island-card"><img src="{{ 'v2-hair-faq.jpg' | asset_url }}"></div>
+        <div class="island-card"><img src="{{ 'hairfaq.jpg' | asset_url }}"></div>
     </section>
 </main>
 
