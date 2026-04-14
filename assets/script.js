@@ -326,4 +326,13 @@ document.addEventListener('DOMContentLoaded', () => {
   }, 100);
 
 
+  // --- BACK BUTTON RESET ---
+  window.addEventListener('pageshow', (event) => {
+    // If user returns via back button and button is stuck in "ADDING" state
+    const addBtn = document.querySelector('.add-to-cart-btn');
+    if (addBtn && addBtn.innerHTML.includes('ADDING')) {
+       window.location.reload();
+    }
+  });
+
 });
