@@ -327,12 +327,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   // --- BACK BUTTON RESET ---
-  window.addEventListener('pageshow', (event) => {
-    // If user returns via back button and button is stuck in "ADDING" state
-    const addBtn = document.querySelector('.add-to-cart-btn');
-    if (addBtn && addBtn.innerHTML.includes('ADDING')) {
-       window.location.reload();
-    }
+  // Ensuring the "Add to Bag" button resets when navigating back
+  window.addEventListener('pageshow', () => {
+    const addBtns = document.querySelectorAll('.add-to-cart-btn');
+    addBtns.forEach(btn => {
+      if (btn.innerHTML.includes('ADDING') || btn.innerHTML.includes('Adding')) {
+        window.location.reload();
+      }
+    });
   });
 
 });
