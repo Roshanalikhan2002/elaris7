@@ -56,9 +56,43 @@
       .discovery-grid { grid-template-columns: 1fr; gap: 10px; }
       .island-card { height: 400px; }
     }
+
+    /* Editorial Sections CSS */
+    .meet-product-section { padding: 80px 40px; background: #fff; margin-bottom: 20px; border-radius: 12px; }
+    .meet-title { text-align: center; font-size: 2.5rem; font-weight: 800; color: #5b5a53; margin-bottom: 50px; }
+    .meet-carousel { display: flex; gap: 20px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; }
+    .meet-carousel::-webkit-scrollbar { display: none; }
+    .meet-carousel img { flex: 0 0 23%; min-width: 250px; border-radius: 12px; scroll-snap-align: start; }
+    
+    .breakdown-section { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 20px; min-height: 600px; }
+    .breakdown-content { background: #f2f0ed; border-radius: 12px; padding: 60px; display: flex; flex-direction: column; justify-content: center; }
+    .bd-title { font-size: 2rem; font-weight: 800; color: #5b5a53; margin-bottom: 30px; }
+    .bd-row { display: flex; padding: 15px 0; border-bottom: 1px solid rgba(0,0,0,0.05); gap: 20px; }
+    .bd-label { font-weight: 800; font-size: 0.75rem; color: #5b5a53; width: 120px; text-transform: uppercase; }
+    .bd-val { font-size: 0.9rem; color: #333; flex: 1; }
+    .breakdown-image img { width: 100%; height: 100%; object-fit: cover; border-radius: 12px; }
+
+    .faq-section { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 12px; background: #fff; border-radius: 12px; overflow: hidden; margin-bottom: 60px; }
+    .faq-content { padding: 60px; background: #f2f0ed; }
+    .faq-title { font-size: 2.5rem; font-weight: 800; margin-bottom: 40px; }
+    .faq-item { border-bottom: 1px solid rgba(0,0,0,0.1); padding: 25px 0; display: flex; justify-content: space-between; align-items: flex-start; cursor: pointer; }
+    .faq-qa { flex: 1; }
+    .faq-question { font-size: 1rem; font-weight: 800; color: #333; display: block; margin-bottom: 10px; }
+    .faq-answer { font-size: 0.9rem; color: #5b5a53; line-height: 1.6; display: none; }
+    .faq-item.active .faq-answer { display: block; }
+    .faq-image-col img { width: 100%; height: 100%; object-fit: cover; }
+
+    @media (max-width: 768px) {
+      .meet-product-section { padding: 40px 20px; }
+      .breakdown-section, .faq-section { grid-template-columns: 1fr; }
+      .breakdown-content, .faq-content { padding: 30px 20px; }
+      .meet-carousel img { flex: 0 0 85%; }
+    }
 </style>
 
-<div class="pdp-wrapper">
+  {% section 'header' %}
+
+  <main class="page-wrapper" style="padding-top: 155px;">
     <!-- 1. Top Section -->
     <div class="pdp-main-box">
       <div class="gallery-wrap">
@@ -66,7 +100,7 @@
       </div>
       <div class="details-panel">
         <h1 class="product-title">{{ product.title }}</h1>
-        <div style="font-size: 13px; font-weight: 700; margin-bottom: 30px; letter-spacing: 2px;">? ? ? ? ? (1,850)</div>
+        <div style="font-size: 13px; font-weight: 700; margin-bottom: 30px; letter-spacing: 2px;">★★★★★ (1,620)</div>
         <div style="font-size: 15px; line-height: 1.7; margin-bottom: 40px; color: #333;">{{ product.description }}</div>
         
         <button class="btn-atc add-to-cart-btn" data-variant-id="{{ product.selected_or_first_available_variant.id }}">BUY THE KIT - {{ product.price | money }}</button>
@@ -75,20 +109,90 @@
         <div class="accordion-item" onclick="this.classList.toggle('active')">
           <div class="acc-head">WHAT'S INSIDE <div class="accordion-plus">+</div></div>
           <div class="acc-content">
-            <p>Includes all essential items for this specialized bundle.</p>
+            <p>Our Brightening Bundle features the perfect combination of products to even out skin tone and reveal a natural glow.</p>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- 2. Discovery Section -->
+    <!-- 2. Discovery Section (2 Image) -->
     <section class="discovery-grid">
-      <div class="island-card"><img src="{{ 'twoimagessection1.jpg' | file_img_url: 'master' }}" style="width:100%; height:100%; object-fit:cover;"></div>
-      <div class="island-card"><img src="{{ 'twoimagessection2.jpg' | file_img_url: 'master' }}" style="width:100%; height:100%; object-fit:cover;"></div>
+      <div class="island-card"><img src="{{ 'v2-bright-spread.jpg' | asset_url }}" style="width:100%; height:100%; object-fit:cover;"></div>
+      <div class="island-card"><img src="{{ 'v2-bright-spoon.jpg' | asset_url }}" style="width:100%; height:100%; object-fit:cover;"></div>
     </section>
-  </div>
 
-  <script>
+    <!-- 3. Product Breakdown Section (Text with Image) -->
+    <section class="breakdown-section">
+      <div class="breakdown-content">
+        <h2 class="bd-title">Targeted Brightening Care</h2>
+        <div class="bd-table">
+          <div class="bd-row">
+            <span class="bd-label">GOOD FOR:</span><span class="bd-val">Dull skin, dark spots, and achieving an even skin tone</span>
+          </div>
+          <div class="bd-row">
+            <span class="bd-label">FEELS LIKE:</span><span class="bd-val">A skin-reviving routine that feels energetic and lightweight</span>
+          </div>
+          <div class="bd-row">
+            <span class="bd-label">LOOKS LIKE:</span><span class="bd-val">Radiant, glowing, and more youthful-looking complexion</span>
+          </div>
+          <div class="bd-row">
+            <span class="bd-label">FYI:</span><span class="bd-val">Vitamin C Enriched • Advanced Formula • Daily Use • High Performance</span>
+          </div>
+        </div>
+      </div>
+      <div class="breakdown-image">
+        <img src="{{ 'v2-bright-plate.jpg' | asset_url }}" alt="Bundle Breakdown">
+      </div>
+    </section>
+
+    <!-- 4. Meet the Product Section (4 Image Carousel) -->
+    <section class="meet-product-section">
+      <h2 class="meet-title">Meet the Brightening Essentials</h2>
+      <div class="meet-carousel">
+        <img src="{{ 'v2-bright-1.jpeg' | asset_url }}" alt="Step 1">
+        <img src="{{ 'v2-bright-2.jpg' | asset_url }}" alt="Step 2">
+        <img src="{{ 'v2-bright-3.jpg' | asset_url }}" alt="Step 3">
+        <img src="{{ 'v2-bright-4.jpg' | asset_url }}" alt="Step 4">
+      </div>
+    </section>
+
+    <!-- 5. FAQ Section -->
+    <section class="faq-section">
+      <div class="faq-content">
+        <h2 class="faq-title">FAQ</h2>
+        <div class="faq-accordion">
+          <div class="faq-item" onclick="this.classList.toggle('active')">
+            <div class="faq-qa">
+              <span class="faq-question">How do I use this bundle?</span>
+              <p class="faq-answer">Follow the included step-by-step guide for optimal brightening results.</p>
+            </div>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-item" onclick="this.classList.toggle('active')">
+            <div class="faq-qa">
+              <span class="faq-question">Can I use this with other products?</span>
+              <p class="faq-answer">Yes, it integrates perfectly with your existing skincare routine.</p>
+            </div>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-item" onclick="this.classList.toggle('active')">
+            <div class="faq-qa">
+              <span class="faq-question">When will I see results?</span>
+              <p class="faq-answer">Most users report a visible glow within the first 10 days of use.</p>
+            </div>
+            <span class="faq-icon">+</span>
+          </div>
+        </div>
+      </div>
+      <div class="faq-image-col">
+        <img src="{{ 'v2-bright-faq.jpg' | asset_url }}" alt="FAQ View">
+      </div>
+    </section>
+  </main>
+
+  {% section 'footer' %}
+
+<script>
     // Main Add to Cart Logic
     document.querySelectorAll('.add-to-cart-btn').forEach(btn => {
         btn.addEventListener('click', async function(e) {
