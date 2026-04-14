@@ -2174,6 +2174,201 @@ a { color: inherit; text-decoration: none; }
         function scrollGallery(index, thumb) {
           const slider = document.getElementById('productSlider');
           if (slider) slider.style.transform = `translateX(-${index * 25}%)`;
+.split-cat-grid {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  min-height: 700px;
+}
+
+.split-cat-left, .split-cat-right {
+  flex: 1;
+  border-radius: 14px;
+  overflow: hidden;
+  position: relative;
+}
+
+.split-cat-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.product-showcase-card {
+  width: 100%;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.product-swirl-wrap {
+  width: 100%;
+}
+
+.product-swirl-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.stars-row {
+  font-size: 0.75rem;
+  color: #7A7973;
+  margin-bottom: 12px;
+}
+
+.showcase-title {
+  font-size: 1.1rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  color: #2c2b28;
+  margin-bottom: 6px;
+}
+
+.showcase-subtitle {
+  font-size: 0.85rem;
+  color: #7A7973;
+  margin-bottom: 30px;
+}
+
+.btn-pill-buy {
+  display: inline-block;
+  padding: 16px 40px;
+  border: 1.5px solid #2c2b28;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  color: #2c2b28;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn-pill-buy:hover {
+  background-color: #2c2b28;
+  color: #fff;
+}
+
+.pagination-counter {
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+  font-size: 1.8rem;
+  font-weight: 800;
+  letter-spacing: -0.05em;
+  color: #2c2b28;
+}
+
+/* ── Mobile: seamlessly connected, zero gap ── */
+@media (max-width: 768px) {
+  .split-category-wrapper {
+    margin: 0 0 12px; /* flush to screen edges */
+  }
+
+  .split-cat-grid {
+    flex-direction: column !important; /* Force stack on mobile regardless of flipped class */
+    gap: 0; /* NO gap between image and card */
+    min-height: auto;
+  }
+
+  .split-cat-left,
+  .split-cat-right {
+    min-height: 420px;
+    height: auto;
+    border-radius: 12px;
+    width: 100%;
+    padding: 0;
+  }
+
+  .split-cat-img {
+    width: 100%;
+    height: 100%;
+    min-height: 420px;
+    object-fit: cover;
+    display: block;
+  }
+
+  .pagination-counter {
+    bottom: 20px;
+    right: 20px;
+    font-size: 1.4rem;
+  }
+
+  .product-overlay-details {
+    position: absolute !important;
+    bottom: 16px !important;
+    left: 16px !important;
+    right: auto !important;
+    text-align: left !important;
+    z-index: 10;
+  }
+
+  .product-overlay-details .stars-row {
+    font-size: 0.55rem !important;
+    margin-bottom: 4px !important;
+  }
+
+  .product-overlay-details .showcase-title {
+    font-size: 0.85rem !important;
+    margin-bottom: 10px !important;
+    line-height: 1.2 !important;
+  }
+
+  .product-overlay-details .btn-pill-buy {
+    font-size: 0.6rem !important;
+    padding: 7px 16px !important;
+    border-radius: 50px !important;
+  }
+}
+
+</style>
+  <script src="{{ 'script.js' | asset_url }}" defer></script>
+{{ 'styles.css' | asset_url | stylesheet_tag }}
+</head>
+<body>
+  {% section 'header' %}
+
+  <main class="product-page">
+    <div class="product-grid">
+      <div class="product-gallery">
+        <div class="gallery-thumbnails">
+          <div class="thumb-item active" onmouseover="scrollGallery(0, this)">
+            <img src="{{ 'glutathione-cream-100.jpg' | asset_url }}" alt="Product Jar">
+          </div>
+          <div class="thumb-item" onmouseover="scrollGallery(1, this)">
+            <img src="{{ 'glutathione-meet-1.jpg' | asset_url }}" alt="Model View">
+          </div>
+          <div class="thumb-item" onmouseover="scrollGallery(2, this)">
+            <img src="{{ 'glutathione-meet-3.jpg' | asset_url }}" alt="Label Detail">
+          </div>
+          <div class="thumb-item" onmouseover="scrollGallery(3, this)">
+            <img src="{{ 'glutathione-meet-4.jpg' | asset_url }}" alt="Texture View">
+          </div>
+        </div>
+        <div class="gallery-main-viewport">
+          <div class="gallery-slider" id="productSlider" style="display: flex; transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1); width: 400%; height: 100%;">
+            <div class="gallery-slide" style="min-width: 25%; height: 100%; display: flex; align-items: center; justify-content: center;">
+              <img src="{{ 'glutathione-cream-100.jpg' | asset_url }}" alt="Main View 1">
+            </div>
+            <div class="gallery-slide" style="min-width: 25%; height: 100%; display: flex; align-items: center; justify-content: center;">
+              <img src="{{ 'glutathione-meet-1.jpg' | asset_url }}" alt="Model Focus" style="object-fit: cover !important; width: 100%; height: 100%;">
+            </div>
+            <div class="gallery-slide" style="min-width: 25%; height: 100%; display: flex; align-items: center; justify-content: center;">
+              <img src="{{ 'glutathione-meet-3.jpg' | asset_url }}" alt="Label Detail" style="object-fit: cover !important; width: 100%; height: 100%;">
+            </div>
+            <div class="gallery-slide" style="min-width: 25%; height: 100%; display: flex; align-items: center; justify-content: center;">
+              <img src="{{ 'glutathione-meet-4.jpg' | asset_url }}" alt="Texture View" style="object-fit: cover !important; width: 100%; height: 100%;">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <script>
+        function scrollGallery(index, thumb) {
+          const slider = document.getElementById('productSlider');
+          if (slider) slider.style.transform = `translateX(-${index * 25}%)`;
           document.querySelectorAll('.thumb-item').forEach(t => t.classList.remove('active'));
           if (thumb) thumb.classList.add('active');
         }
@@ -2192,7 +2387,8 @@ a { color: inherit; text-decoration: none; }
             <p>A nourishing brightening cream designed to improve uneven tone, reduce dullness, and support skin repair. It helps fade the look of dark spots, restore radiance, and leave skin smoother and healthier with consistent use.</p>
           </div>
           <hr class='divider'>
-                              <div class="bogo-inline-section">
+          
+          <div class="bogo-inline-section">
             <div class="bogo-header">
                <svg class="bogo-gift-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12v10H4V12M2 7h20v5H2zM12 22V7M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7zM12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg>
                <p class="bogo-inline-title">Choose your item</p>
@@ -2200,7 +2396,7 @@ a { color: inherit; text-decoration: none; }
             <div class="bogo-vertical-scroll">
               <div class="bogo-inline-card selected" onclick="selectBogo(this)">
                 <div class="bogo-radio"></div>
-                <input type="radio" name="free_gift" data-variant-id="{{ all_products['oil-to-foam-cleanser'].variants.first.id }}" data-gift-handle="oil-to-foam-cleanser" style="display:none;" checked>
+                <input type="radio" name="free_gift" data-variant-id="{{ all_products['renewal-cleanser'].selected_or_first_available_variant.id }}" data-gift-handle="renewal-cleanser" style="display:none;" checked>
                 <div class="bogo-img-box"><img src="{{ 'oil-to-foam-main.jpg' | asset_url }}" alt="Oil to Foam Cleanser"></div>
                 <div class="bogo-inline-info">
                   <span class="bogo-inline-name">Oil to Foam Cleanser</span>
@@ -2209,7 +2405,7 @@ a { color: inherit; text-decoration: none; }
               </div>
               <div class="bogo-inline-card" onclick="selectBogo(this)">
                 <div class="bogo-radio"></div>
-                <input type="radio" name="free_gift" data-variant-id="{{ all_products['gel-cleanser'].variants.first.id }}" data-gift-handle="gel-cleanser" style="display:none;">
+                <input type="radio" name="free_gift" data-variant-id="{{ all_products['renewal-cleanser'].selected_or_first_available_variant.id }}" data-gift-handle="renewal-cleanser" style="display:none;">
                 <div class="bogo-img-box"><img src="{{ 'gel cleanser-100.jpg' | asset_url }}" alt="Gel Cleanser"></div>
                 <div class="bogo-inline-info">
                   <span class="bogo-inline-name">Gel Cleanser</span>
@@ -2218,7 +2414,7 @@ a { color: inherit; text-decoration: none; }
               </div>
               <div class="bogo-inline-card" onclick="selectBogo(this)">
                 <div class="bogo-radio"></div>
-                <input type="radio" name="free_gift" data-variant-id="{{ all_products['hair-regrow-spray'].variants.first.id }}" data-gift-handle="hair-regrow-spray" style="display:none;">
+                <input type="radio" name="free_gift" data-variant-id="{{ all_products['hair-regrow-spray'].selected_or_first_available_variant.id }}" data-gift-handle="hair-regrow-spray" style="display:none;">
                 <div class="bogo-img-box"><img src="{{ 'hair-regrow-main.jpeg' | asset_url }}" alt="Hair Regrow Spray"></div>
                 <div class="bogo-inline-info">
                   <span class="bogo-inline-name">Hair Regrow Spray</span>
@@ -2227,7 +2423,7 @@ a { color: inherit; text-decoration: none; }
               </div>
               <div class="bogo-inline-card" onclick="selectBogo(this)">
                 <div class="bogo-radio"></div>
-                <input type="radio" name="free_gift" data-variant-id="{{ all_products['night-cream'].variants.first.id }}" data-gift-handle="night-cream" style="display:none;">
+                <input type="radio" name="free_gift" data-variant-id="{{ all_products['night-cream'].selected_or_first_available_variant.id }}" data-gift-handle="night-cream" style="display:none;">
                 <div class="bogo-img-box"><img src="{{ 'night-cream.jpg' | asset_url }}" alt="Night Cream"></div>
                 <div class="bogo-inline-info">
                   <span class="bogo-inline-name">Night Cream</span>
@@ -2236,7 +2432,7 @@ a { color: inherit; text-decoration: none; }
               </div>
               <div class="bogo-inline-card" onclick="selectBogo(this)">
                 <div class="bogo-radio"></div>
-                <input type="radio" name="free_gift" data-variant-id="{{ all_products['tranexamic-serum'].variants.first.id }}" data-gift-handle="tranexamic-serum" style="display:none;">
+                <input type="radio" name="free_gift" data-variant-id="{{ all_products['tranexamic-serum'].selected_or_first_available_variant.id }}" data-gift-handle="tranexamic-serum" style="display:none;">
                 <div class="bogo-img-box"><img src="{{ 'tranexamic-serum.jpg' | asset_url }}" alt="Tranexamic Serum"></div>
                 <div class="bogo-inline-info">
                   <span class="bogo-inline-name">Tranexamic Serum</span>
@@ -2245,7 +2441,7 @@ a { color: inherit; text-decoration: none; }
               </div>
               <div class="bogo-inline-card" onclick="selectBogo(this)">
                 <div class="bogo-radio"></div>
-                <input type="radio" name="free_gift" data-variant-id="{{ all_products['anti-frizz-keratin-serum'].variants.first.id }}" data-gift-handle="anti-frizz-keratin-serum" style="display:none;">
+                <input type="radio" name="free_gift" data-variant-id="{{ all_products['keratin-serum-v2'].selected_or_first_available_variant.id }}" data-gift-handle="keratin-serum-v2" style="display:none;">
                 <div class="bogo-img-box"><img src="{{ 'keratin-serum.jpg' | asset_url }}" alt="Anti Frizz Keratin Serum"></div>
                 <div class="bogo-inline-info">
                   <span class="bogo-inline-name">Anti Frizz Keratin Serum</span>
@@ -2254,7 +2450,7 @@ a { color: inherit; text-decoration: none; }
               </div>
               <div class="bogo-inline-card" onclick="selectBogo(this)">
                 <div class="bogo-radio"></div>
-                <input type="radio" name="free_gift" data-variant-id="{{ all_products['glow-serum'].variants.first.id }}" data-gift-handle="glow-serum" style="display:none;">
+                <input type="radio" name="free_gift" data-variant-id="{{ all_products['e7-korean-glass-skin-centella-sunscreen-spf50-copy'].selected_or_first_available_variant.id }}" data-gift-handle="e7-korean-glass-skin-centella-sunscreen-spf50-copy" style="display:none;">
                 <div class="bogo-img-box"><img src="{{ 'glow-serum-100.jpg' | asset_url }}" alt="Glow Serum"></div>
                 <div class="bogo-inline-info">
                   <span class="bogo-inline-name">Glow Serum</span>
@@ -2263,7 +2459,7 @@ a { color: inherit; text-decoration: none; }
               </div>
               <div class="bogo-inline-card" onclick="selectBogo(this)">
                 <div class="bogo-radio"></div>
-                <input type="radio" name="free_gift" data-variant-id="{{ all_products['glutathione-cream'].variants.first.id }}" data-gift-handle="glutathione-cream" style="display:none;">
+                <input type="radio" name="free_gift" data-variant-id="{{ all_products['glutathione-cream'].selected_or_first_available_variant.id }}" data-gift-handle="glutathione-cream" style="display:none;">
                 <div class="bogo-img-box"><img src="{{ 'glutathione-cream-100.jpg' | asset_url }}" alt="Glutathione Cream"></div>
                 <div class="bogo-inline-info">
                   <span class="bogo-inline-name">Glutathione Cream</span>
@@ -2272,7 +2468,7 @@ a { color: inherit; text-decoration: none; }
               </div>
               <div class="bogo-inline-card" onclick="selectBogo(this)">
                 <div class="bogo-radio"></div>
-                <input type="radio" name="free_gift" data-variant-id="{{ all_products['floral-blossom-hair-mist'].variants.first.id }}" data-gift-handle="floral-blossom-hair-mist" style="display:none;">
+                <input type="radio" name="free_gift" data-variant-id="{{ all_products['hair-mist'].selected_or_first_available_variant.id }}" data-gift-handle="hair-mist" style="display:none;">
                 <div class="bogo-img-box"><img src="{{ 'hair-mist.jpg' | asset_url }}" alt="Floral Blossom Hair Mist"></div>
                 <div class="bogo-inline-info">
                   <span class="bogo-inline-name">Floral Blossom Hair Mist</span>
@@ -2281,7 +2477,7 @@ a { color: inherit; text-decoration: none; }
               </div>
               <div class="bogo-inline-card" onclick="selectBogo(this)">
                 <div class="bogo-radio"></div>
-                <input type="radio" name="free_gift" data-variant-id="{{ all_products['e7-korean-glass-skin-centella-face-wash-copy'].variants.first.id }}" data-gift-handle="e7-korean-glass-skin-centella-face-wash-copy" style="display:none;">
+                <input type="radio" name="free_gift" data-variant-id="{{ all_products['face-wash'].selected_or_first_available_variant.id }}" data-gift-handle="face-wash" style="display:none;">
                 <div class="bogo-img-box"><img src="{{ 'facewash-100.jpg' | asset_url }}" alt="Face Wash"></div>
                 <div class="bogo-inline-info">
                   <span class="bogo-inline-name">Face Wash</span>
@@ -2290,7 +2486,7 @@ a { color: inherit; text-decoration: none; }
               </div>
               <div class="bogo-inline-card" onclick="selectBogo(this)">
                 <div class="bogo-radio"></div>
-                <input type="radio" name="free_gift" data-variant-id="{{ all_products['anti-acne'].variants.first.id }}" data-gift-handle="anti-acne" style="display:none;">
+                <input type="radio" name="free_gift" data-variant-id="{{ all_products['anti-acne'].selected_or_first_available_variant.id }}" data-gift-handle="anti-acne" style="display:none;">
                 <div class="bogo-img-box"><img src="{{ 'anti-acne-100.jpg' | asset_url }}" alt="Anti Acne"></div>
                 <div class="bogo-inline-info">
                   <span class="bogo-inline-name">Anti Acne</span>
@@ -2299,7 +2495,7 @@ a { color: inherit; text-decoration: none; }
               </div>
               <div class="bogo-inline-card" onclick="selectBogo(this)">
                 <div class="bogo-radio"></div>
-                <input type="radio" name="free_gift" data-variant-id="{{ all_products['e7-korean-glass-skin-centella-sunscreen-spf50-copy'].variants.first.id }}" data-gift-handle="e7-korean-glass-skin-centella-sunscreen-spf50-copy" style="display:none;">
+                <input type="radio" name="free_gift" data-variant-id="{{ all_products['sunscreen-v2'].selected_or_first_available_variant.id }}" data-gift-handle="sunscreen-v2" style="display:none;">
                 <div class="bogo-img-box"><img src="{{ 'sunscreen-100.jpg' | asset_url }}" alt="Sunscreen SPF60+"></div>
                 <div class="bogo-inline-info">
                   <span class="bogo-inline-name">Sunscreen SPF60+</span>
@@ -2308,7 +2504,7 @@ a { color: inherit; text-decoration: none; }
               </div>
               <div class="bogo-inline-card" onclick="selectBogo(this)">
                 <div class="bogo-radio"></div>
-                <input type="radio" name="free_gift" data-variant-id="{{ all_products['renewal-cleanser-v2'].variants.first.id }}" data-gift-handle="renewal-cleanser-v2" style="display:none;">
+                <input type="radio" name="free_gift" data-variant-id="{{ all_products['renewal-cleanser'].selected_or_first_available_variant.id }}" data-gift-handle="renewal-cleanser" style="display:none;">
                 <div class="bogo-img-box"><img src="{{ 'rc-gal-1.jpg' | asset_url }}" alt="Renewal Cleanser"></div>
                 <div class="bogo-inline-info">
                   <span class="bogo-inline-name">Renewal Cleanser</span>
@@ -2317,7 +2513,7 @@ a { color: inherit; text-decoration: none; }
               </div>
               <div class="bogo-inline-card" onclick="selectBogo(this)">
                 <div class="bogo-radio"></div>
-                <input type="radio" name="free_gift" data-variant-id="{{ all_products['centella-moisturizer'].variants.first.id }}" data-gift-handle="centella-moisturizer" style="display:none;">
+                <input type="radio" name="free_gift" data-variant-id="{{ all_products['hydra-burst-moisturizer'].selected_or_first_available_variant.id }}" data-gift-handle="hydra-burst-moisturizer" style="display:none;">
                 <div class="bogo-img-box"><img src="{{ 'moisturizer-100.jpg' | asset_url }}" alt="Hydra Burst Moisturizer"></div>
                 <div class="bogo-inline-info">
                   <span class="bogo-inline-name">Hydra Burst Moisturizer</span>
@@ -2326,7 +2522,7 @@ a { color: inherit; text-decoration: none; }
               </div>
               <div class="bogo-inline-card" onclick="selectBogo(this)">
                 <div class="bogo-radio"></div>
-                <input type="radio" name="free_gift" data-variant-id="{{ all_products['renewal-toner'].variants.first.id }}" data-gift-handle="renewal-toner" style="display:none;">
+                <input type="radio" name="free_gift" data-variant-id="{{ all_products['renewal-toner'].selected_or_first_available_variant.id }}" data-gift-handle="renewal-toner" style="display:none;">
                 <div class="bogo-img-box"><img src="{{ 'toner1.jpeg' | asset_url }}" alt="Renewal Toner"></div>
                 <div class="bogo-inline-info">
                   <span class="bogo-inline-name">Renewal Toner</span>
@@ -2481,7 +2677,7 @@ a { color: inherit; text-decoration: none; }
                     b.disabled = true;
 
                     try {
-                        const mainVariantId = "{{ product.variants.first.id }}";
+                        const mainVariantId = "{{ product.selected_or_first_available_variant.id }}";
                         const selectedGift = document.querySelector('input[name="free_gift"]:checked');
                         
                         let items = [{ 
@@ -2513,7 +2709,7 @@ a { color: inherit; text-decoration: none; }
                         const data = await response.json();
                         if (!response.ok) throw new Error(data.description || data.message || 'Could not add to bag');
 
-                        window.location.href = '/cart';
+                        window.location.assign("/cart");
                         
                     } catch (error) {
                         console.error('Cart Addition Error:', error);
@@ -2523,10 +2719,6 @@ a { color: inherit; text-decoration: none; }
                     }
                 });
             });</script>
-</body>
-</html>
-
-
 
 
 
