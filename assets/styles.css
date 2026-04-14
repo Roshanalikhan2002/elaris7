@@ -2145,3 +2145,16 @@ a { color: inherit; text-decoration: none; }
     border-radius: 50px !important;
   }
 }
+
+/* --- BEGIN CUSTOM OVERRIDES --- */
+/* Remove mobile sticky 'Add to Bag' button and adjust layout */
+.mobile-sticky-cart {
+  display: none !important;
+}
+
+@media (max-width: 900px) {
+  .product-page {
+    padding-bottom: 0 !important;
+  }
+}
+/* --- END CUSTOM OVERRIDES --- */
