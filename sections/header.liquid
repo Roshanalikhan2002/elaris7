@@ -1,10 +1,10 @@
 <header class="site-header">
-  {%- assign mega_names = "NIGHT CREAM,TRANEXAMIC SERUM,ANTI FRIZZ KERATIN SERUM,CENTELLA SERUM,GLUTATHIONE CREAM,FLORAL BLOSSOM HAIR MIST,FACE WASH,ANTI ACNE,SUNSCREEN,RENEWAL CLEANSER,CENTELLA MOISTURIZER,RENEWAL TONER" | split: "," -%}
-  {%- assign mega_images = "night-cream.jpg,tranexamic-serum.jpg,keratin-serum.jpg,glow-serum-100.jpg,glutathione-cream-100.jpg,hair-mist.jpg,facewash-100.jpg,anti-acne-100.jpg,sunscreen-100.jpg,rc-gal-1.jpg,moisturizer-100.jpg,renewal toner-100.jpg" | split: "," -%}
-  {%- assign mega_descs = "To Restore & Protect,Even & Illuminate,Repair & Smooth Hair,Smooth Control Glow,Glow & Repair,Fresh Floral Touch,Gentle Daily Cleanser,Targeted Spot Control,Premium Solar Protection,Intense Clarity Refresh,Plumping Hydration Boost,Refining Skin Texture" | split: "," -%}
-  {%- assign mega_labels = "featured korean-glass-skin,featured korean-brightening,featured hair-care,featured korean-glass-skin,featured korean-brightening,featured hair-care,featured korean-glass-skin,featured anti-acne korean-brightening,featured korean-glass-skin,featured korean-brightening,featured korean-glass-skin,featured korean-brightening" | split: "," -%}
-  {%- assign mega_handles = "night-cream,tranexamic-serum-v2,keratin-serum-v2,glow-serum,glutathione-cream-v2,hair-mist-v2,face-wash,anti-acne,sunscreen-v2,renewal-cleanser-v2,e7-korean-glass-skin-moisturizer,renewal-toner-v2" | split: "," -%}
-  {%- assign mega_prices = "2675,2740,2680,2645,2640,2960,2620,2755,2735,2820,2680,2780" | split: "," -%}
+  {%- assign mega_names = "NIGHT CREAM,TRANEXAMIC SERUM,ANTI FRIZZ KERATIN SERUM,CENTELLA SERUM,GLUTATHIONE CREAM,FLORAL BLOSSOM HAIR MIST,FACE WASH,ANTI ACNE,SUNSCREEN,RENEWAL CLEANSER,CENTELLA MOISTURIZER,RENEWAL TONER,OIL TO FOAM CLEANSER,SKIN REFINING TONER" | split: "," -%}
+  {%- assign mega_images = "night-cream.jpg,tranexamic-serum.jpg,keratin-serum.jpg,glow-serum-100.jpg,glutathione-cream-100.jpg,hair-mist.jpg,facewash-100.jpg,anti-acne-100.jpg,sunscreen-100.jpg,rc-gal-1.jpg,moisturizer-100.jpg,renewal toner-100.jpg,oil-to-foam-main.jpg,skin-refining-toner-main.jpeg" | split: "," -%}
+  {%- assign mega_descs = "To Restore & Protect,Even & Illuminate,Repair & Smooth Hair,Smooth Control Glow,Glow & Repair,Fresh Floral Touch,Gentle Daily Cleanser,Targeted Spot Control,Premium Solar Protection,Intense Clarity Refresh,Plumping Hydration Boost,Refining Skin Texture,Deep Double Cleansing,Refining Skin Texture" | split: "," -%}
+  {%- assign mega_labels = "featured korean-glass-skin,featured korean-brightening,featured hair-care,featured korean-glass-skin,featured korean-brightening,featured hair-care,featured korean-glass-skin,featured anti-acne,featured korean-glass-skin,featured korean-brightening,featured korean-glass-skin,featured korean-brightening,korean-glass-skin,korean-glass-skin" | split: "," -%}
+  {%- assign mega_handles = "night-cream,tranexamic-serum-v2,keratin-serum-v2,glow-serum,glutathione-cream-v2,hair-mist-v2,face-wash,anti-acne,sunscreen-v2,renewal-cleanser-v2,e7-korean-glass-skin-moisturizer,renewal-toner-v2,oil-to-foam-cleanser,skin-refining-toner" | split: "," -%}
+  {%- assign mega_prices = "2675,2740,2680,2645,2640,2960,2620,2755,2735,2820,2680,2780,2820,2780" | split: "," -%}
 
   <div class="announcement-bar">
     <div class="announcement-slider">
@@ -143,7 +143,7 @@
     <div class="menu-scroll-area">
     
     <div class="menu-products">
-      {% for i in (0..11) %}
+      {% for i in (0..13) %}
         {%- assign mname = mega_names[i] -%}
         {%- assign mimage = mega_images[i] -%}
         {%- assign mdesc = mega_descs[i] -%}
