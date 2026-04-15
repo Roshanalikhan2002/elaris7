@@ -264,13 +264,15 @@ document.addEventListener('DOMContentLoaded', () => {
         matches = tags.some(tag => tag === cleanTarget || tag.includes(cleanTarget));
 
         // 2. Title-based Keyword matching (Highly Reliable)
+        const isBundle = itemCatStr.includes('set') || itemCatStr.includes('bundle') || itemTitle.includes('bundle');
+
         if (cleanTarget.includes('glass')) {
-           if (itemTitle.includes('centella') || itemTitle.includes('night cream') || itemTitle.includes('sunscreen') || itemTitle.includes('cleanser') || itemTitle.includes('toner') || itemTitle.includes('moisturizer') || itemTitle.includes('face wash') || itemTitle.includes('oil to foam') || itemTitle.includes('skin refining')) {
+           if (!isBundle && (itemTitle.includes('centella') || itemTitle.includes('night cream') || itemTitle.includes('sunscreen') || itemTitle.includes('cleanser') || itemTitle.includes('toner') || itemTitle.includes('moisturizer') || itemTitle.includes('face wash') || itemTitle.includes('oil to foam') || itemTitle.includes('skin refining'))) {
               if (!itemTitle.includes('tranexamic') && !itemTitle.includes('gel') && !itemTitle.includes('renewal')) matches = true;
            }
         }
         if (cleanTarget.includes('brightening')) {
-           const isExcluded = itemTitle.includes('skin refining') || itemTitle.includes('anti frizz') || itemTitle.includes('centella') || itemTitle.includes('anti acne');
+           const isExcluded = itemTitle.includes('skin refining') || itemTitle.includes('anti frizz') || itemTitle.includes('centella') || itemTitle.includes('anti acne') || isBundle;
            if (!isExcluded) {
               if (itemTitle.includes('tranexamic') || itemTitle.includes('glutathione') || itemTitle.includes('toner') || itemTitle.includes('serum') || itemTitle.includes('brightening') || itemTitle.includes('renewal')) {
                  matches = true;
