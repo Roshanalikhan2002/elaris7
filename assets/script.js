@@ -283,7 +283,7 @@ document.addEventListener('DOMContentLoaded', () => {
            if (itemTitle.includes('acne')) matches = true;
         }
         if (cleanTarget.includes('hair')) {
-           if (itemTitle.includes('hair') || itemTitle.includes('keratin') || itemTitle.includes('mist')) matches = true;
+           if (!isBundle && (itemTitle.includes('hair') || itemTitle.includes('keratin') || itemTitle.includes('mist'))) matches = true;
         }
       }
 
