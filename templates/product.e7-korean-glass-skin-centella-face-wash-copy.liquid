@@ -1,4 +1,4 @@
-{% layout none %}
+﻿{% layout none %}
 
 
 
@@ -191,7 +191,7 @@ a { color: inherit; text-decoration: none; }
   /*
    * Rhode-exact layout:
    * - Announcement bar: on white bg, in normal flow
-   * - Header-main: absolute, top:100% â†’ floats RIGHT ON TOP of the hero image
+   * - Header-main: absolute, top:100% Ã¢â€ â€™ floats RIGHT ON TOP of the hero image
    * - Hero card: starts immediately after announcement bar
    */
   .site-header {
@@ -572,7 +572,7 @@ a { color: inherit; text-decoration: none; }
     object-fit: cover;
   }
 
-  /* Rhode layout: text wraps 2 lines on RIGHT, button stacked BELOW â€” column, right-aligned */
+  /* Rhode layout: text wraps 2 lines on RIGHT, button stacked BELOW Ã¢â‚¬â€ column, right-aligned */
   .hero-bottom {
     position: absolute;
     left: 0;
@@ -583,7 +583,7 @@ a { color: inherit; text-decoration: none; }
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    align-items: flex-end; /* RIGHT-aligned â€” matches Rhode BOTTOM_RIGHT class */
+    align-items: flex-end; /* RIGHT-aligned Ã¢â‚¬â€ matches Rhode BOTTOM_RIGHT class */
     gap: 8px;
     background: transparent;
     text-align: right;
@@ -834,7 +834,7 @@ a { color: inherit; text-decoration: none; }
   }
 }
 
-/* â”€â”€ Rhode-style product cards (High Fidelity) â”€â”€ */
+/* Ã¢â€â‚¬Ã¢â€â‚¬ Rhode-style product cards (High Fidelity) Ã¢â€â‚¬Ã¢â€â‚¬ */
 .card-rhode {
   flex: 0 0 30%; /* Clearly shows peek on most screens move move moved moves move move move move move move */
   min-width: 330px;
@@ -1176,7 +1176,7 @@ a { color: inherit; text-decoration: none; }
   margin-top: 8px;
 }
 
-/* Product image â€” centered, transparent bg, fills remaining space */
+/* Product image Ã¢â‚¬â€ centered, transparent bg, fills remaining space */
 .card-rhode-image {
   flex: 1;
   display: flex;
@@ -1220,7 +1220,7 @@ a { color: inherit; text-decoration: none; }
   opacity: 0;
 }
 
-/* â”€â”€ Buy Button Pop-up â”€â”€ */
+/* Ã¢â€â‚¬Ã¢â€â‚¬ Buy Button Pop-up Ã¢â€â‚¬Ã¢â€â‚¬ */
 .buy-button-hover {
   position: absolute;
   bottom: 25px;
@@ -1300,7 +1300,7 @@ a { color: inherit; text-decoration: none; }
   margin-top: 4px;
 }
 
-/* Hover CTA â€” slides up from bottom */
+/* Hover CTA Ã¢â‚¬â€ slides up from bottom */
 .card-rhode-hover {
   position: absolute;
   bottom: 0;
@@ -2075,7 +2075,7 @@ a { color: inherit; text-decoration: none; }
   color: #2c2b28;
 }
 
-/* â”€â”€ Mobile: seamlessly connected, zero gap â”€â”€ */
+/* Ã¢â€â‚¬Ã¢â€â‚¬ Mobile: seamlessly connected, zero gap Ã¢â€â‚¬Ã¢â€â‚¬ */
 @media (max-width: 768px) {
   .split-category-wrapper {
     margin: 0 0 12px; /* flush to screen edges */
@@ -2587,7 +2587,7 @@ a { color: inherit; text-decoration: none; }
             <span class="bd-label">SMELLS LIKE:</span><span class="bd-val">Subtle, calming freshness for a relaxing nighttime routine</span>
           </div>
           <div class="bd-row">
-            <span class="bd-label">FYI:</span><span class="bd-val">Deep Cleansing � Halal � Non-Drying</span>
+            <span class="bd-label">FYI:</span><span class="bd-val">Deep Cleansing • Halal • Non-Drying</span>
           </div>
         </div>
       </div>
@@ -4708,98 +4708,75 @@ a { color: inherit; text-decoration: none; }
     }
   </style>
   <script src="./assets/script.js" defer></script>
-          <script>
-            // BOGO Selection Logic
-            function selectBogo(card) {
-                document.querySelectorAll('.bogo-inline-card').forEach(c => c.classList.remove('selected'));
-                card.classList.add('selected');
-                const input = card.querySelector('input[type="radio"]');
-                if(input) {
-                    input.checked = true;
-                }
-            }
+  <script src="{{ 'script.js' | asset_url }}" defer></script>
 
-                                                            // Main Add to Cart Logic
-                        // Main Add to Cart Logic
-            document.querySelectorAll('.add-to-cart-btn').forEach(btn => {
-                btn.addEventListener('click', async function(e) {
-                    e.preventDefault();
-                    const b = this;
-                    const originalText = b.innerHTML;
-                    
-                    if (b.disabled) return;
-                    
-                    b.innerHTML = 'ADDING TO BAG...';
-                    b.disabled = true;
+  <script>
+    // BOGO Selection Logic
+    function selectBogo(card) {
+        document.querySelectorAll('.bogo-inline-card').forEach(c => c.classList.remove('selected'));
+        card.classList.add('selected');
+        const input = card.querySelector('input[type="radio"]');
+        if(input) {
+            input.checked = true;
+        }
+    }
 
-                    try {
-                        const mainVariantId = "{{ product.variants.first.id }}";
-                        const selectedGift = document.querySelector('input[name="free_gift"]:checked');
-                        
-                        let items = [{ 
-                            id: mainVariantId, 
+    // Main Add to Cart Logic
+    document.querySelectorAll('.add-to-cart-btn').forEach(btn => {
+        btn.addEventListener('click', async function(e) {
+            e.preventDefault();
+            const b = this;
+            const originalText = b.innerHTML;
+            
+            if (b.disabled) return;
+            
+            b.innerHTML = 'ADDING TO BAG...';
+            b.disabled = true;
+
+            try {
+                const mainVariantId = "{{ product.variants.first.id }}";
+                const selectedGift = document.querySelector('input[name="free_gift"]:checked');
+                
+                let items = [{ 
+                    id: mainVariantId, 
+                    quantity: 1, 
+                    properties: { '_bogo': 'true' } 
+                }];
+
+                if (selectedGift) {
+                    const giftVariantId = selectedGift.getAttribute('data-variant-id');
+                    if (giftVariantId && giftVariantId.trim() !== '' && giftVariantId !== '0') {
+                        items.push({ 
+                            id: giftVariantId, 
                             quantity: 1, 
-                            properties: { '_bogo': 'true' } 
-                        }];
-
-                        if (selectedGift) {
-                            const giftVariantId = selectedGift.getAttribute('data-variant-id');
-                            if (giftVariantId && giftVariantId.trim() !== '' && giftVariantId !== '0') {
-                                items.push({ 
-                                    id: giftVariantId, 
-                                    quantity: 1, 
-                                    properties: { '_free_gift': 'true', '_bogo': 'true' } 
-                                });
-                            }
-                        }
-
-                        const response = await fetch('/cart/add.js', {
-                            method: 'POST',
-                            headers: { 
-                                'Content-Type': 'application/json',
-                                'X-Requested-With': 'XMLHttpRequest'
-                            },
-                            body: JSON.stringify({ items: items })
+                            properties: { '_free_gift': 'true', '_bogo': 'true' } 
                         });
-
-                        const data = await response.json();
-                        if (!response.ok) throw new Error(data.description || data.message || 'Could not add to bag');
-
-                        window.location.href = '/cart';
-                        
-                    } catch (error) {
-                        console.error('Cart Addition Error:', error);
-                        alert('Bag Error: ' + error.message);
-                        b.innerHTML = originalText;
-                        b.disabled = false;
                     }
+                }
+
+                const response = await fetch('/cart/add.js', {
+                    method: 'POST',
+                    headers: { 
+                        'Content-Type': 'application/json',
+                        'X-Requested-With': 'XMLHttpRequest'
+                    },
+                    body: JSON.stringify({ items: items })
                 });
-            });
-                            }
-                        }
 
-                        const response = await fetch('/cart/add.js', {
-                            method: 'POST',
-                            headers: { 
-                                'Content-Type': 'application/json',
-                                'X-Requested-With': 'XMLHttpRequest'
-                            },
-                            body: JSON.stringify({ items: items })
-                        });
+                const data = await response.json();
+                if (!response.ok) throw new Error(data.description || data.message || 'Could not add to bag');
 
-                        const data = await response.json();
-                        if (!response.ok) throw new Error(data.description || data.message || 'Could not add to bag');
-
-                        window.location.href = '/cart';
-                        
-                    } catch (error) {
-                        console.error('Cart Addition Error:', error);
-                        alert('Bag Error: ' + error.message);
-                        b.innerHTML = originalText;
-                        b.disabled = false;
-                    }
-                });
-            });</script>
+                window.location.href = '/cart';
+                
+            } catch (error) {
+                console.error('Cart Addition Error:', error);
+                alert('Bag Error: ' + error.message);
+                b.innerHTML = originalText;
+                b.disabled = false;
+            }
+        });
+    });
+  </script>
 </body>
 </html>
 

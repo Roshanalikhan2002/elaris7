@@ -1,4 +1,4 @@
-{% layout none %}
+﻿{% layout none %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -182,7 +182,7 @@ a { color: inherit; text-decoration: none; }
   /*
    * Rhode-exact layout:
    * - Announcement bar: on white bg, in normal flow
-   * - Header-main: absolute, top:100% → floats RIGHT ON TOP of the hero image
+   * - Header-main: absolute, top:100% â†’ floats RIGHT ON TOP of the hero image
    * - Hero card: starts immediately after announcement bar
    */
   .site-header {
@@ -563,7 +563,7 @@ a { color: inherit; text-decoration: none; }
     object-fit: cover;
   }
 
-  /* Rhode layout: text wraps 2 lines on RIGHT, button stacked BELOW — column, right-aligned */
+  /* Rhode layout: text wraps 2 lines on RIGHT, button stacked BELOW â€” column, right-aligned */
   .hero-bottom {
     position: absolute;
     left: 0;
@@ -574,7 +574,7 @@ a { color: inherit; text-decoration: none; }
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    align-items: flex-end; /* RIGHT-aligned — matches Rhode BOTTOM_RIGHT class */
+    align-items: flex-end; /* RIGHT-aligned â€” matches Rhode BOTTOM_RIGHT class */
     gap: 8px;
     background: transparent;
     text-align: right;
@@ -825,7 +825,7 @@ a { color: inherit; text-decoration: none; }
   }
 }
 
-/* ── Rhode-style product cards (High Fidelity) ── */
+/* â”€â”€ Rhode-style product cards (High Fidelity) â”€â”€ */
 .card-rhode {
   flex: 0 0 30%; /* Clearly shows peek on most screens move move moved moves move move move move move move */
   min-width: 330px;
@@ -1167,7 +1167,7 @@ a { color: inherit; text-decoration: none; }
   margin-top: 8px;
 }
 
-/* Product image — centered, transparent bg, fills remaining space */
+/* Product image â€” centered, transparent bg, fills remaining space */
 .card-rhode-image {
   flex: 1;
   display: flex;
@@ -1211,7 +1211,7 @@ a { color: inherit; text-decoration: none; }
   opacity: 0;
 }
 
-/* ── Buy Button Pop-up ── */
+/* â”€â”€ Buy Button Pop-up â”€â”€ */
 .buy-button-hover {
   position: absolute;
   bottom: 25px;
@@ -1291,7 +1291,7 @@ a { color: inherit; text-decoration: none; }
   margin-top: 4px;
 }
 
-/* Hover CTA — slides up from bottom */
+/* Hover CTA â€” slides up from bottom */
 .card-rhode-hover {
   position: absolute;
   bottom: 0;
@@ -2066,7 +2066,7 @@ a { color: inherit; text-decoration: none; }
   color: #2c2b28;
 }
 
-/* ── Mobile: seamlessly connected, zero gap ── */
+/* â”€â”€ Mobile: seamlessly connected, zero gap â”€â”€ */
 @media (max-width: 768px) {
   .split-category-wrapper {
     margin: 0 0 12px; /* flush to screen edges */
@@ -2180,7 +2180,7 @@ a { color: inherit; text-decoration: none; }
             <div class="card-rhode-image"><img src="{{ 'night-cream.jpg' | asset_url }}" alt="Night Cream" class="product-main-img"></div>
             <div class="card-rhode-footer">
               <div class="card-meta">
-                <div class="card-stars">★★★★★ <span class="review-count">(16k)</span></div>
+                <div class="card-stars">â˜…â˜…â˜…â˜…â˜… <span class="review-count">(16k)</span></div>
                 <h3 class="card-name">NIGHT CREAM</h3>
               </div>
               <a href="night-cream.html" class="btn-rhode-buy-pill">BUY - RS. 1,500</a>
@@ -2195,7 +2195,7 @@ a { color: inherit; text-decoration: none; }
             <div class="card-rhode-image"><img src="{{ 'tranexamic-serum.jpg' | asset_url }}" alt="Tranexamic Serum" class="product-main-img"></div>
             <div class="card-rhode-footer">
               <div class="card-meta">
-                <div class="card-stars">★★★★★ <span class="review-count">(16k)</span></div>
+                <div class="card-stars">â˜…â˜…â˜…â˜…â˜… <span class="review-count">(16k)</span></div>
                 <h3 class="card-name">TRANEXAMIC SERUM</h3>
               </div>
               <a href="tranexamic-serum.html" class="btn-rhode-buy-pill">BUY - RS. 1,500</a>
@@ -2210,7 +2210,7 @@ a { color: inherit; text-decoration: none; }
             <div class="card-rhode-image"><img src="{{ 'keratin-serum.jpg' | asset_url }}" alt="Keratin Serum" class="product-main-img"></div>
             <div class="card-rhode-footer">
               <div class="card-meta">
-                <div class="card-stars">★★★★★ <span class="review-count">(16k)</span></div>
+                <div class="card-stars">â˜…â˜…â˜…â˜…â˜… <span class="review-count">(16k)</span></div>
                 <h3 class="card-name">KERATIN SERUM</h3>
               </div>
               <a href="keratin-serum.html" class="btn-rhode-buy-pill">BUY - RS. 1,500</a>
@@ -2225,7 +2225,7 @@ a { color: inherit; text-decoration: none; }
             <div class="card-rhode-image"><img src="{{ 'glow-serum-100.jpg' | asset_url }}" alt="Glow Serum" class="product-main-img"></div>
             <div class="card-rhode-footer">
               <div class="card-meta">
-                <div class="card-stars">★★★★★ <span class="review-count">(16k)</span></div>
+                <div class="card-stars">â˜…â˜…â˜…â˜…â˜… <span class="review-count">(16k)</span></div>
                 <h3 class="card-name">GLOW SERUM</h3>
               </div>
               <a href="glow-serum.html" class="btn-rhode-buy-pill">BUY - RS. 1,500</a>
@@ -2240,7 +2240,7 @@ a { color: inherit; text-decoration: none; }
             <div class="card-rhode-image"><img src="{{ 'facewash-100.jpg' | asset_url }}" alt="Face Wash" class="product-main-img"></div>
             <div class="card-rhode-footer">
               <div class="card-meta">
-                <div class="card-stars">★★★★★ <span class="review-count">(16k)</span></div>
+                <div class="card-stars">â˜…â˜…â˜…â˜…â˜… <span class="review-count">(16k)</span></div>
                 <h3 class="card-name">CENTELLA WASH</h3>
               </div>
               <a href="face-wash.html" class="btn-rhode-buy-pill">BUY - RS. 1,500</a>
@@ -2261,72 +2261,75 @@ a { color: inherit; text-decoration: none; }
     </div>
   </footer>
 
-          <script>
-            // BOGO Selection Logic
-            function selectBogo(card) {
-                document.querySelectorAll('.bogo-inline-card').forEach(c => c.classList.remove('selected'));
-                card.classList.add('selected');
-                const input = card.querySelector('input[type="radio"]');
-                if(input) {
-                    input.checked = true;
-                }
-            }
+  <script src="{{ 'script.js' | asset_url }}" defer></script>
 
-                                                // Main Add to Cart Logic
-            document.querySelectorAll('.add-to-cart-btn').forEach(btn => {
-                btn.addEventListener('click', async function(e) {
-                    e.preventDefault();
-                    const b = this;
-                    const originalText = b.innerHTML;
-                    
-                    if (b.disabled) return;
-                    
-                    b.innerHTML = 'ADDING TO BAG...';
-                    b.disabled = true;
+  <script>
+    // BOGO Selection Logic
+    function selectBogo(card) {
+        document.querySelectorAll('.bogo-inline-card').forEach(c => c.classList.remove('selected'));
+        card.classList.add('selected');
+        const input = card.querySelector('input[type="radio"]');
+        if(input) {
+            input.checked = true;
+        }
+    }
 
-                    try {
-                        const mainVariantId = "{{ product.variants.first.id }}";
-                        const selectedGift = document.querySelector('input[name="free_gift"]:checked');
-                        
-                        let items = [{ 
-                            id: mainVariantId, 
+    // Main Add to Cart Logic
+    document.querySelectorAll('.add-to-cart-btn').forEach(btn => {
+        btn.addEventListener('click', async function(e) {
+            e.preventDefault();
+            const b = this;
+            const originalText = b.innerHTML;
+            
+            if (b.disabled) return;
+            
+            b.innerHTML = 'ADDING TO BAG...';
+            b.disabled = true;
+
+            try {
+                const mainVariantId = "{{ product.variants.first.id }}";
+                const selectedGift = document.querySelector('input[name="free_gift"]:checked');
+                
+                let items = [{ 
+                    id: mainVariantId, 
+                    quantity: 1, 
+                    properties: { '_bogo': 'true' } 
+                }];
+
+                if (selectedGift) {
+                    const giftVariantId = selectedGift.getAttribute('data-variant-id');
+                    if (giftVariantId && giftVariantId.trim() !== '' && giftVariantId !== '0') {
+                        items.push({ 
+                            id: giftVariantId, 
                             quantity: 1, 
-                            properties: { '_bogo': 'true' } 
-                        }];
-
-                        if (selectedGift) {
-                            const giftVariantId = selectedGift.getAttribute('data-variant-id');
-                            if (giftVariantId && giftVariantId.trim() !== '' && giftVariantId !== '0') {
-                                items.push({ 
-                                    id: giftVariantId, 
-                                    quantity: 1, 
-                                    properties: { '_free_gift': 'true', '_bogo': 'true' } 
-                                });
-                            }
-                        }
-
-                        const response = await fetch('/cart/add.js', {
-                            method: 'POST',
-                            headers: { 
-                                'Content-Type': 'application/json',
-                                'X-Requested-With': 'XMLHttpRequest'
-                            },
-                            body: JSON.stringify({ items: items })
+                            properties: { '_free_gift': 'true', '_bogo': 'true' } 
                         });
-
-                        const data = await response.json();
-                        if (!response.ok) throw new Error(data.description || data.message || 'Could not add to bag');
-
-                        window.location.href = '/cart';
-                        
-                    } catch (error) {
-                        console.error('Cart Addition Error:', error);
-                        alert('Bag Error: ' + error.message);
-                        b.innerHTML = originalText;
-                        b.disabled = false;
                     }
+                }
+
+                const response = await fetch('/cart/add.js', {
+                    method: 'POST',
+                    headers: { 
+                        'Content-Type': 'application/json',
+                        'X-Requested-With': 'XMLHttpRequest'
+                    },
+                    body: JSON.stringify({ items: items })
                 });
-            });</script>
+
+                const data = await response.json();
+                if (!response.ok) throw new Error(data.description || data.message || 'Could not add to bag');
+
+                window.location.href = '/cart';
+                
+            } catch (error) {
+                console.error('Cart Addition Error:', error);
+                alert('Bag Error: ' + error.message);
+                b.innerHTML = originalText;
+                b.disabled = false;
+            }
+        });
+    });
+  </script>
 </body>
 </html>
 
