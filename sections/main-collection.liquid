@@ -23,11 +23,11 @@
 <div class="collection-page">
   <div class="collection-nav-bar">
     <div class="collection-nav-inner">
-       {%- assign cats = "Featured,Korean Glass Skin,Anti Acne,Korean Brightening,Hair Care,Sets" | split: "," -%}
+       {% assign default_cats = "Featured,Korean glass skin,Anti acne,Korean brightening,Hair care,Sets" | split: "," %}
        <div class="collection-pills">
-         {% for cat in cats %}
-           {%- assign c_handle = cat | handleize -%}
-           <a href="/collections/{{ c_handle }}" class="coll-pill {% if collection.handle == c_handle %}active{% endif %}">
+         {% for cat in default_cats %}
+           {%- assign c_handle = cat | strip | handleize -%}
+           <a href="javascript:void(0)" class="coll-pill cat-link {% if forloop.first %}active{% endif %}" data-category="{{ c_handle }}">
              {{ cat | uppercase }}
            </a>
          {% endfor %}
@@ -61,36 +61,139 @@
   {% else %}
     <!-- STANDARD COLLECTION GRID MODE -->
     <div class="collection-main">
-      {%- assign featured_handles = "night-cream,tranexamic-serum,anti-frizz-keratin-serum,e7-korean-glass-skin-centella-sunscreen-spf50-copy,glutathione-cream,floral-blossom-hair-mist,e7-korean-glass-skin-centella-night-cream-copy,anti-acne-cream,e7-korean-glass-skin-centella-face-wash-copy,centella-skin-toner-copy,e7-korean-glass-skin-moisturizer,centella-skin-toner,e7-glass-skin-set,e7-complete-glass-skin-set,e7-hair-care-set,elaris-7-korean-brightening-bundle" | split: "," -%}
-      {%- assign fallback_prices = "Rs. 2,500,Rs. 2,800,Rs. 2,700,Rs. 2,540,Rs. 2,950,Rs. 2,400,Rs. 2,200,Rs. 2,450,Rs. 2,630,Rs. 2,850,Rs. 2,499,Rs. 2,670,Rs. 4,500,Rs. 7,500,Rs. 3,200,Rs. 5,900" | split: "," -%}
-
-      {% paginate collection.products by section.settings.products_per_page %}
-        <div class="collection-grid">
-          {% for product in collection.products %}
-            {% if collection.handle == 'all' %}
-              {% unless featured_handles contains product.handle %}{% continue %}{% endunless %}
-            {% endif %}
-
-            <div class="coll-item">
-              <a href="{{ product.url }}" class="coll-card">
-                <div class="coll-image">
-                  <img src="{{ product.featured_image | img_url: '800x' }}" alt="{{ product.title }}" loading="lazy" class="main-img">
-                  <div class="coll-badge-top"><div class="coll-brand">ELARIS7</div></div>
-                  <div class="coll-buy-btn quick-add-btn" data-variant-id="{{ product.first_available_variant.id }}">
-                      BUY NOW — {{ product.price | money }}
-                  </div>
-                </div>
-                <div class="coll-info">
-                   <div class="coll-stars">★ ★ ★ ★ ★ (16k)</div>
-                   <h3 class="coll-title">{{ product.title | upcase }}</h3>
-                   <p class="coll-price">{{ product.price | money }}</p>
-                </div>
-              </a>
-            </div>
-          {% endfor %}
+      <div class="collection-grid-rhode" id="product-collection-scroll">
+        
+        {% comment %} 1. Hardcoded NEW PRODUCTS {% endcomment %}
+        <div class="card card-rhode" data-category="korean-glass-skin">
+           <a href="/products/oil-to-foam-cleanser" class="card-link-wrapper">
+             <img src="{{ 'oil-to-foam-hover.jpg' | asset_url }}" class="card-hover-bg" alt="Oil to Foam Cleanser Hover">
+             <div class="card-rhode-top"><span class="card-brand-label">oil-to-foam</span></div>
+             <div class="card-rhode-image"><img src="{{ 'oil-to-foam-main.jpg' | asset_url }}" alt="Oil to Foam Cleanser" class="product-main-img"></div>
+             <div class="card-rhode-footer">
+               <div class="card-meta"><h3 class="card-name">OIL TO FOAM CLEANSER</h3></div>
+               <span class="btn-rhode-buy-pill">BUY - RS. 2,820</span>
+             </div>
+             <div class="buy-button-hover" data-handle="oil-to-foam-cleanser">BUY OIL TO FOAM CLEANSER - RS. 2,820</div>
+           </a>
         </div>
-        {% if paginate.pages > 1 %}<div class="pagination">{{ paginate | default_pagination }}</div>{% endif %}
-      {% endpaginate %}
+        <div class="card card-rhode" data-category="korean-glass-skin">
+           <a href="/products/skin-refining-toner" class="card-link-wrapper">
+             <img src="{{ 'skin-refining-toner-hover.jpg' | asset_url }}" class="card-hover-bg" alt="Skin Refining Toner Hover">
+             <div class="card-rhode-top"><span class="card-brand-label">toner</span></div>
+             <div class="card-rhode-image"><img src="{{ 'skin-refining-toner-main.jpeg' | asset_url }}" alt="Skin Refining Toner" class="product-main-img"></div>
+             <div class="card-rhode-footer">
+               <div class="card-meta"><h3 class="card-name">SKIN REFINING TONER</h3></div>
+               <span class="btn-rhode-buy-pill">BUY - RS. 2,780</span>
+             </div>
+             <div class="buy-button-hover" data-handle="skin-refining-toner">BUY SKIN REFINING TONER - RS. 2,780</div>
+           </a>
+        </div>
+        <div class="card card-rhode" data-category="hair-care">
+           <a href="/products/hair-regrow-spray" class="card-link-wrapper">
+             <img src="{{ 'hair-regrow-hover.jpg' | asset_url }}" class="card-hover-bg" alt="Hair Regrow Spray Hover">
+             <div class="card-rhode-top"><span class="card-brand-label">regrow-spray</span></div>
+             <div class="card-rhode-image"><img src="{{ 'hair-regrow-main.jpeg' | asset_url }}" alt="Hair Regrow Spray" class="product-main-img"></div>
+             <div class="card-rhode-footer">
+               <div class="card-meta"><h3 class="card-name">HAIR REGROW SPRAY</h3></div>
+               <span class="btn-rhode-buy-pill">BUY - RS. 2,790</span>
+             </div>
+             <div class="buy-button-hover" data-handle="hair-regrow-spray">BUY HAIR REGROW SPRAY - RS. 2,790</div>
+           </a>
+        </div>
+
+        {% comment %} 2. Fallback List (Homepage Content) {% endcomment %}
+        {%- assign f_names = "Oil to Foam Cleanser,Gel Cleanser,Hair Regrow Spray,Night Cream,Tranexamic Serum,Anti Frizz Keratin Serum,Glow Serum,Glutathione Cream,Floral Blossom Hair Mist,Face Wash,Anti Acne,Sunscreen SPF60+,Renewal Cleanser,Hydra Burst Moisturizer,Renewal Toner" | split: "," -%}
+        {%- assign f_images = "oil-to-foam-main.jpg,gel cleanser-100.jpg,hair-mist.jpg,night-cream.jpg,tranexamic-serum.jpg,keratin-serum.jpg,glow-serum-100.jpg,glutathione-cream-100.jpg,hair-mist.jpg,facewash-100.jpg,anti-acne-100.jpg,sunscreen-100.jpg,renewal-cleanser-1.jpg,moisturizer-100.jpg,toner1.jpeg" | split: "," -%}
+        {%- assign f_hovers = "oil-to-foam-hover.jpg,deep-hydration-facewash.jpg,hair-mist-hover.jpg,night-cream-hover.jpg,tranexamic-meet-1.jpg,keratin-serum-hover.jpg,glow-serum-hover.jpg,deep-hydration-100.jpg,hair-mist-hover.jpg,deep-hydration-facewash.jpg,hover-anti-acne.png,sunscreen-hover.jpg,renewal-cleanser-2.jpg,moisturizer-hover.jpg,toner-hover.jpg" | split: "," -%}
+        {%- assign f_labels = "korean-glass-skin,korean-brightening,hair-care,korean-glass-skin,korean-brightening,hair-care,korean-glass-skin,korean-brightening,hair-care,korean-glass-skin,anti-acne,korean-glass-skin,korean-brightening,korean-glass-skin,featured" | split: "," -%}
+        
+        {% for i in (0..14) %}
+          {%- assign pname = f_names[i] -%}
+          {%- assign phandle = pname | handleize -%}
+          {%- if pname == "Night Cream" -%}{%- assign phandle = "e7-korean-glass-skin-centella-night-cream-copy" -%}
+          {%- elsif pname == "Tranexamic Serum" -%}{%- assign phandle = "tranexamic-serum-v2" -%}
+          {%- elsif pname contains "Keratin Serum" -%}{%- assign phandle = "keratin-serum-v2" -%}
+          {%- elsif pname == "Glow Serum" -%}{%- assign phandle = "centella-serum" -%}
+          {%- elsif pname == "Glutathione Cream" -%}{%- assign phandle = "glutathione-cream-v2" -%}
+          {%- elsif pname == "Floral Blossom Hair Mist" -%}{%- assign phandle = "hair-mist-v2" -%}
+          {%- elsif pname == "Face Wash" -%}{%- assign phandle = "e7-korean-glass-skin-centella-face-wash-copy" -%}
+          {%- elsif pname == "Anti Acne" -%}{%- assign phandle = "anti-acne-serum-v2" -%}
+          {%- elsif pname == "Sunscreen SPF60+" -%}{%- assign phandle = "e7-korean-glass-skin-centella-sunscreen-spf50-copy" -%}
+          {%- elsif pname == "Renewal Cleanser" -%}{%- assign phandle = "renewal-cleanser-v2" -%}
+          {%- elsif pname == "Hydra Burst Moisturizer" -%}{%- assign phandle = "e7-korean-glass-skin-moisturizer" -%}
+          {%- elsif pname == "Renewal Toner" -%}{%- assign phandle = "centella-skin-toner-copy" -%}
+          {%- elsif pname == "Oil to Foam Cleanser" -%}{%- assign phandle = "oil-to-foam-cleanser" -%}
+          {%- elsif pname == "Gel Cleanser" -%}{%- assign phandle = "gel-cleanser" -%}
+          {%- elsif pname == "Hair Regrow Spray" -%}{%- assign phandle = "hair-regrow-spray" -%}
+          {%- endif -%}
+
+          {%- assign cur_p = all_products[phandle] -%}
+          {%- assign pimg = f_images[i] | asset_url -%}
+          {%- if cur_p.featured_image != blank -%}{%- assign pimg = cur_p.featured_image | img_url: '800x800' -%}{%- endif -%}
+          {%- assign phov = f_hovers[i] | asset_url -%}
+          {%- if cur_p.images.size > 1 -%}{%- assign phov = cur_p.images[1] | img_url: '1200x' -%}{%- endif -%}
+          {%- assign plab = f_labels[i] -%}
+
+          {%- assign c_price = "1,500" -%}
+          {%- case phandle -%}
+            {%- when 'night-cream' or 'e7-korean-glass-skin-centella-night-cream-copy' -%}{%- assign c_price = "2,675" -%}
+            {%- when 'tranexamic-serum' or 'tranexamic-serum-v2' -%}{%- assign c_price = "2,740" -%}
+            {%- when 'anti-frizz-keratin-serum' or 'keratin-serum-v2' or 'keratin-serum' -%}{%- assign c_price = "2,680" -%}
+            {%- when 'glow-serum' or 'centella-serum' -%}{%- assign c_price = "2,645" -%}
+            {%- when 'glutathione-cream' or 'glutathione-cream-v2' -%}{%- assign c_price = "2,640" -%}
+            {%- when 'floral-blossom-hair-mist' or 'hair-mist' or 'hair-mist-v2' -%}{%- assign c_price = "2,960" -%}
+            {%- when 'face-wash' or 'e7-korean-glass-skin-centella-face-wash-copy' -%}{%- assign c_price = "2,620" -%}
+            {%- when 'anti-acne' or 'anti-acne-serum-v2' -%}{%- assign c_price = "2,755" -%}
+            {%- when 'sunscreen' or 'sunscreen-v2' or 'e7-korean-glass-skin-centella-sunscreen-spf50-copy' -%}{%- assign c_price = "2,735" -%}
+            {%- when 'renewal-cleanser' or 'renewal-cleanser-v2' -%}{%- assign c_price = "2,820" -%}
+            {%- when 'centella-moisturizer' or 'moisturizer' or 'e7-korean-glass-skin-moisturizer' -%}{%- assign c_price = "2,680" -%}
+            {%- when 'renewal-toner' or 'renewal-toner-v2' or 'centella-skin-toner-copy' -%}{%- assign c_price = "2,780" -%}
+            {%- when 'oil-to-foam-cleanser' -%}{%- assign c_price = "2,820" -%}
+            {%- when 'skin-refining-toner' -%}{%- assign c_price = "2,780" -%}
+            {%- when 'gel-cleanser' -%}{%- assign c_price = "2,620" -%}
+            {%- when 'hair-regrow-spray' -%}{%- assign c_price = "2,790" -%}
+          {%- endcase -%}
+
+          <div class="card card-rhode" data-category="{{ plab }}">
+             <a href="/products/{{ phandle }}" class="card-link-wrapper">
+               {% if phov != blank and phov != 'none' %}<img src="{{ phov }}" class="card-hover-bg" alt="Hover">{% endif %}
+               <div class="card-rhode-top"><span class="card-brand-label">{{ plab }}</span></div>
+               <div class="card-rhode-image"><img src="{{ pimg }}" class="product-main-img" alt="{{ pname }}"></div>
+               <div class="card-rhode-footer">
+                 <div class="card-meta"><h3 class="card-name">{{ cur_p.title | default: pname | upcase | replace: 'RENEWAL CLEANSER', 'GEL CLEANSER' | replace: 'Renewal Cleanser', 'Gel Cleanser' }}</h3></div>
+                 <span class="btn-rhode-buy-pill">BUY - RS. {{ c_price }}</span>
+               </div>
+               <div class="buy-button-hover" data-handle="{{ phandle }}">BUY {{ cur_p.title | default: pname | upcase | replace: 'RENEWAL CLEANSER', 'GEL CLEANSER' | replace: 'Renewal Cleanser', 'Gel Cleanser' }} - RS. {{ c_price }}</div>
+             </a>
+          </div>
+        {% endfor %}
+
+        {% comment %} 3. Bundle Cards {% endcomment %}
+        <div class="card card-rhode bundle-card" data-category="set" onclick="window.location.href='/products/elaris-7-korean-glass-skin-bundle'" style="display: none; background: #fff; border: 1px solid #eee; justify-content: center; align-items: center; min-height: 480px; cursor: pointer; overflow: hidden; padding: 0;">
+          <img src="{{ 'glassskinbundle.jpeg' | asset_url }}" class="bundle-card-img" style="width: 100%; height: 100%; object-fit: cover;">
+          <div style="position: absolute; bottom: 0; left: 0; right: 0; background: rgba(255,255,255,0.95); padding: 18px 15px; border-top: 1px solid #eee; text-align: center;">
+            <h3 style="font-size: 13px; font-weight: 800; text-transform: uppercase; margin: 0 0 5px;">Korean Glass Skin Bundle</h3>
+            <div style="margin-bottom: 8px;"><span style="font-size: 11px; text-decoration: line-through; color: #999; margin-right: 8px;">RS. 13,354</span><span style="font-size: 13px; font-weight: 800; color: #2c2b28;">RS. 6,677</span></div>
+            <span style="font-size: 10px; font-weight: 800; color: #555; text-transform: uppercase; border: 1px solid #555; padding: 4px 10px; border-radius: 20px;">SHOP THE SET</span>
+          </div>
+        </div>
+        <div class="card card-rhode bundle-card" data-category="set" onclick="window.location.href='/products/elaris-7-korean-brightening-bundle'" style="display: none; background: #fff; border: 1px solid #eee; justify-content: center; align-items: center; min-height: 480px; cursor: pointer; overflow: hidden; padding: 0;">
+          <img src="{{ 'main.jpg' | file_img_url: '600x' }}" class="bundle-card-img" style="width: 100%; height: 100%; object-fit: cover;">
+          <div style="position: absolute; bottom: 0; left: 0; right: 0; background: rgba(255,255,255,0.95); padding: 18px 15px; border-top: 1px solid #eee; text-align: center;">
+            <h3 style="font-size: 13px; font-weight: 800; text-transform: uppercase; margin: 0 0 5px;">Korean Brightening Bundle</h3>
+            <div style="margin-bottom: 8px;"><span style="font-size: 11px; text-decoration: line-through; color: #999; margin-right: 8px;">RS. 10,784</span><span style="font-size: 13px; font-weight: 800; color: #2c2b28;">RS. 5,392</span></div>
+            <span style="font-size: 10px; font-weight: 800; color: #555; text-transform: uppercase; border: 1px solid #555; padding: 4px 10px; border-radius: 20px;">SHOP THE SET</span>
+          </div>
+        </div>
+        <div class="card card-rhode bundle-card" data-category="set" onclick="window.location.href='/products/elaris-7-korean-hair-care-bundle'" style="display: none; background: #fff; border: 1px solid #eee; justify-content: center; align-items: center; min-height: 480px; cursor: pointer; overflow: hidden; padding: 0;">
+          <img src="{{ 'hairmain.jpg' | file_img_url: '600x' }}" class="bundle-card-img" style="width: 100%; height: 100%; object-fit: cover;">
+          <div style="position: absolute; bottom: 0; left: 0; right: 0; background: rgba(255,255,255,0.95); padding: 18px 15px; border-top: 1px solid #eee; text-align: center;">
+            <h3 style="font-size: 13px; font-weight: 800; text-transform: uppercase; margin: 0 0 5px;">Hair Care Bundle</h3>
+            <div style="margin-bottom: 8px;"><span style="font-size: 11px; text-decoration: line-through; color: #999; margin-right: 8px;">RS. 8,430</span><span style="font-size: 13px; font-weight: 800; color: #2c2b28;">RS. 4,215</span></div>
+            <span style="font-size: 10px; font-weight: 800; color: #555; text-transform: uppercase; border: 1px solid #555; padding: 4px 10px; border-radius: 20px;">SHOP THE SET</span>
+          </div>
+        </div>
+      </div>
     </div>
   {% endif %}
 </div>
@@ -103,17 +206,32 @@
   .collection-pills { display: flex; gap: 15px; justify-content: center; white-space: nowrap; }
   .coll-pill { text-decoration: none; font-size: 0.72rem; font-weight: 800; color: #5b5a53; padding: 10px 24px; border-radius: 50px; border: 1px solid #e5e5e5; transition: all 0.3s ease; }
   .coll-pill.active { background: #5b5a53; color: #fff; border-color: #5b5a53; }
-  .collection-main { max-width: 1400px; margin: 0 auto; padding: 60px 40px; }
-  .collection-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; }
-  .coll-item { background: #fff; border-radius: 8px; overflow: hidden; }
-  .coll-image { aspect-ratio: 1/1.3; position: relative; overflow: hidden; }
-  .coll-image img { width: 100%; height: 100%; object-fit: contain; padding: 20px; mix-blend-mode: multiply; }
-  .coll-title { font-size: 0.8rem; font-weight: 900; color: #333; margin: 10px 0 5px; text-align: center; }
-  .coll-price { font-size: 0.75rem; font-weight: 700; color: #5b5a53; text-align: center; padding-bottom: 15px; }
+  .collection-main { max-width: 1400px; margin: 0 auto; padding: 40px; }
+  
+  /* Rhode Grid Style */
+  .collection-grid-rhode {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    padding: 0;
+  }
+  
+  .collection-grid-rhode .card-rhode {
+    width: 100% !important;
+    flex: none !important;
+    scroll-snap-align: none !important;
+    display: flex !important; /* Default show, JS will hide */
+  }
 
-  @media (max-width: 768px) {
-    .collection-grid { grid-template-columns: 1fr; gap: 20px; }
-    .collection-nav-inner { padding: 12px 16px; }
+  @media (max-width: 1100px) {
+    .collection-grid-rhode { grid-template-columns: repeat(3, 1fr); }
+  }
+  @media (max-width: 850px) {
+    .collection-grid-rhode { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .collection-main { padding: 20px 12px; }
+  }
+  @media (max-width: 500px) {
+    .collection-grid-rhode { grid-template-columns: 1fr; }
   }
 </style>
 

@@ -311,7 +311,21 @@ document.addEventListener('DOMContentLoaded', () => {
     const category = link.getAttribute('data-category') || link.textContent.trim().toLowerCase().replace(/\s+/g, '-');
     if (!category || category === '#') return;
 
-    // Only prevent default if it's acting as a filter button
+    // Check if we are on a page that should filter instead of navigate
+    const isFilterPage = window.location.pathname.includes('/collections/all') || 
+                         document.querySelector('.collection-grid-rhode') ||
+                         document.querySelector('.product-collection');
+
+    if (isFilterPage) {
+       // If it's a category link, filter instead of navigating
+       if (link.classList.contains('cat-link') || link.classList.contains('mega-cat-item')) {
+         e.preventDefault();
+         applyFilter(category, true);
+         return;
+       }
+    }
+
+    // Fallback for javascript:void(0) links
     if (link.getAttribute('href') === 'javascript:void(0)' || !link.getAttribute('href')) {
        e.preventDefault();
        applyFilter(category, true);
