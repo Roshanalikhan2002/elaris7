@@ -101,32 +101,16 @@
            </a>
         </div>
 
-        {% comment %} 2. Fallback List (Homepage Content) {% endcomment %}
-        {%- assign f_names = "Oil to Foam Cleanser,Gel Cleanser,Hair Regrow Spray,Night Cream,Tranexamic Serum,Anti Frizz Keratin Serum,Glow Serum,Glutathione Cream,Floral Blossom Hair Mist,Face Wash,Anti Acne,Sunscreen SPF60+,Renewal Cleanser,Hydra Burst Moisturizer,Renewal Toner" | split: "," -%}
-        {%- assign f_images = "oil-to-foam-main.jpg,gel cleanser-100.jpg,hair-mist.jpg,night-cream.jpg,tranexamic-serum.jpg,keratin-serum.jpg,glow-serum-100.jpg,glutathione-cream-100.jpg,hair-mist.jpg,facewash-100.jpg,anti-acne-100.jpg,sunscreen-100.jpg,renewal-cleanser-1.jpg,moisturizer-100.jpg,toner1.jpeg" | split: "," -%}
-        {%- assign f_hovers = "oil-to-foam-hover.jpg,deep-hydration-facewash.jpg,hair-mist-hover.jpg,night-cream-hover.jpg,tranexamic-meet-1.jpg,keratin-serum-hover.jpg,glow-serum-hover.jpg,deep-hydration-100.jpg,hair-mist-hover.jpg,deep-hydration-facewash.jpg,hover-anti-acne.png,sunscreen-hover.jpg,renewal-cleanser-2.jpg,moisturizer-hover.jpg,toner-hover.jpg" | split: "," -%}
-        {%- assign f_labels = "korean-glass-skin,korean-brightening,hair-care,korean-glass-skin,korean-brightening,hair-care,korean-glass-skin,korean-brightening,hair-care,korean-glass-skin,anti-acne,korean-glass-skin,korean-brightening,korean-glass-skin,featured" | split: "," -%}
+        {% comment %} 2. Fallback List (Featured Collection) {% endcomment %}
+        {%- assign f_names = "Centella Night Cream,Tranexamic Brightening Serum,Anti Frizz Keratin Serum,Centella Serum,Brightening Repair Cream,Floral Blossom Hair Mist,Centella Face Wash,Anti Acne,Centella Sunscreen SPF60+,Gel Cleanser,Centella Moisturizer,Renewal Toner" | split: "," -%}
+        {%- assign f_handles = "night-cream,tranexamic-serum,anti-frizz-keratin-serum,e7-korean-glass-skin-centella-sunscreen-spf50-copy,glutathione-cream,floral-blossom-hair-mist,e7-korean-glass-skin-centella-night-cream-copy,anti-acne,e7-korean-glass-skin-centella-face-wash-copy,renewal-cleanser,centella-moisturizer,renewal-toner" | split: "," -%}
+        {%- assign f_images = "night-cream.jpg,tranexamic-serum.jpg,keratin-serum.jpg,glow-serum-100.jpg,glutathione-cream-100.jpg,hair-mist.jpg,facewash-100.jpg,anti-acne-100.jpg,sunscreen-100.jpg,renewal-cleanser-1.jpg,moisturizer-100.jpg,toner1.jpeg" | split: "," -%}
+        {%- assign f_hovers = "night-cream-hover.jpg,tranexamic-meet-1.jpg,keratin-serum-hover.jpg,glow-serum-hover.jpg,deep-hydration-100.jpg,hair-mist-hover.jpg,deep-hydration-facewash.jpg,hover-anti-acne.png,sunscreen-hover.jpg,renewal-cleanser-2.jpg,moisturizer-hover.jpg,toner-hover.jpg" | split: "," -%}
+        {%- assign f_labels = "featured korean-glass-skin,featured korean-brightening,featured hair-care,featured korean-glass-skin,featured korean-brightening,featured hair-care,featured korean-glass-skin,featured anti-acne,featured korean-glass-skin,featured korean-brightening,featured korean-glass-skin,featured" | split: "," -%}
         
-        {% for i in (0..14) %}
+        {% for i in (0..11) %}
           {%- assign pname = f_names[i] -%}
-          {%- assign phandle = pname | handleize -%}
-          {%- if pname == "Night Cream" -%}{%- assign phandle = "e7-korean-glass-skin-centella-night-cream-copy" -%}
-          {%- elsif pname == "Tranexamic Serum" -%}{%- assign phandle = "tranexamic-serum-v2" -%}
-          {%- elsif pname contains "Keratin Serum" -%}{%- assign phandle = "keratin-serum-v2" -%}
-          {%- elsif pname == "Glow Serum" -%}{%- assign phandle = "centella-serum" -%}
-          {%- elsif pname == "Glutathione Cream" -%}{%- assign phandle = "glutathione-cream-v2" -%}
-          {%- elsif pname == "Floral Blossom Hair Mist" -%}{%- assign phandle = "hair-mist-v2" -%}
-          {%- elsif pname == "Face Wash" -%}{%- assign phandle = "e7-korean-glass-skin-centella-face-wash-copy" -%}
-          {%- elsif pname == "Anti Acne" -%}{%- assign phandle = "anti-acne-serum-v2" -%}
-          {%- elsif pname == "Sunscreen SPF60+" -%}{%- assign phandle = "e7-korean-glass-skin-centella-sunscreen-spf50-copy" -%}
-          {%- elsif pname == "Renewal Cleanser" -%}{%- assign phandle = "renewal-cleanser-v2" -%}
-          {%- elsif pname == "Hydra Burst Moisturizer" -%}{%- assign phandle = "e7-korean-glass-skin-moisturizer" -%}
-          {%- elsif pname == "Renewal Toner" -%}{%- assign phandle = "centella-skin-toner-copy" -%}
-          {%- elsif pname == "Oil to Foam Cleanser" -%}{%- assign phandle = "oil-to-foam-cleanser" -%}
-          {%- elsif pname == "Gel Cleanser" -%}{%- assign phandle = "gel-cleanser" -%}
-          {%- elsif pname == "Hair Regrow Spray" -%}{%- assign phandle = "hair-regrow-spray" -%}
-          {%- endif -%}
-
+          {%- assign phandle = f_handles[i] -%}
           {%- assign cur_p = all_products[phandle] -%}
           {%- assign pimg = f_images[i] | asset_url -%}
           {%- if cur_p.featured_image != blank -%}{%- assign pimg = cur_p.featured_image | img_url: '800x800' -%}{%- endif -%}
@@ -134,36 +118,32 @@
           {%- if cur_p.images.size > 1 -%}{%- assign phov = cur_p.images[1] | img_url: '1200x' -%}{%- endif -%}
           {%- assign plab = f_labels[i] -%}
 
-          {%- assign c_price = "1,500" -%}
+          {%- assign c_price = "2,620" -%}
           {%- case phandle -%}
-            {%- when 'night-cream' or 'e7-korean-glass-skin-centella-night-cream-copy' -%}{%- assign c_price = "2,675" -%}
-            {%- when 'tranexamic-serum' or 'tranexamic-serum-v2' -%}{%- assign c_price = "2,740" -%}
-            {%- when 'anti-frizz-keratin-serum' or 'keratin-serum-v2' or 'keratin-serum' -%}{%- assign c_price = "2,680" -%}
-            {%- when 'glow-serum' or 'centella-serum' -%}{%- assign c_price = "2,645" -%}
-            {%- when 'glutathione-cream' or 'glutathione-cream-v2' -%}{%- assign c_price = "2,640" -%}
-            {%- when 'floral-blossom-hair-mist' or 'hair-mist' or 'hair-mist-v2' -%}{%- assign c_price = "2,960" -%}
-            {%- when 'face-wash' or 'e7-korean-glass-skin-centella-face-wash-copy' -%}{%- assign c_price = "2,620" -%}
-            {%- when 'anti-acne' or 'anti-acne-serum-v2' -%}{%- assign c_price = "2,755" -%}
-            {%- when 'sunscreen' or 'sunscreen-v2' or 'e7-korean-glass-skin-centella-sunscreen-spf50-copy' -%}{%- assign c_price = "2,735" -%}
-            {%- when 'renewal-cleanser' or 'renewal-cleanser-v2' -%}{%- assign c_price = "2,820" -%}
-            {%- when 'centella-moisturizer' or 'moisturizer' or 'e7-korean-glass-skin-moisturizer' -%}{%- assign c_price = "2,680" -%}
-            {%- when 'renewal-toner' or 'renewal-toner-v2' or 'centella-skin-toner-copy' -%}{%- assign c_price = "2,780" -%}
-            {%- when 'oil-to-foam-cleanser' -%}{%- assign c_price = "2,820" -%}
-            {%- when 'skin-refining-toner' -%}{%- assign c_price = "2,780" -%}
-            {%- when 'gel-cleanser' -%}{%- assign c_price = "2,620" -%}
-            {%- when 'hair-regrow-spray' -%}{%- assign c_price = "2,790" -%}
+            {%- when 'night-cream' -%}{%- assign c_price = "2,675" -%}
+            {%- when 'tranexamic-serum' -%}{%- assign c_price = "2,740" -%}
+            {%- when 'anti-frizz-keratin-serum' -%}{%- assign c_price = "2,680" -%}
+            {%- when 'e7-korean-glass-skin-centella-sunscreen-spf50-copy' -%}{%- assign c_price = "2,645" -%}
+            {%- when 'glutathione-cream' -%}{%- assign c_price = "2,640" -%}
+            {%- when 'floral-blossom-hair-mist' -%}{%- assign c_price = "2,960" -%}
+            {%- when 'e7-korean-glass-skin-centella-night-cream-copy' -%}{%- assign c_price = "2,620" -%}
+            {%- when 'anti-acne' -%}{%- assign c_price = "2,755" -%}
+            {%- when 'e7-korean-glass-skin-centella-face-wash-copy' -%}{%- assign c_price = "2,735" -%}
+            {%- when 'renewal-cleanser' -%}{%- assign c_price = "2,820" -%}
+            {%- when 'centella-moisturizer' -%}{%- assign c_price = "2,680" -%}
+            {%- when 'renewal-toner' -%}{%- assign c_price = "2,780" -%}
           {%- endcase -%}
 
           <div class="card card-rhode" data-category="{{ plab }}">
              <a href="/products/{{ phandle }}" class="card-link-wrapper">
                {% if phov != blank and phov != 'none' %}<img src="{{ phov }}" class="card-hover-bg" alt="Hover">{% endif %}
-               <div class="card-rhode-top"><span class="card-brand-label">{{ plab }}</span></div>
+               <div class="card-rhode-top"><span class="card-brand-label">{{ plab | split: ' ' | last }}</span></div>
                <div class="card-rhode-image"><img src="{{ pimg }}" class="product-main-img" alt="{{ pname }}"></div>
                <div class="card-rhode-footer">
-                 <div class="card-meta"><h3 class="card-name">{{ cur_p.title | default: pname | upcase | replace: 'RENEWAL CLEANSER', 'GEL CLEANSER' | replace: 'Renewal Cleanser', 'Gel Cleanser' }}</h3></div>
+                 <div class="card-meta"><h3 class="card-name">{{ pname | upcase }}</h3></div>
                  <span class="btn-rhode-buy-pill">BUY - RS. {{ c_price }}</span>
                </div>
-               <div class="buy-button-hover" data-handle="{{ phandle }}">BUY {{ cur_p.title | default: pname | upcase | replace: 'RENEWAL CLEANSER', 'GEL CLEANSER' | replace: 'Renewal Cleanser', 'Gel Cleanser' }} - RS. {{ c_price }}</div>
+               <div class="buy-button-hover" data-handle="{{ phandle }}">BUY {{ pname | upcase }} - RS. {{ c_price }}</div>
              </a>
           </div>
         {% endfor %}
