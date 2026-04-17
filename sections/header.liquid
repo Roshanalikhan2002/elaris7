@@ -1,6 +1,6 @@
 <header class="site-header">
   {%- assign mega_names = "NIGHT CREAM,TRANEXAMIC SERUM,ANTI FRIZZ KERATIN SERUM,CENTELLA SERUM,BRIGHTENING REPAIR CREAM,FLORAL BLOSSOM HAIR MIST,FACE WASH,ANTI ACNE,CENTELLA SUNSCREEN,GEL CLEANSER,CENTELLA MOISTURIZER,RENEWAL TONER,OIL TO FOAM CLEANSER,HAIR REGROWTH SPRAY" | split: "," -%}
-  {%- assign mega_images = "night-cream.jpg,tranexamic-serum.jpg,keratin-serum.jpg,glow-serum-100.jpg,glutathione-cream-100.jpg,hair-mist.jpg,facewash-100.jpg,anti-acne-100.jpg,sunscreen-100.jpg,rc-gal-1.jpg,moisturizer-100.jpg,renewal toner-100.jpg,oil-to-foam-main.jpg,hair-regrow-main.jpeg" | split: "," -%}
+  {%- assign mega_images = "night-cream.jpg,tranexamic-serum.jpg,keratin-serum.jpg,glow-serum-100.jpg,glutathione-cream-100.jpg,hair-mist.jpg,facewash-100.jpg,anti-acne-100.jpg,sunscreen-100.jpg,rc-gal-1.jpg,moisturizer-100.jpg,renewal toner-100.jpg,rc-gal-1.jpg,hair-regrow-main.jpeg" | split: "," -%}
   {%- assign mega_descs = "To Restore & Protect,Even & Illuminate,Repair & Smooth Hair,Smooth Control Glow,Glow & Repair,Fresh Floral Touch,Gentle Daily Cleanser,Targeted Spot Control,Premium Solar Protection,Intense Clarity Refresh,Plumping Hydration Boost,Refining Skin Texture,Deep Double Cleansing,Healthy Hair Growth" | split: "," -%}
   {%- assign mega_labels = "featured korean-glass-skin,featured korean-brightening,featured hair-care,featured korean-glass-skin,featured korean-brightening,featured hair-care,featured korean-glass-skin,featured anti-acne,featured korean-glass-skin,featured korean-brightening,featured korean-glass-skin,featured korean-brightening,korean-glass-skin,hair-care" | split: "," -%}
   {%- assign mega_handles = "night-cream,tranexamic-serum,anti-frizz-keratin-serum,e7-korean-glass-skin-centella-sunscreen-spf50-copy,glutathione-cream,floral-blossom-hair-mist,e7-korean-glass-skin-centella-night-cream-copy,anti-acne,e7-korean-glass-skin-centella-face-wash-copy,renewal-cleanser,centella-moisturizer,renewal-toner,oil-to-foam-cleanser,hair-regrow-spray" | split: "," -%}
@@ -46,11 +46,7 @@
                   
                   <a href="/products/{{ mhandle }}" class="mega-product-card">
                     <div class="mega-product-image">
-                      {% if mimage contains 'main.jpg' %}
-                        <img src="{{ mimage | file_img_url: '600x' }}" alt="{{ mname }}">
-                      {% else %}
-                        <img src="{{ mimage | asset_url }}" alt="{{ mname }}">
-                      {% endif %}
+                      <img src="{{ mimage | asset_url }}" alt="{{ mname }}">
                     </div>
                     <div class="mega-product-info">
                       <h3 class="mega-product-name">{{ mname | upcase }}</h3>
@@ -153,11 +149,7 @@
         
         <a href="/products/{{ mhandle }}" class="menu-product-row" data-category="{{ mlabel }}">
           <div class="mini-thumb">
-            {% if mimage contains 'main.jpg' %}
-              <img src="{{ mimage | file_img_url: '600x' }}" alt="{{ mname }}" loading="lazy">
-            {% else %}
-              <img src="{{ mimage | asset_url }}" alt="{{ mname }}" loading="lazy">
-            {% endif %}
+            <img src="{{ mimage | asset_url }}" alt="{{ mname }}" loading="lazy">
           </div>
           <div class="mini-meta">
             <div class="mini-title card-name">{{ mname | upcase }}</div>
