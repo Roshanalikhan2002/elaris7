@@ -21,6 +21,11 @@
 {%- endif -%}
 
 <div class="collection-page">
+  <!-- MOBILE HERO BANNER (Homepage Style) -->
+  <div class="mobile-only coll-mobile-banner">
+    <img src="{{ 'new bundle banner-100.jpg' | asset_url }}" alt="New Bundle Launch">
+  </div>
+
   <div class="collection-nav-bar">
     <div class="collection-nav-inner">
        {% assign default_cats = "Featured,Korean glass skin,Anti acne,Korean brightening,Hair care,Sets" | split: "," %}
@@ -207,9 +212,19 @@
   @media (max-width: 850px) {
     .collection-grid-rhode { grid-template-columns: repeat(2, 1fr); gap: 12px; }
     .collection-main { padding: 20px 12px; }
+    .collection-nav-inner { padding: 12px 10px; }
+    .collection-pills { justify-content: flex-start; padding-left: 10px; padding-right: 10px; }
   }
   @media (max-width: 500px) {
     .collection-grid-rhode { grid-template-columns: 1fr; }
+  }
+
+  /* Mobile Banner Styles */
+  .coll-mobile-banner { width: 100%; aspect-ratio: 4/5; background: #f1efea; }
+  .coll-mobile-banner img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  
+  @media (min-width: 769px) {
+    .coll-mobile-banner { display: none !important; }
   }
 </style>
 
