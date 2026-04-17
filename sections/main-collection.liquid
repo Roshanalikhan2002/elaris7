@@ -104,8 +104,8 @@
         {% comment %} 2. Fallback List (Featured Collection) {% endcomment %}
         {%- assign f_names = "Centella Night Cream,Tranexamic Brightening Serum,Anti Frizz Keratin Serum,Centella Serum,Brightening Repair Cream,Floral Blossom Hair Mist,Centella Face Wash,Anti Acne,Centella Sunscreen SPF60+,Gel Cleanser,Centella Moisturizer,Renewal Toner" | split: "," -%}
         {%- assign f_handles = "night-cream,tranexamic-serum,anti-frizz-keratin-serum,e7-korean-glass-skin-centella-sunscreen-spf50-copy,glutathione-cream,floral-blossom-hair-mist,e7-korean-glass-skin-centella-night-cream-copy,anti-acne,e7-korean-glass-skin-centella-face-wash-copy,renewal-cleanser,centella-moisturizer,renewal-toner" | split: "," -%}
-        {%- assign f_images = "night-cream.jpg,tranexamic-serum.jpg,keratin-serum.jpg,glow-serum-100.jpg,glutathione-cream-100.jpg,hair-mist.jpg,facewash-100.jpg,anti-acne-100.jpg,sunscreen-100.jpg,renewal-cleanser-1.jpg,moisturizer-100.jpg,toner1.jpeg" | split: "," -%}
-        {%- assign f_hovers = "night-cream-hover.jpg,tranexamic-meet-1.jpg,keratin-serum-hover.jpg,glow-serum-hover.jpg,deep-hydration-100.jpg,hair-mist-hover.jpg,deep-hydration-facewash.jpg,hover-anti-acne.png,sunscreen-hover.jpg,renewal-cleanser-2.jpg,moisturizer-hover.jpg,toner-hover.jpg" | split: "," -%}
+        {%- assign f_images = "night-cream.jpg,tranexamic-serum.jpg,keratin-serum.jpg,glow-serum-100.jpg,glutathione-cream-100.jpg,hair-mist.jpg,facewash-100.jpg,anti-acne-100.jpg,sunscreen-100.jpg,rc-gal-1.jpg,moisturizer-100.jpg,renewal toner-100.jpg" | split: "," -%}
+        {%- assign f_hovers = "night-cream-hover.jpg,tranexamic-meet-1.jpg,keratin-serum-hover.jpg,glow-serum-hover.jpg,deep-hydration-100.jpg,hair-mist-hover.jpg,deep-hydration-facewash.jpg,hover-anti-acne.png,sunscreen-hover.jpg,rc-gal-2.jpg,moisturizer-hover.jpg,toner-hover.jpg" | split: "," -%}
         {%- assign f_labels = "featured korean-glass-skin,featured korean-brightening,featured hair-care,featured korean-glass-skin,featured korean-brightening,featured hair-care,featured korean-glass-skin,featured anti-acne,featured korean-glass-skin,featured korean-brightening,featured korean-glass-skin,featured" | split: "," -%}
         
         {% for i in (0..11) %}
@@ -113,9 +113,7 @@
           {%- assign phandle = f_handles[i] -%}
           {%- assign cur_p = all_products[phandle] -%}
           {%- assign pimg = f_images[i] | asset_url -%}
-          {%- if cur_p.featured_image != blank -%}{%- assign pimg = cur_p.featured_image | img_url: '800x800' -%}{%- endif -%}
           {%- assign phov = f_hovers[i] | asset_url -%}
-          {%- if cur_p.images.size > 1 -%}{%- assign phov = cur_p.images[1] | img_url: '1200x' -%}{%- endif -%}
           {%- assign plab = f_labels[i] -%}
 
           {%- assign c_price = "2,620" -%}
