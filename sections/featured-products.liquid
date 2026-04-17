@@ -124,12 +124,12 @@
 
               <div class="card-meta">
 
-                <h3 class="card-name">{{ block.settings.title | default: 'NIGHT CREAM' }}</h3>
+                <h3 class="card-name">{{ block.settings.title | default: 'NIGHT CREAM' | replace: 'Renewal Cleanser', 'Gel Cleanser' | replace: 'RENEWAL CLEANSER', 'GEL CLEANSER' }}</h3>
               </div>
               <span class="btn-rhode-buy-pill">BUY - {{ b_custom_price }}</span>
             </div>
             <div class="buy-button-hover" data-handle="{{ b_handle }}">
-              BUY {{ block.settings.title | default: 'NIGHT CREAM' | upcase }} - {{ b_custom_price }}
+              BUY {{ block.settings.title | default: 'NIGHT CREAM' | upcase | replace: 'RENEWAL CLEANSER', 'GEL CLEANSER' | replace: 'Renewal Cleanser', 'Gel Cleanser' }} - {{ b_custom_price }}
             </div>
           </a>
           
@@ -235,12 +235,12 @@
 
               <div class="card-meta">
 
-                <h3 class="card-name">{{ current_prod.title | default: pname | upcase }}</h3>
+                <h3 class="card-name">{{ current_prod.title | default: pname | upcase | replace: 'RENEWAL CLEANSER', 'GEL CLEANSER' | replace: 'Renewal Cleanser', 'Gel Cleanser' }}</h3>
               </div>
               <span class="btn-rhode-buy-pill">BUY - {{ pprice }}</span>
             </div>
             <div class="buy-button-hover" data-handle="{{ phandle }}" onclick="window.location.href='/products/{{ phandle }}'">
-              BUY {{ current_prod.title | default: pname | upcase }} - {{ pprice }}
+              BUY {{ current_prod.title | default: pname | upcase | replace: 'RENEWAL CLEANSER', 'GEL CLEANSER' | replace: 'Renewal Cleanser', 'Gel Cleanser' }} - {{ pprice }}
             </div>
           </a>
           
