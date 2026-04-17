@@ -24,43 +24,6 @@
       <ul class="desktop-only site-nav">
         <li class="nav-item-shop">
           <a href="/collections/all" class="nav-link">SHOP</a>
-          <div class="mega-menu-container">
-            <div class="mega-menu-categories">
-              <div class="mega-cat-list">
-                <a href="/collections/all" class="mega-cat-item active">FEATURED</a>
-                <a href="/collections/korean-glass-skin" class="mega-cat-item">KOREAN GLASS SKIN</a>
-                <a href="/collections/anti-acne" class="mega-cat-item">ANTI ACNE</a>
-                <a href="/collections/korean-brightening" class="mega-cat-item">KOREAN BRIGHTENING</a>
-                <a href="/collections/hair-care" class="mega-cat-item">HAIR CARE</a>
-                <a href="/collections/sets" class="mega-cat-item">SETS</a>
-              </div>
-            </div>
-            
-            <div class="mega-menu-products">
-              <div class="mega-products-grid">
-                {% for i in (0..15) %}
-                  {%- assign mname = mega_names[i] -%}
-                  {%- assign mimage = mega_images[i] -%}
-                  {%- assign mdesc = mega_descs[i] -%}
-                  {%- assign mhandle = mega_handles[i] -%}
-                  
-                  <a href="/products/{{ mhandle }}" class="mega-product-card">
-                    <div class="mega-product-image">
-                      <img src="{{ mimage | asset_url }}" alt="{{ mname }}">
-                    </div>
-                    <div class="mega-product-info">
-                      <h3 class="mega-product-name">{{ mname | upcase }}</h3>
-                      <p class="mega-product-desc">{{ mdesc }}</p>
-                    </div>
-                  </a>
-                {% endfor %}
-              </div>
-            </div>
-            
-            <div class="mega-menu-footer">
-              <a href="/collections/all" class="mega-shop-btn">SHOP ELARIS7</a>
-            </div>
-          </div>
         </li>
         <li><a href="/pages/about" class="nav-link">ABOUT</a></li>
         <li><a href="/pages/futures" class="nav-link">FUTURES</a></li>
@@ -622,11 +585,6 @@ body.menu-open { overflow: hidden; }
   z-index: 1000;
 }
 
-.nav-item-shop:hover .mega-menu-container {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
 
 /* Mega Menu Categories */
 .mega-menu-categories {
