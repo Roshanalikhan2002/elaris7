@@ -244,11 +244,11 @@
       {%- elsif is_face_wash -%}
         <img class="faq-image faq-bg-img" src="{{ 'meet-elaris-you-2-100-10.jpg' | asset_url }}" alt="FAQ Face Wash Visual">
       {%- elsif product.handle == 'anti-frizz-keratin-serum' or product.handle == 'anti-frizz-serum' or product.handle == 'keratin-serum' -%}
-      {%- elsif product.handle == 'centella-skin-toner-copy' or product.handle == 'renewal-cleanser' -%}
+      {%- elsif product.handle == 'renewal-toner' or product.handle == 'renewal-cleanser' -%}
         <img class="faq-image faq-bg-img" src="{{ 'cleanser-meet-1.jpg' | asset_url }}" alt="FAQ Cleanser Visual">
       {%- elsif product.handle == 'centella-skin-toner' -%}
         <img class="faq-image faq-bg-img" src="{{ 'toner-meet-4.jpg' | asset_url }}" alt="FAQ Toner Visual">
-      {%- elsif product.handle == 'centella-skin-toner-copy' or product.handle == 'renewal-cleanser' -%}
+      {%- elsif product.handle == 'renewal-toner' or product.handle == 'renewal-cleanser' -%}
         <img class="faq-image faq-bg-img" src="{{ 'glutathione-cream-100.jpg' | asset_url }}" alt="FAQ Glutathione Cream Visual">
       {%- elsif product.handle == 'floral-blossom-hair-mist' -%}
         <img class="faq-image faq-bg-img" src="{{ 'hair-mist-faq.jpg' | asset_url }}" alt="FAQ Hair Mist Visual">
@@ -428,5 +428,6 @@ document.addEventListener('DOMContentLoaded', () => {
   "presets": [{ "name": "FAQ Split" }]
 }
 {% endschema %}
+
 
 

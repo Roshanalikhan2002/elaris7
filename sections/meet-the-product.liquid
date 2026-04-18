@@ -91,7 +91,7 @@
     {%- assign meet_title = "Your Overnight Glow Secret" -%}
   {%- elsif product.handle contains 'centella-skin-toner' or product.handle contains 'renewal-cleanser' -%}
     {%- assign meet_title = "Clarity You Can See" -%}
-  {%- elsif product.handle == 'e7-korean-glass-skin-moisturizer' -%}
+  {%- elsif product.handle == 'centella-moisturizer' -%}
     {%- assign meet_title = "Your Everyday Glow Essential" -%}
   {%- endif -%}
   <h2 class="meet-title">{{ meet_title }}</h2>
@@ -124,7 +124,7 @@
             {%- assign product_key = 'hair-mist' -%}
           {%- elsif product.handle == 'centella-skin-toner' or product.handle == 'renewal-toner' -%}
             {%- assign product_key = 'toner' -%}
-          {%- elsif product.handle == 'e7-korean-glass-skin-moisturizer' or product.handle == 'hydra-burst-moisturizer' -%}
+          {%- elsif product.handle == 'centella-moisturizer' or product.handle == 'hydra-burst-moisturizer' -%}
             {%- assign product_key = 'moisturizer' -%}
           {%- elsif is_sunscreen -%}
             {%- assign product_key = 'sunscreen' -%}
@@ -134,7 +134,7 @@
             {%- assign product_key = 'night-cream' -%}
           {%- endif -%}
 
-          {%- if product.handle contains 'centella-skin-toner-copy' or product.handle contains 'renewal-cleanser' -%}
+          {%- if product.handle contains 'renewal-toner' or product.handle contains 'renewal-cleanser' -%}
              <img src="{{ 'oil-foam-meet-1.jpg' | asset_url }}" alt="Oil Foam Cleanser 1">
              <img src="{{ 'oil-foam-meet-2.jpg' | asset_url }}" alt="Oil Foam Cleanser 2">
              <img src="{{ 'oil-foam-meet-3.jpg' | asset_url }}" alt="Oil Foam Cleanser 3">
@@ -204,12 +204,12 @@
                 <img src="{{ 'moisturizer-meet-1.jpg' | asset_url }}" alt="Moisturizer 1">
              {%- endif -%}
           {%- else -%}
-             {%- if section.blocks.size > 0 and is_sunscreen == false and product.handle contains 'centella-skin-toner-copy' == false and product.handle contains 'renewal-cleanser' == false -%}
+             {%- if section.blocks.size > 0 and is_sunscreen == false and product.handle contains 'renewal-toner' == false and product.handle contains 'renewal-cleanser' == false -%}
                 {%- for block in section.blocks -%}
                    {{ block.settings.image | image_url: width: 800 | image_tag: alt: block.settings.image.alt, loading: 'lazy' }}
                 {%- endfor -%}
              {%- else -%}
-                {%- if is_sunscreen or product.handle == 'centella-skin-toner-copy' or product.handle == 'renewal-cleanser' -%}
+                {%- if is_sunscreen or product.handle == 'renewal-toner' or product.handle == 'renewal-cleanser' -%}
                   {%- comment -%} Forced images already rendered above, doing nothing here to avoid duplicates {%- endcomment -%}
                 {%- else -%}
                   <img src="{{ 'meet-elaris-1.jpg' | asset_url }}" alt="Initial Image 1">
@@ -244,5 +244,6 @@
   "presets": [{ "name": "Meet Product Carousel" }]
 }
 {% endschema %}
+
 
 

@@ -125,7 +125,7 @@
 {%- endif -%}
 
 {%- assign title_color = '#003087' -%}
-{%- if is_face_wash or product.handle == 'centella-skin-toner-copy' or is_night_cream -%}
+{%- if is_face_wash or product.handle == 'renewal-toner' or is_night_cream -%}
   {%- assign title_color = '#333333' -%}
 {%- endif -%}
 
@@ -160,9 +160,9 @@
       <img class="ing-image" src="{{ 'sunscreen-lifestyle-3.jpg' | asset_url }}" alt="Sunscreen Ingredients">
     {%- elsif is_face_wash -%}
       <img class="ing-image" src="{{ 'faq-100-13.jpg' | asset_url }}" alt="Face Wash Ingredients">
-    {%- elsif product.handle == 'centella-skin-toner-copy' or product.handle == 'renewal-cleanser' -%}
+    {%- elsif product.handle == 'renewal-toner' or product.handle == 'renewal-cleanser' -%}
       <img class="ing-image" src="{{ 'cleanser-meet-1.jpg' | asset_url }}" alt="Renewal Cleanser Ingredients">
-    {%- elsif product.handle == 'e7-korean-glass-skin-moisturizer' or product.handle == 'hydra-burst-moisturizer' -%}
+    {%- elsif product.handle == 'centella-moisturizer' or product.handle == 'hydra-burst-moisturizer' -%}
       <img class="ing-image" src="{{ 'moisturizer-whats-inside.jpg' | asset_url }}" alt="Moisturizer Ingredients">
     {%- elsif product.handle == 'floral-blossom-hair-mist' or product.handle == 'hair-mist' -%}
       <img class="ing-image" src="{{ 'hair-mist.jpg' | asset_url }}" alt="Hair Mist Ingredients">
@@ -271,5 +271,6 @@
   "presets": [{ "name": "Product Ingredients" }]
 }
 {% endschema %}
+
 
 

@@ -203,7 +203,7 @@
     <div class="ds-row"><div class="ds-label">FYI:</div><div class="ds-value">Halal-Friendly • Dermatologist-Tested • Non-Sticky • Repair-Focused</div></div>
   {%- endcapture -%}
 
-{%- elsif product.handle == 'centella-skin-toner-copy' or product.handle == 'renewal-cleanser' -%}
+{%- elsif product.handle == 'renewal-toner' or product.handle == 'renewal-cleanser' -%}
   {%- assign ds_title = "Your Daily Brightening Cleanse<br><span style='font-size: 0.7em;'>A gel cleanser for CLEAR, FRESH + RADIANT SKIN.</span>" -%}
   {%- assign ds_image_name = 'gel cleanser-100.jpg' -%}
   {%- assign use_custom_list = true -%}
@@ -227,7 +227,7 @@
     <div class="ds-row"><div class="ds-label">FYI:</div><div class="ds-value">Halal-Friendly • Dermatologist-Tested • Non-Stripping • Pore-Refining</div></div>
   {%- endcapture -%}
 
-{%- elsif product.handle == 'e7-korean-glass-skin-moisturizer' or product.handle == 'hydra-burst-moisturizer' -%}
+{%- elsif product.handle == 'centella-moisturizer' or product.handle == 'hydra-burst-moisturizer' -%}
   {%- assign ds_title = "Glow That Lasts All Day<br><span style='font-size: 0.7em;'>A daily moisturizer for HYDRATION + SMOOTH, RADIANT SKIN.</span>" -%}
   {%- assign ds_image_name = 'moisturizer-benefits.jpg' -%}
   {%- assign use_custom_list = true -%}
@@ -326,5 +326,6 @@
   ]
 }
 {% endschema %}
+
 
 

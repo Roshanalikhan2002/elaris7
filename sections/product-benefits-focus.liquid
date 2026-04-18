@@ -137,11 +137,11 @@
           <div class="bf-line">hair refresh</div>
           <div class="bf-line">soft floral scent</div>
           <div class="bf-line bf-line-highlight">natural shine</div>
-        {%- elsif product.handle == 'centella-skin-toner-copy' or product.handle == 'renewal-cleanser' -%}
+        {%- elsif product.handle == 'renewal-toner' or product.handle == 'renewal-cleanser' -%}
           <div class="bf-line">daily cleansing</div>
           <div class="bf-line">brighter skin</div>
           <div class="bf-line bf-line-highlight">fresh, clean feel</div>
-        {%- elsif product.handle == 'e7-korean-glass-skin-moisturizer' -%}
+        {%- elsif product.handle == 'centella-moisturizer' -%}
           <div class="bf-line">all-day hydration</div>
           <div class="bf-line">natural radiance</div>
           <div class="bf-line bf-line-highlight">soft, glass-like skin</div>
@@ -178,9 +178,9 @@
       <img class="bf-image" src="{{ 'glow-meet-4.jpg' | asset_url }}" alt="Centella Serum Shot">
     {%- elsif is_glutathione_cream -%}
       <img class="bf-image" src="{{ 'toner-deep-hydration.jpg' | asset_url }}" alt="Refined, balanced skin">
-    {%- elsif product.handle == 'centella-skin-toner-copy' or product.handle == 'renewal-cleanser' -%}
+    {%- elsif product.handle == 'renewal-toner' or product.handle == 'renewal-cleanser' -%}
       <img class="bf-image" src="{{ 'cleanser-meet-3.jpg' | asset_url }}" alt="Gel Cleanser Shot">
-    {%- elsif product.handle == 'e7-korean-glass-skin-moisturizer' -%}
+    {%- elsif product.handle == 'centella-moisturizer' -%}
       <img class="bf-image" src="{{ 'moisturizer-deep-hydration.jpg' | asset_url }}" alt="Moisturizer Shot">
     {%- elsif product.handle == 'floral-blossom-hair-mist' -%}
       <img class="bf-image" src="{{ 'hair-mist-meet-1.jpg' | asset_url }}" alt="Hair Mist Shot">
@@ -240,5 +240,6 @@
   ]
 }
 {% endschema %}
+
 
 

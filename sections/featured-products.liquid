@@ -109,17 +109,17 @@
               
               {%- case b_handle -%}
                 {%- when 'night-cream' -%}{%- assign b_custom_price = "RS. 2,675" -%}
-                {%- when 'tranexamic-serum' or 'tranexamic-serum-v2' -%}{%- assign b_custom_price = "RS. 2,740" -%}
-                {%- when 'anti-frizz-keratin-serum' or 'keratin-serum-v2' or 'keratin-serum' -%}{%- assign b_custom_price = "RS. 2,680" -%}
-                {%- when 'glow-serum' -%}{%- assign b_custom_price = "RS. 2,645" -%}
-                {%- when 'glutathione-cream' or 'glutathione-cream-v2' -%}{%- assign b_custom_price = "RS. 2,640" -%}
-                {%- when 'floral-blossom-hair-mist' or 'hair-mist' or 'hair-mist-v2' -%}{%- assign b_custom_price = "RS. 2,960" -%}
-                {%- when 'face-wash' or 'e7-korean-glass-skin-centella-face-wash-copy' -%}{%- assign b_custom_price = "RS. 2,620" -%}
-                {%- when 'anti-acne' or 'anti-acne-serum-v2' -%}{%- assign b_custom_price = "RS. 2,755" -%}
-                {%- when 'sunscreen' or 'sunscreen-v2' or 'e7-korean-glass-skin-centella-sunscreen-spf50-copy' -%}{%- assign b_custom_price = "RS. 2,735" -%}
-                {%- when 'renewal-cleanser' or 'renewal-cleanser-v2' -%}{%- assign b_custom_price = "RS. 2,820" -%}
-                {%- when 'centella-moisturizer' or 'moisturizer' -%}{%- assign b_custom_price = "RS. 2,680" -%}
-                {%- when 'renewal-toner' or 'renewal-toner-v2' -%}{%- assign b_custom_price = "RS. 2,780" -%}
+                {%- when 'tranexamic-serum' -%}{%- assign b_custom_price = "RS. 2,740" -%}
+                {%- when 'anti-frizz-keratin-serum' -%}{%- assign b_custom_price = "RS. 2,680" -%}
+                {%- when 'e7-korean-glass-skin-centella-sunscreen-spf50-copy' -%}{%- assign b_custom_price = "RS. 2,540" -%}
+                {%- when 'glutathione-cream' -%}{%- assign b_custom_price = "RS. 2,640" -%}
+                {%- when 'floral-blossom-hair-mist' -%}{%- assign b_custom_price = "RS. 2,960" -%}
+                {%- when 'e7-korean-glass-skin-centella-night-cream-copy' -%}{%- assign b_custom_price = "RS. 2,620" -%}
+                {%- when 'anti-acne' -%}{%- assign b_custom_price = "RS. 2,755" -%}
+                {%- when 'e7-korean-glass-skin-centella-face-wash-copy' -%}{%- assign b_custom_price = "RS. 2,735" -%}
+                {%- when 'renewal-cleanser' -%}{%- assign b_custom_price = "RS. 2,820" -%}
+                {%- when 'centella-moisturizer' -%}{%- assign b_custom_price = "RS. 2,680" -%}
+                {%- when 'renewal-toner' -%}{%- assign b_custom_price = "RS. 2,780" -%}
               {%- endcase -%}
 
               <div class="card-meta">
@@ -151,33 +151,33 @@
         {%- assign pname = fallback_names[i] -%}
         {%- assign phandle = pname | handleize -%}
         {%- if pname == "Night Cream" -%}
-          {%- assign phandle = "e7-korean-glass-skin-centella-night-cream-copy" -%}
+          {%- assign phandle = "night-cream" -%}
         {%- elsif pname == "Tranexamic Serum" -%}
-          {%- assign phandle = "tranexamic-serum-v2" -%}
+          {%- assign phandle = "tranexamic-serum" -%}
         {%- elsif pname contains "Keratin Serum" -%}
-          {%- assign phandle = "keratin-serum-v2" -%}
+          {%- assign phandle = "anti-frizz-keratin-serum" -%}
         {%- elsif pname == "Glow Serum" -%}
-          {%- assign phandle = "centella-serum" -%}
-        {%- elsif pname == "Glutathione Cream" -%}
-          {%- assign phandle = "glutathione-cream-v2" -%}
-        {%- elsif pname == "Floral Blossom Hair Mist" -%}
-          {%- assign phandle = "hair-mist-v2" -%}
-        {%- elsif pname == "Face Wash" -%}
-          {%- assign phandle = "e7-korean-glass-skin-centella-face-wash-copy" -%}
-        {%- elsif pname == "Anti Acne" -%}
-          {%- assign phandle = "anti-acne-serum-v2" -%}
-        {%- elsif pname == "Sunscreen SPF60+" -%}
           {%- assign phandle = "e7-korean-glass-skin-centella-sunscreen-spf50-copy" -%}
+        {%- elsif pname == "Glutathione Cream" -%}
+          {%- assign phandle = "glutathione-cream" -%}
+        {%- elsif pname == "Floral Blossom Hair Mist" -%}
+          {%- assign phandle = "floral-blossom-hair-mist" -%}
+        {%- elsif pname == "Face Wash" -%}
+          {%- assign phandle = "e7-korean-glass-skin-centella-night-cream-copy" -%}
+        {%- elsif pname == "Anti Acne" -%}
+          {%- assign phandle = "anti-acne" -%}
+        {%- elsif pname == "Sunscreen SPF60+" -%}
+          {%- assign phandle = "e7-korean-glass-skin-centella-face-wash-copy" -%}
         {%- elsif pname == "Renewal Cleanser" -%}
-          {%- assign phandle = "renewal-cleanser-v2" -%}
+          {%- assign phandle = "renewal-cleanser" -%}
         {%- elsif pname == "Hydra Burst Moisturizer" -%}
-          {%- assign phandle = "e7-korean-glass-skin-moisturizer" -%}
+          {%- assign phandle = "centella-moisturizer" -%}
         {%- elsif pname == "Renewal Toner" -%}
-          {%- assign phandle = "centella-skin-toner-copy" -%}
+          {%- assign phandle = "renewal-toner" -%}
         {%- elsif pname == "Oil to Foam Cleanser" -%}
           {%- assign phandle = "oil-to-foam-cleanser" -%}
         {%- elsif pname == "Gel Cleanser" -%}
-          {%- assign phandle = "gel-cleanser" -%}
+          {%- assign phandle = "renewal-cleanser" -%}
         {%- elsif pname == "Hair Regrow Spray" -%}
           {%- assign phandle = "hair-regrow-spray" -%}
         {%- endif -%}
@@ -215,17 +215,17 @@
               {%- assign custom_price = "1,500" -%}
               {%- case phandle -%}
                 {%- when 'night-cream' or 'e7-korean-glass-skin-centella-night-cream-copy' -%}{%- assign custom_price = "2,675" -%}
-                {%- when 'tranexamic-serum' or 'tranexamic-serum-v2' -%}{%- assign custom_price = "2,740" -%}
-                {%- when 'anti-frizz-keratin-serum' or 'keratin-serum-v2' or 'keratin-serum' -%}{%- assign custom_price = "2,680" -%}
+                {%- when 'tranexamic-serum' or 'tranexamic-serum' -%}{%- assign custom_price = "2,740" -%}
+                {%- when 'anti-frizz-keratin-serum' or 'anti-frizz-keratin-serum' or 'keratin-serum' -%}{%- assign custom_price = "2,680" -%}
                 {%- when 'glow-serum' or 'centella-serum' -%}{%- assign custom_price = "2,645" -%}
-                {%- when 'glutathione-cream' or 'glutathione-cream-v2' -%}{%- assign custom_price = "2,640" -%}
-                {%- when 'floral-blossom-hair-mist' or 'hair-mist' or 'hair-mist-v2' -%}{%- assign custom_price = "2,960" -%}
+                {%- when 'glutathione-cream' or 'glutathione-cream' -%}{%- assign custom_price = "2,640" -%}
+                {%- when 'floral-blossom-hair-mist' or 'hair-mist' or 'floral-blossom-hair-mist' -%}{%- assign custom_price = "2,960" -%}
                 {%- when 'face-wash' or 'e7-korean-glass-skin-centella-face-wash-copy' -%}{%- assign custom_price = "2,620" -%}
-                {%- when 'anti-acne' or 'anti-acne-serum-v2' -%}{%- assign custom_price = "2,755" -%}
-                {%- when 'sunscreen' or 'sunscreen-v2' or 'e7-korean-glass-skin-centella-sunscreen-spf50-copy' -%}{%- assign custom_price = "2,735" -%}
-                {%- when 'renewal-cleanser' or 'renewal-cleanser-v2' -%}{%- assign custom_price = "2,820" -%}
-                {%- when 'centella-moisturizer' or 'moisturizer' or 'e7-korean-glass-skin-moisturizer' -%}{%- assign custom_price = "2,680" -%}
-                {%- when 'renewal-toner' or 'renewal-toner-v2' or 'centella-skin-toner-copy' -%}{%- assign custom_price = "2,780" -%}
+                {%- when 'anti-acne' or 'anti-acne' -%}{%- assign custom_price = "2,755" -%}
+                {%- when 'sunscreen' or 'e7-korean-glass-skin-centella-face-wash-copy' or 'e7-korean-glass-skin-centella-sunscreen-spf50-copy' -%}{%- assign custom_price = "2,735" -%}
+                {%- when 'renewal-cleanser' or 'renewal-cleanser' -%}{%- assign custom_price = "2,820" -%}
+                {%- when 'centella-moisturizer' or 'moisturizer' or 'centella-moisturizer' -%}{%- assign custom_price = "2,680" -%}
+                {%- when 'renewal-toner' or 'renewal-toner-v2' or 'renewal-toner' -%}{%- assign custom_price = "2,780" -%}
                 {%- when 'oil-to-foam-cleanser' -%}{%- assign custom_price = "2,820" -%}
                 {%- when 'skin-refining-toner' -%}{%- assign custom_price = "2,780" -%}
                 {%- when 'gel-cleanser' -%}{%- assign custom_price = "2,620" -%}
@@ -459,3 +459,4 @@
   ]
 }
 {% endschema %}
+

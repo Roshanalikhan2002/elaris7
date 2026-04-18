@@ -5,7 +5,7 @@
         <div class="grid-item">
           {%- assign final_link = block.settings.product_link | default: '#' -%}
           {%- if final_link contains 'renewal-cleanser' -%}
-            {%- assign final_link = '/products/centella-skin-toner-copy' -%}
+            {%- assign final_link = '/products/renewal-toner' -%}
           {%- endif -%}
           <a href="{{ final_link }}" class="card-rhode-grid">
             <div class="card-rhode-inner-grid">
@@ -63,9 +63,9 @@
         {%- elsif pname == "Sunscreen SPF60+" -%}
           {%- assign phandle = "e7-korean-glass-skin-centella-face-wash-copy" -%}
         {%- elsif pname == "Renewal Cleanser" -%}
-          {%- assign phandle = "centella-skin-toner-copy" -%}
+          {%- assign phandle = "renewal-toner" -%}
         {%- elsif pname == "Hydra Burst Moisturizer" -%}
-          {%- assign phandle = "e7-korean-glass-skin-moisturizer" -%}
+          {%- assign phandle = "centella-moisturizer" -%}
         {%- elsif pname == "Renewal Toner" -%}
           {%- assign phandle = "centella-skin-toner" -%}
         {%- endif -%}
@@ -385,5 +385,6 @@
   ]
 }
 {% endschema %}
+
 
 

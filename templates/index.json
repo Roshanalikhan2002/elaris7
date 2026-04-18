@@ -67,7 +67,7 @@
             "reviews": "8k",
             "asset_image": "tranexamic-serum.jpg",
             "asset_hover_image": "tranexamic-meet-1.jpg",
-            "product_link": "/products/tranexamic-serum-v2"
+            "product_link": "/products/tranexamic-serum"
           }
         },
         "block_keratin": {
@@ -81,7 +81,7 @@
             "reviews": "6k",
             "asset_image": "keratin-serum.jpg",
             "asset_hover_image": "keratin-serum-hover.jpg",
-            "product_link": "/products/keratin-serum-v2"
+            "product_link": "/products/anti-frizz-keratin-serum"
           }
         },
         "block_glow": {
@@ -165,7 +165,7 @@
             "reviews": "7k",
             "asset_image": "sunscreen-100.jpg",
             "asset_hover_image": "sunscreen-hover.jpg",
-            "product_link": "/products/sunscreen-v2"
+            "product_link": "/products/e7-korean-glass-skin-centella-face-wash-copy"
           }
         },
         "block_cleanser": {

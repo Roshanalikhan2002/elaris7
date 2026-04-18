@@ -172,7 +172,7 @@
         <div class="sr-stat-block"><h3 class="sr-number">99%</h3><p class="sr-desc">SAID THEIR SKIN FELT CLEANER + MORE BALANCED</p></div>
         <div class="sr-stat-block"><h3 class="sr-number">98%</h3><p class="sr-desc">SAID THEIR SKIN LOOKED CLEARER + MORE REFINED</p></div>
         {%- assign has_custom_stats = true -%}
-      {%- elsif product.handle == 'e7-korean-glass-skin-moisturizer' or product.handle == 'hydra-burst-moisturizer' -%}
+      {%- elsif product.handle == 'centella-moisturizer' or product.handle == 'hydra-burst-moisturizer' -%}
         <div class="sr-stat-block"><h3 class="sr-number">99%</h3><p class="sr-desc">SAID THEIR SKIN FELT MORE HYDRATED + REFRESHED</p></div>
         <div class="sr-stat-block"><h3 class="sr-number">98%</h3><p class="sr-desc">SAID IT ABSORBS QUICKLY WITHOUT ANY HEAVINESS</p></div>
         {%- assign has_custom_stats = true -%}
@@ -227,7 +227,7 @@
        <img class="sr-image" src="{{ 'before-after-100-10.jpg' | asset_url }}" alt="Face Wash Result">
     {%- elsif product.handle == 'centella-skin-toner' or product.handle == 'renewal-toner' -%}
       <img class="sr-image" src="{{ 'toner-before-after.jpg' | asset_url }}" alt="Toner Results">
-    {%- elsif product.handle == 'e7-korean-glass-skin-moisturizer' or product.handle == 'hydra-burst-moisturizer' -%}
+    {%- elsif product.handle == 'centella-moisturizer' or product.handle == 'hydra-burst-moisturizer' -%}
       <img class="sr-image" src="{{ 'moisturizer-before-after.jpg' | asset_url }}" alt="Moisturizer Results">
     {%- elsif product.handle == 'anti-frizz-keratin-serum' or product.handle == 'keratin-serum' -%}
       <img class="sr-image" src="{{ 'keratin-ba.jpg' | asset_url }}" alt="Before After Comparison">
@@ -285,5 +285,6 @@
   ]
 }
 {% endschema %}
+
 
 

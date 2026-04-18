@@ -1,4 +1,4 @@
-﻿<style>
+<style>
   .product-page { padding: 40px 20px; max-width: 1400px; margin: 0 auto; background: #fff; }
   .product-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
   
@@ -64,8 +64,8 @@
           {%- when 'hair-mist' -%}{%- assign asset_image_name = 'hair-mist.jpg' -%}
           {%- when 'e7-korean-glass-skin-centella-night-cream-copy' -%}{%- assign asset_image_name = 'facewash-100.jpg' -%}
           {%- when 'e7-korean-glass-skin-centella-face-wash-copy' -%}{%- assign asset_image_name = 'sunscreen-100.jpg' -%}
-          {%- when 'centella-skin-toner-copy' or 'renewal-cleanser' -%}{%- assign asset_image_name = 'gel cleanser-100.jpg' -%}
-          {%- when 'e7-korean-glass-skin-moisturizer' -%}{%- assign asset_image_name = 'moisturizer-100.jpg' -%}
+          {%- when 'renewal-toner' or 'renewal-cleanser' -%}{%- assign asset_image_name = 'gel cleanser-100.jpg' -%}
+          {%- when 'centella-moisturizer' -%}{%- assign asset_image_name = 'moisturizer-100.jpg' -%}
           {%- when 'centella-skin-toner' or 'renewal-toner' -%}{%- assign asset_image_name = 'toner1.jpeg' -%}
         {%- endcase -%}
 
@@ -94,7 +94,7 @@
       {%- endif -%}
       {%- assign is_night_cream = false -%}
       {%- assign is_face_wash = false -%}
-      {%- if title_up contains 'FACE WASH' or product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' or handle_down contains 'face-wash' or product.handle == 'centella-skin-toner-copy' or product.handle == 'renewal-cleanser' -%}
+      {%- if title_up contains 'FACE WASH' or product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' or handle_down contains 'face-wash' or product.handle == 'renewal-toner' or product.handle == 'renewal-cleanser' -%}
         {%- assign is_face_wash = true -%}
       {%- elsif handle_down == 'night-cream' or title_up contains 'NIGHT CREAM' -%}
         {%- assign is_night_cream = true -%}
@@ -253,7 +253,7 @@
                 <li>Keeps hair smelling beautiful all day</li>
                 <li>Lightweight formula that doesn't weigh hair down</li>
                 <li>Suitable for all hair types</li>
-              {%- elsif product.handle == 'centella-skin-toner-copy' or product.handle == 'renewal-cleanser' -%}
+              {%- elsif product.handle == 'renewal-toner' or product.handle == 'renewal-cleanser' -%}
                 <li>Gently removes dirt, oil, and daily buildup</li>
                 <li>Helps improve dull and uneven skin tone</li>
                 <li>Supports a clearer, brighter-looking complexion</li>
@@ -272,11 +272,11 @@
             {%- if product.handle == 'night-cream' or product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' -%}
               <p>After cleansing and toning, take a small amount of Centella Night Cream and gently massage it upward onto your face and neck, avoiding the eye area. Leave it on overnight to fully absorb and lock in hydration, allowing your skin to repair, restore, and wake up looking radiant and smooth. Consistency is key for optimal results.</p>
             {%- elsif product.handle == 'tranexamic-serum' -%}
-              <p>Use morning and night after cleansing and toning. Apply 2–3 drops to face and neck and gently press into the skin. Follow with moisturizer and use sunscreen during the day.</p>
+              <p>Use morning and night after cleansing and toning. Apply 2�3 drops to face and neck and gently press into the skin. Follow with moisturizer and use sunscreen during the day.</p>
             {%- elsif product.handle == 'anti-frizz-keratin-serum' or product.handle == 'anti-frizz-serum' or product.handle == 'keratin-serum' -%}
               <p>After washing or styling, take a small amount of Anti Frizz Keratin Serum and apply evenly through damp or dry hair, focusing on mid-lengths and ends. Avoid the roots and style as desired.</p>
             {%- elsif is_centella_serum -%}
-              <p>After cleansing, take 3–4 drops of Centella Serum and gently press onto slightly damp skin across the face and neck. Allow it to absorb fully, then follow with your moisturizer to seal in hydration.</p>
+              <p>After cleansing, take 3�4 drops of Centella Serum and gently press onto slightly damp skin across the face and neck. Allow it to absorb fully, then follow with your moisturizer to seal in hydration.</p>
             {%- elsif is_glutathione_cream -%}
               <p>Use morning and evening after cleansing and serum.</p>
               <ul style="padding-left: 20px;">
@@ -287,7 +287,7 @@
               <p>Suitable for daily use.</p>
             {%- elsif is_hair_mist -%}
               <p>Mist evenly over dry or damp hair from 6-8 inches away. Use throughout the day as needed to refresh and scent your hair.</p>
-            {%- elsif product.handle == 'centella-skin-toner-copy' or product.handle == 'renewal-cleanser' -%}
+            {%- elsif product.handle == 'renewal-toner' or product.handle == 'renewal-cleanser' -%}
               <p>Use morning and night. Apply a small amount to wet skin and gently massage over face and neck. Rinse thoroughly with lukewarm water and follow with toner, serum, and moisturizer.</p>
             {%- endif -%}
           </div>
@@ -337,10 +337,10 @@
                 <li>Use after styling to add a final touch of shine and fragrance</li>
                 <li>Keep in your bag for an instant on-the-go refresh</li>
               </ul>
-            {%- elsif product.handle == 'centella-skin-toner-copy' or product.handle == 'renewal-cleanser' -%}
+            {%- elsif product.handle == 'renewal-toner' or product.handle == 'renewal-cleanser' -%}
               <ul style="padding-left: 20px;">
                 <li>Use on damp skin for a gentle, effective cleanse</li>
-                <li>Massage for 30–60 seconds for better results</li>
+                <li>Massage for 30�60 seconds for better results</li>
                 <li>Follow with toner to enhance brightness</li>
                 <li>Use consistently for a clearer-looking complexion</li>
               </ul>
@@ -363,7 +363,7 @@
               <p>Honey, Centella Asiatica, Glutathione, Alpha Arbutin, Kojic Acid Dipalmitate, Niacinamide, Vitamin C, Hyaluronic Acid, Glycerin, Vitamin E, Amla Extract</p>
             {%- elsif is_hair_mist -%}
               <p>PANTHENOL, GLYCERIN, ALOE VERA, VITAMIN E, ROSE WATER, JASMINE EXTRACT, PEPTIDES</p>
-            {%- elsif product.handle == 'centella-skin-toner-copy' or product.handle == 'renewal-cleanser' -%}
+            {%- elsif product.handle == 'renewal-toner' or product.handle == 'renewal-cleanser' -%}
               <p>Niacinamide, Vitamin C (Sodium Ascorbyl Phosphate), Glutathione, Glycerin, Sodium Lactate, Allantoin, Chamomile Extract, Licorice Root Extract, Mild Cleansing Agents</p>
             {%- endif -%}
           </div>
@@ -374,7 +374,7 @@
 </main>
 
 <script>
-  // ── Gift selection UI ──
+  // -- Gift selection UI --
   function selectGift(el) {
     document.querySelectorAll('.gift-item').forEach(item => item.classList.remove('selected'));
     el.classList.add('selected');
@@ -382,7 +382,7 @@
     if (radio) radio.checked = true;
   }
 
-  // ── BOGO Add to Cart ──
+  // -- BOGO Add to Cart --
   async function bogoAddToCart(buyNow = false) {
     const mainVariantId  = {{ product.selected_or_first_available_variant.id }};
     const mainProductTitle = {{ product.title | json }};
@@ -394,7 +394,7 @@
       ? selectedRadio.closest('.gift-item')?.querySelector('.gift-name')?.textContent?.trim()
       : null;
 
-    // Build items array — always start with main product
+    // Build items array � always start with main product
     const items = [
       { id: mainVariantId, quantity: 1 }
     ];
@@ -440,5 +440,6 @@
     }
   }
 </script>
+
 
 
