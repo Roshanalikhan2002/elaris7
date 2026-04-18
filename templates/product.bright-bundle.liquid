@@ -48,12 +48,17 @@
     .faq-q { font-size: 12px; font-weight: 800; text-transform: uppercase; }
 
     @media (max-width: 1024px) {
-        .pdp-main-box { grid-template-columns: 1fr; height: auto; }
-        .gallery-wrap { height: 450px; }
+        .pdp-main-box { grid-template-columns: 1fr; height: auto; min-height: auto; }
+        .gallery-wrap { height: 400px; }
         .details-panel { border-left: none; padding: 40px 20px; }
-        .discovery-grid { grid-template-columns: 1fr; }
-        .island-card { height: 450px; }
-        .breakdown-content, .faq-text-side { padding: 40px 20px; }
+        .discovery-grid { grid-template-columns: 1fr; gap: 10px; }
+        .island-card { height: auto; min-height: 400px; }
+        .breakdown-content, .faq-text-side { padding: 40px 20px; height: auto; }
+        .bd-title, .faq-title { font-size: 32px; margin-bottom: 25px; }
+        .bd-row { flex-direction: column; gap: 10px; align-items: flex-start; }
+        .bd-label { width: 100%; margin-bottom: 0; }
+        .pdp-wrapper { padding-top: 120px !important; }
+        .product-title { font-size: 36px; }
     }
 </style>
 
