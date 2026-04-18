@@ -1,10 +1,11 @@
 {% layout none %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Centella Moisturizer | elaris7</title>
+  <title>Tranexamic Brightening Serum | elaris7</title>
   <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
 
@@ -2274,16 +2275,16 @@ a { color: inherit; text-decoration: none; }
       <!-- Thumbnails on Left -->
       <div class="gallery-thumbnails">
         <div class="thumb-item active" onmouseover="scrollGallery(0, this)">
-          <img src="{{ "moisturizer-100.jpg" | asset_url }}" alt="Thumb 1">
+          <img src="{{ "TranexamicSerum1.jpg" | asset_url }}" alt="Thumb 1">
         </div>
         <div class="thumb-item" onmouseover="scrollGallery(1, this)">
-          <img src="{{ "moisturizer-gallery-2.jpg" | asset_url }}" alt="Thumb 2">
+          <img src="{{ "TranexamicSerum2.jpg" | asset_url }}" alt="Thumb 2">
         </div>
         <div class="thumb-item" onmouseover="scrollGallery(2, this)">
-          <img src="{{ "moisturizer-gallery-3.jpg" | asset_url }}" alt="Thumb 3">
+          <img src="{{ "TranexamicSerum3.jpg" | asset_url }}" alt="Thumb 3">
         </div>
         <div class="thumb-item" onmouseover="scrollGallery(3, this)">
-          <img src="{{ "moisturizer-gallery-4.jpg" | asset_url }}" alt="Thumb 4">
+          <img src="{{ "tranexamic-percentage.jpg" | asset_url }}" alt="Thumb 4">
         </div>
       </div>
 
@@ -2291,16 +2292,16 @@ a { color: inherit; text-decoration: none; }
       <div class="gallery-main-viewport">
         <div class="gallery-slider" id="productSlider">
           <div class="gallery-slide">
-            <img src="{{ "moisturizer-100.jpg" | asset_url }}" alt="Main View 1">
+            <img src="{{ "TranexamicSerum1.jpg" | asset_url }}" alt="Main View 1">
           </div>
           <div class="gallery-slide">
-            <img src="{{ "moisturizer-gallery-2.jpg" | asset_url }}" alt="Main View 2">
+            <img src="{{ "TranexamicSerum2.jpg" | asset_url }}" alt="Main View 2">
           </div>
           <div class="gallery-slide">
-            <img src="{{ "moisturizer-gallery-3.jpg" | asset_url }}" alt="Main View 3">
+            <img src="{{ "TranexamicSerum3.jpg" | asset_url }}" alt="Main View 3">
           </div>
           <div class="gallery-slide">
-            <img src="{{ "moisturizer-gallery-4.jpg" | asset_url }}" alt="Main View 4">
+            <img src="{{ "tranexamic-percentage.jpg" | asset_url }}" alt="Main View 4">
           </div>
         </div>
       </div>
@@ -2321,18 +2322,21 @@ a { color: inherit; text-decoration: none; }
       <div class="product-details">
         <div class="product-details-inner">
           <div class="product-header">
-            <h1 class="product-title">Centella Moisturizer</h1>
+            <h1 class="product-title">Tranexamic Brightening Serum</h1>
           </div>
 
           <div class="product-meta">
-            <span class="product-subtitle">Daily Dew</p>
+            <span class="product-subtitle">Even & Illuminate</span>
+          </div>
+
+          <div class="product-description">
+            <p>A targeted brightening serum designed to reduce the appearance of dark spots and uneven tone. It helps improve clarity, boost radiance, and support a smoother, more even-looking complexion with consistent use.</p>
             <p class="disclaimer">*with continued daily use</p>
           </div>
 
           <hr class='divider'>
-                              <div class="bogo-inline-section">
-                               {% render 'bogo-selection' %}
-          </div>
+                  {% render 'bogo-selection' %}
+
           <div class="product-actions-grid">
             <button class="buy-button add-to-cart-btn" style="white-space: nowrap; width: 100%;">ADD TO CART - <span>{{ product.price | money_without_trailing_zeros }}</span></button>
           </div>
@@ -2384,27 +2388,43 @@ a { color: inherit; text-decoration: none; }
 
           <div class="product-accordions accordions">
             <details class="accordion-item">
-              <summary><span>BENEFITS</span><span>+</span></summary><div class="accordion-content"><ul>                  <li>Boosts natural radiance while improving overall skin clarity</li>
-                  <li>Delivers lasting hydration for a plump, soft, and dewy feel</li>
-                  <li>Smooths texture and helps reduce the appearance of uneven tone</li></ul></div>
+              <summary><span>BENEFITS</span><span>+</span></summary><div class="accordion-content"><ul>                  <li>Helps reduce the appearance of dark spots and discoloration</li>
+                  <li>Supports a brighter, more even skin tone</li>
+                  <li>Improves dullness and uneven texture</li>
+                  <li>Enhances overall skin clarity and radiance</li>
+                  <li>Hydrates while supporting the skin barrier</li>
+                  <li>Helps smooth and refine the skin surface</li>
+                  <li>Promotes a healthier, more luminous glow</li>
+                  <li>Provides 72-hour hydration with a moisture-locking formula</li>
+                  <li>Supports collagen to improve skin firmness and elasticity</li>
+                  <li>Helps fade dark spots, acne scars, and discoloration</li>
+                  <li>Repairs and strengthens the skin barrier overnight</li>
+                  <li>Delivers a soft, smooth, poreless finish by morning</li>
+                  <li>Reduces the appearance of fine lines and wrinkles</li>
+                  <li>Promotes a more even-toned, youthful-looking complexion over time</li></ul></div>
             </details>
             <details class="accordion-item">
-              <summary><span>APPLICATION</span><span>+</span></summary><div class="accordion-content"><p style="margin:0;">After cleansing and applying serum, take a small amount of Centella Moisturizer and gently massage it onto slightly damp skin using upward motions. Allow it to absorb fully to lock in hydration.</p></div>
+              <summary><span>APPLICATION</span><span>+</span></summary><div class="accordion-content"><p style="margin:0;">Use morning and night after cleansing and toning. Apply 2â€“3 drops to face and neck and gently press into the skin. Follow with moisturizer and use sunscreen during the day.</p></div>
             </details>
             <details class="accordion-item">
-              <summary><span>TRICK</span><span>+</span></summary><div class="accordion-content"><ul>                  <li>Apply on damp skin to enhance absorption and maximize hydration</li>
-                  <li>Use a slightly thicker layer for an instant dewy glow finish</li>
-                  <li>Pair with sunscreen in the morning for protected, radiant skin</li></ul></div>
+              <summary><span>TRICK</span><span>+</span></summary><div class="accordion-content"><ul>                  <li>Apply on slightly damp skin for better absorption</li>
+                  <li>Use consistently for visible brightening results</li>
+                  <li>Pair with sunscreen daily to prevent further discoloration</li>
+                  <li>Layer with moisturizer to lock in hydration</li>
+                  <li>Combine with your serum for enhanced repair benefits</li>
+                  <li>Use consistently to see a reduction in fine lines and dark spots</li></ul></div>
             </details>
             <details class="accordion-item">
-              <summary><span>KEY INGREDIENTS</span><span>+</span></summary><div class="accordion-content"><ul>                  <li>Hyaluronic Acid</li>
-                  <li>Vitamin C Complex</li>
-                  <li>Centella Asiatica</li>
-                  <li>Morus Alba Extract</li>
-                  <li>Broussonetia Root Extract</li>
-                  <li>Honey</li>
-                  <li>Galactoarabinan</li>
-                  <li>Vitamin E</li></ul></div>
+              <summary><span>KEY INGREDIENTS</span><span>+</span></summary><div class="accordion-content"><ul>                  <li>Tranexamic Acid (4%)</li>
+                  <li>Niacinamide (10%)</li>
+                  <li>Vitamin C</li>
+                  <li>Alpha Arbutin</li>
+                  <li>Hyaluronic Acid</li>
+                  <li>Glycerin</li>
+                  <li>Panthenol (Vitamin B5)</li>
+                  <li>Vitamin E</li>
+                  <li>Peptides</li>
+                  <li>Botanical Extracts</li></ul></div>
             </details>
           </div>
 
@@ -2414,14 +2434,14 @@ a { color: inherit; text-decoration: none; }
 
     <!-- Meet the Product Section -->
     <section class="meet-product-section">
-      <h2 class="meet-title">Your Everyday Glow Essential</h2>
+      <h2 class="meet-title">Fade Spots. Reveal Clarity.</h2>
       <div class="meet-carousel-wrapper">
         <div class="carousel-swipe-indicator">SWIPE â†’</div>
         <div class="meet-carousel">
-          <img src="{{ "centella-moisturizer-faq.jpg" | asset_url }}" alt="Product Image 1">
-          <img src="{{ "moisturizer-meet-2.jpg" | asset_url }}" alt="Product Image 2">
-          <img src="{{ "moisturizer-meet-3.jpg" | asset_url }}" alt="Product Image 3">
-          <img src="{{ "centella-moisturizer-spoon.jpeg" | asset_url }}" alt="Product Image 4">
+          <img src="{{ "tranexamic-glow-1.jpeg" | asset_url }}" alt="Product Image 1">
+          <img src="{{ "TranexamicSerum2.jpg" | asset_url }}" alt="Product Image 2">
+          <img src="{{ "TranexamicSerum3.jpg" | asset_url }}" alt="Product Image 3">
+          <img src="{{ "tranexamic-percentage.jpg" | asset_url }}" alt="Product Image 4">
         </div>
         <!-- Right Arrow Overlay -->
         <div class="carousel-arrow">
@@ -2433,27 +2453,27 @@ a { color: inherit; text-decoration: none; }
     <!-- Product Breakdown Section -->
     <section class="breakdown-section">
       <div class="breakdown-content">
-        <h2 class="bd-title">Glow That Lasts All Day</h2>
+        <h2 class="bd-title">Targeted Brightening That Works</h2>
         <div class="bd-table">
           <div class="bd-row">
-            <span class="bd-label">GOOD FOR:</span><span class="bd-val">All skin types, including sensitive and combination skin</span>
+            <span class="bd-label">GOOD FOR:</span><span class="bd-val">All skin types, especially uneven tone and dark spots</span>
           </div>
           <div class="bd-row">
-            <span class="bd-label">FEELS LIKE:</span><span class="bd-val">A light, refreshing cream that melts effortlessly into the skin</span>
+            <span class="bd-label">FEELS LIKE:</span><span class="bd-val">A smooth, fast-absorbing serum that layers easily</span>
           </div>
           <div class="bd-row">
-            <span class="bd-label">LOOKS LIKE:</span><span class="bd-val">A soft, luminous finish with a naturally healthy glow</span>
+            <span class="bd-label">LOOKS LIKE:</span><span class="bd-val">Brighter, clearer skin with improved tone</span>
           </div>
           <div class="bd-row">
-            <span class="bd-label">SMELLS LIKE:</span><span class="bd-val">Clean, subtle freshness with no overpowering scent</span>
+            <span class="bd-label">SMELLS LIKE:</span><span class="bd-val">A soft, clean scent with a subtle finish</span>
           </div>
           <div class="bd-row">
-            <span class="bd-label">FYI:</span><span class="bd-val">Halal-Friendly â€¢ Dermatologist-Tested â€¢ Lightweight â€¢ Non-Sticky</span>
+            <span class="bd-label">FYI:</span><span class="bd-val">Non-Greasy â€¢ Fast Absorbing â€¢ Daily Use â€¢ Tone-Correcting</span>
           </div>
         </div>
       </div>
       <div class="breakdown-image">
-        <img src="{{ "moisturizer-before-after.jpg" | asset_url }}" alt="Plate View">
+        <img src="{{ "tranexamic-plate.jpg" | asset_url }}" alt="Plate View">
       </div>
     </section>
 
@@ -2461,27 +2481,27 @@ a { color: inherit; text-decoration: none; }
     <!-- What's Inside Section -->
     <section class="whats-inside-section">
       <div class="wi-image-col">
-        <img src="{{ "moisturizer-whats-inside.jpg" | asset_url }}" alt="Spoon View" class="wi-image">
+        <img src="{{ "tranexamic-spoon.jpg" | asset_url }}" alt="Spoon View" class="wi-image">
         <button class="wi-full-ingredients-btn">FULL INGREDIENTS LIST</button>
       </div>
       <div class="wi-content-col">
         <div class="wi-vertical-text">what's inside</div>
         <div class="wi-details">
-          <p class="wi-intro">Our formula is powered by glow-enhancing hydrators and skin-refining botanicals. Meet 2 of our favorites for daily radiance.</p>
+          <p class="wi-intro">A potent brightening serum formulated to target dark spots, even skin tone, and enhance natural radiance.</p>
           
           <div class="wi-ingredient-block">
-            <h3 class="wi-ingred-title">centella asiatica</h3><p class="wi-ingred-desc">a soothing plant extract that helps calm irritation, strengthen the skin barrier, and support a clearer, more balanced complexion</p>
+            <h3 class="wi-ingred-title">TRANEXAMIC ACID (4%)</h3><p class="wi-ingred-desc">helps visibly reduce dark spots and discoloration</p>
           </div>
           
           <hr class="wi-divider">
           
           <div class="wi-ingredient-block">
-            <h3 class="wi-ingred-title">hyaluronic acid</h3><p class="wi-ingred-desc">a powerful hydrator that helps attract and retain moisture, leaving skin plump, smooth, and refreshed throughout the day</p>
+            <h3 class="wi-ingred-title">NIACINAMIDE (10%)</h3><p class="wi-ingred-desc">supports even tone and improves dullness</p>
           </div>
           
           <hr class="wi-divider">
           
-          <p class="wi-also-made">also made with <strong>VITAMIN C COMPLEX, MORUS ALBA EXTRACT, BROUSSONETIA ROOT EXTRACT, HONEY, GALACTOARABINAN, VITAMIN E</strong></p>
+          <p class="wi-also-made">also made with <strong>Vitamin C, Alpha Arbutin, Hyaluronic Acid, Glycerin, Panthenol, Vitamin E, peptides, and botanical extracts for hydration, barrier support, and glowing skin</strong></p>
         </div>
       </div>
     </section>
@@ -2490,12 +2510,12 @@ a { color: inherit; text-decoration: none; }
     <section class="spread-section">
       <div class="spread-content">
         <span class="spread-label">SPREAD IT ON FOR:</span>
-        <h2 class="spread-heading">all-day hydration</h2>
-        <h2 class="spread-heading">overnight hydration</h2>
-        <h2 class="spread-heading spread-green">soft, glass-like skin</h2>
+        <h2 class="spread-heading">dark spot care</h2>
+        <h2 class="spread-heading">even skin tone</h2>
+        <h2 class="spread-heading spread-green">radiant glow</h2>
       </div>
       <div class="spread-image-col">
-        <img src="{{ "moisturizer-deep-hydration.jpg" | asset_url }}" alt="Spread View">
+        <img src="{{ "tranexamic-spread.jpg" | asset_url }}" alt="Spread View">
       </div>
     </section>
 
@@ -2505,32 +2525,32 @@ a { color: inherit; text-decoration: none; }
       <div class="stats-content">
         
         <div class="stat-item">
-          <div class="stat-pct">99%</div>
-          <div class="stat-desc">SAID THEIR SKIN FELT MORE HYDRATED + REFRESHED</div>
-        </div>
-        
-        <div class="stat-item">
-          <div class="stat-pct">98%</div>
-          <div class="stat-desc">SAID IT ABSORBS QUICKLY WITHOUT ANY HEAVINESS</div>
-        </div>
-        
-        <div class="stat-item">
           <div class="stat-pct">97%</div>
-          <div class="stat-desc">SAID THEIR SKIN LOOKED SMOOTHER + MORE EVEN</div>
+          <div class="stat-desc">SAID THEIR SKIN LOOKED MORE EVEN</div>
+        </div>
+        
+        <div class="stat-item">
+          <div class="stat-pct">95%</div>
+          <div class="stat-desc">SAID THEIR SKIN APPEARED BRIGHTER</div>
+        </div>
+        
+        <div class="stat-item">
+          <div class="stat-pct">94%</div>
+          <div class="stat-desc">SAID DARK SPOTS LOOKED LESS VISIBLE</div>
         </div>
         
         <div class="stat-item">
           <div class="stat-pct">3 out of 4</div>
-          <div class="stat-desc">SAID THEY NOTICED A HEALTHY, NATURAL GLOW</div>
+          <div class="stat-desc">SAID THEY NOTICED IMPROVED SKIN CLARITY</div>
         </div>
         
         <div class="stat-disclaimer">
-          *Based on a 2-week consumer perception study with consistent daily use.
+          Based on a 2-week consumer perception study with consistent daily use.
         </div>
       </div>
       
       <div class="stats-image">
-        <img src="{{ "moisturizer-benefits.jpg" | asset_url }}" alt="Percentage View">
+        <img src="{{ "tranexamic-stats.jpg" | asset_url }}" alt="Percentage View">
       </div>
     </section>
 
@@ -2540,17 +2560,50 @@ a { color: inherit; text-decoration: none; }
         <h2 class="faq-title">FAQ</h2>
         
         <div class="faq-accordion">
+
           <div class="faq-item">
             <div class="faq-qa">
-              <span class="faq-question">Can I use this moisturizer with makeup?</span>
-              <p class="faq-answer">Yes, it works perfectly as a base under makeup, helping create a smooth and hydrated canvas.</p>
+              <span class="faq-question">Can I use this serum every day?</span>
+              <p class="faq-answer">Yes, it is suitable for daily use, both morning and night.</p>
+            </div>
+            <span class="faq-icon">+</span>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-qa">
+              <span class="faq-question">Is it suitable for sensitive skin?</span>
+              <p class="faq-answer">Yes, it includes soothing ingredients, but patch testing is recommended.</p>
+            </div>
+            <span class="faq-icon">+</span>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-qa">
+              <span class="faq-question">Does it help with dark spots and pigmentation?</span>
+              <p class="faq-answer">Yes, it is designed to target discoloration and improve uneven tone.</p>
+            </div>
+            <span class="faq-icon">+</span>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-qa">
+              <span class="faq-question">Can I layer it with other skincare products?</span>
+              <p class="faq-answer">Yes, it works well with moisturizers, sunscreens, and other gentle actives.</p>
+            </div>
+            <span class="faq-icon">+</span>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-qa">
+              <span class="faq-question">Do I need to use sunscreen with this?</span>
+              <p class="faq-answer">Yes, sunscreen is essential during the day to protect and maintain results.</p>
             </div>
             <span class="faq-icon">+</span>
           </div>
         </div>
       </div>
       <div class="faq-image-col">
-        <img src="{{ "faq.jpeg" | asset_url }}" alt="FAQ View">
+        <img src="{{ "tranexamic-faq.jpeg" | asset_url }}" alt="FAQ View">
       </div>
     </section>
 
@@ -2566,23 +2619,70 @@ a { color: inherit; text-decoration: none; }
 
       <hr class="rv-divider">
 
+      
       <div class="review-card">
         <div class="rv-sidebar">
-          <div class="rv-author">Sana</div>
+          <div class="rv-author">Nimra</div>
           <div class="rv-verified">Verified Buyer</div>
         </div>
         <div class="rv-main">
-          <div class="rv-main-header">
-            <div class="rv-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          </div>
+          <div class="rv-main-header"><div class="rv-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div></div>
           <div class="rv-title">Verified Selection</div>
-          <div class="rv-body">"It feels so light on my skin and gives me a soft, natural glow throughout the day. My skin looks healthier and more refreshed."</div>
+          <div class="rv-body">"Iâ€™ve seen a noticeable difference in my dark spots. My skin looks clearer and more even now."</div>
         </div>
       </div>
+<hr class="rv-divider">
 
-      <hr class="rv-divider" style="margin-bottom: 40px;">
+      <div class="review-card">
+        <div class="rv-sidebar">
+          <div class="rv-author">Laiba</div>
+          <div class="rv-verified">Verified Buyer</div>
+        </div>
+        <div class="rv-main">
+          <div class="rv-main-header"><div class="rv-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div></div>
+          <div class="rv-title">Verified Selection</div>
+          <div class="rv-body">"This serum has really helped brighten my complexion. My skin feels smoother and looks more radiant."</div>
+        </div>
+      </div>
+<hr class="rv-divider">
 
+      <div class="review-card">
+        <div class="rv-sidebar">
+          <div class="rv-author">Sumbul</div>
+          <div class="rv-verified">Verified Buyer</div>
+        </div>
+        <div class="rv-main">
+          <div class="rv-main-header"><div class="rv-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div></div>
+          <div class="rv-title">Verified Selection</div>
+          <div class="rv-body">"My uneven tone has improved a lot since I started using this. It feels gentle and effective."</div>
+        </div>
+      </div>
+<hr class="rv-divider">
 
+      <div class="review-card">
+        <div class="rv-sidebar">
+          <div class="rv-author">Faizan</div>
+          <div class="rv-verified">Verified Buyer</div>
+        </div>
+        <div class="rv-main">
+          <div class="rv-main-header"><div class="rv-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div></div>
+          <div class="rv-title">Verified Selection</div>
+          <div class="rv-body">"After a few weeks, my skin looks more balanced and fresh. It has reduced the appearance of marks."</div>
+        </div>
+      </div>
+<hr class="rv-divider">
+
+      <div class="review-card">
+        <div class="rv-sidebar">
+          <div class="rv-author">Rehan</div>
+          <div class="rv-verified">Verified Buyer</div>
+        </div>
+        <div class="rv-main">
+          <div class="rv-main-header"><div class="rv-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div></div>
+          <div class="rv-title">Verified Selection</div>
+          <div class="rv-body">"It absorbs quickly and gives a nice glow to my skin. My complexion looks healthier overall."</div>
+        </div>
+      </div>
     </section>
 
     <!-- 2. Product Selection Carousel -->
@@ -2596,355 +2696,347 @@ a { color: inherit; text-decoration: none; }
         </button>
       </div>
 
-      <div class="product-collection" id="product-slider">
-        <div class="card card-rhode" data-category="skincare">
+      <div class="product-collection" id="product-slider"><!-- Card 1: Night Cream -->
+        <div class="card card-rhode" data-category="nightcream">
           <a href="/products/night-cream" class="card-link-wrapper">
-            <img src="{{ "night-cream-hover.jpg" | asset_url }}" class="card-hover-bg" alt="Centella Night Cream Hover">
+            <img src="{{ 'night-cream-hover.jpg' | asset_url }}" class="card-hover-bg" alt="Night Cream Hover">
             <div class="card-rhode-top">
               <span class="card-brand-label">NIGHT CREAM</span>
             </div>
             <div class="card-rhode-image">
-              <img src="{{ "moisturizer-100.jpg" | asset_url }}" alt="Centella Night Cream" class="product-main-img">
+              <img src="{{ 'night-cream.jpg' | asset_url }}" alt="Night Cream" class="product-main-img">
             </div>
             <div class="card-rhode-footer">
               <div class="card-meta">
-                <div class="card-stars">&#9733;&#9733;&#9733;&#9733;&#9733; <span class="review-count">(10k+)</span></div>
-                <h3 class="card-name">Centella Night Cream</h3>
+                <div class="card-stars">&#9733;&#9733;&#9733;&#9733;&#9733; <span class="review-count">(16k)</span></div>
+                <h3 class="card-name">NIGHT CREAM</h3>
               </div>
-              <span class="btn-rhode-buy-pill">BUY - RS. 2,660</span>
+              <a href="/products/night-cream" class="btn-rhode-buy-pill">BUY - RS. 2,675</a>
             </div>
-            <div class="buy-button-hover">
-                BUY Centella Night Cream - RS. 2,660
+            <div class="buy-button-hover" style="position: absolute; bottom: 25px; left: 50%; transform: translateX(-50%) translateY(20px); width: 88%; background: white; color: #2c2b28; padding: 14px 20px; border-radius: 40px; text-align: center; font-size: 0.72rem; font-weight: 800; letter-spacing: 0.05em; opacity: 0; z-index: 20; transition: all 0.4s cubic-bezier(0.16,1,0.3,1); box-shadow: 0 4px 15px rgba(0,0,0,0.08);">
+                BUY NIGHT CREAM - RS. 1,500
             </div>
           </a>
         </div>
 
-        <div class="card card-rhode" data-category="skincare">
-          <a href="/products/centella-moisturizer" class="card-link-wrapper">
-            <img src="{{ "moisturizer-meet-2.jpg" | asset_url }}" class="card-hover-bg" alt="Centella Moisturizer Hover">
-            <div class="card-rhode-top">
-              <span class="card-brand-label">Daily Dew</span>
-            </div>
-            <div class="card-rhode-image">
-              <img src="{{ "moisturizer-100.jpg" | asset_url }}" alt="Centella Moisturizer" class="product-main-img">
-            </div>
-            <div class="card-rhode-footer">
-              <div class="card-meta">
-                <div class="card-stars">&#9733;&#9733;&#9733;&#9733;&#9733; <span class="review-count">(10k+)</span></div>
-                <h3 class="card-name">Centella Moisturizer</h3>
-              </div>
-              <span class="btn-rhode-buy-pill">BUY - RS. 1,800</span>
-            </div>
-            <div class="buy-button-hover">
-                BUY Centella Moisturizer - RS. 1,800
-            </div>
-          </a>
-        </div>
-
-        <div class="card card-rhode" data-category="skincare">
-          <a href="/products/face-wash" class="card-link-wrapper">
-            <img src="{{ "facewash-shot.png" | asset_url }}" class="card-hover-bg" alt="Centella Face Wash Hover">
-            <div class="card-rhode-top">
-              <span class="card-brand-label">cleanser</span>
-            </div>
-            <div class="card-rhode-image">
-              <img src="{{ "facewash1.jpeg" | asset_url }}" alt="Centella Face Wash" class="product-main-img">
-            </div>
-            <div class="card-rhode-footer">
-              <div class="card-meta">
-                <div class="card-stars">&#9733;&#9733;&#9733;&#9733;&#9733; <span class="review-count">(10k+)</span></div>
-                <h3 class="card-name">Centella Face Wash</h3>
-              </div>
-              <span class="btn-rhode-buy-pill">BUY - RS. 1,800</span>
-            </div>
-            <div class="buy-button-hover">
-                BUY Centella Face Wash - RS. 1,800
-            </div>
-          </a>
-        </div>
-
+        <!-- Card 2: Tranexamic Serum -->
         <div class="card card-rhode" data-category="serum">
-          <a href="/products/glow-serum" class="card-link-wrapper">
-            <img src="{{ "glow-serum-hover.jpg" | asset_url }}" class="card-hover-bg" alt="Centella Serum Hover">
+          <a href="/products/tranexamic-serum" class="card-link-wrapper">
+            <img src="{{ 'tranexamic-meet-1.jpg' | asset_url }}" class="card-hover-bg" alt="Tranexamic Serum Hover">
             <div class="card-rhode-top">
               <span class="card-brand-label">serum</span>
             </div>
             <div class="card-rhode-image">
-              <img src="{{ "glowserum-1.png" | asset_url }}" alt="Centella Serum" class="product-main-img">
+              <img src="{{ 'tranexamic-serum.jpg' | asset_url }}" alt="Tranexamic Serum" class="product-main-img">
             </div>
             <div class="card-rhode-footer">
               <div class="card-meta">
-                <div class="card-stars">&#9733;&#9733;&#9733;&#9733;&#9733; <span class="review-count">(10k+)</span></div>
-                <h3 class="card-name">Centella Serum</h3>
+                <div class="card-stars">&#9733;&#9733;&#9733;&#9733;&#9733; <span class="review-count">(16k)</span></div>
+                <h3 class="card-name">TRANEXAMIC SERUM</h3>
               </div>
-              <span class="btn-rhode-buy-pill">BUY - RS. 2,200</span>
+              <a href="/products/tranexamic-serum" class="btn-rhode-buy-pill">BUY - RS. 2,740</a>
             </div>
             <div class="buy-button-hover">
-                BUY Centella Serum - RS. 2,200
+                BUY TRANEXAMIC - RS. 1,500
             </div>
           </a>
         </div>
 
-        <div class="card card-rhode" data-category="skincare">
-          <a href="/products/e7-korean-glass-skin-centella-face-wash-copy" class="card-link-wrapper">
-            <img src="{{ "v2-sunscreen-2.jpg" | asset_url }}" class="card-hover-bg" alt="Sunscreen SPF60+ Hover">
-            <div class="card-rhode-top">
-              <span class="card-brand-label">sunscreen</span>
-            </div>
-            <div class="card-rhode-image">
-              <img src="{{ "v2-sunscreen-1.jpeg" | asset_url }}" alt="Sunscreen SPF60+" class="product-main-img">
-            </div>
-            <div class="card-rhode-footer">
-              <div class="card-meta">
-                <div class="card-stars">&#9733;&#9733;&#9733;&#9733;&#9733; <span class="review-count">(10k+)</span></div>
-                <h3 class="card-name">Sunscreen SPF60+</h3>
-              </div>
-              <span class="btn-rhode-buy-pill">BUY - RS. 2,500</span>
-            </div>
-            <div class="buy-button-hover">
-                BUY Sunscreen SPF60+ - RS. 2,500
-            </div>
-          </a>
-        </div>
-
-        <div class="card card-rhode" data-category="skincare">
-          <a href="/products/skin-refining-toner" class="card-link-wrapper">
-            <img src="{{ "toner-meet-2.jpg" | asset_url }}" class="card-hover-bg" alt="Refining Toner Hover">
-            <div class="card-rhode-top">
-              <span class="card-brand-label">Clarity Reset</span>
-            </div>
-            <div class="card-rhode-image">
-              <img src="{{ "skin refining-100.jpg" | asset_url }}" alt="Refining Toner" class="product-main-img">
-            </div>
-            <div class="card-rhode-footer">
-              <div class="card-meta">
-                <div class="card-stars">&#9733;&#9733;&#9733;&#9733;&#9733; <span class="review-count">(10k+)</span></div>
-                <h3 class="card-name">Refining Toner</h3>
-              </div>
-              <span class="btn-rhode-buy-pill">BUY - RS. 1,800</span>
-            </div>
-            <div class="buy-button-hover">
-                BUY Refining Toner - RS. 1,800
-            </div>
-          </a>
-        </div>
-
-        <div class="card card-rhode" data-category="serum">
-          <a href="/products/anti-frizz-keratin-serum" class="card-link-wrapper">
-            <img src="{{ "keratin-serum-hover.jpg" | asset_url }}" class="card-hover-bg" alt="Keratin Serum Hover">
+        <!-- Card 3: Keratin Serum -->
+        <div class="card card-rhode" data-category="haircare">
+          <a href="/products/keratin-serum" class="card-link-wrapper">
+            <img src="{{ 'keratin-serum-hover.jpg' | asset_url }}" class="card-hover-bg" alt="Keratin Serum Hover">
             <div class="card-rhode-top">
               <span class="card-brand-label">haircare</span>
             </div>
             <div class="card-rhode-image">
-              <img src="{{ "antifrizz-1.jpg" | asset_url }}" alt="Keratin Serum" class="product-main-img">
+              <img src="{{ 'keratin-serum.jpg' | asset_url }}" alt="Keratin Serum" class="product-main-img">
             </div>
             <div class="card-rhode-footer">
               <div class="card-meta">
-                <div class="card-stars">&#9733;&#9733;&#9733;&#9733;&#9733; <span class="review-count">(10k+)</span></div>
-                <h3 class="card-name">Keratin Serum</h3>
+                <div class="card-stars">&#9733;&#9733;&#9733;&#9733;&#9733; <span class="review-count">(16k)</span></div>
+                <h3 class="card-name">KERATIN SERUM</h3>
               </div>
-              <span class="btn-rhode-buy-pill">BUY - RS. 1,800</span>
+              <a href="/products/keratin-serum" class="btn-rhode-buy-pill">BUY - RS. 1,500</a>
             </div>
-            <div class="buy-button-hover">
-                BUY Keratin Serum - RS. 1,800
+            <div class="buy-button-hover" style="position: absolute; bottom: 25px; left: 50%; transform: translateX(-50%) translateY(20px); width: 88%; background: white; color: #2c2b28; padding: 14px 20px; border-radius: 40px; text-align: center; font-size: 0.72rem; font-weight: 800; letter-spacing: 0.05em; opacity: 0; z-index: 20; transition: all 0.4s cubic-bezier(0.16,1,0.3,1); box-shadow: 0 4px 15px rgba(0,0,0,0.08);">
+                BUY KERATIN SERUM - RS. 1,500
             </div>
           </a>
         </div>
 
-        <div class="card card-rhode" data-category="skincare">
-          <a href="/products/hair-mist" class="card-link-wrapper">
-            <img src="{{ "v2-hair-2.jpg" | asset_url }}" class="card-hover-bg" alt="Floral Blossom Hair Mist Hover">
-            <div class="card-rhode-top">
-              <span class="card-brand-label">Fresh Floral Touch</span>
-            </div>
-            <div class="card-rhode-image">
-              <img src="{{ "v2-hair-1.jpeg" | asset_url }}" alt="Floral Blossom Hair Mist" class="product-main-img">
-            </div>
-            <div class="card-rhode-footer">
-              <div class="card-meta">
-                <div class="card-stars">&#9733;&#9733;&#9733;&#9733;&#9733; <span class="review-count">(10k+)</span></div>
-                <h3 class="card-name">Floral Blossom Hair Mist</h3>
-              </div>
-              <span class="btn-rhode-buy-pill">BUY - RS. 1,200</span>
-            </div>
-            <div class="buy-button-hover">
-                BUY Floral Blossom Hair Mist - RS. 1,200
-            </div>
-          </a>
-        </div>
-
-        <div class="card card-rhode" data-category="skincare">
-          <a href="/products/aha-exfoliant" class="card-link-wrapper">
-            <img src="{{ "toner-meet-2.jpg" | asset_url }}" class="card-hover-bg" alt="Glycolic Toner Hover">
-            <div class="card-rhode-top">
-              <span class="card-brand-label">Renew & Refine</span>
-            </div>
-            <div class="card-rhode-image">
-              <img src="{{ "toner1.jpeg" | asset_url }}" alt="Glycolic Toner" class="product-main-img">
-            </div>
-            <div class="card-rhode-footer">
-              <div class="card-meta">
-                <div class="card-stars">&#9733;&#9733;&#9733;&#9733;&#9733; <span class="review-count">(10k+)</span></div>
-                <h3 class="card-name">Glycolic Toner</h3>
-              </div>
-              <span class="btn-rhode-buy-pill">BUY - RS. 2,000</span>
-            </div>
-            <div class="buy-button-hover">
-                BUY Glycolic Toner - RS. 2,000
-            </div>
-          </a>
-        </div>
-
+        <!-- Card 4: Glow Serum -->
         <div class="card card-rhode" data-category="serum">
-          <a href="/products/tranexamic-serum" class="card-link-wrapper">
-            <img src="{{ "tranexamic-meet-1.jpg" | asset_url }}" class="card-hover-bg" alt="Elaris7 Tranexamic Brightening Serum Hover">
+          <a href="/products/glow-serum" class="card-link-wrapper">
+            <img src="{{ 'glow-serum-hover.jpg' | asset_url }}" class="card-hover-bg" alt="Glow Serum Hover">
             <div class="card-rhode-top">
               <span class="card-brand-label">serum</span>
             </div>
             <div class="card-rhode-image">
-              <img src="{{ "TranexamicSerum1.jpg" | asset_url }}" alt="Elaris7 Tranexamic Brightening Serum" class="product-main-img">
+              <img src="{{ 'glow-serum-100.jpg' | asset_url }}" alt="Glow Serum" class="product-main-img">
             </div>
             <div class="card-rhode-footer">
               <div class="card-meta">
-                <div class="card-stars">&#9733;&#9733;&#9733;&#9733;&#9733; <span class="review-count">(10k+)</span></div>
-                <h3 class="card-name">Elaris7 Tranexamic Brightening Serum</h3>
+                <div class="card-stars">&#9733;&#9733;&#9733;&#9733;&#9733; <span class="review-count">(16k)</span></div>
+                <h3 class="card-name">GLOW SERUM</h3>
               </div>
-              <span class="btn-rhode-buy-pill">BUY - RS. 2,400</span>
+              <a href="/products/glow-serum" class="btn-rhode-buy-pill">BUY - RS. 2,645</a>
             </div>
             <div class="buy-button-hover">
-                BUY Elaris7 Tranexamic Brightening Serum - RS. 2,400
+                BUY GLOW SERUM - RS. 1,500
             </div>
           </a>
         </div>
 
-        <div class="card card-rhode" data-category="serum">
-          <a href="/products/anti-acne" class="card-link-wrapper">
-            <img src="{{ "v2-antiacne-2.jpg" | asset_url }}" class="card-hover-bg" alt="Anti-Acne Serum Hover">
-            <div class="card-rhode-top">
-              <span class="card-brand-label">Clear & Control</span>
-            </div>
-            <div class="card-rhode-image">
-              <img src="{{ "v2-antiacne-1.jpeg" | asset_url }}" alt="Anti-Acne Serum" class="product-main-img">
-            </div>
-            <div class="card-rhode-footer">
-              <div class="card-meta">
-                <div class="card-stars">&#9733;&#9733;&#9733;&#9733;&#9733; <span class="review-count">(10k+)</span></div>
-                <h3 class="card-name">Anti-Acne Serum</h3>
-              </div>
-              <span class="btn-rhode-buy-pill">BUY - RS. 2,200</span>
-            </div>
-            <div class="buy-button-hover">
-                BUY Anti-Acne Serum - RS. 2,200
-            </div>
-          </a>
-        </div>
-
-        <div class="card card-rhode" data-category="skincare">
+        <!-- Card 5: Glutathione Cream -->
+        <div class="card card-rhode" data-category="repair">
           <a href="/products/glutathione-cream" class="card-link-wrapper">
-            <img src="{{ "deep-hydration-100.jpg" | asset_url }}" class="card-hover-bg" alt="Glutathione Cream Hover">
+            <img src="{{ 'deep-hydration-100.jpg' | asset_url }}" class="card-hover-bg" alt="Glutathione Cream Hover">
             <div class="card-rhode-top">
               <span class="card-brand-label">repair</span>
             </div>
             <div class="card-rhode-image">
-              <img src="{{ "glutathione-1.jpeg" | asset_url }}" alt="Glutathione Cream" class="product-main-img">
+              <img src="{{ 'glutathione-cream-100.jpg' | asset_url }}" alt="Glutathione Cream" class="product-main-img">
             </div>
             <div class="card-rhode-footer">
               <div class="card-meta">
-                <div class="card-stars">&#9733;&#9733;&#9733;&#9733;&#9733; <span class="review-count">(10k+)</span></div>
-                <h3 class="card-name">Glutathione Cream</h3>
+                <div class="card-stars">&#9733;&#9733;&#9733;&#9733;&#9733; <span class="review-count">(16k)</span></div>
+                <h3 class="card-name">GLUTATHIONE CREAM</h3>
               </div>
-              <span class="btn-rhode-buy-pill">BUY - RS. 2,400</span>
+              <a href="/products/glutathione-cream" class="btn-rhode-buy-pill">BUY - RS. 2,640</a>
             </div>
             <div class="buy-button-hover">
-                BUY Glutathione Cream - RS. 2,400
+                BUY GLUTATHIONE - RS. 1,500
             </div>
           </a>
         </div>
 
-        <div class="card card-rhode" data-category="skincare">
+        <!-- Card 6: Hair Mist -->
+        <div class="card card-rhode" data-category="haircare">
+          <a href="/products/hair-mist" class="card-link-wrapper">
+            <div class="card-rhode-top">
+              <span class="card-brand-label">haircare</span>
+            </div>
+            <div class="card-rhode-image">
+              <img src="{{ 'hair-mist.jpg' | asset_url }}" alt="Hair Mist" class="product-main-img">
+            </div>
+            <div class="card-rhode-footer">
+              <div class="card-meta">
+                <div class="card-stars">&#9733;&#9733;&#9733;&#9733;&#9733; <span class="review-count">(16k)</span></div>
+                <h3 class="card-name">HAIR MIST</h3>
+              </div>
+              <a href="/products/hair-mist" class="btn-rhode-buy-pill">BUY - RS. 1,500</a>
+            </div>
+          </a>
+        </div>
+
+        <!-- Card 7: Face Wash -->
+        <div class="card card-rhode" data-category="cleanser">
+          <a href="/products/face-wash" class="card-link-wrapper">
+            <img src="{{ 'facewash-shot.png' | asset_url }}" class="card-hover-bg" alt="Face Wash Hover">
+            <div class="card-rhode-top">
+              <span class="card-brand-label">cleanser</span>
+            </div>
+            <div class="card-rhode-image">
+              <img src="{{ 'facewash-100.jpg' | asset_url }}" alt="Face Wash" class="product-main-img">
+            </div>
+            <div class="card-rhode-footer">
+              <div class="card-meta">
+                <div class="card-stars">&#9733;&#9733;&#9733;&#9733;&#9733; <span class="review-count">(16k)</span></div>
+                <h3 class="card-name">CENTELLA WASH</h3>
+              </div>
+              <a href="/products/face-wash" class="btn-rhode-buy-pill">BUY - RS. 2,620</a>
+            </div>
+            <div class="buy-button-hover">
+                BUY FACE WASH - RS. 1,500
+            </div>
+          </a>
+        </div>
+
+        <!-- Card 8: Anti Acne Serum -->
+        <div class="card card-rhode" data-category="antiacne">
+          <a href="/products/anti-acne-serum" class="card-link-wrapper">
+            <img src="{{ 'hover-anti-acne.png' | asset_url }}" class="card-hover-bg" alt="Anti Acne Hover">
+            <div class="card-rhode-top">
+              <span class="card-brand-label">antiacne</span>
+            </div>
+            <div class="card-rhode-image">
+              <img src="{{ 'anti-acne-100.jpg' | asset_url }}" alt="Anti Acne Serum" class="product-main-img">
+            </div>
+            <div class="card-rhode-footer">
+              <div class="card-meta">
+                <div class="card-stars">&#9733;&#9733;&#9733;&#9733;&#9733; <span class="review-count">(16k)</span></div>
+                <h3 class="card-name">ANTI ACNE SERUM</h3>
+              </div>
+              <a href="/products/anti-acne-serum" class="btn-rhode-buy-pill">BUY - RS. 1,500</a>
+            </div>
+            <div class="buy-button-hover" style="position: absolute; bottom: 25px; left: 50%; transform: translateX(-50%) translateY(20px); width: 88%; background: white; color: #2c2b28; padding: 14px 20px; border-radius: 40px; text-align: center; font-size: 0.72rem; font-weight: 800; letter-spacing: 0.05em; opacity: 0; z-index: 20; transition: all 0.4s cubic-bezier(0.16,1,0.3,1); box-shadow: 0 4px 15px rgba(0,0,0,0.08);">
+                BUY ANTI ACNE - RS. 1,500
+            </div>
+          </a>
+        </div>
+
+        <!-- Card 9: Sunscreen -->
+        <div class="card card-rhode" data-category="sunscreen">
+          <a href="/products/sunscreen" class="card-link-wrapper">
+            <div class="card-rhode-top">
+              <span class="card-brand-label">sunscreen</span>
+            </div>
+            <div class="card-rhode-image">
+              <img src="{{ 'sunscreen-100.jpg' | asset_url }}" alt="Sunscreen" class="product-main-img">
+            </div>
+            <div class="card-rhode-footer">
+              <div class="card-meta">
+                <div class="card-stars">&#9733;&#9733;&#9733;&#9733;&#9733; <span class="review-count">(16k)</span></div>
+                <h3 class="card-name">SUNSCREEN</h3>
+              </div>
+              <a href="/products/sunscreen" class="btn-rhode-buy-pill">BUY - RS. 2,735</a>
+            </div>
+          </a>
+        </div>
+
+        <!-- Card 10: Renewal Cleanser -->
+        <div class="card card-rhode" data-category="cleanser">
           <a href="/products/renewal-cleanser" class="card-link-wrapper">
-            <img src="{{ "v2-cleanser-2.jpg" | asset_url }}" class="card-hover-bg" alt="Renewal Cleanser Hover">
             <div class="card-rhode-top">
-              <span class="card-brand-label">Deep Brightening</span>
+              <span class="card-brand-label">cleanser</span>
             </div>
             <div class="card-rhode-image">
-              <img src="{{ "v2-cleanser-1.jpeg" | asset_url }}" alt="Renewal Cleanser" class="product-main-img">
+              <img src="./assets/gel cleanser-100.jpg" alt="Renewal Cleanser" class="product-main-img">
             </div>
             <div class="card-rhode-footer">
               <div class="card-meta">
-                <div class="card-stars">&#9733;&#9733;&#9733;&#9733;&#9733; <span class="review-count">(10k+)</span></div>
-                <h3 class="card-name">Renewal Cleanser</h3>
+                <div class="card-stars">&#9733;&#9733;&#9733;&#9733;&#9733; <span class="review-count">(16k)</span></div>
+                <h3 class="card-name">RENEWAL CLEANSER</h3>
               </div>
-              <span class="btn-rhode-buy-pill">BUY - RS. 2,850</span>
-            </div>
-            <div class="buy-button-hover">
-                BUY Renewal Cleanser - RS. 2,850
+              <a href="/products/renewal-cleanser" class="btn-rhode-buy-pill">BUY - RS. 2,820</a>
             </div>
           </a>
         </div>
 
-        <div class="card card-rhode" data-category="skincare">
+        <!-- Card 11: Hydra Burst Moisturizer -->
+        <div class="card card-rhode" data-category="moisturizer">
           <a href="/products/centella-moisturizer" class="card-link-wrapper">
-            <img src="{{ "TranexamicSerum2.jpg" | asset_url }}" class="card-hover-bg" alt="Hydra Burst Moisturizer Hover">
             <div class="card-rhode-top">
-              <span class="card-brand-label">Glass Skin Finish</span>
+              <span class="card-brand-label">moisturizer</span>
             </div>
             <div class="card-rhode-image">
-              <img src="{{ "v2-moisturizer-1.jpeg" | asset_url }}" alt="Hydra Burst Moisturizer" class="product-main-img">
+              <img src="{{ 'moisturizer-100.jpg' | asset_url }}" alt="Hydra Burst Moisturizer" class="product-main-img">
             </div>
             <div class="card-rhode-footer">
               <div class="card-meta">
-                <div class="card-stars">&#9733;&#9733;&#9733;&#9733;&#9733; <span class="review-count">(10k+)</span></div>
-                <h3 class="card-name">Hydra Burst Moisturizer</h3>
+                <div class="card-stars">&#9733;&#9733;&#9733;&#9733;&#9733; <span class="review-count">(16k)</span></div>
+                <h3 class="card-name">HYDRA BURST</h3>
               </div>
-              <span class="btn-rhode-buy-pill">BUY - RS. 2,499</span>
-            </div>
-            <div class="buy-button-hover">
-                BUY Hydra Burst Moisturizer - RS. 2,499
+              <a href="/products/centella-moisturizer" class="btn-rhode-buy-pill">BUY - RS. 2,680</a>
             </div>
           </a>
         </div>
 
-        <div class="card card-rhode" data-category="skincare">
-          <a href="/products/renewal-toner-v2" class="card-link-wrapper">
-            <img src="{{ "toner2.jpg" | asset_url }}" class="card-hover-bg" alt="Renewal Toner Hover">
-            <div class="card-rhode-top">
-              <span class="card-brand-label">Pore Refining</span>
-            </div>
-            <div class="card-rhode-image">
-              <img src="{{ "toner1.jpeg" | asset_url }}" alt="Renewal Toner" class="product-main-img">
-            </div>
-            <div class="card-rhode-footer">
-              <div class="card-meta">
-                <div class="card-stars">&#9733;&#9733;&#9733;&#9733;&#9733; <span class="review-count">(10k+)</span></div>
-                <h3 class="card-name">Renewal Toner</h3>
-              </div>
-              <span class="btn-rhode-buy-pill">BUY - RS. 2,670</span>
-            </div>
-            <div class="buy-button-hover">
-                BUY Renewal Toner - RS. 2,670
-            </div>
-          </a>
-        </div>
-
-        <div class="card card-rhode" data-category="skincare">
+        <!-- Card 12: Renewal Toner -->
+        <div class="card card-rhode" data-category="toner">
           <a href="/products/renewal-toner" class="card-link-wrapper">
-            <img src="{{ "toner2.jpg" | asset_url }}" class="card-hover-bg" alt="Renewal Toner Hover">
             <div class="card-rhode-top">
-              <span class="card-brand-label">Pore Refining</span>
+              <span class="card-brand-label">toner</span>
             </div>
             <div class="card-rhode-image">
-              <img src="{{ "toner1.jpeg" | asset_url }}" alt="Renewal Toner" class="product-main-img">
+              <img src="{{ 'toner1.jpeg' | asset_url }}" alt="Renewal Toner" class="product-main-img">
             </div>
             <div class="card-rhode-footer">
               <div class="card-meta">
-                <div class="card-stars">&#9733;&#9733;&#9733;&#9733;&#9733; <span class="review-count">(10k+)</span></div>
-                <h3 class="card-name">Renewal Toner</h3>
+                <div class="card-stars">&#9733;&#9733;&#9733;&#9733;&#9733; <span class="review-count">(16k)</span></div>
+                <h3 class="card-name">RENEWAL TONER</h3>
               </div>
-              <span class="btn-rhode-buy-pill">BUY - RS. 2,670</span>
+              <a href="/products/renewal-toner" class="btn-rhode-buy-pill">BUY - RS. 2,780</a>
             </div>
-            <div class="buy-button-hover">
-                BUY Renewal Toner - RS. 2,670
+          </a>
+        </div>
+
+        <!-- Card 13: Skin Refining Toner -->
+        <div class="card card-rhode" data-category="toner">
+          <a href="/products/skin-refining-toner" class="card-link-wrapper">
+            <div class="card-rhode-top">
+              <span class="card-brand-label">toner</span>
+            </div>
+            <div class="card-rhode-image">
+              <img src="{{ 'essence-white.png' | asset_url }}" alt="Skin Refining Toner" class="product-main-img">
+            </div>
+            <div class="card-rhode-footer">
+              <div class="card-meta">
+                <div class="card-stars">&#9733;&#9733;&#9733;&#9733;&#9733; <span class="review-count">(16k)</span></div>
+                <h3 class="card-name">SKIN REFINING TONER</h3>
+              </div>
+              <a href="/products/skin-refining-toner" class="btn-rhode-buy-pill">BUY - RS. 1,500</a>
+            </div>
+          </a>
+        </div>
+
+        <!-- 4 BUNDLE SETS -->
+        <div class="card card-rhode" data-category="set">
+          <a href="/products/e7-complete-glass-skin-set" class="card-link-wrapper">
+            <div class="card-rhode-top">
+              <span class="card-brand-label">SET</span>
+            </div>
+            <div class="card-rhode-image">
+              <div class="product-placeholder-img" style="background: #f2f2f0; height: 100%;"></div>
+            </div>
+            <div class="card-rhode-footer">
+              <div class="card-meta">
+                <div class="card-stars">&#9733;&#9733;&#9733;&#9733;&#9733; <span class="review-count">(12k)</span></div>
+                <h3 class="card-name">E7 GLASS SKIN SET</h3>
+              </div>
+              <span class="btn-rhode-buy-pill">BUY - RS. 4,500</span>
+            </div>
+          </a>
+        </div>
+        <div class="card card-rhode" data-category="set">
+          <a href="/products/e7-complete-glass-skin-set" class="card-link-wrapper">
+            <div class="card-rhode-top">
+              <span class="card-brand-label">SET</span>
+            </div>
+            <div class="card-rhode-image">
+              <div class="product-placeholder-img" style="background: #f2f2f0; height: 100%;"></div>
+            </div>
+            <div class="card-rhode-footer">
+              <div class="card-meta">
+                <div class="card-stars">&#9733;&#9733;&#9733;&#9733;&#9733; <span class="review-count">(8k)</span></div>
+                <h3 class="card-name">E7 COMPLETE GLASS SKIN SET</h3>
+              </div>
+              <span class="btn-rhode-buy-pill">BUY - RS. 7,500</span>
+            </div>
+          </a>
+        </div>
+        <div class="card card-rhode" data-category="set">
+          <a href="/products/e7-complete-glass-skin-set" class="card-link-wrapper">
+            <div class="card-rhode-top">
+              <span class="card-brand-label">SET</span>
+            </div>
+            <div class="card-rhode-image">
+              <div class="product-placeholder-img" style="background: #f2f2f0; height: 100%;"></div>
+            </div>
+            <div class="card-rhode-footer">
+              <div class="card-meta">
+                <div class="card-stars">&#9733;&#9733;&#9733;&#9733;&#9733; <span class="review-count">(5k)</span></div>
+                <h3 class="card-name">E7 HAIR CARE SET</h3>
+              </div>
+              <span class="btn-rhode-buy-pill">BUY - RS. 3,200</span>
+            </div>
+          </a>
+        </div>
+        <div class="card card-rhode" data-category="set">
+          <a href="/products/e7-complete-glass-skin-set" class="card-link-wrapper">
+            <div class="card-rhode-top">
+              <span class="card-brand-label">SET</span>
+            </div>
+            <div class="card-rhode-image">
+              <div class="product-placeholder-img" style="background: #f2f2f0; height: 100%;"></div>
+            </div>
+            <div class="card-rhode-footer">
+              <div class="card-meta">
+                <div class="card-stars">&#9733;&#9733;&#9733;&#9733;&#9733; <span class="review-count">(15k)</span></div>
+                <h3 class="card-name">ELARIS 7 KOREAN BRIGHTENING BUNDLE</h3>
+              </div>
+              <span class="btn-rhode-buy-pill">BUY - RS. 5,900</span>
             </div>
           </a>
         </div></div>
@@ -3097,9 +3189,10 @@ a { color: inherit; text-decoration: none; }
     /* Breakdown Section Styles */
     .breakdown-section {
       display: grid;
-      grid-template-columns: 1fr;
+      grid-template-columns: 1.1fr 0.9fr;
       gap: 16px;
       margin-top: 16px;
+      height: 600px;
     }
 
     .breakdown-content {
@@ -3600,7 +3693,7 @@ a { color: inherit; text-decoration: none; }
     /* What's Inside Section */
     .whats-inside-section {
       display: grid;
-      grid-template-columns: 1fr;
+      grid-template-columns: 0.9fr 1.1fr;
       gap: 16px;
       margin-top: 16px;
     }
@@ -3736,9 +3829,10 @@ a { color: inherit; text-decoration: none; }
     /* Spread It On For Section */
     .spread-section {
       display: grid;
-      grid-template-columns: 1fr;
+      grid-template-columns: 1.1fr 0.9fr;
       gap: 16px;
       margin-top: 16px;
+      height: 600px;
     }
 
     .spread-content {
@@ -3811,9 +3905,10 @@ a { color: inherit; text-decoration: none; }
     /* Statistics Section */
     .stats-section {
       display: grid;
-      grid-template-columns: 1fr;
+      grid-template-columns: 1.1fr 0.9fr;
       gap: 16px;
       margin-top: 16px;
+      height: 600px;
     }
 
     .stats-content {
@@ -3885,7 +3980,7 @@ a { color: inherit; text-decoration: none; }
     /* FAQ Section */
     .faq-section {
       display: grid;
-      grid-template-columns: 1fr;
+      grid-template-columns: 1.1fr 0.9fr;
       gap: 16px;
       margin-top: 16px;
     }
@@ -4571,6 +4666,8 @@ a { color: inherit; text-decoration: none; }
     }
   </style>
   <script src="./assets/script.js" defer></script>
+
+                    
   <script src="{{ 'script.js' | asset_url }}" defer></script>
 
   <script>
