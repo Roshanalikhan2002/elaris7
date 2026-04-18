@@ -272,7 +272,7 @@ document.addEventListener('DOMContentLoaded', () => {
            }
         }
         if (cleanTarget.includes('brightening')) {
-           const isExcluded = itemTitle.includes('skin refining') || itemTitle.includes('anti frizz') || itemTitle.includes('centella') || itemTitle.includes('anti acne') || isBundle;
+           const isExcluded = itemTitle.includes('skin refining') || itemTitle.includes('anti frizz') || itemTitle.includes('centella') || itemTitle.includes('anti acne') || itemTitle.includes('oil to foam') || isBundle;
            if (!isExcluded) {
               if (itemTitle.includes('tranexamic') || itemTitle.includes('glutathione') || itemTitle.includes('toner') || itemTitle.includes('serum') || itemTitle.includes('brightening') || itemTitle.includes('renewal') || itemTitle.includes('cleanser')) {
                  matches = true;
