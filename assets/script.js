@@ -321,6 +321,14 @@ document.addEventListener('DOMContentLoaded', () => {
        if (link.classList.contains('cat-link') || link.classList.contains('mega-cat-item')) {
          e.preventDefault();
          applyFilter(category, true);
+
+         // Sync URL if on a collection page
+         if (window.location.pathname.includes('/collections/')) {
+           const newHref = link.getAttribute('href');
+           if (newHref && newHref !== 'javascript:void(0)') {
+             history.pushState(null, '', newHref);
+           }
+         }
          return;
        }
     }

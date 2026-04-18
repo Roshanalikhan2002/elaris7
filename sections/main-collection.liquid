@@ -29,14 +29,24 @@
   <div class="collection-nav-bar">
     <div class="collection-nav-inner">
        {% assign default_cats = "Featured,Korean glass skin,Anti acne,Korean brightening,Hair care,Sets" | split: "," %}
-       <div class="collection-pills">
-         {% for cat in default_cats %}
-           {%- assign c_handle = cat | strip | handleize -%}
-           <a href="javascript:void(0)" class="coll-pill cat-link {% if forloop.first %}active{% endif %}" data-category="{{ c_handle }}">
-             {{ cat | uppercase }}
-           </a>
-         {% endfor %}
-       </div>
+        <div class="collection-pills">
+          {% for cat in default_cats %}
+            {%- assign c_handle = cat | strip | handleize -%}
+            {%- assign pill_url = "/collections/" | append: c_handle -%}
+            {%- if c_handle == 'featured' -%}{%- assign pill_url = "/collections/all" -%}{%- endif -%}
+            
+            {%- assign is_active = false -%}
+            {%- if c_handle == 'featured' and collection.handle == 'all' -%}
+              {%- assign is_active = true -%}
+            {%- elsif c_handle == collection.handle -%}
+              {%- assign is_active = true -%}
+            {%- endif -%}
+
+            <a href="{{ pill_url }}" class="coll-pill cat-link {% if is_active %}active{% endif %}" data-category="{{ c_handle }}">
+              {{ cat | uppercase }}
+            </a>
+          {% endfor %}
+        </div>
     </div>
   </div>
 
