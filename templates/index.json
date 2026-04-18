@@ -95,7 +95,7 @@
             "reviews": "12k",
             "asset_image": "glow-serum-100.jpg",
             "asset_hover_image": "glow-serum-hover.jpg",
-            "product_link": "/products/glow-serum"
+            "product_link": "/products/e7-korean-glass-skin-centella-sunscreen-spf50-copy"
           }
         },
         "block_glutathione": {
@@ -129,7 +129,7 @@
         "block_face_wash": {
           "type": "product",
           "settings": {
-            "title": "Face Wash",
+            "title": "Centella Face Wash",
             "price": "Rs. 2,200",
             "subtitle": "Premium Korean skincare formula",
             "brand_label": "korean-glass-skin",
@@ -137,7 +137,7 @@
             "reviews": "11k",
             "asset_image": "facewash-100.jpg",
             "asset_hover_image": "deep-hydration-facewash.jpg",
-            "product_link": "/products/face-wash"
+            "product_link": "/products/e7-korean-glass-skin-centella-night-cream-copy"
           }
         },
         "block_anti_acne": {
@@ -157,7 +157,7 @@
         "block_sunscreen": {
           "type": "product",
           "settings": {
-            "title": "Sunscreen SPF60+",
+            "title": "Centella Sunscreen SPF60+",
             "price": "Rs. 2,630",
             "subtitle": "Premium Korean skincare formula",
             "brand_label": "korean-glass-skin",
