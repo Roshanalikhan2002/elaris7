@@ -5,7 +5,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gel Cleanser | elaris7</title>
+  <title>Renewal Cleanser | elaris7</title>
   <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
 
@@ -2275,16 +2275,16 @@ a { color: inherit; text-decoration: none; }
       <!-- Thumbnails on Left -->
       <div class="gallery-thumbnails">
         <div class="thumb-item active" onmouseover="scrollGallery(0, this)">
-          <img src="{{ "facewash1.jpeg" | asset_url }}" alt="Thumb 1">
+          <img src="{{ "rc-gal-1.jpg" | asset_url }}" alt="Thumb 1">
         </div>
         <div class="thumb-item" onmouseover="scrollGallery(1, this)">
-          <img src="{{ "facewash2.jpg" | asset_url }}" alt="Thumb 2">
+          <img src="{{ "rc-gal-2.jpg" | asset_url }}" alt="Thumb 2">
         </div>
         <div class="thumb-item" onmouseover="scrollGallery(2, this)">
-          <img src="{{ "facewash3.jpg" | asset_url }}" alt="Thumb 3">
+          <img src="{{ "rc-gal-3.jpg" | asset_url }}" alt="Thumb 3">
         </div>
         <div class="thumb-item" onmouseover="scrollGallery(3, this)">
-          <img src="{{ "facewash4.jpg" | asset_url }}" alt="Thumb 4">
+          <img src="{{ "rc-gal-4.jpg" | asset_url }}" alt="Thumb 4">
         </div>
       </div>
 
@@ -2292,16 +2292,16 @@ a { color: inherit; text-decoration: none; }
       <div class="gallery-main-viewport">
         <div class="gallery-slider" id="productSlider">
           <div class="gallery-slide">
-            <img src="{{ "facewash1.jpeg" | asset_url }}" alt="Main View 1">
+            <img src="{{ "rc-gal-1.jpg" | asset_url }}" alt="Main View 1">
           </div>
           <div class="gallery-slide">
-            <img src="{{ "facewash2.jpg" | asset_url }}" alt="Main View 2">
+            <img src="{{ "rc-gal-2.jpg" | asset_url }}" alt="Main View 2">
           </div>
           <div class="gallery-slide">
-            <img src="{{ "facewash3.jpg" | asset_url }}" alt="Main View 3">
+            <img src="{{ "rc-gal-3.jpg" | asset_url }}" alt="Main View 3">
           </div>
           <div class="gallery-slide">
-            <img src="{{ "facewash4.jpg" | asset_url }}" alt="Main View 4">
+            <img src="{{ "rc-gal-4.jpg" | asset_url }}" alt="Main View 4">
           </div>
         </div>
       </div>
@@ -2326,22 +2326,17 @@ a { color: inherit; text-decoration: none; }
           </div>
 
           <div class="product-meta">
-            <span class="product-subtitle">Luminous Purify</span>
+            <span class="product-subtitle">Melt & Cleanse</span>
           </div>
 
           <div class="product-description">
-            <p>Specifically formulated for brightening, this lightweight gel cleanser effectively washes away impurities while infusing your skin with radiance-boosting botanicals for a clarified, glowing complexion.</p>
+            <p>A transforming Renewal Cleanser designed to dissolve makeup, sunscreen, and daily buildup while maintaining skin balance and revealing a fresh, glass-like glow.</p>
             <p class="disclaimer">*with continued daily use</p>
           </div>
 
           <hr class='divider'>
                               <div class="bogo-inline-section">
-            <div class="bogo-header">
-               <svg class="bogo-gift-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12v10H4V12M2 7h20v5H2zM12 22V7M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7zM12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg>
-               <p class="bogo-inline-title">Choose your item</p>
-            </div>
-          <div class="bogo-inline-section">
-            {% render 'bogo-selection' %}
+                               {% render 'bogo-selection' %}
           </div>
           <div class="product-actions-grid">
             <button class="buy-button add-to-cart-btn" style="white-space: nowrap; width: 100%;">ADD TO CART - <span>{{ product.price | money_without_trailing_zeros }}</span></button>
@@ -2394,11 +2389,12 @@ a { color: inherit; text-decoration: none; }
 
           <div class="product-accordions accordions">
             <details class="accordion-item">
-              <summary><span>BENEFITS</span><span>+</span></summary><div class="accordion-content"><ul>                  <li>Gently removes dirt, oil, and impurities without stripping the skin</li>
-                  <li>Helps brighten complexion and revive dull, tired-looking skin</li>
-                  <li>Supports hydration for a soft, fresh, and balanced feel</li>
-                  <li>Calms irritation and reduces the look of redness</li>
-                  <li>Helps maintain a healthy skin barrier for daily protection</li>
+              <summary><span>BENEFITS</span><span>+</span></summary><div class="accordion-content"><ul>                  <li>Effortlessly melts away makeup and sunscreen buildup</li>
+                  <li>Deeply cleanses without leaving skin dry or tight</li>
+                  <li>Helps balance excess oil while maintaining hydration</li>
+                  <li>Supports and strengthens the skin's natural barrier</li>
+                  <li>Smooths texture and clears away daily impurities</li>
+                  <li>Prepares skin for a clearer, more radiant appearance</li>
                   <li>Provides 72-hour hydration with a moisture-locking formula</li>
                   <li>Supports collagen to improve skin firmness and elasticity</li>
                   <li>Helps fade dark spots, acne scars, and discoloration</li>
@@ -2408,27 +2404,22 @@ a { color: inherit; text-decoration: none; }
                   <li>Promotes a more even-toned, youthful-looking complexion over time</li></ul></div>
             </details>
             <details class="accordion-item">
-              <summary><span>APPLICATION</span><span>+</span></summary><div class="accordion-content"><p style="margin:0;">After wetting your face, take a small amount of Centella Face Wash and gently massage onto skin in circular motions for about 60 seconds. Rinse thoroughly with water and pat dry, then follow with your skincare routine.</p></div>
+              <summary><span>APPLICATION</span><span>+</span></summary><div class="accordion-content"><p style="margin:0;">Apply 1â€“2 pumps of Renewal Cleanser onto dry skin and gently massage to dissolve makeup and impurities. Add a little water to transform it into a soft foam, then rinse thoroughly before continuing your routine.</p></div>
             </details>
             <details class="accordion-item">
-              <summary><span>TRICK</span><span>+</span></summary><div class="accordion-content"><ul>                  <li>Use lukewarm water to avoid drying out your skin while cleansing</li>
-                  <li>Massage gently for a full 60 seconds to allow ingredients to work effectively</li>
-                  <li>Follow immediately with serum or moisturizer on damp skin to lock in hydration</li>
+              <summary><span>TRICK</span><span>+</span></summary><div class="accordion-content"><ul>                  <li>Use on dry skin first to break down makeup more effectively</li>
+                  <li>Add water gradually to activate the foam transformation</li>
+                  <li>Massage gently for at least 60 seconds for a deeper cleanse</li>
+                  <li>Follow with a face wash for a complete double-cleansing ritual</li>
                   <li>Combine with your serum for enhanced repair benefits</li>
                   <li>Use consistently to see a reduction in fine lines and dark spots</li></ul></div>
             </details>
             <details class="accordion-item">
-              <summary><span>KEY INGREDIENTS</span><span>+</span></summary><div class="accordion-content"><ul>                  <li>3-0-Ethyl Ascorbic Acid</li>
-                  <li>Hyaluronic Acid</li>
-                  <li>Rice Extract</li>
-                  <li>Licorice Extract</li>
-                  <li>Morus Alba</li>
+              <summary><span>KEY INGREDIENTS</span><span>+</span></summary><div class="accordion-content"><ul>                  <li>Botanical Oils</li>
                   <li>Centella Asiatica</li>
-                  <li>Honey</li>
-                  <li>D-Panthenol</li>
-                  <li>Sodium PCA</li>
                   <li>Glycerin</li>
-                  <li>Apple Extract</li></ul></div>
+                  <li>Vitamin E</li>
+                  <li>Mild Cleansing Agents</li></ul></div>
             </details>
           </div>
 
@@ -2438,14 +2429,14 @@ a { color: inherit; text-decoration: none; }
 
     <!-- Meet the Product Section -->
     <section class="meet-product-section">
-      <h2 class="meet-title">Fresh Skin Begins Here</h2>
+      <h2 class="meet-title">Melt It Away. Cleanse It All.</h2>
       <div class="meet-carousel-wrapper">
         <div class="carousel-swipe-indicator">SWIPE â†’</div>
         <div class="meet-carousel">
-          <img src="{{ "facewash1.jpeg" | asset_url }}" alt="Product Image 1">
-          <img src="{{ "facewash2.jpg" | asset_url }}" alt="Product Image 2">
-          <img src="{{ "facewash3.jpg" | asset_url }}" alt="Product Image 3">
-          <img src="{{ "facewash4.jpg" | asset_url }}" alt="Product Image 4">
+          <img src="{{ "renewal-cleanser-spread.jpg" | asset_url }}" alt="Product Image 1">
+          <img src="{{ "rc-gal-2.jpg" | asset_url }}" alt="Product Image 2">
+          <img src="{{ "rc-gal-3.jpg" | asset_url }}" alt="Product Image 3">
+          <img src="{{ "renewal-cleanser-faq.jpg" | asset_url }}" alt="Product Image 4">
         </div>
         <!-- Right Arrow Overlay -->
         <div class="carousel-arrow">
@@ -2457,27 +2448,27 @@ a { color: inherit; text-decoration: none; }
     <!-- Product Breakdown Section -->
     <section class="breakdown-section">
       <div class="breakdown-content">
-        <h2 class="bd-title">Cleanse. Refresh. Glow.</h2>
+        <h2 class="bd-title">Clean Skin Starts Here</h2>
         <div class="bd-table">
           <div class="bd-row">
-            <span class="bd-label">GOOD FOR:</span><span class="bd-val">All skin types, especially dull, sensitive, or acne-prone skin</span>
+            <span class="bd-label">GOOD FOR:</span><span class="bd-val">All skin types, including oily and combination skin</span>
           </div>
           <div class="bd-row">
-            <span class="bd-label">FEELS LIKE:</span><span class="bd-val">A soft, airy lather that cleanses gently without tightness</span>
+            <span class="bd-label">FEELS LIKE:</span><span class="bd-val">A silky oil that transforms into a soft, airy foam</span>
           </div>
           <div class="bd-row">
-            <span class="bd-label">LOOKS LIKE:</span><span class="bd-val">Fresh, clear skin with a natural, healthy glow</span>
+            <span class="bd-label">LOOKS LIKE:</span><span class="bd-val">Clean, refreshed skin with a smooth finish</span>
           </div>
           <div class="bd-row">
-            <span class="bd-label">SMELLS LIKE:</span><span class="bd-val">Light, clean freshness that feels calming and pure</span>
+            <span class="bd-label">SMELLS LIKE:</span><span class="bd-val">Gentle, fresh notes with a soothing touch</span>
           </div>
           <div class="bd-row">
-            <span class="bd-label">FYI:</span><span class="bd-val">Halal-Friendly â€¢ Dermatologist-Tested â€¢ Non-Drying â€¢ Gentle for Daily Use</span>
+            <span class="bd-label">FYI:</span><span class="bd-val">Halal-Friendly â€¢ Dermatologist-Tested â€¢ Non-Stripping â€¢ Double-Cleanse Essential</span>
           </div>
         </div>
       </div>
       <div class="breakdown-image">
-        <img src="{{ "facewash-plate.jpg" | asset_url }}" alt="Plate View">
+        <img src="{{ "rc-plate.jpg" | asset_url }}" alt="Plate View">
       </div>
     </section>
 
@@ -2485,27 +2476,27 @@ a { color: inherit; text-decoration: none; }
     <!-- What's Inside Section -->
     <section class="whats-inside-section">
       <div class="wi-image-col">
-        <img src="{{ "facewash-spoon.jpg" | asset_url }}" alt="Spoon View" class="wi-image">
+        <img src="{{ "rc-spoon.jpg" | asset_url }}" alt="Spoon View" class="wi-image">
         <button class="wi-full-ingredients-btn">FULL INGREDIENTS LIST</button>
       </div>
       <div class="wi-content-col">
         <div class="wi-vertical-text">what's inside</div>
         <div class="wi-details">
-          <p class="wi-intro">Our formula is powered by gentle cleansers and glow-boosting hydrators. Meet 2 of our favorites for a fresh, balanced cleanse.</p>
+          <p class="wi-intro">A versatile oil-to-foam formula that dissolves impurities while keeping skin soft and balanced. Here are 2 key ingredients that make it so effective:</p>
           
           <div class="wi-ingredient-block">
-            <h3 class="wi-ingred-title">hyaluronic acid</h3><p class="wi-ingred-desc">a moisture-binding ingredient that helps keep skin hydrated and plump while cleansing, preventing dryness and tightness</p>
+            <h3 class="wi-ingred-title">botanical oils</h3><p class="wi-ingred-desc">rich, nourishing oils that break down makeup, sunscreen, and excess sebum without stripping the skin</p>
           </div>
           
           <hr class="wi-divider">
           
           <div class="wi-ingredient-block">
-            <h3 class="wi-ingred-title">3-o-ethyl ascorbic acid</h3><p class="wi-ingred-desc">a stable form of vitamin C that helps brighten the complexion, reduce dullness, and support a more radiant, even look</p>
+            <h3 class="wi-ingred-title">vitamin e</h3><p class="wi-ingred-desc">an antioxidant powerhouse that soothes and protects skin while maintaining hydration</p>
           </div>
           
           <hr class="wi-divider">
           
-          <p class="wi-also-made">also made with <strong>RICE EXTRACT, LICORICE EXTRACT, MORUS ALBA, HONEY, D-PANTHENOL, SODIUM PCA, GLYCERIN, APPLE EXTRACT, CENTELLA ASIATICA</strong></p>
+          <p class="wi-also-made">also made with <strong>Centella Asiatica, Glycerin, Mild Cleansing Agents</strong></p>
         </div>
       </div>
     </section>
@@ -2514,12 +2505,12 @@ a { color: inherit; text-decoration: none; }
     <section class="spread-section">
       <div class="spread-content">
         <span class="spread-label">SPREAD IT ON FOR:</span>
-        <h2 class="spread-heading">fresh, balanced skin</h2>
-        <h2 class="spread-heading">gentle daily cleansing</h2>
-        <h2 class="spread-heading spread-green">natural, radiant glow</h2>
+        <h2 class="spread-heading">broad-spectrum protection</h2>
+        <h2 class="spread-heading">hydrated, comfortable skin</h2>
+        <h2 class="spread-heading spread-green">smooth, invisible finish</h2>
       </div>
       <div class="spread-image-col">
-        <img src="{{ "facewash-spread.jpg" | asset_url }}" alt="Spread View">
+        <img src="{{ "rc-spread.jpg" | asset_url }}" alt="Spread View">
       </div>
     </section>
 
@@ -2530,22 +2521,22 @@ a { color: inherit; text-decoration: none; }
         
         <div class="stat-item">
           <div class="stat-pct">97%</div>
-          <div class="stat-desc">SAID THEIR SKIN FELT CLEAN + REFRESHED AFTER EVERY WASH</div>
+          <div class="stat-desc">SAID THEIR SKIN FELT CLEAN WITHOUT DRYNESS</div>
         </div>
         
         <div class="stat-item">
           <div class="stat-pct">95%</div>
-          <div class="stat-desc">SAID IT DID NOT DRY OUT THEIR SKIN</div>
+          <div class="stat-desc">SAID IT REMOVED MAKEUP + SUNSCREEN EFFECTIVELY</div>
         </div>
         
         <div class="stat-item">
           <div class="stat-pct">94%</div>
-          <div class="stat-desc">SAID THEIR SKIN LOOKED CLEARER + MORE BALANCED</div>
+          <div class="stat-desc">SAID THEIR SKIN FELT SOFTER + SMOOTHER</div>
         </div>
         
         <div class="stat-item">
           <div class="stat-pct">3 out of 4</div>
-          <div class="stat-desc">SAID THEY NOTICED LESS DULLNESS WITH DAILY USE</div>
+          <div class="stat-desc">SAID THEY NOTICED A CLEAR, FRESH GLOW</div>
         </div>
         
         <div class="stat-disclaimer">
@@ -2554,7 +2545,7 @@ a { color: inherit; text-decoration: none; }
       </div>
       
       <div class="stats-image">
-        <img src="{{ "facewash2.jpg" | asset_url }}" alt="Percentage View">
+        <img src="{{ "rc-percent.jpg" | asset_url }}" alt="Percentage View">
       </div>
     </section>
 
@@ -2567,47 +2558,47 @@ a { color: inherit; text-decoration: none; }
 
           <div class="faq-item">
             <div class="faq-qa">
-              <span class="faq-question">Can I use this face wash twice a day?</span>
-              <p class="faq-answer">Yes, it is gentle enough for both morning and evening use without over-drying your skin.</p>
+              <span class="faq-question">Can I use this cleanser daily?</span>
+              <p class="faq-answer">Yes, it is gentle enough for daily use and works well as the first step in your cleansing routine.</p>
             </div>
             <span class="faq-icon">+</span>
           </div>
 
           <div class="faq-item">
             <div class="faq-qa">
-              <span class="faq-question">Is it suitable for sensitive skin?</span>
-              <p class="faq-answer">Yes, the formula includes calming ingredients like Centella Asiatica and honey, making it ideal for sensitive skin.</p>
+              <span class="faq-question">Do I still need a second cleanser after this?</span>
+              <p class="faq-answer">Yes, for a complete cleanse, it is recommended to follow with a face wash as part of double cleansing.</p>
             </div>
             <span class="faq-icon">+</span>
           </div>
 
           <div class="faq-item">
             <div class="faq-qa">
-              <span class="faq-question">Will it help with acne or breakouts?</span>
-              <p class="faq-answer">It helps cleanse pores, remove excess oil, and soothe irritation, which can support clearer skin over time.</p>
+              <span class="faq-question">Is it suitable for oily or acne-prone skin?</span>
+              <p class="faq-answer">Yes, it helps remove excess oil and impurities without clogging pores or causing heaviness.</p>
             </div>
             <span class="faq-icon">+</span>
           </div>
 
           <div class="faq-item">
             <div class="faq-qa">
-              <span class="faq-question">Does it remove makeup?</span>
-              <p class="faq-answer">It can remove light makeup, but for heavy or waterproof makeup, use a remover before cleansing.</p>
+              <span class="faq-question">Will it remove waterproof makeup and sunscreen?</span>
+              <p class="faq-answer">Yes, the oil-based formula is designed to effectively dissolve long-wear makeup and SPF.</p>
             </div>
             <span class="faq-icon">+</span>
           </div>
 
           <div class="faq-item">
             <div class="faq-qa">
-              <span class="faq-question">Will my skin feel dry after washing?</span>
-              <p class="faq-answer">No, it is designed to maintain hydration and leave your skin feeling soft and balanced.</p>
+              <span class="faq-question">Does it leave any greasy residue after rinsing?</span>
+              <p class="faq-answer">No, it transforms into a foam and rinses clean, leaving skin fresh and balanced.</p>
             </div>
             <span class="faq-icon">+</span>
           </div>
         </div>
       </div>
       <div class="faq-image-col">
-        <img src="{{ "facewash-faq.jpg" | asset_url }}" alt="FAQ View">
+        <img src="{{ "rc-faq.jpg" | asset_url }}" alt="FAQ View">
       </div>
     </section>
 
@@ -2626,65 +2617,65 @@ a { color: inherit; text-decoration: none; }
       
       <div class="review-card">
         <div class="rv-sidebar">
-          <div class="rv-author">Areeba</div>
+          <div class="rv-author">Saad</div>
           <div class="rv-verified">Verified Buyer</div>
         </div>
         <div class="rv-main">
           <div class="rv-main-header"><div class="rv-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div></div>
           <div class="rv-title">Verified Selection</div>
-          <div class="rv-body">"I love how gentle this face wash feels on my skin. It cleans properly without making my skin dry, and my face looks fresh after every wash."</div>
+          <div class="rv-body">"It removes my makeup so easily without making my skin feel dry. My face feels clean and soft after every use."</div>
         </div>
       </div>
 <hr class="rv-divider">
 
       <div class="review-card">
         <div class="rv-sidebar">
-          <div class="rv-author">Mehwish</div>
+          <div class="rv-author">Nimra</div>
           <div class="rv-verified">Verified Buyer</div>
         </div>
         <div class="rv-main">
           <div class="rv-main-header"><div class="rv-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div></div>
           <div class="rv-title">Verified Selection</div>
-          <div class="rv-body">"My skin feels so soft and clean after using it. I've noticed less dullness and my complexion looks more even now."</div>
+          <div class="rv-body">"I like how it turns into foam and washes everything off properly. It leaves my skin fresh and not greasy at all."</div>
         </div>
       </div>
 <hr class="rv-divider">
 
       <div class="review-card">
         <div class="rv-sidebar">
-          <div class="rv-author">Kiran</div>
+          <div class="rv-author">Haris</div>
           <div class="rv-verified">Verified Buyer</div>
         </div>
         <div class="rv-main">
           <div class="rv-main-header"><div class="rv-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div></div>
           <div class="rv-title">Verified Selection</div>
-          <div class="rv-body">"It's very mild yet effective. My skin doesn't feel tight anymore after washing, and it actually feels hydrated."</div>
+          <div class="rv-body">"My skin feels smoother and clearer since I started using this. It works really well for daily cleansing."</div>
         </div>
       </div>
 <hr class="rv-divider">
 
       <div class="review-card">
         <div class="rv-sidebar">
-          <div class="rv-author">Bilal</div>
+          <div class="rv-author">Laiba</div>
           <div class="rv-verified">Verified Buyer</div>
         </div>
         <div class="rv-main">
           <div class="rv-main-header"><div class="rv-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div></div>
           <div class="rv-title">Verified Selection</div>
-          <div class="rv-body">"This face wash gives a really clean feeling without irritation. My skin looks clearer and feels balanced throughout the day."</div>
+          <div class="rv-body">"It melts away sunscreen and dirt quickly, and my skin feels very comfortable after washing. It's gentle and effective."</div>
         </div>
       </div>
 <hr class="rv-divider">
 
       <div class="review-card">
         <div class="rv-sidebar">
-          <div class="rv-author">Hamza</div>
+          <div class="rv-author">Shahzaib</div>
           <div class="rv-verified">Verified Buyer</div>
         </div>
         <div class="rv-main">
           <div class="rv-main-header"><div class="rv-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div></div>
           <div class="rv-title">Verified Selection</div>
-          <div class="rv-body">"I've been using it daily and my skin feels healthier overall. It's simple, gentle, and does exactly what I needed."</div>
+          <div class="rv-body">"This cleanser makes my routine easier and more effective. My skin feels balanced and looks much cleaner now."</div>
         </div>
       </div>
     </section>
@@ -2906,12 +2897,12 @@ a { color: inherit; text-decoration: none; }
               <span class="card-brand-label">cleanser</span>
             </div>
             <div class="card-rhode-image">
-              <img src="./assets/gel cleanser-100.jpg" alt="Renewal Cleanser" class="product-main-img">
+              <img src="./assets/Renewal Cleanser-100.jpg" alt="Renewal Cleanser" class="product-main-img">
             </div>
             <div class="card-rhode-footer">
               <div class="card-meta">
                 <div class="card-stars">&#9733;&#9733;&#9733;&#9733;&#9733; <span class="review-count">(16k)</span></div>
-                <h3 class="card-name">RENEWAL CLEANSER</h3>
+                <h3 class="card-name">Renewal Cleanser</h3>
               </div>
               <a href="/products/renewal-cleanser" class="btn-rhode-buy-pill">BUY - RS. 2,820</a>
             </div>
@@ -3193,10 +3184,9 @@ a { color: inherit; text-decoration: none; }
     /* Breakdown Section Styles */
     .breakdown-section {
       display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
+      grid-template-columns: 1fr;
       gap: 16px;
       margin-top: 16px;
-      height: 600px;
     }
 
     .breakdown-content {
@@ -3697,10 +3687,9 @@ a { color: inherit; text-decoration: none; }
     /* What's Inside Section */
     .whats-inside-section {
       display: grid;
-      grid-template-columns: 0.9fr 1.1fr;
+      grid-template-columns: 1fr;
       gap: 16px;
       margin-top: 16px;
-      height: 700px;
     }
 
     .wi-image-col {
@@ -3834,10 +3823,9 @@ a { color: inherit; text-decoration: none; }
     /* Spread It On For Section */
     .spread-section {
       display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
+      grid-template-columns: 1fr;
       gap: 16px;
       margin-top: 16px;
-      height: 600px;
     }
 
     .spread-content {
@@ -3910,10 +3898,9 @@ a { color: inherit; text-decoration: none; }
     /* Statistics Section */
     .stats-section {
       display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
+      grid-template-columns: 1fr;
       gap: 16px;
       margin-top: 16px;
-      height: 600px;
     }
 
     .stats-content {
@@ -3985,7 +3972,7 @@ a { color: inherit; text-decoration: none; }
     /* FAQ Section */
     .faq-section {
       display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
+      grid-template-columns: 1fr;
       gap: 16px;
       margin-top: 16px;
     }
@@ -4672,7 +4659,7 @@ a { color: inherit; text-decoration: none; }
   </style>
   <script src="./assets/script.js" defer></script>
 
-                    
+          
   <script src="{{ 'script.js' | asset_url }}" defer></script>
 
   <script>
@@ -4744,6 +4731,10 @@ a { color: inherit; text-decoration: none; }
   </script>
 </body>
 </html>
+
+
+
+
 
 
 
