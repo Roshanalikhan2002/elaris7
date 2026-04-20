@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "mobile_hero": {
@@ -5,12 +14,19 @@
       "blocks": {
         "slide1": {
           "type": "banner",
-          "settings": {}
+          "settings": {
+            "title": "",
+            "btn_text": "SHOP NOW",
+            "btn_link": ""
+          }
         },
         "slide2": {
           "type": "banner",
           "settings": {
-            "image": "shopify://shop_images/Artboard_71-100_jpg.jpg"
+            "image": "shopify://shop_images/Artboard_71-100_jpg.jpg",
+            "title": "",
+            "btn_text": "SHOP NOW",
+            "btn_link": ""
           }
         }
       },
@@ -46,11 +62,12 @@
           "type": "product",
           "settings": {
             "title": "Centella Night Cream",
-            "price": "Rs. 2,660",
-            "subtitle": "Night Renewal",
-            "brand_label": "korean-glass-skin",
+            "price": "Rs. 2,500",
+            "subtitle": "Premium Korean skincare formula",
+            "brand_label": "nightcream",
             "badge": "bestseller",
             "reviews": "16k",
+            "main_image": "shopify://shop_images/night_cream-100_jpg_a81cb520-4a41-4b5f-9e57-a45d8fb02454.jpg",
             "asset_image": "night-cream.jpg",
             "asset_hover_image": "night-cream-hover.jpg",
             "product_link": "/products/night-cream"
@@ -59,10 +76,10 @@
         "block_tranexamic": {
           "type": "product",
           "settings": {
-            "title": "Elaris7 Tranexamic Brightening Serum",
-            "price": "Rs. 2,400",
-            "subtitle": "Even & Illuminate",
-            "brand_label": "korean-brightening",
+            "title": "Tranexamic Brightening Serum",
+            "price": "Rs. 2,800",
+            "subtitle": "Premium Korean skincare formula",
+            "brand_label": "serum",
             "badge": "new",
             "reviews": "8k",
             "asset_image": "tranexamic-serum.jpg",
@@ -74,9 +91,9 @@
           "type": "product",
           "settings": {
             "title": "Anti Frizz Keratin Serum",
-            "price": "Rs. 2,660",
-            "subtitle": "Smooth Control",
-            "brand_label": "hair-care",
+            "price": "Rs. 2,700",
+            "subtitle": "Premium Korean skincare formula",
+            "brand_label": "haircare",
             "badge": "",
             "reviews": "6k",
             "asset_image": "keratin-serum.jpg",
@@ -90,7 +107,7 @@
             "title": "Centella Serum",
             "price": "Rs. 2,540",
             "subtitle": "Premium Korean skincare formula",
-            "brand_label": "korean-glass-skin",
+            "brand_label": "serum",
             "badge": "",
             "reviews": "12k",
             "asset_image": "glow-serum-100.jpg",
@@ -101,10 +118,10 @@
         "block_glutathione": {
           "type": "product",
           "settings": {
-            "title": "Elaris7 Brightening Repair Cream",
-            "price": "Rs. 2,660",
-            "subtitle": "Glow & Repair",
-            "brand_label": "korean-brightening",
+            "title": "Glutathione Cream",
+            "price": "Rs. 2,950",
+            "subtitle": "Premium Korean skincare formula",
+            "brand_label": "repair",
             "badge": "",
             "reviews": "9k",
             "asset_image": "glutathione-cream-100.jpg",
@@ -116,23 +133,23 @@
           "type": "product",
           "settings": {
             "title": "Floral Blossom Hair Mist",
-            "price": "Rs. 2,660",
-            "subtitle": "Fresh Floral Touch",
-            "brand_label": "hair-care",
+            "price": "Rs. 2,400",
+            "subtitle": "Premium Korean skincare formula",
+            "brand_label": "haircare",
             "badge": "",
             "reviews": "5k",
             "asset_image": "hair-mist.jpg",
             "asset_hover_image": "hair-mist-hover.jpg",
-            "product_link": "/products/hair-mist"
+            "product_link": "/products/floral-blossom-hair-mist"
           }
         },
         "block_face_wash": {
           "type": "product",
           "settings": {
-            "title": "Centella Face Wash",
+            "title": "Face Wash",
             "price": "Rs. 2,200",
             "subtitle": "Premium Korean skincare formula",
-            "brand_label": "korean-glass-skin",
+            "brand_label": "cleanser",
             "badge": "",
             "reviews": "11k",
             "asset_image": "facewash-100.jpg",
@@ -143,10 +160,10 @@
         "block_anti_acne": {
           "type": "product",
           "settings": {
-            "title": "Elaris7 Anti-Acne Clarifying Serum",
-            "price": "Rs. 2,660",
-            "subtitle": "Clear & Control",
-            "brand_label": "anti-acne korean-brightening",
+            "title": "Anti Acne",
+            "price": "Rs. 2,450",
+            "subtitle": "Premium Korean skincare formula",
+            "brand_label": "antiacne",
             "badge": "",
             "reviews": "14k",
             "asset_image": "anti-acne-100.jpg",
@@ -157,10 +174,10 @@
         "block_sunscreen": {
           "type": "product",
           "settings": {
-            "title": "Centella Sunscreen SPF60+",
+            "title": "Sunscreen SPF60+",
             "price": "Rs. 2,630",
             "subtitle": "Premium Korean skincare formula",
-            "brand_label": "korean-glass-skin",
+            "brand_label": "sunscreen",
             "badge": "",
             "reviews": "7k",
             "asset_image": "sunscreen-100.jpg",
@@ -171,14 +188,14 @@
         "block_cleanser": {
           "type": "product",
           "settings": {
-            "title": "Oil-to-Foam Cleanser",
+            "title": "Renewal Cleanser",
             "price": "Rs. 2,850",
             "subtitle": "Premium Korean skincare formula",
-            "brand_label": "korean-glass-skin",
+            "brand_label": "cleanser",
             "badge": "",
             "reviews": "10k",
-            "asset_image": "rc-gal-1.jpg",
-            "asset_hover_image": "rc-gal-2.jpg",
+            "asset_image": "gel cleanser-100.jpg",
+            "asset_hover_image": "gel-cleanser-hover.jpg",
             "product_link": "/products/renewal-cleanser"
           }
         },
@@ -188,26 +205,82 @@
             "title": "Hydra Burst Moisturizer",
             "price": "Rs. 2,499",
             "subtitle": "Premium Korean skincare formula",
-            "brand_label": "korean-glass-skin",
+            "brand_label": "moisturizer",
             "badge": "",
             "reviews": "13k",
             "asset_image": "moisturizer-100.jpg",
             "asset_hover_image": "moisturizer-hover.jpg",
-            "product_link": "/products/e7-korean-glass-skin-moisturizer"
+            "product_link": "/products/centella-moisturizer"
           }
         },
         "block_toner": {
           "type": "product",
           "settings": {
-            "title": "Skin Refining Toner",
+            "title": "Renewal Toner",
             "price": "Rs. 2,670",
-            "subtitle": "Clarity Reset",
-            "brand_label": "korean-brightening",
+            "subtitle": "Premium Korean skincare formula",
+            "brand_label": "toner",
             "badge": "",
             "reviews": "8k",
             "asset_image": "renewal toner-100.jpg",
             "asset_hover_image": "toner-hover.jpg",
             "product_link": "/products/renewal-toner"
+          }
+        },
+        "block_set_1": {
+          "type": "product",
+          "settings": {
+            "title": "E7 Glass Skin Set",
+            "price": "Rs. 4,500",
+            "subtitle": "Essential glass skin routine",
+            "brand_label": "set",
+            "badge": "popular",
+            "reviews": "12k",
+            "asset_image": "new-bundle-banner.jpg",
+            "asset_hover_image": "",
+            "product_link": "/products/e7-complete-glass-skin-set"
+          }
+        },
+        "block_set_2": {
+          "type": "product",
+          "settings": {
+            "title": "E7 Complete Glass Skin Set",
+            "price": "Rs. 7,500",
+            "subtitle": "The full transformation kit",
+            "brand_label": "set",
+            "badge": "best value",
+            "reviews": "8k",
+            "asset_image": "new-bundle-banner.jpg",
+            "asset_hover_image": "",
+            "product_link": "/products/e7-complete-glass-skin-set"
+          }
+        },
+        "block_set_3": {
+          "type": "product",
+          "settings": {
+            "title": "E7 Hair Care Set",
+            "price": "Rs. 3,200",
+            "subtitle": "Complete hair health bundle",
+            "brand_label": "set",
+            "badge": "new",
+            "reviews": "5k",
+            "asset_image": "new-bundle-banner.jpg",
+            "asset_hover_image": "",
+            "product_link": "/products/e7-complete-glass-skin-set"
+          }
+        },
+        "block_set_4": {
+          "type": "product",
+          "settings": {
+            "title": "ELARIS 7 KOREAN BRIGHTENING BUNDLE",
+            "price": "Rs. 5,900",
+            "subtitle": "Radiance and glow essential",
+            "brand_label": "set",
+            "badge": "limited",
+            "reviews": "15k",
+            "asset_image": "new-bundle-banner.jpg",
+            "asset_hover_image": "",
+            "product_link": "/products/e7-complete-glass-skin-set"
           }
         }
       },
@@ -223,7 +296,11 @@
         "block_sunscreen",
         "block_cleanser",
         "block_moisturizer",
-        "block_toner"
+        "block_toner",
+        "block_set_1",
+        "block_set_2",
+        "block_set_3",
+        "block_set_4"
       ],
       "settings": {
         "collection": "",
@@ -235,6 +312,7 @@
       "settings": {
         "flip_layout": false,
         "white_text": false,
+        "featured_product": "",
         "image_left": "shopify://shop_images/new_bundle_banner-100_jpg.jpg",
         "product_image": "shopify://shop_images/brightening_bundle-100_jpg.jpg",
         "product_title": "KOREAN BRIGHTENING BUNDLE",
@@ -247,6 +325,7 @@
       "settings": {
         "flip_layout": false,
         "white_text": true,
+        "featured_product": "",
         "image_left": "shopify://shop_images/hair_care_bundle_product_image-100_jpg.jpg",
         "product_image": "shopify://shop_images/hair_care_image-100_jpg.jpg",
         "product_title": "HAIR CARE BUNDLE",
@@ -286,6 +365,5 @@
     "category_promos_9mCf8w",
     "social_grid",
     "values_accordion"
-  ],
-  "last_sync": 1775860270136
+  ]
 }
