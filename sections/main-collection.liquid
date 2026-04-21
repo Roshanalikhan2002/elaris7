@@ -16,7 +16,7 @@
 {% endschema %}
 
 {%- assign is_special = false -%}
-{%- if collection.handle == 'korean-glass-skin' or collection.handle == 'anti-acne' or collection.handle == 'korean-brightening' or collection.handle == 'hair-care' -%}
+{%- if collection.handle == 'korean-glass-skin' or collection.handle == 'elaris-7-korean-glass-skin-bundle' or collection.handle == 'anti-acne' or collection.handle == 'korean-brightening' or collection.handle == 'elaris-7-korean-brightening-bundle' or collection.handle == 'hair-care' or collection.handle == 'elaris-7-korean-hair-care-bundle' -%}
   {%- assign is_special = true -%}
 {%- endif -%}
 
@@ -57,11 +57,11 @@
     -->
     <div class="landing-page-container">
       {%- case collection.handle -%}
-        {%- when 'korean-glass-skin' -%}
+        {%- when 'korean-glass-skin' or 'elaris-7-korean-glass-skin-bundle' -%}
            {% include 'content-glass-bundle' %}
-        {%- when 'korean-brightening' -%}
+        {%- when 'korean-brightening' or 'elaris-7-korean-brightening-bundle' -%}
            {% include 'content-bright-bundle' %}
-        {%- when 'hair-care' -%}
+        {%- when 'hair-care' or 'elaris-7-korean-hair-care-bundle' -%}
            {% include 'content-hair-bundle' %}
         {%- when 'anti-acne' -%}
            {% include 'content-anti-acne' %}
@@ -162,7 +162,7 @@
         {% endfor %}
 
         {% comment %} 3. Bundle Cards {% endcomment %}
-        <div class="card card-rhode bundle-card" data-category="set" onclick="window.location.href='/products/elaris-7-korean-glass-skin-bundle'" style="display: none; background: #fff; border: 1px solid #eee; justify-content: center; align-items: center; min-height: 480px; cursor: pointer; overflow: hidden; padding: 0;">
+        <div class="card card-rhode bundle-card" data-category="set" onclick="window.location.href='/collections/elaris-7-korean-glass-skin-bundle'" style="display: none; background: #fff; border: 1px solid #eee; justify-content: center; align-items: center; min-height: 480px; cursor: pointer; overflow: hidden; padding: 0;">
           <img src="{{ 'glassskinbundle.jpeg' | asset_url }}" class="bundle-card-img" style="width: 100%; height: 100%; object-fit: cover;">
           <div style="position: absolute; bottom: 0; left: 0; right: 0; background: rgba(255,255,255,0.95); padding: 18px 15px; border-top: 1px solid #eee; text-align: center;">
             <h3 style="font-size: 13px; font-weight: 800; text-transform: uppercase; margin: 0 0 5px;">Korean Glass Skin Bundle</h3>
@@ -170,7 +170,7 @@
             <span style="font-size: 10px; font-weight: 800; color: #555; text-transform: uppercase; border: 1px solid #555; padding: 4px 10px; border-radius: 20px;">SHOP THE SET</span>
           </div>
         </div>
-        <div class="card card-rhode bundle-card" data-category="set" onclick="window.location.href='/products/elaris-7-korean-brightening-bundle'" style="display: none; background: #fff; border: 1px solid #eee; justify-content: center; align-items: center; min-height: 480px; cursor: pointer; overflow: hidden; padding: 0;">
+        <div class="card card-rhode bundle-card" data-category="set" onclick="window.location.href='/collections/elaris-7-korean-brightening-bundle'" style="display: none; background: #fff; border: 1px solid #eee; justify-content: center; align-items: center; min-height: 480px; cursor: pointer; overflow: hidden; padding: 0;">
           <img src="{{ 'main.jpg' | file_img_url: '600x' }}" class="bundle-card-img" style="width: 100%; height: 100%; object-fit: cover;">
           <div style="position: absolute; bottom: 0; left: 0; right: 0; background: rgba(255,255,255,0.95); padding: 18px 15px; border-top: 1px solid #eee; text-align: center;">
             <h3 style="font-size: 13px; font-weight: 800; text-transform: uppercase; margin: 0 0 5px;">Korean Brightening Bundle</h3>
@@ -178,7 +178,7 @@
             <span style="font-size: 10px; font-weight: 800; color: #555; text-transform: uppercase; border: 1px solid #555; padding: 4px 10px; border-radius: 20px;">SHOP THE SET</span>
           </div>
         </div>
-        <div class="card card-rhode bundle-card" data-category="set" onclick="window.location.href='/products/elaris-7-korean-hair-care-bundle'" style="display: none; background: #fff; border: 1px solid #eee; justify-content: center; align-items: center; min-height: 480px; cursor: pointer; overflow: hidden; padding: 0;">
+        <div class="card card-rhode bundle-card" data-category="set" onclick="window.location.href='/collections/elaris-7-korean-hair-care-bundle'" style="display: none; background: #fff; border: 1px solid #eee; justify-content: center; align-items: center; min-height: 480px; cursor: pointer; overflow: hidden; padding: 0;">
           <img src="{{ 'hairmain.jpg' | file_img_url: '600x' }}" class="bundle-card-img" style="width: 100%; height: 100%; object-fit: cover;">
           <div style="position: absolute; bottom: 0; left: 0; right: 0; background: rgba(255,255,255,0.95); padding: 18px 15px; border-top: 1px solid #eee; text-align: center;">
             <h3 style="font-size: 13px; font-weight: 800; text-transform: uppercase; margin: 0 0 5px;">Hair Care Bundle</h3>
