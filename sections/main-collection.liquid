@@ -147,8 +147,17 @@
             {%- when 'renewal-toner' -%}{%- assign c_price = "2,780" -%}
           {%- endcase -%}
 
+          {%- assign bundle_href = "/products/" | append: phandle -%}
+          {%- if phandle == 'elaris-7-korean-hair-care-bundle' or phandle == 'hair-care' -%}
+            {%- assign bundle_href = "/collections/elaris-7-korean-hair-care-bundle" -%}
+          {%- elsif phandle == 'elaris-7-korean-glass-skin-bundle' or phandle == 'korean-glass-skin' -%}
+            {%- assign bundle_href = "/collections/elaris-7-korean-glass-skin-bundle" -%}
+          {%- elsif phandle == 'elaris-7-korean-brightening-bundle' or phandle == 'korean-brightening' -%}
+            {%- assign bundle_href = "/collections/elaris-7-korean-brightening-bundle" -%}
+          {%- endif -%}
+
           <div class="card card-rhode" data-category="{{ plab }}">
-             <a href="/products/{{ phandle }}" class="card-link-wrapper">
+             <a href="{{ bundle_href }}" class="card-link-wrapper">
                {% if phov != blank and phov != 'none' %}<img src="{{ phov }}" class="card-hover-bg" alt="Hover">{% endif %}
                <div class="card-rhode-top"><span class="card-brand-label">{{ plab | split: ' ' | last }}</span></div>
                <div class="card-rhode-image"><img src="{{ pimg }}" class="product-main-img" alt="{{ pname }}"></div>

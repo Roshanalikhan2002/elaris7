@@ -81,6 +81,13 @@
         {% if block.settings.brand_label contains 'set' %}{% continue %}{% endif %}
         <div class="card card-rhode" data-category="{{ block.settings.brand_label }}" {{ block.shopify_attributes }}>
 {%- assign final_link = block.settings.product_link | default: '#' -%}
+{%- if final_link contains '/products/elaris-7-korean-hair-care-bundle' or final_link contains 'hair-care' -%}
+  {%- assign final_link = '/collections/elaris-7-korean-hair-care-bundle' -%}
+{%- elsif final_link contains '/products/elaris-7-korean-glass-skin-bundle' or final_link contains 'glass-skin' -%}
+  {%- assign final_link = '/collections/elaris-7-korean-glass-skin-bundle' -%}
+{%- elsif final_link contains '/products/elaris-7-korean-brightening-bundle' or final_link contains 'brightening' -%}
+  {%- assign final_link = '/collections/elaris-7-korean-brightening-bundle' -%}
+{%- endif -%}
           <a href="{{ final_link }}" class="card-link-wrapper">
             {% if block.settings.hover_image != blank %}
               {{ block.settings.hover_image | image_url: width: 1200 | image_tag: class: 'card-hover-bg', alt: block.settings.title }}
@@ -194,8 +201,16 @@
         {%- endif -%}
 
         {%- assign plabel = fallback_labels[i] -%}
-        <div class="card card-rhode" data-category="{{ plabel }}">
-          <a href="/products/{{ phandle }}" class="card-link-wrapper">
+          {%- assign bundle_href = "/products/" | append: phandle -%}
+          {%- if phandle == 'elaris-7-korean-hair-care-bundle' or phandle == 'hair-care' -%}
+            {%- assign bundle_href = "/collections/elaris-7-korean-hair-care-bundle" -%}
+          {%- elsif phandle == 'elaris-7-korean-glass-skin-bundle' or phandle == 'korean-glass-skin' -%}
+            {%- assign bundle_href = "/collections/elaris-7-korean-glass-skin-bundle" -%}
+          {%- elsif phandle == 'elaris-7-korean-brightening-bundle' or phandle == 'korean-brightening' -%}
+            {%- assign bundle_href = "/collections/elaris-7-korean-brightening-bundle" -%}
+          {%- endif -%}
+
+          <a href="{{ bundle_href }}" class="card-link-wrapper">
             {% if phover != blank and phover != 'none' %}
               <img src="{{ phover }}" class="card-hover-bg" alt="Hover Background">
             {% endif %}
