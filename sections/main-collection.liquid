@@ -21,34 +21,36 @@
 {%- endif -%}
 
 <div class="collection-page">
-  <!-- MOBILE HERO BANNER (Homepage Style) -->
-  <div class="mobile-only coll-mobile-banner">
-    <img src="{{ 'new bundle banner-100.jpg' | asset_url }}" alt="New Bundle Launch">
-  </div>
-
-  <div class="collection-nav-bar">
-    <div class="collection-nav-inner">
-       {% assign default_cats = "Featured,Korean glass skin,Anti acne,Korean brightening,Hair care,Sets" | split: "," %}
-        <div class="collection-pills">
-          {% for cat in default_cats %}
-            {%- assign c_handle = cat | strip | handleize -%}
-            {%- assign pill_url = "/collections/" | append: c_handle -%}
-            {%- if c_handle == 'featured' -%}{%- assign pill_url = "/collections/all" -%}{%- endif -%}
-            
-            {%- assign is_active = false -%}
-            {%- if c_handle == 'featured' and collection.handle == 'all' -%}
-              {%- assign is_active = true -%}
-            {%- elsif c_handle == collection.handle -%}
-              {%- assign is_active = true -%}
-            {%- endif -%}
-
-            <a href="{{ pill_url }}" class="coll-pill cat-link {% if is_active %}active{% endif %}" data-category="{{ c_handle }}">
-              {{ cat | uppercase }}
-            </a>
-          {% endfor %}
-        </div>
+  {% unless is_special %}
+    <!-- MOBILE HERO BANNER (Homepage Style) -->
+    <div class="mobile-only coll-mobile-banner">
+      <img src="{{ 'new bundle banner-100.jpg' | asset_url }}" alt="New Bundle Launch">
     </div>
-  </div>
+
+    <div class="collection-nav-bar">
+      <div class="collection-nav-inner">
+         {% assign default_cats = "Featured,Korean glass skin,Anti acne,Korean brightening,Hair care,Sets" | split: "," %}
+          <div class="collection-pills">
+            {% for cat in default_cats %}
+              {%- assign c_handle = cat | strip | handleize -%}
+              {%- assign pill_url = "/collections/" | append: c_handle -%}
+              {%- if c_handle == 'featured' -%}{%- assign pill_url = "/collections/all" -%}{%- endif -%}
+              
+              {%- assign is_active = false -%}
+              {%- if c_handle == 'featured' and collection.handle == 'all' -%}
+                {%- assign is_active = true -%}
+              {%- elsif c_handle == collection.handle -%}
+                {%- assign is_active = true -%}
+              {%- endif -%}
+
+              <a href="{{ pill_url }}" class="coll-pill cat-link {% if is_active %}active{% endif %}" data-category="{{ c_handle }}">
+                {{ cat | uppercase }}
+              </a>
+            {% endfor %}
+          </div>
+      </div>
+    </div>
+  {% endunless %}
 
   {% if is_special %}
     <!-- 
