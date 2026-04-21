@@ -50,7 +50,8 @@
 
     @media (max-width: 1024px) {
         .pdp-main-box { grid-template-columns: 1fr; height: auto; min-height: auto; }
-        .gallery-wrap { height: 400px; }
+        .gallery-wrap { height: auto; min-height: 300px; }
+        .gallery-wrap img { object-fit: contain; }
         .details-panel { border-left: none; padding: 40px 20px; }
         .discovery-grid { grid-template-columns: 1fr; gap: 10px; }
         .island-card { height: auto; min-height: 400px; }
