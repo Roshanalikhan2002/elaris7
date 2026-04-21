@@ -1,48 +1,237 @@
 {%- assign product = all_products['elaris-7-korean-brightening-bundle'] -%}
 
 <style>
-    .pdp-wrapper-bright { padding: 40px 12px; max-width: 1440px; margin: 0 auto; width: 100%; }
-    .pdp-main-box { background: #fff; border: 1px solid #d1d1d1; border-radius: 12px; display: grid; grid-template-columns: 1.15fr 0.85fr; margin-bottom: 20px; overflow: hidden; }
-    .gallery-wrap { display: flex; align-items: flex-start; justify-content: center; background: #fff; }
-    .details-panel { padding: 60px; border-left: 1px solid #d1d1d1; background: #fdfdfd; }
-    .product-title { font-family: 'Lexend'; font-size: 48px; font-weight: 800; letter-spacing: -0.05em; margin-bottom: 30px; line-height: 0.9; }
-    .btn-atc { width: 100%; padding: 22px; border-radius: 50px; border: 1.5px solid #000; background: #fff; font-weight: 700; text-transform: uppercase; cursor: pointer; font-size: 13px; color: #000; text-align: center; display: block; text-decoration: none; }
+    :root {
+        --bg-page: #f2f2f1;
+        --white: #ffffff;
+        --text-color: #000000;
+        --placeholder-bg: #e5e5e5;
+        --border-color: #d1d1d1;
+    }
+
+    /* --- Global Grid Layout --- */
+    .pdp-wrapper { max-width: 1440px; margin: 0 auto; padding: 0 12px; width: 100%; margin-top: 20px; }
+    .pdp-main-box { background: var(--white); border: 1px solid var(--border-color); border-radius: 12px; display: grid; grid-template-columns: 1.15fr 0.85fr; margin-bottom: 20px; overflow: hidden; height: auto; min-height: 800px; }
+    .gallery-wrap { padding: 0; background: #fff; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+    .gallery-wrap img { width: 100%; height: 100%; object-fit: cover; }
+    
+    .details-panel { padding: 60px; border-left: 1px solid var(--border-color); background: #fdfdfd; height: 100%; }
+    .product-title { font-family: 'Lexend', sans-serif; font-size: 48px; font-weight: 800; letter-spacing: -0.05em; margin-bottom: 30px; line-height: 0.9; }
+
+    .btn-atc { width: 100%; padding: 22px; border-radius: 50px; border: 1.5px solid #000; background: #fff; font-weight: 700; text-transform: uppercase; cursor: pointer; font-size: 13px; transition: all 0.3s ease; text-align: center; display: block; text-decoration: none; color: #000; }
     .btn-atc:hover { background: #000; color: #fff; }
+
+
+    /* Accordions */
     .accordion-item { border-top: 1px solid #eee; padding: 25px 0; cursor: pointer; }
     .acc-head { display: flex; justify-content: space-between; align-items: center; font-size: 12px; font-weight: 800; text-transform: uppercase; }
-    .acc-content { display: none; padding-top: 15px; font-size: 14px; line-height: 1.6; color: #444; }
-    .accordion-item.active .acc-content { display: block; }
+    .accordion-plus { width: 22px; height: 22px; background: #f0f0f0; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 16px; transition: transform 0.3s; }
+    .acc-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; font-size: 14px; line-height: 1.6; color: #444; }
+    .accordion-item.active .acc-content, .faq-item.active .acc-content { max-height: 1200px; padding-top: 20px; }
+    .accordion-item.active .accordion-plus, .faq-item.active .accordion-plus { transform: rotate(45deg); background: #000; color: #fff; }
+
+    /* Discovery Blocks */
+    .discovery-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px; }
+    .island-card { border-radius: 12px; overflow: hidden; background: #fff; height: 600px; position: relative; }
+    .island-card img { width: 100%; height: 100%; object-fit: cover; }
+
+    /* Breakdown / Results */
+    .breakdown-content { background: #f2f0ed; padding: 60px; display: flex; flex-direction: column; justify-content: center; height: 100%; }
+    .bd-title { font-size: 2.5rem; font-weight: 800; margin-bottom: 40px; }
+    .bd-row { border-bottom: 1px solid rgba(0,0,0,0.05); padding: 20px 0; display: flex; gap: 30px; }
+    .bd-label { font-weight: 800; font-size: 12px; width: 100px; }
+    .bd-val { font-size: 14px; color: #555; }
+
+    /* FAQ */
+    .faq-text-side { padding: 80px 60px; background: #f2f0ed; height: 100%; display: flex; flex-direction: column; justify-content: center; }
+    .faq-title { font-size: 42px; font-weight: 800; margin-bottom: 40px; }
+    .faq-item { border-top: 1px solid #ddd; padding: 25px 0; display: flex; justify-content: space-between; align-items: center; cursor: pointer; }
+    .faq-q { font-size: 12px; font-weight: 800; text-transform: uppercase; }
 
     @media (max-width: 1024px) {
-        .pdp-main-box { grid-template-columns: 1fr; }
-        .details-panel { border-left: none; padding: 30px 15px; }
+        .pdp-main-box { grid-template-columns: 1fr; height: auto; min-height: auto; }
+        .gallery-wrap { height: 400px; }
+        .details-panel { border-left: none; padding: 40px 20px; }
+        .discovery-grid { grid-template-columns: 1fr; gap: 10px; }
+        .island-card { height: auto; min-height: 400px; }
+        .breakdown-content, .faq-text-side { padding: 40px 20px; height: auto; }
+        .bd-title, .faq-title { font-size: 32px; margin-bottom: 25px; }
+        .bd-row { flex-direction: column; gap: 10px; align-items: flex-start; }
+        .bd-label { width: 100%; margin-bottom: 0; }
+        .product-title { font-size: 36px; }
     }
 </style>
 
-<div class="pdp-wrapper-bright">
+<div class="pdp-wrapper">
+    <!-- 1. Top Section -->
     <div class="pdp-main-box">
-      <div class="gallery-wrap">
-        <img src="{{ 'main.jpg' | file_img_url: 'master' }}" style="width:100%; height:auto;" alt="Brightening Bundle">
-      </div>
-      <div class="details-panel">
-        <p style="font-size: 11px; font-weight: 700; color: #999; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 20px;">COMPLETE BRIGHTENING SYSTEM</p>
-        <h1 class="product-title">{{ product.title | default: 'Elaris 7 Korean Brightening Bundle' }}</h1>
-        <div style="font-size: 13px; font-weight: 700; margin-bottom: 30px; letter-spacing: 2px;">★ ★ ★ ★ ★ (2,199)</div>
-        <p style="font-size: 15px; line-height: 1.7; margin-bottom: 40px; color: #333;">Unlock your skin’s natural radiance with the Elaris 7 Korean Brightening Bundle.</p>
-        
-        <a href="/cart/add?id={{ product.selected_or_first_available_variant.id }}&quantity=1" class="btn-atc">BUY THE KIT - {{ product.price | money }}</a>
-
-        <div class="accordion-item" onclick="this.classList.toggle('active')">
-          <div class="acc-head">WHAT'S INSIDE <div class="accordion-plus">+</div></div>
-          <div class="acc-content"><p>Includes: Cleanser, Toner, Serum, and Sunscreen.</p></div>
+        <div class="gallery-wrap">
+            <img src="{{ 'bright-main.jpg' | asset_url }}" alt="{{ product.title }}">
         </div>
-      </div>
+        <div class="details-panel">
+            <p style="font-size: 11px; font-weight: 700; color: #999; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 20px;">COMPLETE SYSTEM</p>
+            <h1 class="product-title">{{ product.title }}</h1>
+            <div style="font-size: 13px; font-weight: 700; margin-bottom: 30px; letter-spacing: 2px;">★ ★ ★ ★ ★ (1,620)</div>
+            <p style="font-size: 15px; line-height: 1.7; margin-bottom: 40px; color: #333;">Unlock your skin’s natural radiance with the Elaris 7 Korean Brightening Bundle. This four-product system is carefully designed to target dullness, dark spots, and uneven tone while maintaining hydration and comfort. Following a lightweight, barrier-friendly Korean skincare approach, it combines gentle cleansing, controlled exfoliation, targeted brightening actives, and daily sun protection for clearer, smoother, and radiant skin.</p>
+            
+            <button class="btn-atc add-to-cart-btn-bundle" data-variant-id="{{ product.selected_or_first_available_variant.id }}">BUY THE KIT - {{ product.price | money }}</button>
+
+
+            <!-- WHAT'S INSIDE -->
+            <div class="accordion-item" onclick="this.classList.toggle('active')">
+                <div class="acc-head">WHAT'S INSIDE <div class="accordion-plus">+</div></div>
+                <div class="acc-content">
+                    <p>The bundle includes four full-size products: E7 Brightening Gel Cleanser, E7 Glow Renewal Toner, E7 Tranexamic Brightening Serum, and E7 Korean Gel Sunscreen.</p>
+                </div>
+            </div>
+
+            <!-- THE ROUTINE -->
+            <div class="accordion-item" onclick="this.classList.toggle('active')">
+                <div class="acc-head">THE ROUTINE <div class="accordion-plus">+</div></div>
+                <div class="acc-content">
+                    <p><strong>E7 BRIGHTENING GEL CLEANSER — Pure Refresh</strong><br>Use morning and night. Apply to wet skin, gently massage over face and neck, and rinse thoroughly with lukewarm water. Prepares your skin for better absorption of active ingredients.</p>
+                    <p><strong>E7 GLOW RENEWAL TONER — Clarity Boost</strong><br>Recommended for evening use 2–3 times per week. Soak a cotton pad or use fingertips to sweep toner over face and neck. Do not rinse. Supports gentle exfoliation and enhances brightness.</p>
+                    <p><strong>E7 TRANEXAMIC BRIGHTENING SERUM — Tone Correct</strong><br>Apply 2–3 drops to face and neck morning and night. Gently press into skin until absorbed. Helps visibly reduce dark spots, improve dullness, and even skin tone.</p>
+                    <p><strong>E7 KOREAN GEL SUNSCREEN — Daily Shield</strong><br>Use every morning as the final step. Apply generously on face and neck. Lightweight and non-greasy, it protects against UV damage while keeping skin hydrated.</p>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <section class="discovery-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-      <div class="island-card"><img src="{{ 'twoimagessection1.jpg' | file_img_url: 'master' }}" style="width:100%; height:100%; object-fit:cover;"></div>
-      <div class="island-card"><img src="{{ 'twoimagessection2.jpg' | file_img_url: 'master' }}" style="width:100%; height:100%; object-fit:cover;"></div>
+    <!-- 2. Discovery Section (2 Image) -->
+    <section class="discovery-grid">
+        <div class="island-card"><img src="{{ 'twoimagessection1.jpg' | asset_url }}"></div>
+        <div class="island-card"><img src="{{ 'twoimagessection2.jpg' | asset_url }}"></div>
+    </section>
+
+    <!-- 3. Product Breakdown Section (Text with Image) -->
+    <section class="discovery-grid">
+        <div class="island-card">
+            <div class="breakdown-content">
+                <h2 class="bd-title">Research-Backed Ingredients</h2>
+                <div class="bd-row">
+                    <span class="bd-label">Honey:</span><span class="bd-val">Soothes, nourishes, and supports natural glow</span>
+                </div>
+                <div class="bd-row">
+                    <span class="bd-label">Centella Asiatica:</span><span class="bd-val">Repairs skin barrier and calms irritation</span>
+                </div>
+                <div class="bd-row">
+                    <span class="bd-label">Glutathione:</span><span class="bd-val">Powerful antioxidant that brightens skin</span>
+                </div>
+                <div class="bd-row">
+                    <span class="bd-label">Alpha Arbutin:</span><span class="bd-val">Reduces dark spots and uneven tone</span>
+                </div>
+                <div class="bd-row">
+                    <span class="bd-label">Kojic Acid Dipalmitate:</span><span class="bd-val">Improves skin clarity</span>
+                </div>
+                <div class="bd-row">
+                  <span class="bd-label">Niacinamide:</span><span class="bd-val">Controls oil, refines texture, enhances brightness</span>
+                </div>
+                <div class="bd-row">
+                  <span class="bd-label">Sodium Ascorbyl Phosphate (Vitamin C):</span><span class="bd-val">Supports even complexion</span>
+                </div>
+                <div class="bd-row">
+                  <span class="bd-label">Hyaluronic Acid & Glycerin:</span><span class="bd-val">Provide lasting hydration</span>
+                </div>
+                <div class="bd-row">
+                  <span class="bd-label">Tocopheryl Acetate (Vitamin E):</span><span class="bd-val">Antioxidant protection</span>
+                </div>
+                <div class="bd-row">
+                  <span class="bd-label">Amla Extract:</span><span class="bd-val">Defends against environmental stress and supports radiance</span>
+                </div>
+            </div>
+        </div>
+        <div class="island-card"><img src="{{ 'textimage.jpg' | asset_url }}"></div>
+    </section>
+
+    <!-- 4. Meet the Product Section (4 Image Carousel) -->
+    <div style="background: #fff; border-radius: 12px; padding: 80px 40px; margin-bottom: 20px; text-align: center;">
+        <h2 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 50px;">meet the essentials</h2>
+        <div style="display: flex; gap: 20px; overflow-x: auto; scrollbar-width: none;">
+            <img src="{{ 'brightning1.jpg' | asset_url }}" style="flex: 0 0 23%; min-width: 250px; border-radius: 12px; aspect-ratio: 4/5; object-fit: cover;">
+            <img src="{{ 'brightning2.jpg' | asset_url }}" style="flex: 0 0 23%; min-width: 250px; border-radius: 12px; aspect-ratio: 4/5; object-fit: cover;">
+            <img src="{{ 'brightning3.jpg' | asset_url }}" style="flex: 0 0 23%; min-width: 250px; border-radius: 12px; aspect-ratio: 4/5; object-fit: cover;">
+            <img src="{{ 'brightning4.jpg' | asset_url }}" style="flex: 0 0 23%; min-width: 250px; border-radius: 12px; aspect-ratio: 4/5; object-fit: cover;">
+        </div>
+    </div>
+
+    <!-- 5. FAQ Section -->
+    <section class="discovery-grid">
+        <div class="island-card">
+            <div class="faq-text-side">
+                <h2 class="faq-title">Ask away.</h2>
+                <div class="faq-item" onclick="this.classList.toggle('active')">
+                    <div style="flex: 1;">
+                        <span class="faq-q">Can I use the toner every night?</span>
+                        <div class="acc-content" style="font-size: 13px; color: #666; margin-top: 10px;">Start 2–3 times per week and increase as tolerated to avoid irritation from exfoliating acids.</div>
+                    </div>
+                    <div class="accordion-plus">+</div>
+                </div>
+                <div class="faq-item" onclick="this.classList.toggle('active')">
+                    <div style="flex: 1;">
+                        <span class="faq-q">Is the Tranexamic Brightening Serum safe for sensitive skin?</span>
+                        <div class="acc-content" style="font-size: 13px; color: #666; margin-top: 10px;">Yes. It combines gentle brightening actives with soothing ingredients like centella to calm the skin.</div>
+                    </div>
+                    <div class="accordion-plus">+</div>
+                </div>
+                <div class="faq-item" onclick="this.classList.toggle('active')">
+                    <div style="flex: 1;">
+                        <span class="faq-q">Can I layer serum under sunscreen?</span>
+                        <div class="acc-content" style="font-size: 13px; color: #666; margin-top: 10px;">Absolutely. Applying serum first enhances hydration and allows sunscreen to absorb evenly.</div>
+                    </div>
+                    <div class="accordion-plus">+</div>
+                </div>
+                <div class="faq-item" onclick="this.classList.toggle('active')">
+                    <div style="flex: 1;">
+                        <span class="faq-q">Will the Korean Gel Sunscreen leave a white cast?</span>
+                        <div class="acc-content" style="font-size: 13px; color: #666; margin-top: 10px;">No. It blends effortlessly, leaving a lightweight, non-greasy finish suitable for all skin tones.</div>
+                    </div>
+                    <div class="accordion-plus">+</div>
+                </div>
+                <div class="faq-item" onclick="this.classList.toggle('active')">
+                    <div style="flex: 1;">
+                        <span class="faq-q">Can this bundle be used in humid climates?</span>
+                        <div class="acc-content" style="font-size: 13px; color: #666; margin-top: 10px;">Yes. The lightweight, non-greasy formula is ideal for warm and humid environments.</div>
+                    </div>
+                    <div class="accordion-plus">+</div>
+                </div>
+            </div>
+        </div>
+        <div class="island-card"><img src="{{ 'bright-faq.jpg' | asset_url }}"></div>
     </section>
 </div>
 
+<script>
+    // Main Add to Cart Logic for Bundles
+    document.querySelectorAll('.add-to-cart-btn-bundle').forEach(btn => {
+        btn.addEventListener('click', async function(e) {
+            e.preventDefault();
+            const b = this;
+            const originalText = b.innerHTML;
+            if (b.disabled) return;
+            b.innerHTML = 'ADDING TO BAG...';
+            b.disabled = true;
 
+            try {
+                const mainVariantId = b.getAttribute('data-variant-id');
+                const response = await fetch('/cart/add.js', {
+                    method: 'POST',
+                    headers: { 
+                        'Content-Type': 'application/json',
+                        'X-Requested-With': 'XMLHttpRequest'
+                    },
+                    body: JSON.stringify({ items: [{ id: mainVariantId, quantity: 1 }] })
+                });
+
+                const data = await response.json();
+                if (!response.ok) throw new Error(data.description || data.message || 'Could not add to bag');
+                window.location.href = '/cart';
+            } catch (error) {
+                console.error('Cart Addition Error:', error);
+                alert('Bag Error: ' + error.message);
+                b.innerHTML = originalText;
+                b.disabled = false;
+            }
+        });
+    });
+</script>

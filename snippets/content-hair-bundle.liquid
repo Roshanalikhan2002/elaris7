@@ -1,53 +1,222 @@
 {%- assign product = all_products['elaris-7-korean-hair-care-bundle'] -%}
 
 <style>
-    .pdp-wrapper-hair { padding: 40px 12px; max-width: 1440px; margin: 0 auto; width: 100%; }
-    .pdp-main-box { background: #fff; border: 1px solid #d1d1d1; border-radius: 12px; display: grid; grid-template-columns: 1.15fr 0.85fr; margin-bottom: 20px; overflow: hidden; }
-    .gallery-wrap { display: flex; align-items: flex-start; justify-content: center; background: #fff; }
-    .details-panel { padding: 60px; border-left: 1px solid #d1d1d1; background: #fdfdfd; }
-    .product-title { font-family: 'Lexend'; font-size: 48px; font-weight: 800; letter-spacing: -0.05em; margin-bottom: 30px; line-height: 0.9; }
-    .btn-atc { width: 100%; padding: 22px; border-radius: 50px; border: 1.5px solid #000; background: #fff; font-weight: 700; text-transform: uppercase; cursor: pointer; font-size: 13px; color: #000; text-align: center; display: block; text-decoration: none; }
+    :root {
+        --bg-page: #f2f2f1;
+        --white: #ffffff;
+        --text-color: #000000;
+        --placeholder-bg: #e5e5e5;
+        --border-color: #d1d1d1;
+    }
+
+    /* --- Global Grid Layout --- */
+    .pdp-wrapper { max-width: 1440px; margin: 0 auto; padding: 0 12px; width: 100%; margin-top: 20px; }
+    .pdp-main-box { background: var(--white); border: 1px solid var(--border-color); border-radius: 12px; display: grid; grid-template-columns: 1.15fr 0.85fr; margin-bottom: 20px; overflow: hidden; height: auto; min-height: 800px; }
+    .gallery-wrap { padding: 0; background: #fff; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+    .gallery-wrap img { width: 100%; height: 100%; object-fit: cover; }
+    
+    .details-panel { padding: 60px; border-left: 1px solid var(--border-color); background: #fdfdfd; height: 100%; }
+    .product-title { font-family: 'Lexend', sans-serif; font-size: 48px; font-weight: 800; letter-spacing: -0.05em; margin-bottom: 30px; line-height: 0.9; }
+
+    .btn-atc { width: 100%; padding: 22px; border-radius: 50px; border: 1.5px solid #000; background: #fff; font-weight: 700; text-transform: uppercase; cursor: pointer; font-size: 13px; transition: all 0.3s ease; text-align: center; display: block; text-decoration: none; color: #000; }
     .btn-atc:hover { background: #000; color: #fff; }
+
+
+    /* Accordions */
     .accordion-item { border-top: 1px solid #eee; padding: 25px 0; cursor: pointer; }
     .acc-head { display: flex; justify-content: space-between; align-items: center; font-size: 12px; font-weight: 800; text-transform: uppercase; }
-    .acc-content { display: none; padding-top: 15px; font-size: 14px; line-height: 1.6; color: #444; }
-    .accordion-item.active .acc-content { display: block; }
-    .discovery-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px; }
-    .island-card { border-radius: 12px; overflow: hidden; background: #fff; height: 600px; }
+    .accordion-plus { width: 22px; height: 22px; background: #f0f0f0; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 16px; transition: transform 0.3s; }
+    .acc-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; font-size: 14px; line-height: 1.6; color: #444; }
+    .accordion-item.active .acc-content, .faq-item.active .acc-content { max-height: 1200px; padding-top: 20px; }
+    .accordion-item.active .accordion-plus, .faq-item.active .accordion-plus { transform: rotate(45deg); background: #000; color: #fff; }
+
+    /* Discovery Blocks */
+    .discovery-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px; }
+    .island-card { border-radius: 12px; overflow: hidden; background: #fff; height: 600px; position: relative; }
+    .island-card img { width: 100%; height: 100%; object-fit: cover; }
+
+    /* Breakdown / Results */
+    .breakdown-content { background: #f2f0ed; padding: 60px; display: flex; flex-direction: column; justify-content: center; height: 100%; }
+    .bd-title { font-size: 2.5rem; font-weight: 800; margin-bottom: 40px; }
+    .bd-row { border-bottom: 1px solid rgba(0,0,0,0.05); padding: 20px 0; display: flex; gap: 30px; }
+    .bd-label { font-weight: 800; font-size: 12px; width: 100px; }
+    .bd-val { font-size: 14px; color: #555; }
+
+    /* FAQ */
+    .faq-text-side { padding: 80px 60px; background: #f2f0ed; height: 100%; display: flex; flex-direction: column; justify-content: center; }
+    .faq-title { font-size: 42px; font-weight: 800; margin-bottom: 40px; }
+    .faq-item { border-top: 1px solid #ddd; padding: 25px 0; display: flex; justify-content: space-between; align-items: center; cursor: pointer; }
+    .faq-q { font-size: 12px; font-weight: 800; text-transform: uppercase; }
 
     @media (max-width: 1024px) {
-        .pdp-main-box { grid-template-columns: 1fr; }
-        .details-panel { border-left: none; padding: 30px 15px; }
-        .discovery-grid { grid-template-columns: 1fr; }
-        .island-card { height: 400px; }
+        .pdp-main-box { grid-template-columns: 1fr; height: auto; min-height: auto; }
+        .gallery-wrap { height: 400px; }
+        .details-panel { border-left: none; padding: 40px 20px; }
+        .discovery-grid { grid-template-columns: 1fr; gap: 10px; }
+        .island-card { height: auto; min-height: 400px; }
+        .breakdown-content, .faq-text-side { padding: 40px 20px; height: auto; }
+        .bd-title, .faq-title { font-size: 32px; margin-bottom: 25px; }
+        .bd-row { flex-direction: column; gap: 10px; align-items: flex-start; }
+        .bd-label { width: 100%; margin-bottom: 0; }
+        .product-title { font-size: 36px; }
     }
 </style>
 
-<div class="pdp-wrapper-hair">
+<div class="pdp-wrapper">
+    <!-- 1. Top Section -->
     <div class="pdp-main-box">
-      <div class="gallery-wrap">
-        <img src="{{ 'hairmain.jpg' | file_img_url: 'master' }}" style="width:100%; height:auto;" alt="Hair Care Bundle">
-      </div>
-      <div class="details-panel">
-        <p style="font-size: 11px; font-weight: 700; color: #999; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 20px;">COMPLETE NOURISHMENT SYSTEM</p>
-        <h1 class="product-title">{{ product.title | default: 'Elaris 7 Korean Hair Care Bundle' }}</h1>
-        <div style="font-size: 13px; font-weight: 700; margin-bottom: 30px; letter-spacing: 2px;">★ ★ ★ ★ ★ (1,240)</div>
-        <p style="font-size: 15px; line-height: 1.7; margin-bottom: 40px; color: #333;">Transform your hair routine with the E7 Hair Care Set. Crafted to control frizz, strengthen roots, and leave your hair feeling soft.</p>
-        
-        <a href="/cart/add?id={{ product.selected_or_first_available_variant.id }}&quantity=1" class="btn-atc">BUY THE KIT - {{ product.price | money }}</a>
-
-
-        <div class="accordion-item" onclick="this.classList.toggle('active')">
-            <div class="acc-head">WHAT'S INSIDE <div class="accordion-plus">+</div></div>
-            <div class="acc-content"><p>Includes: E7 Anti Frizz Keratin Serum, E7 Hair Regrowth Spray, and E7 Floral Blossom Hair Mist.</p></div>
+        <div class="gallery-wrap">
+            <img src="{{ 'hair-main.jpg' | asset_url }}" alt="{{ product.title }}">
         </div>
-      </div>
+        <div class="details-panel">
+            <p style="font-size: 11px; font-weight: 700; color: #999; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 20px;">COMPLETE SYSTEM</p>
+            <h1 class="product-title">{{ product.title }}</h1>
+            <div style="font-size: 13px; font-weight: 700; margin-bottom: 30px; letter-spacing: 2px;">★ ★ ★ ★ ★ (1,430)</div>
+            <p style="font-size: 15px; line-height: 1.7; margin-bottom: 40px; color: #333;">Transform your hair routine with the E7 Hair Care Set. This three-product collection is designed to control frizz, strengthen roots, and leave your hair feeling soft, shiny, and beautifully scented. Each product works on its own or together, making styling, protection, and daily care effortless—perfect for home or on-the-go use.</p>
+            
+            <button class="btn-atc add-to-cart-btn-bundle" data-variant-id="{{ product.selected_or_first_available_variant.id }}">BUY THE KIT - {{ product.price | money }}</button>
+
+
+            <!-- WHAT'S INSIDE -->
+            <div class="accordion-item" onclick="this.classList.toggle('active')">
+                <div class="acc-head">WHAT'S INSIDE <div class="accordion-plus">+</div></div>
+                <div class="acc-content">
+                    <p>The E7 Hair Care Set includes three full-size products in a sleek Elaris pouch: E7 Anti Frizz Keratin Serum, E7 Hair Regrowth Spray, and E7 Floral Blossom Hair Mist.</p>
+                </div>
+            </div>
+
+            <!-- THE ROUTINE -->
+            <div class="accordion-item" onclick="this.classList.toggle('active')">
+                <div class="acc-head">THE ROUTINE <div class="accordion-plus">+</div></div>
+                <div class="acc-content">
+                    <p><strong>Your complete hair care ritual:</strong></p>
+                    <p><strong>E7 ANTI FRIZZ KERATIN SERUM — Smooth Control</strong><br>Apply a small amount to damp or dry hair, focusing on mid-lengths and ends. Avoid roots and style as desired. Use before heat styling for added protection.</p>
+                    <p><strong>E7 HAIR REGROWTH SPRAY — Stronger Roots</strong><br>Spray directly onto a clean, dry scalp. Massage gently to aid absorption and leave overnight. Use daily for best results.</p>
+                    <p><strong>E7 FLORAL BLOSSOM HAIR MIST — Fresh Floral Touch</strong><br>Spray evenly onto dry hair from a short distance. Refresh hair anytime during the day and enjoy a subtle, long-lasting floral fragrance.</p>
+                </div>
+            </div>
+        </div>
     </div>
 
+    <!-- 2. Discovery Section (2 Image) -->
     <section class="discovery-grid">
-      <div class="island-card"><img src="{{ 'hairtwoimagesection1.jpg' | file_img_url: 'master' }}" style="width:100%; height:100%; object-fit:cover;"></div>
-      <div class="island-card"><img src="{{ 'hairtwoimagesection2.jpg' | file_img_url: 'master' }}" style="width:100%; height:100%; object-fit:cover;"></div>
+        <div class="island-card"><img src="{{ 'hairtwoimagesection1.jpg' | asset_url }}"></div>
+        <div class="island-card"><img src="{{ 'hairtwoimagesection2.jpeg' | asset_url }}"></div>
+    </section>
+
+    <!-- 3. Product Breakdown Section (Text with Image) -->
+    <section class="discovery-grid">
+        <div class="island-card">
+            <div class="breakdown-content">
+                <h2 class="bd-title">Research-Backed Ingredients</h2>
+                <div class="bd-row"><span class="bd-label">Argan Oil:</span><span class="bd-val">Deep nourishment and shine</span></div>
+                <div class="bd-row"><span class="bd-label">Wheat Germ Oil:</span><span class="bd-val">Vitamin-rich repair</span></div>
+                <div class="bd-row"><span class="bd-label">Almond Oil:</span><span class="bd-val">Softness and strength</span></div>
+                <div class="bd-row"><span class="bd-label">Olive Oil:</span><span class="bd-val">Natural conditioning</span></div>
+                <div class="bd-row"><span class="bd-label">Coconut Oil:</span><span class="bd-val">Moisture retention</span></div>
+                <div class="bd-row"><span class="bd-label">Flaxseed Oil:</span><span class="bd-val">Omega-3 for hair health</span></div>
+                <div class="bd-row"><span class="bd-label">Shea Butter:</span><span class="bd-val">Intense hydration</span></div>
+                <div class="bd-row"><span class="bd-label">Squalene:</span><span class="bd-val">Weightless moisture</span></div>
+                <div class="bd-row"><span class="bd-label">Niacinamide:</span><span class="bd-val">Scalp health support</span></div>
+                <div class="bd-row"><span class="bd-label">Anagain™:</span><span class="bd-val">Stimulates hair growth</span></div>
+                <div class="bd-row"><span class="bd-label">Procapil®:</span><span class="bd-val">Strengthens hair from the root</span></div>
+                <div class="bd-row"><span class="bd-label">Rosemary Extract:</span><span class="bd-val">Improves circulation</span></div>
+                <div class="bd-row"><span class="bd-label">Acetyl Tetrapeptide-3:</span><span class="bd-val">Supports hair density</span></div>
+                <div class="bd-row"><span class="bd-label">Panthenol:</span><span class="bd-val">Pro-vitamin B5 for volume</span></div>
+                <div class="bd-row"><span class="bd-label">Propanediol:</span><span class="bd-val">Enhanced ingredient absorption</span></div>
+            </div>
+        </div>
+        <div class="island-card"><img src="{{ 'hairtextimage.jpg' | asset_url }}"></div>
+    </section>
+
+    <!-- 4. Meet the Product Section (4 Image Carousel) -->
+    <div style="background: #fff; border-radius: 12px; padding: 80px 40px; margin-bottom: 20px; text-align: center;">
+        <h2 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 50px;">meet the essentials</h2>
+        <div style="display: flex; gap: 20px; overflow-x: auto; scrollbar-width: none;">
+            <img src="{{ 'v2-hair-1.jpeg' | asset_url }}" style="flex: 0 0 23%; min-width: 250px; border-radius: 12px; aspect-ratio: 4/5; object-fit: cover;">
+            <img src="{{ 'v2-hair-2.jpg' | asset_url }}" style="flex: 0 0 23%; min-width: 250px; border-radius: 12px; aspect-ratio: 4/5; object-fit: cover;">
+            <img src="{{ 'v2-hair-3.jpg' | asset_url }}" style="flex: 0 0 23%; min-width: 250px; border-radius: 12px; aspect-ratio: 4/5; object-fit: cover;">
+            <img src="{{ 'v2-hair-4.jpg' | asset_url }}" style="flex: 0 0 23%; min-width: 250px; border-radius: 12px; aspect-ratio: 4/5; object-fit: cover;">
+        </div>
+    </div>
+
+    <!-- 5. FAQ Section -->
+    <section class="discovery-grid">
+        <div class="island-card">
+            <div class="faq-text-side">
+                <h2 class="faq-title">Ask away.</h2>
+                <div class="faq-item" onclick="this.classList.toggle('active')">
+                    <div style="flex: 1;">
+                        <span class="faq-q">Can I use the Anti Frizz Keratin Serum on damp and dry hair?</span>
+                        <div class="acc-content" style="font-size: 13px; color: #666; margin-top: 10px;">Yes! On damp hair it locks in moisture and smooths strands, and on dry hair it instantly tames flyaways.</div>
+                    </div>
+                    <div class="accordion-plus">+</div>
+                </div>
+                <div class="faq-item" onclick="this.classList.toggle('active')">
+                    <div style="flex: 1;">
+                        <span class="faq-q">How long until I see results with the Hair Regrowth Spray?</span>
+                        <div class="acc-content" style="font-size: 13px; color: #666; margin-top: 10px;">Consistent daily use usually shows noticeable improvement in hair strength and density within 6–8 weeks.</div>
+                    </div>
+                    <div class="accordion-plus">+</div>
+                </div>
+                <div class="faq-item" onclick="this.classList.toggle('active')">
+                    <div style="flex: 1;">
+                        <span class="faq-q">Is the Hair Mist suitable for colored or treated hair?</span>
+                        <div class="acc-content" style="font-size: 13px; color: #666; margin-top: 10px;">Absolutely. It is lightweight, non-greasy, and safe for all hair types, including color-treated hair.</div>
+                    </div>
+                    <div class="accordion-plus">+</div>
+                </div>
+                <div class="faq-item" onclick="this.classList.toggle('active')">
+                    <div style="flex: 1;">
+                        <span class="faq-q">Can I use all three products together in one routine?</span>
+                        <div class="acc-content" style="font-size: 13px; color: #666; margin-top: 10px;">Yes! Start with the serum after washing, follow with the spray on the scalp, and finish with the hair mist for a refreshed fragrance.</div>
+                    </div>
+                    <div class="accordion-plus">+</div>
+                </div>
+                <div class="faq-item" onclick="this.classList.toggle('active')">
+                    <div style="flex: 1;">
+                        <span class="faq-q">Will the Anti Frizz Serum weigh down fine hair?</span>
+                        <div class="acc-content" style="font-size: 13px; color: #666; margin-top: 10px;">No, the serum is lightweight and formulated to control frizz without heaviness, making it perfect for all hair types.</div>
+                    </div>
+                    <div class="accordion-plus">+</div>
+                </div>
+            </div>
+        </div>
+        <div class="island-card"><img src="{{ 'hairfaq.jpg' | asset_url }}"></div>
     </section>
 </div>
 
+<script>
+    // Main Add to Cart Logic for Bundles
+    document.querySelectorAll('.add-to-cart-btn-bundle').forEach(btn => {
+        btn.addEventListener('click', async function(e) {
+            e.preventDefault();
+            const b = this;
+            const originalText = b.innerHTML;
+            if (b.disabled) return;
+            b.innerHTML = 'ADDING TO BAG...';
+            b.disabled = true;
 
+            try {
+                const mainVariantId = b.getAttribute('data-variant-id');
+                const response = await fetch('/cart/add.js', {
+                    method: 'POST',
+                    headers: { 
+                        'Content-Type': 'application/json',
+                        'X-Requested-With': 'XMLHttpRequest'
+                    },
+                    body: JSON.stringify({ items: [{ id: mainVariantId, quantity: 1 }] })
+                });
+
+                const data = await response.json();
+                if (!response.ok) throw new Error(data.description || data.message || 'Could not add to bag');
+                window.location.href = '/cart';
+            } catch (error) {
+                console.error('Cart Addition Error:', error);
+                alert('Bag Error: ' + error.message);
+                b.innerHTML = originalText;
+                b.disabled = false;
+            }
+        });
+    });
+</script>
