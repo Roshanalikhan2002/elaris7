@@ -135,7 +135,12 @@
               </div>
               <span class="btn-rhode-buy-pill">BUY - {{ b_custom_price }}</span>
             </div>
-            <div class="buy-button-hover" data-handle="{{ b_handle }}">
+            {%- assign b_redirect = "/products/" | append: b_handle -%}
+            {%- if b_handle contains 'hair-care' -%}{%- assign b_redirect = "/collections/elaris-7-korean-hair-care-bundle" -%}
+            {%- elsif b_handle contains 'glass-skin' -%}{%- assign b_redirect = "/collections/elaris-7-korean-glass-skin-bundle" -%}
+            {%- elsif b_handle contains 'brightening' -%}{%- assign b_redirect = "/collections/elaris-7-korean-brightening-bundle" -%}
+            {%- endif -%}
+            <div class="buy-button-hover" data-handle="{{ b_handle }}" onclick="window.location.href='{{ b_redirect }}'">
               BUY {{ block.settings.title | default: 'NIGHT CREAM' | upcase | replace: 'RENEWAL CLEANSER', 'GEL CLEANSER' | replace: 'Renewal Cleanser', 'Gel Cleanser' }} - {{ b_custom_price }}
             </div>
           </a>
@@ -254,7 +259,15 @@
               </div>
               <span class="btn-rhode-buy-pill">BUY - {{ pprice }}</span>
             </div>
-            <div class="buy-button-hover" data-handle="{{ phandle }}" onclick="window.location.href='/products/{{ phandle }}'">
+            {%- assign final_buy_href = "/products/" | append: phandle -%}
+            {%- if phandle == 'elaris-7-korean-hair-care-bundle' or phandle == 'hair-care' -%}
+              {%- assign final_buy_href = "/collections/elaris-7-korean-hair-care-bundle" -%}
+            {%- elsif phandle == 'elaris-7-korean-glass-skin-bundle' or phandle == 'korean-glass-skin' -%}
+              {%- assign final_buy_href = "/collections/elaris-7-korean-glass-skin-bundle" -%}
+            {%- elsif phandle == 'elaris-7-korean-brightening-bundle' or phandle == 'korean-brightening' -%}
+              {%- assign final_buy_href = "/collections/elaris-7-korean-brightening-bundle" -%}
+            {%- endif -%}
+            <div class="buy-button-hover" data-handle="{{ phandle }}" onclick="window.location.href='{{ final_buy_href }}'">
               BUY {{ current_prod.title | default: pname | upcase | replace: 'RENEWAL CLEANSER', 'GEL CLEANSER' | replace: 'Renewal Cleanser', 'Gel Cleanser' }} - {{ pprice }}
             </div>
           </a>
