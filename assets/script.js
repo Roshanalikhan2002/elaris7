@@ -267,12 +267,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const isBundle = itemCatStr.includes('set') || itemCatStr.includes('bundle') || itemTitle.includes('bundle');
 
         if (cleanTarget.includes('glass')) {
-           if (!isBundle && (itemTitle.includes('centella') || itemTitle.includes('night cream') || itemTitle.includes('sunscreen') || itemTitle.includes('cleanser') || itemTitle.includes('toner') || itemTitle.includes('moisturizer') || itemTitle.includes('face wash') || itemTitle.includes('oil to foam') || itemTitle.includes('skin refining'))) {
-              if (!itemTitle.includes('tranexamic') && !itemTitle.includes('gel') && !itemTitle.includes('renewal')) matches = true;
+           if (!isBundle && (itemTitle.includes('centella') || itemTitle.includes('night cream') || itemTitle.includes('sunscreen') || itemTitle.includes('cleanser') || itemTitle.includes('toner') || itemTitle.includes('moisturizer') || itemTitle.includes('face wash') || itemTitle.includes('oil to foam') || itemTitle.includes('skin refining') || itemTitle.includes('glow'))) {
+              if (!itemTitle.includes('tranexamic') && !itemTitle.includes('gel') && !itemTitle.includes('renewal') && !itemTitle.includes('brightening')) matches = true;
            }
         }
         if (cleanTarget.includes('brightening')) {
-           const isExcluded = itemTitle.includes('skin refining') || itemTitle.includes('anti frizz') || itemTitle.includes('centella') || itemTitle.includes('anti acne') || itemTitle.includes('oil to foam') || isBundle;
+           const isExcluded = itemTitle.includes('skin refining') || itemTitle.includes('anti frizz') || itemTitle.includes('centella') || itemTitle.includes('anti acne') || itemTitle.includes('oil to foam') || itemTitle.includes('glow') || isBundle;
            if (!isExcluded) {
               if (itemTitle.includes('tranexamic') || itemTitle.includes('glutathione') || itemTitle.includes('toner') || itemTitle.includes('serum') || itemTitle.includes('brightening') || itemTitle.includes('renewal') || itemTitle.includes('cleanser')) {
                  matches = true;
