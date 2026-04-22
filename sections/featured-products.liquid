@@ -131,7 +131,7 @@
 
               <div class="card-meta">
 
-                <h3 class="card-name">{{ block.settings.title | default: 'NIGHT CREAM' | replace: 'Renewal Cleanser', 'Gel Cleanser' | replace: 'RENEWAL CLEANSER', 'GEL CLEANSER' | replace: 'Centella Serum', 'Glow Serum' | replace: 'CENTELLA SERUM', 'GLOW SERUM' | replace: 'Glutathione Cream', 'Glutathione Brightening Cream' | replace: 'GLUTATHIONE CREAM', 'GLUTATHIONE BRIGHTENING CREAM' | replace: 'Face Wash', 'Centella Face Wash' | replace: 'FACE WASH', 'CENTELLA FACE WASH' | replace: 'Anti Acne', 'Anti Acne Serum ( Tea Tree Oil)' | replace: 'ANTI ACNE', 'ANTI ACNE SERUM ( TEA TREE OIL)' }}</h3>
+                <h3 class="card-name">{{ block.settings.title | default: 'NIGHT CREAM' | replace: 'Renewal Cleanser', 'Gel Cleanser' | replace: 'RENEWAL CLEANSER', 'GEL CLEANSER' | replace: 'Centella Serum', 'Glow Serum' | replace: 'CENTELLA SERUM', 'GLOW SERUM' | replace: 'Glutathione Cream', 'Glutathione Brightening Cream' | replace: 'GLUTATHIONE CREAM', 'GLUTATHIONE BRIGHTENING CREAM' | replace: 'Face Wash', 'Centella Face Wash' | replace: 'FACE WASH', 'CENTELLA FACE WASH' | replace: 'Anti Acne', 'Anti Acne Serum ( Tea Tree Oil)' | replace: 'ANTI ACNE', 'ANTI ACNE SERUM ( TEA TREE OIL)' | replace: 'Sunscreen SPF60+', 'Tinted Centella Sunscreen SPF 60+' | replace: 'SUNSCREEN SPF60+', 'TINTED CENTELLA SUNSCREEN SPF 60+' }}</h3>
               </div>
               <span class="btn-rhode-buy-pill">BUY - {{ b_custom_price }}</span>
             </div>
@@ -141,7 +141,7 @@
             {%- elsif b_handle contains 'brightening' -%}{%- assign b_redirect = "/collections/elaris-7-korean-brightening-bundle" -%}
             {%- endif -%}
             <div class="buy-button-hover" data-handle="{{ b_handle }}" onclick="window.location.href='{{ b_redirect }}'">
-              BUY {{ block.settings.title | default: 'NIGHT CREAM' | upcase | replace: 'RENEWAL CLEANSER', 'GEL CLEANSER' | replace: 'Renewal Cleanser', 'Gel Cleanser' | replace: 'CENTELLA SERUM', 'GLOW SERUM' | replace: 'Centella Serum', 'Glow Serum' | replace: 'GLUTATHIONE CREAM', 'GLUTATHIONE BRIGHTENING CREAM' | replace: 'Glutathione Cream', 'Glutathione Brightening Cream' | replace: 'FACE WASH', 'CENTELLA FACE WASH' | replace: 'Face Wash', 'Centella Face Wash' | replace: 'ANTI ACNE', 'ANTI ACNE SERUM ( TEA TREE OIL)' | replace: 'Anti Acne', 'Anti Acne Serum ( Tea Tree Oil)' }} - {{ b_custom_price }}
+              BUY {{ block.settings.title | default: 'NIGHT CREAM' | upcase | replace: 'RENEWAL CLEANSER', 'GEL CLEANSER' | replace: 'Renewal Cleanser', 'Gel Cleanser' | replace: 'CENTELLA SERUM', 'GLOW SERUM' | replace: 'Centella Serum', 'Glow Serum' | replace: 'GLUTATHIONE CREAM', 'GLUTATHIONE BRIGHTENING CREAM' | replace: 'Glutathione Cream', 'Glutathione Brightening Cream' | replace: 'FACE WASH', 'CENTELLA FACE WASH' | replace: 'Face Wash', 'Centella Face Wash' | replace: 'ANTI ACNE', 'ANTI ACNE SERUM ( TEA TREE OIL)' | replace: 'Anti Acne', 'Anti Acne Serum ( Tea Tree Oil)' | replace: 'SUNSCREEN SPF60+', 'TINTED CENTELLA SUNSCREEN SPF 60+' | replace: 'Sunscreen SPF60+', 'Tinted Centella Sunscreen SPF 60+' }} - {{ b_custom_price }}
             </div>
           </a>
           
@@ -255,7 +255,7 @@
 
               <div class="card-meta">
 
-                <h3 class="card-name">{{ current_prod.title | default: pname | upcase | replace: 'RENEWAL CLEANSER', 'GEL CLEANSER' | replace: 'Renewal Cleanser', 'Gel Cleanser' | replace: 'CENTELLA SERUM', 'GLOW SERUM' | replace: 'Centella Serum', 'Glow Serum' | replace: 'GLUTATHIONE CREAM', 'GLUTATHIONE BRIGHTENING CREAM' | replace: 'Glutathione Cream', 'Glutathione Brightening Cream' | replace: 'FACE WASH', 'CENTELLA FACE WASH' | replace: 'Face Wash', 'Centella Face Wash' | replace: 'ANTI ACNE', 'ANTI ACNE SERUM ( TEA TREE OIL)' | replace: 'Anti Acne', 'Anti Acne Serum ( Tea Tree Oil)' }}</h3>
+                <h3 class="card-name">{{ current_prod.title | default: pname | upcase | replace: 'RENEWAL CLEANSER', 'GEL CLEANSER' | replace: 'Renewal Cleanser', 'Gel Cleanser' | replace: 'CENTELLA SERUM', 'GLOW SERUM' | replace: 'Centella Serum', 'Glow Serum' | replace: 'GLUTATHIONE CREAM', 'GLUTATHIONE BRIGHTENING CREAM' | replace: 'Glutathione Cream', 'Glutathione Brightening Cream' | replace: 'FACE WASH', 'CENTELLA FACE WASH' | replace: 'Face Wash', 'Centella Face Wash' | replace: 'ANTI ACNE', 'ANTI ACNE SERUM ( TEA TREE OIL)' | replace: 'Anti Acne', 'Anti Acne Serum ( Tea Tree Oil)' | replace: 'SUNSCREEN SPF60+', 'TINTED CENTELLA SUNSCREEN SPF 60+' | replace: 'Sunscreen SPF60+', 'Tinted Centella Sunscreen SPF 60+' }}</h3>
               </div>
               <span class="btn-rhode-buy-pill">BUY - {{ pprice }}</span>
             </div>
@@ -268,7 +268,7 @@
               {%- assign final_buy_href = "/collections/elaris-7-korean-brightening-bundle" -%}
             {%- endif -%}
             <div class="buy-button-hover" data-handle="{{ phandle }}" onclick="window.location.href='{{ final_buy_href }}'">
-              BUY {{ current_prod.title | default: pname | upcase | replace: 'RENEWAL CLEANSER', 'GEL CLEANSER' | replace: 'Renewal Cleanser', 'Gel Cleanser' | replace: 'CENTELLA SERUM', 'GLOW SERUM' | replace: 'Centella Serum', 'Glow Serum' | replace: 'GLUTATHIONE CREAM', 'GLUTATHIONE BRIGHTENING CREAM' | replace: 'Glutathione Cream', 'Glutathione Brightening Cream' | replace: 'FACE WASH', 'CENTELLA FACE WASH' | replace: 'Face Wash', 'Centella Face Wash' | replace: 'ANTI ACNE', 'ANTI ACNE SERUM ( TEA TREE OIL)' | replace: 'Anti Acne', 'Anti Acne Serum ( Tea Tree Oil)' }} - {{ pprice }}
+              BUY {{ current_prod.title | default: pname | upcase | replace: 'RENEWAL CLEANSER', 'GEL CLEANSER' | replace: 'Renewal Cleanser', 'Gel Cleanser' | replace: 'CENTELLA SERUM', 'GLOW SERUM' | replace: 'Centella Serum', 'Glow Serum' | replace: 'GLUTATHIONE CREAM', 'GLUTATHIONE BRIGHTENING CREAM' | replace: 'Glutathione Cream', 'Glutathione Brightening Cream' | replace: 'FACE WASH', 'CENTELLA FACE WASH' | replace: 'Face Wash', 'Centella Face Wash' | replace: 'ANTI ACNE', 'ANTI ACNE SERUM ( TEA TREE OIL)' | replace: 'Anti Acne', 'Anti Acne Serum ( Tea Tree Oil)' | replace: 'SUNSCREEN SPF60+', 'TINTED CENTELLA SUNSCREEN SPF 60+' | replace: 'Sunscreen SPF60+', 'Tinted Centella Sunscreen SPF 60+' }} - {{ pprice }}
             </div>
           </a>
           
