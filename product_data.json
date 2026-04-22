@@ -138,7 +138,7 @@
   },
   {
     "File": "product.centella-moisturizer.liquid",
-    "Title": "Centella Moisturizer",
+    "Title": "Centella Hydra Moisturizer",
     "Subtitle": "Daily Dew",
     "Price": "1,800",
     "Description": "A lightweight, glow-enhancing moisturizer infused with Centella Asiatica, brightening complexes, and nourishing botanicals to hydrate, soothe, and refine your skin for a smooth, glass-like finish every day.",
@@ -409,7 +409,7 @@
   },
   {
     "File": "product.glow-serum.liquid",
-    "Title": "Centella Serum",
+    "Title": "Glow Serum",
     "Subtitle": "Radiance Reset",
     "Price": "2,200",
     "Description": "A concentrated, glow-correcting serum infused with Centella Asiatica and advanced brightening actives to visibly even tone, fade dark spots, and restore a smooth, glass-like complexion over time.",
@@ -550,7 +550,7 @@
   },
   {
     "File": "product.sunscreen-v2.liquid",
-    "Title": "Centella Sunscreen SPF60+",
+    "Title": "Tinted Centella Sunscreen SPF 60+",
     "Subtitle": "Daily Shield",
     "Price": "2,500",
     "Description": "A protective sunscreen infused with Centella Asiatica and advanced UV filters to defend against sun damage, hydrate deeply, and maintain a smooth, glass-like finish every day.",
@@ -1095,7 +1095,7 @@
   },
   {
     "File": "product.aha-exfoliant.liquid",
-    "Title": "Elaris7 Glycolic Renewal Toner",
+    "Title": "Glycolic Renewal Toner",
     "Subtitle": "Renew & Refine",
     "Price": "2,660",
     "Description": "A resurfacing toner designed to promote smoother, clearer skin by gently exfoliating and renewing the surface. It helps refine texture, unclog pores, and boost radiance while keeping the skin balanced and comfortable with continued use.",
@@ -1374,7 +1374,7 @@
   },
   {
     "File": "product.anti-acne.liquid",
-    "Title": "Elaris7 Anti-Acne Clarifying Serum",
+    "Title": "Anti Acne Serum ( Tea Tree Oil)",
     "Subtitle": "Clear & Control",
     "Price": "2,660",
     "Description": "A targeted clarifying serum formulated to reduce acne, calm inflammation, and support clearer-looking skin. It helps refine pores, balance oil, and promote a smoother, healthier complexion with consistent use.",
@@ -1498,7 +1498,7 @@
   },
   {
     "File": "product.glutathione-cream.liquid",
-    "Title": "Elaris7 Brightening Repair Cream",
+    "Title": "Glutathione Brightening Cream",
     "Subtitle": "Glow & Repair",
     "Price": "2,660",
     "Description": "A nourishing brightening cream designed to improve uneven tone, reduce dullness, and support skin repair. It helps fade the look of dark spots, restore radiance, and leave skin smoother and healthier with consistent use.",
@@ -1640,19 +1640,19 @@
   },
   {
     "File": "product.renewal-cleanser.liquid",
-    "Title": "Oil-to-Foam Cleanser",
-    "Subtitle": "Melt & Cleanse",
-    "Price": "2,850",
-    "Description": "A transforming oil-to-foam cleanser designed to dissolve makeup, sunscreen, and daily buildup while maintaining skin balance and revealing a fresh, glass-like glow.",
+    "Title": "Korean Brightening Cleanser",
+    "Subtitle": "Glow & Refresh",
+    "Price": "1,850",
+    "Description": "A refreshing brightening cleanser designed to wash away impurities while revealing a fresh, glass-like glow.",
     "Benefits": [
-      "Effortlessly melts away makeup and sunscreen buildup",
-      "Deeply cleanses without leaving skin dry or tight",
-      "Helps balance excess oil while maintaining hydration",
-      "Supports and strengthens the skin's natural barrier",
-      "Smooths texture and clears away daily impurities",
-      "Prepares skin for a clearer, more radiant appearance"
+      "Gently cleanses without stripping natural moisture",
+      "Helps brighten and even out skin tone",
+      "Supports a clearer and more radiant complexion",
+      "Leaves skin feeling soft, fresh, and revitalized",
+      "Refines skin texture for a smoother look",
+      "Prepares skin for better absorption of serums"
     ],
-    "Application": "Apply 1–2 pumps of Oil-to-Foam Cleanser onto dry skin and gently massage to dissolve makeup and impurities. Add a little water to transform it into a soft foam, then rinse thoroughly before continuing your routine.",
+    "Application": "Apply 1–2 pumps of Korean Brightening Cleanser onto damp skin and gently massage in circular motions. Rinse thoroughly with lukewarm water and pat dry.",
     "Tricks": [
       "Use on dry skin first to break down makeup more effectively",
       "Add water gradually to activate the foam transformation",
@@ -1860,7 +1860,7 @@
   },
   {
     "File": "product.renewal-toner.liquid",
-    "Title": "Elaris7 Glycolic Renewal Toner",
+    "Title": "Glycolic Renewal Toner",
     "Subtitle": "Renew & Refine",
     "Price": "2,660",
     "Description": "A resurfacing toner designed to promote smoother, clearer skin by gently exfoliating and renewing the surface. It helps refine texture, unclog pores, and boost radiance while keeping the skin balanced and comfortable with continued use.",
@@ -2081,7 +2081,7 @@
   },
   {
     "File": "product.anti-acne-serum-v2.liquid",
-    "Title": "Elaris7 Anti-Acne Clarifying Serum",
+    "Title": "Anti Acne Serum ( Tea Tree Oil)",
     "Subtitle": "Clear & Control",
     "Price": "2,660",
     "Description": "A targeted clarifying serum formulated to reduce acne, calm inflammation, and support clearer-looking skin. It helps refine pores, balance oil, and promote a smoother, healthier complexion with consistent use.",
@@ -2200,6 +2200,140 @@
         "v2-antiacne-2.jpg",
         "v2-antiacne-3.jpg",
         "v2-antiacne-4.jpg"
+      ]
+    }
+  },
+  {
+    "File": "product.oil-to-foam-cleanser.liquid",
+    "Title": "Oil to Foam Cleanser (makeup removal)",
+    "Subtitle": "Melt & Cleanse",
+    "Price": "2,850",
+    "Description": "A transforming oil-to-foam cleanser designed to dissolve makeup, sunscreen, and daily buildup while maintaining skin balance and revealing a fresh, glass-like glow.",
+    "Benefits": [
+      "Effortlessly melts away makeup and sunscreen buildup",
+      "Deeply cleanses without leaving skin dry or tight",
+      "Helps balance excess oil while maintaining hydration",
+      "Supports and strengthens the skin's natural barrier",
+      "Smooths texture and clears away daily impurities",
+      "Prepares skin for a clearer, more radiant appearance"
+    ],
+    "Application": "Apply 1–2 pumps of Oil-to-Foam Cleanser onto dry skin and gently massage to dissolve makeup and impurities. Add a little water to transform it into a soft foam, then rinse thoroughly before continuing your routine.",
+    "Tricks": [
+      "Use on dry skin first to break down makeup more effectively",
+      "Add water gradually to activate the foam transformation",
+      "Massage gently for at least 60 seconds for a deeper cleanse",
+      "Follow with a face wash for a complete double-cleansing ritual"
+    ],
+    "Ingredients": [
+      "Botanical Oils",
+      "Centella Asiatica",
+      "Glycerin",
+      "Vitamin E",
+      "Mild Cleansing Agents"
+    ],
+    "CatchyLine": "Melt It Away. Cleanse It All.",
+    "ImportantInfo": {
+      "Headline": "Clean Skin Starts Here",
+      "GoodFor": "All skin types, including oily and combination skin",
+      "FeelsLike": "A silky oil that transforms into a soft, airy foam",
+      "LooksLike": "Clean, refreshed skin with a smooth finish",
+      "SmellsLike": "Gentle, fresh notes with a soothing touch",
+      "FYI": "Halal-Friendly • Dermatologist-Tested • Non-Stripping • Double-Cleanse Essential"
+    },
+    "WhatsInside": {
+      "Intro": "A versatile oil-to-foam formula that dissolves impurities while keeping skin soft and balanced. Here are 2 key ingredients that make it so effective:",
+      "I1Title": "botanical oils",
+      "I1Desc": "rich, nourishing oils that break down makeup, sunscreen, and excess sebum without stripping the skin",
+      "I2Title": "vitamin e",
+      "I2Desc": "an antioxidant powerhouse that soothes and protects skin while maintaining hydration",
+      "Also": "Centella Asiatica, Glycerin, Mild Cleansing Agents"
+    },
+    "SpreadItOn": [
+      "broad-spectrum protection",
+      "hydrated, comfortable skin",
+      "smooth, invisible finish"
+    ],
+    "Stats": [
+      {
+        "Pct": "99%",
+        "Desc": "SAID THEIR SKIN FELT CLEAN WITHOUT DRYNESS"
+      },
+      {
+        "Pct": "98%",
+        "Desc": "SAID IT REMOVED MAKEUP + SUNSCREEN EFFECTIVELY"
+      },
+      {
+        "Pct": "97%",
+        "Desc": "SAID THEIR SKIN FELT SOFTER + SMOOTHER"
+      },
+      {
+        "Pct": "3 out of 4",
+        "Desc": "SAID THEY NOTICED A CLEAR, FRESH GLOW"
+      }
+    ],
+    "StatsDisclaimer": "*Based on a 2-week consumer perception study with consistent daily use.",
+    "FAQs": [
+      {
+        "Q": "Can I use this cleanser daily?",
+        "A": "Yes, it is gentle enough for daily use and works well as the first step in your cleansing routine."
+      },
+      {
+        "Q": "Do I still need a second cleanser after this?",
+        "A": "Yes, for a complete cleanse, it is recommended to follow with a face wash as part of double cleansing."
+      },
+      {
+        "Q": "Is it suitable for oily or acne-prone skin?",
+        "A": "Yes, it helps remove excess oil and impurities without clogging pores or causing heaviness."
+      },
+      {
+        "Q": "Will it remove waterproof makeup and sunscreen?",
+        "A": "Yes, the oil-based formula is designed to effectively dissolve long-wear makeup and SPF."
+      },
+      {
+        "Q": "Does it leave any greasy residue after rinsing?",
+        "A": "No, it transforms into a foam and rinses clean, leaving skin fresh and balanced."
+      }
+    ],
+    "Reviews": [
+      {
+        "Name": "Saad",
+        "Text": "It removes my makeup so easily without making my skin feel dry. My face feels clean and soft after every use."
+      },
+      {
+        "Name": "Nimra",
+        "Text": "I like how it turns into foam and washes everything off properly. It leaves my skin fresh and not greasy at all."
+      },
+      {
+        "Name": "Haris",
+        "Text": "My skin feels smoother and clearer since I started using this. It works really well for daily cleansing."
+      },
+      {
+        "Name": "Laiba",
+        "Text": "It melts away sunscreen and dirt quickly, and my skin feels very comfortable after washing. It's gentle and effective."
+      },
+      {
+        "Name": "Shahzaib",
+        "Text": "This cleanser makes my routine easier and more effective. My skin feels balanced and looks much cleaner now."
+      }
+    ],
+    "Images": {
+      "Hero": "rc-gal-1.jpg",
+      "Gallery": [
+        "rc-gal-1.jpg",
+        "rc-gal-2.jpg",
+        "rc-gal-3.jpg",
+        "rc-gal-4.jpg"
+      ],
+      "Breakdown": "rc-plate.jpg",
+      "WhatsInside": "rc-spoon.jpg",
+      "Spread": "rc-spread.jpg",
+      "Stats": "rc-percent.jpg",
+      "FAQ": "rc-faq.jpg",
+      "Carousel": [
+        "rc-gal-1.jpg",
+        "rc-gal-2.jpg",
+        "rc-gal-3.jpg",
+        "rc-gal-4.jpg"
       ]
     }
   }
