@@ -174,6 +174,42 @@
         .wi-image-col { height: 400px; }
         .wi-content-col, .stats-content, .faq-content { padding: 40px 20px; }
     }
+
+    /* BOGO Section Styles (Copied from Product Page) */
+    .bogo-header { display: flex; align-items: center; gap: 8px; margin-bottom: 15px; padding: 0 5px; }
+    .bogo-gift-icon { width: 18px !important; height: 18px !important; color: #333; }
+    .bogo-inline-title { margin: 0; font-size: 0.85rem; font-weight: 800; color: #333; text-transform: none; }
+    
+    .bogo-vertical-scroll { display: flex; flex-direction: column; gap: 8px; max-height: 380px; overflow-y: auto; padding-right: 10px; width: 100%; }
+    .bogo-vertical-scroll::-webkit-scrollbar { width: 4px; }
+    .bogo-vertical-scroll::-webkit-scrollbar-track { background: #f1f1f1; }
+    .bogo-vertical-scroll::-webkit-scrollbar-thumb { background: #ccc; border-radius: 10px; }
+
+    .bogo-inline-card { display: flex; align-items: center; gap: 12px; background: #fff; border: 1px solid #e8e8e6; border-radius: 12px; padding: 12px; cursor: pointer; transition: all 0.2s ease; margin-bottom: 2px; width: 100%; box-sizing: border-box; }
+    .bogo-inline-card.selected { border-color: #5b5a53; background: #fdfdfb; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+    
+    .bogo-radio { 
+      width: 18px; height: 18px; border: 2px solid #ccc; border-radius: 50%; position: relative; flex-shrink: 0; 
+      transition: border-color 0.2s ease;
+    }
+    .bogo-inline-card.selected .bogo-radio { border-color: #007aff; }
+    .bogo-inline-card.selected .bogo-radio::after {
+      content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+      width: 100%; height: 100%; max-width: 10px; max-height: 10px; background: #007aff; border-radius: 50%;
+    }
+
+    .bogo-img-box { 
+      width: 50px; height: 50px; background: #fff; border-radius: 8px; display: flex; 
+      align-items: center; justify-content: center; overflow: hidden; border: 1px solid #f0f0f0; flex-shrink: 0;
+    }
+    .bogo-img-box img { width: 100%; height: 100%; object-fit: contain; }
+
+    .bogo-inline-info { flex: 1; display: flex; flex-direction: column; gap: 2px; }
+    .bogo-inline-name { font-size: 0.85rem; font-weight: 800; color: #333; line-height: 1.2; }
+    
+    .bogo-price-line { display: flex; align-items: center; gap: 6px; }
+    .bogo-old-price { text-decoration: line-through; color: #999; font-size: 0.75rem; }
+    .bogo-free-tag { color: #333; font-weight: 800; font-size: 0.75rem; color: #000; }
 </style>
 
 <div class="product-page-acne">
