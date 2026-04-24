@@ -15,13 +15,13 @@
 }
 {% endschema %}
 
-{%- assign is_special = false -%}
-{%- if collection.handle == 'elaris-7-korean-glass-skin-bundle' or collection.handle == 'anti-acne' or collection.handle == 'korean-brightening' or collection.handle == 'elaris-7-korean-brightening-bundle' or collection.handle == 'hair-care' or collection.handle == 'elaris-7-korean-hair-care-bundle' -%}
-  {%- assign is_special = true -%}
+{%- assign is_landing_mode = false -%}
+{%- if request.path == '/collections/elaris-7-korean-glass-skin-bundle' or request.path == '/collections/elaris-7-korean-hair-care-bundle' -%}
+  {%- assign is_landing_mode = true -%}
 {%- endif -%}
 
 <div class="collection-page">
-  {% unless is_special %}
+  {% unless is_landing_mode %}
     <!-- MOBILE HERO BANNER (Homepage Style) -->
     <div class="mobile-only coll-mobile-banner">
       <img src="{{ 'new bundle banner-100.jpg' | asset_url }}" alt="New Bundle Launch">
@@ -33,11 +33,15 @@
           <div class="collection-pills">
             {% for cat in default_cats %}
               {%- assign c_handle = cat | strip | handleize -%}
+              {%- if c_handle == 'sets' or c_handle == 'set' -%}
+                {%- assign c_handle = 'set' -%}
+              {%- endif -%}
+
               {%- assign pill_url = "/collections/" | append: c_handle -%}
               {%- if c_handle == 'featured' -%}{%- assign pill_url = "/collections/all" -%}{%- endif -%}
               
               {%- assign is_active = false -%}
-              {%- if c_handle == 'featured' and collection.handle == 'all' -%}
+              {%- if c_handle == 'featured' and (collection.handle == 'all' or collection.handle == 'frontpage') -%}
                 {%- assign is_active = true -%}
               {%- elsif c_handle == collection.handle -%}
                 {%- assign is_active = true -%}
@@ -52,18 +56,16 @@
     </div>
   {% endunless %}
 
-  {% if is_special %}
+  {% if is_landing_mode %}
     <!-- 
        LANDING PAGE MODE: 
        Replicating the exact design from your custom bundle templates 
     -->
     <div class="landing-page-container">
       {%- case collection.handle -%}
-        {%- when 'korean-glass-skin' or 'elaris-7-korean-glass-skin-bundle' -%}
+        {%- when 'elaris-7-korean-glass-skin-bundle' -%}
            {% include 'content-glass-bundle' %}
-        {%- when 'korean-brightening' or 'elaris-7-korean-brightening-bundle' -%}
-           {% include 'content-bright-bundle' %}
-        {%- when 'hair-care' or 'elaris-7-korean-hair-care-bundle' -%}
+        {%- when 'elaris-7-korean-hair-care-bundle' -%}
            {% include 'content-hair-bundle' %}
         {%- when 'anti-acne' -%}
            {% include 'content-anti-acne' %}
@@ -72,7 +74,7 @@
 
     <style>
       .landing-page-container { background: #fff; min-height: 100vh; padding-bottom: 100px; }
-      {% if is_special %}
+      {% if is_landing_mode %}
         header.site-header, 
         .announcement-bar,
         #shopify-section-header,
