@@ -16,7 +16,8 @@
 {% endschema %}
 
 {%- assign is_special = false -%}
-{%- if collection.handle == 'elaris-7-korean-glass-skin-bundle' or collection.handle == 'anti-acne' or collection.handle == 'elaris-7-korean-brightening-bundle' or collection.handle == 'hair-care' or collection.handle == 'elaris-7-korean-hair-care-bundle' -%}
+{%- assign special_handles = "elaris-7-korean-glass-skin-bundle,elaris-7-korean-brightening-bundle,elaris-7-korean-hair-care-bundle" | split: "," -%}
+{%- if special_handles contains collection.handle -%}
   {%- assign is_special = true -%}
 {%- endif -%}
 
