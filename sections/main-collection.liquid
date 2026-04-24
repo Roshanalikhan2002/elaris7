@@ -15,13 +15,18 @@
 }
 {% endschema %}
 
-{%- assign is_special = false -%}
+{%- assign is_landing_mode = false -%}
 {%- if collection.handle == 'elaris-7-korean-glass-skin-bundle' or collection.handle == 'elaris-7-korean-brightening-bundle' or collection.handle == 'elaris-7-korean-hair-care-bundle' -%}
-  {%- assign is_special = true -%}
+  {%- assign is_landing_mode = true -%}
 {%- endif -%}
 
+<!-- DEBUG BANNER (Will be removed after fix) -->
+<div style="background: red; color: white; padding: 10px; text-align: center; font-weight: bold; position: sticky; top: 0; z-index: 9999999;">
+  DEBUG: Handle = {{ collection.handle }} | Landing Mode = {{ is_landing_mode }}
+</div>
+
 <div class="collection-page">
-  {% unless is_special %}
+  {% unless is_landing_mode %}
     <!-- MOBILE HERO BANNER (Homepage Style) -->
     <div class="mobile-only coll-mobile-banner">
       <img src="{{ 'new bundle banner-100.jpg' | asset_url }}" alt="New Bundle Launch">
@@ -56,18 +61,18 @@
     </div>
   {% endunless %}
 
-  {% if is_special %}
+  {% if is_landing_mode %}
     <!-- 
        LANDING PAGE MODE: 
        Replicating the exact design from your custom bundle templates 
     -->
     <div class="landing-page-container">
       {%- case collection.handle -%}
-        {%- when 'korean-glass-skin' or 'elaris-7-korean-glass-skin-bundle' -%}
+        {%- when 'elaris-7-korean-glass-skin-bundle' -%}
            {% include 'content-glass-bundle' %}
-        {%- when 'korean-brightening' or 'elaris-7-korean-brightening-bundle' -%}
+        {%- when 'elaris-7-korean-brightening-bundle' -%}
            {% include 'content-bright-bundle' %}
-        {%- when 'hair-care' or 'elaris-7-korean-hair-care-bundle' -%}
+        {%- when 'elaris-7-korean-hair-care-bundle' -%}
            {% include 'content-hair-bundle' %}
         {%- when 'anti-acne' -%}
            {% include 'content-anti-acne' %}
@@ -76,7 +81,7 @@
 
     <style>
       .landing-page-container { background: #fff; min-height: 100vh; padding-bottom: 100px; }
-      {% if is_special %}
+      {% if is_landing_mode %}
         header.site-header, 
         .announcement-bar,
         #shopify-section-header,
