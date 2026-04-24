@@ -20,6 +20,13 @@
   {%- assign is_landing_mode = true -%}
 {%- endif -%}
 
+{%- comment -%} FORCE GRID MODE FOR SHORT URLS {%- endcomment -%}
+{%- if request.path contains '/collections/korean-brightening' or request.path contains '/collections/korean-glass-skin' -%}
+  {%- if request.path != '/collections/elaris-7-korean-brightening-bundle' and request.path != '/collections/elaris-7-korean-glass-skin-bundle' -%}
+    {%- assign is_landing_mode = false -%}
+  {%- endif -%}
+{%- endif -%}
+
 <div class="collection-page">
   {% unless is_landing_mode %}
     <!-- MOBILE HERO BANNER (Homepage Style) -->
