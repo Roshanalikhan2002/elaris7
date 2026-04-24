@@ -342,12 +342,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Initial Sync
   setTimeout(() => {
-    const activeTab = document.querySelector('.cat-link.active, .mega-cat-item.active');
-    if (activeTab) {
-       const initialCat = activeTab.getAttribute('data-category') || activeTab.textContent.trim();
-       applyFilter(initialCat, false);
+    let initialCat = '';
+    
+    // 1. Try to get category from URL path if on a collections page
+    const path = window.location.pathname;
+    if (path.includes('/collections/')) {
+       const parts = path.split('/');
+       const lastPart = parts[parts.length - 1] || parts[parts.length - 2]; // handle trailing slash
+       if (lastPart && lastPart !== 'all' && lastPart !== 'collections') {
+         initialCat = lastPart;
+       }
     }
-  }, 100);
+
+    // 2. Fallback to active tab if URL didn't provide a specific handle
+    if (!initialCat) {
+      const activeTab = document.querySelector('.cat-link.active, .mega-cat-item.active');
+      if (activeTab) {
+         initialCat = activeTab.getAttribute('data-category') || activeTab.textContent.trim();
+      }
+    }
+    
+    // 3. Final default
+    if (!initialCat) initialCat = 'featured';
+
+    applyFilter(initialCat, false);
+  }, 150);
 
 
   // --- BACK BUTTON RESET ---

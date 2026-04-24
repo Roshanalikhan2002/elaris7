@@ -33,11 +33,15 @@
           <div class="collection-pills">
             {% for cat in default_cats %}
               {%- assign c_handle = cat | strip | handleize -%}
+              {%- if c_handle == 'sets' or c_handle == 'set' -%}
+                {%- assign c_handle = 'set' -%}
+              {%- endif -%}
+
               {%- assign pill_url = "/collections/" | append: c_handle -%}
               {%- if c_handle == 'featured' -%}{%- assign pill_url = "/collections/all" -%}{%- endif -%}
               
               {%- assign is_active = false -%}
-              {%- if c_handle == 'featured' and collection.handle == 'all' -%}
+              {%- if c_handle == 'featured' and (collection.handle == 'all' or collection.handle == 'frontpage') -%}
                 {%- assign is_active = true -%}
               {%- elsif c_handle == collection.handle -%}
                 {%- assign is_active = true -%}
