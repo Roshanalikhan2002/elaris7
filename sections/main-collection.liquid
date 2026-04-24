@@ -16,16 +16,14 @@
 {% endschema %}
 
 {%- assign is_landing_mode = false -%}
-{%- if collection.handle == 'elaris-7-korean-glass-skin-bundle' or collection.handle == 'elaris-7-korean-brightening-bundle' or collection.handle == 'elaris-7-korean-hair-care-bundle' -%}
+{%- if request.path == '/collections/elaris-7-korean-glass-skin-bundle' or request.path == '/collections/elaris-7-korean-brightening-bundle' or request.path == '/collections/elaris-7-korean-hair-care-bundle' -%}
   {%- assign is_landing_mode = true -%}
 {%- endif -%}
 
-{%- comment -%} FORCE GRID MODE FOR SHORT URLS {%- endcomment -%}
-{%- if request.path contains '/collections/korean-brightening' or request.path contains '/collections/korean-glass-skin' -%}
-  {%- if request.path != '/collections/elaris-7-korean-brightening-bundle' and request.path != '/collections/elaris-7-korean-glass-skin-bundle' -%}
-    {%- assign is_landing_mode = false -%}
-  {%- endif -%}
-{%- endif -%}
+<!-- FORCE DEBUG BANNER -->
+<div style="background: red; color: white; padding: 10px; text-align: center; font-weight: bold; position: sticky; top: 0; z-index: 9999999;">
+  PATH: {{ request.path }} | HANDLE: {{ collection.handle }} | MODE: {% if is_landing_mode %}LANDING{% else %}GRID{% endif %}
+</div>
 
 <div class="collection-page">
   {% unless is_landing_mode %}
