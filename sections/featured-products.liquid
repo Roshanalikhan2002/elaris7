@@ -86,7 +86,7 @@
 {%- elsif final_link contains '/products/elaris-7-korean-glass-skin-bundle' or final_link contains 'glass-skin' -%}
   {%- assign final_link = '/collections/elaris-7-korean-glass-skin-bundle' -%}
 {%- elsif final_link contains '/products/elaris-7-korean-brightening-bundle' or final_link contains 'brightening' -%}
-  {%- assign final_link = '/collections/elaris-7-korean-brightening-bundle' -%}
+  {%- assign final_link = '/collections/korean-brightening' -%}
 {%- endif -%}
           <a href="{{ final_link }}" class="card-link-wrapper">
             {% if block.settings.hover_image != blank %}
@@ -138,7 +138,7 @@
             {%- assign b_redirect = "/products/" | append: b_handle -%}
             {%- if b_handle contains 'hair-care' -%}{%- assign b_redirect = "/collections/elaris-7-korean-hair-care-bundle" -%}
             {%- elsif b_handle contains 'glass-skin' -%}{%- assign b_redirect = "/collections/elaris-7-korean-glass-skin-bundle" -%}
-            {%- elsif b_handle contains 'brightening' -%}{%- assign b_redirect = "/collections/elaris-7-korean-brightening-bundle" -%}
+            {%- elsif b_handle contains 'brightening' -%}{%- assign b_redirect = "/collections/korean-brightening" -%}
             {%- endif -%}
             <div class="buy-button-hover" data-handle="{{ b_handle }}" onclick="window.location.href='{{ b_redirect }}'">
               BUY {{ block.settings.title | default: 'NIGHT CREAM' | upcase | replace: 'RENEWAL CLEANSER', 'KOREAN BRIGHTENING CLEANSER' | replace: 'Renewal Cleanser', 'Korean Brightening Cleanser' | replace: 'GEL CLEANSER', 'KOREAN BRIGHTENING CLEANSER' | replace: 'Gel Cleanser', 'Korean Brightening Cleanser' | replace: 'CENTELLA SERUM', 'GLOW SERUM' | replace: 'Centella Serum', 'Glow Serum' | replace: 'GLUTATHIONE CREAM', 'GLUTATHIONE BRIGHTENING CREAM' | replace: 'Glutathione Cream', 'Glutathione Brightening Cream' | replace: 'FACE WASH', 'CENTELLA FACE WASH' | replace: 'Face Wash', 'Centella Face Wash' | replace: 'ANTI ACNE', 'ANTI ACNE SERUM ( TEA TREE OIL)' | replace: 'Anti Acne', 'Anti Acne Serum ( Tea Tree Oil)' | replace: 'SUNSCREEN SPF60+', 'TINTED CENTELLA SUNSCREEN SPF 60+' | replace: 'Sunscreen SPF60+', 'Tinted Centella Sunscreen SPF 60+' | replace: 'CENTELLA MOISTURIZER', 'CENTELLA HYDRA MOISTURIZER' | replace: 'Centella Moisturizer', 'Centella Hydra Moisturizer' | replace: 'HYDRA BURST MOISTURIZER', 'CENTELLA HYDRA MOISTURIZER' | replace: 'Hydra Burst Moisturizer', 'Centella Hydra Moisturizer' | replace: 'RENEWAL TONER', 'GLYCOLIC RENEWAL TONER' | replace: 'Renewal Toner', 'Glycolic Renewal Toner' | replace: 'OIL TO FOAM CLEANSER', 'OIL TO FOAM CLEANSER (MAKEUP REMOVAL)' | replace: 'Oil to Foam Cleanser', 'Oil to Foam Cleanser (makeup removal)' }} - {{ b_custom_price }}
@@ -212,7 +212,7 @@
           {%- elsif phandle == 'elaris-7-korean-glass-skin-bundle' or phandle == 'korean-glass-skin' -%}
             {%- assign bundle_href = "/collections/elaris-7-korean-glass-skin-bundle" -%}
           {%- elsif phandle == 'elaris-7-korean-brightening-bundle' or phandle == 'korean-brightening' -%}
-            {%- assign bundle_href = "/collections/elaris-7-korean-brightening-bundle" -%}
+            {%- assign bundle_href = "/collections/korean-brightening" -%}
           {%- endif -%}
 
           <a href="{{ bundle_href }}" class="card-link-wrapper">
@@ -265,7 +265,7 @@
             {%- elsif phandle == 'elaris-7-korean-glass-skin-bundle' or phandle == 'korean-glass-skin' -%}
               {%- assign final_buy_href = "/collections/elaris-7-korean-glass-skin-bundle" -%}
             {%- elsif phandle == 'elaris-7-korean-brightening-bundle' or phandle == 'korean-brightening' -%}
-              {%- assign final_buy_href = "/collections/elaris-7-korean-brightening-bundle" -%}
+              {%- assign final_buy_href = "/collections/korean-brightening" -%}
             {%- endif -%}
             <div class="buy-button-hover" data-handle="{{ phandle }}" onclick="window.location.href='{{ final_buy_href }}'">
               BUY {{ current_prod.title | default: pname | upcase | replace: 'RENEWAL CLEANSER', 'KOREAN BRIGHTENING CLEANSER' | replace: 'Renewal Cleanser', 'Korean Brightening Cleanser' | replace: 'GEL CLEANSER', 'KOREAN BRIGHTENING CLEANSER' | replace: 'Gel Cleanser', 'Korean Brightening Cleanser' | replace: 'CENTELLA SERUM', 'GLOW SERUM' | replace: 'Centella Serum', 'Glow Serum' | replace: 'GLUTATHIONE CREAM', 'GLUTATHIONE BRIGHTENING CREAM' | replace: 'Glutathione Cream', 'Glutathione Brightening Cream' | replace: 'FACE WASH', 'CENTELLA FACE WASH' | replace: 'Face Wash', 'Centella Face Wash' | replace: 'ANTI ACNE', 'ANTI ACNE SERUM ( TEA TREE OIL)' | replace: 'Anti Acne', 'Anti Acne Serum ( Tea Tree Oil)' | replace: 'SUNSCREEN SPF60+', 'TINTED CENTELLA SUNSCREEN SPF 60+' | replace: 'Sunscreen SPF60+', 'Tinted Centella Sunscreen SPF 60+' | replace: 'CENTELLA MOISTURIZER', 'CENTELLA HYDRA MOISTURIZER' | replace: 'Centella Moisturizer', 'Centella Hydra Moisturizer' | replace: 'HYDRA BURST MOISTURIZER', 'CENTELLA HYDRA MOISTURIZER' | replace: 'Hydra Burst Moisturizer', 'Centella Hydra Moisturizer' | replace: 'RENEWAL TONER', 'GLYCOLIC RENEWAL TONER' | replace: 'Renewal Toner', 'Glycolic Renewal Toner' | replace: 'OIL TO FOAM CLEANSER', 'OIL TO FOAM CLEANSER (MAKEUP REMOVAL)' | replace: 'Oil to Foam Cleanser', 'Oil to Foam Cleanser (makeup removal)' }} - {{ pprice }}
@@ -294,7 +294,7 @@
       </div>
     </div>
 
-    <div class="card card-rhode bundle-card" data-category="set" onclick="window.location.href='/collections/elaris-7-korean-brightening-bundle'" style="display: none; background: #fff; border: 1px solid #eee; justify-content: center; align-items: center; min-height: 480px; cursor: pointer; overflow: hidden; padding: 0;">
+    <div class="card card-rhode bundle-card" data-category="set" onclick="window.location.href='/collections/korean-brightening'" style="display: none; background: #fff; border: 1px solid #eee; justify-content: center; align-items: center; min-height: 480px; cursor: pointer; overflow: hidden; padding: 0;">
       <img src="{{ 'main.jpg' | file_img_url: '600x' }}" class="bundle-card-img" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);">
       <div style="position: absolute; bottom: 0; left: 0; right: 0; background: rgba(255,255,255,0.95); padding: 18px 15px; border-top: 1px solid #eee; text-align: center; z-index: 10;">
         <h3 style="font-size: 13px; font-weight: 800; text-transform: uppercase; margin: 0 0 5px;">Korean Brightening Bundle</h3>
