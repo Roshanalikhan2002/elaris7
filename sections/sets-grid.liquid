@@ -9,18 +9,10 @@
         </div>
         <div class="card-info">
           <h3 class="card-name">KOREAN GLASS SKIN BUNDLE</h3>
-          <div class="card-buy-btn">BUY - RS. 4,800</div>
-        </div>
-      </div>
-
-      <!-- HAIR CARE BUNDLE -->
-      <div class="card card-rhode bundle-card" onclick="window.location.href='/collections/elaris-7-korean-hair-care-bundle'">
-        <div class="card-image-wrapper">
-          <img src="{{ 'hair_care_main.jpg' | file_img_url: '600x' }}" class="card-img" alt="Hair Care Bundle">
-        </div>
-        <div class="card-info">
-          <h3 class="card-name">HAIR CARE BUNDLE</h3>
-          <div class="card-buy-btn">BUY - RS. 7,515</div>
+          <p class="card-price">
+            <span class="original-price">RS. 13,354</span> RS. 6,677
+          </p>
+          <div class="card-shop-btn">SHOP THE SET</div>
         </div>
       </div>
 
@@ -31,7 +23,24 @@
         </div>
         <div class="card-info">
           <h3 class="card-name">KOREAN BRIGHTENING BUNDLE</h3>
-          <div class="card-buy-btn">BUY - RS. 5,392</div>
+          <p class="card-price">
+            <span class="original-price">RS. 10,784</span> RS. 5,392
+          </p>
+          <div class="card-shop-btn">SHOP THE SET</div>
+        </div>
+      </div>
+
+      <!-- HAIR CARE BUNDLE -->
+      <div class="card card-rhode bundle-card" onclick="window.location.href='/collections/elaris-7-korean-hair-care-bundle'">
+        <div class="card-image-wrapper">
+          <img src="{{ 'hair_care_main.jpg' | file_img_url: '600x' }}" class="card-img" alt="Hair Care Bundle">
+        </div>
+        <div class="card-info">
+          <h3 class="card-name">HAIR CARE BUNDLE</h3>
+          <p class="card-price">
+            <span class="original-price">RS. 8,430</span> RS. 4,215
+          </p>
+          <div class="card-shop-btn">SHOP THE SET</div>
         </div>
       </div>
 
@@ -43,71 +52,81 @@
 .collection-grid-rhode.bundle-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  padding: 40px 20px;
-  max-width: 1200px;
+  gap: 15px;
+  padding: 40px 15px;
+  max-width: 1400px;
   margin: 0 auto;
 }
 @media (max-width: 768px) {
   .collection-grid-rhode.bundle-grid {
     grid-template-columns: 1fr;
-    gap: 15px;
+    gap: 20px;
+    padding: 20px 15px;
   }
 }
 
 .card-rhode {
   cursor: pointer;
-  background: #f4f4f2;
+  background: #fff;
   border-radius: 12px;
   overflow: hidden;
   transition: all 0.3s ease;
   display: flex;
   flex-direction: column;
+  border: 1px solid #f0f0f0;
 }
 .card-image-wrapper {
   position: relative;
-  aspect-ratio: 1/1.4;
+  aspect-ratio: 1/1.2;
   overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0;
-  background: #f4f4f2;
+  background: #fff;
 }
 .card-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: transform 0.6s ease;
 }
 .card-rhode:hover .card-img {
   transform: scale(1.05);
 }
 
 .card-info { 
-  padding: 15px 10px 20px; 
+  padding: 20px 10px; 
   text-align: center;
 }
 .card-name { 
-  font-size: 0.65rem; 
+  font-size: 0.75rem; 
   font-weight: 800; 
   color: #333; 
-  margin-bottom: 12px; 
+  margin-bottom: 8px; 
   letter-spacing: 0.05em;
-  line-height: 1.4;
 }
-.card-buy-btn {
+.card-price {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 15px;
+}
+.original-price {
+  text-decoration: line-through;
+  color: #999;
+  margin-right: 8px;
+  font-weight: 400;
+  font-size: 0.65rem;
+}
+.card-shop-btn {
   border: 1px solid #333;
   border-radius: 50px;
-  padding: 8px 15px;
+  padding: 6px 20px;
   font-size: 0.65rem;
-  font-weight: 800;
+  font-weight: 700;
   color: #333;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
   display: inline-block;
+  transition: all 0.3s ease;
 }
-.card-rhode:hover .card-buy-btn {
+.card-rhode:hover .card-shop-btn {
   background: #333;
   color: #fff;
 }
