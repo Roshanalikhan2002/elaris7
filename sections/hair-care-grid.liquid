@@ -1,0 +1,124 @@
+<div class="collection-page">
+  <div class="collection-main">
+    <div class="collection-grid-rhode">
+      {%- assign h_products = "anti-frizz-keratin-serum,floral-blossom-hair-mist,hair-regrow-spray" | split: "," -%}
+      {% for handle in h_products %}
+        {%- assign product = all_products[handle] -%}
+        {% if product != blank %}
+          <div class="card card-rhode" onclick="window.location.href='{{ product.url }}'">
+            <div class="card-image-wrapper">
+              {%- if product.images.size > 1 -%}
+                <img src="{{ product.featured_image | image_url: width: 600 }}" class="card-img" alt="{{ product.title }}">
+                <img src="{{ product.images[1] | image_url: width: 600 }}" class="card-img-hover" alt="{{ product.title }}">
+              {%- else -%}
+                <img src="{{ product.featured_image | image_url: width: 600 }}" class="card-img" alt="{{ product.title }}">
+              {%- endif -%}
+            </div>
+            <div class="card-info">
+              <h3 class="card-name">{{ product.title | upcase }}</h3>
+              <div class="card-buy-btn">
+                BUY - RS. {{ product.price | money_without_currency }}
+              </div>
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<style>
+.collection-grid-rhode {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+@media (max-width: 1024px) {
+  .collection-grid-rhode {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 768px) {
+  .collection-grid-rhode {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    padding: 15px 10px;
+  }
+}
+
+.card-rhode {
+  cursor: pointer;
+  background: #f4f4f2;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+.card-image-wrapper {
+  position: relative;
+  aspect-ratio: 1/1.4;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+.card-img, .card-img-hover {
+  width: 90%;
+  height: 90%;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+  transition: transform 0.5s ease, opacity 0.4s ease;
+}
+.card-img-hover {
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  opacity: 0;
+}
+.card-rhode:hover .card-img { opacity: 0; transform: scale(1.05); }
+.card-rhode:hover .card-img-hover { opacity: 1; transform: scale(1.05); }
+
+.card-info { 
+  padding: 15px 10px 20px; 
+  text-align: center;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.card-name { 
+  font-size: 0.65rem; 
+  font-weight: 800; 
+  color: #333; 
+  margin-bottom: 12px; 
+  letter-spacing: 0.05em;
+  line-height: 1.4;
+}
+.card-buy-btn {
+  border: 1px solid #333;
+  border-radius: 50px;
+  padding: 8px 15px;
+  font-size: 0.65rem;
+  font-weight: 800;
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: all 0.3s ease;
+}
+.card-rhode:hover .card-buy-btn {
+  background: #333;
+  color: #fff;
+}
+</style>
+
+{% schema %}
+{
+  "name": "Hair Care Grid",
+  "settings": []
+}
+{% endschema %}
