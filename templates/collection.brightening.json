@@ -8,10 +8,14 @@
         "hero_image": "shopify://shop_images/Artboard_4-100_jpg.jpg"
       }
     },
+    "nav": {
+      "type": "category-nav",
+      "settings": {}
+    },
     "main": {
       "type": "brightening-grid",
       "settings": {}
     }
   },
-  "order": ["hero", "main"]
+  "order": ["hero", "nav", "main"]
 }
