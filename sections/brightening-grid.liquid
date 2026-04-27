@@ -7,12 +7,17 @@
         {% if product != blank %}
           <div class="card card-rhode" onclick="window.location.href='{{ product.url }}'">
             <div class="card-image-wrapper">
-              {%- if product.images.size > 1 -%}
-                <img src="{{ product.featured_image | image_url: width: 600 }}" class="card-img" alt="{{ product.title }}">
-                <img src="{{ product.images[1] | image_url: width: 600 }}" class="card-img-hover" alt="{{ product.title }}">
-              {%- else -%}
-                <img src="{{ product.featured_image | image_url: width: 600 }}" class="card-img" alt="{{ product.title }}">
-              {%- endif -%}
+              <img src="{{ product.featured_image | image_url: width: 600 }}" class="card-img" alt="{{ product.title }}">
+              {%- assign h_img = 'none' -%}
+              {%- case handle -%}
+                {%- when 'tranexamic-serum' -%}{%- assign h_img = 'tranexamic-meet-1.jpg' -%}
+                {%- when 'glutathione-cream' -%}{%- assign h_img = 'deep-hydration-100.jpg' -%}
+                {%- when 'renewal-cleanser' -%}{%- assign h_img = 'rc-gal-2.jpg' -%}
+                {%- when 'renewal-toner' -%}{%- assign h_img = 'toner-hover.jpg' -%}
+              {%- endcase -%}
+              {% if h_img != 'none' %}
+                <img src="{{ h_img | asset_url }}" class="card-img-hover" alt="{{ product.title }}">
+              {% endif %}
             </div>
             <div class="card-info">
               <h3 class="card-name">{{ product.title | upcase }}</h3>
