@@ -29,7 +29,7 @@
       {% endfor %}
     {% else %}
       {%- assign default_cats = "Featured,Korean glass skin,Anti acne,Korean brightening,Hair care,SET" | split: "," -%}
-      {%- assign default_urls = "/collections/all,/collections/korean-glass-skin,/collections/anti-acne,/collections/korean-brightening,/collections/hair-care,/pages/sets" | split: "," -%}
+      {%- assign default_urls = "/collections/all,/collections/korean-glass-skin,/collections/anti-acne,/collections/korean-brightening,/collections/hair-care,/collections/sets" | split: "," -%}
       {% for cat in default_cats %}
         {%- assign c_handle = cat | strip | handleize -%}
         {%- assign c_url = default_urls[forloop.index0] -%}

@@ -310,8 +310,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const category = link.getAttribute('data-category') || link.textContent.trim().toLowerCase().replace(/\s+/g, '-');
     const href = link.getAttribute('href');
+    const isHomePage = window.location.pathname === '/';
 
-    // If it's a dummy link, apply JS filter. Otherwise, let the browser navigate (refresh).
+    // If on Homepage, ALWAYS use AJAX filtering (No Refresh)
+    if (isHomePage) {
+       e.preventDefault();
+       applyFilter(category, true);
+       return;
+    }
+
+    // If it's a dummy link, apply JS filter. Otherwise, let browser navigate.
     if (href === 'javascript:void(0)' || !href || href === '#') {
        e.preventDefault();
        applyFilter(category, true);
