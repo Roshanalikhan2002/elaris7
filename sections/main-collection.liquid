@@ -27,7 +27,7 @@
 {%- endif -%}
 
 {%- assign is_sets_collection = false -%}
-{%- if collection.handle == 'sets' or request.path == '/collections/sets' -%}
+{%- if request.path contains '/collections/sets' or collection.handle contains 'sets' or collection.title contains 'Sets' or collection.title contains 'SET' -%}
   {%- assign is_sets_collection = true -%}
 {%- endif -%}
 
@@ -342,3 +342,5 @@
 </style>
 
 
+< s c r i p t > d o c u m e n t . a d d E v e n t L i s t e n e r ( ' D O M C o n t e n t L o a d e d ' ,   f u n c t i o n ( )   {   i f   ( w i n d o w . l o c a t i o n . p a t h n a m e . i n c l u d e s ( ' / c o l l e c t i o n s / s e t s ' ) )   {   d o c u m e n t . q u e r y S e l e c t o r A l l ( ' . b u n d l e - c a r d ' ) . f o r E a c h ( b   = >   b . s t y l e . s e t P r o p e r t y ( ' d i s p l a y ' ,   ' f l e x ' ,   ' i m p o r t a n t ' ) ) ;   d o c u m e n t . q u e r y S e l e c t o r A l l ( ' . c o l l e c t i o n - g r i d - r h o d e ' ) . f o r E a c h ( g   = >   g . s t y l e . s e t P r o p e r t y ( ' g r i d - t e m p l a t e - c o l u m n s ' ,   ' r e p e a t ( 3 ,   1 f r ) ' ,   ' i m p o r t a n t ' ) ) ;   }   } ) ; < / s c r i p t >  
+ 
