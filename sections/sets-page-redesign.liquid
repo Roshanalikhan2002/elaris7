@@ -1,0 +1,155 @@
+<div class="sets-redesign-container">
+  <div class="sets-header">
+    <h1 class="sets-title">OUR BUNDLES</h1>
+  </div>
+  
+  <div class="sets-grid">
+    <!-- GLASS SKIN BUNDLE -->
+    <div class="set-card" onclick="window.location.href='/collections/elaris-7-korean-glass-skin-bundle'">
+      <div class="set-image-wrapper">
+        <img src="{{ 'glassskinbundle.jpeg' | asset_url }}" class="set-img" alt="Korean Glass Skin Bundle">
+      </div>
+      <div class="set-details">
+        <h3 class="set-name">KOREAN GLASS SKIN BUNDLE</h3>
+        <p class="set-price">
+          <span class="old-price">RS. 13,354</span> RS. 6,677
+        </p>
+        <div class="set-action-btn">SHOP THE SET</div>
+      </div>
+    </div>
+
+    <!-- BRIGHTENING BUNDLE -->
+    <div class="set-card" onclick="window.location.href='/collections/elaris-7-korean-brightening-bundle'">
+      <div class="set-image-wrapper">
+        <img src="{{ 'main.jpg' | file_img_url: '600x' }}" class="set-img" alt="Korean Brightening Bundle">
+      </div>
+      <div class="set-details">
+        <h3 class="set-name">KOREAN BRIGHTENING BUNDLE</h3>
+        <p class="set-price">
+          <span class="old-price">RS. 10,784</span> RS. 5,392
+        </p>
+        <div class="set-action-btn">SHOP THE SET</div>
+      </div>
+    </div>
+
+    <!-- HAIR CARE BUNDLE -->
+    <div class="set-card" onclick="window.location.href='/collections/elaris-7-korean-hair-care-bundle'">
+      <div class="set-image-wrapper">
+        <img src="{{ 'hairmain.jpg' | file_img_url: '600x' }}" class="set-img" alt="Hair Care Bundle">
+      </div>
+      <div class="set-details">
+        <h3 class="set-name">HAIR CARE BUNDLE</h3>
+        <p class="set-price">
+          <span class="old-price">RS. 8,430</span> RS. 4,215
+        </p>
+        <div class="set-action-btn">SHOP THE SET</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+.sets-redesign-container {
+  background: #fdfdfb;
+  min-height: 80vh;
+  padding: 60px 20px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+.sets-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+.sets-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: #333;
+}
+.sets-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+.set-card {
+  background: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s ease;
+  border: 1px solid #f0f0f0;
+  display: flex;
+  flex-direction: column;
+}
+.set-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+.set-image-wrapper {
+  position: relative;
+  aspect-ratio: 1/1.2;
+  overflow: hidden;
+}
+.set-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+.set-card:hover .set-img {
+  transform: scale(1.05);
+}
+.set-details {
+  padding: 25px 15px;
+  text-align: center;
+  flex: 1;
+}
+.set-name {
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: #333;
+  margin-bottom: 10px;
+  letter-spacing: 0.05em;
+}
+.set-price {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 20px;
+}
+.old-price {
+  text-decoration: line-through;
+  color: #aaa;
+  margin-right: 10px;
+  font-weight: 400;
+  font-size: 0.75rem;
+}
+.set-action-btn {
+  display: inline-block;
+  border: 1.5px solid #333;
+  padding: 8px 30px;
+  border-radius: 50px;
+  font-size: 0.7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transition: all 0.3s ease;
+}
+.set-card:hover .set-action-btn {
+  background: #333;
+  color: #fff;
+}
+
+@media (max-width: 900px) {
+  .sets-grid { grid-template-columns: 1fr; gap: 30px; max-width: 400px; }
+  .sets-title { font-size: 1.2rem; }
+}
+</style>
+
+{% schema %}
+{
+  "name": "Sets Redesign",
+  "settings": []
+}
+{% endschema %}

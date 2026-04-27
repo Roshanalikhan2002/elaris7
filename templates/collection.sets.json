@@ -1,21 +1,9 @@
 {
   "sections": {
-    "hero": {
-      "type": "hero",
-      "settings": {
-        "title": "Bundles & Sets",
-        "btn_text": "all collections",
-        "hero_image": "shopify://shop_images/Artboard_4-100_jpg.jpg"
-      }
-    },
-    "nav": {
-      "type": "category-nav",
-      "settings": {}
-    },
     "main": {
-      "type": "sets-grid",
+      "type": "sets-page-redesign",
       "settings": {}
     }
   },
-  "order": ["hero", "nav", "main"]
+  "order": ["main"]
 }
