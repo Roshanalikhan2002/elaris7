@@ -1,22 +1,42 @@
+{%- assign current_path = request.path -%}
 <nav class="category-bar">
   <ul class="category-list">
     {% if section.blocks.size > 0 %}
       {% for block in section.blocks %}
+        {%- assign block_handle = block.settings.title | strip | handleize -%}
+        {%- assign block_url = block.settings.link | default: '' -%}
+        {%- if block_url == blank -%}
+          {%- case block_handle -%}
+            {%- when 'featured' -%}{%- assign block_url = '/pages/featured' -%}
+            {%- when 'korean-glass-skin' -%}{%- assign block_url = '/collections/korean-glass-skin' -%}
+            {%- when 'anti-acne' -%}{%- assign block_url = '/collections/anti-acne' -%}
+            {%- when 'korean-brightening' -%}{%- assign block_url = '/collections/korean-brightening' -%}
+            {%- when 'hair-care' -%}{%- assign block_url = '/collections/hair-care' -%}
+            {%- when 'set', 'sets' -%}{%- assign block_url = '/pages/sets' -%}
+            {%- else -%}{%- assign block_url = '/collections/' | append: block_handle -%}
+          {%- endcase -%}
+        {%- endif -%}
+        {%- assign is_active = false -%}
+        {%- if current_path contains block_handle -%}{%- assign is_active = true -%}{%- endif -%}
         <li>
-          <a href="javascript:void(0)" 
-             class="cat-link {% if block.settings.title == 'Featured' %}active{% endif %}" 
-             data-category="{{ block.settings.title | handleize }}"
+          <a href="{{ block_url }}"
+             class="cat-link {% if is_active %}active{% endif %}"
+             data-category="{{ block_handle }}"
              {{ block.shopify_attributes }}>
             {{ block.settings.title | uppercase }}
           </a>
         </li>
       {% endfor %}
     {% else %}
-      {% assign default_cats = "Featured,Korean glass skin,Anti acne,Korean brightening,Hair care,SET" | split: "," %}
+      {%- assign default_cats = "Featured,Korean glass skin,Anti acne,Korean brightening,Hair care,SET" | split: "," -%}
+      {%- assign default_urls = "/pages/featured,/collections/korean-glass-skin,/collections/anti-acne,/collections/korean-brightening,/collections/hair-care,/pages/sets" | split: "," -%}
       {% for cat in default_cats %}
         {%- assign c_handle = cat | strip | handleize -%}
+        {%- assign c_url = default_urls[forloop.index0] -%}
+        {%- assign is_active = false -%}
+        {%- if current_path contains c_handle -%}{%- assign is_active = true -%}{%- endif -%}
         <li>
-          <a href="javascript:void(0)" class="cat-link {% if forloop.first %}active{% endif %}" data-category="{{ c_handle }}">
+          <a href="{{ c_url }}" class="cat-link {% if is_active %}active{% endif %}" data-category="{{ c_handle }}">
             {{ cat | uppercase }}
           </a>
         </li>

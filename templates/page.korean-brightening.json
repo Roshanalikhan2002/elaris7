@@ -16,13 +16,60 @@
       "type": "featured-grid",
       "settings": {},
       "blocks": {
-        "p1": { "type": "product", "settings": { "title": "Placeholder" } },
-        "p2": { "type": "product", "settings": { "title": "Placeholder" } },
-        "p3": { "type": "product", "settings": { "title": "Placeholder" } },
-        "p4": { "type": "product", "settings": { "title": "Placeholder" } },
-        "p5": { "type": "product", "settings": { "title": "Placeholder" } }
+        "p1": {
+          "type": "product",
+          "settings": {
+            "title": "Tranexamic Brightening Serum",
+            "price": "Rs. 1,500",
+            "brand_label": "serum",
+            "badge": "",
+            "reviews": "16k",
+            "asset_image": "tranexamic-serum.jpg",
+            "asset_hover_image": "tranexamic-meet-1.jpg",
+            "product_link": "/products/tranexamic-serum"
+          }
+        },
+        "p2": {
+          "type": "product",
+          "settings": {
+            "title": "Glutathione Brightening Cream",
+            "price": "Rs. 1,500",
+            "brand_label": "repair",
+            "badge": "",
+            "reviews": "16k",
+            "asset_image": "glutathione-cream-100.jpg",
+            "asset_hover_image": "deep-hydration-100.jpg",
+            "product_link": "/products/glutathione-cream"
+          }
+        },
+        "p3": {
+          "type": "product",
+          "settings": {
+            "title": "Korean Brightening Cleanser",
+            "price": "Rs. 1,500",
+            "brand_label": "cleanser",
+            "badge": "",
+            "reviews": "16k",
+            "asset_image": "gel cleanser-100.jpg",
+            "asset_hover_image": "deep-hydration-facewash.jpg",
+            "product_link": "/products/renewal-cleanser"
+          }
+        },
+        "p4": {
+          "type": "product",
+          "settings": {
+            "title": "Glycolic Renewal Toner",
+            "price": "Rs. 1,500",
+            "brand_label": "toner",
+            "badge": "",
+            "reviews": "16k",
+            "asset_image": "toner1.jpeg",
+            "asset_hover_image": "",
+            "product_link": "/products/renewal-toner"
+          }
+        }
       },
-      "block_order": ["p1", "p2", "p3", "p4", "p5"]
+      "block_order": ["p1", "p2", "p3", "p4"]
     }
   },
   "order": ["hero", "nav", "main"]
