@@ -1,0 +1,17 @@
+{
+  "sections": {
+    "hero": {
+      "type": "hero",
+      "settings": {
+        "title": "Korean Brightening",
+        "btn_text": "all collections",
+        "hero_image": "shopify://shop_images/Artboard_4-100_jpg.jpg"
+      }
+    },
+    "main": {
+      "type": "brightening-grid",
+      "settings": {}
+    }
+  },
+  "order": ["hero", "main"]
+}
