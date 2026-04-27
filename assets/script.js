@@ -309,32 +309,10 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!link) return;
 
     const category = link.getAttribute('data-category') || link.textContent.trim().toLowerCase().replace(/\s+/g, '-');
-    if (!category || category === '#') return;
+    const href = link.getAttribute('href');
 
-    // Check if we are on a page that should filter instead of navigate
-    const isFilterPage = window.location.pathname.includes('/collections/all') || 
-                         document.querySelector('.collection-grid-rhode') ||
-                         document.querySelector('.product-collection');
-
-    if (isFilterPage) {
-       // If it's a category link, filter instead of navigating
-       if (link.classList.contains('cat-link') || link.classList.contains('mega-cat-item')) {
-         e.preventDefault();
-         applyFilter(category, true);
-
-         // Sync URL if on a collection page
-         if (window.location.pathname.includes('/collections/')) {
-           const newHref = link.getAttribute('href');
-           if (newHref && newHref !== 'javascript:void(0)') {
-             history.pushState(null, '', newHref);
-           }
-         }
-         return;
-       }
-    }
-
-    // Fallback for javascript:void(0) links
-    if (link.getAttribute('href') === 'javascript:void(0)' || !link.getAttribute('href')) {
+    // If it's a dummy link, apply JS filter. Otherwise, let the browser navigate (refresh).
+    if (href === 'javascript:void(0)' || !href || href === '#') {
        e.preventDefault();
        applyFilter(category, true);
     }
