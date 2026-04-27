@@ -1,7 +1,7 @@
 <div class="collection-page">
   <div class="collection-main">
     <div class="collection-grid-rhode">
-      {%- assign h_products = "anti-frizz-keratin-serum,floral-blossom-hair-mist,hair-regrow-spray" | split: "," -%}
+      {%- assign h_products = "hair-regrow-spray,anti-frizz-keratin-serum,floral-blossom-hair-mist" | split: "," -%}
       {% for handle in h_products %}
         {%- assign product = all_products[handle] -%}
         {% if product != blank %}
