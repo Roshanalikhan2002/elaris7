@@ -1,4 +1,4 @@
-﻿<div id="MAIN_COLLECTION_V3_MARKER" style="display:none !important;"></div>
+<div id="MAIN_COLLECTION_V3_MARKER" style="display:none !important;"></div>
 {% schema %}
 {
   "name": "Main Collection",
@@ -31,20 +31,63 @@
   {%- assign is_sets_collection = true -%}
 {%- endif -%}
 
-{%- if is_sets_collection or is_brightening_collection -%}
-  {%- assign is_landing_mode = false -%}
-{%- endif -%}
-
 {%- if is_sets_collection -%}
-<style>
-  .collection-grid-rhode .card-rhode { display: none !important; }
-  .collection-grid-rhode .bundle-card { display: flex !important; }
-  .collection-grid-rhode { grid-template-columns: repeat(3, 1fr) !important; }
-  @media (max-width: 768px) { .collection-grid-rhode { grid-template-columns: 1fr !important; } }
-</style>
+<div class="collection-page">
+  <div class="collection-main">
+    <div class="collection-grid-rhode bundle-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; padding: 40px 15px; max-width: 1400px; margin: 0 auto;">
+      
+      <!-- GLASS SKIN BUNDLE -->
+      <div class="card card-rhode bundle-card" onclick="window.location.href='/collections/elaris-7-korean-glass-skin-bundle'" style="cursor: pointer; background: #fff; border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; border: 1px solid #f0f0f0;">
+        <div style="position: relative; aspect-ratio: 1/1.2; overflow: hidden; background: #fff;">
+          <img src="{{ 'glassskinbundle.jpeg' | asset_url }}" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <div style="padding: 20px 10px; text-align: center;">
+          <h3 style="font-size: 0.75rem; font-weight: 800; color: #333; margin-bottom: 8px; letter-spacing: 0.05em;">KOREAN GLASS SKIN BUNDLE</h3>
+          <p style="font-size: 0.75rem; font-weight: 700; color: #333; margin-bottom: 15px;">
+            <span style="text-decoration: line-through; color: #999; margin-right: 8px; font-weight: 400; font-size: 0.65rem;">RS. 13,354</span> RS. 6,677
+          </p>
+          <div style="border: 1px solid #333; border-radius: 50px; padding: 6px 20px; font-size: 0.65rem; font-weight: 700; color: #333; text-transform: uppercase; display: inline-block;">SHOP THE SET</div>
+        </div>
+      </div>
+
+      <!-- BRIGHTENING BUNDLE -->
+      <div class="card card-rhode bundle-card" onclick="window.location.href='/collections/elaris-7-korean-brightening-bundle'" style="cursor: pointer; background: #fff; border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; border: 1px solid #f0f0f0;">
+        <div style="position: relative; aspect-ratio: 1/1.2; overflow: hidden; background: #fff;">
+          <img src="{{ 'main.jpg' | file_img_url: '600x' }}" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <div style="padding: 20px 10px; text-align: center;">
+          <h3 style="font-size: 0.75rem; font-weight: 800; color: #333; margin-bottom: 8px; letter-spacing: 0.05em;">KOREAN BRIGHTENING BUNDLE</h3>
+          <p style="font-size: 0.75rem; font-weight: 700; color: #333; margin-bottom: 15px;">
+            <span style="text-decoration: line-through; color: #999; margin-right: 8px; font-weight: 400; font-size: 0.65rem;">RS. 10,784</span> RS. 5,392
+          </p>
+          <div style="border: 1px solid #333; border-radius: 50px; padding: 6px 20px; font-size: 0.65rem; font-weight: 700; color: #333; text-transform: uppercase; display: inline-block;">SHOP THE SET</div>
+        </div>
+      </div>
+
+      <!-- HAIR CARE BUNDLE -->
+      <div class="card card-rhode bundle-card" onclick="window.location.href='/collections/elaris-7-korean-hair-care-bundle'" style="cursor: pointer; background: #fff; border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; border: 1px solid #f0f0f0;">
+        <div style="position: relative; aspect-ratio: 1/1.2; overflow: hidden; background: #fff;">
+          <img src="{{ 'hairmain.jpg' | file_img_url: '600x' }}" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <div style="padding: 20px 10px; text-align: center;">
+          <h3 style="font-size: 0.75rem; font-weight: 800; color: #333; margin-bottom: 8px; letter-spacing: 0.05em;">HAIR CARE BUNDLE</h3>
+          <p style="font-size: 0.75rem; font-weight: 700; color: #333; margin-bottom: 15px;">
+            <span style="text-decoration: line-through; color: #999; margin-right: 8px; font-weight: 400; font-size: 0.65rem;">RS. 8,430</span> RS. 4,215
+          </p>
+          <div style="border: 1px solid #333; border-radius: 50px; padding: 6px 20px; font-size: 0.65rem; font-weight: 700; color: #333; text-transform: uppercase; display: inline-block;">SHOP THE SET</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
 {%- endif -%}
 
 <div class="collection-page">
+  {%- if is_sets_collection or is_brightening_collection -%}
+    {%- assign is_landing_mode = false -%}
+  {%- endif -%}
+  
   {% unless is_landing_mode %}
     <!-- MOBILE HERO BANNER (Homepage Style) -->
     <div class="mobile-only coll-mobile-banner">
