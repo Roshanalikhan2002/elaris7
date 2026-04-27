@@ -31,8 +31,17 @@
   {%- assign is_sets_collection = true -%}
 {%- endif -%}
 
-{%- if is_brightening_collection or is_sets_collection -%}
+{%- if is_sets_collection or is_brightening_collection -%}
   {%- assign is_landing_mode = false -%}
+{%- endif -%}
+
+{%- if is_sets_collection -%}
+<style>
+  .collection-grid-rhode .card-rhode { display: none !important; }
+  .collection-grid-rhode .bundle-card { display: flex !important; }
+  .collection-grid-rhode { grid-template-columns: repeat(3, 1fr) !important; }
+  @media (max-width: 768px) { .collection-grid-rhode { grid-template-columns: 1fr !important; } }
+</style>
 {%- endif -%}
 
 <div class="collection-page">
