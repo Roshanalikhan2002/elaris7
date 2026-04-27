@@ -1,3 +1,4 @@
+<div id="MAIN_COLLECTION_V3_MARKER" style="display:none !important;"></div>
 {% schema %}
 {
   "name": "Main Collection",
@@ -15,14 +16,18 @@
 }
 {% endschema %}
 
+{%- assign is_brightening_collection = false -%}
+{%- if collection.handle == 'korean-brightening' or request.path == '/collections/korean-brightening' -%}
+  {%- assign is_brightening_collection = true -%}
+{%- endif -%}
+
 {%- assign is_landing_mode = false -%}
 {%- if request.path == '/collections/elaris-7-korean-glass-skin-bundle' or request.path == '/collections/elaris-7-korean-hair-care-bundle' -%}
   {%- assign is_landing_mode = true -%}
 {%- endif -%}
 
-{%- assign is_brightening_collection = false -%}
-{%- if collection.handle == 'korean-brightening' -%}
-  {%- assign is_brightening_collection = true -%}
+{%- if is_brightening_collection -%}
+  {%- assign is_landing_mode = false -%}
 {%- endif -%}
 
 <div class="collection-page">
@@ -126,6 +131,8 @@
            {% include 'content-hair-bundle' %}
         {%- when 'anti-acne' -%}
            {% include 'content-anti-acne' %}
+        {%- when 'korean-brightening' -%}
+           {% include 'content-bright-bundle' %}
       {%- endcase -%}
     </div>
 
