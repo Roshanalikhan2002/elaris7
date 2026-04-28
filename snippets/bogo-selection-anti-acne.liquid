@@ -1,0 +1,104 @@
+            <div class="bogo-header">
+               <svg class="bogo-gift-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12v10H4V12M2 7h20v5H2zM12 22V7M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7zM12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg>
+               <p class="bogo-inline-title">Choose your item</p>
+            </div>
+            <div class="bogo-vertical-scroll">
+              <!-- 1. Night Cream -->
+              <div class="bogo-inline-card selected" onclick="selectBogo(this)">
+                <input type="checkbox" name="free_gift" data-variant-id="{{ all_products['night-cream'].selected_or_first_available_variant.id }}" data-gift-handle="night-cream" data-price="2675" style="display:none;" checked>
+                <div class="bogo-img-box"><img src="{{ 'night-cream.jpg' | asset_url }}" alt="Night Cream"></div>
+                <div class="bogo-inline-info">
+                  <span class="bogo-inline-name">Night Cream</span>
+                  <div class="bogo-price-line"><span class="bogo-old-price">Rs. 2,675</span><span class="bogo-free-tag">FREE</span></div>
+                </div>
+                <div class="bogo-checkbox"></div>
+              </div>
+
+              <!-- 2. Glutathione Cream -->
+              <div class="bogo-inline-card" onclick="selectBogo(this)">
+                <input type="checkbox" name="free_gift" data-variant-id="{{ all_products['glutathione-cream'].selected_or_first_available_variant.id }}" data-gift-handle="glutathione-cream" data-price="2640" style="display:none;">
+                <div class="bogo-img-box"><img src="{{ 'glutathione-cream-100.jpg' | asset_url }}" alt="Glutathione Cream"></div>
+                <div class="bogo-inline-info">
+                  <span class="bogo-inline-name">Glutathione Cream</span>
+                  <div class="bogo-price-line"><span class="bogo-old-price">Rs. 2,640</span><span class="bogo-free-tag">FREE</span></div>
+                </div>
+                <div class="bogo-checkbox"></div>
+              </div>
+
+              <!-- 3. Glow Serum -->
+              <div class="bogo-inline-card" onclick="selectBogo(this)">
+                <input type="checkbox" name="free_gift" data-variant-id="{{ all_products['e7-korean-glass-skin-centella-sunscreen-spf50-copy'].selected_or_first_available_variant.id }}" data-gift-handle="e7-korean-glass-skin-centella-sunscreen-spf50-copy" data-price="2645" style="display:none;">
+                <div class="bogo-img-box"><img src="{{ 'glow-serum-100.jpg' | asset_url }}" alt="Glow Serum"></div>
+                <div class="bogo-inline-info">
+                  <span class="bogo-inline-name">Glow Serum</span>
+                  <div class="bogo-price-line"><span class="bogo-old-price">Rs. 2,645</span><span class="bogo-free-tag">FREE</span></div>
+                </div>
+                <div class="bogo-checkbox"></div>
+              </div>
+
+              <!-- 4. Tranexamic Serum -->
+              <div class="bogo-inline-card" onclick="selectBogo(this)">
+                <input type="checkbox" name="free_gift" data-variant-id="{{ all_products['tranexamic-serum'].selected_or_first_available_variant.id }}" data-gift-handle="tranexamic-serum" data-price="2740" style="display:none;">
+                <div class="bogo-img-box"><img src="{{ 'tranexamic-serum.jpg' | asset_url }}" alt="Tranexamic Serum"></div>
+                <div class="bogo-inline-info">
+                  <span class="bogo-inline-name">Tranexamic Serum</span>
+                  <div class="bogo-price-line"><span class="bogo-old-price">Rs. 2,740</span><span class="bogo-free-tag">FREE</span></div>
+                </div>
+                <div class="bogo-checkbox"></div>
+              </div>
+
+              <!-- 5. Face Wash -->
+              <div class="bogo-inline-card" onclick="selectBogo(this)">
+                <input type="checkbox" name="free_gift" data-variant-id="{{ all_products['e7-korean-glass-skin-centella-night-cream-copy'].selected_or_first_available_variant.id }}" data-gift-handle="e7-korean-glass-skin-centella-night-cream-copy" data-price="2620" style="display:none;">
+                <div class="bogo-img-box"><img src="{{ 'facewash-100.jpg' | asset_url }}" alt="Face Wash"></div>
+                <div class="bogo-inline-info">
+                  <span class="bogo-inline-name">Face Wash</span>
+                  <div class="bogo-price-line"><span class="bogo-old-price">Rs. 2,620</span><span class="bogo-free-tag">FREE</span></div>
+                </div>
+                <div class="bogo-checkbox"></div>
+              </div>
+
+              <!-- 6. Gel Cleanser -->
+              <div class="bogo-inline-card" onclick="selectBogo(this)">
+                <input type="checkbox" name="free_gift" data-variant-id="{{ all_products['renewal-cleanser'].selected_or_first_available_variant.id }}" data-gift-handle="renewal-cleanser" data-price="2620" style="display:none;">
+                <div class="bogo-img-box"><img src="{{ 'gel cleanser-100.jpg' | asset_url }}" alt="Gel Cleanser"></div>
+                <div class="bogo-inline-info">
+                  <span class="bogo-inline-name">Gel Cleanser</span>
+                  <div class="bogo-price-line"><span class="bogo-old-price">Rs. 2,620</span><span class="bogo-free-tag">FREE</span></div>
+                </div>
+                <div class="bogo-checkbox"></div>
+              </div>
+
+              <!-- 7. Sunscreen SPF60+ -->
+              <div class="bogo-inline-card" onclick="selectBogo(this)">
+                <input type="checkbox" name="free_gift" data-variant-id="{{ all_products['e7-korean-glass-skin-centella-face-wash-copy'].selected_or_first_available_variant.id }}" data-gift-handle="e7-korean-glass-skin-centella-face-wash-copy" data-price="2735" style="display:none;">
+                <div class="bogo-img-box"><img src="{{ 'sunscreen-100.jpg' | asset_url }}" alt="Sunscreen SPF60+"></div>
+                <div class="bogo-inline-info">
+                  <span class="bogo-inline-name">Sunscreen SPF60+</span>
+                  <div class="bogo-price-line"><span class="bogo-old-price">Rs. 2,735</span><span class="bogo-free-tag">FREE</span></div>
+                </div>
+                <div class="bogo-checkbox"></div>
+              </div>
+
+              <!-- 8. Hair Regrow Spray -->
+              <div class="bogo-inline-card" onclick="selectBogo(this)">
+                <input type="checkbox" name="free_gift" data-variant-id="{{ all_products['hair-regrow-spray'].selected_or_first_available_variant.id }}" data-gift-handle="hair-regrow-spray" data-price="2790" style="display:none;">
+                <div class="bogo-img-box"><img src="{{ 'hair-regrow-main.jpeg' | asset_url }}" alt="Hair Regrow Spray"></div>
+                <div class="bogo-inline-info">
+                  <span class="bogo-inline-name">Hair Regrow Spray</span>
+                  <div class="bogo-price-line"><span class="bogo-old-price">Rs. 2,790</span><span class="bogo-free-tag">FREE</span></div>
+                </div>
+                <div class="bogo-checkbox"></div>
+              </div>
+
+              <!-- 9. Anti Frizz Keratin Serum -->
+              <div class="bogo-inline-card" onclick="selectBogo(this)">
+                <input type="checkbox" name="free_gift" data-variant-id="{{ all_products['anti-frizz-keratin-serum'].selected_or_first_available_variant.id }}" data-gift-handle="anti-frizz-keratin-serum" data-price="2680" style="display:none;">
+                <div class="bogo-img-box"><img src="{{ 'keratin-serum.jpg' | asset_url }}" alt="Anti Frizz Keratin Serum"></div>
+                <div class="bogo-inline-info">
+                  <span class="bogo-inline-name">Anti Frizz Keratin Serum</span>
+                  <div class="bogo-price-line"><span class="bogo-old-price">Rs. 2,680</span><span class="bogo-free-tag">FREE</span></div>
+                </div>
+                <div class="bogo-checkbox"></div>
+              </div>
+            </div>
