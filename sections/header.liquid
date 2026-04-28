@@ -1,4 +1,4 @@
-<header class="site-header">
+<header class="site-header {% if template == 'index' %}is-home{% endif %}">
   {%- assign mega_names = "NIGHT CREAM,TRANEXAMIC SERUM,ANTI FRIZZ KERATIN SERUM,GLOW SERUM,GLUTATHIONE BRIGHTENING CREAM,FLORAL BLOSSOM HAIR MIST,CENTELLA FACE WASH,ANTI ACNE SERUM ( TEA TREE OIL),TINTED CENTELLA SUNSCREEN SPF 60+,KOREAN BRIGHTENING CLEANSER,CENTELLA HYDRA MOISTURIZER,GLYCOLIC RENEWAL TONER,OIL TO FOAM CLEANSER (MAKEUP REMOVAL),HAIR REGROWTH SPRAY,SKIN REFINING TONER" | split: "," -%}
   {%- assign mega_images = "night-cream.jpg,tranexamic-serum.jpg,keratin-serum.jpg,glow-serum-100.jpg,glutathione-cream-100.jpg,hair-mist.jpg,facewash-100.jpg,anti-acne-100.jpg,sunscreen-100.jpg,rc-gal-1.jpg,moisturizer-100.jpg,renewal toner-100.jpg,oil-to-foam-main.jpg,hair-regrow-main.jpeg,skin-refining-toner-main.jpeg" | split: "," -%}
   {%- assign mega_descs = "To Restore & Protect,Even & Illuminate,Repair & Smooth Hair,Smooth Control Glow,Glow & Repair,Fresh Floral Touch,Gentle Daily Cleanser,Targeted Spot Control,Premium Solar Protection,Intense Clarity Refresh,Plumping Hydration Boost,Refining Skin Texture,Deep Double Cleansing,Healthy Hair Growth,Refining Skin Texture" | split: "," -%}
@@ -171,12 +171,20 @@
 </div>
 <style>
 /* Global Announcement Bar Fix */
+.site-header {
+  background-color: #fff !important; /* Force white background for separation */
+}
+
+.site-header.is-home {
+  background-color: transparent !important; /* Keep home page transparent for hero */
+}
+
 .announcement-bar {
   height: 36px !important;
   overflow: hidden !important;
   padding: 0 !important;
   position: relative !important;
-  margin: 10px 12px 12px !important;
+  margin: 15px 12px 15px !important; /* Increased spacing for separation */
   background-color: #f2f2ef !important;
   border-radius: 6px !important;
   display: block !important;
@@ -186,7 +194,7 @@
 
 @media (max-width: 850px) {
   .announcement-bar {
-    margin: 15px 16px 15px !important;
+    margin: 20px 16px 20px !important; /* Increased spacing for mobile separation */
     border-radius: 8px !important;
   }
 }
