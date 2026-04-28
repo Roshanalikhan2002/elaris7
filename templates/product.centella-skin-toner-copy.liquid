@@ -4599,27 +4599,46 @@ a { color: inherit; text-decoration: none; }
             b.disabled = true;
 
             try {
-                const mainVariantId = "{{ product.variants.first.id }}";
-                const selectedGift = document.querySelector('input[name="free_gift"]:checked');
-                
-                let items = [{ 
-                    id: mainVariantId, 
-                    quantity: 1, 
-                    properties: { '_bogo': 'true' } 
-                }];
+                                        const mainVariantId = "{{ product.variants.first.id }}";
+                        const mainPrice = {{ product.price | divided_by: 100 | default: 0 }};
+                        const selectedGift = document.querySelector('input[name="free_gift"]:checked');
+                        
+                        let items = [];
+                        
+                        if (selectedGift) {
+                            const giftVariantId = selectedGift.getAttribute('data-variant-id');
+                            const giftPrice = parseInt(selectedGift.getAttribute('data-price') || 0);
+                            
+                            if (giftPrice > mainPrice) {
+                                // Gift is more expensive -> Main is FREE, Gift is PAID
+                                items.push({ 
+                                    id: mainVariantId, 
+                                    quantity: 1, 
+                                    properties: { '_free_gift': 'true', '_bogo': 'true' } 
+                                });
+                                items.push({ 
+                                    id: giftVariantId, 
+                                    quantity: 1, 
+                                    properties: { '_bogo': 'true' } 
+                                });
+                            } else {
+                                // Main is more expensive or equal -> Gift is FREE, Main is PAID
+                                items.push({ 
+                                    id: mainVariantId, 
+                                    quantity: 1, 
+                                    properties: { '_bogo': 'true' } 
+                                });
+                                items.push({ 
+                                    id: giftVariantId, 
+                                    quantity: 1, 
+                                    properties: { '_free_gift': 'true', '_bogo': 'true' } 
+                                });
+                            }
+                        } else {
+                            items.push({ id: mainVariantId, quantity: 1 });
+                        }
 
-                if (selectedGift) {
-                    const giftVariantId = selectedGift.getAttribute('data-variant-id');
-                    if (giftVariantId && giftVariantId.trim() !== '' && giftVariantId !== '0') {
-                        items.push({ 
-                            id: giftVariantId, 
-                            quantity: 1, 
-                            properties: { '_free_gift': 'true', '_bogo': 'true' } 
-                        });
-                    }
-                }
-
-                const response = await fetch('/cart/add.js', {
+                        const response = await fetch('/cart/add.js', {
                     method: 'POST',
                     headers: { 
                         'Content-Type': 'application/json',
