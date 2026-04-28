@@ -61,27 +61,49 @@ const refinedLogic = `                        const mainVariantId = "{{ product.
                             alert('Bag Error: ' + (error.description || error.message || 'Could not add to bag'));
                             b.innerHTML = originalText;
                             b.disabled = false;
-                        });
-`;
+                        });`;
 
 files.forEach(file => {
     if (file.endsWith('.liquid')) {
         const filePath = path.join(templatesDir, file);
         let content = fs.readFileSync(filePath, 'utf8');
-        if (content.includes('const mainVariantId = "{{ product.variants.first.id }}";')) {
-            console.log(`Refining Add to Cart logic in ${file}...`);
+        
+        // Find the start of the logic
+        const startMarker = 'const mainVariantId = "{{ product.variants.first.id }}";';
+        const startIndex = content.indexOf(startMarker);
+        
+        if (startIndex !== -1) {
+            console.log(`Updating ${file}...`);
+            // Find the catch block or the end of the fetch
+            // Since we know the previous versions used either "window.location.href" or "window.location.reload()"
+            let endIndex = -1;
+            const markers = ["window.location.href = '/cart';", "window.location.reload();"];
+            for (const m of markers) {
+                const idx = content.indexOf(m, startIndex);
+                if (idx !== -1) {
+                    // Find the end of the catch block after this
+                    const catchIdx = content.indexOf('}', idx + m.length);
+                    const finalIdx = content.indexOf('}', catchIdx + 1);
+                    endIndex = finalIdx + 1;
+                    break;
+                }
+            }
             
-            const startMarker = 'const mainVariantId = "{{ product.variants.first.id }}";';
-            const endMarker = '                    } catch (error) {';
-            
-            const startIndex = content.indexOf(startMarker);
-            const endIndex = content.indexOf(endMarker);
-            
-            if (startIndex !== -1 && endIndex !== -1 && startIndex < endIndex) {
+            if (endIndex !== -1) {
                 const before = content.substring(0, startIndex);
                 const after = content.substring(endIndex);
                 content = before + refinedLogic + '\n' + after;
                 fs.writeFileSync(filePath, content);
+            } else {
+                 // Fallback: search for the next closing brace after mainVariantId
+                 console.log(`Falling back for ${file}`);
+                 const nextBrace = content.indexOf('});', startIndex);
+                 if (nextBrace !== -1) {
+                     const before = content.substring(0, startIndex);
+                     const after = content.substring(nextBrace);
+                     content = before + refinedLogic + '\n                        ' + after;
+                     fs.writeFileSync(filePath, content);
+                 }
             }
         }
     }
