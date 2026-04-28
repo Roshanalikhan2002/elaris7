@@ -170,6 +170,50 @@
   </div>
 </div>
 <style>
+/* Global Announcement Bar Fix */
+.announcement-bar {
+  height: 36px !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  position: relative !important;
+  margin: 10px 12px 0 !important;
+  background-color: #f2f2ef !important;
+  border-radius: 6px !important;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+@media (max-width: 850px) {
+  .announcement-bar {
+    margin: 15px 16px 8px !important;
+    border-radius: 8px !important;
+  }
+}
+
+.announcement-slider {
+  display: flex !important;
+  flex-direction: column !important;
+  height: 100% !important;
+  animation: announcement-slide 8s infinite cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.announcement-item {
+  height: 36px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-shrink: 0 !important;
+  padding: 0 16px !important;
+  white-space: nowrap !important;
+}
+
+@keyframes announcement-slide {
+  0%, 45% { transform: translateY(0); }
+  50%, 95% { transform: translateY(-36px); }
+  100% { transform: translateY(0); }
+}
+
 /* ===== Search Overlay ===== */
 .search-overlay {
   position: fixed;
