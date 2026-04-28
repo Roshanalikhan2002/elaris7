@@ -4738,7 +4738,7 @@ a { color: inherit; text-decoration: none; }
                 const data = await response.json();
                 if (!response.ok) throw new Error(data.description || data.message || 'Could not add to bag');
 
-                window.location.href = '/cart';
+                window.location.reload();
                 
             } catch (error) {
                 console.error('Cart Addition Error:', error);
