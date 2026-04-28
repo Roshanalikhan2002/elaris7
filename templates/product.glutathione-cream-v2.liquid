@@ -2514,12 +2514,7 @@ a { color: inherit; text-decoration: none; }
   </style>
           <script>
             // BOGO Selection Logic
-                        function selectBogo(card) {
-                document.querySelectorAll('.bogo-inline-card').forEach(c => {
-                    c.classList.remove('selected');
-                    const input = c.querySelector('input[type="checkbox"]');
-                    if(input) input.checked = false;
-                });
+                        );
                 card.classList.add('selected');
                 const input = card.querySelector('input[type="checkbox"]');
                 if(input) {

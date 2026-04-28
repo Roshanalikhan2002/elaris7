@@ -1010,7 +1010,21 @@ body.menu-open { overflow: hidden; }
     lastScrollY = currentScrollY;
   }, { passive: true });
 })();
+// BOGO Selection Logic
+function selectBogo(card) {
+  if (!card) return;
+  const cards = document.querySelectorAll('.bogo-inline-card');
+  cards.forEach(c => {
+    c.classList.remove('selected');
+    const input = c.querySelector('input[name="free_gift"]');
+    if (input) input.checked = false;
+  });
+  card.classList.add('selected');
+  const input = card.querySelector('input[name="free_gift"]');
+  if (input) input.checked = true;
+}
 </script>
+
 
 {% schema %}
 {
