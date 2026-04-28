@@ -222,6 +222,105 @@
   100% { transform: translateY(0); }
 }
 
+/* BOGO Section Fixes - Remove Scroll and Style Checkbox on Right */
+.bogo-vertical-scroll {
+  max-height: none !important;
+  overflow-y: visible !important;
+  padding-right: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 10px !important;
+}
+
+.bogo-inline-card {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  padding: 12px 16px !important;
+  border-radius: 12px !important;
+  border: 1.5px solid #e8e8e6 !important;
+  background: #fff !important;
+  transition: all 0.3s ease !important;
+  position: relative !important;
+  margin-bottom: 0 !important;
+}
+
+.bogo-inline-card.selected {
+  border-color: #2c2b28 !important;
+  background: #fdfdfb !important;
+}
+
+.bogo-img-box {
+  width: 50px !important;
+  height: 50px !important;
+  flex-shrink: 0 !important;
+  border: none !important;
+}
+
+.bogo-inline-info {
+  flex: 1 !important;
+  margin-left: 12px !important;
+  text-align: left !important;
+}
+
+.bogo-inline-name {
+  font-size: 0.8rem !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  color: #2c2b28 !important;
+  margin-bottom: 2px !important;
+}
+
+.bogo-price-line {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+}
+
+.bogo-old-price {
+  text-decoration: line-through !important;
+  color: #7A7973 !important;
+  font-size: 0.75rem !important;
+  font-weight: 500 !important;
+}
+
+.bogo-free-tag {
+  color: #2c2b28 !important;
+  font-weight: 800 !important;
+  font-size: 0.75rem !important;
+  letter-spacing: 0.02em !important;
+}
+
+.bogo-checkbox {
+  width: 20px !important;
+  height: 20px !important;
+  border: 1.5px solid #ccc !important;
+  border-radius: 4px !important;
+  flex-shrink: 0 !important;
+  position: relative !important;
+  transition: all 0.2s ease !important;
+  margin-left: 10px !important;
+  order: 3 !important;
+}
+
+.bogo-inline-card.selected .bogo-checkbox {
+  background-color: #2c2b28 !important;
+  border-color: #2c2b28 !important;
+}
+
+.bogo-inline-card.selected .bogo-checkbox::after {
+  content: '' !important;
+  position: absolute !important;
+  left: 6px !important;
+  top: 2px !important;
+  width: 5px !important;
+  height: 10px !important;
+  border: solid white !important;
+  border-width: 0 2px 2px 0 !important;
+  transform: rotate(45deg) !important;
+}
+
+
 /* ===== Search Overlay ===== */
 .search-overlay {
   position: fixed;
