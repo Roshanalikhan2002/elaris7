@@ -4894,18 +4894,17 @@ a { color: inherit; text-decoration: none; }
                     b.disabled = true;
 
                     try {
-                                                const mainVariantId = "{{ product.variants.first.id }}";
+                                                                        const mainVariantId = "{{ product.variants.first.id }}";
                         const mainPrice = {{ product.price | divided_by: 100 | default: 0 }};
                         const selectedGift = document.querySelector('input[name="free_gift"]:checked');
                         
                         let items = [];
                         
-                        if (selectedGift) {
+                        if (selectedGift && selectedGift.getAttribute('data-variant-id')) {
                             const giftVariantId = selectedGift.getAttribute('data-variant-id');
                             const giftPrice = parseInt(selectedGift.getAttribute('data-price') || 0);
                             
                             if (giftPrice > mainPrice) {
-                                // Gift is more expensive -> Main is FREE, Gift is PAID
                                 items.push({ 
                                     id: mainVariantId, 
                                     quantity: 1, 
@@ -4917,7 +4916,6 @@ a { color: inherit; text-decoration: none; }
                                     properties: { '_bogo': 'true' } 
                                 });
                             } else {
-                                // Main is more expensive or equal -> Gift is FREE, Main is PAID
                                 items.push({ 
                                     id: mainVariantId, 
                                     quantity: 1, 
@@ -4933,20 +4931,28 @@ a { color: inherit; text-decoration: none; }
                             items.push({ id: mainVariantId, quantity: 1 });
                         }
 
-                        const response = await fetch('/cart/add.js', {
+                        console.log('Adding items to cart:', items);
+
+                        fetch('/cart/add.js', {
                             method: 'POST',
-                            headers: { 
-                                'Content-Type': 'application/json',
-                                'X-Requested-With': 'XMLHttpRequest'
-                            },
+                            headers: { 'Content-Type': 'application/json' },
                             body: JSON.stringify({ items: items })
+                        })
+                        .then(response => {
+                            if (!response.ok) return response.json().then(err => { throw err; });
+                            return response.json();
+                        })
+                        .then(data => {
+                            console.log('Success:', data);
+                            window.location.reload();
+                        })
+                        .catch(error => {
+                            console.error('Cart Error:', error);
+                            alert('Bag Error: ' + (error.description || error.message || 'Could not add to bag'));
+                            b.innerHTML = originalText;
+                            b.disabled = false;
                         });
 
-                        const data = await response.json();
-                        if (!response.ok) throw new Error(data.description || data.message || 'Could not add to bag');
-
-                        window.location.reload();
-                        
                     } catch (error) {
                         console.error('Cart Addition Error:', error);
                         alert('Bag Error: ' + error.message);
