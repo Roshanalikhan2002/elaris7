@@ -27,37 +27,32 @@
 
       <div class="lux-items-list" id="lux-cart-items">
         {%- assign gift_items = "" -%}
+        {%- assign cheapest_gift_price = 999999999 -%}
+        {%- assign cheapest_gift_key = "" -%}
+        
         {%- for item in cart.items -%}
+          {%- assign item_is_marked_gift = false -%}
           {%- for prop in item.properties -%}
-            {%- if prop.first == '_free_gift' and prop.last == 'true' -%}
-              {%- assign gift_items = gift_items | append: item.key | append: "," -%}
-            {%- endif -%}
+            {%- if prop.first == '_free_gift' and prop.last == 'true' -%}{%- assign item_is_marked_gift = true -%}{%- endif -%}
           {%- endfor -%}
+          
+          {%- if item_is_marked_gift -%}
+            {%- assign gift_items = gift_items | append: item.key | append: "," -%}
+            {%- assign item_price_num = item.original_line_price | plus: 0 -%}
+            {%- if item_price_num < cheapest_gift_price -%}
+              {%- assign cheapest_gift_price = item_price_num -%}
+              {%- assign cheapest_gift_key = item.key -%}
+            {%- endif -%}
+          {%- endif -%}
         {%- endfor -%}
         {%- assign gift_keys = gift_items | split: "," -%}
 
+        {%- if cheapest_gift_key == "" -%}{%- assign cheapest_gift_price = 0 -%}{%- endif -%}
+
         {%- for item in cart.items -%}
           {%- assign is_free_gift = false -%}
-          {%- if gift_keys contains item.key -%}
+          {%- if item.key == cheapest_gift_key -%}
             {%- assign is_free_gift = true -%}
-          {%- endif -%}
-          
-          {%- comment -%} 
-            Identify the cheapest item among those marked as gifts.
-          {%- endcomment -%}
-          {%- if is_free_gift and gift_keys.size > 1 -%}
-             {%- assign highest_original_price = 0 -%}
-             {%- for g_key in gift_keys -%}
-                {%- for itm in cart.items -%}{%- if itm.key == g_key -%}
-                  {%- if itm.original_line_price > highest_original_price -%}
-                    {%- assign highest_original_price = itm.original_line_price -%}
-                  {%- endif -%}
-                {%- endif -%}{%- endfor -%}
-             {%- endfor -%}
-
-             {%- if item.original_line_price == highest_original_price -%}
-                {%- assign is_free_gift = false -%}
-             {%- endif -%}
           {%- endif -%}
 
         <div class="lux-cart-item{% if is_free_gift %} lux-gift-item{% endif %}" data-key="{{ item.key }}">
@@ -167,10 +162,11 @@
         <h2 class="lux-summary-title">Order Summary</h2>
 
         {%- assign paid_total = cart.total_price | minus: gift_total_price -%}
+        {%- assign final_cart_total = cart.original_total_price | minus: cheapest_gift_price -%}
         <div class="lux-summary-rows">
           <div class="lux-summary-row">
             <span>Subtotal</span>
-            <span id="lux-subtotal">{{ cart.original_total_price | money }}</span>
+            <span id="lux-subtotal">{{ final_cart_total | money }}</span>
           </div>
           {%- if has_gift -%}
           <div class="lux-summary-row" style="color: #27ae60; font-weight: 600;">
@@ -195,7 +191,7 @@
           <div class="lux-summary-divider"></div>
           <div class="lux-summary-row lux-total-row">
             <span>Estimated Total</span>
-            <span id="lux-total">{{ cart.original_total_price | money }}</span>
+            <span id="lux-total">{{ final_cart_total | money }}</span>
           </div>
         </div>
 
