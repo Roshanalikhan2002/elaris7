@@ -1,4 +1,4 @@
-<style>
+ï»¿<style>
   .product-page { padding: 40px 20px; max-width: 1400px; margin: 0 auto; background: #fff; }
   .product-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
   
@@ -272,11 +272,11 @@
             {%- if product.handle == 'night-cream' or product.handle == 'e7-korean-glass-skin-centella-night-cream-copy' -%}
               <p>After cleansing and toning, take a small amount of Centella Night Cream and gently massage it upward onto your face and neck, avoiding the eye area. Leave it on overnight to fully absorb and lock in hydration, allowing your skin to repair, restore, and wake up looking radiant and smooth. Consistency is key for optimal results.</p>
             {%- elsif product.handle == 'tranexamic-serum' -%}
-              <p>Use morning and night after cleansing and toning. Apply 2–3 drops to face and neck and gently press into the skin. Follow with moisturizer and use sunscreen during the day.</p>
+              <p>Use morning and night after cleansing and toning. Apply 2â€“3 drops to face and neck and gently press into the skin. Follow with moisturizer and use sunscreen during the day.</p>
             {%- elsif product.handle == 'anti-frizz-keratin-serum' or product.handle == 'anti-frizz-serum' or product.handle == 'keratin-serum' -%}
               <p>After washing or styling, take a small amount of Anti Frizz Keratin Serum and apply evenly through damp or dry hair, focusing on mid-lengths and ends. Avoid the roots and style as desired.</p>
             {%- elsif is_centella_serum -%}
-              <p>After cleansing, take 3–4 drops of Centella Serum and gently press onto slightly damp skin across the face and neck. Allow it to absorb fully, then follow with your moisturizer to seal in hydration.</p>
+              <p>After cleansing, take 3â€“4 drops of Centella Serum and gently press onto slightly damp skin across the face and neck. Allow it to absorb fully, then follow with your moisturizer to seal in hydration.</p>
             {%- elsif is_glutathione_cream -%}
               <p>Use morning and evening after cleansing and serum.</p>
               <ul style="padding-left: 20px;">
@@ -340,7 +340,7 @@
             {%- elsif product.handle == 'renewal-toner' or product.handle == 'renewal-cleanser' -%}
               <ul style="padding-left: 20px;">
                 <li>Use on damp skin for a gentle, effective cleanse</li>
-                <li>Massage for 30–60 seconds for better results</li>
+                <li>Massage for 30â€“60 seconds for better results</li>
                 <li>Follow with toner to enhance brightness</li>
                 <li>Use consistently for a clearer-looking complexion</li>
               </ul>
@@ -394,7 +394,7 @@
       ? selectedRadio.closest('.gift-item')?.querySelector('.gift-name')?.textContent?.trim()
       : null;
 
-    // Build items array — always start with main product
+    // Build items array â€” always start with main product
     const items = [
       { id: mainVariantId, quantity: 1 }
     ];
@@ -427,7 +427,7 @@
       if (!res.ok) throw new Error('Cart add failed');
 
       if (buyNow) {
-        window.location.href = '/checkout';
+        window.location.href = '/discount/Thankyou10?redirect=/checkout';
       } else {
         window.location.href = '/cart';
       }
@@ -440,6 +440,7 @@
     }
   }
 </script>
+
 
 
 
