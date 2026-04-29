@@ -1,0 +1,93 @@
+<div class="bogo-header">
+  <svg class="bogo-gift-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12v10H4V12M2 7h20v5H2zM12 22V7M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7zM12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg>
+  <p class="bogo-inline-title">Choose your free item</p>
+</div>
+<div class="bogo-vertical-scroll">
+  
+  <!-- BRIGHTENING PRODUCTS -->
+  <div class="bogo-inline-card selected" onclick="selectBogo(this)">
+    <input type="checkbox" name="free_gift" data-variant-id="{{ all_products['glutathione-cream'].selected_or_first_available_variant.id }}" data-gift-handle="glutathione-cream" data-price="2640" style="display:none;" checked>
+    <div class="bogo-img-box"><img src="{{ 'glutathione-cream-100.jpg' | asset_url }}" alt="Glutathione Cream"></div>
+    <div class="bogo-inline-info">
+      <span class="bogo-inline-name">Glutathione Cream</span>
+      <div class="bogo-price-line"><span class="bogo-old-price">Rs. 2,640</span><span class="bogo-free-tag">FREE</span></div>
+    </div>
+    <div class="bogo-checkbox"></div>
+  </div>
+
+  <div class="bogo-inline-card" onclick="selectBogo(this)">
+    <input type="checkbox" name="free_gift" data-variant-id="{{ all_products['tranexamic-serum'].selected_or_first_available_variant.id }}" data-gift-handle="tranexamic-serum" data-price="2740" style="display:none;">
+    <div class="bogo-img-box"><img src="{{ 'tranexamic-serum.jpg' | asset_url }}" alt="Tranexamic Serum"></div>
+    <div class="bogo-inline-info">
+      <span class="bogo-inline-name">Tranexamic Serum</span>
+      <div class="bogo-price-line"><span class="bogo-old-price">Rs. 2,740</span><span class="bogo-free-tag">FREE</span></div>
+    </div>
+    <div class="bogo-checkbox"></div>
+  </div>
+
+  <div class="bogo-inline-card" onclick="selectBogo(this)">
+    <input type="checkbox" name="free_gift" data-variant-id="{{ all_products['renewal-cleanser'].selected_or_first_available_variant.id }}" data-gift-handle="renewal-cleanser" data-price="2620" style="display:none;">
+    <div class="bogo-img-box"><img src="{{ 'gel cleanser-100.jpg' | asset_url }}" alt="Gel Cleanser"></div>
+    <div class="bogo-inline-info">
+      <span class="bogo-inline-name">Gel Cleanser</span>
+      <div class="bogo-price-line"><span class="bogo-old-price">Rs. 2,620</span><span class="bogo-free-tag">FREE</span></div>
+    </div>
+    <div class="bogo-checkbox"></div>
+  </div>
+
+  <div class="bogo-inline-card" onclick="selectBogo(this)">
+    <input type="checkbox" name="free_gift" data-variant-id="{{ all_products['renewal-toner'].selected_or_first_available_variant.id }}" data-gift-handle="renewal-toner" data-price="2780" style="display:none;">
+    <div class="bogo-img-box"><img src="{{ 'toner1.jpeg' | asset_url }}" alt="Renewal Toner"></div>
+    <div class="bogo-inline-info">
+      <span class="bogo-inline-name">Renewal Toner</span>
+      <div class="bogo-price-line"><span class="bogo-old-price">Rs. 2,780</span><span class="bogo-free-tag">FREE</span></div>
+    </div>
+    <div class="bogo-checkbox"></div>
+  </div>
+
+  <!-- HEADING: Glass Skin Bundle -->
+  <div class="bogo-group-header" style="padding: 15px 5px 10px; margin-top: 5px;">
+    <p style="margin:0; font-size: 0.85rem; font-weight: 800; color: #333; text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid #eee; padding-bottom: 5px;">Glass skin bundle</p>
+  </div>
+
+  <!-- GLASS SKIN PRODUCTS -->
+  <div class="bogo-inline-card" onclick="selectBogo(this)">
+    <input type="checkbox" name="free_gift" data-variant-id="{{ all_products['night-cream'].selected_or_first_available_variant.id }}" data-gift-handle="night-cream" data-price="2675" style="display:none;">
+    <div class="bogo-img-box"><img src="{{ 'night-cream.jpg' | asset_url }}" alt="Night Cream"></div>
+    <div class="bogo-inline-info">
+      <span class="bogo-inline-name">Night Cream</span>
+      <div class="bogo-price-line"><span class="bogo-old-price">Rs. 2,675</span><span class="bogo-free-tag">FREE</span></div>
+    </div>
+    <div class="bogo-checkbox"></div>
+  </div>
+
+  <div class="bogo-inline-card" onclick="selectBogo(this)">
+    <input type="checkbox" name="free_gift" data-variant-id="{{ all_products['e7-korean-glass-skin-centella-night-cream-copy'].selected_or_first_available_variant.id }}" data-gift-handle="e7-korean-glass-skin-centella-night-cream-copy" data-price="2620" style="display:none;">
+    <div class="bogo-img-box"><img src="{{ 'facewash-100.jpg' | asset_url }}" alt="Face Wash"></div>
+    <div class="bogo-inline-info">
+      <span class="bogo-inline-name">Face Wash</span>
+      <div class="bogo-price-line"><span class="bogo-old-price">Rs. 2,620</span><span class="bogo-free-tag">FREE</span></div>
+    </div>
+    <div class="bogo-checkbox"></div>
+  </div>
+
+  <div class="bogo-inline-card" onclick="selectBogo(this)">
+    <input type="checkbox" name="free_gift" data-variant-id="{{ all_products['e7-korean-glass-skin-centella-face-wash-copy'].selected_or_first_available_variant.id }}" data-gift-handle="e7-korean-glass-skin-centella-face-wash-copy" data-price="2735" style="display:none;">
+    <div class="bogo-img-box"><img src="{{ 'sunscreen-100.jpg' | asset_url }}" alt="Sunscreen SPF60+"></div>
+    <div class="bogo-inline-info">
+      <span class="bogo-inline-name">Sunscreen SPF60+</span>
+      <div class="bogo-price-line"><span class="bogo-old-price">Rs. 2,735</span><span class="bogo-free-tag">FREE</span></div>
+    </div>
+    <div class="bogo-checkbox"></div>
+  </div>
+
+  <div class="bogo-inline-card" onclick="selectBogo(this)">
+    <input type="checkbox" name="free_gift" data-variant-id="{{ all_products['centella-moisturizer'].selected_or_first_available_variant.id }}" data-gift-handle="centella-moisturizer" data-price="2680" style="display:none;">
+    <div class="bogo-img-box"><img src="{{ 'moisturizer-100.jpg' | asset_url }}" alt="Hydra Burst Moisturizer"></div>
+    <div class="bogo-inline-info">
+      <span class="bogo-inline-name">Hydra Burst Moisturizer</span>
+      <div class="bogo-price-line"><span class="bogo-old-price">Rs. 2,680</span><span class="bogo-free-tag">FREE</span></div>
+    </div>
+    <div class="bogo-checkbox"></div>
+  </div>
+</div>
