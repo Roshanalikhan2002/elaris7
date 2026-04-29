@@ -170,8 +170,7 @@
         <div class="lux-summary-rows">
           <div class="lux-summary-row">
             <span>Subtotal</span>
-            {%- assign subtotal_to_show = cart.total_price -%}
-            <span id="lux-subtotal">{{ subtotal_to_show | money }}</span>
+            <span id="lux-subtotal">{{ cart.original_total_price | money }}</span>
           </div>
           {%- if has_gift -%}
           <div class="lux-summary-row" style="color: #27ae60; font-weight: 600;">
@@ -196,7 +195,7 @@
           <div class="lux-summary-divider"></div>
           <div class="lux-summary-row lux-total-row">
             <span>Estimated Total</span>
-            <span id="lux-total">{{ cart.total_price | money }}</span>
+            <span id="lux-total">{{ cart.original_total_price | money }}</span>
           </div>
         </div>
 
