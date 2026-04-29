@@ -43,17 +43,19 @@
           {%- endif -%}
           
           {%- comment -%} 
-            If multiple items are marked as free gifts, we only show the cheapest one as FREE.
-            The expensive one should show its price.
+            Identify the cheapest item among those marked as gifts.
           {%- endcomment -%}
           {%- if is_free_gift and gift_keys.size > 1 -%}
-             {%- assign highest_price = 0 -%}
+             {%- assign highest_original_price = 0 -%}
              {%- for g_key in gift_keys -%}
                 {%- for itm in cart.items -%}{%- if itm.key == g_key -%}
-                  {%- if itm.final_line_price > highest_price -%}{%- assign highest_price = itm.final_line_price -%}{%- endif -%}
+                  {%- if itm.original_line_price > highest_original_price -%}
+                    {%- assign highest_original_price = itm.original_line_price -%}
+                  {%- endif -%}
                 {%- endif -%}{%- endfor -%}
              {%- endfor -%}
-             {%- if item.final_line_price == highest_price -%}
+
+             {%- if item.original_line_price == highest_original_price -%}
                 {%- assign is_free_gift = false -%}
              {%- endif -%}
           {%- endif -%}
