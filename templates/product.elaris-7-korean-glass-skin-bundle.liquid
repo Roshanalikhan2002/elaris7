@@ -222,7 +222,7 @@
 
                 const data = await response.json();
                 if (!response.ok) throw new Error(data.description || data.message || 'Could not add to bag');
-                window.location.reload();
+                window.location.href = '/cart';
             } catch (error) {
                 console.error('Cart Addition Error:', error);
                 alert('Bag Error: ' + error.message);
