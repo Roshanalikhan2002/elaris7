@@ -163,14 +163,6 @@
             </div>
             {%- endfor -%}
           {%- endif -%}
-
-          <!-- Promo Code Field -->
-          <div class="lux-promo-wrap">
-            <input type="text" id="lux-promo-input" placeholder="PROMO CODE" class="lux-promo-input">
-            <button type="button" class="lux-promo-btn" onclick="luxApplyPromo()">APPLY</button>
-          </div>
-          <div id="lux-promo-msg" class="lux-promo-msg"></div>
-
           <div class="lux-summary-divider"></div>
           <div class="lux-summary-row lux-total-row">
             <span>Estimated Total</span>
@@ -547,38 +539,6 @@
   text-align: center;
 }
 
-/* Promo Code Styles */
-.lux-promo-wrap {
-  display: flex;
-  gap: 8px;
-  margin: 15px 0 5px;
-}
-.lux-promo-input {
-  flex: 1;
-  padding: 10px 12px;
-  border: 1px solid #e8e4de;
-  border-radius: 4px;
-  font-size: 0.75rem;
-  font-weight: 600;
-  outline: none;
-}
-.lux-promo-btn {
-  background: #f1efea;
-  border: 1px solid #e8e4de;
-  padding: 0 15px;
-  font-size: 0.65rem;
-  font-weight: 800;
-  cursor: pointer;
-  border-radius: 4px;
-  transition: all 0.2s;
-}
-.lux-promo-btn:hover { background: #e8e4de; }
-.lux-promo-msg {
-  font-size: 0.7rem;
-  font-weight: 600;
-  margin-bottom: 10px;
-}
-
 /* ── TRUST BADGES ── */
 .lux-trust-badges {
   display: flex;
@@ -668,36 +628,6 @@ async function luxRemoveItem(key) {
     }
   } catch(e) { console.error(e); }
   finally { luxHideLoading(); }
-}
-
-function luxApplyPromo() {
-  const code = document.getElementById('lux-promo-input').value.trim();
-  const msg = document.getElementById('lux-promo-msg');
-  if (!code) {
-    msg.textContent = 'Please enter a code';
-    msg.style.color = '#c0392b';
-    return;
-  }
-  
-  // Shopify doesn't have a direct AJAX API to "apply" a discount to the cart object (only checkout).
-  // The best way is to append it to the checkout form or redirect via /discount/CODE
-  // We'll append a hidden input to the checkout form so it applies when they click Checkout.
-  
-  const form = document.querySelector('form[action="/checkout"]');
-  let input = form.querySelector('input[name="discount"]');
-  if (!input) {
-    input = document.createElement('input');
-    input.type = 'hidden';
-    input.name = 'discount';
-    form.appendChild(input);
-  }
-  input.value = code;
-  
-  msg.textContent = `Code "${code}" will be applied at checkout!`;
-  msg.style.color = '#27ae60';
-  
-  // Optionally, we could also use the /discount/CODE redirect trick if we want it to apply NOW
-  // but that usually requires a page reload/redirect.
 }
 </script>
 
