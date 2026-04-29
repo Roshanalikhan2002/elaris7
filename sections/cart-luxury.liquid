@@ -26,13 +26,38 @@
       </div>
 
       <div class="lux-items-list" id="lux-cart-items">
+        {%- assign gift_items = "" -%}
         {%- for item in cart.items -%}
-          {%- assign is_free_gift = false -%}
           {%- for prop in item.properties -%}
             {%- if prop.first == '_free_gift' and prop.last == 'true' -%}
-              {%- assign is_free_gift = true -%}
+              {%- assign gift_items = gift_items | append: item.key | append: "," -%}
             {%- endif -%}
           {%- endfor -%}
+        {%- endfor -%}
+        {%- assign gift_keys = gift_items | split: "," -%}
+
+        {%- for item in cart.items -%}
+          {%- assign is_free_gift = false -%}
+          {%- if gift_keys contains item.key -%}
+            {%- assign is_free_gift = true -%}
+          {%- endif -%}
+          
+          {%- comment -%} 
+            If multiple items are marked as free gifts, we only show the cheapest one as FREE.
+            The expensive one should show its price.
+          {%- endcomment -%}
+          {%- if is_free_gift and gift_keys.size > 1 -%}
+             {%- assign highest_price = 0 -%}
+             {%- for g_key in gift_keys -%}
+                {%- for itm in cart.items -%}{%- if itm.key == g_key -%}
+                  {%- if itm.final_line_price > highest_price -%}{%- assign highest_price = itm.final_line_price -%}{%- endif -%}
+                {%- endif -%}{%- endfor -%}
+             {%- endfor -%}
+             {%- if item.final_line_price == highest_price -%}
+                {%- assign is_free_gift = false -%}
+             {%- endif -%}
+          {%- endif -%}
+
         <div class="lux-cart-item{% if is_free_gift %} lux-gift-item{% endif %}" data-key="{{ item.key }}">
           <div class="lux-item-img">
             <a href="{{ item.url }}">
@@ -70,14 +95,14 @@
             <div class="lux-item-top">
               <div>
                 <a href="{{ item.url }}" class="lux-item-name">{{ item.product.title }}</a>
-                {%- if item.final_line_price == 0 or is_free_gift -%}
+                {%- if is_free_gift -%}
                   <span class="lux-free-badge">🎁 FREE GIFT</span>
                 {%- endif -%}
                 {%- unless item.variant.title == 'Default Title' -%}
                   <p class="lux-item-variant">{{ item.variant.title }}</p>
                 {%- endunless -%}
               </div>
-              {%- if item.final_line_price == 0 or is_free_gift -%}
+              {%- if is_free_gift -%}
                 <p class="lux-item-price" style="color: #27ae60;">
                   <span style="text-decoration: line-through; color: #aaa; font-weight: 400; font-size: 0.85rem;">{{ item.original_line_price | money }}</span>
                   <span style="display:block;">FREE</span>
@@ -143,7 +168,8 @@
         <div class="lux-summary-rows">
           <div class="lux-summary-row">
             <span>Subtotal</span>
-            <span id="lux-subtotal">{{ paid_total | money }}</span>
+            {%- assign subtotal_to_show = cart.total_price -%}
+            <span id="lux-subtotal">{{ subtotal_to_show | money }}</span>
           </div>
           {%- if has_gift -%}
           <div class="lux-summary-row" style="color: #27ae60; font-weight: 600;">
@@ -157,16 +183,18 @@
           </div>
           {%- if cart.cart_level_discount_applications.size > 0 -%}
             {%- for discount in cart.cart_level_discount_applications -%}
-            <div class="lux-summary-row lux-discount-row">
-              <span>{{ discount.title }}</span>
-              <span>-{{ discount.total_allocated_amount | money }}</span>
-            </div>
+              {%- unless discount.title contains 'Thankyou10' -%}
+                <div class="lux-summary-row lux-discount-row">
+                  <span>{{ discount.title }}</span>
+                  <span>-{{ discount.total_allocated_amount | money }}</span>
+                </div>
+              {%- endunless -%}
             {%- endfor -%}
           {%- endif -%}
           <div class="lux-summary-divider"></div>
           <div class="lux-summary-row lux-total-row">
             <span>Estimated Total</span>
-            <span id="lux-total">{{ paid_total | money }}</span>
+            <span id="lux-total">{{ cart.total_price | money }}</span>
           </div>
         </div>
 
